@@ -1,0 +1,15 @@
+/prototype/node_modules
+/build/node_modules
+/prototype/.sass-cache
+!/.gitignore
+/design
+/build/composer.lock
+/build
+!/build/wp-content/plugins/sative
+!/build/wp-content/plugins/sative/*
+!/build/wp-content/themes/sative
+!/build/wp-content/themes/sative/*
+!/build/static
+!/build/static/*
+/.DS_Store
+**/.DS_Store
