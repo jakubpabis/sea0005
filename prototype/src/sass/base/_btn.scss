@@ -1,0 +1,40 @@
+.btn {
+    vertical-align: middle;
+    text-transform: uppercase;
+    display: inline-block;
+    border-radius: 0!important;
+    font-weight: 700;
+    line-height: 1;
+
+    &__default {
+        padding: 16px 25px;
+        font-size: 16px;
+    }
+
+    &__small {
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+
+    &.navy {
+        background-color: $color-navy;
+        color: white;
+    }   
+
+    &.yellow {
+        background-color: $color-yellow;
+        color: $color-navy;
+    }
+
+    &.grey {
+        background-color: $color-grey;
+        color: white;
+    }
+
+    &.white {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+    }
+
+}

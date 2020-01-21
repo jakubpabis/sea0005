@@ -1,0 +1,21 @@
+.modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .modal-dialog {
+
+        @media (min-width: 1280px){
+            max-width: 1200px;
+        }
+        
+        @media (min-width: 767px){
+            max-width: 720px;
+        }
+
+    }
+
+    .close {
+
+    }
+
+}
