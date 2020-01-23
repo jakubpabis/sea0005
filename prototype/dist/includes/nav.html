@@ -5,14 +5,47 @@
                 <li class="active">
                     <a href="index.html">Home</a>
                 </li>
-                <li>
-                    <a href="jobs.html">Jobs</a>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Jobs</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="jobs.html">Show me all jobs</a>
+                        </li>
+                        <li>
+                            <a href="jobs.html">IT</a>
+                        </li>
+                        <li>
+                            <a href="jobs.html">Sales</a>
+                        </li>
+                        <li>
+                            <a href="jobs.html">Executive</a>
+                        </li>
+                        <li>
+                            <a href="jobs.html">Freelance</a>
+                        </li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="javascript:void(0)">IT</a>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">IT</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="">I am looking for a job</a>
+                        </li>
+                        <li>
+                            <a href="">I am looking for employees</a>
+                        </li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="javascript:void(0)">Sales</a>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sales</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="">I am looking for a job</a>
+                        </li>
+                        <li>
+                            <a href="">I am looking for employees</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a href="article.html">Executive</a>
@@ -23,8 +56,19 @@
                 <li>
                     <a href="knowledge.html">Knowledge</a>
                 </li>
-                <li>
-                    <a href="javascript:void(0)">About Us</a>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="">Our team</a>
+                        </li>
+                        <li>
+                            <a href="">Our clients</a>
+                        </li>
+                        <li>
+                            <a href="">Testimonials</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a href="contact.html">Contact</a>
@@ -52,7 +96,7 @@
                         </div>
                         <div class="col-auto navigation__lower-utils">
                             <a href="" target="_blank"><img src="/img/whatsapp.png" alt="" width="22" height="22"></a>
-                            <a href="javascript:void(0)" onclick="openModal('#searchModal')"><i class="far fa-search"></i></a>
+                            <a href="javascript:void(0)" data-toggle="modal" data-target="#searchModal"><i class="far fa-search"></i></a>
                             <hr>
                             <ul class="lang">
                                 <li>
@@ -62,7 +106,7 @@
                                     <a href="">NL</a>
                                 </li>
                             </ul>
-                            <a href="javascript:void(0)" class="btn btn__small navy">
+                            <a href="javascript:void(0)" class="btn btn__small navy" data-toggle="modal" data-target="#uploadCVModal">
                                 Upload CV
                             </a>
                         </div>

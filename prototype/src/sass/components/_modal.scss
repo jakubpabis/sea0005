@@ -1,21 +1,212 @@
 .modal {
-    overflow-x: hidden;
-    overflow-y: auto;
 
     .modal-dialog {
+        border: none;
+        outline: 0;
 
-        @media (min-width: 1280px){
-            max-width: 1200px;
+        @media (min-width: 768px){
+            max-width: 730px;
         }
         
-        @media (min-width: 767px){
-            max-width: 720px;
+        // @media (min-width: 767px){
+        //     max-width: 720px;
+        // }
+
+        .modal-content {
+            border: none;
+            background: transparent;
+            padding: 0;
+            border-radius: none;
+
+            .modal-header,
+            .modal-body {
+                border: none;
+                padding: 0;
+            }
+
+            .modal-container {
+                background: $color-secondary;
+                padding: 40px 65px;
+                --notchSize: 15px;
+                clip-path: 
+                    polygon(
+                        0% var(--notchSize), 
+                        var(--notchSize) 0%, 
+                        calc(100% - var(--notchSize)) 0%, 
+                        100% var(--notchSize), 
+                        100% calc(100% - var(--notchSize)), 
+                        calc(100% - var(--notchSize)) 100%, 
+                        var(--notchSize) 100%, 
+                        0% calc(100% - var(--notchSize))
+                    );
+            }
+
         }
 
     }
 
     .close {
+        background-color: white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        z-index: 99999999999;
+        opacity: 1!important;
+        outline: 0!important;
+        box-shadow: none!important;
+    }
 
+}
+
+#uploadCVModal {
+
+    form {
+
+        .pretty {
+
+            .icon {
+                top: 0;
+            }
+
+            label {
+                font-size: 14px;
+                text-indent: 2em;
+
+                &:before,
+                &:after {
+                    width: 20px;
+                    height: 20px;
+                    border: none;
+                    background-color: white;
+                    top: 0;
+                }
+
+            }
+
+        }
+
+        .ugly {
+
+            label {
+                left: 15px;
+                position: absolute;
+                margin: 0;
+                padding: 12px 15px;
+                opacity: 1;
+                pointer-events: none;
+                @include trans200;
+                font-size: 14px;
+                font-weight: 400;
+                color: $color-primary;
+                line-height: 1;
+                font-style: italic;
+                min-height: 40px;
+
+                span {
+                    font-weight: 600;
+                    font-size: 14px;
+                    color: $color-tertiary;
+                }
+
+            }
+    
+            input,
+            textarea {
+                border: none;
+                outline: none!important;
+                box-shadow: none!important;
+                appearance: none;
+                padding: 11px 15px;
+                width: 100%;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 1;
+
+                &:focus {
+
+                    &~label {
+                        opacity: 0;
+                    }
+
+                }
+
+            }
+
+            textarea {
+                min-height: 120px;
+                resize: none;
+            }
+
+        }
+
+    }
+
+}
+
+#searchModal {
+
+    .dog {
+        margin-bottom: -22%;
+        margin-left: -45px;
+    }
+
+    .searchInput {
+        margin-left: 20px;
+    }
+
+    .triangle-left {
+        position: absolute;
+        top: 15px;
+        left: -3px;
+        width: 0; 
+        height: 0; 
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent; 
+        border-right: 20px solid white; 
+        content: '';
+    }
+
+    input {
+        position: relative;
+        padding: 20px 30px 20px 20px;
+        font-size: 18px;
+        font-weight: 400;
+        color: $color-primary;
+        width: 100%;
+        max-width: calc(100% - 120px);
+        display: inline-block;
+        vertical-align: middle;
+        border: none;
+        outline: 0!important;
+        --notchSize: 8px;
+        clip-path: 
+            polygon(
+                0% var(--notchSize), 
+                var(--notchSize) 0%, 
+                calc(100% - var(--notchSize)) 0%, 
+                100% var(--notchSize), 
+                100% calc(100% - var(--notchSize)), 
+                calc(100% - var(--notchSize)) 100%, 
+                var(--notchSize) 100%, 
+                0% calc(100% - var(--notchSize))
+            );
+
+        &::placeholder {
+            color: $color-primary;
+            opacity: 1;
+            font-style: italic;
+        }
+
+    }
+
+    .btn {
+        background-color: $color-tertiary;
+        color: white;
+        font-size: 26px;
+        padding: 18px 18px 17px;
+        margin-left: -20px;
     }
 
 }

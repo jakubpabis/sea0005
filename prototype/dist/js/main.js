@@ -50,9 +50,28 @@ function lazyImages()
 
 }
 
+function uglyInput() 
+{
+	$('.ugly').each(function() {
+		var $input = $(this).find('input, textarea');
+		$input.on('change', function() {
+			if(!$input.val()) {
+				$input.next('label').css({'opacity':1});
+			} else {
+				$input.next('label').css({'opacity':0});
+			}
+		});
+	});
+}
+
+function chatClose()
+{
+	$('#chat').addClass('closed');
+}
+
 
 $(document).ready(function() {
-
+	uglyInput();
 });
 
 $(window).on('load', function() {

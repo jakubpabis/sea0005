@@ -1,3 +1,21 @@
 @mixin trans200 {
     transition: all 200ms ease-out;
 }
+
+@mixin trans($val) {
+    transition: all $val ease-out;
+}
+
+@mixin notch($val) {
+    clip-path: 
+        polygon(
+            0% $val, 
+            $val 0%, 
+            calc(100% - #{$val}) 0%, 
+            100% $val, 
+            100% calc(100% - #{$val}), 
+            calc(100% - #{$val}) 100%, 
+            $val 100%, 
+            0% calc(100% - #{$val})
+        );
+}

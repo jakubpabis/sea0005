@@ -3,6 +3,7 @@
     top: 0;
     left: 0;
     right: 0;
+    z-index: 999;
 
     &__upper {
         background-color: $color-primary;
@@ -31,6 +32,15 @@
                     position: relative;
                     font-weight: 600;
                     @include trans200;
+
+                    &.dropdown-toggle {
+
+                        &:after {
+                            display: none;
+                        }
+
+                    }
+
                 }
 
                 &:hover {
@@ -42,12 +52,75 @@
 
                 }
 
-                &.active {
+                &.active,
+                &.show {
 
                     > a {
                         color: $color-tertiary;
                         text-decoration: none;
                         font-weight: 700;
+                    }
+
+                }
+
+                // .dropdown-menu {
+                //     display: block;
+                //     visibility: hidden;
+                //     opacity: 0;
+                //     transform: translateY(15px);
+                //     @include trans300;
+
+                //     &.show {
+                //         display: block;
+                //         visibility: visible;
+                //         opacity: 1;
+                //         transform: translateY(0px);
+                //         @include trans300;
+                //     }
+
+                // }
+
+                > ul {
+                    padding: 0;
+                    margin: 0;
+                    margin-left: -5px;
+                    list-style: none;
+                    border: none;
+                    border-radius: 0;
+                    border-top: 1px solid $color-tertiary;
+
+                    li {
+                        padding: 0;
+                        line-height: 1;
+                        border-bottom: 1px solid $color-secondary;
+
+                        a {
+                            background-color: $color-primary;
+                            padding: 15px 20px;
+                            font-size: 13px;
+                            text-transform: uppercase;
+                            color: white;
+                            font-weight: 600;
+                            line-height: 1;
+                            display: block;
+                            position: relative;
+                            @include trans200;
+                            white-space: nowrap;
+                        }
+
+                        &:last-of-type {
+                            border-bottom: none;
+                        }
+
+                        &:hover {
+
+                            a {
+                                text-decoration: none;
+                                background-color: rgba($color: $color-primary, $alpha: 0.8);
+                            }
+
+                        }
+
                     }
 
                 }
