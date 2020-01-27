@@ -33,3 +33,31 @@
     }
 
 }
+
+.cards {
+
+    &__section {
+
+        &-img {
+            max-height: 450px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        &-content {
+
+            > .container {
+                margin-top: -80px;
+                padding-bottom: 50px;
+            }
+
+            .card {
+                margin-bottom: 30px;
+            }
+
+        }
+
+    }
+
+}

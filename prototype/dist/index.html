@@ -2,24 +2,27 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Search X Recruitment</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/spf/2.4.0/spf.js"></script>
-        <script>spf.init();</script>-->
+
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500,500i&display=swap" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500,500i&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/fa.min.css" media="none" onload="if(media!='all')media='all'">
         <noscript>
-            <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500,500i&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="css/fa.min.css"/>
         </noscript>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css" media="none" onload="if(media!='all')media='all'">
+        <!--<noscript>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous"/>
+        </noscript>
         <noscript>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
-        </noscript>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous"/>
+        </noscript>-->
         <link rel="stylesheet" href="css/main.min.css">
     </head>
     <body>
@@ -110,8 +113,8 @@
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-3">
                     <a href="index.html" class="navigation__lower-logo">
-                        <object type="image/svg+xml" data="/img/logo.svg">
-                            <img src="/img/logo.svg" alt="">
+                        <object type="image/svg+xml" data="img/logo.svg">
+                            <img src="img/logo.svg" alt="">
                         </object>
                     </a>
                 </div>
@@ -124,7 +127,7 @@
                             <a href="tel:+31207782393"><i class="fas fa-mobile-android-alt"></i>+31 (0)20 - 7782393</a>
                         </div>
                         <div class="col-auto navigation__lower-utils">
-                            <a href="" target="_blank"><img src="/img/whatsapp.png" alt="" width="22" height="22"></a>
+                            <a href="" target="_blank"><img src="img/whatsapp.png" alt="" width="22" height="22"></a>
                             <a href="javascript:void(0)" data-toggle="modal" data-target="#searchModal"><i class="far fa-search"></i></a>
                             <hr>
                             <ul class="lang">
@@ -150,8 +153,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 dog">
-                <object type="image/svg+xml" data="/img/dog-stand-whitebow.svg">
-                    <img src="/img/dog-stand-whitebow.svg" alt="">
+                <object type="image/svg+xml" data="img/dog-stand-whitebow.svg">
+                    <img data-src="img/dog-stand-whitebow.svg" alt="" class="lazy">
                 </object>
             </div>
             <div class="col-lg-8">
@@ -174,6 +177,270 @@
     </div>
 </header>
 
+<section class="home__middle">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h2 class="text-size-xxxlarge">
+                    A pretty strong title about this recruitment company
+                </h2>
+
+            </div>
+            <div class="col-lg-4">
+                <h2>
+                    Why?
+                </h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit commodo ligula eget dolor natoque parturient nascetur ridiculus.
+                </p>
+                <a href="" class="btn btn__default yellow">
+                    Call to action
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home__cards cards__section">
+    <div class="cards__section-img">
+        <img data-src="img/searchitrecruitment_homepage.jpg" alt="" class="bg-cover lazy">
+    </div>
+    <div class="cards__section-content bg-sea">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <h3 class="mb-2"><i class="far fa-briefcase mr-2"></i> 253 open jobs</h3>
+                        <p>
+                            Are you looking for a job? Let us help you find the perfect match!
+                        </p>
+                        <div class="btns mt-3">
+                            <a href="" class="btn btn__default navy">
+                                Upload CV
+                            </a>
+                            <a href="" class="link text-size-medium color-pink ml-4">All vacancies</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <h3 class="mb-2"><i class="far fa-user-cog mr-2"></i> 159 candidates in progress</h3>
+                        <p>
+                            Do you want us to help you find the perfect candidate for the job?
+                        </p>
+                        <div class="btns mt-3">
+                            <a href="" class="btn btn__default navy">
+                                Get in touch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <h3 class="mb-2"><i class="far fa-smile-beam mr-2"></i> 88 happy clients</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consec tet uer adipiscing elit commodo ligula eget 
+                        </p>
+                        <div class="btns mt-3">
+                            <a href="" class="btn btn__default navy">
+                                Show reviews
+                            </a>
+                            <a href="" class="link text-size-medium color-pink ml-4">All clients</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <h3 class="mb-2"><i class="far fa-user-check mr-2"></i> 258 matched candidates</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consec tet uer adipiscing elit commodo ligula eget 
+                        </p>
+                        <div class="btns mt-3">
+                            <a href="" class="btn btn__default navy">
+                                Show reviews
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home__jobs">
+    <div class="container">
+        <div class="row align-content-center">
+            <div class="col-lg-3">
+                <div class="home__jobs-content">
+                    <div class="home__jobs-icon bg-sea">
+                        <i class="fal fa-laptop-code"></i>
+                    </div>
+                    <h2>IT</h2>
+                    <div class="home__jobs-hidden">
+                        <p class="text-size-small">
+                            Lorem ipsum dolor sit amet consecteur detir
+                        </p>
+                        <a href="" class="btn btn__small navy">
+                            48 open jobs
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="home__jobs-content">
+                    <div class="home__jobs-icon bg-pink">
+                        <i class="fal fa-sack-dollar"></i>
+                    </div>
+                    <h2>Sales</h2>
+                    <div class="home__jobs-hidden">
+                        <p class="text-size-small">
+                            Lorem ipsum dolor sit amet consecteur detir
+                        </p>
+                        <a href="" class="btn btn__small navy">
+                            48 open jobs
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="home__jobs-content">
+                    <div class="home__jobs-icon bg-grey">
+                        <i class="fal fa-user-tie"></i>
+                    </div>
+                    <h2>Executive</h2>
+                    <div class="home__jobs-hidden">
+                        <p class="text-size-small">
+                            Lorem ipsum dolor sit amet consecteur detir
+                        </p>
+                        <a href="" class="btn btn__small navy">
+                            48 open jobs
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="home__jobs-content">
+                    <div class="home__jobs-icon bg-yellow">
+                        <i class="fal fa-street-view"></i>
+                    </div>
+                    <h2>Freelance</h2>
+                    <div class="home__jobs-hidden">
+                        <p class="text-size-small">
+                            Lorem ipsum dolor sit amet consecteur detir
+                        </p>
+                        <a href="" class="btn btn__small navy">
+                            48 open jobs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home__testimonials testimonials__section">
+    <div class="testimonials__section-img">
+        <img data-src="img/searchitrecruitment_references_header.jpg" alt="" class="bg-cover lazy">
+    </div>
+    <div class="testimonials__section-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div id="carouselTestimonials" class="carousel slide bg-yellow" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-9">
+                                        <div class="row">
+                                            <div class="col-lg-2">
+                                                <img data-src="img/person.jpg" alt="" class="bg-cover lazy">
+                                            </div>
+                                            <div class="col-lg-10">
+                                                <i class="fas fa-quote-left"></i>
+                                                <p class="mb-1 mt-0">
+                                                    Search It Recruitment has been incredibly helpful in finding me a job based on my personal characteristics and needs. They have managed to find me three potential offers within a week and, after another week, an official offer from an Utrecht's company. Well done!
+                                                </p>
+                                                <span class="text-size-small text500">
+                                                    <i>
+                                                        Giampaolo Falqui - PHP Developer - candidate
+                                                    </i>
+                                                </span>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-9">
+                                        <div class="row">
+                                            <div class="col-lg-2">
+                                                <img data-src="img/person.jpg" alt="" class="bg-cover lazy">
+                                            </div>
+                                            <div class="col-lg-10">
+                                                <i class="fas fa-quote-left"></i>
+                                                <p class="mb-1 mt-0">
+                                                    Search It Recruitment has been incredibly helpful in finding me a job based on my personal characteristics and needs. They have managed to find me three potential offers within a week and, after another week, an official offer from an Utrecht's company. Well done!
+                                                </p>
+                                                <span class="text-size-small text500">
+                                                    <i>
+                                                        Giampaolo Falqui - PHP Developer - candidate
+                                                    </i>
+                                                </span>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselTestimonials" role="button" data-slide="prev">
+                            <i class="fas fa-caret-left"></i>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselTestimonials" role="button" data-slide="next">
+                            <i class="fas fa-caret-right"></i>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home__clients">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="owl-carousel owl-theme">
+                    <img class="owl-lazy" data-src="img/clients/download.png" alt="">
+                    <img class="owl-lazy" data-src="img/clients/Qelp_Logo_RGB.png" alt="">
+                    <img class="owl-lazy" data-src="img/clients/TechMahindra.png" alt="">
+                    <img class="owl-lazy" data-src="img/clients/Twinfield.png" alt="">
+                    <img class="owl-lazy" data-src="img/clients/Fabory.jpg" alt="">
+                    <img class="owl-lazy" data-src="img/clients/Flipbase.png" alt="">
+                    <img class="owl-lazy" data-src="img/clients/Gradient.png" alt="">
+                    <img class="owl-lazy" data-src="img/clients/IceMobile.svg" alt="">
+                    <img class="owl-lazy" data-src="img/clients/Ireckonu.png" alt="">
+                    <img class="owl-lazy" data-src="img/clients/Justlease.jpg" alt="">
+                    <img class="owl-lazy" data-src="img/clients/MSP.png" alt="">
+                </div>
+                <div class="custom-owl-prev" role="button">
+                    <i class="fas fa-caret-left"></i>
+                    <span class="sr-only">Previous</span>
+                </div>
+                <div class="custom-owl-next" role="button">
+                    <i class="fas fa-caret-right"></i>
+                    <span class="sr-only">Next</span>
+                </div>
+            </div>
+            <div class="col-12 text-center mt-3">
+                <a href="" class="btn btn__default yellow">See all clients</a>
+            </div>
+        </div>
+    </div>
+</section>
+
             <footer class="footer">
                 <div class="container">
                     <div class="row align-items-center footer__upper">
@@ -183,8 +450,8 @@
                         </div>
                         <div class="col-lg-4 text-center">
                             <a href="index.html">
-                                <object type="image/svg+xml" data="/img/logo-white.svg" width="250" height="74">
-                                    <img src="/img/logo-white.svg" alt="" width="250" height="74">
+                                <object type="image/svg+xml" data="img/logo-white.svg" width="250" height="74">
+                                    <img src="img/logo-white.svg" alt="" width="250" height="74">
                                 </object>
                             </a>
                         </div>
@@ -295,8 +562,8 @@
     </div>
     <div class="triangle"></div>
     <div class="dog">
-        <object type="image/svg+xml" data="/img/dog-stand.svg">
-            <img src="/img/dog-stand.svg" alt="">
+        <object type="image/svg+xml" data="img/dog-stand.svg">
+            <img src="img/dog-stand.svg" alt="">
         </object>
     </div>
 </aside>
@@ -304,8 +571,8 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <object type="image/svg+xml" data="/img/cubecross-close.svg" width="40" height="40">
-                    <img src="/img/cubecross-close.svg" alt="" width="40" height="40">
+                <object type="image/svg+xml" data="img/cubecross-close.svg" width="40" height="40">
+                    <img src="img/cubecross-close.svg" alt="" width="40" height="40">
                 </object>
             </button>
             <div class="modal-container">
@@ -316,8 +583,8 @@
                     <form class="pt-3" action="">
                         <div class="row">
                             <div class="col-lg-3 dog">
-                                <object type="image/svg+xml" data="/img/dog-stand-whitebow.svg">
-                                    <img src="/img/dog-stand-whitebow.svg" alt="">
+                                <object type="image/svg+xml" data="img/dog-stand-whitebow.svg">
+                                    <img src="img/dog-stand-whitebow.svg" alt="">
                                 </object>
                             </div>
                             <div class="col-lg-9 searchInput">
@@ -336,8 +603,8 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <object type="image/svg+xml" data="/img/cubecross-close.svg" width="40" height="40">
-                    <img src="/img/cubecross-close.svg" alt="" width="40" height="40">
+                <object type="image/svg+xml" data="img/cubecross-close.svg" width="40" height="40">
+                    <img src="img/cubecross-close.svg" alt="" width="40" height="40">
                 </object>
             </button>
             <div class="modal-container">

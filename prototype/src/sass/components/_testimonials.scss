@@ -1,0 +1,73 @@
+.testimonials {
+
+    &__section {
+
+        &-img {
+            max-height: 450px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        &-content {
+
+            > .container {
+                margin-top: -80px;
+                padding-bottom: 80px;
+            }
+            
+            .carousel {
+                @include notch(15px);
+            }
+
+            .carousel-item {
+                padding: 60px 0;
+
+                img {
+                    @include notch(15px);
+                }
+
+                .fa-quote-left {
+                    position: absolute;
+                    top: -45px;
+                    left: 0;
+                    font-size: 78px;
+                    color: white;
+                    opacity: 0.5;
+                    z-index: -1;
+                }
+
+            }
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                opacity: 1;
+                width: 10%;
+
+                i {
+                    width: 36px;
+                    height: 36px;
+                    font-size: 20px;
+                    line-height: 36px;
+                    text-align: center;
+                    color: $color-primary;
+                    background-color: white;
+                    border-radius: 36px;
+                    text-indent: -3px;
+                }
+
+            }
+
+            .carousel-control-next {
+
+                i {
+                    text-indent: 4px;
+                }
+
+            }
+
+        }
+    
+    }
+
+}

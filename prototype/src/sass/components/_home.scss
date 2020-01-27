@@ -1,3 +1,135 @@
 .home {
 
+    &__middle {
+        padding: 100px 0;
+    }
+
+    &__jobs {
+        padding: 150px 0;
+
+        &-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 0 20px;
+            position: relative;
+            text-align: center;
+            @include trans200;
+
+            &:hover {
+                transform: translateY(-35%);
+
+                .home__jobs-hidden {
+                    height: auto;
+                    visibility: visible;
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+            }
+
+        }
+
+        &-icon {
+            @include notch(15px);
+            width: 110px;
+            height: 110px;
+            text-align: center;
+            line-height: 1;
+            vertical-align: middle;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 25px;
+
+            i {
+                font-size: 46px;
+                font-weight: 300;
+            }
+
+        }
+
+        &-hidden {
+            bottom: -65%;
+            transform: translateY(-75%);
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            @include trans200;
+        }
+
+    }
+
+    &__clients {
+        padding-bottom: 80px;
+
+        .owl-carousel {
+
+            .owl-stage {
+                display: flex;
+                align-items: center;
+            }
+
+            .owl-item {
+                padding: 0 15px;
+
+                img {
+                    filter: grayscale(100%);
+                    @include trans200;
+                }
+
+                &:hover {
+
+                    img {
+                        filter: grayscale(0);
+                        transform: translateY(-10px);
+                    }
+
+                }
+
+            }
+
+        }
+
+        .custom-owl-prev,
+        .custom-owl-next {
+            cursor: pointer;
+            width: 36px;
+            position: absolute;
+            top: 50%;
+            margin-top: -18px;
+            margin: 0;
+            padding: 0;
+
+            i {
+                width: 36px;
+                height: 36px;
+                font-size: 20px;
+                line-height: 36px;
+                text-align: center;
+                color: $color-primary;
+                background-color: $color-grey2;
+                border-radius: 36px;
+                text-indent: -3px;
+            }
+
+        }
+        
+        .custom-owl-prev {
+            left: -80px;
+        }
+
+        .custom-owl-next {
+            right: -80px;
+
+            i {
+                text-indent: 4px;
+            }
+
+        }
+
+    }
+
 }
