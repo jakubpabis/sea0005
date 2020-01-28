@@ -1840,12 +1840,111 @@ aside#chat .dog {
 	transform: rotateY(180deg);
 }
 
+.jobs__list {
+	margin-bottom: 100px;
+}
+
 .jobs__list-filters {
 	padding: 35px;
 }
 
+.jobs__list-filters .title {
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.jobs__list-filters .title i {
+	font-size: 18px;
+	margin-right: 15px;
+}
+
+.jobs__list-items .loadmore {
+	margin-top: 20px;
+}
+
 .jobs__list-item {
+	display: block;
 	margin-bottom: 40px;
+}
+
+.jobs__list-item:nth-child(n+6) {
+	display: none;
+}
+
+.jobs__list-item .title {
+	display: -webkit-box;
+	display: flex;
+	margin-bottom: 25px;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.jobs__list-item .title .icon {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-right: 15px;
+	background-position: center;
+	background-size: cover;
+}
+
+.jobs__list-item .title .icon.it {
+	background-image: url('../img/cubecross-it.svg');
+}
+
+.jobs__list-item .title .icon.sales {
+	background-image: url('../img/cubecross-sales.svg');
+}
+
+.jobs__list-item .title .icon.exec {
+	background-image: url('../img/cubecross-exec.svg');
+}
+
+.jobs__list-item .title .icon.free {
+	background-image: url('../img/cubecross-free.svg');
+}
+
+.jobs__list-item .info {
+	display: -webkit-box;
+	display: flex;
+	flex-wrap: wrap;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.jobs__list-item .info__item {
+	margin-bottom: 5px;
+	flex-basis: 50%;
+}
+
+.jobs__list-item .info__item i {
+	margin-right: 8px;
+}
+
+.jobs__list-item .info__item:nth-child(2) {
+	-webkit-box-ordinal-group: 4;
+	order: 3;
+}
+
+.jobs__list-item .info__item:nth-child(3) {
+	-webkit-box-ordinal-group: 3;
+	order: 2;
+}
+
+.jobs__list-item .info__item:nth-child(4) {
+	-webkit-box-ordinal-group: 5;
+	order: 4;
+}
+
+.jobs__list-item p {
+	margin-top: 8px;
+	margin-bottom: 30px;
+}
+
+.jobs__list-item .btn {
+	font-size: 15px;
 }
 
 .footer {

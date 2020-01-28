@@ -97,6 +97,21 @@ function homepageClients()
 	});
 }
 
+function loadMoreJobs($items)
+{
+	var $left = $items;	
+	$('.jobs__list-item:hidden').each(function() {
+		if($left > 0) {
+			$(this).fadeIn(300);
+		}
+		$left--;
+	});
+	if(!$('.jobs__list-item:hidden').length > 0) {
+		$('.jobs__list-items').find('.loadmore').fadeOut(300);
+	}
+
+}
+
 
 $(document).ready(function() {
 	
