@@ -1860,6 +1860,83 @@ aside#chat .dog {
 	margin-right: 15px;
 }
 
+.jobs__list-filters .filter-group {
+	margin-top: 30px;
+}
+
+.jobs__list-filters .filter-group .filter-title {
+	font-weight: 600;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.jobs__list-filters .filter-group .filter-title i {
+	margin-left: 10px;
+}
+
+.jobs__list-filters .filter-group .filter-title i.fa-minus {
+	display: none;
+}
+
+.jobs__list-filters .filter-group .filter-title.active i.fa-minus {
+	display: inline-block;
+}
+
+.jobs__list-filters .filter-group .filter-title.active i.fa-plus {
+	display: none;
+}
+
+.jobs__list-filters .filter-group ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.jobs__list-filters .filter-group ul li {
+	padding: 0;
+}
+
+.jobs__list-filters .filter-group ul li span {
+	font-size: 15px;
+	padding: 2px 6px;
+	cursor: pointer;
+	-webkit-transition: all 200ms ease-out;
+	transition: all 200ms ease-out;
+}
+
+.jobs__list-filters .filter-group ul li span i {
+	font-size: 14px;
+	display: none;
+	margin-left: 3px;
+}
+
+.jobs__list-filters .filter-group ul li span:hover {
+	color: white;
+	background-color: #183153;
+}
+
+.jobs__list-filters .filter-group ul li.active > span {
+	color: white;
+	background-color: #183153;
+}
+
+.jobs__list-filters .filter-group ul li.active > span i {
+	display: inline-block;
+}
+
+.jobs__list-filters .filter-group ul li.active > ul {
+	display: block;
+}
+
+.jobs__list-filters .filter-group ul li.active > ul ul {
+	padding-bottom: 0;
+}
+
+.jobs__list-filters .filter-group ul li ul {
+	display: none;
+	padding: 3px 10px 10px;
+}
+
 .jobs__list-items .loadmore {
 	margin-top: 20px;
 }
