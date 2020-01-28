@@ -692,6 +692,8 @@ p,
 .btn__small.icon {
 	font-weight: 400;
 	padding: 7px 18px;
+	-webkit-transition: all 200ms ease-out;
+	transition: all 200ms ease-out;
 	text-transform: none;
 }
 
@@ -703,6 +705,29 @@ p,
 .btn__small.icon span {
 	font-weight: 500;
 	margin-left: 5px;
+	vertical-align: middle;
+}
+
+.btn__medium {
+	font-size: 16px;
+	padding: 11px 16px;
+}
+
+.btn__medium.icon {
+	font-weight: 400;
+	-webkit-transition: all 200ms ease-out;
+	transition: all 200ms ease-out;
+	text-transform: none;
+}
+
+.btn__medium.icon i {
+	font-size: 15px;
+	margin: 0;
+	vertical-align: middle;
+}
+
+.btn__medium.icon span {
+	font-weight: 500;
 	vertical-align: middle;
 }
 
@@ -742,9 +767,19 @@ p,
 	background-color: #fdd963;
 }
 
+.btn.lgrey {
+	color: #a2a2a2;
+	background-color: #f8f7f8;
+}
+
 .btn.grey {
 	color: white;
 	background-color: #e3e0e5;
+}
+
+.btn.dgrey {
+	color: #a2a2a2;
+	background-color: #f1eff2;
 }
 
 .btn.white {
@@ -1121,18 +1156,18 @@ section {
 	font-weight: 600;
 }
 
-header.header__home {
+.header__home {
 	padding-top: 120px;
 	background-color: #94d4e9;
 }
 
-header.header__home .dog {
+.header__home .dog {
 	margin-top: 30px;
 	padding-right: 70px;
 	padding-left: 30px;
 }
 
-header.header__home .triangle {
+.header__home .triangle {
 	position: absolute;
 	top: 120px;
 	left: -40px;
@@ -1144,7 +1179,7 @@ header.header__home .triangle {
 	border-bottom: 60px solid transparent;
 }
 
-header.header__home .text {
+.header__home .text {
 	position: relative;
 	padding: 40px 65px;
 	background-color: white;
@@ -1152,12 +1187,136 @@ header.header__home .text {
 	clip-path: polygon(0% 15px, 15px 0%, calc(100% - 15px) 0%, 100% 15px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0% calc(100% - 15px));
 }
 
-header.header__home .btns {
+.header__home .btns {
 	padding: 20px 40px;
 }
 
-header.header__home .btns .btn {
+.header__home .btns .btn {
 	margin: 10px;
+}
+
+.header__jobs {
+	margin-top: 40px;
+}
+
+.header__jobs-cats {
+	display: -webkit-box;
+	display: flex;
+}
+
+.header__jobs-cats .btn {
+	margin-left: 10px;
+}
+
+.header__jobs-cats .btn span {
+	margin-right: 3px;
+	-webkit-transition: all 200ms ease-out;
+	transition: all 200ms ease-out;
+}
+
+.header__jobs-cats .btn i {
+	position: relative;
+}
+
+.header__jobs-cats .btn.active {
+	background-color: #183153;
+}
+
+.header__jobs-cats .btn.active i {
+	-webkit-transform: rotate(135deg);
+	transform: rotate(135deg);
+	color: white;
+}
+
+.header__jobs-cats .btn.active span {
+	color: white;
+}
+
+.header__jobs .dog {
+	position: absolute;
+	top: 0;
+	left: -465px;
+}
+
+.header__jobs .dog object,
+.header__jobs .dog svg {
+	height: 280px;
+}
+
+.header__jobs-search {
+	position: relative;
+	margin-top: 50px;
+	margin-bottom: 10px;
+}
+
+.header__jobs-search .triangle-left {
+	position: absolute;
+	top: 15px;
+	left: -3px;
+	width: 0;
+	height: 0;
+	content: '';
+	border-top: 15px solid transparent;
+	border-right: 20px solid #f8f7f8;
+	border-bottom: 15px solid transparent;
+}
+
+.header__jobs-search input {
+	font-size: 18px;
+	font-weight: 400;
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	padding: 20px 30px 20px 20px;
+	vertical-align: middle;
+	color: #183153;
+	border: none;
+	outline: 0 !important;
+	background-color: #f8f7f8;
+	-webkit-clip-path: polygon(0% 8px, 8px 0%, calc(100% - 8px) 0%, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px));
+	clip-path: polygon(0% 8px, 8px 0%, calc(100% - 8px) 0%, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px));
+}
+
+.header__jobs-search input.location {
+	max-width: calc(100% - 47px);
+}
+
+.header__jobs-search input::-webkit-input-placeholder {
+	font-style: italic;
+	opacity: 1;
+	color: #183153;
+}
+
+.header__jobs-search input::-moz-placeholder {
+	font-style: italic;
+	opacity: 1;
+	color: #183153;
+}
+
+.header__jobs-search input:-ms-input-placeholder {
+	font-style: italic;
+	opacity: 1;
+	color: #183153;
+}
+
+.header__jobs-search input::-ms-input-placeholder {
+	font-style: italic;
+	opacity: 1;
+	color: #183153;
+}
+
+.header__jobs-search input::placeholder {
+	font-style: italic;
+	opacity: 1;
+	color: #183153;
+}
+
+.header__jobs-search .btn {
+	font-size: 26px;
+	margin-left: -20px;
+	padding: 18px 18px 17px;
+	color: white;
+	background-color: #ec6278;
 }
 
 .home__middle {
@@ -1679,6 +1838,14 @@ aside#chat .dog {
 	margin-top: 10px;
 	-webkit-transform: rotateY(180deg);
 	transform: rotateY(180deg);
+}
+
+.jobs__list-filters {
+	padding: 35px;
+}
+
+.jobs__list-item {
+	margin-bottom: 40px;
 }
 
 .footer {

@@ -34,6 +34,7 @@
             text-transform: none;
             padding: 7px 18px;
             font-weight: 400;
+            @include trans200;
 
             i {
                 font-size: 22px;
@@ -43,6 +44,30 @@
             span {
                 vertical-align: middle;
                 margin-left: 5px;
+                font-weight: 500;
+            }
+
+        }
+
+    }
+
+    &__medium {
+        padding: 11px 16px;
+        font-size: 16px;
+
+        &.icon {
+            text-transform: none;
+            font-weight: 400;
+            @include trans200;
+
+            i {
+                font-size: 15px;
+                margin: 0;
+                vertical-align: middle;
+            }
+
+            span {
+                vertical-align: middle;
                 font-weight: 500;
             }
 
@@ -96,9 +121,19 @@
         color: $color-navy;
     }
 
+    &.lgrey {
+        background-color: $color-light-grey;
+        color: $color-dark-grey;
+    }
+
     &.grey {
         background-color: $color-grey;
         color: white;
+    }
+
+    &.dgrey {
+        background-color: $color-grey2;
+        color: $color-dark-grey;
     }
 
     &.white {
