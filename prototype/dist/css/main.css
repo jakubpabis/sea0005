@@ -1845,12 +1845,14 @@ aside#chat .dog {
 }
 
 .jobs__list-filters {
+	display: block;
 	padding: 35px;
 }
 
 .jobs__list-filters .title {
 	display: -webkit-box;
 	display: flex;
+	margin-bottom: 30px;
 	-webkit-box-align: center;
 	align-items: center;
 }
@@ -1860,14 +1862,23 @@ aside#chat .dog {
 	margin-right: 15px;
 }
 
-.jobs__list-filters .filter-group {
-	margin-top: 30px;
+.jobs__list-filters .filter-group.active {
+	margin-bottom: 30px;
+}
+
+.jobs__list-filters .filter-group.active .filters {
+	display: block;
+}
+
+.jobs__list-filters .filter-group .filters {
+	display: none;
 }
 
 .jobs__list-filters .filter-group .filter-title {
 	font-weight: 600;
 	display: block;
 	margin-bottom: 10px;
+	cursor: pointer;
 }
 
 .jobs__list-filters .filter-group .filter-title i {
@@ -1884,6 +1895,57 @@ aside#chat .dog {
 
 .jobs__list-filters .filter-group .filter-title.active i.fa-plus {
 	display: none;
+}
+
+.jobs__list-filters .filter-group .inputs {
+	display: -webkit-box;
+	display: flex;
+	width: auto;
+	margin: 0 -5px;
+	-webkit-box-align: center;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+
+.jobs__list-filters .filter-group .inputs input {
+	font-size: 15px;
+	width: auto;
+	min-width: 1px;
+	margin: 0 5px;
+	padding: 5px 10px;
+	border: none;
+	outline: 0 !important;
+	flex-basis: 48%;
+}
+
+.jobs__list-filters .filter-group .inputs input::-webkit-input-placeholder {
+	font-style: italic;
+	opacity: 1;
+	color: #183153;
+}
+
+.jobs__list-filters .filter-group .inputs input::-moz-placeholder {
+	font-style: italic;
+	opacity: 1;
+	color: #183153;
+}
+
+.jobs__list-filters .filter-group .inputs input:-ms-input-placeholder {
+	font-style: italic;
+	opacity: 1;
+	color: #183153;
+}
+
+.jobs__list-filters .filter-group .inputs input::-ms-input-placeholder {
+	font-style: italic;
+	opacity: 1;
+	color: #183153;
+}
+
+.jobs__list-filters .filter-group .inputs input::placeholder {
+	font-style: italic;
+	opacity: 1;
+	color: #183153;
 }
 
 .jobs__list-filters .filter-group ul {
@@ -1935,6 +1997,10 @@ aside#chat .dog {
 .jobs__list-filters .filter-group ul li ul {
 	display: none;
 	padding: 3px 10px 10px;
+}
+
+.jobs__list-filters .btn {
+	margin-top: 30px;
 }
 
 .jobs__list-items .loadmore {

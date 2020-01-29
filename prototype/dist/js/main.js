@@ -3563,11 +3563,46 @@ function loadMoreJobs($items)
 
 }
 
+function activateFilter()
+{
+	$el = $('.jobs__list-filters').find('.filter-title');
+	$el.on('click', function() {
+		if($(this).hasClass('active')) {
+			$(this).removeClass('active').parent().removeClass('active');
+			$(this).next('.filters').find('li.active').each(function() {
+				$(this).removeClass('active');
+			});
+		} else {
+			$(this).addClass('active').parent().addClass('active');
+		}
+	});
+}
+
+function selectFilter(el)
+{
+	$el = $('.jobs__list-filters').find('.filters').find('span');
+	$el.on('click', function(e) {
+		console.log($(this));
+		console.log(e.target);
+		if($(this).parent().hasClass('active')) {
+			$(this).parent().removeClass('active');
+			$(this).next('ul').find('li.active').each(function() {
+				$(this).removeClass('active');
+			});
+		} else {
+			$(this).parent().addClass('active');
+		}
+	});
+}
 
 $(document).ready(function() {
 	
 	lazyImages();
 	uglyInput();
+	if($('.jobs__list-filters').length > 0) {
+		activateFilter();
+		selectFilter();
+	}
 
 });
 
