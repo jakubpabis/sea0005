@@ -192,14 +192,19 @@
 
                     a {
                         padding: 2px;
-                        
-                        &.active {
-                            font-weight: 600;
-                            text-decoration: underline;
-                        }
+                        text-transform: uppercase;
 
                         &:hover {
                             color: inherit;
+                        }
+
+                    }
+
+                    &.current-lang {
+
+                        a {
+                            font-weight: 600;
+                            text-decoration: underline;
                         }
 
                     }

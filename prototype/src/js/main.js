@@ -97,61 +97,10 @@ function homepageClients()
 	});
 }
 
-function loadMoreJobs($items)
-{
-	var $left = $items;	
-	$('.jobs__list-item:hidden').each(function() {
-		if($left > 0) {
-			$(this).fadeIn(300);
-		}
-		$left--;
-	});
-	if(!$('.jobs__list-item:hidden').length > 0) {
-		$('.jobs__list-items').find('.loadmore').fadeOut(300);
-	}
-
-}
-
-function activateFilter()
-{
-	$el = $('.jobs__list-filters').find('.filter-title');
-	$el.on('click', function() {
-		if($(this).hasClass('active')) {
-			$(this).removeClass('active').parent().removeClass('active');
-			$(this).next('.filters').find('li.active').each(function() {
-				$(this).removeClass('active');
-			});
-		} else {
-			$(this).addClass('active').parent().addClass('active');
-		}
-	});
-}
-
-function selectFilter(el)
-{
-	$el = $('.jobs__list-filters').find('.filters').find('span');
-	$el.on('click', function(e) {
-		console.log($(this));
-		console.log(e.target);
-		if($(this).parent().hasClass('active')) {
-			$(this).parent().removeClass('active');
-			$(this).next('ul').find('li.active').each(function() {
-				$(this).removeClass('active');
-			});
-		} else {
-			$(this).parent().addClass('active');
-		}
-	});
-}
-
 $(document).ready(function() {
 	
 	lazyImages();
 	uglyInput();
-	if($('.jobs__list-filters').length > 0) {
-		activateFilter();
-		selectFilter();
-	}
 
 });
 

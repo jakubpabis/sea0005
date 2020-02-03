@@ -79,7 +79,7 @@ gulp.task('sass',function(){
         }))
         .pipe(cleanCss())
         .pipe(gulp.dest('dist/css'))
-        .pipe(gulp.dest('../build/public/assets/css'))
+        .pipe(gulp.dest('../build/wp-content/themes/sative/assets/css'))
         .pipe(browsersync.stream());
 });
 gulp.task('js',function(){
@@ -97,7 +97,7 @@ gulp.task('js',function(){
         }))
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'))
-        .pipe(gulp.dest('../build/public/assets/js'))
+        .pipe(gulp.dest('../build/wp-content/themes/sative/assets/js'))
 });
 gulp.task('html',function(){
     return gulp.src(['src/**/*.html'])
@@ -123,7 +123,7 @@ gulp.task('image',function(){
         }))
         .pipe(cache(imageMin({ optimizationLevel: 7, progressive: true, interlaced: true })))
         .pipe(gulp.dest('dist/img'))
-        .pipe(gulp.dest('../build/public/assets/img'))
+        .pipe(gulp.dest('../build/wp-content/themes/sative/assets/img'))
 });
 gulp.task('exportWebP', function() {
     return gulp.src(['src/img/**/*'])
@@ -134,7 +134,7 @@ gulp.task('exportWebP', function() {
       ]))
       .pipe(extReplace(".webp"))
       .pipe(gulp.dest('dist/img'))
-      .pipe(gulp.dest('../build/public/assets/img'));
+      .pipe(gulp.dest('../build/wp-content/themes/sative/assets/img'));
 });
 
 gulp.task('watch', function() {

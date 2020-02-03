@@ -173,11 +173,11 @@
             margin-bottom: 40px;
             display: block;
 
-            &:nth-child(n+6) {
-                display: none;
-            } 
+            // &:nth-child(n+6) {
+            //     display: none;
+            // } 
 
-            .title {
+            .job-title {
                 display: flex;
                 align-items: center;
                 margin-bottom: 25px;
@@ -190,19 +190,19 @@
                     background-position: center;
                     background-size: cover;
 
-                    &.it {
+                    &[data-type="it"] {
                         background-image: url('../img/cubecross-it.svg');
                     }
 
-                    &.sales {
+                    &[data-type="free"] {
                         background-image: url('../img/cubecross-sales.svg');
                     }
 
-                    &.exec {
+                    &[data-type="exec"] {
                         background-image: url('../img/cubecross-exec.svg');
                     }
 
-                    &.free {
+                    &[data-type="free"] {
                         background-image: url('../img/cubecross-free.svg');
                     }
 

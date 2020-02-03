@@ -1099,15 +1099,16 @@ section {
 
 .navigation__lower-utils .lang li a {
 	padding: 2px;
-}
-
-.navigation__lower-utils .lang li a.active {
-	font-weight: 600;
-	text-decoration: underline;
+	text-transform: uppercase;
 }
 
 .navigation__lower-utils .lang li a:hover {
 	color: inherit;
+}
+
+.navigation__lower-utils .lang li.current-lang a {
+	font-weight: 600;
+	text-decoration: underline;
 }
 
 .navigation__lower-utils .btn {
@@ -2012,11 +2013,7 @@ aside#chat .dog {
 	margin-bottom: 40px;
 }
 
-.jobs__list-item:nth-child(n+6) {
-	display: none;
-}
-
-.jobs__list-item .title {
+.jobs__list-item .job-title {
 	display: -webkit-box;
 	display: flex;
 	margin-bottom: 25px;
@@ -2024,7 +2021,7 @@ aside#chat .dog {
 	align-items: center;
 }
 
-.jobs__list-item .title .icon {
+.jobs__list-item .job-title .icon {
 	display: inline-block;
 	width: 20px;
 	height: 20px;
@@ -2033,19 +2030,19 @@ aside#chat .dog {
 	background-size: cover;
 }
 
-.jobs__list-item .title .icon.it {
+.jobs__list-item .job-title .icon[data-type='it'] {
 	background-image: url('../img/cubecross-it.svg');
 }
 
-.jobs__list-item .title .icon.sales {
+.jobs__list-item .job-title .icon[data-type='free'] {
 	background-image: url('../img/cubecross-sales.svg');
 }
 
-.jobs__list-item .title .icon.exec {
+.jobs__list-item .job-title .icon[data-type='exec'] {
 	background-image: url('../img/cubecross-exec.svg');
 }
 
-.jobs__list-item .title .icon.free {
+.jobs__list-item .job-title .icon[data-type='free'] {
 	background-image: url('../img/cubecross-free.svg');
 }
 
