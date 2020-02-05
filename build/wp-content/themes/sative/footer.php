@@ -23,16 +23,16 @@
                             </a>
                         </div>
                         <div class="col-lg-4 text-right">
-                            <a href="" class="btn btn__social btn__notched sea" target="_blank">
+                            <a href="https://www.facebook.com/searchitrecruitment/" class="btn btn__social btn__notched sea" target="_blank">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="" class="btn btn__social btn__notched sea" target="_blank">
+                            <a href="https://www.instagram.com/searchitjobs/" class="btn btn__social btn__notched sea" target="_blank">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="" class="btn btn__social btn__notched sea" target="_blank">
+                            <a href="https://www.linkedin.com/company/search-it-recruitment/" class="btn btn__social btn__notched sea" target="_blank">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="" class="btn btn__social btn__notched sea" target="_blank">
+                            <a href="https://twitter.com/searchitjobs" class="btn btn__social btn__notched sea" target="_blank">
                                 <i class="fab fa-twitter"></i>
                             </a>
                         </div>
@@ -47,7 +47,7 @@
                                 Laan van Kronenburg 14<br/>
                                 1183 AS Amstelveen<br/>
                                 Amsterdam Area, The Netherlands<br/>
-                                <a href="" class="color-sea"><strong><u>Open in maps</u></strong></a><br/>
+                                <a href="https://g.page/searchitrecruitment?share" class="color-sea" target="_blank"><strong><u>Open in maps</u></strong></a><br/>
                                 <br/>
                                 KVK: 62737244<br/>
                                 BTW: NL854937274B01<br/>

@@ -59,6 +59,24 @@ get_header(); ?>
         'posts_per_page' => -1
     );
     $query = new WP_Query( $args );
+    $script = 'var $jobs = {'; 
+    if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); $helper = jobDisplayHelper(); 
+        $script .= get_the_ID().':{'; 
+        $script .= 'slug: "'.get_post_field('post_name', get_the_ID()).'", '; 
+        $script .= 'name: "'.get_the_title().'", '; 
+        $script .= '},'; 
+    endwhile; endif; 
+    $script .= '};'; 
+    file_put_contents( get_template_directory().'/inc/assets/js/jobs.js', $script);  
+    $output = \JShrink\Minifier::minify(file_get_contents(get_template_directory().'/inc/assets/js/jobs.js'));
+    file_put_contents(get_template_directory().'/inc/assets/js/jobs.min.js', $output); 
+    wp_reset_postdata();
+    $args = array( 
+        'post_type' => 'jobs',
+        'post_status' => 'publish',
+        'posts_per_page' => 10
+    );
+    $query = new WP_Query( $args );
 ?>
 
 <section class="jobs__list">
@@ -69,56 +87,44 @@ get_header(); ?>
             </div>
             <div id="jobs__list-cont" class="col-lg-8">
                 <main class="jobs__list-items">
-                    <script type="text/javascript">
-                        var $jobs = {
-                    <?php if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); ?>
-                        <?php $helper = jobDisplayHelper(); ?>
-                        <?= get_the_ID(); ?> : {
-                            name: '<?= get_the_title(); ?>',
-                        },
-
-                            
-                        <?php /*
-                        <article class="card bg-lgrey jobs__list-item">
-                            <div class="job-title">
-                                <?php if(strlen($helper['supCatName']) > 0) : ?>
-                                    <span class="icon" data-type="<?= $helper['supCatName']; ?>"></span>
-                                <?php endif; ?>
-                                <h3 class="title"><?= get_the_title(); ?></h3>
+                    <?php if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); $helper = jobDisplayHelper(); ?>
+                    <article class="card bg-lgrey jobs__list-item">
+                        <div class="job-title">
+                            <?php if(strlen($helper['supCatName']) > 0) : ?>
+                                <span class="icon" data-type="<?= $helper['supCatName']; ?>"></span>
+                            <?php endif; ?>
+                            <h3 class="title"><?= get_the_title(); ?></h3>
+                        </div>
+                        <div class="info">
+                            <div class="info__item">
+                                <i class="far fa-map-marker-alt"></i>
+                                <span class="text-size-medium location"><?= get_field('location'); ?></span>
                             </div>
-                            <div class="info">
-                                <div class="info__item">
-                                    <i class="far fa-map-marker-alt"></i>
-                                    <span class="text-size-medium location"><?= get_field('location'); ?></span>
-                                </div>
-                                <div class="info__item">
-                                    <i class="far fa-clock"></i>
-                                    <span class="text-size-medium type"><?= $helper['type']; ?></span>
-                                </div>
-                                <div class="info__item">
-                                    <i class="far fa-euro-sign"></i>
-                                    <span class="text-size-medium">
-                                        <number class="salarymin"><?= number_format(get_field('salary_min')); ?></number> - <number class="salarymax"><?= number_format(get_field('salary_max')); ?></number>
-                                    </span>
-                                </div>
-                                <div class="info__item">
-                                    <i class="far fa-industry"></i>
-                                    <span class="text-size-medium industry"></span>
-                                </div>
+                            <div class="info__item">
+                                <i class="far fa-clock"></i>
+                                <span class="text-size-medium type"><?= $helper['type']; ?></span>
                             </div>
-                            <p class="text-size-small excerpt">
-                                <?= get_the_excerpt(); ?>
-                            </p>
-                            <a href="<?= get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e( 'More info' ); ?></a>
-                        </article>
-                        */ ?>
-                    <?php endwhile; endif;  ?>
-                        };
-                    </script>
+                            <div class="info__item">
+                                <i class="far fa-euro-sign"></i>
+                                <span class="text-size-medium">
+                                    <number class="salarymin"><?= number_format(get_field('salary_min')); ?></number> - <number class="salarymax"><?= number_format(get_field('salary_max')); ?></number>
+                                </span>
+                            </div>
+                            <div class="info__item">
+                                <i class="far fa-industry"></i>
+                                <span class="text-size-medium industry"></span>
+                            </div>
+                        </div>
+                        <p class="text-size-small excerpt">
+                            <?= get_the_excerpt(); ?>
+                        </p>
+                        <a href="<?= get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e( 'More info' ); ?></a>
+                    </article>
+                    <?php endwhile; endif; ?>
                 </main>
             </div>
         </div>
     </div>
 </section>
 
-<?php get_footer();
+<?php get_footer('jobs');
