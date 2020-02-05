@@ -142,4 +142,16 @@
 
     }
 
+    &__article {
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+
+        .bg-cover {
+            max-height: 50vh;
+            height: 100%;
+        }
+
+    }
+
 }

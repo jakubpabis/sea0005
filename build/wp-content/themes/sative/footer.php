@@ -12,7 +12,7 @@
                 <div class="container">
                     <div class="row align-items-center footer__upper">
                         <div class="col-lg-4 footer__upper-contact">
-                            <a class="d-inline-block mt-1 text-size-medium" href="mailto:info@searchxrecruitment.com"><i class="fal fa-envelope mr-3"></i>info@searchxrecruitment.com</a><br/>
+                            <a class="d-inline-block mt-1 text-size-medium" href="mailto:info@searchxrecruitment.com"><i class="far fa-envelope mr-3"></i>info@searchxrecruitment.com</a><br/>
                             <a class="d-inline-block mt-1 text-size-medium" href="tel:+31207782393"><i class="fas fa-mobile-android-alt mr-4"></i>+31 (0)20 - 7782393</a>
                         </div>
                         <div class="col-lg-4 text-center">

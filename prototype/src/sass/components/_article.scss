@@ -1,0 +1,84 @@
+.article {
+    margin-top: 50px;
+    margin-bottom: 70px;
+
+    article {
+        padding-right: 45px;
+
+        h1 {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            font-family: $font-secondary;
+            font-size: 17px;
+            font-weight: 300;
+
+            li {
+                line-height: 1.44;
+                
+            }
+
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.75;
+
+            img {
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+
+        }
+
+        .btn {
+            margin-top: 30px;
+        }
+
+    }
+
+    aside {
+
+        .card {
+            padding: 35px;
+        }
+
+        .share {
+            margin-top: 50px;
+
+            h5 {
+                font-size: 18px;
+                font-weight: 500;
+                margin-bottom: 20px;
+            }
+
+            .btns {
+                margin: 0 -4px;
+                width: auto;
+
+                .btn {
+                    margin: 4px;
+                }
+
+            }
+
+        }
+
+    }
+
+}

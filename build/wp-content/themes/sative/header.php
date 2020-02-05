@@ -68,7 +68,7 @@
                         <div class="col-lg-9">
                             <div class="row align-items-center justify-content-end">
                                 <div class="col-auto navigation__lower-contact">
-                                    <a href="mailto:info@searchxrecruitment.com"><i class="fal fa-envelope"></i>info@searchxrecruitment.com</a>
+                                    <a href="mailto:info@searchxrecruitment.com"><i class="far fa-envelope"></i>info@searchxrecruitment.com</a>
                                 </div>
                                 <div class="col-auto navigation__lower-contact">
                                     <a href="tel:+31207782393"><i class="fas fa-mobile-android-alt"></i>+31 (0)20 - 7782393</a>

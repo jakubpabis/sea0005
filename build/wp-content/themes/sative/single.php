@@ -9,27 +9,50 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area col-sm-12 col-lg-8">
-		<main id="main" class="site-main" role="main">
+<?php while ( have_posts() ) : the_post(); 
 
-		<?php
-		while ( have_posts() ) : the_post();
+	if(get_the_post_thumbnail_url()) : ?>
 
-			get_template_part( 'template-parts/content', get_post_format() );
+	<header class="header__article">
+		<picture class="bg-cover">
+			<source srcset="<?= get_the_post_thumbnail_url(); ?>">
+			<img class="bg-cover" src="<?= get_the_post_thumbnail_url(); ?>" alt="">
+		</picture>
+	</header>
 
-			    the_post_navigation();
+	<?php endif;
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+	get_template_part( 'template-parts/breadcrumbs' ); ?>
 
-		endwhile; // End of the loop.
-		?>
+	<section class="article">
+		<div class="container">
+			<div class="row">
+				<article class="col-lg-8">
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+					<?php 
+					
+					if ( 'post' === get_post_type() ) : 
+						wp_bootstrap_starter_posted_on(); 
+					endif;
 
-<?php
-get_sidebar();
-get_footer();
+					the_title( '<h1>', '</h1>' ); 
+					
+					the_content();
+
+					if(get_field('button')) :
+						echo '<a href="'.get_field('button')['url'].'" class="btn btn__default yellow">'.get_field('button')['title'].'</a>'; 
+					endif;
+
+					?>
+
+				</article>
+				<aside class="col-lg-4">
+					<?php get_sidebar(); ?>
+				</aside>
+			</div>
+		</div>
+	</section>
+
+<?php endwhile; ?>
+
+<?php get_footer();

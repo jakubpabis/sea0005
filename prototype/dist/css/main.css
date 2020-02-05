@@ -611,7 +611,6 @@ h5,
 }
 
 p,
-.text-size-normal,
 .text-size-normal {
 	font-family: 'Roboto', sans-serif;
 	font-size: 18px;
@@ -746,10 +745,14 @@ p,
 	vertical-align: middle;
 }
 
+.btn__social.notched {
+	-webkit-clip-path: polygon(0% 5px, 5px 0%, calc(100% - 5px) 0%, 100% 5px, 100% calc(100% - 5px), calc(100% - 5px) 100%, 5px 100%, 0% calc(100% - 5px));
+	clip-path: polygon(0% 5px, 5px 0%, calc(100% - 5px) 0%, 100% 5px, 100% calc(100% - 5px), calc(100% - 5px) 100%, 5px 100%, 0% calc(100% - 5px));
+}
+
 .btn__notched {
-	--notchSize: 8px;
-	-webkit-clip-path: polygon(0% var(--notchSize), var(--notchSize) 0%, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, var(--notchSize) 100%, 0% calc(100% - var(--notchSize)));
-	clip-path: polygon(0% var(--notchSize), var(--notchSize) 0%, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, var(--notchSize) 100%, 0% calc(100% - var(--notchSize)));
+	-webkit-clip-path: polygon(0% 8px, 8px 0%, calc(100% - 8px) 0%, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px));
+	clip-path: polygon(0% 8px, 8px 0%, calc(100% - 8px) 0%, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px));
 }
 
 .btn.navy {
@@ -869,6 +872,10 @@ section {
 	position: relative;
 	display: block;
 	width: 100%;
+}
+
+i {
+	font-weight: 400;
 }
 
 .container {
@@ -1127,7 +1134,7 @@ section {
 	padding: 10px 0;
 }
 
-.breadcrumbs ul {
+.breadcrumbs__items {
 	position: relative;
 	display: -webkit-box;
 	display: flex;
@@ -1137,23 +1144,28 @@ section {
 	list-style: none;
 }
 
-.breadcrumbs ul li {
+.breadcrumbs__items a,
+.breadcrumbs__items i,
+.breadcrumbs__items strong {
 	font-size: 12px;
 	font-weight: 400;
 	line-height: 1;
+	display: inline-block;
 	padding: 0 4px;
 	vertical-align: middle;
 }
 
-.breadcrumbs ul li a {
-	display: block;
-}
-
-.breadcrumbs ul li a:hover {
+.breadcrumbs__items a:hover,
+.breadcrumbs__items i:hover,
+.breadcrumbs__items strong:hover {
 	color: inherit;
 }
 
-.breadcrumbs ul li.final {
+.breadcrumbs__items i {
+	font-weight: 700;
+}
+
+.breadcrumbs__items strong {
 	font-weight: 600;
 }
 
@@ -1318,6 +1330,19 @@ section {
 	padding: 18px 18px 17px;
 	color: white;
 	background-color: #ec6278;
+}
+
+.header__article {
+	display: -webkit-box;
+	display: flex;
+	overflow: hidden;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.header__article .bg-cover {
+	height: 100%;
+	max-height: 50vh;
 }
 
 .home__middle {
@@ -2034,15 +2059,15 @@ aside#chat .dog {
 	background-image: url('../img/cubecross-it.svg');
 }
 
-.jobs__list-item .job-title .icon[data-type='free'] {
+.jobs__list-item .job-title .icon[data-type='sales'] {
 	background-image: url('../img/cubecross-sales.svg');
 }
 
-.jobs__list-item .job-title .icon[data-type='exec'] {
+.jobs__list-item .job-title .icon[data-type='executive'] {
 	background-image: url('../img/cubecross-exec.svg');
 }
 
-.jobs__list-item .job-title .icon[data-type='free'] {
+.jobs__list-item .job-title .icon[data-type='freelance'] {
 	background-image: url('../img/cubecross-free.svg');
 }
 
@@ -2085,6 +2110,80 @@ aside#chat .dog {
 
 .jobs__list-item .btn {
 	font-size: 15px;
+}
+
+.article {
+	margin-top: 50px;
+	margin-bottom: 70px;
+}
+
+.article article {
+	padding-right: 45px;
+}
+
+.article article h1 {
+	margin-bottom: 40px;
+}
+
+.article article h2 {
+	margin-bottom: 30px;
+}
+
+.article article h2 {
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+.article article h3 {
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+.article article ul {
+	font-family: 'Roboto', sans-serif;
+	font-size: 17px;
+	font-weight: 300;
+}
+
+.article article ul li {
+	line-height: 1.44;
+}
+
+.article article p {
+	font-size: 17px;
+	line-height: 1.75;
+}
+
+.article article p img {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.article article .btn {
+	margin-top: 30px;
+}
+
+.article aside .card {
+	padding: 35px;
+}
+
+.article aside .share {
+	margin-top: 50px;
+}
+
+.article aside .share h5 {
+	font-size: 18px;
+	font-weight: 500;
+	margin-bottom: 20px;
+}
+
+.article aside .share .btns {
+	width: auto;
+	margin: 0 -4px;
+}
+
+.article aside .share .btns .btn {
+	margin: 4px;
 }
 
 .footer {
@@ -3267,7 +3366,6 @@ aside#chat .dog {
 @media (max-width: 991px) {
 
 p,
-.text-size-normal,
 .text-size-normal {
 	font-size: 17px;
 }
@@ -3302,7 +3400,6 @@ h4,
 }
 
 p,
-.text-size-normal,
 .text-size-normal {
 	font-size: 16px;
 }

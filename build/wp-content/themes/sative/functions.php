@@ -571,3 +571,49 @@ function jobUpdate()
 {
 
 }
+
+
+function jobDisplayHelper()
+{
+    $helper = array(
+        'supCatName' => '',
+        'type' => '',
+    );
+    
+    $categories = get_the_terms(get_the_ID(), 'job-category');
+    if(is_array($categories)) {
+        foreach($categories as $category) {
+            if($category->parent == 0) {
+                $helper['supCatName'] = $category->slug;
+                break;
+            }
+        }
+    }
+
+    $types = get_the_terms(get_the_ID(), 'job-type');
+    if(is_array($types)) {
+        foreach($types as $type) {
+            if($type->parent == 0) {
+                $helper['type'] = $type->name;
+                break;
+            }
+        }
+    }
+
+    return $helper;
+}
+
+
+
+$toTranslate = array(
+    'Contact',
+    'Get in touch',
+    'Share this content',
+    'open jobs',
+    'jobs showing',
+    'More info'
+);
+
+foreach($toTranslate as $string) {
+    pll_register_string('sative', $string);
+}

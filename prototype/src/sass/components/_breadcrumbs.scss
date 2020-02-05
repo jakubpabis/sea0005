@@ -3,7 +3,7 @@
     margin: 0;
     line-height: 1;
 
-    ul {
+    &__items {
         margin: 0;
         margin-left: -19px;
         padding: 0;
@@ -11,26 +11,28 @@
         list-style: none;
         display: flex;
 
-        li {
+        a,
+        i,
+        strong {
+            display: inline-block;
             padding: 0 4px;
             font-weight: 400;
             font-size: 12px;
             line-height: 1;
             vertical-align: middle;
 
-            a {
-                display: block;
-
-                &:hover {
-                    color: inherit;
-                }
-
+            &:hover {
+                color: inherit;
             }
 
-            &.final {
-                font-weight: 600;
-            }
+        }
 
+        i {
+            font-weight: 700;
+        }
+
+        strong {
+            font-weight: 600;
         }
 
     }
