@@ -187,13 +187,8 @@ if ( ! class_exists( 'wp_bootstrap_navwalker' )) {
     require_once(get_template_directory() . '/inc/wp_bootstrap_navwalker.php');
 }
 
-
-
-/*
-* Creating a function to create our CPT
-*/
  
-function custom_post_type() 
+function custom_post_type_jobs() 
 {
  
 // Set UI labels for Custom Post Type
@@ -247,7 +242,7 @@ register_post_type( 'jobs', $args );
 * Containing our post type registration is not 
 * unnecessarily executed. 
 */
-add_action( 'init', 'custom_post_type', 0 );
+add_action( 'init', 'custom_post_type_jobs', 0 );
 
 
 /**
@@ -354,6 +349,162 @@ function add_job_location_taxonomies()
     ));
 }
 add_action( 'init', 'add_job_location_taxonomies', 0 );
+
+
+
+
+function custom_post_type_team() 
+{
+ 
+// Set UI labels for Custom Post Type
+$labels = array(
+    'name'                => _x( 'Team', 'Post Type General Name', 'sative' ),
+    'singular_name'       => _x( 'Team', 'Post Type Singular Name', 'sative' ),
+    'menu_name'           => __( 'Team', 'sative' ),
+    'parent_item_colon'   => __( 'Parent Team', 'sative' ),
+    'all_items'           => __( 'All Team', 'sative' ),
+    'view_item'           => __( 'View Team', 'sative' ),
+    'add_new_item'        => __( 'Add New Team', 'sative' ),
+    'add_new'             => __( 'Add New', 'sative' ),
+    'edit_item'           => __( 'Edit Team', 'sative' ),
+    'update_item'         => __( 'Update Team', 'sative' ),
+    'search_items'        => __( 'Search Team', 'sative' ),
+    'not_found'           => __( 'Not Found', 'sative' ),
+    'not_found_in_trash'  => __( 'Not found in Trash', 'sative' ),
+);
+    
+// Set other options for Custom Post Type
+$args = array(
+    'label'               => __( 'team', 'sative' ),
+    'description'         => __( 'Team', 'sative' ),
+    'labels'              => $labels,
+    // Features this CPT supports in Post Editor
+    'supports'            => array( 'title', 'editor', 'custom-fields', 'thumbnail' ),
+    // You can associate this CPT with a taxonomy or custom taxonomy. 
+    'taxonomies'          => array(),
+    /* A hierarchical CPT is like Pages and can have
+    * Parent and child items. A non-hierarchical CPT
+    * is like Posts.
+    */ 
+    'hierarchical'        => false,
+    'public'              => true,
+    'show_ui'             => true,
+    'show_in_menu'        => true,
+    'show_in_nav_menus'   => true,
+    'show_in_admin_bar'   => true,
+    'menu_position'       => 20,
+    'menu_icon'           => 'dashicons-groups',
+    'can_export'          => true,
+    'has_archive'         => true,
+    'exclude_from_search' => false,
+    'publicly_queryable'  => true,
+    'capability_type'     => 'post',
+);   
+// Registering your Custom Post Type
+register_post_type( 'team', $args );
+}
+/* Hook into the 'init' action so that the function
+* Containing our post type registration is not 
+* unnecessarily executed. 
+*/
+add_action( 'init', 'custom_post_type_team', 0 );
+
+function custom_post_type_testimonials() 
+{
+ 
+// Set UI labels for Custom Post Type
+$labels = array(
+    'name'                => _x( 'Testimonials', 'Post Type General Name', 'sative' ),
+    'singular_name'       => _x( 'Testimonial', 'Post Type Singular Name', 'sative' ),
+    'menu_name'           => __( 'Testimonials', 'sative' ),
+    'parent_item_colon'   => __( 'Parent Testimonial', 'sative' ),
+    'all_items'           => __( 'All Testimonials', 'sative' ),
+    'view_item'           => __( 'View Testimonials', 'sative' ),
+    'add_new_item'        => __( 'Add New Testimonial', 'sative' ),
+    'add_new'             => __( 'Add New', 'sative' ),
+    'edit_item'           => __( 'Edit Testimonial', 'sative' ),
+    'update_item'         => __( 'Update Testimonial', 'sative' ),
+    'search_items'        => __( 'Search Testimonials', 'sative' ),
+    'not_found'           => __( 'Not Found', 'sative' ),
+    'not_found_in_trash'  => __( 'Not found in Trash', 'sative' ),
+);
+    
+// Set other options for Custom Post Type
+$args = array(
+    'label'               => __( 'testimonials', 'sative' ),
+    'description'         => __( 'Testimonials', 'sative' ),
+    'labels'              => $labels,
+    // Features this CPT supports in Post Editor
+    'supports'            => array( 'title', 'editor', 'custom-fields', 'thumbnail' ),
+    // You can associate this CPT with a taxonomy or custom taxonomy. 
+    'taxonomies'          => array(),
+    /* A hierarchical CPT is like Pages and can have
+    * Parent and child items. A non-hierarchical CPT
+    * is like Posts.
+    */ 
+    'hierarchical'        => false,
+    'public'              => true,
+    'show_ui'             => true,
+    'show_in_menu'        => true,
+    'show_in_nav_menus'   => true,
+    'show_in_admin_bar'   => true,
+    'menu_position'       => 25,
+    'menu_icon'           => 'dashicons-format-chat',
+    'can_export'          => true,
+    'has_archive'         => true,
+    'exclude_from_search' => false,
+    'publicly_queryable'  => true,
+    'capability_type'     => 'post',
+);   
+// Registering your Custom Post Type
+register_post_type( 'testimonials', $args );
+}
+/* Hook into the 'init' action so that the function
+* Containing our post type registration is not 
+* unnecessarily executed. 
+*/
+
+/**
+ * Add job category taxonomies
+ *
+ * Additional custom taxonomies can be defined here
+ * http://codex.wordpress.org/Function_Reference/register_taxonomy
+ */
+function add_testimonial_taxonomies() 
+{
+    // Hierarchical taxonomy (like categories)
+    register_taxonomy('testimonial-type', 'testimonials', 
+        array(
+            'hierarchical' => true,
+            // This array of options controls the labels displayed in the WordPress Admin UI
+            'labels' => array(
+            'name' => _x( 'Testimonial types', 'taxonomy general name' ),
+            'singular_name' => _x( 'Testimonial type', 'taxonomy singular name' ),
+            'search_items' =>  __( 'Search Testimonial types' ),
+            'all_items' => __( 'All Testimonial types' ),
+            'parent_item' => __( 'Parent Testimonial type' ),
+            'parent_item_colon' => __( 'Parent Testimonial type:' ),
+            'edit_item' => __( 'Edit Testimonial type' ),
+            'update_item' => __( 'Update Testimonial type' ),
+            'add_new_item' => __( 'Add New Testimonial type' ),
+            'new_item_name' => __( 'New Testimonial type Name' ),
+            'menu_name' => __( 'Testimonial types' ),
+        ),
+        // Control the slugs used for this taxonomy
+        'rewrite' => array(
+            'slug' => 'testimonial-type', // This controls the base slug that will display before each term
+            'with_front' => false, // Don't display the category base before "/locations/"
+            'hierarchical' => false // This will allow URL's like "/locations/boston/cambridge/"
+        ),
+    ));
+}
+add_action( 'init', 'add_testimonial_taxonomies', 0 );
+
+
+
+
+
+add_action( 'init', 'custom_post_type_testimonials', 0 );
 
 function slugify($text)
 {
@@ -630,4 +781,9 @@ $toTranslate = array(
 
 foreach($toTranslate as $string) {
     pll_register_string('sative', $string);
+}
+
+add_action( 'admin_init', 'my_remove_admin_menus' );
+function my_remove_admin_menus() {
+    remove_menu_page( 'edit-comments.php' );
 }
