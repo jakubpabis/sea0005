@@ -52,146 +52,85 @@ get_header(); ?>
 </section>
 <?php endif; ?>
 
+<?php if( have_rows('middle_cards') ): ?>
 <section class="home__cards cards__section">
     <div class="cards__section-img">
-        <img data-src="img/searchitrecruitment_homepage.jpg" alt="" class="bg-cover lazy">
+        <img data-src="<?= get_field('middle_cards_image')['url']; ?>" alt="<?= get_field('middle_cards_image')['alt']; ?>" class="bg-cover lazy">
     </div>
     <div class="cards__section-content bg-sea">
         <div class="container">
             <div class="row">
+                <?php while ( have_rows('middle_cards') ) : the_row(); ?>
                 <div class="col-lg-6">
                     <div class="card">
-                        <h3 class="mb-2"><i class="far fa-briefcase mr-2"></i> 253 open jobs</h3>
-                        <p>
-                            Are you looking for a job? Let us help you find the perfect match!
-                        </p>
+                        <h3 class="mb-2">
+                            <?php if(get_sub_field('icon')): ?>
+                            <i class="<?= get_sub_field('icon'); ?> mr-2"></i>&nbsp;
+                            <?php endif; ?>
+                            <?= get_sub_field('title'); ?>
+                        </h3>
+                        <?= get_sub_field('text'); ?>
                         <div class="btns mt-3">
-                            <a href="" class="btn btn__default navy">
-                                Upload CV
+                            <?php if(get_sub_field('button')): ?>    
+                            <a href="<?= get_sub_field('button')['url']; ?>" class="btn btn__default navy">
+                                <?= get_sub_field('button')['title']; ?>
                             </a>
-                            <a href="" class="link text-size-medium color-pink ml-4">All vacancies</a>
+                            <?php endif; ?>
+                            <?php if(get_sub_field('additional_link')): ?>
+                            <a href="<?= get_sub_field('additional_link')['url']; ?>" class="link text-size-medium color-pink ml-4"><?= get_sub_field('additional_link')['title']; ?></a>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <h3 class="mb-2"><i class="far fa-user-cog mr-2"></i> 159 candidates in progress</h3>
-                        <p>
-                            Do you want us to help you find the perfect candidate for the job?
-                        </p>
-                        <div class="btns mt-3">
-                            <a href="" class="btn btn__default navy">
-                                Get in touch
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <h3 class="mb-2"><i class="far fa-smile-beam mr-2"></i> 88 happy clients</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consec tet uer adipiscing elit commodo ligula eget 
-                        </p>
-                        <div class="btns mt-3">
-                            <a href="" class="btn btn__default navy">
-                                Show reviews
-                            </a>
-                            <a href="" class="link text-size-medium color-pink ml-4">All clients</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <h3 class="mb-2"><i class="far fa-user-check mr-2"></i> 258 matched candidates</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consec tet uer adipiscing elit commodo ligula eget 
-                        </p>
-                        <div class="btns mt-3">
-                            <a href="" class="btn btn__default navy">
-                                Show reviews
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <?php endwhile; ?>
             </div>
         </div>
     </div>
 </section>
+<?php endif; ?>
 
+<?php if( have_rows('job_categories') ): ?>
 <section class="home__jobs">
     <div class="container">
         <div class="row align-content-center">
+            <?php while ( have_rows('middle_cards') ) : the_row(); ?>
             <div class="col-lg-3">
                 <div class="home__jobs-content">
-                    <div class="home__jobs-icon bg-sea">
-                        <i class="fal fa-laptop-code"></i>
+                    <div class="home__jobs-icon <?= get_sub_field('colour'); ?>">
+                        <i class="<?= get_sub_field('icon'); ?>"></i>
                     </div>
-                    <h2>IT</h2>
+                    <h2><?= get_sub_field('title'); ?></h2>
                     <div class="home__jobs-hidden">
                         <p class="text-size-small">
-                            Lorem ipsum dolor sit amet consecteur detir
+                            <?= get_sub_field('text'); ?>
                         </p>
-                        <a href="" class="btn btn__small navy">
-                            48 open jobs
+                        <a href="<?= get_sub_field('button')['url']; ?>" class="btn btn__small navy">
+                            <?= get_sub_field('button')['title']; ?>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
-                <div class="home__jobs-content">
-                    <div class="home__jobs-icon bg-pink">
-                        <i class="fal fa-sack-dollar"></i>
-                    </div>
-                    <h2>Sales</h2>
-                    <div class="home__jobs-hidden">
-                        <p class="text-size-small">
-                            Lorem ipsum dolor sit amet consecteur detir
-                        </p>
-                        <a href="" class="btn btn__small navy">
-                            48 open jobs
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="home__jobs-content">
-                    <div class="home__jobs-icon bg-grey">
-                        <i class="fal fa-user-tie"></i>
-                    </div>
-                    <h2>Executive</h2>
-                    <div class="home__jobs-hidden">
-                        <p class="text-size-small">
-                            Lorem ipsum dolor sit amet consecteur detir
-                        </p>
-                        <a href="" class="btn btn__small navy">
-                            48 open jobs
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="home__jobs-content">
-                    <div class="home__jobs-icon bg-yellow">
-                        <i class="fal fa-street-view"></i>
-                    </div>
-                    <h2>Freelance</h2>
-                    <div class="home__jobs-hidden">
-                        <p class="text-size-small">
-                            Lorem ipsum dolor sit amet consecteur detir
-                        </p>
-                        <a href="" class="btn btn__small navy">
-                            48 open jobs
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <?php endwhile; ?>
         </div>
     </div>
 </section>
+<?php endif; ?>
 
+<?php
+
+wp_reset_postdata();
+$args = array( 
+    'post_type' => 'testimonials',
+    'post_status' => 'publish',
+    'posts_per_page' => -1
+);
+$query = new WP_Query( $args );
+
+?>
+<?php if($query->have_posts()) : ?>
 <section class="home__testimonials testimonials__section">
     <div class="testimonials__section-img">
-        <img data-src="img/searchitrecruitment_references_header.jpg" alt="" class="bg-cover lazy">
+        <img data-src="<?= get_field('testimonial_image')['url']; ?>" alt="" class="bg-cover lazy">
     </div>
     <div class="testimonials__section-content">
         <div class="container">
@@ -199,21 +138,21 @@ get_header(); ?>
                 <div class="col-12">
                     <div id="carouselTestimonials" class="carousel slide bg-yellow" data-ride="carousel">
                         <div class="carousel-inner">
+                            <?php while($query->have_posts()) : $query->the_post(); ?>
+                            <?php if(get_field('testimonial_featured') == true): ?>
                             <div class="carousel-item active">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-9">
                                         <div class="row">
                                             <div class="col-lg-2">
-                                                <img data-src="img/person.jpg" alt="" class="bg-cover lazy">
+                                                <img data-src="<?= get_the_post_thumbnail_url(); ?>" alt="" class="bg-cover lazy">
                                             </div>
                                             <div class="col-lg-10">
                                                 <i class="fas fa-quote-left"></i>
-                                                <p class="mb-1 mt-0">
-                                                    Search It Recruitment has been incredibly helpful in finding me a job based on my personal characteristics and needs. They have managed to find me three potential offers within a week and, after another week, an official offer from an Utrecht's company. Well done!
-                                                </p>
-                                                <span class="text-size-small text500">
-                                                    <i>
-                                                        Giampaolo Falqui - PHP Developer - candidate
+                                                <?php the_content(); ?>
+                                                <span>
+                                                    <i class="text-size-small text500">
+                                                        <?= get_the_title(); ?>
                                                     </i>
                                                 </span>
                                             </div>
@@ -221,28 +160,8 @@ get_header(); ?>
                                     </div>
                                 </div>
                             </div>
-                            <div class="carousel-item">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-9">
-                                        <div class="row">
-                                            <div class="col-lg-2">
-                                                <img data-src="img/person.jpg" alt="" class="bg-cover lazy">
-                                            </div>
-                                            <div class="col-lg-10">
-                                                <i class="fas fa-quote-left"></i>
-                                                <p class="mb-1 mt-0">
-                                                    Search It Recruitment has been incredibly helpful in finding me a job based on my personal characteristics and needs. They have managed to find me three potential offers within a week and, after another week, an official offer from an Utrecht's company. Well done!
-                                                </p>
-                                                <span class="text-size-small text500">
-                                                    <i>
-                                                        Giampaolo Falqui - PHP Developer - candidate
-                                                    </i>
-                                                </span>
-                                            </div>
-                                        </div>  
-                                    </div>
-                                </div>
-                            </div>
+                            <?php endif; ?>
+                            <?php endwhile; ?>
                         </div>
                         <a class="carousel-control-prev" href="#carouselTestimonials" role="button" data-slide="prev">
                             <i class="fas fa-caret-left"></i>
@@ -258,23 +177,17 @@ get_header(); ?>
         </div>
     </div>
 </section>
+<?php endif; wp_reset_postdata(); ?>
 
+<?php if( have_rows('clients') ): ?>
 <section class="home__clients">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10">
                 <div class="owl-carousel owl-theme">
-                    <img class="owl-lazy" data-src="img/clients/download.png" alt="">
-                    <img class="owl-lazy" data-src="img/clients/Qelp_Logo_RGB.png" alt="">
-                    <img class="owl-lazy" data-src="img/clients/TechMahindra.png" alt="">
-                    <img class="owl-lazy" data-src="img/clients/Twinfield.png" alt="">
-                    <img class="owl-lazy" data-src="img/clients/Fabory.jpg" alt="">
-                    <img class="owl-lazy" data-src="img/clients/Flipbase.png" alt="">
-                    <img class="owl-lazy" data-src="img/clients/Gradient.png" alt="">
-                    <img class="owl-lazy" data-src="img/clients/IceMobile.svg" alt="">
-                    <img class="owl-lazy" data-src="img/clients/Ireckonu.png" alt="">
-                    <img class="owl-lazy" data-src="img/clients/Justlease.jpg" alt="">
-                    <img class="owl-lazy" data-src="img/clients/MSP.png" alt="">
+                <?php while ( have_rows('clients') ) : the_row(); ?>
+                    <img class="owl-lazy" data-src="<?= get_sub_field('image')['url']; ?>" alt="">
+                <?php endwhile; ?>
                 </div>
                 <div class="custom-owl-prev" role="button">
                     <i class="fas fa-caret-left"></i>
@@ -285,11 +198,14 @@ get_header(); ?>
                     <span class="sr-only">Next</span>
                 </div>
             </div>
+            <?php if(get_field('clients_button')): ?>
             <div class="col-12 text-center mt-3">
-                <a href="" class="btn btn__default yellow">See all clients</a>
+                <a href="<?= get_field('clients_button')['url']; ?>" class="btn btn__default yellow"><?= get_field('clients_button')['title']; ?></a>
             </div>
+            <?php endif; ?>
         </div>
     </div>
 </section>
+<?php endif; ?>
 
 <?php get_footer();
