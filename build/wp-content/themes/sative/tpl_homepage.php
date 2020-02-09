@@ -138,9 +138,9 @@ $query = new WP_Query( $args );
                 <div class="col-12">
                     <div id="carouselTestimonials" class="carousel slide bg-yellow" data-ride="carousel">
                         <div class="carousel-inner">
-                            <?php while($query->have_posts()) : $query->the_post(); ?>
+                            <?php $i = 0; while($query->have_posts()) : $query->the_post(); ?>
                             <?php if(get_field('testimonial_featured') == true): ?>
-                            <div class="carousel-item active">
+                            <div class="carousel-item <?= $i == 0 ? 'active' : null ?>">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-9">
                                         <div class="row">
@@ -160,9 +160,10 @@ $query = new WP_Query( $args );
                                     </div>
                                 </div>
                             </div>
-                            <?php endif; ?>
+                            <?php $i++; endif; ?>
                             <?php endwhile; ?>
                         </div>
+                        <?php if($i > 1): ?>
                         <a class="carousel-control-prev" href="#carouselTestimonials" role="button" data-slide="prev">
                             <i class="fas fa-caret-left"></i>
                             <span class="sr-only">Previous</span>
@@ -171,6 +172,7 @@ $query = new WP_Query( $args );
                             <i class="fas fa-caret-right"></i>
                             <span class="sr-only">Next</span>
                         </a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -189,6 +191,7 @@ $query = new WP_Query( $args );
                     <img class="owl-lazy" data-src="<?= get_sub_field('image')['url']; ?>" alt="">
                 <?php endwhile; ?>
                 </div>
+                <?php if(count(get_field('clients')) > 1): ?>
                 <div class="custom-owl-prev" role="button">
                     <i class="fas fa-caret-left"></i>
                     <span class="sr-only">Previous</span>
@@ -197,6 +200,7 @@ $query = new WP_Query( $args );
                     <i class="fas fa-caret-right"></i>
                     <span class="sr-only">Next</span>
                 </div>
+                <?php endif; ?>
             </div>
             <?php if(get_field('clients_button')): ?>
             <div class="col-12 text-center mt-3">
