@@ -2192,6 +2192,7 @@ aside#chat .dog {
 }
 
 .filtered-articles article {
+	margin-bottom: 80px;
 	padding-right: 45px;
 }
 
