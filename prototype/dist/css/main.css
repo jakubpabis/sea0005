@@ -2186,6 +2186,90 @@ aside#chat .dog {
 	margin: 4px;
 }
 
+.filtered-articles {
+	margin-top: 50px;
+	margin-bottom: 70px;
+}
+
+.filtered-articles article {
+	padding-right: 45px;
+}
+
+.filtered-articles article h1 {
+	margin-bottom: 40px;
+}
+
+.filtered-articles article h2 {
+	margin-bottom: 30px;
+}
+
+.filtered-articles article h2 {
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+.filtered-articles article h3 {
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+.filtered-articles article ul {
+	font-family: 'Roboto', sans-serif;
+	font-size: 17px;
+	font-weight: 300;
+}
+
+.filtered-articles article ul li {
+	line-height: 1.44;
+}
+
+.filtered-articles article p {
+	font-size: 17px;
+	line-height: 1.75;
+}
+
+.filtered-articles article p img {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.filtered-articles article .btn {
+	margin-top: 30px;
+}
+
+.filtered-articles aside .card {
+	padding: 35px;
+}
+
+.filtered-articles aside .card ul {
+	margin: 10px 0 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.filtered-articles aside .card ul li a:hover {
+	color: inherit;
+}
+
+.filtered-articles aside .share {
+	margin-top: 50px;
+}
+
+.filtered-articles aside .share h5 {
+	font-size: 18px;
+	font-weight: 500;
+	margin-bottom: 20px;
+}
+
+.filtered-articles aside .share .btns {
+	width: auto;
+	margin: 0 -4px;
+}
+
+.filtered-articles aside .share .btns .btn {
+	margin: 4px;
+}
+
 .footer {
 	padding-top: 40px;
 	color: white;

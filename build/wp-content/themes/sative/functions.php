@@ -776,7 +776,9 @@ $toTranslate = array(
     'Share this content',
     'open jobs',
     'jobs showing',
-    'More info'
+    'More info',
+    'Read more',
+    'Topics'
 );
 
 foreach($toTranslate as $string) {
