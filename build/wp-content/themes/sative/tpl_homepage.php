@@ -101,12 +101,16 @@ get_header(); ?>
                     </div>
                     <h2><?= get_sub_field('title'); ?></h2>
                     <div class="home__jobs-hidden">
+                        <?php if(get_sub_field('text')): ?>
                         <p class="text-size-small">
                             <?= get_sub_field('text'); ?>
                         </p>
+                        <?php endif; ?>
+                        <?php if(get_sub_field('button')): ?>
                         <a href="<?= get_sub_field('button')['url']; ?>" class="btn btn__small navy">
                             <?= get_sub_field('button')['title']; ?>
                         </a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
