@@ -7,10 +7,6 @@
         @media (min-width: 768px){
             max-width: 730px;
         }
-        
-        // @media (min-width: 767px){
-        //     max-width: 720px;
-        // }
 
         .modal-content {
             border: none;
@@ -27,18 +23,7 @@
             .modal-container {
                 background: $color-secondary;
                 padding: 40px 65px;
-                --notchSize: 15px;
-                clip-path: 
-                    polygon(
-                        0% var(--notchSize), 
-                        var(--notchSize) 0%, 
-                        calc(100% - var(--notchSize)) 0%, 
-                        100% var(--notchSize), 
-                        100% calc(100% - var(--notchSize)), 
-                        calc(100% - var(--notchSize)) 100%, 
-                        var(--notchSize) 100%, 
-                        0% calc(100% - var(--notchSize))
-                    );
+                @include notch(15px);
             }
 
         }
@@ -90,6 +75,7 @@
         .ugly {
 
             label {
+                top: 8px;
                 left: 15px;
                 position: absolute;
                 margin: 0;

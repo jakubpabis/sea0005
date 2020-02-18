@@ -1,4 +1,52 @@
-.dogs {
+.dog {
+
+    &.grey {
+
+        .bowtie {
+            fill: $color-exec;
+        }
+
+    }
+
+    &.sea {
+
+        .bowtie {
+            fill: $color-sea;
+        }
+
+    }
+
+    &.white {
+
+        .bowtie {
+            fill: white;
+        }
+
+    }
+
+    &.yellow {
+
+        .bowtie {
+            fill: $color-yellow;
+        }
+
+    }
+
+    &.pink {
+
+        .bowtie {
+            fill: $color-pink;
+        }
+
+    }
+
+    &.left {
+
+    }
+
+    &.right {
+        
+    }
 
     &__normal {
         

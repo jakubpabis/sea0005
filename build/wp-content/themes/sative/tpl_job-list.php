@@ -107,7 +107,7 @@ get_header(); ?>
                             <div class="info__item">
                                 <i class="far fa-euro-sign"></i>
                                 <span class="text-size-medium">
-                                    <number class="salarymin"><?= number_format(get_field('salary_min')); ?></number> - <number class="salarymax"><?= number_format(get_field('salary_max')); ?></number>
+                                    <number class="salarymin"><?= number_format(get_field('salary_min'), 0, ".", "."); ?></number> - <number class="salarymax"><?= number_format(get_field('salary_max'), 0, ".", "."); ?></number>
                                 </span>
                             </div>
                             <div class="info__item">

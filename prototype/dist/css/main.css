@@ -1618,9 +1618,8 @@ i {
 .modal .modal-dialog .modal-content .modal-container {
 	padding: 40px 65px;
 	background: #94d4e9;
-	--notchSize: 15px;
-	-webkit-clip-path: polygon(0% var(--notchSize), var(--notchSize) 0%, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, var(--notchSize) 100%, 0% calc(100% - var(--notchSize)));
-	clip-path: polygon(0% var(--notchSize), var(--notchSize) 0%, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, var(--notchSize) 100%, 0% calc(100% - var(--notchSize)));
+	-webkit-clip-path: polygon(0% 15px, 15px 0%, calc(100% - 15px) 0%, 100% 15px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0% calc(100% - 15px));
+	clip-path: polygon(0% 15px, 15px 0%, calc(100% - 15px) 0%, 100% 15px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0% calc(100% - 15px));
 }
 
 .modal .close {
@@ -1660,6 +1659,7 @@ i {
 	font-style: italic;
 	line-height: 1;
 	position: absolute;
+	top: 8px;
 	left: 15px;
 	min-height: 40px;
 	margin: 0;
@@ -2271,6 +2271,26 @@ aside#chat .dog {
 	margin: 4px;
 }
 
+.dog.grey .bowtie {
+	fill: #e3e0e5;
+}
+
+.dog.sea .bowtie {
+	fill: #94d4e9;
+}
+
+.dog.white .bowtie {
+	fill: white;
+}
+
+.dog.yellow .bowtie {
+	fill: #fdd963;
+}
+
+.dog.pink .bowtie {
+	fill: #ec6278;
+}
+
 .footer {
 	padding-top: 40px;
 	color: white;
@@ -2323,6 +2343,7 @@ aside#chat .dog {
 }
 
 .footer__middle .newsletter {
+	position: relative;
 	margin-top: 30px;
 }
 
@@ -2372,13 +2393,15 @@ aside#chat .dog {
 .footer__middle .newsletter button {
 	font-size: 22px;
 	position: absolute;
-	right: 20px;
+	top: 0;
+	right: 0;
 	height: auto;
 	margin: 0;
-	padding: 5px;
+	padding: 5px 12px;
 	color: #ec6278;
 	border: none;
 	outline: 0;
+	background-color: transparent;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
