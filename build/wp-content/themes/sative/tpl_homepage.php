@@ -93,7 +93,7 @@ get_header(); ?>
 <section class="home__jobs">
     <div class="container">
         <div class="row align-content-center">
-            <?php while ( have_rows('middle_cards') ) : the_row(); ?>
+            <?php while ( have_rows('job_categories') ) : the_row(); ?>
             <div class="col-lg-3">
                 <div class="home__jobs-content">
                     <div class="home__jobs-icon <?= get_sub_field('colour'); ?>">
