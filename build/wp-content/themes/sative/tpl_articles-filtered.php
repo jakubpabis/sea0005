@@ -19,7 +19,7 @@ get_header(); ?>
 get_template_part( 'template-parts/breadcrumbs' ); ?>
 
 <?php
-wp_reset_query();
+wp_reset_postdata();
 $catID = get_field('categoryID');
 $args = array( 
     'post_type' => 'post',
@@ -90,5 +90,6 @@ $query = new WP_Query( $args );
 		</aside>
 	</div>
 </div>
+<?php wp_reset_postdata(); ?>
 
 <?php get_footer();
