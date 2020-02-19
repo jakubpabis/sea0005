@@ -5,19 +5,6 @@
 
 get_header(); ?>
 
-<?php
-
-$catID = get_field('categoryID');
-
-$args = array( 
-    'post_type' => 'post',
-    'post_status' => 'publish',
-	'posts_per_page' => -1,
-	'cat' => $catID
-);
-$query = new WP_Query( $args );
-?>
-
 <?php if(get_the_post_thumbnail_url()) : ?>
 
 	<header class="header__article">
@@ -30,6 +17,18 @@ $query = new WP_Query( $args );
 <?php endif;
 
 get_template_part( 'template-parts/breadcrumbs' ); ?>
+
+<?php
+wp_reset_query();
+$catID = get_field('categoryID');
+$args = array( 
+    'post_type' => 'post',
+    'post_status' => 'publish',
+	'posts_per_page' => -1,
+	'cat' => $catID
+);
+$query = new WP_Query( $args );
+?>
 
 <div class="container filtered-articles">
 	<div class="row">
