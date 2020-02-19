@@ -27,6 +27,7 @@ $args = array(
 	'posts_per_page' => -1,
 	'cat' => $catID
 );
+var_dump($args);
 $query = new WP_Query( $args );
 ?>
 
