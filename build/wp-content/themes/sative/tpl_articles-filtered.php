@@ -7,13 +7,13 @@ get_header(); ?>
 
 <?php
 
-$categorySlug = get_field('category-slug')->slug;
+$catID = get_field('category-slug')->slug;
 
 $args = array( 
     'post_type' => 'post',
     'post_status' => 'publish',
 	'posts_per_page' => -1,
-	'cat' => $categorySlug
+	'cat' => $catID
 );
 $query = new WP_Query( $args );
 ?>
@@ -37,13 +37,11 @@ get_template_part( 'template-parts/breadcrumbs' ); ?>
 			<?php if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); ?>
 			<article>
 
-				<?php 
-
-				the_title( '<h2 class="mt-0">', '</h2>' ); 
+				<h2 class="mt-0">
+					<a href="<?= get_permalink(); ?>"><?= get_the_title(); ?></a>
+				</h2> 
 				
-				the_excerpt();
-
-				?>
+				<?php the_excerpt(); ?>
 
 				<a href="<?= get_permalink(); ?>" class="btn btn__default yellow"><?php pll_e( 'Read more' ); ?></a>
 
