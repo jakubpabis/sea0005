@@ -7,7 +7,7 @@ get_header(); ?>
 
 <?php
 
-$catID = get_field('categoryID')->slug;
+$catID = get_field('categoryID');
 
 $args = array( 
     'post_type' => 'post',
