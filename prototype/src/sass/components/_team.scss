@@ -1,0 +1,20 @@
+.team {
+    margin-top: 50px;
+    padding: 60px 0;
+
+    &__item {
+        background-color: white;
+        @include notch(15px);
+        margin-top: 60px;
+
+        &-img {
+            @include notch(15px);
+        }
+
+        &-text {
+            padding: 30px;
+        }
+
+    }
+
+}

@@ -3,7 +3,30 @@
  * Template Name: Job list
  */
 
-get_header(); ?>
+get_header();
+
+$args = array( 
+    'post_type' => 'jobs',
+    'post_status' => 'publish',
+    'posts_per_page' => -1
+);
+$query = new WP_Query( $args );
+$post_no = $query->post_count;
+// $script = 'var $jobs = {'; 
+// if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); $helper = jobDisplayHelper(); 
+//     $script .= get_the_ID().':{'; 
+//     $script .= 'slug: "'.get_post_field('post_name', get_the_ID()).'", '; 
+//     $script .= 'name: "'.get_the_title().'", '; 
+//     $script .= 'link: "'.get_the_permalink().'", '; 
+//     $script .= '},'; 
+// endwhile; endif; 
+// $script .= '};'; 
+// file_put_contents( get_template_directory().'/inc/assets/js/jobs.js', $script);  
+// $output = \JShrink\Minifier::minify(file_get_contents(get_template_directory().'/inc/assets/js/jobs.js'));
+// file_put_contents(get_template_directory().'/inc/assets/js/jobs.min.js', $output); 
+wp_reset_postdata();
+?>
+
 
 <header class="header__jobs">
     <div class="container">
@@ -11,7 +34,7 @@ get_header(); ?>
         <div class="row align-items-center justify-content-between">
             <div class="col-lg-auto">
                 <h1>
-                    <span class="header__jobs-jobsno">234</span> <?php pll_e( 'open jobs' ); ?>
+                    <span class="header__jobs-jobsno"><?= $post_no; ?></span> <?php pll_e( 'open jobs' ); ?>
                 </h1>
             </div>
             <div class="col-lg-auto header__jobs-cats">
@@ -45,7 +68,7 @@ get_header(); ?>
             </div>
             <div class="col-12 text-right">
                 <p class="text-size-small font-primary">
-                    <span class="jobsno">150</span> <?php pll_e( 'jobs showing' ); ?>
+                    <span class="jobsno">150</span> <?php pll_e( 'jobs found' ); ?>
                 </p>
             </div>
         </div>
@@ -53,24 +76,6 @@ get_header(); ?>
 </header>
 
 <?php 
-    $args = array( 
-        'post_type' => 'jobs',
-        'post_status' => 'publish',
-        'posts_per_page' => -1
-    );
-    $query = new WP_Query( $args );
-    $script = 'var $jobs = {'; 
-    if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); $helper = jobDisplayHelper(); 
-        $script .= get_the_ID().':{'; 
-        $script .= 'slug: "'.get_post_field('post_name', get_the_ID()).'", '; 
-        $script .= 'name: "'.get_the_title().'", '; 
-        $script .= '},'; 
-    endwhile; endif; 
-    $script .= '};'; 
-    file_put_contents( get_template_directory().'/inc/assets/js/jobs.js', $script);  
-    $output = \JShrink\Minifier::minify(file_get_contents(get_template_directory().'/inc/assets/js/jobs.js'));
-    file_put_contents(get_template_directory().'/inc/assets/js/jobs.min.js', $output); 
-    wp_reset_postdata();
     $args = array( 
         'post_type' => 'jobs',
         'post_status' => 'publish',
@@ -93,7 +98,7 @@ get_header(); ?>
                             <?php if(strlen($helper['supCatName']) > 0) : ?>
                                 <span class="icon" data-type="<?= $helper['supCatName']; ?>"></span>
                             <?php endif; ?>
-                            <h3 class="title"><?= get_the_title(); ?></h3>
+                            <h3 class="title"><a href="<?= get_the_permalink(); ?>"><?= get_the_title(); ?></a></h3>
                         </div>
                         <div class="info">
                             <div class="info__item">
@@ -121,6 +126,9 @@ get_header(); ?>
                         <a href="<?= get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e( 'More info' ); ?></a>
                     </article>
                     <?php endwhile; endif; ?>
+                    <nav class="pagination">
+                    <?php posts_nav_link(); ?>
+                    </nav>
                 </main>
             </div>
         </div>

@@ -1,4 +1,8 @@
 .dog {
+    
+    &.section {
+        margin-bottom: 100px;
+    }
 
     &.grey {
 
@@ -40,23 +44,119 @@
 
     }
 
+    object,
+    svg {
+        width: 100%;
+        position: relative;
+    }
+
     &.left {
 
     }
 
     &.right {
-        
+
+        object,
+        svg {
+            transform: rotateY(180deg);
+            max-width: 100vw;
+            min-width: 100%;
+            width: 47vw;
+            position: absolute;
+            left: 80px;
+        }
+
     }
 
     &__normal {
-        
+
+        svg {
+            top: auto;
+            bottom: -25px;
+        }
+
     }
 
     &__stand {
 
+        svg {
+            margin-top: 40px;
+            transform: translateX(20px);
+        }
+
     }
 
-    &__lay {
+    &__sit {
+
+        svg {
+            top: auto;
+            bottom: -20px;
+        }
+
+    }
+
+    &__info {
+        @include notch(20px);
+        padding: 40px;
+        position: relative;
+
+        &+.triangle {
+            position: absolute;
+            top: 40%;
+            width: 0; 
+            height: 0; 
+            content: '';
+            z-index: 9;
+        }
+
+        &.left {
+            
+            &+.triangle {
+                top: 15px;
+                left: -40px;
+                border-left: 0px solid transparent;
+                border-top: 60px solid transparent; 
+                border-right: 60px solid transparent; 
+
+                &.grey2 {
+                    border-right-color: $color-grey2;
+                }
+
+                &.sea {
+                    border-right-color: $color-sea;
+                }
+
+                &.yellow {
+                    border-right-color: $color-yellow;
+                }
+
+            }
+
+        }
+
+        &.right {
+
+            &+.triangle {
+                right: -40px;
+                border-right: 0px solid transparent;
+                border-bottom: 60px solid transparent; 
+                border-left: 60px solid transparent; 
+
+                &.grey2 {
+                    border-left-color: $color-grey2;
+                }
+
+                &.sea {
+                    border-left-color: $color-sea;
+                }
+
+                &.yellow {
+                    border-left-color: $color-yellow;
+                }
+
+            }
+
+        }
 
     }
 

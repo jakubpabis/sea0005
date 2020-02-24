@@ -132,6 +132,14 @@
 
         }
 
+        a {
+
+            &:hover {
+                color: inherit;
+            }
+
+        }
+
         .btn {
             margin-top: 10px;
         }

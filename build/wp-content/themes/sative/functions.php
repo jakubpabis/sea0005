@@ -222,6 +222,7 @@ $args = array(
     * is like Posts.
     */ 
     'hierarchical'        => false,
+    'query_var'           => true,
     'public'              => true,
     'show_ui'             => true,
     'show_in_menu'        => true,
@@ -230,7 +231,7 @@ $args = array(
     'menu_position'       => 1,
     'menu_icon'           => 'dashicons-media-document',
     'can_export'          => true,
-    'has_archive'         => false,
+    'has_archive'         => true,
     'exclude_from_search' => false,
     'publicly_queryable'  => true,
     'capability_type'     => 'post',
@@ -775,6 +776,7 @@ $toTranslate = array(
     'Get in touch',
     'Share this content',
     'open jobs',
+    'jobs found',
     'jobs showing',
     'More info',
     'Read more',

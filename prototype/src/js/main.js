@@ -97,14 +97,26 @@ function homepageClients()
 	});
 }
 
+function homeHashtags()
+{
+	$('.home__middle-hashtags').find('li').on('click', function() {
+		$('#homeSearchInput').val($(this).text()).focus();
+	});
+}
+
 $(document).ready(function() {
 	
 	lazyImages();
 	uglyInput();
 
+	if($('.home__middle-hashtags').length != 0) {
+		homeHashtags();
+	}
+
 });
 
 $(window).on('load', function() {
+	
 	lazyImages();
 
 	if($('.home__clients').length != 0) {

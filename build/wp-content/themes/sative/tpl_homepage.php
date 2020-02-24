@@ -38,6 +38,17 @@ get_header(); ?>
         <div class="row">
             <div class="col-lg-8">
                 <?= get_field('intro_text_left'); ?>
+                <form class="searchInput" action="">
+                    <input id="homeSearchInput" type="search" placeholder="Let's find the perfect job for you">
+                    <button type="submit" class="btn btn__notched"><i class="far fa-search"></i></button>
+                </form>
+                <?php if( have_rows('intro_hashtags') ): ?>
+                <ul class="home__middle-hashtags">
+                    <?php while ( have_rows('intro_hashtags') ) : the_row(); ?>
+                    <li><?= get_sub_field('hashtag'); ?></li>
+                    <?php endwhile; ?>
+                </ul>
+                <?php endif; ?>
             </div>
             <div class="col-lg-4">
                 <?= get_field('intro_text_right'); ?>
