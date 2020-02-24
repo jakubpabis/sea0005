@@ -780,7 +780,8 @@ $toTranslate = array(
     'jobs showing',
     'More info',
     'Read more',
-    'Topics'
+    'Topics',
+    'Schedule a call or meeting'
 );
 
 foreach($toTranslate as $string) {

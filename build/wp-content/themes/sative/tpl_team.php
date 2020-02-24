@@ -127,14 +127,46 @@ get_template_part( 'template-parts/breadcrumbs' ); ?>
         <?php endif; ?>
             <div class="col-lg-10">
                 <div class="team__item">
-                    <?php if(get_post_thumbnail_url()): ?>
-                    <div class="team__item-img">
-                        <img src="<?= get_post_thumbnail_url(); ?>" alt="">
-                    </div>
-                    <?php endif; ?>
-                    <div class="team__item-text">
-                        <h2><?= get_the_title(); ?></h2>
-                        <h4 class="color-pink"><?= get_field('title'); ?></h4>
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <?php if(has_post_thumbnail()): ?>
+                            <div class="team__item-img">
+                                <img class="bg-cover" src="<?= get_the_post_thumbnail_url(); ?>" alt="">
+                            </div>
+                            <?php endif; ?>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="team__item-text">
+                                <div class="row justify-content-between">
+                                    <div class="col-lg-8">
+                                        <h2><?= get_the_title(); ?></h2>
+                                        <h4 class="color-pink"><?= get_field('title'); ?></h4>
+                                    </div>
+                                    <div class="col-auto team__item-social">
+                                        <?php if(get_field('whatsapp')): ?>
+                                            <a href="<?= get_field('whatsapp'); ?>" class="btn btn__social notched sea"><i class="fab fa-whatsapp"></i></a>
+                                        <?php endif; ?>
+                                        <?php if(get_field('skype')): ?>
+                                            <a href="<?= get_field('skype'); ?>" class="btn btn__social notched sea"><i class="fab fa-skype"></i></a>
+                                        <?php endif; ?>
+                                        <?php if(get_field('linkedin')): ?>
+                                            <a href="<?= get_field('linkedin'); ?>" class="btn btn__social notched sea"><i class="fab fa-linkedin-in"></i></a>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                                <a href="tel:<?= get_field('email'); ?>" class="text-size-medium"><?= get_field('email'); ?></a><br/>
+                                <a href="tel:<?= get_field('phone'); ?>" class="text-size-medium"><?= get_field('phone'); ?></a><br/>
+                                <?= get_field('short_bio'); ?>
+                                <div class="btns">
+                                    <?php if(get_the_content()): ?>
+                                        <a href="javascript:void(0)" class="btn btn__default navy"><?php pll_e( 'Read more' ); ?></a>
+                                    <?php endif; ?>
+                                    <?php if(get_field('calendly')): ?>
+                                        <a href="<?= get_field('calendly') ?>"><u><?php pll_e( 'Schedule a call or meeting' ); ?></u></a>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
