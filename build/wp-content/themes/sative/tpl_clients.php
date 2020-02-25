@@ -3,8 +3,9 @@
  * Template Name: Clients
  */
 
-get_header(); ?>
+get_header();
 
+get_template_part( 'template-parts/breadcrumbs' ); ?>
 
 <?php if(get_field('title') || get_field('text')) : ?>
 <header class="header__clients">
