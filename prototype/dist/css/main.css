@@ -1232,14 +1232,14 @@ i {
 	color: white;
 }
 
-.header__jobs .dog {
+.header__jobs-dog {
 	position: absolute;
 	top: 0;
 	left: -465px;
 }
 
-.header__jobs .dog object,
-.header__jobs .dog svg {
+.header__jobs-dog object,
+.header__jobs-dog svg {
 	height: 280px;
 }
 
@@ -1330,7 +1330,8 @@ i {
 	max-height: 50vh;
 }
 
-.header__team {
+.header__team,
+.header__clients {
 	margin-top: 70px;
 }
 
@@ -2330,6 +2331,15 @@ aside#chat .dog {
 	width: 100%;
 }
 
+.dog.left.abs object,
+.dog.left.abs svg {
+	position: absolute;
+	right: 80px;
+	width: 47vw;
+	min-width: 100%;
+	max-width: 100vw;
+}
+
 .dog.right object,
 .dog.right svg {
 	position: absolute;
@@ -2341,8 +2351,7 @@ aside#chat .dog {
 }
 
 .dog__normal svg {
-	top: auto;
-	bottom: -25px;
+	top: 25px;
 }
 
 .dog__stand svg {
@@ -2351,8 +2360,7 @@ aside#chat .dog {
 }
 
 .dog__sit svg {
-	top: auto;
-	bottom: -20px;
+	top: 25px;
 }
 
 .dog__info {
@@ -2456,6 +2464,25 @@ aside#chat .dog {
 
 .team__item-text .btns .btn {
 	margin-right: 30px;
+}
+
+.clients__big,
+.clients__small {
+	margin-top: 180px;
+}
+
+.clients__big-title,
+.clients__small-title {
+	margin-bottom: 40px;
+}
+
+.clients__big-item,
+.clients__small-item {
+	padding: 50px 30px;
+}
+
+.clients__small {
+	margin-bottom: 60px;
 }
 
 .footer {

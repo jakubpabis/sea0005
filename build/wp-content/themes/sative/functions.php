@@ -792,3 +792,12 @@ add_action( 'admin_init', 'my_remove_admin_menus' );
 function my_remove_admin_menus() {
     remove_menu_page( 'edit-comments.php' );
 }
+
+// add_filter( 'jobs_post_type_args', '_my_rewrite_slug' );
+// function _my_rewrite_slug( $args ) 
+// {
+//     if(pll_current_language() == 'nl') {
+//         $args['rewrite']['slug'] = 'vacatures';
+//         return $args;
+//     }
+// }

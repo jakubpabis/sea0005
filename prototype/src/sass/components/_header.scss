@@ -76,7 +76,7 @@
 
         }
 
-        .dog {
+        &-dog {
             position: absolute;
             left: -465px;
             top: 0;
@@ -154,7 +154,8 @@
 
     }
 
-    &__team {
+    &__team,
+    &__clients {
         margin-top: 70px;
     }
 

@@ -1,0 +1,21 @@
+.clients {
+
+    &__big,
+    &__small {
+        margin-top: 180px;
+
+        &-title {
+            margin-bottom: 40px;
+        }
+
+        &-item {
+            padding: 50px 30px;
+        }
+
+    }
+
+    &__small {
+        margin-bottom: 60px;
+    }
+
+}
