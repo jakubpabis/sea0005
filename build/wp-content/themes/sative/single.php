@@ -31,9 +31,9 @@ get_header(); ?>
 
 					<?php 
 					
-					if ( 'post' === get_post_type() ) : 
+					/* if ( 'post' === get_post_type() ) : 
 						wp_bootstrap_starter_posted_on(); 
-					endif;
+					endif; */
 
 					the_title( '<h1>', '</h1>' ); 
 					
