@@ -155,8 +155,13 @@
     }
 
     &__team,
-    &__clients {
+    &__clients,
+    &__testimonials {
         margin-top: 70px;
+    }
+
+    &__testimonials {
+        margin-bottom: 0!important;
     }
 
 }

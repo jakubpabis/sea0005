@@ -1,6 +1,8 @@
 .testimonials {
 
-    &__section {
+    &__section,
+    &__candidates,
+    &__clients {
 
         &-img {
             max-height: 450px;
@@ -68,6 +70,11 @@
 
         }
     
+    }
+
+    &__candidates,
+    &__clients {
+        margin-bottom: 150px;
     }
 
 }

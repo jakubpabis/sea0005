@@ -159,10 +159,14 @@ $query = new WP_Query( $args );
                                 <div class="row justify-content-center">
                                     <div class="col-lg-9">
                                         <div class="row">
+                                            <?php if(has_post_thumbnail()): ?>
                                             <div class="col-lg-2">
                                                 <img data-src="<?= get_the_post_thumbnail_url(); ?>" alt="" class="bg-cover lazy">
                                             </div>
                                             <div class="col-lg-10">
+                                            <?php else: ?>
+                                            <div class="col-12">
+                                            <?php endif; ?>
                                                 <i class="fas fa-quote-left"></i>
                                                 <?php the_content(); ?>
                                                 <span>

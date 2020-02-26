@@ -1331,8 +1331,13 @@ i {
 }
 
 .header__team,
-.header__clients {
+.header__clients,
+.header__testimonials {
 	margin-top: 70px;
+}
+
+.header__testimonials {
+	margin-bottom: 0 !important;
 }
 
 .home__middle {
@@ -1579,33 +1584,45 @@ i {
 	margin-bottom: 30px;
 }
 
-.testimonials__section-img {
+.testimonials__section-img,
+.testimonials__candidates-img,
+.testimonials__clients-img {
 	display: flex;
 	overflow: hidden;
 	max-height: 450px;
 	align-items: center;
 }
 
-.testimonials__section-content > .container {
+.testimonials__section-content > .container,
+.testimonials__candidates-content > .container,
+.testimonials__clients-content > .container {
 	margin-top: -80px;
 	padding-bottom: 80px;
 }
 
-.testimonials__section-content .carousel {
+.testimonials__section-content .carousel,
+.testimonials__candidates-content .carousel,
+.testimonials__clients-content .carousel {
 	-webkit-clip-path: polygon(0% 15px, 15px 0%, calc(100% - 15px) 0%, 100% 15px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0% calc(100% - 15px));
 	clip-path: polygon(0% 15px, 15px 0%, calc(100% - 15px) 0%, 100% 15px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0% calc(100% - 15px));
 }
 
-.testimonials__section-content .carousel-item {
+.testimonials__section-content .carousel-item,
+.testimonials__candidates-content .carousel-item,
+.testimonials__clients-content .carousel-item {
 	padding: 60px 0;
 }
 
-.testimonials__section-content .carousel-item img {
+.testimonials__section-content .carousel-item img,
+.testimonials__candidates-content .carousel-item img,
+.testimonials__clients-content .carousel-item img {
 	-webkit-clip-path: polygon(0% 15px, 15px 0%, calc(100% - 15px) 0%, 100% 15px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0% calc(100% - 15px));
 	clip-path: polygon(0% 15px, 15px 0%, calc(100% - 15px) 0%, 100% 15px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0% calc(100% - 15px));
 }
 
-.testimonials__section-content .carousel-item .fa-quote-left {
+.testimonials__section-content .carousel-item .fa-quote-left,
+.testimonials__candidates-content .carousel-item .fa-quote-left,
+.testimonials__clients-content .carousel-item .fa-quote-left {
 	font-size: 78px;
 	position: absolute;
 	z-index: -1;
@@ -1616,13 +1633,21 @@ i {
 }
 
 .testimonials__section-content .carousel-control-prev,
-.testimonials__section-content .carousel-control-next {
+.testimonials__section-content .carousel-control-next,
+.testimonials__candidates-content .carousel-control-prev,
+.testimonials__candidates-content .carousel-control-next,
+.testimonials__clients-content .carousel-control-prev,
+.testimonials__clients-content .carousel-control-next {
 	width: 10%;
 	opacity: 1;
 }
 
 .testimonials__section-content .carousel-control-prev i,
-.testimonials__section-content .carousel-control-next i {
+.testimonials__section-content .carousel-control-next i,
+.testimonials__candidates-content .carousel-control-prev i,
+.testimonials__candidates-content .carousel-control-next i,
+.testimonials__clients-content .carousel-control-prev i,
+.testimonials__clients-content .carousel-control-next i {
 	font-size: 20px;
 	line-height: 36px;
 	width: 36px;
@@ -1634,8 +1659,15 @@ i {
 	background-color: white;
 }
 
-.testimonials__section-content .carousel-control-next i {
+.testimonials__section-content .carousel-control-next i,
+.testimonials__candidates-content .carousel-control-next i,
+.testimonials__clients-content .carousel-control-next i {
 	text-indent: 4px;
+}
+
+.testimonials__candidates,
+.testimonials__clients {
+	margin-bottom: 150px;
 }
 
 .modal .modal-dialog {
