@@ -164,4 +164,13 @@
         margin-bottom: 0!important;
     }
 
+    &__contact {
+        max-height: 400px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    }
+
 }

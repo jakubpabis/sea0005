@@ -1340,6 +1340,15 @@ i {
 	margin-bottom: 0 !important;
 }
 
+.header__contact {
+	position: relative;
+	display: flex;
+	max-height: 400px;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+}
+
 .home__middle {
 	padding: 100px 0;
 }
