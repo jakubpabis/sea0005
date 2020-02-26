@@ -165,7 +165,8 @@
     }
 
     &__contact {
-        max-height: 400px;
+        min-height: 50vh;
+        max-height: 400px!important;
         position: relative;
         display: flex;
         align-items: center;

@@ -1343,7 +1343,8 @@ i {
 .header__contact {
 	position: relative;
 	display: flex;
-	max-height: 400px;
+	min-height: 50vh;
+	max-height: 400px !important;
 	align-items: center;
 	align-content: center;
 	justify-content: center;
