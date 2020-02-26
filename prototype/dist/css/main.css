@@ -851,6 +851,7 @@ a {
 
 ul {
 	margin: 0;
+	list-style-image: url('../img/cubecrossUL.svg');
 }
 
 ul li {
@@ -2287,6 +2288,7 @@ aside#chat .dog {
 	font-family: 'Roboto', sans-serif;
 	font-size: 17px;
 	font-weight: 300;
+	list-style-image: url('../img/cubecrossUL.svg');
 }
 
 .filtered-articles article ul li {

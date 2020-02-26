@@ -113,10 +113,10 @@
             font-family: $font-secondary;
             font-size: 17px;
             font-weight: 300;
+            list-style-image: url('../img/cubecrossUL.svg');
 
             li {
-                line-height: 1.44;
-                
+                line-height: 1.44;                
             }
 
         }

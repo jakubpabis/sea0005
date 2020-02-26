@@ -302,10 +302,12 @@ function add_job_category_taxonomies()
         ),
         // Control the slugs used for this taxonomy
         'rewrite' => array(
-            'slug' => 'job-categories', // This controls the base slug that will display before each term
+            'slug' => 'jobs/category', // This controls the base slug that will display before each term
             'with_front' => false, // Don't display the category base before "/locations/"
             'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
         ),
+        'hierarchical' => true,
+        'has_archive' => true
     ));
 }
 add_action( 'init', 'add_job_category_taxonomies', 0 );
@@ -340,10 +342,12 @@ function add_job_type_taxonomies()
         ),
         // Control the slugs used for this taxonomy
         'rewrite' => array(
-            'slug' => 'job-types', // This controls the base slug that will display before each term
+            'slug' => 'job/type', // This controls the base slug that will display before each term
             'with_front' => false, // Don't display the category base before "/locations/"
             'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
         ),
+        'hierarchical' => true,
+        'has_archive' => true
     ));
 }
 add_action( 'init', 'add_job_type_taxonomies', 0 );
@@ -371,10 +375,12 @@ function add_job_location_taxonomies()
         ),
         // Control the slugs used for this taxonomy
         'rewrite' => array(
-            'slug' => 'job-locations', // This controls the base slug that will display before each term
+            'slug' => 'job/location', // This controls the base slug that will display before each term
             'with_front' => false, // Don't display the category base before "/locations/"
             'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
         ),
+        'hierarchical' => true,
+        'has_archive' => true
     ));
 }
 add_action( 'init', 'add_job_location_taxonomies', 0 );
