@@ -1,0 +1,34 @@
+.contact {
+    padding: 70px 0 50px;
+
+    &__text {
+
+        &-title {
+
+        }
+
+        &-columns {
+
+            > div {
+                padding-top: 25px;
+                padding-bottom: 10px;
+            }
+
+            a {
+
+                &:hover {
+                    color: inherit;
+                }
+
+            }
+
+            .btn.navy {
+                margin-right: 5px;
+                color: $color-yellow!important;
+            }
+
+        }
+
+    }
+
+}

@@ -607,7 +607,7 @@ h5,
 	font-family: 'Fractul';
 	font-size: 17px;
 	font-weight: 400;
-	line-height: 1.25;
+	line-height: 1.64;
 }
 
 p,
@@ -738,13 +738,13 @@ p,
 }
 
 .btn__social i {
-	font-size: 20px;
+	font-size: 21px;
 	vertical-align: middle;
 }
 
 .btn__social.notched {
-	-webkit-clip-path: polygon(0% 5px, 5px 0%, calc(100% - 5px) 0%, 100% 5px, 100% calc(100% - 5px), calc(100% - 5px) 100%, 5px 100%, 0% calc(100% - 5px));
-	clip-path: polygon(0% 5px, 5px 0%, calc(100% - 5px) 0%, 100% 5px, 100% calc(100% - 5px), calc(100% - 5px) 100%, 5px 100%, 0% calc(100% - 5px));
+	-webkit-clip-path: polygon(0% 6px, 6px 0%, calc(100% - 6px) 0%, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0% calc(100% - 6px));
+	clip-path: polygon(0% 6px, 6px 0%, calc(100% - 6px) 0%, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0% calc(100% - 6px));
 }
 
 .btn__notched {
@@ -2515,6 +2515,24 @@ aside#chat .dog {
 
 .clients__small {
 	margin-bottom: 60px;
+}
+
+.contact {
+	padding: 70px 0 50px;
+}
+
+.contact__text-columns > div {
+	padding-top: 25px;
+	padding-bottom: 10px;
+}
+
+.contact__text-columns a:hover {
+	color: inherit;
+}
+
+.contact__text-columns .btn.navy {
+	margin-right: 5px;
+	color: #fdd963 !important;
 }
 
 .footer {

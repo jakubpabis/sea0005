@@ -781,6 +781,7 @@ $toTranslate = array(
     'More info',
     'Read more',
     'Topics',
+    'Contact us!',
     'Schedule a call or meeting'
 );
 
