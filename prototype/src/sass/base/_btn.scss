@@ -49,11 +49,15 @@
 
         }
 
+        &.full {
+            padding: 7px;
+        }
+
     }
 
     &__medium {
-        padding: 11px 16px;
-        font-size: 16px;
+        padding: 13px 20px;
+        font-size: 15px;
 
         &.icon {
             text-transform: none;

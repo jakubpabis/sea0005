@@ -12,19 +12,6 @@ $args = array(
 );
 $query = new WP_Query( $args );
 $post_no = $query->post_count;
-// $script = 'var $jobs = {'; 
-// if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); $helper = jobDisplayHelper(); 
-//     $script .= get_the_ID().':{'; 
-//     $script .= 'slug: "'.get_post_field('post_name', get_the_ID()).'", '; 
-//     $script .= 'name: "'.get_the_title().'", '; 
-//     $script .= 'link: "'.get_the_permalink().'", '; 
-//     $script .= '},'; 
-// endwhile; endif; 
-// $script .= '};'; 
-// file_put_contents( get_template_directory().'/inc/assets/js/jobs.js', $script);  
-// $output = \JShrink\Minifier::minify(file_get_contents(get_template_directory().'/inc/assets/js/jobs.js'));
-// file_put_contents(get_template_directory().'/inc/assets/js/jobs.min.js', $output); 
-wp_reset_postdata();
 ?>
 
 <header class="header__jobs">

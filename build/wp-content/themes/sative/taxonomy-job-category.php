@@ -6,23 +6,14 @@
 get_header();
 
 $args = array( 
+    'post_type' => 'jobs',
+    'post_status' => 'publish',
     'posts_per_page' => -1
 );
 $query = new WP_Query( $args );
 $post_no = $query->post_count;
-// $script = 'var $jobs = {'; 
-// if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); $helper = jobDisplayHelper(); 
-//     $script .= get_the_ID().':{'; 
-//     $script .= 'slug: "'.get_post_field('post_name', get_the_ID()).'", '; 
-//     $script .= 'name: "'.get_the_title().'", '; 
-//     $script .= 'link: "'.get_the_permalink().'", '; 
-//     $script .= '},'; 
-// endwhile; endif; 
-// $script .= '};'; 
-// file_put_contents( get_template_directory().'/inc/assets/js/jobs.js', $script);  
-// $output = \JShrink\Minifier::minify(file_get_contents(get_template_directory().'/inc/assets/js/jobs.js'));
-// file_put_contents(get_template_directory().'/inc/assets/js/jobs.min.js', $output); 
-wp_reset_postdata();
+// global $wp_query;
+// var_dump($wp_query->query_vars);
 ?>
 
 <header class="header__jobs">
@@ -71,10 +62,14 @@ wp_reset_postdata();
 </header>
 
 <?php 
-    $args = array( 
-        'posts_per_page' => 10
-    );
-    $query = new WP_Query( $args );
+$args = array( 
+    'post_type' => 'jobs',
+    'post_status' => 'publish',
+    'posts_per_page' => 10,
+    'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
+    get_query_var('taxonomy') => get_query_var('term')
+);
+$query = new WP_Query( $args );
 ?>
 
 <section class="jobs__list">
@@ -94,24 +89,38 @@ wp_reset_postdata();
                             <h3 class="title"><a href="<?= get_the_permalink(); ?>"><?= get_the_title(); ?></a></h3>
                         </div>
                         <div class="info">
+                            <?php if(get_field('location')): ?>
                             <div class="info__item">
                                 <i class="far fa-map-marker-alt"></i>
                                 <span class="text-size-medium location"><?= get_field('location'); ?></span>
                             </div>
+                            <?php endif; ?>
+                            <?php if($helper['type']): ?>
                             <div class="info__item">
                                 <i class="far fa-clock"></i>
                                 <span class="text-size-medium type"><?= $helper['type']; ?></span>
                             </div>
+                            <?php endif; ?>
+                            <?php if(get_field('salary_min') || get_field('salary_max')): ?>
                             <div class="info__item">
                                 <i class="far fa-euro-sign"></i>
                                 <span class="text-size-medium">
-                                    <number class="salarymin"><?= number_format(get_field('salary_min'), 0, ".", "."); ?></number> - <number class="salarymax"><?= number_format(get_field('salary_max'), 0, ".", "."); ?></number>
+                                    <number class="salarymin">
+                                        <?= number_format((int)get_field('salary_min'), 0, ".", "."); ?>
+                                    </number>
+                                    <?= get_field('salary_min') && get_field('salary_max') ? '&nbsp;-&nbsp;' : null ?>
+                                    <number class="salarymax">
+                                        <?= number_format((int)get_field('salary_max'), 0, ".", "."); ?>
+                                    </number>
                                 </span>
                             </div>
+                            <?php endif; ?>
+                            <?php if(get_field('industry')): ?>
                             <div class="info__item">
                                 <i class="far fa-industry"></i>
                                 <span class="text-size-medium industry"></span>
                             </div>
+                            <?php endif; ?>
                         </div>
                         <p class="text-size-small excerpt">
                             <?= get_the_excerpt(); ?>
@@ -120,7 +129,15 @@ wp_reset_postdata();
                     </article>
                     <?php endwhile; endif; ?>
                     <nav class="pagination">
-                    <?php next_posts_link( 'Load more' ); ?>
+                    <?php 
+                    $big = 999999999; // need an unlikely integer
+                    echo paginate_links( array(
+                        'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+                        'format' => '?paged=%#%',
+                        'current' => max( 1, get_query_var('paged') ),
+                        'total' => $query->max_num_pages
+                    ) ); 
+                    ?>
                     </nav>
                 </main>
             </div>

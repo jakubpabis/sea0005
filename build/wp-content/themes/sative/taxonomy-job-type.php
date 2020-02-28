@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Job list
+ * Template for displaying jobs
  */
 
 get_header();
@@ -12,6 +12,8 @@ $args = array(
 );
 $query = new WP_Query( $args );
 $post_no = $query->post_count;
+// global $wp_query;
+// var_dump($wp_query->query_vars);
 ?>
 
 <header class="header__jobs">
@@ -64,7 +66,8 @@ $args = array(
     'post_type' => 'jobs',
     'post_status' => 'publish',
     'posts_per_page' => 10,
-    'paged' => get_query_var('paged') ? get_query_var('paged') : 1
+    'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
+    get_query_var('taxonomy') => get_query_var('term')
 );
 $query = new WP_Query( $args );
 ?>

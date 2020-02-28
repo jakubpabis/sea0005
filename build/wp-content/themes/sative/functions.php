@@ -244,7 +244,7 @@ $args = array(
     // Features this CPT supports in Post Editor
     'supports'            => array( 'title', 'editor', 'revisions', 'custom-fields' ),
     // You can associate this CPT with a taxonomy or custom taxonomy. 
-    'taxonomies'          => array( 'job-categories', 'job-types', 'job-locations' ),
+    'taxonomies'          => array( 'job-category', 'job-type', 'job-location' ),
     /* A hierarchical CPT is like Pages and can have
     * Parent and child items. A non-hierarchical CPT
     * is like Posts.
@@ -271,7 +271,7 @@ register_post_type( 'jobs', $args );
 * Containing our post type registration is not 
 * unnecessarily executed. 
 */
-add_action( 'init', 'custom_post_type_jobs', 0 );
+add_action( 'init', 'custom_post_type_jobs', 25 );
 
 
 /**
@@ -303,14 +303,15 @@ function add_job_category_taxonomies()
         // Control the slugs used for this taxonomy
         'rewrite' => array(
             'slug' => 'jobs/category', // This controls the base slug that will display before each term
-            'with_front' => false, // Don't display the category base before "/locations/"
+            'with_front' => true, // Don't display the category base before "/locations/"
             'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
         ),
+        'query_var'    => true,
         'hierarchical' => true,
         'has_archive' => true
     ));
 }
-add_action( 'init', 'add_job_category_taxonomies', 0 );
+add_action( 'init', 'add_job_category_taxonomies', 10 );
 
 
 /**
@@ -342,15 +343,16 @@ function add_job_type_taxonomies()
         ),
         // Control the slugs used for this taxonomy
         'rewrite' => array(
-            'slug' => 'job/type', // This controls the base slug that will display before each term
-            'with_front' => false, // Don't display the category base before "/locations/"
+            'slug' => 'jobs/type', // This controls the base slug that will display before each term
+            'with_front' => true, // Don't display the category base before "/locations/"
             'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
         ),
+        'query_var'    => true,
         'hierarchical' => true,
         'has_archive' => true
     ));
 }
-add_action( 'init', 'add_job_type_taxonomies', 0 );
+add_action( 'init', 'add_job_type_taxonomies', 10 );
 
 function add_job_location_taxonomies() 
 {
@@ -375,15 +377,16 @@ function add_job_location_taxonomies()
         ),
         // Control the slugs used for this taxonomy
         'rewrite' => array(
-            'slug' => 'job/location', // This controls the base slug that will display before each term
-            'with_front' => false, // Don't display the category base before "/locations/"
+            'slug' => 'jobs/location', // This controls the base slug that will display before each term
+            'with_front' => true, // Don't display the category base before "/locations/"
             'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
         ),
+        'query_var'    => true,
         'hierarchical' => true,
         'has_archive' => true
     ));
 }
-add_action( 'init', 'add_job_location_taxonomies', 0 );
+add_action( 'init', 'add_job_location_taxonomies', 10 );
 
 
 
@@ -804,11 +807,37 @@ function jobDisplayHelper()
 }
 
 
+function hierarchical_tax_tree( $cat, $tax ) {
+    $next = get_categories('taxonomy=' . $tax . '&hide_empty=false&parent=' . $cat);
+    if( $next ) :    
+        echo '<ul>';
+        foreach( $next as $cat ) :
+            if(get_query_var('term') == $cat->category_nicename) {
+                echo '<li class="active">';
+            } else {
+                echo '<li>';
+            }
+            echo '<a href="' . get_category_link( $cat->term_id ) . '">' . $cat->name . '&nbsp;<small>('. $cat->count . ')</small><i class="far fa-times"></i></a>'; 
+            hierarchical_tax_tree( $cat->term_id, $tax );
+            echo '</li>';
+        endforeach;   
+        echo '</ul>'; 
+    endif;
+    
+}  
 
 $toTranslate = array(
     'Contact',
     'Get in touch',
     'Share this content',
+    'Filter jobs',
+    'Categories',
+    'Salary range',
+    'Location',
+    'Industry type',
+    'Job type',
+    'Hot skills',
+    'Filter',
     'open jobs',
     'jobs found',
     'jobs showing',
@@ -816,6 +845,24 @@ $toTranslate = array(
     'Read more',
     'Topics',
     'Contact us!',
+    'Apply here',
+    'Apply with:',
+    'Male',
+    'Female',
+    'Name',
+    'Email',
+    'Phone',
+    'Date of birth',
+    'City',
+    'CV',
+    'Upload',
+    'Motivation',
+    'Send application',
+    'I hereby agree with the',
+    'Privacy Policy',
+    'Back',
+    'Executive search consultant',
+    'Show all jobs',
     'Schedule a call or meeting'
 );
 
@@ -836,3 +883,105 @@ function my_remove_admin_menus() {
 //         return $args;
 //     }
 // }
+
+// function taxonomy_slug_rewrite($wp_rewrite) {
+//     $rules = array();
+//     // get all custom taxonomies
+//     $taxonomies = get_taxonomies(array('_builtin' => false), 'objects');
+//     // get all custom post types
+//     $post_types = get_post_types(array('public' => true, '_builtin' => false), 'objects');
+
+//     foreach ($post_types as $post_type) {
+//         foreach ($taxonomies as $taxonomy) {
+
+//             // go through all post types which this taxonomy is assigned to
+//             foreach ($taxonomy->object_type as $object_type) {
+
+//                 // check if taxonomy is registered for this custom type
+//                 if ($object_type == $post_type->rewrite['slug']) {
+
+//                     // get category objects
+//                     $terms = get_categories(array('type' => $object_type, 'taxonomy' => $taxonomy->name, 'hide_empty' => 0));
+
+//                     // make rules
+//                     foreach ($terms as $term) {
+//                         $rules[$object_type . '/' . $term->slug . '/?$'] = 'index.php?' . $term->taxonomy . '=' . $term->slug;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     // merge with global rules
+//     $wp_rewrite->rules = $rules + $wp_rewrite->rules;
+// }
+// add_filter('generate_rewrite_rules', 'taxonomy_slug_rewrite');
+
+
+function resources_cpt_generating_rule($wp_rewrite) 
+{
+    $rules = array();
+    $terms = get_terms( array(
+        'taxonomy' => 'job-category',
+        'hide_empty' => false,
+    ) );
+    $post_type = 'jobs';
+    foreach ($terms as $term) {    
+        $rules['vacatures/' . $term->slug . '/([^/]*)$'] = 'index.php?post_type=' . $post_type. '&job-category=$matches[1]&name=$matches[1]';
+        $rules['nl/vacatures/' . $term->slug . '/([^/]*)$'] = 'index.php?post_type=' . $post_type. '&job-category=$matches[1]&name=$matches[1]';
+        $rules['jobs/' . $term->slug . '/([^/]*)$'] = 'index.php?post_type=' . $post_type. '&job-category=$matches[1]&name=$matches[1]';
+        $rules['en/jobs/' . $term->slug . '/([^/]*)$'] = 'index.php?post_type=' . $post_type. '&job-category=$matches[1]&name=$matches[1]';
+    }
+    // merge with global rules
+    $wp_rewrite->rules = $rules + $wp_rewrite->rules;
+}
+add_filter('generate_rewrite_rules', 'resources_cpt_generating_rule');
+
+function change_link( $permalink, $post ) 
+{
+    if( $post->post_type == 'jobs' ) {
+        $resource_terms = get_the_terms( $post, 'job-category' );
+        $term_slug = '';
+        if( ! empty( $resource_terms ) ) {
+            foreach ( $resource_terms as $term ) {
+                // The featured resource will have another category which is the main one
+                if( $term->slug == 'featured' ) {
+                    continue;
+                }
+                $term_slug = $term->slug;
+                break;
+            }
+        }
+        if(pll_current_language() == 'nl') {
+            $permalink = "/nl/vacatures/" . $term_slug . '/' . $post->post_name;
+        } else {
+            $permalink = "/en/jobs/" . $term_slug . '/' . $post->post_name;
+        }
+    }
+    return $permalink;
+}
+add_filter('post_type_link', 'change_link', 10, 2);
+
+// function change_link2( $permalink, $post ) 
+// {
+//     if( is_tax() ) {
+//         $resource_terms = get_the_terms( $post, 'job-category' );
+//         $term_slug = '';
+//         if( ! empty( $resource_terms ) ) {
+//             foreach ( $resource_terms as $term ) {
+//                 // The featured resource will have another category which is the main one
+//                 if( $term->slug == 'featured' ) {
+//                     continue;
+//                 }
+//                 $term_slug = $term->slug;
+//                 break;
+//             }
+//         }
+//         if(pll_current_language() == 'nl') {
+//             $permalink = "/nl/vacatures/category" . $term_slug;
+//         } else {
+//             $permalink = "/en/jobs/category" . $term_slug;
+//         }
+//     }
+//     return $permalink;
+// }
+// add_filter('post_link_category', 'change_link2', 10, 2);

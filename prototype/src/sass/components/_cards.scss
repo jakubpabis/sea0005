@@ -43,6 +43,11 @@
             overflow: hidden;
             display: flex;
             align-items: center;
+
+            &.job-single {
+                max-height: 320px;
+            }
+
         }
 
         &-content {
@@ -50,6 +55,37 @@
             > .container {
                 margin-top: -80px;
                 padding-bottom: 50px;
+            }
+
+            &.job-single {
+
+                .card {
+                    display: block;
+
+                    .title {
+                        margin-bottom: 20px;
+
+                        a {
+
+                            &:hover {
+                                color: inherit;
+                            }
+
+                        }
+
+                    }
+
+                    .info {
+                        margin-bottom: 30px;
+
+                        &__item {
+                            margin-bottom: 5px;
+                        }
+
+                    }
+
+                }
+
             }
 
             .card {
