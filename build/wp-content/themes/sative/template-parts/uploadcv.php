@@ -79,8 +79,8 @@
                                 <label for="city">City</label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
-                                <input type="text" name="cv">
-                                <label for="cv">CV</label>
+                                <label class="full bg-white" for="cv"><?php pll_e( 'CV' ); ?><span><?= pll_e( 'Upload' ); ?></span></label>
+                                <input type="file" name="cv">
                             </div>
                             <div class="col-12 ugly pt-2 pb-3">
                                 <textarea name="motivation"></textarea>

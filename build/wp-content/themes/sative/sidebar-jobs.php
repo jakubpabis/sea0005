@@ -60,8 +60,8 @@
                 <label for="city"><?php pll_e( 'City' ); ?></label>
             </div>
             <div class="col-lg-12 ugly pt-2">
-                <input type="text" name="cv">
-                <label for="cv"><?php pll_e( 'CV' ); ?></label>
+                <label class="full bg-white" for="cv"><?php pll_e( 'CV' ); ?> <span><?= pll_e( 'Upload' ); ?></span></label>
+                <input type="file" name="cv">
             </div>
             <div class="col-lg-12 ugly pt-2">
                 <textarea name="motivation"></textarea>

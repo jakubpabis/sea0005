@@ -3785,10 +3785,32 @@ function homeHashtags()
 	});
 }
 
+function filterSelect()
+{
+	$('#filter').find('.filters').find('li').find('input').on('change', function() {
+		if($(this).parent().parent().hasClass('active')) {
+			$(this).parent().parent().removeClass('active');
+			$(this).parent().next().find('li').removeClass('active').find('input').prop('checked', false);
+		} else {
+			$(this).parent().parent().addClass('active');
+		}
+	});
+	$('#filter').find('.filter-title').on('click', function() {
+		if($(this).hasClass('active')) {
+			$(this).removeClass('active').parent().removeClass('active');
+			$(this).next('.filters').find('li').find('input').prop('checked', false).parent().parent().removeClass('active');
+			console.log($(this).next('.filters').find('li').find('input:checked').length);
+		} else {
+			$(this).addClass('active').parent().addClass('active');
+		}
+	});
+}
+
 $(document).ready(function() {
 	
 	lazyImages();
 	uglyInput();
+	filterSelect();
 
 	if($('.home__middle-hashtags').length != 0) {
 		homeHashtags();
@@ -3814,3 +3836,23 @@ $(window).on('load resize', function() {
 	// 	$('.navigation__menu').removeClass('dropdown-menu dropdown-menu-right').removeAttr('style').removeAttr('x-placement');
 	// }
 });
+
+// jQuery(function($){
+// 	$('#filter').submit(function(){
+// 		var filter = $('#filter');
+// 		$.ajax({
+// 			url:filter.attr('action'),
+// 			data:filter.serialize(), // form data
+// 			type:filter.attr('method'), // POST
+// 			beforeSend:function(xhr){
+// 				filter.find('button').text('Processing...'); // changing the button label
+// 			},
+// 			success:function(data){
+// 				filter.find('button').text('Filter'); // changing the button label back
+// 				$('main.jobs__list-items').html(data); // insert data
+// 				$('nav.pagination').trigger('yith-wcan-ajax-filtered');
+// 			}
+// 		});
+// 		return false;
+// 	});
+// });

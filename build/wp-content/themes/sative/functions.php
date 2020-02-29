@@ -537,12 +537,16 @@ function add_testimonial_taxonomies()
     ));
 }
 add_action( 'init', 'add_testimonial_taxonomies', 0 );
-
-
-
-
-
 add_action( 'init', 'custom_post_type_testimonials', 0 );
+
+
+function term_has_parent($termid, $tax){
+    $term = get_term($termid, $tax);
+    if ($term->parent > 0){
+        return $term->parent;
+    }
+    return false;
+}
 
 function slugify($text)
 {
@@ -822,9 +826,185 @@ function hierarchical_tax_tree( $cat, $tax ) {
             echo '</li>';
         endforeach;   
         echo '</ul>'; 
-    endif;
-    
+    endif;    
 }  
+
+
+function hierarchical_tax_tree_filter( $cat, $tax ) {
+    $next = get_categories('taxonomy=' . $tax . '&hide_empty=false&parent=' . $cat);
+    if( $next ) :    
+        echo '<ul>';
+        foreach( $next as $cat ) :
+            if(get_query_var('term') == $cat->category_nicename) {
+                echo '<li class="active">';
+            } else {
+                echo '<li>';
+            }
+            echo '<span>' . $cat->name . '&nbsp;<small>('. $cat->count . ')</small><i class="far fa-times"></i><input type="checkbox" name="' . $tax . '[]" value="' . $cat->term_id . '"></span>'; 
+            hierarchical_tax_tree_filter( $cat->term_id, $tax );
+            echo '</li>';
+        endforeach;   
+        echo '</ul>'; 
+    endif;    
+}
+
+
+add_action('wp_ajax_myfilter', 'jobs_filter_function'); // wp_ajax_{ACTION HERE} 
+add_action('wp_ajax_nopriv_myfilter', 'jobs_filter_function');
+ 
+
+function filterHelper($els, $tax)
+{
+    $arr = $els;
+    foreach($arr as $el) {
+        if(term_has_parent($el, $tax) !== false) {
+            $needle = term_has_parent($el, $tax);
+            $stack = array_search($needle, $arr);
+            if($stack !== false) {
+                array_splice($arr, $stack, 1);
+            }
+        }
+    }
+    return $arr;
+}
+
+function jobs_filter_function()
+{
+	$args = array(
+		'post_type' => 'jobs',
+        'post_status' => 'publish',
+        'posts_per_page' => 10,
+        'paged' => get_query_var('paged') ? get_query_var('paged') : 1
+    );
+    
+	// for taxonomies / categories
+    if( isset( $_POST['job-category'] ) ) {
+        
+        if(count($_POST['job-category']) > 1) {
+            $args['tax_query'] = array(
+                'relation' => 'OR',
+            );
+            foreach(filterHelper($_POST['job-category'], 'job-category') as $termID) {
+                $arr = array(
+                    'taxonomy' => 'job-category',
+                    'field' => 'id',
+                    'terms' => $termID,
+                );
+                array_push($args['tax_query'], $arr);
+            }
+        } else {
+            $args['tax_query'] = array(
+                array(
+                    'taxonomy' => 'job-category',
+                    'field' => 'id',
+                    'terms' => $_POST['job-category'],
+                )
+            );
+        }
+        //var_dump($args['tax_query']);
+    }
+ 
+	// create $args['meta_query'] array if one of the following fields is filled
+	if( isset( $_POST['price_min'] ) && $_POST['price_min'] || isset( $_POST['price_max'] ) && $_POST['price_max'] || isset( $_POST['featured_image'] ) && $_POST['featured_image'] == 'on' )
+		$args['meta_query'] = array( 'relation'=>'AND' ); // AND means that all conditions of meta_query should be true
+ 
+	// if both minimum price and maximum price are specified we will use BETWEEN comparison
+	if( isset( $_POST['price_min'] ) && $_POST['price_min'] && isset( $_POST['price_max'] ) && $_POST['price_max'] ) {
+		$args['meta_query'][] = array(
+			'key' => '_price',
+			'value' => array( $_POST['price_min'], $_POST['price_max'] ),
+			'type' => 'numeric',
+			'compare' => 'between'
+		);
+	} else {
+		// if only min price is set
+		if( isset( $_POST['price_min'] ) && $_POST['price_min'] )
+			$args['meta_query'][] = array(
+				'key' => '_price',
+				'value' => $_POST['price_min'],
+				'type' => 'numeric',
+				'compare' => '>'
+			);
+ 
+		// if only max price is set
+		if( isset( $_POST['price_max'] ) && $_POST['price_max'] )
+			$args['meta_query'][] = array(
+				'key' => '_price',
+				'value' => $_POST['price_max'],
+				'type' => 'numeric',
+				'compare' => '<'
+			);
+	}
+
+	$query = new WP_Query( $args );
+	if( $query->have_posts() ) :
+		while( $query->have_posts() ): $query->the_post(); $helper = jobDisplayHelper(); ?>
+			<article class="card bg-lgrey jobs__list-item">
+                <div class="job-title">
+                    <?php if(strlen($helper['supCatName']) > 0) : ?>
+                        <span class="icon" data-type="<?= $helper['supCatName']; ?>"></span>
+                    <?php endif; ?>
+                    <h3 class="title"><a href="<?= get_the_permalink(); ?>"><?= get_the_title(); ?></a></h3>
+                </div>
+                <div class="info">
+                    <?php if(get_field('location')): ?>
+                    <div class="info__item">
+                        <i class="far fa-map-marker-alt"></i>
+                        <span class="text-size-medium location"><?= get_field('location'); ?></span>
+                    </div>
+                    <?php endif; ?>
+                    <?php if($helper['type']): ?>
+                    <div class="info__item">
+                        <i class="far fa-clock"></i>
+                        <span class="text-size-medium type"><?= $helper['type']; ?></span>
+                    </div>
+                    <?php endif; ?>
+                    <?php if(get_field('salary_min') || get_field('salary_max')): ?>
+                    <div class="info__item">
+                        <i class="far fa-euro-sign"></i>
+                        <span class="text-size-medium">
+                            <number class="salarymin">
+                                <?= number_format((int)get_field('salary_min'), 0, ".", "."); ?>
+                            </number>
+                            <?= get_field('salary_min') && get_field('salary_max') ? '&nbsp;-&nbsp;' : null ?>
+                            <number class="salarymax">
+                                <?= number_format((int)get_field('salary_max'), 0, ".", "."); ?>
+                            </number>
+                        </span>
+                    </div>
+                    <?php endif; ?>
+                    <?php if(get_field('industry')): ?>
+                    <div class="info__item">
+                        <i class="far fa-industry"></i>
+                        <span class="text-size-medium industry"></span>
+                    </div>
+                    <?php endif; ?>
+                </div>
+                <p class="text-size-small excerpt">
+                    <?= get_the_excerpt(); ?>
+                </p>
+                <a href="<?= get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e( 'More info' ); ?></a>
+            </article>
+        <?php endwhile; ?>
+        <nav class="pagination">
+        <?php 
+        $big = 999999999; // need an unlikely integer
+        echo paginate_links( array(
+            'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+            'format' => '?paged=%#%',
+            'current' => max( 1, get_query_var('paged') ),
+            'total' => $query->max_num_pages
+        ) ); 
+        ?>
+        </nav>
+		<?php wp_reset_postdata();
+	else :
+		pll_e('No jobs found...');
+	endif;
+ 
+	die();
+}
+
 
 $toTranslate = array(
     'Contact',
@@ -863,6 +1043,7 @@ $toTranslate = array(
     'Back',
     'Executive search consultant',
     'Show all jobs',
+    'No jobs found...',
     'Schedule a call or meeting'
 );
 

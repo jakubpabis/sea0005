@@ -33,8 +33,8 @@ get_header(); ?>
 					endif;
 
                     ?>
-                    
-                    <?php if(get_field('recruiter')): $recruiter = get_field('recruiter')[0]; ?>
+
+                    <?php if(is_array(get_field('recruiter'))): $recruiter = get_field('recruiter')[0]; ?>
 
                     <aside class="jobs__single-recruiter">
                         <h3><?php pll_e( 'Executive search consultant' ); ?></h3>

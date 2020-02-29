@@ -59,13 +59,25 @@ $post_no = $query->post_count;
     </div>
 </header>
 
-<?php 
+<?php
 $args = array( 
     'post_type' => 'jobs',
     'post_status' => 'publish',
     'posts_per_page' => 10,
     'paged' => get_query_var('paged') ? get_query_var('paged') : 1
 );
+//var_dump($_GET);
+if(isset($_GET['job-category']) && $_GET['job-category']) {
+    $args['tax_query'] = array(
+        'relation' => 'OR',
+        array(
+            'taxonomy' => 'job-category',
+            'field' => 'id',
+            'terms' => $_GET['job-category'],
+        ) 
+    );
+}
+
 $query = new WP_Query( $args );
 ?>
 

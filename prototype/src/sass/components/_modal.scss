@@ -90,6 +90,21 @@
                 font-style: italic;
                 min-height: 40px;
 
+                &.full {
+                    max-width: 100%;
+                    width: calc(100% - 30px);
+                    display: flex;
+                    justify-content: space-between;
+                    text-align: left!important;
+                    cursor: pointer!important;
+
+                    span {
+                        font-style: normal!important;
+                        text-decoration: underline;
+                    }
+
+                }
+
                 span {
                     font-weight: 600;
                     font-size: 14px;
@@ -116,6 +131,14 @@
                         opacity: 0;
                     }
 
+                }
+
+                &[type="file"] {
+                    height: 40px;
+                    width: 100%;
+                    background-color: white;
+                    opacity: 0;
+                    cursor: pointer!important;
                 }
 
             }
