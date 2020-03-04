@@ -27,6 +27,56 @@
 
         }
 
+        .filter-group {
+
+            &.active {
+                margin-bottom: 30px;
+
+                .filters {
+                    display: block;
+                }
+
+            }
+
+            .filters {
+                display: none;
+            }
+
+            .filter-title {
+                font-weight: 600;
+                margin-bottom: 10px;
+                display: block;
+                cursor: pointer;
+
+                i {
+                    margin-left: 10px;
+
+                    &.fa-minus {
+                        display: none;
+                    }
+
+                }
+
+                &.active {
+
+                    i {
+
+                        &.fa-minus {
+                            display: inline-block;
+                        }
+
+                        &.fa-plus {
+                            display: none;
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
     }
 
 }

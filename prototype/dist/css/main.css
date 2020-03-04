@@ -2889,6 +2889,41 @@ aside#chat .dog {
 	margin-right: 15px;
 }
 
+.knowledge__filters .filter-group.active {
+	margin-bottom: 30px;
+}
+
+.knowledge__filters .filter-group.active .filters {
+	display: block;
+}
+
+.knowledge__filters .filter-group .filters {
+	display: none;
+}
+
+.knowledge__filters .filter-group .filter-title {
+	font-weight: 600;
+	display: block;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+
+.knowledge__filters .filter-group .filter-title i {
+	margin-left: 10px;
+}
+
+.knowledge__filters .filter-group .filter-title i.fa-minus {
+	display: none;
+}
+
+.knowledge__filters .filter-group .filter-title.active i.fa-minus {
+	display: inline-block;
+}
+
+.knowledge__filters .filter-group .filter-title.active i.fa-plus {
+	display: none;
+}
+
 .contact {
 	padding: 70px 0 50px;
 }
