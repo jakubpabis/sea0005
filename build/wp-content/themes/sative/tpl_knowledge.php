@@ -73,7 +73,7 @@ $query = new WP_Query( $args );
                         endif;
                         ?>
                         <?php $i = 0; foreach(get_categories() as $cat): ?>
-                            <?php if($cat->parent === $know): ?>
+                            <?php if($cat->parent === $know->term_id): ?>
                                 <?= $i === 0 ? null : '&nbsp;|&nbsp;' ?><a href=""><?= $cat->name; ?></a>
                             <?php endif; ?>
                         <?php $i++; endforeach; ?>
@@ -111,7 +111,7 @@ $query = new WP_Query( $args );
                     </h3>
                     <form action="" method="GET" id="filter">
                     <?php foreach(get_categories() as $cat): ?>
-                        <?php if($cat->parent === $know): ?>
+                        <?php if($cat->parent === $know->term_id): ?>
                         <div class="filter-group active">
                             <span class="filter-title active">
                                 <?php $cat->name; ?>
