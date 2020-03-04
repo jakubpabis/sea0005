@@ -75,8 +75,8 @@ $query = new WP_Query( $args );
                         <?php $i = 0; foreach(get_categories() as $cat): ?>
                             <?php if($cat->parent === $know->term_id): ?>
                                 <?= $i === 0 ? null : '&nbsp;|&nbsp;' ?><a href=""><?= $cat->name; ?></a>
-                            <?php endif; ?>
-                        <?php $i++; endforeach; ?>
+                            <?php $i++; endif; ?>
+                        <?php endforeach; ?>
                         </h4>
                     <?php endif; ?>
                     <?php if(has_excerpt()):
