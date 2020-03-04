@@ -44,10 +44,10 @@ $post_no = $query->post_count;
             </div>
             <div class="offset-lg-1 col-lg-5">
                 <div class="triangle-left"></div>
-                <input type="text" placeholder="Enter job title here">
+                <input type="text" placeholder="<?php pll_e('Enter job title here'); ?>">
             </div>
             <div class="col-lg-6">
-                <input class="location" type="text" placeholder="Enter job location">
+                <input class="location" type="text" placeholder="<?php pll_e('Enter job location'); ?>">
                 <button type="submit" class="btn btn__notched"><i class="far fa-search"></i></button>
             </div>
             <div class="col-12 text-right">

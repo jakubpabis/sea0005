@@ -1324,6 +1324,10 @@ i {
 	background-color: #ec6278;
 }
 
+.header__jobs-search .btn.knowledge {
+	margin-left: -67px;
+}
+
 .header__article {
 	display: flex;
 	overflow: hidden;

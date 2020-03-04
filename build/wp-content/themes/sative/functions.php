@@ -1044,7 +1044,12 @@ $toTranslate = array(
     'Executive search consultant',
     'Show all jobs',
     'No jobs found...',
-    'Schedule a call or meeting'
+    'Schedule a call or meeting',
+    'Search our knowledge base. We have tons of useful articles for you!',
+    'articles found',
+    'Enter job title here',
+    'Enter job location',
+    'Filter by topic'
 );
 
 foreach($toTranslate as $string) {
