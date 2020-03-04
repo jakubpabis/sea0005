@@ -2889,21 +2889,9 @@ aside#chat .dog {
 	margin-right: 15px;
 }
 
-.knowledge__filters .filter-group.active {
-	margin-bottom: 30px;
-}
-
-.knowledge__filters .filter-group.active .filters {
-	display: block;
-}
-
-.knowledge__filters .filter-group .filters {
-	display: none;
-}
-
 .knowledge__filters .filter-group .filter-title {
 	font-weight: 600;
-	display: block;
+	display: inline-block;
 	margin-bottom: 10px;
 	cursor: pointer;
 }
@@ -2914,6 +2902,16 @@ aside#chat .dog {
 
 .knowledge__filters .filter-group .filter-title i.fa-minus {
 	display: none;
+}
+
+.knowledge__filters .filter-group .filter-title.active {
+	padding: 5px 10px;
+	color: white;
+	background-color: #183153;
+}
+
+.knowledge__filters .filter-group .filter-title.active i {
+	color: white;
 }
 
 .knowledge__filters .filter-group .filter-title.active i.fa-minus {

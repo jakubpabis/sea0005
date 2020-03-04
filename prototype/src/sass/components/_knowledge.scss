@@ -29,23 +29,10 @@
 
         .filter-group {
 
-            &.active {
-                margin-bottom: 30px;
-
-                .filters {
-                    display: block;
-                }
-
-            }
-
-            .filters {
-                display: none;
-            }
-
             .filter-title {
                 font-weight: 600;
                 margin-bottom: 10px;
-                display: block;
+                display: inline-block;
                 cursor: pointer;
 
                 i {
@@ -58,8 +45,12 @@
                 }
 
                 &.active {
+                    background-color: $color-navy;
+                    padding: 5px 10px;
+                    color: white;
 
                     i {
+                        color: white;
 
                         &.fa-minus {
                             display: inline-block;
