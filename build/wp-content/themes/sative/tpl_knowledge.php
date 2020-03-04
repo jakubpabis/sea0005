@@ -112,9 +112,9 @@ $query = new WP_Query( $args );
                     <form action="" method="GET" id="filter">
                     <?php foreach(get_categories() as $cat): ?>
                         <?php if($cat->parent === $know->term_id): ?>
-                        <div class="filter-group active">
-                            <span class="filter-title active">
-                                <?php $cat->name; ?>
+                        <div class="filter-group">
+                            <span class="filter-title">
+                                <?= $cat->name; ?>
                                 <i class="fas fa-plus"></i>
                                 <i class="fas fa-minus"></i>
                                 <input style="opacity: 0; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 9;" type="checkbox" name="category[]" value="<?= $cat->term_id; ?>">
