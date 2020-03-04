@@ -41,7 +41,7 @@ get_header(); ?>
                         <div class="row recruiter">
                             <div class="col-lg-3">
                                 <div class="recruiter-img">
-                                    <img src="<?= get_the_post_thumbnail_url($recruiter->ID); ?>" alt="" class="bg-cover">
+                                    <img data-src="<?= get_the_post_thumbnail_url($recruiter->ID); ?>" alt="" class="lazy bg-cover">
                                 </div>
                             </div>
                             <div class="col-lg-auto">

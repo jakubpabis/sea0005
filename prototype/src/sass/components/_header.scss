@@ -27,6 +27,15 @@
             background-color: white;
             padding: 40px 65px;
             position: relative;            
+
+            h1 {
+
+                span {
+                    padding: 0 5px;
+                }
+
+            }
+
         }
 
         .btns {
@@ -92,6 +101,10 @@
             position: relative;
             margin-top: 50px;
             margin-bottom: 10px;
+
+            &.knowledge {
+                margin-top: 90px;
+            }
 
             .triangle-left {
                 position: absolute;
@@ -165,6 +178,20 @@
     &__generic {
         margin-top: 70px;
     }
+
+    &__generic {
+
+        h1 {
+
+            span {
+                padding: 0 5px;
+            }
+
+        }
+
+    }
+
+    &
 
     &__testimonials {
         margin-bottom: 0!important;

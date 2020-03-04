@@ -1049,7 +1049,12 @@ $toTranslate = array(
     'articles found',
     'Enter job title here',
     'Enter job location',
-    'Filter by topic'
+    'Filter by topic',
+    'Contact',
+    'Recent jobs',
+    'Hot skills',
+    'Subscribe to our newsletter',
+    'Interested in instantly receiving the latest Search X Recruitment jobs within your area of expertise?'
 );
 
 foreach($toTranslate as $string) {

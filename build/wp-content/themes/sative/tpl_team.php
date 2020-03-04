@@ -131,7 +131,7 @@ get_template_part( 'template-parts/breadcrumbs' ); ?>
                         <div class="col-lg-5">
                             <?php if(has_post_thumbnail()): ?>
                             <div class="team__item-img">
-                                <img class="bg-cover" src="<?= get_the_post_thumbnail_url(); ?>" alt="">
+                                <img class="lazy bg-cover" data-src="<?= get_the_post_thumbnail_url(); ?>" alt="">
                             </div>
                             <?php endif; ?>
                         </div>

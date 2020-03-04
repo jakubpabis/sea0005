@@ -2,9 +2,9 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <object type="image/svg+xml" data="<?= get_template_directory_uri(); ?>/assets/img/cubecross-close.svg" width="40" height="40">
-                    <img src="<?= get_template_directory_uri(); ?>/assets/img/cubecross-close.svg" alt="" width="40" height="40">
-                </object>
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M30.3884 34.2353L20.1176 23.9745L9.84745 34.2353L6 30.3939L16.2713 20.1321L16.2568 20.1171L16.2713 20.1027L6.00107 9.84138L9.84638 6L20.1176 16.2597L30.3889 6L34.2348 9.84138L23.964 20.1027L23.979 20.1171L23.964 20.1321L34.2353 30.3939L30.3884 34.2353ZM0 40H40V0H0V40Z" fill="#EC6278"/>
+                </svg>
             </button>
             <div class="modal-container">
                 <div class="modal-header">

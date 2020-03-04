@@ -45,7 +45,7 @@ get_template_part( 'template-parts/breadcrumbs' ); ?>
         <div class="row align-items-center justify-content-center">
         <?php while(have_rows('big_clients')): the_row(); ?>
             <div class="col-lg-4 clients__big-item">
-                <img src="<?= get_sub_field('image')['sizes']['medium_large']; ?>" alt="<?= get_sub_field('image')['alt']; ?>" class="bg-cover">
+                <img data-src="<?= get_sub_field('image')['sizes']['medium_large']; ?>" alt="<?= get_sub_field('image')['alt']; ?>" class="lazy bg-cover">
             </div>
         <?php endwhile; ?>
         </div>
@@ -68,7 +68,7 @@ get_template_part( 'template-parts/breadcrumbs' ); ?>
         <div class="row align-items-center justify-content-center">
         <?php while(have_rows('small_clients')): the_row(); ?>
             <div class="col-lg-3 clients__small-item">
-                <img src="<?= get_sub_field('image')['sizes']['medium_large']; ?>" alt="<?= get_sub_field('image')['alt']; ?>" class="bg-cover">
+                <img data-src="<?= get_sub_field('image')['sizes']['medium_large']; ?>" alt="<?= get_sub_field('image')['alt']; ?>" class="lazy bg-cover">
             </div>
         <?php endwhile; ?>
         </div>

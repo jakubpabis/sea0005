@@ -14,7 +14,7 @@ get_header(); ?>
 	<header class="header__article">
 		<picture class="bg-cover">
 			<source srcset="<?= get_the_post_thumbnail_url(); ?>">
-			<img class="bg-cover" src="<?= get_the_post_thumbnail_url(); ?>" alt="">
+			<img class="bg-cover lazy" data-src="<?= get_the_post_thumbnail_url(); ?>" alt="">
 		</picture>
 	</header>
 
