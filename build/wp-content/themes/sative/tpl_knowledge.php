@@ -65,7 +65,13 @@ $query = new WP_Query( $args );
                     <h3 class="title"><a href="<?= get_the_permalink(); ?>"><?= get_the_title(); ?></a></h3>
                     <?php if(!empty(get_categories())): ?>
                         <h4>
-                        <?php $know = get_category_by_slug('knowledge'); ?>
+                        <?php 
+                        if(pll_current_language() == 'en'): 
+                            $know = get_category_by_slug('knowledge'); 
+                        else:
+                            $know = get_category_by_slug('kennis'); 
+                        endif;
+                        ?>
                         <?php $i = 0; foreach(get_categories() as $cat): ?>
                             <?php if($cat->parent === $know): ?>
                                 <?= $i === 0 ? null : '&nbsp;|&nbsp;' ?><a href=""><?= $cat->name; ?></a>
