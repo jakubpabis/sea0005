@@ -13,11 +13,14 @@
         &-menu {
             list-style: none;
             padding: 0;
-            margin: 0;
-            margin-right: -15px;
+            margin: 0 -15px;
             display: flex;
             align-items: center;
             justify-content: flex-end;
+
+            @media(max-width: 1199px) {
+                margin: 0 -12px;
+            }
 
             > li {
                 padding: 0;
@@ -33,6 +36,10 @@
                     font-weight: 600;
                     @include trans200;
 
+                    @media(max-width: 1199px) {
+                        padding: 12px;
+                    }
+ 
                     &.dropdown-toggle {
 
                         &:after {
@@ -136,6 +143,10 @@
         color: $color-primary;
         padding: 20px 0;
 
+        @media(max-width: 991px) {
+            padding: 10px 0;
+        }
+
         &-logo {
             max-width: 190px;
             display: block;
@@ -221,6 +232,22 @@
             * {
                 vertical-align: middle;
                 display: inline-block;
+            }
+
+        }
+
+        &-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background-color: $color-navy;
+            appearance: none;
+            outline: 0!important;
+            margin-left: 30px;
+
+            i {
+                color: white;
+                font-size: 23px;
             }
 
         }

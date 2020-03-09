@@ -4,10 +4,20 @@
         background-color: $color-secondary;
         padding-top: 120px;
 
+        @media(max-width: 1199px) {
+            padding-top: 40px;
+        }
+
         .dog {
             padding-left: 30px;
             padding-right: 70px;
             margin-top: 30px;
+
+            @media(max-width: 1199px) {
+                display: flex;
+                align-items: flex-end;
+            }
+
         }
 
         .triangle {
@@ -26,7 +36,11 @@
             @include notch(15px);
             background-color: white;
             padding: 40px 65px;
-            position: relative;            
+            position: relative;
+            
+            @media(max-width: 1199px) {
+                padding: 25px 30px;
+            }
 
             h1 {
 
@@ -46,6 +60,11 @@
 
             > * {
                 margin: 10px;
+            }
+
+            @media(max-width: 1199px) {
+                padding: 20px;
+                margin-bottom: 40px;
             }
 
         }

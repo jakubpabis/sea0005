@@ -1036,6 +1036,7 @@ $toTranslate = array(
     'City',
     'CV',
     'Upload',
+    'Upload CV',
     'Motivation',
     'Send application',
     'I hereby agree with the',

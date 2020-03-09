@@ -5,6 +5,14 @@
 
     &__upper {
 
+        @media(max-width: 767px) {
+
+            * {
+                text-align: center!important;
+            }
+
+        }
+
         &-contact {
 
             i {
@@ -40,8 +48,21 @@
 
     &__middle {
 
+        @media(max-width: 767px) {
+
+            * {
+                text-align: center!important;
+            }
+
+        }
+
         h4 {
             margin-bottom: 25px;
+
+            @media(max-width: 991px) {
+                margin-bottom: 20px;
+            }
+
         }
 
         p {
@@ -72,6 +93,11 @@
             margin-top: 30px;
             position: relative;
 
+            @media(max-width: 767px) {
+                max-width: 360px;
+                margin: 30px auto 0;
+            }
+
             input {
                 position: relative;
                 padding: 12px 30px 12px 15px;
@@ -88,6 +114,10 @@
                     color: $color-primary;
                     opacity: 1;
                     font-style: italic;
+                }
+
+                @media(max-width: 767px) {
+                    text-align: left!important;
                 }
 
             }
@@ -112,11 +142,19 @@
     }
 
     &__lower {
-        margin-top: 70px;
+        margin-top: 30px;
         background-color: $color-secondary;
         color: $color-primary;
         padding: 12px 0;
         font-size: 13px;
+
+        @media(max-width: 767px) {
+            
+            * {
+                text-align: center!important;
+            }
+
+        }
 
         a:hover {
             color: inherit;
@@ -124,6 +162,11 @@
 
         .sative {
             margin-left: 20px;
+
+            @media(max-width: 359px) {
+                margin: 10px auto 5px;
+                display: block;
+            }
 
             a {
 

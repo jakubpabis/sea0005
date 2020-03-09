@@ -75,7 +75,7 @@ get_header(); ?>
     </section>
 
     <?php
-        $customTaxonomyTerms = wp_get_object_terms( $post->ID, 'job-category', array('fields' => 'ids') );
+        $customTaxonomyTerms = wp_get_object_terms( $post->ID, 'job-category', array('fields' => 'ids', 'childless' => true) );
         $args = array(
             'post_type' => 'jobs',
             'post_status' => 'publish',
