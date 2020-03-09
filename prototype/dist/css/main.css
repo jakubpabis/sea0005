@@ -797,14 +797,20 @@ p,
 	text-decoration: underline;
 }
 
-.dropdown-menu {
+.dropdown_container.home.show .btn {
+	transform: translateY(2px);
+	-webkit-filter: brightness(75%);
+	filter: brightness(75%);
+}
+
+.dropdown_container.home .dropdown-menu {
 	padding: 10px 0;
 	border: none !important;
 	border-radius: 0 !important;
 	background-color: transparent !important;
 }
 
-.dropdown-menu .dropdown-item {
+.dropdown_container.home .dropdown-menu .dropdown-item {
 	font-size: 15px;
 	font-weight: 700;
 	display: inline-block;
@@ -815,7 +821,7 @@ p,
 	color: white;
 }
 
-.dropdown-menu .dropdown-item:hover {
+.dropdown_container.home .dropdown-menu .dropdown-item:hover {
 	background-color: inherit;
 }
 

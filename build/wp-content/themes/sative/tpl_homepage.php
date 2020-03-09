@@ -21,7 +21,7 @@ get_header(); ?>
                 <?php if( have_rows('header_buttons') ): ?>
                     <div class="btns">
                     <?php while ( have_rows('header_buttons') ) : the_row(); ?>
-                        <div class="dropdown_container">
+                        <div class="dropdown_container home">
                             <button class="btn btn__default navy dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <?= get_sub_field('button_title'); ?>
                                 <i class="fas fa-chevron-down ml-2 mr-n2"></i>
