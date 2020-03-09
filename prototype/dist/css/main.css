@@ -668,13 +668,7 @@ p,
 
 .btn:before,
 .btn:after {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	content: '';
-	transition: all 200ms ease-out;
+	border: none !important;
 }
 
 .btn__default {
@@ -801,6 +795,28 @@ p,
 .link {
 	font-weight: 600;
 	text-decoration: underline;
+}
+
+.dropdown-menu {
+	padding: 10px 0;
+	border: none !important;
+	border-radius: 0 !important;
+	background-color: transparent !important;
+}
+
+.dropdown-menu .dropdown-item {
+	font-size: 15px;
+	font-weight: 700;
+	display: inline-block;
+	width: auto;
+	margin-bottom: 5px;
+	padding: 10px 20px;
+	text-transform: uppercase;
+	color: white;
+}
+
+.dropdown-menu .dropdown-item:hover {
+	background-color: inherit;
 }
 
 body {
@@ -1200,10 +1216,13 @@ i {
 }
 
 .header__home .btns {
+	display: flex;
 	padding: 20px 40px;
+	flex-wrap: wrap;
+	align-items: center;
 }
 
-.header__home .btns .btn {
+.header__home .btns > * {
 	margin: 10px;
 }
 
@@ -1358,7 +1377,7 @@ i {
 	padding: 0 5px;
 }
 
-.header .header__testimonials {
+.header__testimonials {
 	margin-bottom: 0 !important;
 }
 

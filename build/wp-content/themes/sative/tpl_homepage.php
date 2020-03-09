@@ -21,9 +21,21 @@ get_header(); ?>
                 <?php if( have_rows('header_buttons') ): ?>
                     <div class="btns">
                     <?php while ( have_rows('header_buttons') ) : the_row(); ?>
-                        <a href="<?= get_sub_field('button')['url']; ?>" class="btn btn__default navy">
-                            <?= get_sub_field('button')['title']; ?>
-                        </a>
+                        <div class="dropdown_container">
+                            <button class="btn btn__default navy dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <?= get_sub_field('button_title'); ?>
+                                <i class="fas fa-chevron-down ml-2 mr-n2"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <?php if( have_rows('items') ): while ( have_rows('items') ) : the_row(); ?>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <a class="dropdown-item bg-navy" href="<?= get_sub_field('item')['url']; ?>"><?= get_sub_field('item')['title']; ?></a>
+                                        </div>
+                                    </div>
+                                <?php endwhile; endif; ?>
+                            </div>
+                        </div>
                     <?php endwhile; ?>
                     </div>
                 <?php endif; ?>

@@ -40,8 +40,11 @@
 
         .btns {
             padding: 20px 40px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
 
-            .btn {
+            > * {
                 margin: 10px;
             }
 
@@ -190,8 +193,6 @@
         }
 
     }
-
-    &
 
     &__testimonials {
         margin-bottom: 0!important;
