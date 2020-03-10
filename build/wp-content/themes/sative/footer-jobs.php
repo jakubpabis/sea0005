@@ -45,7 +45,7 @@
                                 Laan van Kronenburg 14<br/>
                                 1183 AS Amstelveen<br/>
                                 Amsterdam Area, The Netherlands<br/>
-                                <a href="https://g.page/searchitrecruitment?share" class="color-sea" target="_blank"><strong><u>Open in maps</u></strong></a><br/>
+                                <a href="https://g.page/searchitrecruitment?share" class="color-sea" target="_blank"><strong><u><?php pll_e('Open in maps'); ?></u></strong></a><br/>
                                 <br/>
                                 KVK: 62737244<br/>
                                 BTW: NL854937274B01<br/>
@@ -56,26 +56,24 @@
                             <h4>
                                 <?php pll_e( 'Recent jobs' ); ?>
                             </h4>
+                            <?php 
+                                wp_reset_postdata();
+                                $args = array( 
+                                    'post_type' => 'jobs',
+                                    'post_status' => 'publish',
+                                    'posts_per_page' => 6
+                                );
+                                $query = new WP_Query( $args ); 
+                            ?>
+                            <?php if($query->have_posts()) : ?>
                             <ul class="text-size-small">
+                                <?php while($query->have_posts()) : $query->the_post(); ?>
                                 <li>
-                                    <a href="">Product Owner</a>
+                                    <a href="<?= get_the_permalink(); ?>"><?= get_the_title(); ?></a>
                                 </li>
-                                <li>
-                                    <a href="">Junior Business Developer</a>
-                                </li>
-                                <li>
-                                    <a href="">Front-End Developer</a>
-                                </li>
-                                <li>
-                                    <a href="">Solution Architect</a>
-                                </li>
-                                <li>
-                                    <a href="">Senior Accountmanager Food Industry</a>
-                                </li>
-                                <li>
-                                    <a href="">Technical Support Engineer - Renewable Energy</a>
-                                </li>
+                                <?php endwhile; ?>
                             </ul>
+                            <?php endif; ?>
                         </div>
                         <div class="col-lg-3 col-md-6 mb-5">
                             <h4>
@@ -103,7 +101,7 @@
                     <div class="container">
                         <div class="row justify-content-lg-between justify-content-center">
                             <div class="col-auto">
-                                <span>© Search X Recruitment - 2020</span>
+                                <span>© Search X Recruitment - <?= date("Y"); ?></span>
                             </div>
                             <div class="col-auto">
                                 <span>

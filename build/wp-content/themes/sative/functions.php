@@ -1017,6 +1017,7 @@ $toTranslate = array(
     'Industry type',
     'Job type',
     'Hot skills',
+    'Open in maps',
     'Filter',
     'open jobs',
     'jobs found',

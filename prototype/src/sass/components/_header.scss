@@ -18,6 +18,22 @@
                 align-items: flex-end;
             }
 
+            @media(max-width: 991px) {
+                padding-left: 0;
+                padding-right: 45px;
+            }
+
+            @media(max-width: 767px) {
+                align-items: flex-start;
+                padding-right: 25px;
+                margin-left: -30px;
+            }
+
+            @media(max-width: 575px) {
+                padding-right: 10px;
+                margin-left: -30px;
+            }
+
         }
 
         .triangle {
@@ -30,6 +46,17 @@
             border-bottom: 60px solid transparent; 
             border-right: 60px solid white; 
             content: '';
+
+            @media(max-width: 767px) {
+                top: 60px;
+                left: -20px;
+            }
+
+            @media(max-width: 575px) {
+                left: -10px;
+            }
+
+
         }
 
         .text {
@@ -40,6 +67,20 @@
             
             @media(max-width: 1199px) {
                 padding: 25px 30px;
+            }
+
+            @media(max-width: 991px) {
+                margin-right: -45px;
+                padding-right: 45px;
+            }
+
+            @media(max-width: 767px) {
+                margin-right: -60px;
+                padding-right: 30px;
+            }
+
+            @media(max-width: 575px) {
+                padding: 15px 20px;
             }
 
             h1 {

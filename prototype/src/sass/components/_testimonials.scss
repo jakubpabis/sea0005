@@ -9,6 +9,20 @@
             overflow: hidden;
             display: flex;
             align-items: center;
+
+            @media(max-width: 991px) {
+                max-height: 360px;
+            }
+
+            @media(max-width: 767px) {
+                min-height: 240px;
+
+                img {
+                    min-height: 240px;
+                }
+
+            }
+
         }
 
         &-content {
@@ -16,6 +30,11 @@
             > .container {
                 margin-top: -80px;
                 padding-bottom: 80px;
+
+                @media(max-width: 575px) {
+                    padding-bottom: 50px;
+                }
+
             }
             
             .carousel {
@@ -24,6 +43,10 @@
 
             .carousel-item {
                 padding: 60px 0;
+                
+                @media(max-width: 767px) {
+                    padding: 40px 0;
+                }
 
                 img {
                     @include notch(15px);
@@ -37,6 +60,12 @@
                     color: white;
                     opacity: 0.5;
                     z-index: -1;
+
+                    @media(max-width: 767px) {
+                        font-size: 70px;
+                        top: -30px;
+                    }
+
                 }
 
             }
@@ -45,6 +74,11 @@
             .carousel-control-next {
                 opacity: 1;
                 width: 10%;
+                left: 15px;
+
+                @media(max-width: 767px) {
+                    left: calc(-5% + 18px);
+                }
 
                 i {
                     width: 36px;
@@ -61,6 +95,13 @@
             }
 
             .carousel-control-next {
+                left: auto;
+                right: 15px;
+
+                @media(max-width: 767px) {
+                    left: auto;
+                    right: calc(-5% + 18px);
+                }
 
                 i {
                     text-indent: 4px;

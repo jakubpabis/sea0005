@@ -90,6 +90,15 @@ i {
 	overflow: hidden;
 	padding-top: 133px;
 	min-height: 100vh;
+
+	@media(max-width: 991px) {
+		padding-top: 60px;
+	}
+
+	@media(max-width: 575px) {
+		padding-top: 48px;
+	}
+
 }
 
 .bg-cover {

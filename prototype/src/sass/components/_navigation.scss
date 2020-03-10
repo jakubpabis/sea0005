@@ -147,6 +147,10 @@
             padding: 10px 0;
         }
 
+        @media(max-width: 575px) {
+            padding: 0;
+        }
+
         &-logo {
             max-width: 190px;
             display: block;
@@ -155,6 +159,15 @@
             svg,
             img {
                 width: 100%;
+            }
+
+            @media(max-width: 767px) {
+                
+                svg {
+                    height: 30px;
+                    width: 151px;
+                }
+
             }
 
         }
@@ -244,10 +257,28 @@
             appearance: none;
             outline: 0!important;
             margin-left: 30px;
+            @include notch(6px);
+
+            @media(max-width: 575px) {
+                clip-path: none!important;
+                margin-left: 15px;
+                width: 48px;
+                height: 48px;
+                margin-right: -15px;
+            }
+
+            @media(max-width: 340px) {
+                margin-left: 5px;
+            }
 
             i {
                 color: white;
                 font-size: 23px;
+
+                @media(max-width: 575px) {
+                    font-size: 27px;
+                }
+
             }
 
         }

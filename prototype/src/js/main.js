@@ -78,10 +78,13 @@ function homepageClients()
 		lazyLoad: true,
 		responsive: {
 			0: {
+				items: 1
+			},
+			420: {
 				items: 2
 			},
 			767: {
-				items: 4
+				items: 3
 			},
 			991: {
 				items: 6

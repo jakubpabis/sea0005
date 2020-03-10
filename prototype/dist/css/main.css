@@ -1155,6 +1155,8 @@ i {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
+	-webkit-clip-path: polygon(0% 6px, 6px 0%, calc(100% - 6px) 0%, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0% calc(100% - 6px));
+	clip-path: polygon(0% 6px, 6px 0%, calc(100% - 6px) 0%, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0% calc(100% - 6px));
 }
 
 .navigation__lower-btn i {
@@ -1486,6 +1488,7 @@ i {
 
 .home__middle-hashtags li {
 	font-size: 16px;
+	margin-bottom: 8px;
 	padding: 0 10px;
 	cursor: pointer;
 }
@@ -1653,7 +1656,10 @@ i {
 	max-height: 320px;
 }
 
-.cards__section-content > .container {
+.cards__section-content > .container,
+.cards__section-content > .container-lg,
+.cards__section-content > .container-md,
+.cards__section-content > .container-sm {
 	margin-top: -80px;
 	padding-bottom: 50px;
 }
@@ -1736,6 +1742,7 @@ i {
 .testimonials__candidates-content .carousel-control-next,
 .testimonials__clients-content .carousel-control-prev,
 .testimonials__clients-content .carousel-control-next {
+	left: 15px;
 	width: 10%;
 	opacity: 1;
 }
@@ -1755,6 +1762,13 @@ i {
 	color: #183153;
 	border-radius: 36px;
 	background-color: white;
+}
+
+.testimonials__section-content .carousel-control-next,
+.testimonials__candidates-content .carousel-control-next,
+.testimonials__clients-content .carousel-control-next {
+	right: 15px;
+	left: auto;
 }
 
 .testimonials__section-content .carousel-control-next i,
@@ -4185,7 +4199,7 @@ h3,
 @media (max-width: 991px) {
 
 .text-size-xxxxlarge {
-	font-size: 47px;
+	font-size: 44px;
 }
 
 h1,
@@ -4208,8 +4222,36 @@ p,
 	font-size: 17px;
 }
 
+#wrapper {
+	padding-top: 60px;
+}
+
 .navigation__lower {
 	padding: 10px 0;
+}
+
+.header__home .dog {
+	padding-right: 45px;
+	padding-left: 0;
+}
+
+.header__home .text {
+	margin-right: -45px;
+	padding-right: 45px;
+}
+
+.home__jobs {
+	padding: 120px 0;
+}
+
+.cards__section-img {
+	max-height: 360px;
+}
+
+.testimonials__section-img,
+.testimonials__candidates-img,
+.testimonials__clients-img {
+	max-height: 360px;
 }
 
 .footer__middle h4 {
@@ -4221,7 +4263,7 @@ p,
 @media (max-width: 767px) {
 
 .text-size-xxxxlarge {
-	font-size: 44px;
+	font-size: 36px;
 }
 
 h1,
@@ -4243,6 +4285,121 @@ h4,
 .text-size-large {
 	font-size: 19px;
 	line-height: 1.25;
+}
+
+.navigation__lower-logo svg {
+	width: 151px;
+	height: 30px;
+}
+
+.header__home .dog {
+	margin-left: -30px;
+	padding-right: 25px;
+	align-items: flex-start;
+}
+
+.header__home .triangle {
+	top: 60px;
+	left: -20px;
+}
+
+.header__home .text {
+	margin-right: -60px;
+	padding-right: 30px;
+}
+
+.home__middle {
+	padding: 70px 0;
+}
+
+.home__jobs {
+	padding: 90px 0;
+}
+
+.home__jobs-content {
+	flex-direction: row;
+	padding: 20px 0;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.home__jobs-content:hover {
+	transform: translateY(0);
+}
+
+.home__jobs-icon {
+	width: 90px;
+	height: 90px;
+	margin-right: 15px;
+	margin-bottom: 0;
+	-webkit-clip-path: polygon(0% 12px, 12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px));
+	clip-path: polygon(0% 12px, 12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px));
+}
+
+.home__jobs-icon i {
+	font-size: 38px;
+}
+
+.home__jobs-hidden {
+	position: relative;
+	bottom: auto;
+	visibility: visible;
+	transition: none;
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.card {
+	padding: 30px;
+}
+
+.cards__section-img {
+	min-height: 240px;
+}
+
+.cards__section-img img {
+	min-height: 240px;
+}
+
+.testimonials__section-img,
+.testimonials__candidates-img,
+.testimonials__clients-img {
+	min-height: 240px;
+}
+
+.testimonials__section-img img,
+.testimonials__candidates-img img,
+.testimonials__clients-img img {
+	min-height: 240px;
+}
+
+.testimonials__section-content .carousel-item,
+.testimonials__candidates-content .carousel-item,
+.testimonials__clients-content .carousel-item {
+	padding: 40px 0;
+}
+
+.testimonials__section-content .carousel-item .fa-quote-left,
+.testimonials__candidates-content .carousel-item .fa-quote-left,
+.testimonials__clients-content .carousel-item .fa-quote-left {
+	font-size: 70px;
+	top: -30px;
+}
+
+.testimonials__section-content .carousel-control-prev,
+.testimonials__section-content .carousel-control-next,
+.testimonials__candidates-content .carousel-control-prev,
+.testimonials__candidates-content .carousel-control-next,
+.testimonials__clients-content .carousel-control-prev,
+.testimonials__clients-content .carousel-control-next {
+	left: calc(-5% + 18px);
+}
+
+.testimonials__section-content .carousel-control-next,
+.testimonials__candidates-content .carousel-control-next,
+.testimonials__clients-content .carousel-control-next {
+	right: calc(-5% + 18px);
+	left: auto;
 }
 
 .footer__upper * {
@@ -4271,7 +4428,7 @@ h4,
 @media (max-width: 575px) {
 
 .text-size-xxxxlarge {
-	font-size: 42px;
+	font-size: 30px;
 }
 
 h1,
@@ -4294,6 +4451,98 @@ p,
 	font-size: 16px;
 }
 
+#wrapper {
+	padding-top: 48px;
+}
+
+.navigation__lower {
+	padding: 0;
+}
+
+.navigation__lower-btn {
+	width: 48px;
+	height: 48px;
+	margin-right: -15px;
+	margin-left: 15px;
+	-webkit-clip-path: none !important;
+	clip-path: none !important;
+}
+
+.navigation__lower-btn i {
+	font-size: 27px;
+}
+
+.header__home .dog {
+	margin-left: -30px;
+	padding-right: 10px;
+}
+
+.header__home .triangle {
+	left: -10px;
+}
+
+.header__home .text {
+	padding: 15px 20px;
+}
+
+.home__middle .searchInput input {
+	max-width: calc(100% - 50px);
+}
+
+.home__middle .searchInput .btn {
+	position: absolute;
+	right: 15px;
+	transform: translateX(0);
+}
+
+.home__jobs {
+	padding: 60px 0;
+}
+
+.home__clients {
+	padding-bottom: 50px;
+}
+
+.home__clients .custom-owl-prev {
+	left: -25px;
+}
+
+.home__clients .custom-owl-next {
+	right: -25px;
+}
+
+.card {
+	padding: 20px;
+}
+
+.testimonials__section-content > .container,
+.testimonials__candidates-content > .container,
+.testimonials__clients-content > .container {
+	padding-bottom: 50px;
+}
+
+}
+
+@media (max-width: 420px) {
+
+.home__middle .searchInput input {
+	font-size: 16px;
+}
+
+.home__middle .searchInput .btn {
+	padding-right: 12px;
+	padding-left: 12px;
+}
+
+}
+
+@media (max-width: 360px) {
+
+.home__middle .searchInput input {
+	max-width: calc(100% - 40px);
+	padding-left: 10px;
+}
+
 }
 
 @media (max-width: 359px) {
@@ -4301,6 +4550,14 @@ p,
 .footer__lower .sative {
 	display: block;
 	margin: 10px auto 5px;
+}
+
+}
+
+@media (max-width: 340px) {
+
+.navigation__lower-btn {
+	margin-left: 5px;
 }
 
 }
