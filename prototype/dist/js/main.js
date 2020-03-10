@@ -3812,11 +3812,20 @@ function filterSelect()
 	});
 }
 
+function menuMobile()
+{
+	$('button.mobileMenu').on('click', function() {
+		$(this).toggleClass('active');
+		$('.navigation__upper').toggleClass('d-block');
+	});
+}
+
 $(document).ready(function() {
 	
 	lazyImages();
 	uglyInput();
 	filterSelect();
+	menuMobile();
 
 	if($('.home__middle-hashtags').length != 0) {
 		homeHashtags();

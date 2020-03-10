@@ -6,7 +6,7 @@ aside#chat {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-end;
-    z-index: 999;
+    z-index: 998;
 
     &.closed {
         right: -5px;
