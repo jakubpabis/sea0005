@@ -4308,6 +4308,11 @@ h4,
 	padding-right: 30px;
 }
 
+.header__home .btns {
+	margin-left: -10px;
+	padding: 20px 0;
+}
+
 .home__middle {
 	padding: 70px 0;
 }
