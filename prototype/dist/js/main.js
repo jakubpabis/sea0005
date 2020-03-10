@@ -3757,6 +3757,9 @@ function homepageClients()
 		nav: false,
 		dots: false,
 		lazyLoad: true,
+		autoplay: true,
+		autoplayTimeout: 2500,
+		autoplayHoverPause: true,
 		responsive: {
 			0: {
 				items: 1
