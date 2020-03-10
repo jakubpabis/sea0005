@@ -62,7 +62,7 @@
                         <?php pll_e('Upload CV'); ?>
                     </a>
                     <div class="navigation__upper-contact d-lg-none d-flex">
-                        <a href="tel:+31207782393"><i class="fas fa-mobile-android-alt"></i>+31 (0)20 - 7782393</a>
+                        <a class="mb-1" href="tel:+31207782393"><i class="fas fa-mobile-android-alt"></i>+31 (0)20 - 7782393</a>
                         <a href="mailto:info@searchxrecruitment.com"><i class="far fa-envelope"></i>info@searchxrecruitment.com</a>
                     </div>
                 </div>

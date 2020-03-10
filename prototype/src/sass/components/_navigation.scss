@@ -23,8 +23,8 @@
             > .container {
                 overflow-y: scroll;
                 height: 100vh;
-                padding-top: 20px;
-                padding-bottom: 100px;
+                padding-top: 25px;
+                padding-bottom: 90px;
                 display: flex;
                 align-items: center;
                 flex-direction: column;
@@ -141,10 +141,28 @@
                     border-radius: 0;
                     border-top: 1px solid $color-tertiary;
 
+                    @media(max-width: 991px) {
+                        margin-left: -15px!important;
+                        margin-right: -15px!important;
+                        min-width: 100vw;
+                        width: auto!important;
+                        position: relative!important;
+                        top: auto!important;
+                        left: auto!important;
+                        right: auto!important;
+                        transform: none!important;
+                        text-align: center!important;
+                        border-top: none!important;
+                    }
+
                     li {
                         padding: 0;
                         line-height: 1;
                         border-bottom: 1px solid $color-secondary;
+
+                        @media(max-width: 991px) {
+                            border-bottom: 2px solid $color-navy;
+                        }
 
                         a {
                             background-color: $color-primary;
@@ -158,6 +176,14 @@
                             position: relative;
                             @include trans200;
                             white-space: nowrap;
+
+                            @media(max-width: 991px) {
+                                background-color: #0F2441!important;
+                                font-size: 16px;
+                                font-weight: 400;
+                                padding: 12px 20px;
+                            }
+
                         }
 
                         &:last-of-type {
@@ -165,9 +191,12 @@
                         }
 
                         &:hover {
+                            color: $color-tertiary;
 
                             a {
                                 text-decoration: none;
+                                font-weight: 500;
+                                color: $color-tertiary;
                                 background-color: rgba($color: $color-primary, $alpha: 0.8);
                             }
 
