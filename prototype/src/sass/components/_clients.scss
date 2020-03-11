@@ -4,18 +4,61 @@
     &__small {
         margin-top: 180px;
 
+        @media(max-width: 799px) {
+            margin-top: 140px;
+        }
+
+        @media(max-width: 575px) {
+            margin-top: 90px;
+        }
+
+        @media(max-width: 420px) {
+            margin-top: 50px;
+        }
+
         &-title {
             margin-bottom: 40px;
+
+            @media(max-width: 991px) {
+                margin-bottom: 30px;
+            }
+
+            @media(max-width: 575px) {
+                margin-bottom: 20px;
+            }
+
         }
 
         &-item {
             padding: 50px 30px;
+
+            @media(max-width: 991px) {
+                padding: 40px 30px;
+            }
+
+            @media(max-width: 767px) {
+                padding: 30px;
+            }
+
+            @media(max-width: 575px) {
+                padding: 30px 15px;
+            }
+
         }
 
     }
 
     &__small {
         margin-bottom: 60px;
+
+        @media(max-width: 799px) {
+            margin-top: 140px;
+        }
+
+        @media(max-width: 420px) {
+            margin-top: 90px;
+        }
+
     }
 
 }
