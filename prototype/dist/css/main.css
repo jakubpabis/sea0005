@@ -4612,6 +4612,7 @@ h4,
 .testimonials__clients-content .carousel-control-prev,
 .testimonials__clients-content .carousel-control-next {
 	left: calc(-5% + 18px);
+	width: 11%;
 }
 
 .testimonials__section-content .carousel-control-next,
