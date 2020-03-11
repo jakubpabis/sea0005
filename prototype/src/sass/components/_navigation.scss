@@ -144,7 +144,7 @@
                     @media(max-width: 991px) {
                         margin-left: -15px!important;
                         margin-right: -15px!important;
-                        min-width: 100vw;
+                        min-width: calc(100% + 30px);
                         width: auto!important;
                         position: relative!important;
                         top: auto!important;

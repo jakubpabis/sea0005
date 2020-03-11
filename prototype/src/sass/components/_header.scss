@@ -245,6 +245,11 @@
     &__testimonials,
     &__generic {
         margin-top: 70px;
+
+        @media(max-width: 575px) {
+            margin-top: 40px;
+        }
+
     }
 
     &__generic {

@@ -2953,8 +2953,16 @@ aside#chat .dog {
 	clip-path: polygon(0% 15px, 15px 0%, calc(100% - 15px) 0%, 100% 15px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0% calc(100% - 15px));
 }
 
+.team__item-social {
+	margin-bottom: 15px;
+}
+
 .team__item-social a {
 	margin-left: 5px;
+}
+
+.team__item-social a:first-of-type {
+	margin-left: 0;
 }
 
 .team__item-text {
@@ -4279,6 +4287,10 @@ h3,
 	padding: 20px;
 }
 
+.team__item-text {
+	padding: 25px 25px 25px 0;
+}
+
 }
 
 @media (max-width: 991px) {
@@ -4356,7 +4368,7 @@ p,
 	right: auto !important;
 	left: auto !important;
 	width: auto !important;
-	min-width: 100vw;
+	min-width: calc(100% + 30px);
 	margin-right: -15px !important;
 	margin-left: -15px !important;
 	transform: none !important;
@@ -4403,8 +4415,42 @@ p,
 	max-height: 360px;
 }
 
+.dog__stand svg {
+	transform: translateX(-30px);
+}
+
+.dog__info {
+	padding: 30px;
+}
+
+.dog__info.left + .triangle {
+	top: 6px;
+	left: -31px;
+}
+
+.dog__info.right + .triangle {
+	top: 25%;
+	right: -31px;
+}
+
+.team .container-lg {
+	padding: 0 45px;
+}
+
+.team__item-text {
+	padding: 20px 20px 20px 0;
+}
+
 .footer__middle h4 {
 	margin-bottom: 20px;
+}
+
+}
+
+@media (max-width: 799px) {
+
+.team .container-lg {
+	padding: 0 15px;
 }
 
 }
@@ -4564,7 +4610,7 @@ h4,
 
 .dog.right object,
 .dog.right svg {
-	left: 35px;
+	left: 15px;
 	width: 55vw;
 }
 
@@ -4577,6 +4623,22 @@ h4,
 	left: -24px;
 	border-top: 40px solid transparent;
 	border-right: 40px solid transparent;
+}
+
+.dog__info.right {
+	margin-left: -35px;
+	padding-left: 45px;
+}
+
+.dog__info.right + .triangle {
+	top: 20%;
+	right: -24px;
+	border-bottom: 40px solid transparent;
+	border-left: 40px solid transparent;
+}
+
+.team__item-text {
+	padding: 30px 20px 20px 20px;
 }
 
 .footer__upper * {
@@ -4672,6 +4734,13 @@ p,
 	padding: 15px 20px;
 }
 
+.header__team,
+.header__clients,
+.header__testimonials,
+.header__generic {
+	margin-top: 40px;
+}
+
 .home__middle .searchInput input {
 	max-width: calc(100% - 50px);
 }
@@ -4708,10 +4777,20 @@ p,
 	padding-bottom: 50px;
 }
 
+.dog.section {
+	margin-bottom: 60px;
+}
+
 .dog.left.abs object,
 .dog.left.abs svg {
 	right: 15px;
 	width: 47vw;
+}
+
+.dog__stand svg {
+	width: 150%;
+	margin-top: 20px;
+	transform: translateX(-60px);
 }
 
 .dog__sit svg {
@@ -4725,12 +4804,25 @@ p,
 }
 
 .dog__info.left {
-	margin-right: -50px;
+	margin-right: -35px;
 }
 
 .dog__info.left + .triangle {
 	top: 0;
 	left: -9px;
+}
+
+.dog__info.right {
+	margin-left: -30px;
+	padding-left: 30px;
+}
+
+.dog__info.right + .triangle {
+	right: -9px;
+}
+
+.team .container-lg {
+	padding: 0 60px;
 }
 
 .contact {
@@ -4740,6 +4832,14 @@ p,
 .contact__text-columns > div {
 	padding-top: 15px;
 	padding-bottom: 5px;
+}
+
+}
+
+@media (max-width: 450px) {
+
+.team .container-lg {
+	padding: 0 45px;
 }
 
 }
@@ -4755,6 +4855,18 @@ p,
 	padding-left: 12px;
 }
 
+.dog__stand svg {
+	width: 170%;
+}
+
+}
+
+@media (max-width: 400px) {
+
+.team .container-lg {
+	padding: 0 30px;
+}
+
 }
 
 @media (max-width: 360px) {
@@ -4764,6 +4876,10 @@ p,
 	padding-left: 10px;
 }
 
+.team .container-lg {
+	padding: 0 15px;
+}
+
 }
 
 @media (max-width: 359px) {
@@ -4771,6 +4887,14 @@ p,
 .footer__lower .sative {
 	display: block;
 	margin: 10px auto 5px;
+}
+
+}
+
+@media (max-width: 350px) {
+
+.dog__stand svg {
+	width: 190%;
 }
 
 }

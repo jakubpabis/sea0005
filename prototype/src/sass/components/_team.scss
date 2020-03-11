@@ -2,6 +2,34 @@
     margin-top: 50px;
     padding: 60px 0 100px 0;
 
+    .container-lg {
+
+        @media(max-width: 991px) {
+            padding: 0 45px;
+        }
+
+        @media(max-width: 799px) {
+            padding: 0 15px;
+        }
+
+        @media(max-width: 575px) {
+            padding: 0 60px;
+        }
+
+        @media(max-width: 450px) {
+            padding: 0 45px;
+        }
+
+        @media(max-width: 400px) {
+            padding: 0 30px;
+        }
+
+        @media(max-width: 360px) {
+            padding: 0 15px;
+        }
+
+    }
+
     &__item {
         background-color: white;
         @include notch(15px);
@@ -12,15 +40,33 @@
         }
 
         &-social {
+            margin-bottom: 15px;
 
             a {
                 margin-left: 5px;
+
+                &:first-of-type {
+                    margin-left: 0;
+                }
+
             }
 
         }
 
         &-text {
             padding: 30px 30px 30px 0;
+
+            @media(max-width: 1199px) {
+                padding: 25px 25px 25px 0;
+            }
+
+            @media(max-width: 991px) {
+                padding: 20px 20px 20px 0;
+            }
+
+            @media(max-width: 767px) {
+                padding: 30px 20px 20px 20px;
+            }
 
             h4 {
                 margin-top: 5px;

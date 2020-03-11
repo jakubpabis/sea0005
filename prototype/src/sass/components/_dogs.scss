@@ -2,6 +2,11 @@
     
     &.section {
         margin-bottom: 100px;
+
+        @media(max-width: 575px) {
+            margin-bottom: 60px;
+        }
+
     }
 
     &.grey {
@@ -90,7 +95,7 @@
             left: 80px;
 
             @media(max-width: 767px) {
-                left: 35px;
+                left: 15px;
                 width: 55vw;
             }
 
@@ -111,6 +116,25 @@
         svg {
             margin-top: 40px;
             transform: translateX(20px);
+
+            @media(max-width: 991px) {
+                transform: translateX(-30px);
+            }
+
+            @media(max-width: 575px) {
+                width: 150%;
+                margin-top: 20px;
+                transform: translateX(-60px);
+            }
+
+            @media(max-width: 420px) {
+                width: 170%;
+            }
+
+            @media(max-width: 350px) {
+                width: 190%;
+            }
+
         }
 
     }
@@ -133,6 +157,10 @@
         padding: 40px;
         position: relative;
 
+        @media(max-width: 991px) {
+            padding: 30px;
+        }
+
         @media(max-width: 575px) {
             padding: 20px;
             @include notch(16px);
@@ -154,7 +182,7 @@
             }
 
             @media(max-width: 575px) {
-                margin-right: -50px;
+                margin-right: -35px;
             }
             
             &+.triangle {
@@ -162,7 +190,12 @@
                 left: -40px;
                 border-left: 0px solid transparent;
                 border-top: 60px solid transparent; 
-                border-right: 60px solid transparent; 
+                border-right: 60px solid transparent;
+
+                @media(max-width: 991px) {
+                    top: 6px;
+                    left: -31px;
+                }
 
                 @media(max-width: 767px) {
                     top: 19px;
@@ -194,11 +227,37 @@
 
         &.right {
 
+            @media(max-width: 767px) {
+                margin-left: -35px;
+                padding-left: 45px;
+            }
+
+            @media(max-width: 575px) {
+                margin-left: -30px;
+                padding-left: 30px;
+            }
+
             &+.triangle {
                 right: -40px;
                 border-right: 0px solid transparent;
                 border-bottom: 60px solid transparent; 
                 border-left: 60px solid transparent; 
+
+                @media(max-width: 991px) {
+                    top: 25%;
+                    right: -31px;
+                }
+
+                @media(max-width: 767px) {
+                    top: 20%;
+                    right: -24px;
+                    border-bottom: 40px solid transparent; 
+                    border-left: 40px solid transparent; 
+                }
+
+                @media(max-width: 575px) {
+                    right: -9px;
+                }
 
                 &.grey2 {
                     border-left-color: $color-grey2;
