@@ -3067,6 +3067,10 @@ aside#chat .dog {
 	padding: 70px 0 50px;
 }
 
+.contact__text-columns * {
+	font-size: 16px;
+}
+
 .contact__text-columns > div {
 	padding-top: 25px;
 	padding-bottom: 10px;
@@ -4500,7 +4504,7 @@ h4,
 }
 
 .card {
-	padding: 30px;
+	padding: 35px;
 }
 
 .cards__section-img {
@@ -4550,6 +4554,29 @@ h4,
 .testimonials__clients-content .carousel-control-next {
 	right: calc(-5% + 18px);
 	left: auto;
+}
+
+.dog.left.abs object,
+.dog.left.abs svg {
+	right: 35px;
+	width: 55vw;
+}
+
+.dog.right object,
+.dog.right svg {
+	left: 35px;
+	width: 55vw;
+}
+
+.dog__info.left {
+	margin-right: -40px;
+}
+
+.dog__info.left + .triangle {
+	top: 19px;
+	left: -24px;
+	border-top: 40px solid transparent;
+	border-right: 40px solid transparent;
 }
 
 .footer__upper * {
@@ -4672,13 +4699,47 @@ p,
 }
 
 .card {
-	padding: 20px;
+	padding: 30px;
 }
 
 .testimonials__section-content > .container,
 .testimonials__candidates-content > .container,
 .testimonials__clients-content > .container {
 	padding-bottom: 50px;
+}
+
+.dog.left.abs object,
+.dog.left.abs svg {
+	right: 15px;
+	width: 47vw;
+}
+
+.dog__sit svg {
+	top: 10px;
+}
+
+.dog__info {
+	padding: 20px;
+	-webkit-clip-path: polygon(0% 16px, 16px 0%, calc(100% - 16px) 0%, 100% 16px, 100% calc(100% - 16px), calc(100% - 16px) 100%, 16px 100%, 0% calc(100% - 16px));
+	clip-path: polygon(0% 16px, 16px 0%, calc(100% - 16px) 0%, 100% 16px, 100% calc(100% - 16px), calc(100% - 16px) 100%, 16px 100%, 0% calc(100% - 16px));
+}
+
+.dog__info.left {
+	margin-right: -50px;
+}
+
+.dog__info.left + .triangle {
+	top: 0;
+	left: -9px;
+}
+
+.contact {
+	padding: 40px 0 0;
+}
+
+.contact__text-columns > div {
+	padding-top: 15px;
+	padding-bottom: 5px;
 }
 
 }

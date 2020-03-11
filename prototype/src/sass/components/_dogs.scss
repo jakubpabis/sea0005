@@ -61,6 +61,17 @@
                 width: 47vw;
                 position: absolute;
                 right: 80px;
+
+                @media(max-width: 767px) {
+                    right: 35px;
+                    width: 55vw;
+                }
+
+                @media(max-width: 575px) {
+                    right: 15px;
+                    width: 47vw;
+                }
+
             }
 
         }
@@ -77,6 +88,12 @@
             width: 47vw;
             position: absolute;
             left: 80px;
+
+            @media(max-width: 767px) {
+                left: 35px;
+                width: 55vw;
+            }
+
         }
 
     }
@@ -102,6 +119,11 @@
 
         svg {
             top: 25px;
+
+            @media(max-width: 575px) {
+                top: 10px;
+            }
+
         }
 
     }
@@ -110,6 +132,11 @@
         @include notch(20px);
         padding: 40px;
         position: relative;
+
+        @media(max-width: 575px) {
+            padding: 20px;
+            @include notch(16px);
+        }
 
         &+.triangle {
             position: absolute;
@@ -121,6 +148,14 @@
         }
 
         &.left {
+
+            @media(max-width: 767px) {
+                margin-right: -40px;
+            }
+
+            @media(max-width: 575px) {
+                margin-right: -50px;
+            }
             
             &+.triangle {
                 top: 15px;
@@ -128,6 +163,18 @@
                 border-left: 0px solid transparent;
                 border-top: 60px solid transparent; 
                 border-right: 60px solid transparent; 
+
+                @media(max-width: 767px) {
+                    top: 19px;
+                    left: -24px;
+                    border-top: 40px solid transparent; 
+                    border-right: 40px solid transparent; 
+                }
+
+                @media(max-width: 575px) {
+                    top: 0;
+                    left: -9px;
+                }
 
                 &.grey2 {
                     border-right-color: $color-grey2;

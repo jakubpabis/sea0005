@@ -1,17 +1,27 @@
 .contact {
     padding: 70px 0 50px;
 
+    @media(max-width: 575px) {
+        padding: 40px 0 0;
+    }
+
     &__text {
 
-        &-title {
-
-        }
-
         &-columns {
+
+            * {
+                font-size: 16px;
+            }
 
             > div {
                 padding-top: 25px;
                 padding-bottom: 10px;
+
+                @media(max-width: 575px) {
+                    padding-top: 15px;
+                    padding-bottom: 5px;
+                }
+
             }
 
             a {
