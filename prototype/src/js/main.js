@@ -48,6 +48,21 @@ function lazyImages()
 
 }
 
+function knowledgeFilterToggle()
+{
+	$('.knowledge__filters').find('.card').on('click', function() {
+		if($(window).width() <= 991 && $('.knowledge__filters').hasClass('not-opened')) {
+			$('.knowledge__filters').removeClass('not-opened');
+		}
+	});
+
+	$('.knowledge__filters').find('.closethis').on('click', function() {
+		if($(window).width() <= 991) {
+			$('.knowledge__filters').addClass('not-opened');
+		}
+	});
+}
+
 function uglyInput() 
 {
 	$('.ugly').each(function() {
@@ -145,6 +160,7 @@ $(document).ready(function() {
 	uglyInput();
 	filterSelect();
 	menuMobile();
+	knowledgeFilterToggle();
 
 	if($('.home__middle-hashtags').length != 0) {
 		homeHashtags();

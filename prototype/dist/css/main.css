@@ -1368,7 +1368,7 @@ i {
 .header__jobs-dog {
 	position: absolute;
 	top: 0;
-	left: -465px;
+	left: -450px;
 }
 
 .header__jobs-dog object,
@@ -3023,6 +3023,19 @@ aside#chat .dog {
 	margin-top: 20px;
 }
 
+.knowledge__filters.not-opened .closethis {
+	display: none;
+}
+
+.knowledge__filters .closethis {
+	position: absolute;
+	z-index: 99;
+	top: 0;
+	right: 15px;
+	display: none;
+	background-color: white;
+}
+
 .knowledge__filters .title {
 	display: flex;
 	margin-bottom: 30px;
@@ -4293,6 +4306,16 @@ h3,
 
 }
 
+@media (max-width: 991px) and (max-width: 991px) {
+
+.knowledge__filters.not-opened .card .title {
+	margin-bottom: 0;
+	text-align: center;
+	justify-content: center;
+}
+
+}
+
 @media (max-width: 991px) {
 
 .text-size-xxxxlarge {
@@ -4451,6 +4474,25 @@ p,
 	padding: 40px 30px;
 }
 
+.knowledge__filters {
+	margin-bottom: 60px;
+}
+
+.knowledge__filters.not-opened .card {
+	padding: 15px;
+	cursor: pointer;
+	-webkit-clip-path: polygon(0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px));
+	clip-path: polygon(0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px));
+}
+
+.knowledge__filters.not-opened .card form {
+	display: none;
+}
+
+.knowledge__filters .closethis {
+	display: block;
+}
+
 .footer__middle h4 {
 	margin-bottom: 20px;
 }
@@ -4525,6 +4567,15 @@ h4,
 .header__home .btns {
 	margin-left: -10px;
 	padding: 20px 0;
+}
+
+.header__jobs-dog {
+	left: -365px;
+}
+
+.header__jobs-dog object,
+.header__jobs-dog svg {
+	height: 240px;
 }
 
 .home__middle {

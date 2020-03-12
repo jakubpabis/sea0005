@@ -155,12 +155,21 @@
 
         &-dog {
             position: absolute;
-            left: -465px;
+            left: -450px;
             top: 0;
+
+            @media(max-width: 767px) {
+                left: -365px;
+            }
 
             object,
             svg {
                 height: 280px;
+
+                @media(max-width: 767px) {
+                    height: 240px;
+                }
+
             }
 
         }
