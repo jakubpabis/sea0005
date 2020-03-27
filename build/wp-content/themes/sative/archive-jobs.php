@@ -5,13 +5,17 @@
 
 get_header();
 
-$args = array( 
-    'post_type' => 'jobs',
-    'post_status' => 'publish',
-    'posts_per_page' => -1
-);
-$query = new WP_Query( $args );
-$post_no = $query->post_count;
+?>
+
+<?php 
+    $args = array( 
+        'post_type' => 'jobs',
+        'post_status' => 'publish',
+        'posts_per_page' => 10,
+        'paged' => get_query_var('paged') ? get_query_var('paged') : 1
+    );
+    $query = new WP_Query( $args );
+    $post_no = $query->found_posts;
 ?>
 
 <header class="header__jobs">
@@ -52,21 +56,12 @@ $post_no = $query->post_count;
             </div>
             <div class="col-12 text-right">
                 <p class="text-size-small font-primary">
-                    <span class="jobsno">150</span> <?php pll_e( 'jobs found' ); ?>
+                    <span class="jobsno"><?= $post_no; ?></span> <?php pll_e( 'jobs found' ); ?>
                 </p>
             </div>
         </div>
     </div>
 </header>
-
-<?php 
-    $args = array( 
-        'post_type' => 'jobs',
-        'post_status' => 'publish',
-        'posts_per_page' => 10
-    );
-    $query = new WP_Query( $args );
-?>
 
 <section class="jobs__list">
     <div class="container">

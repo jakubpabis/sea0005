@@ -811,18 +811,20 @@ function jobDisplayHelper()
 }
 
 
-function hierarchical_tax_tree( $cat, $tax ) {
+function hierarchical_tax_tree( $cat, $tax, $active = [] ) {
     $next = get_categories('taxonomy=' . $tax . '&hide_empty=false&parent=' . $cat);
     if( $next ) :    
         echo '<ul>';
         foreach( $next as $cat ) :
-            if(get_query_var('term') == $cat->category_nicename) {
+            if(get_query_var('term') == $cat->category_nicename || in_array($cat->term_id, $active)) {
                 echo '<li class="active">';
+                $checked = 'checked';
             } else {
                 echo '<li>';
+                $checked = null;
             }
             echo '<a href="' . get_category_link( $cat->term_id ) . '">' . $cat->name . '&nbsp;<small>('. $cat->count . ')</small><i class="far fa-times"></i></a>'; 
-            hierarchical_tax_tree( $cat->term_id, $tax );
+            hierarchical_tax_tree( $cat->term_id, $tax, $active = [] );
             echo '</li>';
         endforeach;   
         echo '</ul>'; 
@@ -830,18 +832,23 @@ function hierarchical_tax_tree( $cat, $tax ) {
 }  
 
 
-function hierarchical_tax_tree_filter( $cat, $tax ) {
+function hierarchical_tax_tree_filter( $cat, $tax, $active) {
     $next = get_categories('taxonomy=' . $tax . '&hide_empty=false&parent=' . $cat);
     if( $next ) :    
         echo '<ul>';
         foreach( $next as $cat ) :
-            if(get_query_var('term') == $cat->category_nicename) {
+            if($active == null) {
+                $active = [];
+            }
+            if(get_query_var('term') == $cat->category_nicename || in_array($cat->term_id, $active)) {
                 echo '<li class="active">';
+                $checked = 'checked';
             } else {
                 echo '<li>';
+                $checked = null;
             }
-            echo '<span>' . $cat->name . '&nbsp;<small>('. $cat->count . ')</small><i class="far fa-times"></i><input type="checkbox" name="' . $tax . '[]" value="' . $cat->term_id . '"></span>'; 
-            hierarchical_tax_tree_filter( $cat->term_id, $tax );
+            echo '<span>' . $cat->name . '&nbsp;<small>('. $cat->count . ')</small><i class="far fa-times"></i><input type="checkbox" ' . $checked . ' name="' . $tax . '[]" value="' . $cat->term_id . '"></span>'; 
+            hierarchical_tax_tree_filter( $cat->term_id, $tax, $active);
             echo '</li>';
         endforeach;   
         echo '</ul>'; 
@@ -905,32 +912,32 @@ function jobs_filter_function()
     }
  
 	// create $args['meta_query'] array if one of the following fields is filled
-	if( isset( $_POST['price_min'] ) && $_POST['price_min'] || isset( $_POST['price_max'] ) && $_POST['price_max'] || isset( $_POST['featured_image'] ) && $_POST['featured_image'] == 'on' )
+	if( isset( $_POST['salary_min'] ) && $_POST['salary_min'] || isset( $_POST['salary_max'] ) && $_POST['salary_max'] || isset( $_POST['featured_image'] ) && $_POST['featured_image'] == 'on' )
 		$args['meta_query'] = array( 'relation'=>'AND' ); // AND means that all conditions of meta_query should be true
  
-	// if both minimum price and maximum price are specified we will use BETWEEN comparison
-	if( isset( $_POST['price_min'] ) && $_POST['price_min'] && isset( $_POST['price_max'] ) && $_POST['price_max'] ) {
+	// if both minimum salary and maximum salary are specified we will use BETWEEN comparison
+	if( isset( $_POST['salary_min'] ) && $_POST['salary_min'] && isset( $_POST['salary_max'] ) && $_POST['salary_max'] ) {
 		$args['meta_query'][] = array(
-			'key' => '_price',
-			'value' => array( $_POST['price_min'], $_POST['price_max'] ),
+			'key' => '_salary',
+			'value' => array( $_POST['salary_min'], $_POST['salary_max'] ),
 			'type' => 'numeric',
 			'compare' => 'between'
 		);
 	} else {
-		// if only min price is set
-		if( isset( $_POST['price_min'] ) && $_POST['price_min'] )
+		// if only min salary is set
+		if( isset( $_POST['salary_min'] ) && $_POST['salary_min'] )
 			$args['meta_query'][] = array(
-				'key' => '_price',
-				'value' => $_POST['price_min'],
+				'key' => '_salary',
+				'value' => $_POST['salary_min'],
 				'type' => 'numeric',
 				'compare' => '>'
 			);
  
-		// if only max price is set
-		if( isset( $_POST['price_max'] ) && $_POST['price_max'] )
+		// if only max salary is set
+		if( isset( $_POST['salary_max'] ) && $_POST['salary_max'] )
 			$args['meta_query'][] = array(
-				'key' => '_price',
-				'value' => $_POST['price_max'],
+				'key' => '_salary',
+				'value' => $_POST['salary_max'],
 				'type' => 'numeric',
 				'compare' => '<'
 			);
