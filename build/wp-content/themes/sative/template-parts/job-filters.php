@@ -1,8 +1,3 @@
-<?php
-
-
-
-?>
 <aside class="jobs__list-filters card bg-sea">
     <form action="" method="GET" id="filter">
         <div class="title">
@@ -32,10 +27,14 @@
         <?php  
             if( isset( $_GET['salary_min'] ) && $_GET['salary_min'] ){ 
                 $salaryMin = $_GET['salary_min']; 
-            } 
+            } else {
+                $salaryMin = null; 
+            }
             if( isset( $_GET['salary_max'] ) && $_GET['salary_max'] ) {
                 $salaryMax = $_GET['salary_max']; 
-            } 
+            } else {
+                $salaryMax = null; 
+            }
             if( isset( $salaryMin ) || isset( $salaryMax ) ) {
                 $active = 'active';
             } else {
@@ -50,8 +49,8 @@
             </span>
             <div class="filters">
                 <div class="inputs">
-                    <input type="text" placeholder="From" value="<?= $salaryMin; ?>">
-                    <input type="text" placeholder="To" value="<?= $salaryMax; ?>">
+                    <input type="text" name="salary_min" placeholder="From" value="<?= $salaryMin; ?>">
+                    <input type="text" name="salary_max" placeholder="To" value="<?= $salaryMax; ?>">
                 </div>
             </div>
         </div>

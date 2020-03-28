@@ -12,22 +12,65 @@ $args = array(
     'post_type' => 'jobs',
     'post_status' => 'publish',
     'posts_per_page' => 10,
-    'paged' => get_query_var('paged') ? get_query_var('paged') : 1
-);
-//var_dump($_GET);
-if(isset($_GET['job-category']) && $_GET['job-category']) {
-    $args['tax_query'] = array(
+    'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
+    'tax_query' => array(
         'relation' => 'OR',
-        array(
+    ),
+    'meta_query'    => array(
+        'relation' => 'AND',
+    )
+);
+// for taxonomies / categories
+if( isset( $_GET['job-category'] ) ) {
+        
+    if(count($_GET['job-category']) > 1) {
+        foreach(filterHelper($_GET['job-category'], 'job-category') as $termID) {
+            $arr = array(
+                'taxonomy' => 'job-category',
+                'field' => 'id',
+                'terms' => $termID,
+            );
+            array_push($args['tax_query'], $arr);
+        }
+    } else {
+        $args['tax_query'][] = array(
             'taxonomy' => 'job-category',
             'field' => 'id',
             'terms' => $_GET['job-category'],
-        ) 
+        );
+    }
+    //var_dump($args['tax_query']);
+}
+if( isset( $_GET['salary_min'] ) ) {
+    $args['meta_query'][] = array(
+        'key' => 'salary_min', 
+        'value' => $_GET['salary_min'], 
+        'compare' => '>='
     );
 }
-
+if( isset( $_GET['salary_max'] ) ) {
+    $args['meta_query'][] = array(
+        'key' => 'salary_max', 
+        'value' => $_GET['salary_max'], 
+        'compare' => '<='
+    );
+}
+//var_dump($args);
 $query = new WP_Query( $args );
 $post_no = $query->found_posts;
+
+$big = 999999999; // need an unlikely integer
+$pagination = paginate_links( array(
+    'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+    'format' => '?paged=%#%',
+    'current' => max( 1, get_query_var('paged') ),
+    'total' => $query->max_num_pages,
+    'show_all' => true,
+    'add_args' => false,
+) ); 
+
+//var_dump($pagination);
+
 ?>
 
 <header class="header__jobs">
@@ -60,7 +103,8 @@ $post_no = $query->found_posts;
             </div>
             <div class="offset-lg-1 col-lg-5">
                 <div class="triangle-left"></div>
-                <input type="search" name="s" placeholder="<?php pll_e('Enter job title here'); ?>">
+                <input type="text" name="s" value="<?= get_search_query(); ?>" placeholder="<?php pll_e('Enter job title here'); ?>">
+                <input type="hidden" name="post_type" value="jobs" />
             </div>
             <div class="col-lg-6">
                 <input class="location" type="text" placeholder="<?php pll_e('Enter job location'); ?>">
@@ -132,15 +176,7 @@ $post_no = $query->found_posts;
                     </article>
                     <?php endwhile; endif; ?>
                     <nav class="pagination">
-                    <?php 
-                    $big = 999999999; // need an unlikely integer
-                    echo paginate_links( array(
-                        'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
-                        'format' => '?paged=%#%',
-                        'current' => max( 1, get_query_var('paged') ),
-                        'total' => $query->max_num_pages
-                    ) ); 
-                    ?>
+                        <?= $pagination; ?>
                     </nav>
                 </main>
             </div>

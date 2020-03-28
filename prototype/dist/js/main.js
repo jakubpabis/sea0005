@@ -3857,6 +3857,14 @@ $(document).ready(function() {
 		homeHashtags();
 	}
 
+	$("form").submit(function(){
+        $("input").each(function(index, obj){
+            if($(obj).val() == "") {
+                $(obj).remove();
+            }
+        });
+    });
+
 });
 
 $(window).on('load', function() {
