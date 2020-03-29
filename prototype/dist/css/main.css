@@ -4464,6 +4464,10 @@ p,
 	max-height: 360px;
 }
 
+.jobs__single-recruiter .recruiter-text {
+	padding-top: 0;
+}
+
 .jobs__single-sidebar {
 	margin-top: 70px;
 }
