@@ -348,6 +348,19 @@
 
                 &-img {
                     @include notch(15px);
+                    padding: 0;
+                    overflow: hidden;
+                    width: 100%;
+                    padding-bottom: 100%;
+                    position: relative;
+
+                    img {
+                        position: absolute;
+                        top: 0;
+                        transform-origin: top;
+                        transform: scale(1.25);
+                    }
+
                 }
 
                 &-text {
