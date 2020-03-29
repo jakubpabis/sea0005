@@ -14,10 +14,10 @@ get_header(); ?>
 	<section class="jobs__single">
 		<div class="container">
 			<div class="row">
-                <header class="jobs__single-title col-lg-8">
+                <header class="jobs__single-title col-lg-8 col-sm-9">
                     <?php the_title( '<h1>', '</h1>' ); ?>
                 </header>
-                <div class="col-lg-4 text-right">
+                <div class="col-lg-4 col-sm-3 text-right">
                     <a href="" class="btn btn__medium yellow"><?php pll_e( 'Back' ); ?></a>
                 </div>
             </div>
@@ -39,12 +39,12 @@ get_header(); ?>
                     <aside class="jobs__single-recruiter">
                         <h3><?php pll_e( 'Executive search consultant' ); ?></h3>
                         <div class="row recruiter">
-                            <div class="col-lg-3">
+                            <div class="col-xl-3 col-lg-4 col-md-3 col-sm-4">
                                 <div class="recruiter-img">
                                     <img data-src="<?= get_the_post_thumbnail_url($recruiter->ID, 'medium_large'); ?>" alt="" class="lazy bg-cover">
                                 </div>
                             </div>
-                            <div class="col-lg-auto">
+                            <div class="col-lg-auto col-md-9 col-sm-8">
                                 <div class="recruiter-text">
                                     <h5>
                                         <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.365 15L9 10.64 4.635 15 3 13.367l4.365-4.36L7.36 9l.006-.006L3 4.633 4.635 3 9 7.36 13.365 3 15 4.633l-4.365 4.36.006.007-.006.006L15 13.367 13.365 15zM0 18h18V0H0v18z" fill="#FDD963"/></svg>
@@ -99,9 +99,9 @@ get_header(); ?>
         </div>
         <div class="cards__section-content bg-sea job-single">
             <div class="container">
-                <div class="row">
+                <div class="row justify-content-center">
                     <?php while($relatedPosts->have_posts()) : $relatedPosts->the_post(); $helper = jobDisplayHelper(); ?>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-md-6 col-sm-8">
                         <div class="card">
                             <h3 class="title"><a href="<?= get_the_permalink(); ?>"><?= get_the_title(); ?></a></h3>
                             <div class="info">

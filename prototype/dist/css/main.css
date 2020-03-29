@@ -2536,37 +2536,37 @@ aside#chat .dog {
 	padding: 50px 0;
 }
 
-.jobs__single aside .card {
+.jobs__single-sidebar .card {
 	padding: 30px;
 }
 
-.jobs__single aside .card h3 {
+.jobs__single-sidebar .card h3 {
 	margin-bottom: 15px;
 }
 
-.jobs__single aside .card .social-login {
+.jobs__single-sidebar .card .social-login {
 	display: flex;
-	margin: 0 -15px;
+	margin: 0 -10px;
 	flex-wrap: wrap;
 }
 
-.jobs__single aside .card .social-login .btn {
+.jobs__single-sidebar .card .social-login .btn {
 	max-width: 50%;
 	margin: 7px 10px;
 	flex-basis: calc(50% - 20px);
 }
 
-.jobs__single aside .card form .pretty .icon {
+.jobs__single-sidebar .card form .pretty .icon {
 	top: 0;
 }
 
-.jobs__single aside .card form .pretty label {
+.jobs__single-sidebar .card form .pretty label {
 	font-size: 14px;
 	text-indent: 2em;
 }
 
-.jobs__single aside .card form .pretty label:before,
-.jobs__single aside .card form .pretty label:after {
+.jobs__single-sidebar .card form .pretty label:before,
+.jobs__single-sidebar .card form .pretty label:after {
 	top: 0;
 	width: 20px;
 	height: 20px;
@@ -2574,11 +2574,11 @@ aside#chat .dog {
 	background-color: white;
 }
 
-.jobs__single aside .card form .ugly {
+.jobs__single-sidebar .card form .ugly {
 	position: relative;
 }
 
-.jobs__single aside .card form .ugly label {
+.jobs__single-sidebar .card form .ugly label {
 	font-size: 14px;
 	font-weight: 400;
 	font-style: italic;
@@ -2595,7 +2595,7 @@ aside#chat .dog {
 	color: #183153;
 }
 
-.jobs__single aside .card form .ugly label.full {
+.jobs__single-sidebar .card form .ugly label.full {
 	display: flex;
 	width: calc(100% - 30px);
 	max-width: 100%;
@@ -2604,19 +2604,19 @@ aside#chat .dog {
 	justify-content: space-between;
 }
 
-.jobs__single aside .card form .ugly label.full span {
+.jobs__single-sidebar .card form .ugly label.full span {
 	font-style: normal !important;
 	text-decoration: underline;
 }
 
-.jobs__single aside .card form .ugly label span {
+.jobs__single-sidebar .card form .ugly label span {
 	font-size: 14px;
 	font-weight: 600;
 	color: #ec6278;
 }
 
-.jobs__single aside .card form .ugly input,
-.jobs__single aside .card form .ugly textarea {
+.jobs__single-sidebar .card form .ugly input,
+.jobs__single-sidebar .card form .ugly textarea {
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 1;
@@ -2630,13 +2630,13 @@ aside#chat .dog {
 	appearance: none;
 }
 
-.jobs__single aside .card form .ugly input:focus ~ label,
-.jobs__single aside .card form .ugly textarea:focus ~ label {
+.jobs__single-sidebar .card form .ugly input:focus ~ label,
+.jobs__single-sidebar .card form .ugly textarea:focus ~ label {
 	opacity: 0;
 }
 
-.jobs__single aside .card form .ugly input[type='file'],
-.jobs__single aside .card form .ugly textarea[type='file'] {
+.jobs__single-sidebar .card form .ugly input[type='file'],
+.jobs__single-sidebar .card form .ugly textarea[type='file'] {
 	width: 100%;
 	height: 40px;
 	cursor: pointer !important;
@@ -2644,27 +2644,27 @@ aside#chat .dog {
 	background-color: white;
 }
 
-.jobs__single aside .card form .ugly textarea {
+.jobs__single-sidebar .card form .ugly textarea {
 	min-height: 120px;
 	resize: none;
 }
 
-.jobs__single aside .share {
+.jobs__single-sidebar .share {
 	margin-top: 50px;
 }
 
-.jobs__single aside .share h5 {
+.jobs__single-sidebar .share h5 {
 	font-size: 18px;
 	font-weight: 500;
 	margin-bottom: 10px;
 }
 
-.jobs__single aside .share .btns {
+.jobs__single-sidebar .share .btns {
 	width: auto;
 	margin: 0 -4px;
 }
 
-.jobs__single aside .share .btns .btn {
+.jobs__single-sidebar .share .btns .btn {
 	margin: 4px;
 }
 
@@ -4313,6 +4313,19 @@ h3,
 	padding: 20px;
 }
 
+.jobs__single-sidebar .card {
+	padding: 25px 20px;
+}
+
+.jobs__single-sidebar .card .social-login {
+	margin: 0 -7px;
+}
+
+.jobs__single-sidebar .card .social-login .btn {
+	margin: 7px;
+	flex-basis: calc(50% - 14px);
+}
+
 .team__item-text {
 	padding: 25px 25px 25px 0;
 }
@@ -4449,6 +4462,36 @@ p,
 .testimonials__candidates-img,
 .testimonials__clients-img {
 	max-height: 360px;
+}
+
+.jobs__single-sidebar {
+	margin-top: 70px;
+}
+
+.jobs__single-sidebar-inputs {
+	margin-right: -7px;
+	margin-left: -7px;
+}
+
+.jobs__single-sidebar-inputs > div {
+	padding-right: 7px;
+	padding-left: 7px;
+}
+
+.jobs__single-sidebar .card {
+	padding: 30px;
+}
+
+.jobs__single-sidebar .card .social-login .btn {
+	flex-basis: calc(25% - 14px);
+}
+
+.jobs__single-sidebar .card form .ugly label {
+	left: 7px;
+}
+
+.jobs__single-sidebar .card form .ugly label.full {
+	width: calc(100% - 14px);
 }
 
 .dog__stand svg {
@@ -4684,6 +4727,10 @@ h4,
 .testimonials__clients-content .carousel-control-next {
 	right: calc(-5% + 18px);
 	left: auto;
+}
+
+.jobs__single-sidebar .card .social-login .btn {
+	flex-basis: calc(50% - 14px);
 }
 
 .dog.left.abs object,
