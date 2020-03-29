@@ -35,7 +35,7 @@ get_header(); ?>
                     ?>
 
                     <?php if(is_array(get_field('recruiter_related'))): $recruiter = get_field('recruiter_related')[0]; ?>
-                    <?php var_dump($recruiter); ?>
+                    
                     <aside class="jobs__single-recruiter">
                         <h3><?php pll_e( 'Executive search consultant' ); ?></h3>
                         <div class="row recruiter">
