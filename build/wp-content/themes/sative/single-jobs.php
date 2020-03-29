@@ -34,14 +34,14 @@ get_header(); ?>
 
                     ?>
 
-                    <?php if(is_array(get_field('recruiter'))): $recruiter = get_field('recruiter')[0]; ?>
-
+                    <?php if(is_array(get_field('recruiter_related'))): $recruiter = get_field('recruiter_related')[0]; ?>
+                    <?php var_dump($recruiter); ?>
                     <aside class="jobs__single-recruiter">
                         <h3><?php pll_e( 'Executive search consultant' ); ?></h3>
                         <div class="row recruiter">
                             <div class="col-lg-3">
                                 <div class="recruiter-img">
-                                    <img data-src="<?= get_the_post_thumbnail_url($recruiter->ID); ?>" alt="" class="lazy bg-cover">
+                                    <img data-src="<?= get_the_post_thumbnail_url($recruiter->ID, 'medium'); ?>" alt="" class="lazy bg-cover">
                                 </div>
                             </div>
                             <div class="col-lg-auto">
