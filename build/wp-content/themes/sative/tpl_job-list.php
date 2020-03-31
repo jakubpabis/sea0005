@@ -8,68 +8,75 @@ get_header();
 ?>
 
 <?php
-$args = array( 
-    'post_type' => 'jobs',
-    'post_status' => 'publish',
-    'posts_per_page' => 10,
-    'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
-    'tax_query' => array(
-        'relation' => 'OR',
-    ),
-    'meta_query'    => array(
-        'relation' => 'AND',
-    )
-);
-// for taxonomies / categories
-if( isset( $_GET['job-category'] ) ) {
-        
-    if(count($_GET['job-category']) > 1) {
-        foreach(filterHelper($_GET['job-category'], 'job-category') as $termID) {
-            $arr = array(
-                'taxonomy' => 'job-category',
-                'field' => 'id',
-                'terms' => $termID,
-            );
-            array_push($args['tax_query'], $arr);
+
+    $args = array( 
+        'post_type' => 'jobs',
+        'post_status' => 'publish',
+        'posts_per_page' => 10,
+        'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
+        'tax_query' => array(
+            'relation' => 'OR',
+        ),
+        'meta_query'    => array(
+            'relation' => 'AND',
+        )
+    );
+    $taxonomyFilters = array(
+        'job-category',
+        'job-location',
+        'job-industry',
+        'job-type',
+    );
+
+    // for taxonomies
+    foreach($taxonomyFilters as $taxF) {
+        if( isset( $_GET[$taxF] ) ) {
+            if(count($_GET[$taxF]) > 1) {
+                foreach(filterHelper($_GET[$taxF], $taxF) as $termID) {
+                    $arr = array(
+                        'taxonomy' => $taxF,
+                        'field' => 'id',
+                        'terms' => $termID,
+                    );
+                    array_push($args['tax_query'], $arr);
+                }
+            } else {
+                $args['tax_query'][] = array(
+                    'taxonomy' => $taxF,
+                    'field' => 'id',
+                    'terms' => $_GET[$taxF],
+                );
+            }
         }
-    } else {
-        $args['tax_query'][] = array(
-            'taxonomy' => 'job-category',
-            'field' => 'id',
-            'terms' => $_GET['job-category'],
+    }
+
+    if( isset( $_GET['salary_min'] ) ) {
+        $args['meta_query'][] = array(
+            'key' => 'salary_min', 
+            'value' => $_GET['salary_min'], 
+            'compare' => '>='
         );
     }
-    //var_dump($args['tax_query']);
-}
-if( isset( $_GET['salary_min'] ) ) {
-    $args['meta_query'][] = array(
-        'key' => 'salary_min', 
-        'value' => $_GET['salary_min'], 
-        'compare' => '>='
-    );
-}
-if( isset( $_GET['salary_max'] ) ) {
-    $args['meta_query'][] = array(
-        'key' => 'salary_max', 
-        'value' => $_GET['salary_max'], 
-        'compare' => '<='
-    );
-}
-//var_dump($args);
-$query = new WP_Query( $args );
-$post_no = $query->found_posts;
+    if( isset( $_GET['salary_max'] ) ) {
+        $args['meta_query'][] = array(
+            'key' => 'salary_max', 
+            'value' => $_GET['salary_max'], 
+            'compare' => '<='
+        );
+    }
+    
+    //var_dump($args);
+    $query = new WP_Query( $args );
+    $post_no = $query->found_posts;
 
-$big = 999999999; // need an unlikely integer
-$pagination = paginate_links( array(
-    'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
-    'format' => '?paged=%#%',
-    'current' => max( 1, get_query_var('paged') ),
-    'total' => $query->max_num_pages,
-    'show_all' => true,
-    'add_args' => false,
-) ); 
-
-//var_dump($pagination);
+    $big = 999999999; // need an unlikely integer
+    $pagination = paginate_links( array(
+        'format' => '?paged=%#%',
+        'current' => max( 1, get_query_var('paged') ),
+        'total' => $query->max_num_pages,
+        'show_all' => true,
+        'add_args' => false,
+    ) ); 
 
 ?>
 

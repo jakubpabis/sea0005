@@ -74,32 +74,46 @@
             </div>
         </div>
         <?php endif; ?>
-        <div class="filter-group">
-            <span class="filter-title">
+        <?php if(get_categories(array('taxonomy' => 'job-industry'))): 
+            if( isset($_GET['job-industry']) && !empty($_GET['job-industry']) ){ 
+                $activeJobInds = $_GET['job-industry']; 
+                $active = 'active';
+            } else {
+                $activeJobInds = null;
+                $active = null;
+            }    
+        ?>
+        <div class="filter-group <?= $active ?>"">
+            <span class="filter-title <?= $active ?>"">
                 <?php pll_e('Industry type'); ?>
                 <i class="fas fa-plus"></i>
                 <i class="fas fa-minus"></i>
             </span>
+            <div class="filters">
+                <?php hierarchical_tax_tree_filter( 0, 'job-industry', $activeJobInds); ?>
+            </div>
         </div>
-        <?php if(get_categories(array('taxonomy' => 'job-type'))): ?>
-        <div class="filter-group">
-            <span class="filter-title">
+        <?php endif; ?>
+        <?php if(get_categories(array('taxonomy' => 'job-type'))): 
+            if( isset($_GET['job-type']) && !empty($_GET['job-type']) ){ 
+                $activeJobTyps = $_GET['job-type']; 
+                $active = 'active';
+            } else {
+                $activeJobTyps = null;
+                $active = null;
+            }       
+        ?>
+        <div class="filter-group <?= $active ?>">
+            <span class="filter-title <?= $active ?>">
                 <?php pll_e('Job type'); ?>
                 <i class="fas fa-plus"></i>
                 <i class="fas fa-minus"></i>
             </span>
             <div class="filters">
-                <?php hierarchical_tax_tree( 0, 'job-type' ); ?>
+                <?php hierarchical_tax_tree_filter( 0, 'job-type', $activeJobTyps); ?>
             </div>
         </div>
         <?php endif; ?>
-        <div class="filter-group">
-            <span class="filter-title">
-                <?php pll_e('Hot skills'); ?>
-                <i class="fas fa-plus"></i>
-                <i class="fas fa-minus"></i>
-            </span>
-        </div>
         <button type="submit" class="btn btn__default yellow"><?php pll_e('Filter'); ?></button>
         <!-- <input type="hidden" name="action" value="myfilter"> -->
     </form>

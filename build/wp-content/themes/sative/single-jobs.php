@@ -18,7 +18,7 @@ get_header(); ?>
                     <?php the_title( '<h1>', '</h1>' ); ?>
                 </header>
                 <div class="col-lg-4 col-sm-3 text-right">
-                    <a href="" class="btn btn__medium yellow"><?php pll_e( 'Back' ); ?></a>
+                    <button type="button" id="backBTN" class="btn btn__medium yellow d-none"><?php pll_e( 'Back' ); ?></button>
                 </div>
             </div>
             <div class="row pt-3">
@@ -153,5 +153,12 @@ get_header(); ?>
     </section>
 
 <?php endwhile; ?>
-
+<script>
+    if(window.history.length > 1) {
+        document.getElementById('backBTN').classList.remove('d-none');
+        document.getElementById('backBTN').addEventListener('click', function() {
+            window.history.back();
+        });
+    }
+</script>
 <?php get_footer();

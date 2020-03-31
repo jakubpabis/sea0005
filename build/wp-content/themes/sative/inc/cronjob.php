@@ -13,7 +13,13 @@ function xmlRead()
 
     foreach($xml->vacancy as $job) {
 
-        array_push($job_ids, $job->id);
+        if( !empty($job->id) ) {
+            $jobID = intval($job->id);
+        } else {
+            $jobID = null;
+        }
+
+        array_push($job_ids, $jobID);
 
         $date = date("Y-m-d H:i:s", strtotime($job->publish_date));
 
@@ -102,6 +108,7 @@ function xmlRead()
 
                 wp_update_post( $jobArray, true );
 
+                update_field( 'job_id', $jobID, $postID );
                 update_field( 'salary_min', $salary_min, $postID );
                 update_field( 'salary_max', $salary_max, $postID );
                 update_field( 'location', strval($job->address), $postID );
@@ -138,6 +145,7 @@ function xmlRead()
              * General fields insert
              */
             $postID = wp_insert_post( $jobArray, true );
+            update_field( 'job_id', $jobID, $postID );
             update_field( 'salary_min', $salary_min, $postID );
             update_field( 'salary_max', $salary_max, $postID );
             update_field( 'location', strval($job->address), $postID );
@@ -167,7 +175,9 @@ function xmlRead()
         }
 
     }
-    //var_dump($job_ids);
+
+    jobsFulfilled($job_ids);
+
 }
 
 /**
@@ -197,18 +207,39 @@ function jobList()
     return $postsArr;
 }
 
-function jobAdd()
+/**
+ * Removing old jobs
+ *
+ * @return void
+ */
+function jobsFulfilled($job_ids)
 {
+    $inDB = jobList();
 
-}
+    foreach($inDB as $post_slug) {
+        $args = array(
+            'name'        => $post_slug,
+            'post_type'   => 'jobs',
+            'post_status' => 'publish',
+            'numberposts' => 1
+        );
+        $my_posts = get_posts($args);
 
-function jobFulfilled()
-{
-
-}
-
-function jobUpdate()
-{
+        if( $my_posts ) {
+            $postID = $my_posts[0]->ID;
+            $job_id = get_field('job_id', $postID);
+            $post_type = get_post_type($postID);
+        }
+        if( !in_array( $job_id, $job_ids ) && $post_type !== 'jobs-fulfilled') {
+            //var_dump($my_posts[0]->name);
+            removeAllTerms($postID);
+            $jobArray = array(
+                'ID'            => $postID,
+                'post_type'     => 'jobs-fulfilled',
+            );
+            wp_update_post( $jobArray, true );
+        }
+    }
 
 }
 
@@ -230,6 +261,28 @@ function slugify($text)
         return 'n-a';
     }
     return $text;
+}
+
+function removeAllTerms($postID)
+{
+    $category = wp_get_post_terms($postID, 'job-category');
+    $cats = array();
+    foreach($category as $cat) {
+        $cats[] = $cat->term_id;
+    }
+    $location = wp_get_post_terms($postID, 'job-location');
+    $locs = array();
+    foreach($location as $loc) {
+        $locs[] = $loc->term_id;
+    }
+    $type = wp_get_post_terms($postID, 'job-type');
+    $typs = array();
+    foreach($type as $typ) {
+        $typs[] = $typ->term_id;
+    }
+    wp_remove_object_terms($postID, $cats, 'job-category');
+    wp_remove_object_terms($postID, $locs, 'job-location');
+    wp_remove_object_terms($postID, $typs, 'job-type');
 }
 
 function insertCategories($job_categories, $postID) 
@@ -258,7 +311,7 @@ function insertCategories($job_categories, $postID)
             $termID = $term->term_id;
             wp_set_post_terms($postID, $termID, 'job-category', true);
 
-        } else if( $category['group'] == '#6 Skills Sales' || $category['group'] == '#6 Skill Sales' ) {
+        } else if( $category['group'] == '#6 Skill Sales' ) {
 
             $parent = get_term_by('slug', 'sales', 'job-category');
             $parentID = $parent->term_id;
@@ -269,6 +322,16 @@ function insertCategories($job_categories, $postID)
             }
             $termID = $term->term_id;
             wp_set_post_terms($postID, $termID, 'job-category', true);
+
+        } else if( $category['group'] == '#2.2 Skill Industry' ) {
+
+            $term = get_term_by('name', strval($category), 'job-industry');
+            if(!$term) {
+                wp_insert_term(strval($category), 'job-industry');
+                $term = get_term_by('name', strval($category), 'job-industry');
+            }
+            $termID = $term->term_id;
+            wp_set_post_terms($postID, $termID, 'job-industry', true);
 
         } else if($category['group'] == '#1 Availability') {
 
@@ -293,8 +356,13 @@ function insertLocation($job, $postID)
         $city = strval( $job->address_city );
     } else if(!empty($job->address)) {
         $split = explode( ",", strval($job->address) );
-        $city = $split[0];
-        $country = $split[1];
+        if( count($split) > 1 ) {
+            $city = $split[0];
+            $country = $split[1];
+        } else if( count($split) > 0 ) {
+            $country = $split[0];
+            $city = false;
+        }
     } else {
         return false;
     }
