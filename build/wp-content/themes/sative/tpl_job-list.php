@@ -86,7 +86,14 @@ get_header();
         <div class="row align-items-center justify-content-between">
             <div class="col-lg-auto">
                 <h1>
-                    <span class="header__jobs-jobsno"><?= $post_no; ?></span> <?php pll_e( 'open jobs' ); ?>
+                    <span class="header__jobs-jobsno"><?= $post_no === 0 ? pll_e( 'No jobs found...' ) : $post_no; ?></span>
+                    <?php 
+                        if($post_no > 1) {
+                            pll_e( 'open jobs' );
+                        } else if($post_no > 0) {
+                            pll_e( 'open job' );
+                        }
+                    ?>
                 </h1>
             </div>
             <div class="col-lg-auto header__jobs-cats">
@@ -119,7 +126,14 @@ get_header();
             </div>
             <div class="col-12 text-right">
                 <p class="text-size-small font-primary">
-                    <span class="jobsno"><?= $post_no; ?></span> <?php pll_e( 'jobs found' ); ?>
+                    <span class="jobsno"><?= $post_no; ?></span> 
+                    <?php
+                        if($post_no > 1 || $post_no === 0) {
+                            pll_e( 'open jobs' );
+                        } else if($post_no > 0) {
+                            pll_e( 'open job' );
+                        }
+                    ?>
                 </p>
             </div>
         </form>
