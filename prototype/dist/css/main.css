@@ -2962,8 +2962,20 @@ aside#chat .dog {
 }
 
 .team__item-img {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	padding: 0;
+	padding-bottom: 100%;
 	-webkit-clip-path: polygon(0% 15px, 15px 0%, calc(100% - 15px) 0%, 100% 15px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0% calc(100% - 15px));
 	clip-path: polygon(0% 15px, 15px 0%, calc(100% - 15px) 0%, 100% 15px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0% calc(100% - 15px));
+}
+
+.team__item-img img {
+	position: absolute;
+	top: 0;
+	transform: scale(1.25);
+	transform-origin: top;
 }
 
 .team__item-social {
