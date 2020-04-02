@@ -939,6 +939,7 @@ $toTranslate = array(
     'Back',
     'Executive search consultant',
     'Show all jobs',
+    'Show less',
     'No jobs found...',
     'Schedule a call or meeting',
     'Search our knowledge base. We have tons of useful articles for you!',

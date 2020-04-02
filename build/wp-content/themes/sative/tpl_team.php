@@ -161,7 +161,7 @@ get_template_part( 'template-parts/breadcrumbs' ); ?>
                                 <?= get_field('short_bio'); ?>
                                 <div class="btns">
                                     <?php if(get_the_content()): ?>
-                                        <a href="javascript:void(0)" class="btn btn__default navy"><?php pll_e( 'Read more' ); ?></a>
+                                        <a href="javascript:void(0)" class="btn btn__default navy team__item-showmore"><?php pll_e( 'Read more' ); ?></a>
                                     <?php endif; ?>
                                     <?php if(get_field('calendly')): ?>
                                         <a href="<?= get_field('calendly') ?>"><u><?php pll_e( 'Schedule a call or meeting' ); ?></u></a>
@@ -169,6 +169,19 @@ get_template_part( 'template-parts/breadcrumbs' ); ?>
                                 </div>
                             </div>
                         </div>
+                        <?php if(get_the_content()): ?>
+                        <div class="col-12 team__item-hidden d-none">
+                            <?php the_content(); ?>
+                            <?php if(get_field('calendly')): ?>
+                                <div class="text-center mt-3 mb-4">
+                                    <a href="<?= get_field('calendly') ?>"><u><?php pll_e( 'Schedule a call or meeting' ); ?></u></a>
+                                </div>
+                            <?php endif; ?>
+                            <div class="text-center mt-4">
+                                <a href="javascript:void(0)" class="btn btn__default navy team__item-showless"><?php pll_e( 'Show less' ); ?></a>
+                            </div>
+                        </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

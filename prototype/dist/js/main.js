@@ -3837,6 +3837,18 @@ function filterSelect()
 	});
 }
 
+function teamShowMore()
+{
+	$('.team__item-showmore').on('click', function(e) {
+		e.preventDefault();
+		$(this).parent().addClass('d-none').parent().parent().next('.team__item-hidden').removeClass('d-none');
+	});
+	$('.team__item-showless').on('click', function(e) {
+		e.preventDefault();
+		$(this).parent().parent().addClass('d-none').prev().find('.btns').removeClass('d-none');
+	});
+}
+
 function menuMobile()
 {
 	$('button.mobileMenu').on('click', function() {
@@ -3852,6 +3864,7 @@ $(document).ready(function() {
 	filterSelect();
 	menuMobile();
 	knowledgeFilterToggle();
+	teamShowMore();
 
 	if($('.home__middle-hashtags').length != 0) {
 		homeHashtags();

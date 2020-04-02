@@ -2978,31 +2978,46 @@ aside#chat .dog {
 	margin-left: 0;
 }
 
-.team__item-text {
+.team__item-text,
+.team__item-hidden {
 	padding: 30px 30px 30px 0;
 }
 
-.team__item-text h4 {
+.team__item-text h4,
+.team__item-hidden h4 {
 	margin-top: 5px;
 	margin-bottom: 15px;
 }
 
-.team__item-text a:hover {
+.team__item-text a:hover,
+.team__item-hidden a:hover {
 	color: inherit;
 }
 
-.team__item-text p {
+.team__item-text p,
+.team__item-hidden p {
 	font-size: 16px;
 }
 
-.team__item-text .btns {
+.team__item-text .btns,
+.team__item-hidden .btns {
 	display: flex;
 	margin-top: 25px;
 	align-items: center;
 }
 
-.team__item-text .btns .btn {
+.team__item-text .btns .btn,
+.team__item-hidden .btns .btn {
 	margin-right: 30px;
+}
+
+.team__item-hidden {
+	padding: 0 45px 30px;
+}
+
+.team__item-hidden p {
+	font-size: 16px;
+	line-height: 1.75;
 }
 
 .clients__big,
@@ -4326,8 +4341,13 @@ h3,
 	flex-basis: calc(50% - 14px);
 }
 
-.team__item-text {
+.team__item-text,
+.team__item-hidden {
 	padding: 25px 25px 25px 0;
+}
+
+.team__item-hidden {
+	padding: 0 40px 25px;
 }
 
 }
@@ -4520,8 +4540,13 @@ p,
 	padding: 0 45px;
 }
 
-.team__item-text {
+.team__item-text,
+.team__item-hidden {
 	padding: 20px 20px 20px 0;
+}
+
+.team__item-hidden {
+	padding: 0 35px 20px;
 }
 
 .clients__big-title,
@@ -4772,8 +4797,13 @@ h4,
 	border-left: 40px solid transparent;
 }
 
-.team__item-text {
+.team__item-text,
+.team__item-hidden {
 	padding: 30px 20px 20px 20px;
+}
+
+.team__item-hidden {
+	padding: 0 30px 20px;
 }
 
 .clients__big-item,

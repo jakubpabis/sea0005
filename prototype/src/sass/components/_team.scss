@@ -53,7 +53,8 @@
 
         }
 
-        &-text {
+        &-text,
+        &-hidden {
             padding: 30px 30px 30px 0;
 
             @media(max-width: 1199px) {
@@ -94,6 +95,28 @@
                     margin-right: 30px;
                 }
                 
+            }
+
+        }
+
+        &-hidden {
+            padding: 0 45px 30px;
+
+            @media(max-width: 1199px) {
+                padding: 0 40px 25px;
+            }
+
+            @media(max-width: 991px) {
+                padding: 0 35px 20px;
+            }
+
+            @media(max-width: 767px) {
+                padding: 0 30px 20px;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 1.75;
             }
 
         }
