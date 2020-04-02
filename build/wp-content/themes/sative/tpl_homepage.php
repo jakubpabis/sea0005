@@ -115,26 +115,17 @@ get_header(); ?>
     <div class="container">
         <div class="row align-content-center">
             <?php while ( have_rows('job_categories') ) : the_row(); ?>
-            <div class="col-md-3 col-sm-6 col-10">
+            <div class="col-md-3 col-6">
                 <div class="home__jobs-content">
                     <div class="home__jobs-icon <?= get_sub_field('colour'); ?>">
                         <i class="<?= get_sub_field('icon'); ?>"></i>
                     </div>
                     <div>
                         <h2><?= get_sub_field('title'); ?></h2>
-                        <div class="home__jobs-hidden">
-                            <?php if(get_sub_field('text')): ?>
-                            <p class="text-size-small">
-                                <?= get_sub_field('text'); ?>
-                            </p>
-                            <?php endif; ?>
-                            <?php if(get_sub_field('button')): ?>
-                            <a href="<?= get_sub_field('button')['url']; ?>" class="btn btn__small navy">
-                                <?= get_sub_field('button')['title']; ?>
-                            </a>
-                            <?php endif; ?>
-                        </div>
                     </div>
+                    <?php if(get_sub_field('button')): ?>
+                        <a href="<?= get_sub_field('button')['url']; ?>" class="whole-element-link" title="<?= get_sub_field('button')['title']; ?>"></a>
+                    <?php endif; ?>
                 </div>
             </div>
             <?php endwhile; ?>

@@ -1575,7 +1575,7 @@ i {
 }
 
 .home__jobs {
-	padding: 150px 0;
+	padding: 120px 0;
 }
 
 .home__jobs-content {
@@ -1583,7 +1583,7 @@ i {
 	display: flex;
 	flex-direction: column;
 	padding: 0 20px;
-	transition: all 200ms ease-out;
+	transition: all 100ms ease-out;
 	text-align: center;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -1591,14 +1591,13 @@ i {
 }
 
 .home__jobs-content:hover {
-	transform: translateY(-35%);
+	transform: translateY(-15px);
 }
 
-.home__jobs-content:hover .home__jobs-hidden {
-	visibility: visible;
-	height: auto;
-	transform: translateY(0);
-	opacity: 1;
+.home__jobs-content:active {
+	transform: translateY(-10px);
+	-webkit-filter: brightness(75%);
+	filter: brightness(75%);
 }
 
 .home__jobs-icon {
@@ -1618,15 +1617,6 @@ i {
 .home__jobs-icon i {
 	font-size: 46px;
 	font-weight: 300;
-}
-
-.home__jobs-hidden {
-	position: absolute;
-	bottom: -65%;
-	visibility: hidden;
-	transition: all 200ms ease-out;
-	transform: translateY(-75%);
-	opacity: 0;
 }
 
 .home__clients {
@@ -4484,7 +4474,7 @@ p,
 }
 
 .home__jobs {
-	padding: 120px 0;
+	padding: 90px 0;
 }
 
 .cards__section-img {
@@ -4681,40 +4671,32 @@ h4,
 }
 
 .home__jobs {
-	padding: 90px 0;
+	padding: 60px 0;
 }
 
 .home__jobs-content {
-	flex-direction: row;
-	padding: 20px 0;
-	align-items: flex-start;
-	justify-content: flex-start;
+	padding: 30px 0;
+	transition: all 0ms ease-out;
 }
 
 .home__jobs-content:hover {
 	transform: translateY(0);
 }
 
+.home__jobs-content:active {
+	transform: translateY(5px);
+}
+
 .home__jobs-icon {
 	width: 90px;
 	height: 90px;
-	margin-right: 15px;
-	margin-bottom: 0;
+	margin-bottom: 15px;
 	-webkit-clip-path: polygon(0% 12px, 12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px));
 	clip-path: polygon(0% 12px, 12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px));
 }
 
 .home__jobs-icon i {
 	font-size: 38px;
-}
-
-.home__jobs-hidden {
-	position: relative;
-	bottom: auto;
-	visibility: visible;
-	transition: none;
-	transform: translateY(0);
-	opacity: 1;
 }
 
 .card {
@@ -4935,7 +4917,7 @@ p,
 }
 
 .home__jobs {
-	padding: 60px 0;
+	padding: 50px 0;
 }
 
 .home__clients {
