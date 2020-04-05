@@ -896,68 +896,6 @@ function jobs_filter_function()
 	die();
 } */
 
-
-$toTranslate = array(
-    'Contact',
-    'Get in touch',
-    'Share this content',
-    'Filter jobs',
-    'Categories',
-    'Salary range',
-    'Location',
-    'Industry type',
-    'Job type',
-    'Hot skills',
-    'Open in maps',
-    'Filter',
-    'open jobs',
-    'open job',
-    'jobs found',
-    'job found',
-    'jobs showing',
-    'job showing',
-    'More info',
-    'Read more',
-    'Topics',
-    'Contact us!',
-    'Apply here',
-    'Apply with:',
-    'Male',
-    'Female',
-    'Name',
-    'Email',
-    'Phone',
-    'Date of birth',
-    'City',
-    'CV',
-    'Upload',
-    'Upload CV',
-    'Motivation',
-    'Send application',
-    'I hereby agree with the',
-    'Privacy Policy',
-    'Back',
-    'Executive search consultant',
-    'Show all jobs',
-    'Show less',
-    'No jobs found...',
-    'Schedule a call or meeting',
-    'Search our knowledge base. We have tons of useful articles for you!',
-    'articles found',
-    'Enter job title here',
-    'Enter job location',
-    'Filter by topic',
-    'Contact',
-    'Recent jobs',
-    'Hot skills',
-    'Subscribe to our newsletter',
-    'Interested in instantly receiving the latest Search X Recruitment jobs within your area of expertise?'
-);
-
-foreach($toTranslate as $string) {
-    pll_register_string('sative', $string);
-}
-
 add_action( 'admin_init', 'my_remove_admin_menus' );
 function my_remove_admin_menus() {
     remove_menu_page( 'edit-comments.php' );
@@ -1073,5 +1011,66 @@ add_filter('post_type_link', 'change_link', 10, 2);
 //     return $permalink;
 // }
 // add_filter('post_link_category', 'change_link2', 10, 2);
+
+$toTranslate = array(
+    'Contact',
+    'Get in touch',
+    'Share this content',
+    'Filter jobs',
+    'Categories',
+    'Salary range',
+    'Location',
+    'Industry type',
+    'Job type',
+    'Hot skills',
+    'Open in maps',
+    'Filter',
+    'open jobs',
+    'open job',
+    'jobs found',
+    'job found',
+    'jobs showing',
+    'job showing',
+    'More info',
+    'Read more',
+    'Topics',
+    'Contact us!',
+    'Apply here',
+    'Apply with:',
+    'Male',
+    'Female',
+    'Name',
+    'Email',
+    'Phone',
+    'Date of birth',
+    'City',
+    'CV',
+    'Upload',
+    'Upload CV',
+    'Motivation',
+    'Send application',
+    'I hereby agree with the',
+    'Privacy Policy',
+    'Back',
+    'Executive search consultant',
+    'Show all jobs',
+    'Show less',
+    'No jobs found...',
+    'Schedule a call or meeting',
+    'Search our knowledge base. We have tons of useful articles for you!',
+    'articles found',
+    'Enter job title here',
+    'Enter job location',
+    'Filter by topic',
+    'Contact',
+    'Recent jobs',
+    'Hot skills',
+    'Subscribe to our newsletter',
+    'Interested in instantly receiving the latest Search X Recruitment jobs within your area of expertise?'
+);
+
+foreach($toTranslate as $string) {
+    pll_register_string('sative', $string);
+}
 
 require_once get_template_directory() . '/inc/cronjob.php';

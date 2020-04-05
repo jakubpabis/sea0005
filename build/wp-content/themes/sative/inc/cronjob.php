@@ -21,7 +21,7 @@ function xmlRead()
 
         array_push($job_ids, $jobID);
 
-        $date = date("Y-m-d H:i:s", strtotime($job->publish_date));
+        $date = date( "Y-m-d H:i:s", strtotime($job->modify_date) );
 
         if(!empty($job->url_title)) {
             $slug = strval($job->url_title);
@@ -56,9 +56,9 @@ function xmlRead()
             $meta_description = null;
         }
 
-        if($job->contact_first_name && $job->contact_last_name) {
+        if( strval($job->contact_first_name) && strval($job->contact_last_name) ) {
             $recruiter = strval($job->contact_first_name).' '.strval($job->contact_last_name);
-        } else if($job->contact) {
+        } else if( $job->contact ) {
             $recruiter = strval($job->contact);
         }
 
@@ -74,7 +74,6 @@ function xmlRead()
             'post_title'    => $job->title,
             'post_content'  => $job->description,
             'post_date'     => $date,
-            'post_modified' => $date,
             'post_name'     => $slug,
         );
 
@@ -101,6 +100,9 @@ function xmlRead()
 
             if( strval($postDate) !== strval($date) || $force) {
 
+                var_dump( strval($postDate) );
+                var_dump( strval($date) );
+
                 unset($jobArray['post_name']);
                 unset($jobArray['post_type']);
                 unset($jobArray['post_status']);
@@ -115,15 +117,38 @@ function xmlRead()
                 update_field( 'latitude', floatval($job->lat), $postID );
                 update_field( 'longitude', floatval($job->lng), $postID );
                 update_field( 'recruiter', $recruiter, $postID );
-                if($recruiter_related !== null) {
+
+                if( $recruiter_related !== null ) {
                     update_field( 'recruiter_related', $recruiter_related, $postID );   
                 }
-                update_field( 'meta_title', $meta_title, $postID );
-                update_field( 'meta_description', $meta_description, $postID );
-                update_field( 'meta_keywords', $meta_keywords, $postID );
-                update_post_meta( 1, '_yoast_wpseo_title', $meta_title);
-                update_post_meta( 1, '_yoast_wpseo_metadesc', $meta_description);
-                update_post_meta( 1, '_yoast_wpseo_metakeywords', $meta_keywords);
+                
+                if( $meta_title !== null ) {
+                    update_field( 'meta_title', $meta_title, $postID );
+                    if( get_post_meta( $postID, '_yoast_wpseo_title', true ) ) {
+                        update_post_meta( $postID, '_yoast_wpseo_title', $meta_title);
+                    } else {
+                        add_post_meta( $postID, '_yoast_wpseo_title', $meta_title);
+                    }
+                }
+
+                if( $meta_description !== null ) {
+                    update_field( 'meta_description', $meta_description, $postID );
+                    if( get_post_meta( $postID, '_yoast_wpseo_metadesc', true ) ) {
+                        update_post_meta( $postID, '_yoast_wpseo_metadesc', $meta_description);
+                    } else {
+                        add_post_meta( $postID, '_yoast_wpseo_metadesc', $meta_description);
+                    }
+                }
+
+                if( $meta_keywords !== null ) {
+                    update_field( 'meta_keywords', $meta_keywords, $postID );
+                    $meta_keywords = str_replace(',', '', $meta_keywords);
+                    if( get_post_meta( $postID, '_yoast_wpseo_focuskw', true ) ) {
+                        update_post_meta( $postID, '_yoast_wpseo_focuskw', $meta_keywords);
+                    } else {
+                        add_post_meta( $postID, '_yoast_wpseo_focuskw', $meta_keywords);
+                    }
+                }
 
             }
 
@@ -145,6 +170,7 @@ function xmlRead()
              * General fields insert
              */
             $postID = wp_insert_post( $jobArray, true );
+
             update_field( 'job_id', $jobID, $postID );
             update_field( 'salary_min', $salary_min, $postID );
             update_field( 'salary_max', $salary_max, $postID );
@@ -152,15 +178,26 @@ function xmlRead()
             update_field( 'latitude', floatval($job->lat), $postID );
             update_field( 'longitude', floatval($job->lng), $postID );
             update_field( 'recruiter', $recruiter, $postID );
-            if($recruiter_related !== null) {
+
+            if( $recruiter_related !== null ) {
                 update_field( 'recruiter_related', $recruiter_related, $postID );   
             }
-            update_field( 'meta_title', $meta_title, $postID );
-            update_field( 'meta_description', $meta_description, $postID );
-            update_field( 'meta_keywords', $meta_keywords, $postID );
-            update_post_meta( 1, '_yoast_wpseo_title', $meta_title);
-            update_post_meta( 1, '_yoast_wpseo_metadesc', $meta_description);
-            update_post_meta( 1, '_yoast_wpseo_metakeywords', $meta_keywords);
+
+            if( $meta_title !== null ) {
+                update_field( 'meta_title', $meta_title, $postID );
+                add_post_meta( $postID, '_yoast_wpseo_title', $meta_title);
+            }
+
+            if( $meta_description !== null ) {
+                update_field( 'meta_description', $meta_description, $postID );
+                add_post_meta( $postID, '_yoast_wpseo_metadesc', $meta_description);
+            }
+
+            if( $meta_keywords !== null ) {
+                update_field( 'meta_keywords', $meta_keywords, $postID );
+                $meta_keywords = str_replace(',', '', $meta_keywords);
+                add_post_meta( $postID, '_yoast_wpseo_focuskw', $meta_keywords);
+            }
 
             /**
              * Categories insert
