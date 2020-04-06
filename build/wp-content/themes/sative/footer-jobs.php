@@ -39,22 +39,13 @@
                     <div class="row footer__middle">
                         <div class="col-lg-3 col-md-6 mb-5">
                             <h4>
-                                <?php pll_e( 'Contact' ); ?>
+                                <?= get_field( 'contact_title', 'option' ); ?>
                             </h4>
-                            <p class="text-size-small font-primary">
-                                Laan van Kronenburg 14<br/>
-                                1183 AS Amstelveen<br/>
-                                Amsterdam Area, The Netherlands<br/>
-                                <a href="https://g.page/searchitrecruitment?share" class="color-sea" target="_blank"><strong><u><?php pll_e('Open in maps'); ?></u></strong></a><br/>
-                                <br/>
-                                KVK: 62737244<br/>
-                                BTW: NL854937274B01<br/>
-                                BANK: NL54INGB0006845114
-                            </p>
+                            <?= get_field( 'contact_text', 'option' ); ?>
                         </div>
                         <div class="col-lg-3 col-md-6 mb-5">
                             <h4>
-                                <?php pll_e( 'Recent jobs' ); ?>
+                                <?= get_field( 'recent_title', 'option' ); ?>
                             </h4>
                             <?php 
                                 wp_reset_postdata();
@@ -77,19 +68,15 @@
                         </div>
                         <div class="col-lg-3 col-md-6 mb-5">
                             <h4>
-                                <?php pll_e( 'Hot skills' ); ?>
+                                <?= get_field( 'hot_skills_title', 'option' ); ?>
                             </h4>
-                            <p class="text-size-small font-primary">
-                                <a href="">Java</a> / <a href="">.NET</a> / <a href="">PHP</a> / <a href="">JavaScript</a> / <a href="">Cloud</a> / <a href="">Android</a> / <a href="">iOS</a> / <a href="">Data Science</a> / <a href="">Business Intelligence</a> / <a href="">Data Engineering</a> / <a href="">Sales</a> / <a href="">DevOps</a>
-                            </p>
+                            <?= get_field( 'hot_skills_text', 'option' ); ?>
                         </div>
                         <div class="col-lg-3 col-md-6 mb-5">
                             <h4>
-                                <?php pll_e( 'Subscribe to our newsletter' ); ?>
+                                <?= get_field( 'subscribe_title', 'option' ); ?>
                             </h4>
-                            <p class="text-size-small font-primary">
-                                <?php pll_e( 'Interested in instantly receiving the latest Search X Recruitment jobs within your area of expertise?' ); ?>
-                            </p>
+                            <?= get_field( 'subscribe_text', 'option' ); ?>
                             <form action="" class="newsletter">
                                 <input type="email" placeholder="Email">
                                 <button type="submit"><i class="fas fa-caret-right"></i></button>
