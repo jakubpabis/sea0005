@@ -1251,6 +1251,11 @@ i {
 	padding: 10px 0;
 }
 
+.breadcrumbs__list {
+	max-width: calc(100vw - 70px) !important;
+	margin-top: 4px;
+}
+
 .breadcrumbs__items {
 	position: relative;
 	display: flex;
@@ -1258,6 +1263,8 @@ i {
 	margin-left: -19px;
 	padding: 0;
 	list-style: none;
+	white-space: normal;
+	flex-wrap: wrap;
 }
 
 .breadcrumbs__items a,
@@ -1269,6 +1276,7 @@ i {
 	display: inline-block;
 	padding: 0 4px;
 	vertical-align: middle;
+	white-space: normal;
 }
 
 .breadcrumbs__items a:hover,
