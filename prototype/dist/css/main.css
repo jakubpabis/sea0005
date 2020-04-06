@@ -4352,6 +4352,18 @@ h3,
 	flex-basis: calc(50% - 14px);
 }
 
+.article aside {
+	padding-left: 0 !important;
+}
+
+.article aside .card {
+	padding: 25px 5px 25px 20px;
+}
+
+.article aside .share h5 {
+	margin-bottom: 10px;
+}
+
 .team__item-text,
 .team__item-hidden {
 	padding: 25px 25px 25px 0;
@@ -4527,6 +4539,19 @@ p,
 
 .jobs__single-sidebar .card form .ugly label.full {
 	width: calc(100% - 14px);
+}
+
+.article {
+	margin-top: 40px;
+	margin-bottom: 60px;
+}
+
+.article article {
+	padding-right: 15px;
+}
+
+.article aside {
+	padding-left: 15px !important;
 }
 
 .dog__stand svg {
@@ -4763,6 +4788,11 @@ h4,
 
 .jobs__single-sidebar .card .social-login .btn {
 	flex-basis: calc(50% - 14px);
+}
+
+.article {
+	margin-top: 30px;
+	margin-bottom: 50px;
 }
 
 .dog.left.abs object,

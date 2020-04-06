@@ -46,7 +46,7 @@ get_header(); ?>
 					?>
 
 				</article>
-				<aside class="col-lg-4">
+				<aside class="col-lg-4 col-md-7 col-sm-9">
 					<?php get_sidebar(); ?>
 				</aside>
 			</div>
