@@ -80,10 +80,7 @@ $lang = pll_current_language();
                                 <?= get_field( 'subscribe_title_'.$lang, 'option' ); ?>
                             </h4>
                             <?= get_field( 'subscribe_text_'.$lang, 'option' ); ?>
-                            <form action="" class="newsletter">
-                                <input type="email" placeholder="Email">
-                                <button type="submit"><i class="fas fa-caret-right"></i></button>
-                            </form>
+                            <a href="http://jobs.searchsoftware.nl/searchit/subscribe" target="_blank" class="btn btn__default yellow mt-4"><?= pll_e('Subscribe now'); ?></a>
                         </div>
                     </div>
                 </div>
