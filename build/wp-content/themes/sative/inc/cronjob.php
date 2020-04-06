@@ -325,36 +325,17 @@ function removeAllTerms($postID)
 function insertCategories($job_categories, $postID) 
 {
 
-    foreach($job_categories as $category) {
+    $skillArr = array();
+
+    foreach( $job_categories as $category ) {
+
         if($category['group'] == '#2 Skill Area') {
+
+            $skillArr[] = strval($category);
             
             $term = get_term_by('name', strval($category), 'job-category');
             if(!$term) {
                 wp_insert_term(strval($category), 'job-category');
-                $term = get_term_by('name', strval($category), 'job-category');
-            }
-            $termID = $term->term_id;
-            wp_set_post_terms($postID, $termID, 'job-category', true);
-
-        } else if($category['group'] == '#3 Skill IT') {
-
-            $parent = get_term_by('slug', 'it', 'job-category');
-            $parentID = $parent->term_id;
-            $term = get_term_by('name', strval($category), 'job-category');
-            if(!$term) {
-                wp_insert_term(strval($category), 'job-category', array('parent' => $parentID));
-                $term = get_term_by('name', strval($category), 'job-category');
-            }
-            $termID = $term->term_id;
-            wp_set_post_terms($postID, $termID, 'job-category', true);
-
-        } else if( $category['group'] == '#6 Skill Sales' ) {
-
-            $parent = get_term_by('slug', 'sales', 'job-category');
-            $parentID = $parent->term_id;
-            $term = get_term_by('name', strval($category), 'job-category');
-            if(!$term) {
-                wp_insert_term(strval($category), 'job-category', array('parent' => $parentID));
                 $term = get_term_by('name', strval($category), 'job-category');
             }
             $termID = $term->term_id;
@@ -384,7 +365,53 @@ function insertCategories($job_categories, $postID)
 
     }
 
+    if( !empty($skillArr) ) {
+        insertCategoriesRec($job_categories, $postID, $skillArr);
+    }
+
 }
+
+function insertCategoriesRec($job_categories, $postID, $skillArr)
+{
+
+    $skills = array();
+
+    foreach( $skillArr as $skill ) {
+
+        $skillGroup = 'Skill '.$skill;
+
+        foreach( $job_categories as $category ) {
+
+            if( strpos( $category['group'], $skillGroup ) != false ) {
+
+                $skills[] = strval($category);
+
+                $slug = slugify($skill);
+                echo $slug.' - ';
+
+                $parent = get_term_by('slug', $slug, 'job-category');
+                $parentID = $parent->term_id;
+                echo $parentID.' | ';
+                $term = get_term_by('name', strval($category), 'job-category');
+                if(!$term) {
+                    wp_insert_term(strval($category), 'job-category', array('parent' => $parentID));
+                    $term = get_term_by('name', strval($category), 'job-category');
+                }
+                $termID = $term->term_id;
+                wp_set_post_terms($postID, $termID, 'job-category', true);
+
+            }
+
+        }
+
+    }
+
+    if( !empty($skills) ) {
+        insertCategoriesRec($job_categories, $postID, $skills);
+    }
+
+}
+
 
 function insertLocation($job, $postID)
 {

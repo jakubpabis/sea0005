@@ -2308,7 +2308,7 @@ aside#chat .dog {
 	display: block;
 }
 
-.jobs__list-filters .filter-group ul li.active > ul ul {
+.jobs__list-filters .filter-group ul li.active > ul > ul {
 	padding-bottom: 0;
 }
 
