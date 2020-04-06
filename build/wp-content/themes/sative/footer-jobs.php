@@ -39,13 +39,13 @@
                     <div class="row footer__middle">
                         <div class="col-lg-3 col-md-6 mb-5">
                             <h4>
-                                <?= get_field( 'contact_title', 'option' ); ?>
+                                <?= get_field( 'contact_title_'.$lang, 'option' ); ?>
                             </h4>
-                            <?= get_field( 'contact_text', 'option' ); ?>
+                            <?= get_field( 'contact_text_'.$lang, 'option' ); ?>
                         </div>
                         <div class="col-lg-3 col-md-6 mb-5">
                             <h4>
-                                <?= get_field( 'recent_title', 'option' ); ?>
+                                <?= get_field( 'recent_title_'.$lang, 'option' ); ?>
                             </h4>
                             <?php 
                                 wp_reset_postdata();
@@ -68,15 +68,15 @@
                         </div>
                         <div class="col-lg-3 col-md-6 mb-5">
                             <h4>
-                                <?= get_field( 'hot_skills_title', 'option' ); ?>
+                                <?= get_field( 'hot_skills_title_'.$lang, 'option' ); ?>
                             </h4>
-                            <?= get_field( 'hot_skills_text', 'option' ); ?>
+                            <?= get_field( 'hot_skills_text_'.$lang, 'option' ); ?>
                         </div>
                         <div class="col-lg-3 col-md-6 mb-5">
                             <h4>
-                                <?= get_field( 'subscribe_title', 'option' ); ?>
+                                <?= get_field( 'subscribe_title_'.$lang, 'option' ); ?>
                             </h4>
-                            <?= get_field( 'subscribe_text', 'option' ); ?>
+                            <?= get_field( 'subscribe_text_'.$lang, 'option' ); ?>
                             <form action="" class="newsletter">
                                 <input type="email" placeholder="Email">
                                 <button type="submit"><i class="fas fa-caret-right"></i></button>
