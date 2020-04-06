@@ -25,6 +25,9 @@ get_header(); ?>
 	<section class="article">
 		<div class="container">
 			<div class="row">
+				<div class="col-12 mb-4 d-flex justify-content-end">
+					<button type="button" id="backBTN" class="btn btn__medium yellow d-none"><?php pll_e( 'Back' ); ?></button>
+				</div>
 				<article class="col-xl-8 col-lg-7 col-12">
 
 					<?php 
@@ -52,5 +55,12 @@ get_header(); ?>
 	</section>
 
 <?php endwhile; ?>
-
+<script>
+    if(window.history.length > 1) {
+        document.getElementById('backBTN').classList.remove('d-none');
+        document.getElementById('backBTN').addEventListener('click', function() {
+            window.history.back();
+        });
+    }
+</script>
 <?php get_footer();

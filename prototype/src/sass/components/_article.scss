@@ -1,14 +1,14 @@
 .article {
-    margin-top: 50px;
+    margin-top: 40px;
     margin-bottom: 70px;
 
     @media(max-width: 991px) {
-        margin-top: 40px;
+        margin-top: 30px;
         margin-bottom: 60px;
     }
 
     @media(max-width: 767px) {
-        margin-top: 30px;
+        margin-top: 20px;
         margin-bottom: 50px;
     }
 
@@ -73,9 +73,16 @@
         }
 
         @media(max-width: 991px) {
+            margin-top: 70px;
             padding-left: 15px!important;
         }
 
+        #backBTN {
+            // margin-left: 100%;
+            // transform: translateX(-100%);
+            // margin-top: 10px;
+            // margin-bottom: 30px;
+        }
 
         .card {
             padding: 35px;
