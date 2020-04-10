@@ -2172,7 +2172,23 @@ aside#chat .dog {
 
 .jobs__list-filters {
 	display: block;
+}
+
+.jobs__list-filters .card {
 	padding: 35px;
+}
+
+.jobs__list-filters.not-opened .closethis {
+	display: none;
+}
+
+.jobs__list-filters .closethis {
+	position: absolute;
+	z-index: 99;
+	top: 20px;
+	right: 15px;
+	display: none;
+	background-color: white;
 }
 
 .jobs__list-filters .title {
@@ -2432,6 +2448,10 @@ aside#chat .dog {
 
 .jobs__list-item .btn {
 	font-size: 15px;
+}
+
+.jobs__list .jobs-number {
+	margin-bottom: 30px;
 }
 
 .jobs__single {
@@ -4423,16 +4443,6 @@ h3,
 
 }
 
-@media (max-width: 991px) and (max-width: 991px) {
-
-.knowledge__filters.not-opened .card .title {
-	margin-bottom: 0;
-	text-align: center;
-	justify-content: center;
-}
-
-}
-
 @media (max-width: 991px) {
 
 .text-size-xxxxlarge {
@@ -4541,6 +4551,15 @@ p,
 	padding-right: 45px;
 }
 
+.header__jobs-dog {
+	left: -310px;
+}
+
+.header__jobs-dog object,
+.header__jobs-dog svg {
+	height: 200px;
+}
+
 .home__jobs {
 	padding: 90px 0;
 }
@@ -4553,6 +4572,25 @@ p,
 .testimonials__candidates-img,
 .testimonials__clients-img {
 	max-height: 360px;
+}
+
+.jobs__list-filters {
+	margin-top: 20px;
+}
+
+.jobs__list-filters.not-opened .card {
+	padding: 15px;
+	cursor: pointer;
+	-webkit-clip-path: polygon(0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px));
+	clip-path: polygon(0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px));
+}
+
+.jobs__list-filters.not-opened .card form {
+	display: none;
+}
+
+.jobs__list-filters .closethis {
+	display: block;
 }
 
 .jobs__single-recruiter .recruiter-text {
@@ -4669,6 +4707,22 @@ p,
 
 }
 
+@media (max-width: 991px) and (max-width: 991px) {
+
+.jobs__list-filters.not-opened .card .title {
+	margin-bottom: 0;
+	text-align: center;
+	justify-content: center;
+}
+
+.knowledge__filters.not-opened .card .title {
+	margin-bottom: 0;
+	text-align: center;
+	justify-content: center;
+}
+
+}
+
 @media (max-width: 799px) {
 
 .team .container-lg {
@@ -4740,12 +4794,25 @@ h4,
 }
 
 .header__jobs-dog {
-	left: -365px;
+	left: -270px;
 }
 
-.header__jobs-dog object,
-.header__jobs-dog svg {
-	height: 240px;
+.header__jobs-search {
+	margin-bottom: 0;
+}
+
+.header__jobs-search .triangle-left {
+	display: none;
+}
+
+.header__jobs-search input {
+	margin-top: 80px;
+	margin-bottom: 15px;
+}
+
+.header__jobs-search input.location {
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .home__middle {
@@ -4833,6 +4900,10 @@ h4,
 .testimonials__clients-content .carousel-control-next {
 	right: calc(-5% + 18px);
 	left: auto;
+}
+
+.jobs__list-filters {
+	margin-top: 15px;
 }
 
 .jobs__single-sidebar .card .social-login .btn {

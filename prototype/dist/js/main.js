@@ -3754,6 +3754,22 @@ function knowledgeFilterToggle()
 	});
 }
 
+function jobsFilterToggle()
+{
+	$('.jobs__list-filters').find('.card').on('click', function(e) {
+		console.log(e.target);
+		if( $(window).width() <= 991 && $('.jobs__list-filters').hasClass('not-opened') ) {
+			$('.jobs__list-filters').removeClass('not-opened');
+		}
+	});
+
+	$('.jobs__list-filters').find('.closethis').on('click', function() {
+		if($(window).width() <= 991) {
+			$('.jobs__list-filters').addClass('not-opened');
+		}
+	});
+}
+
 function uglyInput() 
 {
 	$('.ugly').each(function() {
@@ -3865,6 +3881,7 @@ $(document).ready(function() {
 	menuMobile();
 	knowledgeFilterToggle();
 	teamShowMore();
+	jobsFilterToggle();
 
 	if($('.home__middle-hashtags').length != 0) {
 		homeHashtags();
