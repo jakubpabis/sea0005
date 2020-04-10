@@ -2737,6 +2737,7 @@ aside#chat .dog {
 }
 
 .article article a {
+	font-weight: 400;
 	color: #ec6278;
 }
 
@@ -3086,6 +3087,7 @@ aside#chat .dog {
 }
 
 .knowledge__article a {
+	font-weight: 400;
 	color: #ec6278;
 }
 
