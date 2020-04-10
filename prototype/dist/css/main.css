@@ -755,14 +755,26 @@ p,
 	background-color: #183153;
 }
 
+.btn.navy:hover {
+	background-color: #ec6278;
+}
+
 .btn.sea {
 	color: #183153 !important;
 	background-color: #94d4e9;
 }
 
+.btn.sea:hover {
+	background-color: #ec6278;
+}
+
 .btn.yellow {
 	color: #183153 !important;
 	background-color: #fdd963;
+}
+
+.btn.yellow:hover {
+	background-color: #ec6278;
 }
 
 .btn.lgrey {
@@ -795,6 +807,10 @@ p,
 .link {
 	font-weight: 600;
 	text-decoration: underline;
+}
+
+.link:hover {
+	color: #ec6278;
 }
 
 .dropdown_container.home.show .btn {
@@ -1722,6 +1738,10 @@ i {
 
 .card.navy {
 	background-color: #183153;
+}
+
+.card .title a:hover {
+	color: #ec6278;
 }
 
 .cards__section-img {
@@ -3124,16 +3144,20 @@ aside#chat .dog {
 	background-color: #183153;
 }
 
-.knowledge__filters .filter-group .filter-title.active i {
-	color: white;
-}
-
 .knowledge__filters .filter-group .filter-title.active i.fa-minus {
 	display: inline-block;
 }
 
 .knowledge__filters .filter-group .filter-title.active i.fa-plus {
 	display: none;
+}
+
+.knowledge__filters .filter-group .filter-title.active:hover {
+	color: #ec6278;
+}
+
+.knowledge__filters .filter-group .filter-title:hover {
+	color: white;
 }
 
 .knowledge__filters .btn {

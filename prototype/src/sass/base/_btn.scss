@@ -100,16 +100,31 @@
     &.navy {
         background-color: $color-navy;
         color: white!important;
+
+        &:hover {
+            background-color: $color-pink;
+        }
+
     }   
 
     &.sea {
         background-color: $color-sea;
         color: $color-primary!important;
+
+        &:hover {
+            background-color: $color-pink;
+        }
+
     }   
 
     &.yellow {
         background-color: $color-yellow;
         color: $color-navy!important;
+
+        &:hover {
+            background-color: $color-pink;
+        }
+
     }
 
     &.lgrey {
@@ -143,6 +158,11 @@
 .link {
     font-weight: 600;
     text-decoration: underline;
+    
+    &:hover {
+        color: $color-pink;
+    }
+
 }
 
 .dropdown_container.home {

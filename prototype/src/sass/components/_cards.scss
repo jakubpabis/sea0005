@@ -40,6 +40,18 @@
         background-color: $color-navy;
     }
 
+    .title {
+
+        a {
+
+            &:hover {
+                color: $color-pink;
+            }
+
+        }
+
+    }
+
 }
 
 .cards {

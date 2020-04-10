@@ -116,7 +116,6 @@
                     color: white;
 
                     i {
-                        color: white;
 
                         &.fa-minus {
                             display: inline-block;
@@ -128,6 +127,14 @@
 
                     }
 
+                    &:hover {
+                        color: $color-pink;
+                    }
+
+                }
+
+                &:hover {
+                    color: white;
                 }
 
             }
