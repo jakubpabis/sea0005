@@ -1069,6 +1069,7 @@ $toTranslate = array(
     'No jobs found...',
     'Schedule a call or meeting',
     'Search our knowledge base. We have tons of useful articles for you!',
+    'article found',
     'articles found',
     'Enter job title here',
     'Enter job location',

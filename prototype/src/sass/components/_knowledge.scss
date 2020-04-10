@@ -85,6 +85,7 @@
                 margin-bottom: 10px;
                 display: inline-block;
                 cursor: pointer;
+                position: relative;
 
                 i {
                     margin-left: 10px;
@@ -93,6 +94,20 @@
                         display: none;
                     }
 
+                }
+
+                input {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    z-index: 9;
+                    min-width: 100%;
+                    min-height: 100%;
+                    appearance: none;
+                    opacity: 0;
+                    cursor: pointer;
                 }
 
                 &.active {

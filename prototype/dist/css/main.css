@@ -3088,6 +3088,7 @@ aside#chat .dog {
 
 .knowledge__filters .filter-group .filter-title {
 	font-weight: 600;
+	position: relative;
 	display: inline-block;
 	margin-bottom: 10px;
 	cursor: pointer;
@@ -3099,6 +3100,22 @@ aside#chat .dog {
 
 .knowledge__filters .filter-group .filter-title i.fa-minus {
 	display: none;
+}
+
+.knowledge__filters .filter-group .filter-title input {
+	position: absolute;
+	z-index: 9;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	min-width: 100%;
+	min-height: 100%;
+	cursor: pointer;
+	opacity: 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 
 .knowledge__filters .filter-group .filter-title.active {

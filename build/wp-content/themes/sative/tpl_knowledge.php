@@ -7,6 +7,59 @@ get_header();
 
 get_template_part( 'template-parts/breadcrumbs' ); ?>
 
+<?php
+wp_reset_postdata();
+// $args = array( 
+//     'post_type' => 'post',
+//     'post_status' => 'publish',
+//     'posts_per_page' => 10,
+//     'category_name' => 'knowledge',
+//     'paged' => get_query_var('paged') ? get_query_var('paged') : 1
+// );
+$args = array( 
+    'post_type' => 'post',
+    'post_status' => 'publish',
+    'posts_per_page' => 10,
+    'category_name' => 'knowledge',
+    'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
+    'tax_query' => array(
+        'relation' => 'OR',
+    )
+);
+
+if( isset( $_GET['category'] ) ) {
+    if(count($_GET['category']) > 1) {
+        foreach(filterHelper($_GET['category'], 'category') as $termID) {
+            $arr = array(
+                'taxonomy' => 'category',
+                'field' => 'id',
+                'terms' => $termID,
+            );
+            array_push($args['tax_query'], $arr);
+        }
+    } else {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'category',
+            'field' => 'id',
+            'terms' => $_GET['category'],
+        );
+    }
+}
+
+$query = new WP_Query( $args );
+$post_no = $query->found_posts;
+
+$big = 999999999; // need an unlikely integer
+$pagination = paginate_links( array(
+    'format' => '?paged=%#%',
+    'current' => max( 1, get_query_var('paged') ),
+    'total' => $query->max_num_pages,
+    'show_all' => true,
+    'add_args' => false,
+) ); 
+
+?>
+
 
 <header class="header__generic">
     <div class="container">
@@ -30,29 +83,24 @@ get_template_part( 'template-parts/breadcrumbs' ); ?>
             </div>
             <div class="col-12 text-right">
                 <p class="text-size-small font-primary">
-                    <span class="jobsno">150</span> <?php pll_e( 'articles found' ); ?>
+                    <span class="jobsno"><?= $post_no; ?></span> 
+                    <?php
+                        if($post_no > 1 || $post_no === 0) {
+                            pll_e( 'articles found' );
+                        } else if($post_no > 0) {
+                            pll_e( 'article found' );
+                        }
+                    ?>
                 </p>
             </div>
         </div>
     </div>
 </header>
 
-<?php
-wp_reset_postdata();
-$args = array( 
-    'post_type' => 'post',
-    'post_status' => 'publish',
-    'posts_per_page' => 10,
-    'category_name' => 'knowledge',
-    'paged' => get_query_var('paged') ? get_query_var('paged') : 1
-);
-$query = new WP_Query( $args );
-?>
-
 <main class="knowledge">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 order-lg-1 order-12">
+            <main class="col-lg-8 order-lg-1 order-12">
                 <?php if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); ?>
                 <article class="card bg-lgrey knowledge__article d-block">
                     <?php if(has_post_thumbnail()): ?>
@@ -82,7 +130,7 @@ $query = new WP_Query( $args );
                     <?php if(has_excerpt()):
                         the_excerpt();
                     else:
-                        wp_trim_excerpt(get_the_content());
+                        echo '<p>'.wp_trim_excerpt().'</p>';
                     endif; ?>
                     <a href="<?= get_the_permalink(); ?>" class="btn btn__medium navy"><?php pll_e( 'Read more' ); ?></a>
                     <?php if(has_post_thumbnail()): ?>
@@ -92,18 +140,10 @@ $query = new WP_Query( $args );
                 </article>
                 <?php endwhile; endif; ?>
                 <nav class="pagination">
-                <?php 
-                $big = 999999999; // need an unlikely integer
-                echo paginate_links( array(
-                    'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
-                    'format' => '?paged=%#%',
-                    'current' => max( 1, get_query_var('paged') ),
-                    'total' => $query->max_num_pages
-                ) ); 
-                ?>
+                    <?= $pagination; ?>
                 </nav>
-            </div>
-            <div class="col-lg-4 order-lg-12 order-1 knowledge__filters not-opened">
+            </main>
+            <aside class="col-lg-4 order-lg-12 order-1 knowledge__filters not-opened">
                 <div class="closethis">
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M30.3884 34.2353L20.1176 23.9745L9.84745 34.2353L6 30.3939L16.2713 20.1321L16.2568 20.1171L16.2713 20.1027L6.00107 9.84138L9.84638 6L20.1176 16.2597L30.3889 6L34.2348 9.84138L23.964 20.1027L23.979 20.1171L23.964 20.1321L34.2353 30.3939L30.3884 34.2353ZM0 40H40V0H0V40Z" fill="#EC6278"/>
@@ -115,22 +155,34 @@ $query = new WP_Query( $args );
                         <?php pll_e( 'Filter by topic' ); ?>
                     </h3>
                     <form action="" method="GET" id="filter">
-                    <?php foreach(get_categories() as $cat): ?>
-                        <?php if($cat->parent === $know->term_id): ?>
-                        <div class="filter-group">
-                            <span class="filter-title">
-                                <?= $cat->name; ?>
-                                <i class="fas fa-plus"></i>
-                                <i class="fas fa-minus"></i>
-                                <input style="opacity: 0; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 9;" type="checkbox" name="category[]" value="<?= $cat->term_id; ?>">
-                            </span>
-                        </div>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-                    <button type="submit" class="btn btn__default yellow"><?php pll_e('Filter'); ?></button>
+                        <?php $categories = get_categories('taxonomy=category&hide_empty=false'); ?>
+                        <?php foreach($categories as $cat): ?>
+                            <?php if($cat->parent === $know->term_id): ?>
+                            <?php 
+                                if( get_query_var('term') == $cat->category_nicename || isset($_GET['category']) && !empty($_GET['category']) ) {
+                                    $activeCats = $_GET['category']; 
+                                    $active = 'active';
+                                    $checked = 'checked';
+                                } else {
+                                    $activeCats = null;
+                                    $active = null;
+                                    $checked = null;
+                                }
+                            ?>
+                            <div class="filter-group <?= $active ?>">
+                                <span class="filter-title <?= $active ?>">
+                                    <?= $cat->name; ?>
+                                    <i class="fas fa-plus"></i>
+                                    <i class="fas fa-minus"></i>
+                                    <input type="checkbox" name="category[]" value="<?= $cat->term_id; ?>" <?= $checked; ?> />
+                                </span>
+                            </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                        <button type="submit" class="btn btn__default yellow"><?php pll_e('Filter'); ?></button>
                     </form>
                 </div>
-            </div>
+            </aside>
         </div>
     </div>
 </main>
