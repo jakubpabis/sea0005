@@ -9,13 +9,17 @@ get_template_part( 'template-parts/breadcrumbs' ); ?>
 
 <?php
 wp_reset_postdata();
-// $args = array( 
-//     'post_type' => 'post',
-//     'post_status' => 'publish',
-//     'posts_per_page' => 10,
-//     'category_name' => 'knowledge',
-//     'paged' => get_query_var('paged') ? get_query_var('paged') : 1
-// );
+
+if(pll_current_language() == 'en'): 
+    $topTerm = 'knowledge';
+    $know = get_category_by_slug('knowledge'); 
+else:
+    $topTerm = 'kennis';
+    $know = get_category_by_slug('kennis'); 
+endif;
+
+//var_dump($know);
+
 $args = array( 
     'post_type' => 'post',
     'post_status' => 'publish',
@@ -23,28 +27,22 @@ $args = array(
     'category_name' => 'knowledge',
     'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
     'tax_query' => array(
-        'relation' => 'OR',
+        'relation' => 'AND',
+        'taxonomy' => 'category',
+        'field'    => 'name',
+        'terms'    => $topTerm,
     )
 );
 
 if( isset( $_GET['category'] ) ) {
-    if(count($_GET['category']) > 1) {
-        foreach(filterHelper($_GET['category'], 'category') as $termID) {
-            $arr = array(
-                'taxonomy' => 'category',
-                'field' => 'id',
-                'terms' => $termID,
-            );
-            array_push($args['tax_query'], $arr);
-        }
-    } else {
-        $args['tax_query'][] = array(
-            'taxonomy' => 'category',
-            'field' => 'id',
-            'terms' => $_GET['category'],
-        );
-    }
+    $args['tax_query'][] = array(
+        'taxonomy' => 'category',
+        'field' => 'id',
+        'terms' => $_GET['category'],
+    );
 }
+
+//var_dump($args);
 
 $query = new WP_Query( $args );
 $post_no = $query->found_posts;
@@ -59,7 +57,6 @@ $pagination = paginate_links( array(
 ) ); 
 
 ?>
-
 
 <header class="header__generic">
     <div class="container">
@@ -111,20 +108,18 @@ $pagination = paginate_links( array(
                             <div class="col-lg-7">
                     <?php endif; ?>
                     <h3 class="title"><a href="<?= get_the_permalink(); ?>"><?= get_the_title(); ?></a></h3>
-                    <?php if(!empty(get_categories())): ?>
+                    <?php 
+                        $args = array(
+                            'child_of' => $know->term_id,
+                            'fields'   => 'all'
+                        );
+                        $cats = wp_get_post_categories( get_the_ID(), $args );
+                    ?>
+                    <?php if( !empty( $cats ) ): ?>
                         <h4>
-                        <?php 
-                        if(pll_current_language() == 'en'): 
-                            $know = get_category_by_slug('knowledge'); 
-                        else:
-                            $know = get_category_by_slug('kennis'); 
-                        endif;
-                        ?>
-                        <?php $i = 0; foreach(get_categories() as $cat): ?>
-                            <?php if($cat->parent === $know->term_id): ?>
-                                <?= $i === 0 ? null : '&nbsp;|&nbsp;' ?><a href=""><?= $cat->name; ?></a>
-                            <?php $i++; endif; ?>
-                        <?php endforeach; ?>
+                        <?php $i = 0; foreach($cats as $cat): ?>
+                            <?= $i === 0 ? null : '&nbsp;|&nbsp;' ?><a href=""><?= $cat->name; ?></a>
+                        <?php $i++; endforeach; ?>
                         </h4>
                     <?php endif; ?>
                     <?php if(has_excerpt()):
@@ -159,12 +154,16 @@ $pagination = paginate_links( array(
                         <?php foreach($categories as $cat): ?>
                             <?php if($cat->parent === $know->term_id): ?>
                             <?php 
-                                if( get_query_var('term') == $cat->category_nicename || isset($_GET['category']) && !empty($_GET['category']) ) {
-                                    $activeCats = $_GET['category']; 
-                                    $active = 'active';
-                                    $checked = 'checked';
+                                if( isset($_GET['category']) && !empty($_GET['category']) ) {
+                                    $activeCats = $_GET['category'];
+                                    if( in_array( $cat->term_id, $activeCats ) ) {
+                                        $active = 'active';
+                                        $checked = 'checked';
+                                    } else {
+                                        $active = null;
+                                        $checked = null;
+                                    }
                                 } else {
-                                    $activeCats = null;
                                     $active = null;
                                     $checked = null;
                                 }
