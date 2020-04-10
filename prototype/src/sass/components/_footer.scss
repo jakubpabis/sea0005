@@ -182,7 +182,6 @@
                 }
 
                 span {
-                    color: $color-tertiary;
                     text-transform: uppercase;
                     font-weight: 600;
                     font-size: 14px;
@@ -196,7 +195,7 @@
                         width: 0;
                         content: '';
                         height: 2px;
-                        background-color: $color-tertiary;
+                        background-color: $color-navy;
                         @include trans200;
                     }
 

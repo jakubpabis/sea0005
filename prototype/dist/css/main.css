@@ -3086,11 +3086,6 @@ aside#chat .dog {
 	margin-top: 15px;
 }
 
-.knowledge__article a {
-	font-weight: 400;
-	color: #ec6278;
-}
-
 .knowledge__article .btn {
 	margin-top: 20px;
 }
@@ -3347,7 +3342,6 @@ aside#chat .dog {
 	font-weight: 600;
 	position: relative;
 	text-transform: uppercase;
-	color: #ec6278;
 }
 
 .footer__lower .sative a span:after {
@@ -3359,7 +3353,7 @@ aside#chat .dog {
 	height: 2px;
 	content: '';
 	transition: all 200ms ease-out;
-	background-color: #ec6278;
+	background-color: #183153;
 }
 
 .footer__lower .sative a:hover {
