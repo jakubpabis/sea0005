@@ -107,6 +107,12 @@ if( function_exists('acf_add_options_page') ) {
 		'page_title' 	=> 'Footer',
 		'menu_title'	=> 'Footer',
 		'parent_slug'	=> 'theme-general-settings',
+    ));
+    
+    acf_add_options_sub_page(array(
+		'page_title' 	=> 'Other',
+		'menu_title'	=> 'Other',
+		'parent_slug'	=> 'theme-general-settings',
 	));
 
 }
@@ -697,19 +703,6 @@ function jobDisplayHelper()
     }
 
     return $helper;
-}
-
-function add_to_yoast_seo($post_id, $metatitle, $metadesc, $metakeywords)
-{
-    try {
-        
-    }
-    catch (Exception $e) {
-        echo $e->getMessage();
-    }
-    catch (InvalidArgumentException $e) {
-        echo $e->getMessage();
-    }
 }
 
 function hierarchical_tax_tree( $cat, $tax, $active = [] ) {

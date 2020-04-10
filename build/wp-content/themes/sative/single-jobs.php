@@ -95,7 +95,11 @@ get_header(); ?>
     <?php if($relatedPosts->have_posts()) : ?>
     <section class="cards__section">
         <div class="cards__section-img job-single">
+        <?php if( get_field( 'jobs_related_image', 'option' ) ) : ?>
+            <img data-src="<?= get_field( 'jobs_related_image', 'option' )['url']; ?>" class="bg-cover lazy">
+        <?php else: ?>
             <img data-src="<?= get_template_directory_uri(); ?>/assets/img/searchitrecruitment_homepage.jpg" class="bg-cover lazy">
+        <?php endif; ?>
         </div>
         <div class="cards__section-content bg-sea job-single">
             <div class="container">
