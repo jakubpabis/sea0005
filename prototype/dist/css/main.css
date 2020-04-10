@@ -2700,10 +2700,6 @@ aside#chat .dog {
 }
 
 .article article h2 {
-	margin-bottom: 30px;
-}
-
-.article article h2 {
 	margin-top: 50px;
 	margin-bottom: 20px;
 }
@@ -2713,10 +2709,17 @@ aside#chat .dog {
 	margin-bottom: 20px;
 }
 
+.article article h4 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
 .article article ul {
 	font-family: 'Roboto', sans-serif;
 	font-size: 17px;
 	font-weight: 300;
+	margin-top: .5em;
+	margin-bottom: .5em;
 }
 
 .article article ul li {
@@ -2731,6 +2734,10 @@ aside#chat .dog {
 .article article p img {
 	margin-top: 15px;
 	margin-bottom: 15px;
+}
+
+.article article a {
+	color: #ec6278;
 }
 
 .article article .btn {
@@ -3076,6 +3083,10 @@ aside#chat .dog {
 
 .knowledge__article h4 {
 	margin-top: 15px;
+}
+
+.knowledge__article a {
+	color: #ec6278;
 }
 
 .knowledge__article .btn {
