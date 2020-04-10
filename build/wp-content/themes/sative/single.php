@@ -40,7 +40,7 @@ get_header(); ?>
 
 					the_title( '<h1>', '</h1>' ); 
 					
-					the_content();
+					echo wp_specialchars_decode( get_the_content() );
 
 					if(get_field('button')) :
 						echo '<a href="'.get_field('button')['url'].'" class="btn btn__default yellow">'.get_field('button')['title'].'</a>'; 

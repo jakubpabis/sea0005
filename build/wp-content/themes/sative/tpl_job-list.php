@@ -191,7 +191,7 @@ get_header();
                             <?php endif; ?>
                         </div>
                         <p class="text-size-small excerpt">
-                            <?= get_the_excerpt(); ?>
+                            <?= wp_specialchars_decode( get_the_excerpt() ); ?>
                         </p>
                         <a href="<?= get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e( 'More info' ); ?></a>
                     </article>
