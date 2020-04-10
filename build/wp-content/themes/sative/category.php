@@ -17,7 +17,7 @@ $args = array(
     'category_name' => $know->slug,
     'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
     'tax_query' => array(
-        'relation' => 'OR',
+        'relation' => 'AND',
     )
 );
 
