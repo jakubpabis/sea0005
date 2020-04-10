@@ -1,3 +1,10 @@
+<?php if( isset($_GET['uploadcv']) ) : ?>
+    <script defer>
+        $(window).on('load', function() {
+            $('#uploadCVModal').modal('show');
+        });
+    </script>
+<?php endif; ?>
 <div id="uploadCVModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="uploadCVModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
