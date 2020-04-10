@@ -15,11 +15,11 @@
             </button>
             <div class="modal-container">
                 <div class="modal-header">
-                    <h3 class="modal-title" id="uploadCVModalTitle">Upload CV here</h3>
+                    <h3 class="modal-title" id="uploadCVModalTitle"><?= pll_e( 'Upload CV here' ); ?></h3>
                 </div>
                 <div class="modal-body pt-3">
                     <span class="text-size-small text500">
-                        Apply with:
+                        <?= pll_e( 'Apply with:' ); ?>
                     </span>
                     <div class="row justify-content-between align-items-center pt-2">
                         <div class="col-auto">
@@ -54,36 +54,36 @@
                                     <input type="radio" name="gender">
                                     <div class="state">
                                         <i class="icon fas fa-mars"></i>
-                                        <label>Male</label>
+                                        <label><?= pll_e( 'Male' ); ?></label>
                                     </div>
                                 </div>
                                 <div class="pretty p-icon p-round p-plain p-jelly">
                                     <input type="radio" name="gender">
                                     <div class="state">
                                         <i class="icon fas fa-venus"></i>
-                                        <label>Female</label>
+                                        <label><?= pll_e( 'Female' ); ?></label>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
                                 <input type="text" name="name" required>
-                                <label for="name">Name <span>*</span></label>
+                                <label for="name"><?= pll_e( 'Name' ); ?> <span>*</span></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
                                 <input type="email" name="email" required>
-                                <label for="email">Email <span>*</span></label>
+                                <label for="email"><?= pll_e( 'Email' ); ?> <span>*</span></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
                                 <input type="text" name="phone">
-                                <label for="phone">Phone</label>
+                                <label for="phone"><?= pll_e( 'Phone' ); ?></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
                                 <input type="text" name="dob">
-                                <label for="dob">Date of birth</label>
+                                <label for="dob"><?= pll_e( 'Date of birth' ); ?></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
                                 <input type="text" name="city">
-                                <label for="city">City</label>
+                                <label for="city"><?= pll_e( 'City' ); ?></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
                                 <label class="full bg-white" for="cv"><?php pll_e( 'CV' ); ?><span><?= pll_e( 'Upload' ); ?></span></label>
@@ -91,19 +91,19 @@
                             </div>
                             <div class="col-12 ugly pt-2 pb-3">
                                 <textarea name="motivation"></textarea>
-                                <label for="motivation">Motivation</label>
+                                <label for="motivation"><?= pll_e( 'Motivation' ); ?></label>
                             </div>
                             <div class="col-12 pb-3">
                                 <div class="pretty p-icon p-plain p-jelly">
                                     <input type="checkbox" name="pp">
                                     <div class="state">
                                         <i class="icon fal fa-times"></i>
-                                        <label>I hereby agree with the <a href=""><u>Privacy Policy</u></a> <span class="color-pink text-size-small text600">*</span></label>
+                                        <label><?= pll_e( 'I hereby agree with the' ); ?> <a href=""><u><?= pll_e( 'Privacy Policy' ); ?></u></a> <span class="color-pink text-size-small text600">*</span></label>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12 pt-1">
-                                <button type="submit" class="btn btn__default yellow">Send application</button>
+                                <button type="submit" class="btn btn__default yellow"><?= pll_e( 'Send application' ); ?></button>
                             </div>
                         </div>
                     </form>
