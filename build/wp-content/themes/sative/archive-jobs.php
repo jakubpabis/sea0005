@@ -94,19 +94,20 @@ get_header();
                 </a>
             </div>
         </div>
-        <form action="" id="search-filter" method="GET" class="row align-items-center justify-content-between header__jobs-search">
+        <form action="" id="search-filter" method="GET" class="row align-items-center justify-content-md-between justify-content-end header__jobs-search">
             <div class="header__jobs-dog">
                 <svg viewBox="0 0 649.89 364.92" xmlns="http://www.w3.org/2000/svg"><path d="M484.2 0l-28 28.09v138.59h41.45l25.37-25.37v-62h-10.23v57.79l-19.43 19.42h-27v-124l22-22.15H639.5v42.84l-26.11 26.11H534.2v99H170.76L63.11 285.84H0v10.28h67.44L175.1 188.58h359.1v91.94l-37.87 46.28 26.85 27.72h-56.8v-72.26H233.13l-46.53 44.42 26.73 27.72h-64.22V237h-10.27v127.79h98.75l-36.39-37.74 36-34.4h218.9v72.27h91.33l-37.25-38.49 34.4-41.95V89.84h73.13l32.17-32.05V.49H484.2" fill="#173751"/><g class="bowtie" fill="#88d8e5"><path d="M555.61 206.72l-23.4-23.39 23.4-23.4 7.22 7.22-16.18 16.18 16.18 16.17z"/><path d="M523.25 206.72L516 199.5l16.17-16.17L516 167.15l7.21-7.22 23.4 23.4-23.4 23.39"/></g></svg>
             </div>
-            <div class="offset-md-1 col-md-5">
+            <div class="offset-md-1 col-md-5 col-11">
                 <div class="triangle-left"></div>
-                <input type="text" name="s" placeholder="<?php pll_e('Enter job title here'); ?>">
+                <input type="text" name="s" value="<?= get_search_query(); ?>" placeholder="<?php pll_e('Enter job title here'); ?>">
+                <input type="hidden" name="post_type" value="jobs" />
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-11">
                 <input class="location" type="text" placeholder="<?php pll_e('Enter job location'); ?>">
                 <button type="submit" class="btn btn__notched"><i class="far fa-search"></i></button>
             </div>
-            <div class="col-12 text-right">
+            <div class="col-12 d-lg-block d-none text-right">
                 <p class="text-size-small font-primary">
                     <span class="jobsno"><?= $post_no; ?></span> <?php pll_e( 'jobs found' ); ?>
                 </p>
@@ -117,20 +118,13 @@ get_header();
 
 <section class="jobs__list">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-md-center justify-content-end">
             <div class="col-lg-4">
                 <?php get_template_part( 'template-parts/job-filters' ); ?>
             </div>
             <div class="col-12 d-lg-none d-block text-right jobs-number">
                 <p class="text-size-small font-primary">
-                    <span class="jobsno"><?= $post_no; ?></span> 
-                    <?php
-                        if($post_no > 1 || $post_no === 0) {
-                            pll_e( 'open jobs' );
-                        } else if($post_no > 0) {
-                            pll_e( 'open job' );
-                        }
-                    ?>
+                    <span class="jobsno"><?= $post_no; ?></span> <?php pll_e( 'jobs found' ); ?>
                 </p>
             </div>
             <div id="jobs__list-cont" class="col-lg-8">

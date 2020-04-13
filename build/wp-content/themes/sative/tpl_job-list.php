@@ -126,14 +126,7 @@ get_header();
             </div>
             <div class="col-12 d-lg-block d-none text-right">
                 <p class="text-size-small font-primary">
-                    <span class="jobsno"><?= $post_no; ?></span> 
-                    <?php
-                        if($post_no > 1 || $post_no === 0) {
-                            pll_e( 'open jobs' );
-                        } else if($post_no > 0) {
-                            pll_e( 'open job' );
-                        }
-                    ?>
+                    <span class="jobsno"><?= $post_no; ?></span> <?php pll_e( 'jobs found' ); ?>
                 </p>
             </div>
         </form>
@@ -142,20 +135,13 @@ get_header();
 
 <section class="jobs__list">
     <div class="container">
-        <div class="row justify-content-md-center justify-content-sm-end">
+        <div class="row justify-content-md-center justify-content-end">
             <div class="col-lg-4 col-12">
                 <?php get_template_part( 'template-parts/job-filters' ); ?>
             </div>
             <div class="col-12 d-lg-none d-block text-right jobs-number">
                 <p class="text-size-small font-primary">
-                    <span class="jobsno"><?= $post_no; ?></span> 
-                    <?php
-                        if($post_no > 1 || $post_no === 0) {
-                            pll_e( 'open jobs' );
-                        } else if($post_no > 0) {
-                            pll_e( 'open job' );
-                        }
-                    ?>
+                    <span class="jobsno"><?= $post_no; ?></span> <?php pll_e( 'jobs found' ); ?>
                 </p>
             </div>
             <div id="jobs__list-cont" class="col-lg-8">
