@@ -123,8 +123,18 @@
         &-cats {
             display: flex;
 
+            @media(max-width: 991px) {
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+
             .btn {
                 margin-left: 10px;
+
+                &:first-of-type,
+                &:first-child {
+                    margin-left: 0;
+                }
 
                 span {
                     @include trans200;

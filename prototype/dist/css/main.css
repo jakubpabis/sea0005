@@ -1367,6 +1367,11 @@ i {
 	margin-left: 10px;
 }
 
+.header__jobs-cats .btn:first-of-type,
+.header__jobs-cats .btn:first-child {
+	margin-left: 0;
+}
+
 .header__jobs-cats .btn span {
 	margin-right: 3px;
 	transition: all 200ms ease-out;
@@ -2392,17 +2397,18 @@ aside#chat .dog {
 .jobs__list-item .job-title {
 	display: flex;
 	margin-bottom: 25px;
-	align-items: center;
 }
 
 .jobs__list-item .job-title .icon {
 	display: inline-block;
-	width: 20px;
+	min-width: 20px;
 	height: 20px;
+	margin-top: 6px;
 	margin-right: 15px;
 	background-image: url('../img/cubecross.svg');
 	background-position: center;
 	background-size: cover;
+	flex-basis: 20px;
 }
 
 .jobs__list-item .job-title .icon[data-type='it'] {
@@ -2427,17 +2433,24 @@ aside#chat .dog {
 
 .jobs__list-item .info {
 	display: flex;
+	margin: 0 -10px;
 	flex-wrap: wrap;
-	align-items: center;
 }
 
 .jobs__list-item .info__item {
-	margin-bottom: 5px;
+	display: flex;
+	margin-bottom: 15px;
+	padding: 0 10px;
 	flex-basis: 50%;
 }
 
 .jobs__list-item .info__item i {
 	margin-right: 8px;
+}
+
+.jobs__list-item .info__item span {
+	line-height: 1.21 !important;
+	display: inline-block;
 }
 
 .jobs__list-item .info__item:nth-child(2) {
@@ -2453,7 +2466,7 @@ aside#chat .dog {
 }
 
 .jobs__list-item p {
-	margin-top: 8px;
+	margin-top: 0;
 	margin-bottom: 30px;
 }
 
@@ -4418,6 +4431,10 @@ h3,
 	padding: 20px;
 }
 
+.jobs__list-item .job-title .icon {
+	margin-top: 5px;
+}
+
 .jobs__single-sidebar .card {
 	padding: 25px 20px;
 }
@@ -4562,6 +4579,11 @@ p,
 	padding-right: 45px;
 }
 
+.header__jobs-cats {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
 .header__jobs-dog {
 	left: -310px;
 }
@@ -4602,6 +4624,10 @@ p,
 
 .jobs__list-filters .closethis {
 	display: block;
+}
+
+.jobs__list-item .job-title .icon {
+	margin-top: 4px;
 }
 
 .jobs__single-recruiter .recruiter-text {
@@ -4931,6 +4957,10 @@ h4,
 	margin-top: 15px;
 }
 
+.jobs__list-filters .closethis {
+	top: 15px;
+}
+
 .jobs__single-sidebar .card .social-login .btn {
 	flex-basis: calc(50% - 14px);
 }
@@ -5125,6 +5155,22 @@ p,
 	padding-bottom: 50px;
 }
 
+.jobs__list-item {
+	padding: 24px !important;
+}
+
+.jobs__list-item .job-title .icon {
+	margin-top: 3px;
+}
+
+.jobs__list-item .info__item {
+	flex-basis: 100%;
+}
+
+.jobs__list-item .info__item span {
+	font-size: 16px !important;
+}
+
 .dog.section {
 	margin-bottom: 60px;
 }
@@ -5255,6 +5301,10 @@ p,
 }
 
 @media (max-width: 359px) {
+
+.jobs__list-item {
+	padding: 20px !important;
+}
 
 .footer__lower .sative {
 	display: block;
