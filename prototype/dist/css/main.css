@@ -1422,6 +1422,15 @@ i {
 	border-bottom: 15px solid transparent;
 }
 
+.header__jobs-search .gradient {
+	position: absolute;
+	right: calc(62px + 15px);
+	bottom: 0;
+	width: 62px;
+	height: 62px;
+	background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #f8f7f8 70%);
+}
+
 .header__jobs-search input {
 	font-size: 18px;
 	font-weight: 400;
@@ -1481,7 +1490,9 @@ i {
 }
 
 .header__jobs-search .btn.knowledge {
-	margin-left: -67px;
+	position: absolute;
+	right: 15px;
+	bottom: 0;
 }
 
 .header__article {
@@ -4683,7 +4694,8 @@ p,
 }
 
 .knowledge__filters {
-	margin-bottom: 60px;
+	margin-top: 10px;
+	margin-bottom: 0;
 }
 
 .knowledge__filters.not-opened .card {
@@ -4801,8 +4813,17 @@ h4,
 	margin-bottom: 0;
 }
 
+.header__jobs-search.knowledge input {
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
 .header__jobs-search .triangle-left {
 	display: none;
+}
+
+.header__jobs-search .gradient {
+	bottom: 10px;
 }
 
 .header__jobs-search input {
@@ -4813,6 +4834,10 @@ h4,
 .header__jobs-search input.location {
 	margin-top: 0;
 	margin-bottom: 0;
+}
+
+.header__jobs-search .btn.knowledge {
+	bottom: 10px;
 }
 
 .home__middle {

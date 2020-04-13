@@ -189,6 +189,16 @@
 
             &.knowledge {
                 margin-top: 90px;
+
+                input {
+
+                    @media(max-width: 767px) {
+                        margin-top: 0;
+                        margin-bottom: 10px;
+                    }
+
+                }
+
             }
 
             .triangle-left {
@@ -204,6 +214,20 @@
 
                 @media(max-width: 767px) {
                     display: none;
+                }
+
+            }
+
+            .gradient {
+                height: 62px;
+                width: 62px;
+                background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $color-light-grey 70%);
+                position: absolute;
+                bottom: 0;
+                right: calc(62px + 15px);
+
+                @media(max-width: 767px) {
+                    bottom: 10px;
                 }
 
             }
@@ -252,7 +276,14 @@
                 margin-left: -20px;
 
                 &.knowledge {
-                    margin-left: -67px;
+                    position: absolute;
+                    bottom: 0;
+                    right: 15px;
+
+                    @media(max-width: 767px) {
+                        bottom: 10px;
+                    }
+
                 }
 
             }

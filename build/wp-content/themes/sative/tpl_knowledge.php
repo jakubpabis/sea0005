@@ -76,9 +76,10 @@ $pagination = paginate_links( array(
             <div class="offset-md-1 col-md-11 offset-sm-2 col-sm-10">
                 <div class="triangle-left"></div>
                 <input type="text" placeholder="<?php pll_e('Search our knowledge base. We have tons of useful articles for you!'); ?>">
+                <div class="gradient"></div>
                 <button type="submit" class="btn btn__notched knowledge"><i class="far fa-search"></i></button>
             </div>
-            <div class="col-12 text-right">
+            <div class="col-12 d-lg-block d-none text-right">
                 <p class="text-size-small font-primary">
                     <span class="jobsno"><?= $post_no; ?></span> 
                     <?php
@@ -96,7 +97,19 @@ $pagination = paginate_links( array(
 
 <main class="knowledge">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-md-center justify-content-end">
+            <div class="col-12 order-6 d-lg-none d-block text-right mb-4">
+                <p class="text-size-small font-primary">
+                    <span class="jobsno"><?= $post_no; ?></span> 
+                    <?php
+                        if($post_no > 1 || $post_no === 0) {
+                            pll_e( 'articles found' );
+                        } else if($post_no > 0) {
+                            pll_e( 'article found' );
+                        }
+                    ?>
+                </p>
+            </div>
             <main class="col-lg-8 order-lg-1 order-12">
                 <?php if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); ?>
                 <article class="card bg-lgrey knowledge__article d-block">
@@ -138,7 +151,7 @@ $pagination = paginate_links( array(
                     <?= $pagination; ?>
                 </nav>
             </main>
-            <aside class="col-lg-4 order-lg-12 order-1 knowledge__filters not-opened">
+            <aside class="col-lg-4 col-md-12 col-sm-11 order-lg-12 order-1 knowledge__filters not-opened">
                 <div class="closethis">
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M30.3884 34.2353L20.1176 23.9745L9.84745 34.2353L6 30.3939L16.2713 20.1321L16.2568 20.1171L16.2713 20.1027L6.00107 9.84138L9.84638 6L20.1176 16.2597L30.3889 6L34.2348 9.84138L23.964 20.1027L23.979 20.1171L23.964 20.1321L34.2353 30.3939L30.3884 34.2353ZM0 40H40V0H0V40Z" fill="#EC6278"/>

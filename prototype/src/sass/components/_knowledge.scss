@@ -16,7 +16,8 @@
     &__filters {
 
         @media(max-width: 991px) {
-            margin-bottom: 60px;
+            margin-top: 10px;
+            margin-bottom: 0;
         }
 
         &.not-opened {
