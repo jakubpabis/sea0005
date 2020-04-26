@@ -662,6 +662,31 @@ add_action( 'init', 'add_testimonial_taxonomies', 0 );
 add_action( 'init', 'custom_post_type_testimonials', 0 );
 
 
+function getTplPageURL() 
+{
+    global $jobtpl;
+    wp_reset_query();
+    wp_reset_postdata();
+    $args_tpl = [
+        'post_type' => 'page',
+        'fields' => 'ids',
+        'nopaging' => true,
+        'meta_key' => '_wp_page_template',
+        'meta_value' => 'tpl_job-list.php'
+    ];
+    $pages_tpl = get_posts( $args_tpl );
+    //var_dump($pages);
+    // cycle through $pages here and either grab the URL
+    // from the results or do get_page_link($id) with 
+    // the id of the page you want 
+    $jobtpl = null;
+    if(isset($pages_tpl[0])) {
+        $jobtpl= get_page_link( pll_get_post( $pages_tpl[0] ) );
+    }
+    return $jobtpl;
+    wp_reset_postdata();
+}
+
 function term_has_parent($termid, $tax){
     $term = get_term($termid, $tax);
     if ($term->parent > 0){
@@ -1081,7 +1106,8 @@ $toTranslate = array(
     'Interested in instantly receiving the latest Search X Recruitment jobs within your area of expertise?',
     'Subscribe now',
     'Category',
-    'Let me help you find the perfect job'
+    'Let me help you find the perfect job',
+    "Let's find the perfect job for you"
 );
 
 foreach($toTranslate as $string) {

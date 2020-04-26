@@ -2051,7 +2051,7 @@ i {
 	position: relative;
 	display: inline-block;
 	width: 100%;
-	max-width: calc(100% - 120px);
+	max-width: calc(100% - 60px);
 	padding: 20px 30px 20px 20px;
 	vertical-align: middle;
 	color: #183153;
