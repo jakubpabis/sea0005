@@ -9,7 +9,7 @@
             <i class="fas fa-filter"></i>
             <h3><?php pll_e('Filter jobs'); ?></h3>
         </div>
-        <form action="" method="GET" id="filter">
+        <div id="filter">
             <?php if(get_categories(array('taxonomy' => 'job-category'))): 
                 if( isset($_GET['job-category']) && !empty($_GET['job-category']) ){ 
                     $activeJobCats = $_GET['job-category']; 
@@ -122,6 +122,6 @@
             <?php endif; ?>
             <button type="submit" class="btn btn__default yellow"><?php pll_e('Filter'); ?></button>
             <!-- <input type="hidden" name="action" value="myfilter"> -->
-        </form>
+        </div>
     </div>
 </aside>

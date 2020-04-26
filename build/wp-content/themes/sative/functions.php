@@ -1080,7 +1080,8 @@ $toTranslate = array(
     'Subscribe to our newsletter',
     'Interested in instantly receiving the latest Search X Recruitment jobs within your area of expertise?',
     'Subscribe now',
-    'Category'
+    'Category',
+    'Let me help you find the perfect job'
 );
 
 foreach($toTranslate as $string) {
