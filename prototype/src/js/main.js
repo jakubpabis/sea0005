@@ -182,6 +182,27 @@ function menuMobile()
 	});
 }
 
+function quickFilters()
+{
+	$('.header__jobs-cats').find('a').on('click', function(e) {
+		e.preventDefault();
+		switch( $(this).attr('href') ) {
+			case '#it':
+
+				break;
+			case '#sales':
+
+				break;
+			case '#executive':
+
+				break;
+			case 'freelance':
+				
+				break;
+		}
+	});
+}
+
 $(document).ready(function() {
 	
 	lazyImages();
@@ -191,6 +212,7 @@ $(document).ready(function() {
 	knowledgeFilterToggle();
 	teamShowMore();
 	jobsFilterToggle();
+	quickFilters();
 
 	if($('.home__middle-hashtags').length != 0) {
 		homeHashtags();
