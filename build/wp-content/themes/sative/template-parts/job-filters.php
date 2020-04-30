@@ -25,7 +25,7 @@
                     <i class="fas fa-plus"></i>
                     <i class="fas fa-minus"></i>
                 </span>
-                <div class="filters">
+                <div class="filters job-category-filters">
                     <?php hierarchical_tax_tree_filter( 0, 'job-category', $activeJobCats); ?>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                     <i class="fas fa-plus"></i>
                     <i class="fas fa-minus"></i>
                 </span>
-                <div class="filters">
+                <div class="filters job-salary-filters">
                     <div class="inputs">
                         <input type="text" name="salary_min" placeholder="From" value="<?= $salaryMin; ?>">
                         <input type="text" name="salary_max" placeholder="To" value="<?= $salaryMax; ?>">

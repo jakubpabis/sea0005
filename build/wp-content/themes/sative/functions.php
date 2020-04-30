@@ -766,7 +766,7 @@ function hierarchical_tax_tree_filter( $cat, $tax, $active) {
                 echo '<li>';
                 $checked = null;
             }
-            echo '<span>' . $cat->name . '&nbsp;<small>('. $cat->count . ')</small><i class="far fa-times"></i><input type="checkbox" ' . $checked . ' name="' . $tax . '[]" value="' . $cat->term_id . '"></span>'; 
+            echo '<span>' . $cat->name . '&nbsp;<small>('. $cat->count . ')</small><i class="far fa-times"></i><input type="checkbox" data-name="'.$cat->category_nicename.'" ' . $checked . ' name="' . $tax . '[]" value="' . $cat->term_id . '"></span>'; 
             hierarchical_tax_tree_filter( $cat->term_id, $tax, $active);
             echo '</li>';
         endforeach;   

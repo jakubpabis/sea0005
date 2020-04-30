@@ -9,7 +9,7 @@ get_header();
 
 <?php require_once get_template_directory() . '/inc/jobs-filtering.php'; ?>
 
-<form action="" method="GET">
+<form id="main-jobs-filter-form" action="" method="GET">
 <header class="header__jobs">
     <div class="container">
         <div class="dog"></div>

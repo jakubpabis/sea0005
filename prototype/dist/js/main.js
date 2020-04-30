@@ -3877,18 +3877,22 @@ function quickFilters()
 {
 	$('.header__jobs-cats').find('a').on('click', function(e) {
 		e.preventDefault();
+		var $form = $('#main-jobs-filter-form');
 		switch( $(this).attr('href') ) {
 			case '#it':
-
+				$('.jobs__list-filters').find('.job-category-filters').find('li').find('input[data-name="it"]').prop('checked', true);
+				$form.submit();
 				break;
 			case '#sales':
-
+				$('.jobs__list-filters').find('.job-category-filters').find('li').find('input[data-name="sales"]').prop('checked', true);
+				$form.submit();
 				break;
 			case '#executive':
-
+				$('.jobs__list-filters').find('.job-salary-filters').find('input[name="salary_min"]').val(80000);
+				$form.submit();
 				break;
 			case 'freelance':
-				
+
 				break;
 		}
 	});
