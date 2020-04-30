@@ -2026,7 +2026,7 @@ i {
 
 #searchModal .dog {
 	margin-bottom: -22%;
-	margin-left: -45px;
+	margin-left: -50px;
 }
 
 #searchModal .searchInput {
@@ -4953,6 +4953,33 @@ h4,
 	left: auto;
 }
 
+#searchModal .modal-container {
+	padding: 30px 20px;
+}
+
+#searchModal .searchInput {
+	margin-left: 0;
+}
+
+#searchModal .searchInput .triangle-left {
+	top: 16px;
+	left: 0;
+	border-top: 10px solid transparent;
+	border-right: 16px solid white;
+	border-bottom: 10px solid transparent;
+}
+
+#searchModal .searchInput input {
+	max-width: calc(100% - 40px);
+	padding: 15px 20px 15px 15px;
+}
+
+#searchModal .searchInput .btn {
+	font-size: 23px;
+	margin-left: -20px;
+	padding: 14px;
+}
+
 .jobs__list-filters {
 	margin-top: 15px;
 }
@@ -5167,6 +5194,33 @@ p,
 .testimonials__candidates-content > .container,
 .testimonials__clients-content > .container {
 	padding-bottom: 50px;
+}
+
+#searchModal .dog {
+	position: absolute;
+	top: -50px;
+	left: -100px;
+	width: 240px;
+	margin-bottom: 0;
+	margin-left: 0;
+	opacity: .3;
+}
+
+#searchModal .modal-container {
+	overflow: hidden;
+}
+
+#searchModal .searchInput .triangle-left {
+	display: none;
+}
+
+#searchModal .searchInput input {
+	font-size: 16px;
+	max-width: calc(100% - 35px);
+}
+
+#searchModal .searchInput .btn {
+	font-size: 21px;
 }
 
 .jobs__list-item {

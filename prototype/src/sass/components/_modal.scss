@@ -158,11 +158,38 @@
 
     .dog {
         margin-bottom: -22%;
-        margin-left: -45px;
+        margin-left: -50px;
+
+        @media(max-width: 575px) {
+            margin-bottom: 0;
+            margin-left: 0;
+            top: -50px;
+            left: -100px;
+            width: 240px;
+            position: absolute;
+            opacity: 0.3;
+        }
+
+    }
+
+    .modal-container {
+
+        @media(max-width: 767px) {
+            padding: 30px 20px;
+        }
+
+        @media(max-width: 575px) {
+            overflow: hidden;
+        }
+
     }
 
     .searchInput {
         margin-left: 20px;
+
+        @media(max-width: 767px) {
+            margin-left: 0;
+        }
     
         .triangle-left {
             position: absolute;
@@ -174,6 +201,19 @@
             border-bottom: 15px solid transparent; 
             border-right: 20px solid white; 
             content: '';
+
+            @media(max-width: 767px) {
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent; 
+                border-right: 16px solid white; 
+                top: 16px;
+                left: 0;
+            }
+
+            @media(max-width: 575px) {
+                display: none;
+            }
+
         }
     
         input {
@@ -189,6 +229,16 @@
             border: none;
             outline: 0!important;
             @include notch(8px);
+
+            @media(max-width: 767px) {
+                max-width: calc(100% - 40px);
+                padding: 15px 20px 15px 15px;
+            }
+
+            @media(max-width: 575px) {
+                max-width: calc(100% - 35px);
+                font-size: 16px;
+            }
     
             &::placeholder {
                 color: $color-primary;
@@ -204,6 +254,17 @@
             font-size: 26px;
             padding: 18px 18px 17px;
             margin-left: -20px;
+
+            @media(max-width: 767px) {
+                font-size: 23px;
+                padding: 14px;
+                margin-left: -20px;
+            }
+
+            @media(max-width: 575px) {
+                font-size: 21px;
+            }
+
         }
         
     }
