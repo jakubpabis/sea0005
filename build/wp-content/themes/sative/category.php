@@ -7,8 +7,6 @@ get_template_part( 'template-parts/breadcrumbs' ); ?>
 <?php
 wp_reset_postdata();
 
-
-
 $know = get_queried_object();
 $args = array( 
     'post_type' => 'post',
