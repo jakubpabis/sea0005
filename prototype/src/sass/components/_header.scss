@@ -128,8 +128,18 @@
                 margin-bottom: 10px;
             }
 
+            @media(max-width: 575px) {
+                flex-wrap: wrap;
+            }
+
             .btn {
                 margin-left: 10px;
+
+                @media(max-width: 575px) {
+                    margin-left: 0;
+                    margin-right: 10px;
+                    margin-bottom: 10px;
+                }
 
                 &:first-of-type,
                 &:first-child {
@@ -182,6 +192,14 @@
 
                 @media(max-width: 991px) {
                     height: 200px;
+                }
+
+            }
+
+            &-search {
+
+                @media(max-width: 575px) {
+                    margin-top: 70px;
                 }
 
             }
