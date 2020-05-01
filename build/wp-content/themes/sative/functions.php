@@ -742,7 +742,7 @@ function jobDisplayHelper()
 }
 
 function hierarchical_tax_tree( $cat, $tax, $active = [] ) {
-    $next = get_categories('taxonomy=' . $tax . '&hide_empty=false&parent=' . $cat);
+    $next = get_categories('taxonomy=' . $tax . '&orderby=count&order=DESC&hide_empty=false&parent=' . $cat);
     if( $next ) :    
         echo '<ul>';
         foreach( $next as $cat ) :
@@ -763,7 +763,7 @@ function hierarchical_tax_tree( $cat, $tax, $active = [] ) {
 
 
 function hierarchical_tax_tree_filter( $cat, $tax, $active) {
-    $next = get_categories('taxonomy=' . $tax . '&hide_empty=false&parent=' . $cat);
+    $next = get_categories('taxonomy=' . $tax . '&orderby=count&order=DESC&hide_empty=false&parent=' . $cat);
     if( $next ) :    
         echo '<ul>';
         foreach( $next as $cat ) :
