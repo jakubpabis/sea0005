@@ -2487,6 +2487,43 @@ aside#chat .dog {
 	padding-right: 45px;
 }
 
+.jobs__single article .info {
+	display: flex;
+	flex-direction: row;
+	margin: 0 -10px;
+	padding: 30px;
+	flex-wrap: wrap;
+}
+
+.jobs__single article .info__item {
+	display: flex;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 0 10px;
+	flex-basis: 50%;
+}
+
+.jobs__single article .info__item i {
+	margin-right: 8px;
+}
+
+.jobs__single article .info__item span {
+	line-height: 1.21 !important;
+	display: inline-block;
+}
+
+.jobs__single article .info__item:nth-child(2) {
+	order: 3;
+}
+
+.jobs__single article .info__item:nth-child(3) {
+	order: 2;
+}
+
+.jobs__single article .info__item:nth-child(4) {
+	order: 4;
+}
+
 .jobs__single article h1 {
 	margin-bottom: 40px;
 }
@@ -5236,6 +5273,14 @@ p,
 }
 
 .jobs__list-item .info__item span {
+	font-size: 16px !important;
+}
+
+.jobs__single article .info__item {
+	flex-basis: 100%;
+}
+
+.jobs__single article .info__item span {
 	font-size: 16px !important;
 }
 

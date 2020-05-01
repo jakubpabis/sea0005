@@ -705,6 +705,7 @@ function jobDisplayHelper()
     $helper = array(
         'supCatName' => '',
         'type' => '',
+        'industry' => '',
     );
     
     $categories = get_the_terms(get_the_ID(), 'job-category');
@@ -722,6 +723,16 @@ function jobDisplayHelper()
         foreach($types as $type) {
             if($type->parent == 0) {
                 $helper['type'] = $type->name;
+                break;
+            }
+        }
+    }
+
+    $industries = get_the_terms(get_the_ID(), 'job-industry');
+    if(is_array($industries)) {
+        foreach($industries as $industry) {
+            if($industry->parent == 0) {
+                $helper['industry'] = $industry->name;
                 break;
             }
         }
@@ -1114,6 +1125,8 @@ $toTranslate = array(
 foreach($toTranslate as $string) {
     pll_register_string('sative', $string);
 }
+
+require_once get_template_directory() . '/inc/application-form.php';
 
 require_once get_template_directory() . '/inc/cronjob.php';
 

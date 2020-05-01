@@ -24,6 +24,42 @@ get_header(); ?>
             <div class="row pt-3">
 				<article class="col-lg-8 jobs__single-article">
 
+                    <?php $helper = jobDisplayHelper(); ?>
+                    <div class="info card bg-lgrey">
+                        <?php if(get_field('location')): ?>
+                        <div class="info__item">
+                            <i class="far fa-map-marker-alt"></i>
+                            <span class="text-size-medium location"><?= get_field('location'); ?></span>
+                        </div>
+                        <?php endif; ?>
+                        <?php if($helper['type']): ?>
+                        <div class="info__item">
+                            <i class="far fa-clock"></i>
+                            <span class="text-size-medium type"><?= $helper['type']; ?></span>
+                        </div>
+                        <?php endif; ?>
+                        <?php if(get_field('salary_min') || get_field('salary_max')): ?>
+                        <div class="info__item">
+                            <i class="far fa-euro-sign"></i>
+                            <span class="text-size-medium">
+                                <number class="salarymin">
+                                    <?= number_format((int)get_field('salary_min'), 0, ".", "."); ?>
+                                </number>
+                                <?= get_field('salary_min') && get_field('salary_max') ? '&nbsp;-&nbsp;' : null ?>
+                                <number class="salarymax">
+                                    <?= number_format((int)get_field('salary_max'), 0, ".", "."); ?>
+                                </number>
+                            </span>
+                        </div>
+                        <?php endif; ?>
+                        <?php if($helper['industry']): ?>
+                        <div class="info__item">
+                            <i class="far fa-industry"></i>
+                            <span class="text-size-medium industry"><?= $helper['industry']; ?></span>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+
 					<?php 
 					
 					echo wp_specialchars_decode( get_the_content() );

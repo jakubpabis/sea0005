@@ -21,7 +21,7 @@
             <span>Github</span>
         </a>
     </div>
-    <form class="pt-3" action="">
+    <form method="POST" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" accept-charset="UTF-8" role="form" class="pt-3" id="job-application-form" enctype="multipart/form-data">
         <div class="row align-items-center jobs__single-sidebar-inputs">
             <div class="col-12 pb-1">
                 <div class="pretty p-icon p-round p-plain p-jelly">
@@ -40,11 +40,11 @@
                 </div>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
-                <input type="text" name="name" required>
+                <input type="text" name="name">
                 <label for="name"><?php pll_e( 'Name' ); ?> <span>*</span></label>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
-                <input type="email" name="email" required>
+                <input type="email" name="email">
                 <label for="email"><?php pll_e( 'Email' ); ?> <span>*</span></label>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
@@ -77,6 +77,8 @@
                 </div>
             </div>
             <div class="col-12 pt-4">
+                <input type="hidden" name="action" value="application_form">
+                <?php wp_nonce_field( 'application_form', 'application_form_nonce' ); ?>
                 <button type="submit" class="btn btn__default yellow"><?php pll_e( 'Send application' ); ?></button>
             </div>
         </div>

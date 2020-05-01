@@ -110,10 +110,10 @@ get_header();
                                 </span>
                             </div>
                             <?php endif; ?>
-                            <?php if(get_field('industry')): ?>
+                            <?php if($helper['industry']): ?>
                             <div class="info__item">
                                 <i class="far fa-industry"></i>
-                                <span class="text-size-medium industry"></span>
+                                <span class="text-size-medium industry"><?= $helper['industry']; ?></span>
                             </div>
                             <?php endif; ?>
                         </div>
