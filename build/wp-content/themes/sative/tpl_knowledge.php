@@ -18,6 +18,12 @@ else:
     $know = get_category_by_slug('kennis'); 
 endif;
 
+if( isset($_GET['k-title']) && $_GET['k-title'] ) {
+    $search = $_GET['k-title'];
+} else {
+    $search = null;
+}
+
 //var_dump($know);
 
 $args = array( 
@@ -25,6 +31,7 @@ $args = array(
     'post_status' => 'publish',
     'posts_per_page' => 10,
     'category_name' => 'knowledge',
+    's' => $search,
     'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
     'tax_query' => array(
         'relation' => 'AND',
@@ -57,7 +64,7 @@ $pagination = paginate_links( array(
 ) ); 
 
 ?>
-
+<form action="" method="GET">
 <header class="header__generic">
     <div class="container">
         <?php if(get_field('knowledge_title')): ?>
@@ -75,7 +82,7 @@ $pagination = paginate_links( array(
             </div>
             <div class="offset-md-1 col-md-11 offset-sm-2 col-sm-10 col-11 header__jobs-dog-search">
                 <div class="triangle-left"></div>
-                <input type="text" placeholder="<?php pll_e('Search our knowledge base. We have tons of useful articles for you!'); ?>">
+                <input type="text" name="k-title" value="<?= isset($_GET['k-title']) ? $_GET['k-title'] : null ?>" placeholder="<?php pll_e('Search our knowledge base. We have tons of useful articles for you!'); ?>">
                 <div class="gradient"></div>
                 <button type="submit" class="btn btn__notched knowledge"><i class="far fa-search"></i></button>
             </div>
@@ -162,7 +169,7 @@ $pagination = paginate_links( array(
                         <i class="fas fa-filter"></i>
                         <?php pll_e( 'Filter by topic' ); ?>
                     </h3>
-                    <form action="" method="GET" id="filter">
+                    <div id="filter">
                         <?php $categories = get_categories('taxonomy=category&hide_empty=false'); ?>
                         <?php foreach($categories as $cat): ?>
                             <?php if($cat->parent === $know->term_id): ?>
@@ -192,12 +199,13 @@ $pagination = paginate_links( array(
                             <?php endif; ?>
                         <?php endforeach; ?>
                         <button type="submit" class="btn btn__default yellow"><?php pll_e('Filter'); ?></button>
-                    </form>
+                    </div>
                 </div>
             </aside>
         </div>
     </div>
 </main>
+</form>
 
 
 <?php get_footer();
