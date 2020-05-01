@@ -153,7 +153,7 @@ get_header(); ?>
     <?php endif; wp_reset_postdata(); ?>
 
     <section class="jobs__single-cta-section text-center">
-        <a href="" class="btn btn__default yellow"><?php pll_e( 'Show all jobs' ); ?></a>
+        <a href="<?php echo getTplPageURL(); ?>" class="btn btn__default yellow"><?php pll_e( 'Show all jobs' ); ?></a>
     </section>
 
 <?php endwhile; ?>

@@ -2618,17 +2618,17 @@ aside#chat .dog {
 	flex-basis: calc(50% - 20px);
 }
 
-.jobs__single-sidebar .card #filter .pretty .icon {
+.jobs__single-sidebar .card form .pretty .icon {
 	top: 0;
 }
 
-.jobs__single-sidebar .card #filter .pretty label {
+.jobs__single-sidebar .card form .pretty label {
 	font-size: 14px;
 	text-indent: 2em;
 }
 
-.jobs__single-sidebar .card #filter .pretty label:before,
-.jobs__single-sidebar .card #filter .pretty label:after {
+.jobs__single-sidebar .card form .pretty label:before,
+.jobs__single-sidebar .card form .pretty label:after {
 	top: 0;
 	width: 20px;
 	height: 20px;
@@ -2636,11 +2636,11 @@ aside#chat .dog {
 	background-color: white;
 }
 
-.jobs__single-sidebar .card #filter .ugly {
+.jobs__single-sidebar .card form .ugly {
 	position: relative;
 }
 
-.jobs__single-sidebar .card #filter .ugly label {
+.jobs__single-sidebar .card form .ugly label {
 	font-size: 14px;
 	font-weight: 400;
 	font-style: italic;
@@ -2657,7 +2657,7 @@ aside#chat .dog {
 	color: #183153;
 }
 
-.jobs__single-sidebar .card #filter .ugly label.full {
+.jobs__single-sidebar .card form .ugly label.full {
 	display: flex;
 	width: calc(100% - 30px);
 	max-width: 100%;
@@ -2666,19 +2666,19 @@ aside#chat .dog {
 	justify-content: space-between;
 }
 
-.jobs__single-sidebar .card #filter .ugly label.full span {
+.jobs__single-sidebar .card form .ugly label.full span {
 	font-style: normal !important;
 	text-decoration: underline;
 }
 
-.jobs__single-sidebar .card #filter .ugly label span {
+.jobs__single-sidebar .card form .ugly label span {
 	font-size: 14px;
 	font-weight: 600;
 	color: #ec6278;
 }
 
-.jobs__single-sidebar .card #filter .ugly input,
-.jobs__single-sidebar .card #filter .ugly textarea {
+.jobs__single-sidebar .card form .ugly input,
+.jobs__single-sidebar .card form .ugly textarea {
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 1;
@@ -2692,13 +2692,13 @@ aside#chat .dog {
 	appearance: none;
 }
 
-.jobs__single-sidebar .card #filter .ugly input:focus ~ label,
-.jobs__single-sidebar .card #filter .ugly textarea:focus ~ label {
+.jobs__single-sidebar .card form .ugly input:focus ~ label,
+.jobs__single-sidebar .card form .ugly textarea:focus ~ label {
 	opacity: 0;
 }
 
-.jobs__single-sidebar .card #filter .ugly input[type='file'],
-.jobs__single-sidebar .card #filter .ugly textarea[type='file'] {
+.jobs__single-sidebar .card form .ugly input[type='file'],
+.jobs__single-sidebar .card form .ugly textarea[type='file'] {
 	width: 100%;
 	height: 40px;
 	cursor: pointer !important;
@@ -2706,7 +2706,7 @@ aside#chat .dog {
 	background-color: white;
 }
 
-.jobs__single-sidebar .card #filter .ugly textarea {
+.jobs__single-sidebar .card form .ugly textarea {
 	min-height: 120px;
 	resize: none;
 }
@@ -4656,11 +4656,11 @@ p,
 	flex-basis: calc(25% - 14px);
 }
 
-.jobs__single-sidebar .card #filter .ugly label {
+.jobs__single-sidebar .card form .ugly label {
 	left: 7px;
 }
 
-.jobs__single-sidebar .card #filter .ugly label.full {
+.jobs__single-sidebar .card form .ugly label.full {
 	width: calc(100% - 14px);
 }
 
