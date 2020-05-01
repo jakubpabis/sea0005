@@ -1107,7 +1107,8 @@ $toTranslate = array(
     'Subscribe now',
     'Category',
     'Let me help you find the perfect job',
-    "Let's find the perfect job for you"
+    "Let's find the perfect job for you",
+    'Clear all'
 );
 
 foreach($toTranslate as $string) {

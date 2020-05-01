@@ -189,22 +189,58 @@ function quickFilters()
 		var $form = $('#main-jobs-filter-form');
 		switch( $(this).attr('href') ) {
 			case '#it':
-				$('.jobs__list-filters').find('.job-category-filters').find('li').find('input[data-name="it"]').prop('checked', true);
-				$form.submit();
+				var $input = $('.jobs__list-filters').find('.job-category-filters').find('li').find('input[data-name="it"]');
+				if($input) {
+					$input.prop('checked', !$input.prop('checked'));
+					$form.submit();
+				}
 				break;
 			case '#sales':
-				$('.jobs__list-filters').find('.job-category-filters').find('li').find('input[data-name="sales"]').prop('checked', true);
-				$form.submit();
+				var $input = $('.jobs__list-filters').find('.job-category-filters').find('li').find('input[data-name="sales"]');
+				if($input) {
+					$input.prop('checked', !$input.prop('checked'));
+					$form.submit();
+				}
 				break;
 			case '#executive':
-				$('.jobs__list-filters').find('.job-salary-filters').find('input[name="salary_min"]').val(80000);
-				$form.submit();
+				var $input = $('.jobs__list-filters').find('.job-salary-filters').find('input[name="salary_min"]');
+				if($input) {
+					if($input.val() != 80000) {
+						$input.val(80000);
+					} else {
+						$input.val(0);
+					}
+					$form.submit();
+				}
 				break;
 			case 'freelance':
-
+				var $input = $('.jobs__list-filters').find('.job-type-filters').find('li').find('input[data-name="freelance"]')
+				if($input) {
+					$input.prop('checked', !$input.prop('checked'));
+					$form.submit();
+				}
 				break;
 		}
 	});
+
+	$('.jobs__list-filters').find('li.active').each(function() {
+	
+		if( $(this).find('input[data-name="it"]').is(':checked') ) {
+			$('.header__jobs-cats').find('a[href="#it"]').addClass('active');
+		}
+		if( $(this).find('input[data-name="sales"]').is(':checked') ) {
+			$('.header__jobs-cats').find('a[href="#sales"]').addClass('active');
+		}
+		if( $(this).find('input[data-name="freelance"]').is(':checked') ) {
+			$('.header__jobs-cats').find('a[href="#freelance"]').addClass('active');
+		}
+
+	});
+
+	if($('.jobs__list-filters').find('.job-salary-filters').find('input[name="salary_min"]').val() == 80000) {
+		$('.header__jobs-cats').find('a[href="#executive"]').addClass('active');
+	}
+
 }
 
 $(document).ready(function() {

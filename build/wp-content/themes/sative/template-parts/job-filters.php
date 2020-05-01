@@ -115,7 +115,7 @@
                     <i class="fas fa-plus"></i>
                     <i class="fas fa-minus"></i>
                 </span>
-                <div class="filters">
+                <div class="filters job-type-filters">
                     <?php hierarchical_tax_tree_filter( 0, 'job-type', $activeJobTyps); ?>
                 </div>
             </div>
