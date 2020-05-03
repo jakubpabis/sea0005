@@ -50,7 +50,7 @@ get_header();
                 <input type="text" name="job-title" value="<?= isset($_GET['job-title']) ? $_GET['job-title'] : null ?>" placeholder="<?php pll_e('Enter job title here'); ?>">
             </div>
             <div class="col-md-6 col-11">
-                <input class="location" name="job-location" type="text" placeholder="<?php pll_e('Enter job location'); ?>">
+                <input class="location" type="text" name="location_s" value="<?= isset($_GET['location_s']) ? $_GET['location_s'] : null ?>" placeholder="<?php pll_e('Enter job location'); ?>">
                 <button type="submit" class="btn btn__notched"><i class="far fa-search"></i></button>
             </div>
             <div class="col-12 d-lg-block d-none text-right">

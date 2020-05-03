@@ -62,6 +62,13 @@ if( isset( $_GET['salary_max'] ) ) {
         'compare' => '<='
     );
 }
+if( isset( $_GET['location_s'] ) ) {
+    $args['meta_query'][] = array(
+        'key' => 'location', 
+        'value' => $_GET['location_s'], 
+        'compare' => 'LIKE'
+    );
+}
 
 //var_dump($args);
 $query = new WP_Query( $args );
