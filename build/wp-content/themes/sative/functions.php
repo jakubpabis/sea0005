@@ -1119,7 +1119,8 @@ $toTranslate = array(
     'Category',
     'Let me help you find the perfect job',
     "Let's find the perfect job for you",
-    'Clear all'
+    'Clear all',
+    'Your file exceeds 5mb limit...'
 );
 
 foreach($toTranslate as $string) {

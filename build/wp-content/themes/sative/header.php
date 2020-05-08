@@ -91,7 +91,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-auto navigation__lower-utils">
-                                    <a href="" target="_blank"><img src="<?= get_template_directory_uri(); ?>/assets/img/whatsapp.png" alt="" width="22" height="22"></a>
+                                    <a href="https://wa.me/31207782393" target="_blank"><img src="<?= get_template_directory_uri(); ?>/assets/img/whatsapp.png" alt="" width="22" height="22"></a>
                                     <a href="javascript:void(0)" data-toggle="modal" data-target="#searchModal"><i class="far fa-search"></i></a>
                                     <hr class="d-none d-sm-inline-block">
                                     <ul class="lang d-none d-sm-inline-block">
