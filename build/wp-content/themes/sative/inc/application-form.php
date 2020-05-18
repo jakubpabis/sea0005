@@ -70,12 +70,12 @@ function add_to_queue(){
 
         // if( $_FILES['app-cv']['size'] <= 5248000 ) {
 
-        // $uploaded_cv = realpath( $_FILES['app-cv']['tmp_name'] );
-        // $cv_ext = $_FILES['app-cv']['type'];
-        // $cv_name = basename( $_FILES['app-cv']['name'] );
-        // $data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
+        $uploaded_cv = realpath( $_FILES['app-cv']['tmp_name'] );
+        $cv_ext = $_FILES['app-cv']['type'];
+        $cv_name = basename( $_FILES['app-cv']['name'] );
+        $data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
 
-        $data['cv'] = '@'.realpath( $_FILES['app-cv']['tmp_name'] );
+        //$data['cv'] = '@'.realpath( $_FILES['app-cv']['tmp_name'] );
     }
     
     // $data['files'] = array('@'.realpath('./my_letter.pdf'));

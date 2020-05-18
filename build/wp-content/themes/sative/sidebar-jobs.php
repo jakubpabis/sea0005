@@ -25,14 +25,14 @@
         <div class="row align-items-center jobs__single-sidebar-inputs">
             <div class="col-12 pb-1">
                 <div class="pretty p-icon p-round p-plain p-jelly">
-                    <input type="radio" name="app-gender">
+                    <input type="radio" name="app-gender" value="Male">
                     <div class="state">
                         <i class="icon fas fa-mars"></i>
                         <label><?php pll_e( 'Male' ); ?></label>
                     </div>
                 </div>
                 <div class="pretty p-icon p-round p-plain p-jelly">
-                    <input type="radio" name="app-gender">
+                    <input type="radio" name="app-gender" value="Female">
                     <div class="state">
                         <i class="icon fas fa-venus"></i>
                         <label><?php pll_e( 'Female' ); ?></label>
