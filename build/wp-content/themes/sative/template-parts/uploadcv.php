@@ -47,7 +47,7 @@
                             </button>
                         </div>
                     </div>
-                    <form class="pt-5" action="">
+                    <form method="POST" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" accept-charset="UTF-8" role="form" class="pt-5" id="cv-upload-form" enctype="multipart/form-data">
                         <div class="row align-items-center">
                             <div class="col-12 pb-2">
                                 <div class="pretty p-icon p-round p-plain p-jelly">

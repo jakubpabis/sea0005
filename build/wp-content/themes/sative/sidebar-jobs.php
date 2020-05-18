@@ -25,14 +25,14 @@
         <div class="row align-items-center jobs__single-sidebar-inputs">
             <div class="col-12 pb-1">
                 <div class="pretty p-icon p-round p-plain p-jelly">
-                    <input type="radio" name="gender">
+                    <input type="radio" name="app-gender">
                     <div class="state">
                         <i class="icon fas fa-mars"></i>
                         <label><?php pll_e( 'Male' ); ?></label>
                     </div>
                 </div>
                 <div class="pretty p-icon p-round p-plain p-jelly">
-                    <input type="radio" name="gender">
+                    <input type="radio" name="app-gender">
                     <div class="state">
                         <i class="icon fas fa-venus"></i>
                         <label><?php pll_e( 'Female' ); ?></label>
@@ -40,36 +40,36 @@
                 </div>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
-                <input type="text" name="name">
-                <label for="name"><?php pll_e( 'Name' ); ?> <span>*</span></label>
+                <input type="text" name="app-name">
+                <label for="app-name"><?php pll_e( 'Name' ); ?> <span>*</span></label>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
-                <input type="email" name="email">
-                <label for="email"><?php pll_e( 'Email' ); ?> <span>*</span></label>
+                <input type="email" name="app-email">
+                <label for="app-email"><?php pll_e( 'Email' ); ?> <span>*</span></label>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
-                <input type="text" name="phone">
-                <label for="phone"><?php pll_e( 'Phone' ); ?></label>
+                <input type="text" name="app-phone">
+                <label for="app-phone"><?php pll_e( 'Phone' ); ?></label>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
-                <input type="text" name="dob">
-                <label for="dob"><?php pll_e( 'Date of birth' ); ?></label>
+                <input type="text" name="app-dob">
+                <label for="app-dob"><?php pll_e( 'Date of birth' ); ?></label>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
-                <input type="text" name="city">
-                <label for="city"><?php pll_e( 'City' ); ?></label>
+                <input type="text" name="app-city">
+                <label for="app-city"><?php pll_e( 'City' ); ?></label>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
-                <label class="full bg-white" for="cv"><?php pll_e( 'CV' ); ?> <span><?= pll_e( 'Upload' ); ?></span></label>
-                <input type="file" name="cv">
+                <label class="full bg-white" for="app-cv"><?php pll_e( 'CV' ); ?> <span><?= pll_e( 'Upload' ); ?></span></label>
+                <input type="file" name="app-cv">
             </div>
             <div class="col-12 ugly pt-2">
-                <textarea name="motivation"></textarea>
-                <label for="motivation"><?php pll_e( 'Motivation' ); ?></label>
+                <textarea name="app-motivation"></textarea>
+                <label for="app-motivation"><?php pll_e( 'Motivation' ); ?></label>
             </div>
             <div class="col-12 pt-1">
                 <div class="pretty p-icon p-plain p-jelly">
-                    <input type="checkbox" name="pp">
+                    <input type="checkbox" name="app-pp">
                     <div class="state">
                         <i class="icon fal fa-times"></i>
                         <label><?php pll_e( 'I hereby agree with the' ); ?> <a href=""><u><?php pll_e( 'Privacy Policy' ); ?></u></a> <span class="color-pink text-size-small text600">*</span></label>
@@ -77,6 +77,7 @@
                 </div>
             </div>
             <div class="col-12 pt-4">
+                <input type="hidden" name="app-jobid" value="<?= get_field('job_id'); ?>">
                 <input type="hidden" name="action" value="application_form">
                 <?php wp_nonce_field( 'application_form', 'application_form_nonce' ); ?>
                 <button type="submit" class="btn btn__default yellow"><?php pll_e( 'Send application' ); ?></button>
