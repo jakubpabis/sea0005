@@ -1,8 +1,8 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 
 function postRequest($request, $api_key, $api_secret, $json)
@@ -83,17 +83,21 @@ function add_to_queue(){
 
     $person_response = postRequest('people/add_to_queue', $api_key, $api_secret, $data);
 
-    echo '<pre>';
-    echo var_dump($person_response);
-    echo '</pre>';
+    // echo '<pre>';
+    // echo var_dump($person_response);
+    // echo '</pre>';
 }
 
 function sative_application_form_submit() {
 
     add_to_queue();
 
-    //$redirect = $_POST['_wp_http_referer'].'?message=success';
-    //header("Location: $redirect");
+    if( !isset( $message ) ) {
+        $message = 'success';
+    }
+
+    $redirect = '/app-success?ref='.$_POST['_wp_http_referer'].'&message='.$message;
+    header("Location: $redirect");
 
 }
 add_action( 'admin_post_nopriv_application_form', 'sative_application_form_submit' );
