@@ -40,19 +40,19 @@
                 </div>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
-                <input type="text" name="app-name">
+                <input type="text" name="app-name" required>
                 <label for="app-name"><?php pll_e( 'Name' ); ?> <span>*</span></label>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
-                <input type="email" name="app-email">
+                <input type="email" name="app-email" required>
                 <label for="app-email"><?php pll_e( 'Email' ); ?> <span>*</span></label>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
-                <input type="text" name="app-phone">
+                <input type="tel" name="app-phone">
                 <label for="app-phone"><?php pll_e( 'Phone' ); ?></label>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
-                <input type="text" name="app-dob">
+                <input type="text" name="app-dob" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}">
                 <label for="app-dob"><?php pll_e( 'Date of birth' ); ?></label>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
@@ -60,8 +60,8 @@
                 <label for="app-city"><?php pll_e( 'City' ); ?></label>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
-                <label class="full bg-white" for="app-cv"><?php pll_e( 'CV' ); ?> <span><?= pll_e( 'Upload' ); ?></span></label>
-                <input type="file" name="app-cv">
+                <label id="app-cv-label" class="full bg-white" for="app-cv"><?php pll_e( 'CV' ); ?> <span><?= pll_e( 'Upload' ); ?></span></label>
+                <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="app-cv" onchange="getFileName(this, 'app-cv-label')">
             </div>
             <div class="col-12 ugly pt-2">
                 <textarea name="app-motivation"></textarea>
@@ -69,7 +69,7 @@
             </div>
             <div class="col-12 pt-1">
                 <div class="pretty p-icon p-plain p-jelly">
-                    <input type="checkbox" name="app-pp">
+                    <input type="checkbox" name="app-pp" required>
                     <div class="state">
                         <i class="icon fal fa-times"></i>
                         <label><?php pll_e( 'I hereby agree with the' ); ?> <a href=""><u><?php pll_e( 'Privacy Policy' ); ?></u></a> <span class="color-pink text-size-small text600">*</span></label>

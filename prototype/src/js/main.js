@@ -79,6 +79,12 @@ function jobsFilterToggle()
 	});
 }
 
+function getFileName($input, $el)
+{
+	$text = $input.value;
+	document.getElementById($el).innerHTML = $text.split('\\')[2];
+}
+
 function uglyInput() 
 {
 	$('.ugly').each(function() {
@@ -253,8 +259,8 @@ $(document).ready(function() {
 	teamShowMore();
 	jobsFilterToggle();
 	quickFilters();
-	// onFormSubmit();
-	// onFormLoad();
+	onFormSubmit();
+	onFormLoad();
 
 	if($('.home__middle-hashtags').length != 0) {
 		homeHashtags();

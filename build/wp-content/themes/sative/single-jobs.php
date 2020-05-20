@@ -17,6 +17,10 @@ get_header(); ?>
                 <div class="row mb-5 mt-5">
                     <div class="col-12 text-center">
                         <?php if( $_GET['message'] === 'success' ): ?>
+                        <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=1233946&conversionId=1160586&fmt=gif" />
+                        <script>
+                            dataLayer.push({'formulier': 'apply job','event': 'formulierVerstuurd','vacature': '{{ record.title|raw }}'});  
+                        </script>
                         <div class="info card bg-yellow">
                             <h2 class="color-navy">
                                 <?= pll_e('Congratulations! Your application was successfully submited!'); ?>
