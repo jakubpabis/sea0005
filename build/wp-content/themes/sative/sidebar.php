@@ -8,6 +8,13 @@
         <a href="/contact" class="btn btn__default yellow mt-4"><?php pll_e( 'Get in touch' ); ?></a>
     </div>
 </div>
+
+<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+<div class="card bg-yellow mt-5">
+    <?php dynamic_sidebar( 'sidebar-1' ); ?>
+</div>
+<?php endif; ?>
+
 <div class="share">
     <h5 class="text500"><?php pll_e( 'Share this content' ); ?></h5>
     <div class="btns">
@@ -35,9 +42,3 @@
         </a>
     </div>
 </div>
-
-<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-<div class="card bg-yellow mt-5">
-    <?php dynamic_sidebar( 'sidebar-1' ); ?>
-</div>
-<?php endif; ?>
