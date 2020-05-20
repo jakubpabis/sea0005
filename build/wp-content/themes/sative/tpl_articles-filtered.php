@@ -72,6 +72,11 @@ $query = new WP_Query( $args );
 					<?php endwhile; endif; ?>
 				</ul>
 			</div>
+			<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+			<div class="card bg-yellow mt-5">
+				<?php dynamic_sidebar( 'sidebar-1' ); ?>
+			</div>
+			<?php endif; ?>
 			<div class="share">
 				<h5 class="text500"><?php pll_e( 'Share this content' ); ?></h5>
 				<div class="btns">
