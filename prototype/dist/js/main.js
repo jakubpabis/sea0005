@@ -3552,7 +3552,7 @@ function myFacebookLogin() {
 				if(response['birthday']) {
 					var $bdayO = response['birthday'];
 					var $bdayM = $bdayO.split('/');
-					$bdayM = $bdayM[2]+'-'+$bdayM[0]+'-'+$bdayM[1];
+					$bdayM = $bdayM[1]+'-'+$bdayM[0]+'-'+$bdayM[2];
                     $('form').find('input[name="app-dob"]').val($bdayM).next('label').css({'opacity':0});
                     $('form').find('input[name="cv-dob"]').val($bdayM).next('label').css({'opacity':0});
 				}
