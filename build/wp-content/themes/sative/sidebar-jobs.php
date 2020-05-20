@@ -52,7 +52,7 @@
                 <label for="app-phone"><?php pll_e( 'Phone' ); ?></label>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
-                <input type="text" name="app-dob" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}">
+                <input id="app-dob-datepicker" type="date" name="app-dob" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}">
                 <label for="app-dob"><?php pll_e( 'Date of birth' ); ?></label>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">

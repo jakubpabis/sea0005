@@ -299,6 +299,12 @@ $(document).ready(function() {
 	
 	if( $('#job-application-form').length > 0 ) {
 		afterFormOpen();
+		$('#app-dob-datepicker').datepicker({
+			format: "dd-mm-yyyy",
+			weekStart: 1,
+			autoclose: true,
+			startDate: "01-01-1991"
+		});
 	}
 
 });
