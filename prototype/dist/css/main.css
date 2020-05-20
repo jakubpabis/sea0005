@@ -1760,6 +1760,18 @@ i {
 	color: #ec6278;
 }
 
+.card .wp-gr .wp-google-review {
+	margin-top: 25px !important;
+}
+
+.card .grw-widget-title {
+	margin-bottom: 1.5rem !important;
+}
+
+.card .wp-google-place img {
+	border-radius: 0 !important;
+}
+
 .cards__section-img {
 	display: flex;
 	overflow: hidden;
