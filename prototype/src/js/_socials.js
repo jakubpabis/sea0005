@@ -34,6 +34,7 @@ function loadScript( url, callback ) {
 	script.src = url;
 	document.getElementsByTagName( "head" )[0].appendChild( script );
 }
+
 function afterFormOpen()
 {
 	if(isScriptLoaded('https://www.linkedin.com/autofill/js/autofill.js') == false) {

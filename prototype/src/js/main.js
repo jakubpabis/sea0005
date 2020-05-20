@@ -295,7 +295,11 @@ $(document).ready(function() {
                 $(obj).remove();
             }
         });
-    });
+	});
+	
+	if( $('#job-application-form').length > 0 ) {
+		afterFormOpen();
+	}
 
 });
 
