@@ -127,8 +127,8 @@ function sative_widgets_init() {
         'name'          => esc_html__( 'Sidebar', 'sative' ),
         'id'            => 'sidebar-1',
         'description'   => esc_html__( 'Add widgets here.', 'sative' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ) );
@@ -1120,7 +1120,8 @@ $toTranslate = array(
     'Let me help you find the perfect job',
     "Let's find the perfect job for you",
     'Clear all',
-    'Your file exceeds 5mb limit...'
+    'Your file exceeds 5mb limit...',
+    'Job application sucessful'
 );
 
 foreach($toTranslate as $string) {

@@ -13,6 +13,24 @@ get_header(); ?>
 
 	<section class="jobs__single">
 		<div class="container">
+            <?php if( isset( $_GET['message'] ) ): ?>
+                <div class="row mb-5 mt-5">
+                    <div class="col-12 text-center">
+                        <?php if( $_GET['message'] === 'success' ): ?>
+                        <div class="info card bg-yellow">
+                            <h2 class="color-navy">
+                                <?= pll_e('Congratulations! Your application was successfully submited!'); ?>
+                            </h2>
+                        <?php else: ?>
+                        <div class="info card bg-pink">
+                            <h2 class="color-navy">
+                                <?= pll_e('Sorry, there was a problem with your application, please try again later...'); ?>
+                            </h2>
+                        <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
 			<div class="row">
                 <header class="jobs__single-title col-lg-8 col-sm-9">
                     <?php the_title( '<h1>', '</h1>' ); ?>

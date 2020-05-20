@@ -77,6 +77,7 @@
                 </div>
             </div>
             <div class="col-12 pt-4">
+                <input type="hidden" name="postid" value="<?= get_the_ID(); ?>">
                 <input type="hidden" name="app-jobid" value="<?= get_field('job_id'); ?>">
                 <input type="hidden" name="action" value="application_form">
                 <?php wp_nonce_field( 'application_form', 'application_form_nonce' ); ?>

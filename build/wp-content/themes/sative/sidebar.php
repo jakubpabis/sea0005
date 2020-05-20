@@ -35,3 +35,9 @@
         </a>
     </div>
 </div>
+
+<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+<div class="card bg-yellow mt-5">
+    <?php dynamic_sidebar( 'sidebar-1' ); ?>
+</div>
+<?php endif; ?>

@@ -253,6 +253,8 @@ $(document).ready(function() {
 	teamShowMore();
 	jobsFilterToggle();
 	quickFilters();
+	onFormSubmit();
+	onFormLoad();
 
 	if($('.home__middle-hashtags').length != 0) {
 		homeHashtags();

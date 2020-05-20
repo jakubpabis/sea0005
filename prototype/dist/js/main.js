@@ -3461,234 +3461,128 @@ var List=function(t){function e(n){if(r[n])return r[n].exports;var i=r[n]={i:n,l
 //     c.type='text/javascript';c.charset='utf-8';c.async=true;
 //     c.src='//www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
 // })(document);
+function isScriptLoaded(url) {
+    var scripts = document.getElementsByTagName('script');
+    for (var i = scripts.length; i--;) {
+        if (scripts[i].src == url) return true;
+    }
+    return false;
+}
 
-// // var $filters = {
-// // 	name: null,
-// // 	category: [],
-// // 	type: [],
-// // 	salarymin: null,
-// // 	salarymax: null,
-// // 	location: [],
-// // 	industry: [],
-// // 	skills: []
-// // };
-// var options = {
-//     valueNames: [ 
-//         'title', 
-//         'location',
-//         'type',
-//         'salarymin',
-//         'salarymax',
-//         'industry',
-//         'excerpt',
-//         {
-//             name: 'icon',
-//             attr: 'data-type'
-//         }
-//     ],
-//     listClass: 'jobs__list-items',
-//     item: '<article class="card bg-lgrey jobs__list-item"><div class="job-title"><span class="icon"></span><h3 class="title"></h3></div><div class="info"><div class="info__item"><i class="far fa-map-marker-alt"></i><span class="text-size-medium location"></span></div><div class="info__item"><i class="far fa-clock"></i><span class="text-size-medium type"></span></div><div class="info__item"><i class="far fa-euro-sign"></i><span class="text-size-medium"><number class="salarymin"></number> - <number class="salarymax"></number></span></div><div class="info__item"><i class="far fa-industry"></i><span class="text-size-medium industry"></span></div></div><p class="text-size-small excerpt"></p><a href="" class="btn btn__small navy">More info</a></article>'
-// };
+function addScript($src)
+{
+	var head = document.getElementsByTagName('head')[0];
+	var script = document.createElement('script');
+	script.type = 'text/javascript';
+	script.src = $src;
+	head.appendChild(script);
+}
 
-// var values = [
-//     { 
-//         icon: 'it',
-//         title: 'Product Owner', 
-//         location: ['Stockholm', 'Sweden'],
-//         type: 'Fulltime employee',
-//         salarymin: 40000,
-//         salarymax: 60000,
-//         industry: 'Banking',
-//         excerpt: 'Voor onze opdrachtgever in Utrecht zijn wij op zoek naar een ervaren Product Owner. Onz  opdrachtgever ontwikkelt innovatieve maatwerk applicaties voor klanten die …'
-//     }
-// ];
+function loadScript( url, callback ) {
+	var script = document.createElement( "script" )
+	script.type = "text/javascript";
+	if(script.readyState) {  // only required for IE <9
+		script.onreadystatechange = function() {
+			if ( script.readyState === "loaded" || script.readyState === "complete" ) {
+				script.onreadystatechange = null;
+				callback();
+			}
+		};
+	} else {  //Others
+		script.onload = function() {
+			callback();
+		};
+	}
+  
+	script.src = url;
+	document.getElementsByTagName( "head" )[0].appendChild( script );
+}
+function afterFormOpen()
+{
+	if(isScriptLoaded('https://www.linkedin.com/autofill/js/autofill.js') == false) {
+		addScript('https://www.linkedin.com/autofill/js/autofill.js');
+	}
+	if(isScriptLoaded('https://www.google.com/recaptcha/api.js') == false) {
+		addScript('https://www.google.com/recaptcha/api.js');
+	}
+	if(isScriptLoaded('https://connect.facebook.net/en_US/sdk.js') == false) {
+		loadScript('https://connect.facebook.net/en_US/sdk.js', function() {
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId            : '382574281913074',
+				autoLogAppEvents : true,
+				xfbml            : true,
+				version          : 'v4.0'
+			});
+		};
+		FB.getLoginStatus(function(response) {
+			statusChangeCallback(response);
+		});
+		$('form').find('.social-btns').append('<button class="fb" type="button" onclick="myFacebookLogin()">Facebook</button>').find('.d-none').removeClass('d-none');
+	});
+	}
+}
 
-// if($('#jobs__list-cont').length > 0) {
-//     var hackerList = new List('jobs__list-cont', options);
-//     hackerList.add(values);
-// }
+function myFacebookLogin() {
 
-// function loadMoreJobs($items)
-// {
-// 	var $left = $items;	
-// 	$('.jobs__list-item:hidden').each(function() {
-// 		if($left > 0) {
-// 			$(this).fadeIn(300);
-// 		}
-// 		$left--;
-// 	});
-// 	if(!$('.jobs__list-item:hidden').length > 0) {
-// 		$('.jobs__list-items').find('.loadmore').fadeOut(300);
-// 	}
+	FB.login(function(response) {
+		if (response.status === 'connected') {
+			FB.api('/me', {fields: 'name, email, birthday, gender, location, picture'}, function(response) {
+				console.log(response);
+				if(response['name']) {
+					$('form').find('input[name="applicant-name"]').val(response['name']);
+				}
+				if(response['email']) {
+					$('form').find('input[name="applicant-email"]').val(response['email']);
+				}
+				// $('form').find('input[name="applicant-photo"]').val(response['picture']['data']['url']);
+				if(response['gender'] == 'male') {
+					$('form').find('input[name="gender"][value="male"]').prop('checked', true);
+				} else if(response['gender'] == 'female') {
+					$('form').find('input[name="gender"][value="female"]').prop('checked', true);
+				}
+				if(response['location']['name']) {
+					$('form').find('input[name="applicant-city"]').val(response['location']['name']);
+				}
+				if(response['birthday']) {
+					var $bdayO = response['birthday'];
+					var $bdayM = $bdayO.split('/');
+					$bdayM = $bdayM[2]+'-'+$bdayM[0]+'-'+$bdayM[1];
+					$('form').find('input[name="dob"]').val($bdayM);
+				}
+			});
+		} else {
+			console.log('User cancelled login or did not fully authorize.');
+		}
+	}, {scope: 'public_profile,email,user_gender,user_location,user_birthday'});
 
-// }
+}
+function onFormSubmit()
+{
+	$(document).on('submit', 'form.application-form, form.cv-form', function() {
+		$(this).addClass('disabled').find('input[type="submit"]').attr("disabled", true).addClass('disabled');
+		if($(this).hasClass('application-form')) {
+			setCookie('jobid_'+$(this).find('input.job-id').val(), $(this).find('input.job-id').val(), 365);
+		} else if($(this).hasClass('cv-form')) {
+			setCookie('cvform', 'sent', 365);
+		}
+	});
+}
 
-// function activateFilter()
-// {
-// 	$el = $('.jobs__list-filters').find('.filter-title');
-// 	$el.on('click', function() {
-// 		if($(this).hasClass('active')) {
-// 			$(this).removeClass('active').parent().removeClass('active');
-// 			// $(this).next('.filters').find('li.active').each(function() {
-// 			// 	$(this).removeClass('active');
-// 			// });
-// 		} else {
-// 			$(this).addClass('active').parent().addClass('active');
-// 		}
-// 	});
-// }
+function onFormLoad()
+{
+	var $jobid = $('form.application-form').find('input.job-id').val();
+	var $cookie = getCookie('jobid_'+$jobid);
 
-// function selectFilter(el)
-// {
-// 	$el = $('.jobs__list-filters').find('.filters').find('span');
-// 	$el.on('click', function(e) {
-// 		// console.log($(this));
-// 		// console.log(e.target);
-// 		var $data = $(this).parent().data();
-// 		//console.log($data);
-// 		if($(this).parent().hasClass('active')) {
-//             // removeFilter($(this).parent().data());
-// 			$(this).parent().removeClass('active');
-// 			$(this).next('ul').find('li.active').each(function() {
-//                 // removeFilter($(this).data());
-//                 $(this).removeClass('active');
-// 			});
-// 		} else {
-//             // addFilter($(this).parent().data());
-//             $(this).parent().addClass('active');
-//             hackerList.filter(function(item) {
-//                 if (item.values().salarymax > 65000 || item.values().salarymin > 35000) {
-//                    return true;
-//                 } else {
-//                    return false;
-//                 }
-//             });
-// 		}
+	if(getCookie('cvform')) {
+		$('form.cv-form').addClass('cv-sent');
+	}
 
-// 	});
-// }
+	if($jobid !== 188 && $jobid == $cookie) {
+		$('form.application-form').addClass('application-sent');
+	}
 
-// function addFilter($val) 
-// {
-// 	var $key = Object.keys($val)[0];
-// 	var $value = $val[$key];
-// 	if(Array.isArray($filters[$key])) {
-// 		$filters[$key].push($value);
-// 	} else {
-// 		$filters[$key] = $value;
-// 	}
-// 	filtering();
-// }
-
-// function removeFilter($val) 
-// {
-// 	var $key = Object.keys($val)[0];
-// 	var $value = $val[$key];
-// 	if(Array.isArray($filters[$key])) {
-// 		var $index = $filters[$key].indexOf($value);
-// 		if($index > -1) {
-// 			$filters[$key].splice($index, 1);
-// 		}
-// 	} else {
-// 		$filters[$key] = null;
-// 	}
-// 	filtering();
-// }
-
-// function indexOfMax(arr) {
-//     if (arr.length === 0) {
-//         return -1;
-//     }
-//     var max = arr[0];
-//     var maxIndex = 0;
-//     for (var i = 1; i < arr.length; i++) {
-//         if (arr[i] > max) {
-//             maxIndex = i;
-//             max = arr[i];
-//         }
-//     }
-//     return maxIndex;
-// }
-
-// function filtering()
-// {
-
-//     var $len = Object.keys($filters).length;
-//     var $jobs = [];
-
-//     // for(var i = 0; i < $len; i++) {
-//     //     var $key = Object.keys($filters)[i]
-//     //     console.log($key);
-//     //     var $val = $filters[$key];
-//     //     if($val != null && $val !== undefined && $val.length != 0) {
-            
-//     //     }
-//     // }
-
-//     $('.jobs__list-item').each(function() {
-
-//         var $points = 0;
-//         var $data = $(this).data();
-//         //console.log($data);
-//         for(var i = 0; i < $len; i++) {
-//             var $key = Object.keys($filters)[i]
-//             //console.log($key);
-//             var $val = $filters[$key];
-//             if($val != null && $val !== undefined && $val.length != 0) {
-//                 if(Array.isArray($val)) {
-//                     if(typeof $data[$key] == "string"){
-//                         var $vals = $data[$key].split('|');
-//                         for(var j = 0; j < $vals.length; j++) {
-//                             console.log($vals[j]);
-//                             for(var k = 0; k < $val.length; k++){
-//                                 console.log($val[k]);
-//                                 if($val[k] == $vals[j]) {
-//                                     $points++;
-//                                 }
-//                             }
-//                         } 
-//                     }
-//                 } else {
-
-//                 }
-                
-//             }
-//         }
-
-//         // if() {
-
-//         // } else {
-
-//         // }
-//         //onsole.log($points);
-//         $jobs.push($points);
-//         $(this).fadeOut(0);
-//     });
-//     //console.log($jobs);
-//     $no = 5;
-//     for($l = 0; $l < $no; $l++) {
-//         var $ind = indexOfMax($jobs);
-//         if($jobs[$ind] !== 0) {
-//             console.log($ind);
-//             $('.jobs__list-item').eq($ind).prependTo('.jobs__list-items').fadeIn(0);
-//         }
-//         $jobs[$ind] = 0;
-//         //console.log($jobs);
-//     }
-    
-// }
-
-// $(document).ready(function() {
-	
-// 	if($('.jobs__list-filters').length > 0) {
-// 		activateFilter();
-// 		selectFilter();
-//     }
-    
-    
-//     //hackerList.show(1, 1);
-    
-// });
+}
 'use strict';
 
 (function($) {
@@ -3944,6 +3838,8 @@ $(document).ready(function() {
 	teamShowMore();
 	jobsFilterToggle();
 	quickFilters();
+	onFormSubmit();
+	onFormLoad();
 
 	if($('.home__middle-hashtags').length != 0) {
 		homeHashtags();
