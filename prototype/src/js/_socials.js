@@ -67,12 +67,12 @@ function myFacebookLogin() {
 			FB.api('/me', {fields: 'name, email, birthday, gender, location, picture'}, function(response) {
 				console.log(response);
 				if(response['name']) {
-                    $('form').find('input[name="app-name"]').val(response['name']);
-                    $('form').find('input[name="cv-name"]').val(response['name']);
+                    $('form').find('input[name="app-name"]').val(response['name']).next('label').css({'opacity':0});
+                    $('form').find('input[name="cv-name"]').val(response['name']).next('label').css({'opacity':0});
 				}
 				if(response['email']) {
-                    $('form').find('input[name="app-email"]').val(response['email']);
-                    $('form').find('input[name="cv-email"]').val(response['email']);
+                    $('form').find('input[name="app-email"]').val(response['email']).next('label').css({'opacity':0});
+                    $('form').find('input[name="cv-email"]').val(response['email']).next('label').css({'opacity':0});
 				}
 				// $('form').find('input[name="applicant-photo"]').val(response['picture']['data']['url']);
 				if(response['gender'] == 'male') {
@@ -83,15 +83,15 @@ function myFacebookLogin() {
                     $('form').find('input[name="cv-gender"][value="female"]').prop('checked', true);
 				}
 				if(response['location']['name']) {
-                    $('form').find('input[name="app-city"]').val(response['location']['name']);
-                    $('form').find('input[name="cv-city"]').val(response['location']['name']);
+                    $('form').find('input[name="app-city"]').val(response['location']['name']).next('label').css({'opacity':0});
+                    $('form').find('input[name="cv-city"]').val(response['location']['name']).next('label').css({'opacity':0});
 				}
 				if(response['birthday']) {
 					var $bdayO = response['birthday'];
 					var $bdayM = $bdayO.split('/');
 					$bdayM = $bdayM[2]+'-'+$bdayM[0]+'-'+$bdayM[1];
-                    $('form').find('input[name="app-dob"]').val($bdayM);
-                    $('form').find('input[name="cv-dob"]').val($bdayM);
+                    $('form').find('input[name="app-dob"]').val($bdayM).next('label').css({'opacity':0});
+                    $('form').find('input[name="cv-dob"]').val($bdayM).next('label').css({'opacity':0});
 				}
 			});
 		} else {
