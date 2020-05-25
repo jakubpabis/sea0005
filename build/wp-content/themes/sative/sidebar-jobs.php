@@ -13,14 +13,14 @@
             <i class="fab fa-linkedin"></i>
             <span>LinkedIn</span>
         </button>
-        <a href="" class="btn btn__small navy icon full">
+        <button type="button" class="btn btn__small navy icon full">
             <i class="fab fa-google"></i>
             <span>Google</span>
-        </a>
-        <a href="" class="btn btn__small navy icon full">
+        </button>
+        <button type="button" class="btn btn__small navy icon full" onclick="myGithubLogin('<?= home_url( $wp->request ) ?>')">
             <i class="fab fa-github"></i>
             <span>Github</span>
-        </a>
+        </button>
     </div>
     <form method="POST" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" accept-charset="UTF-8" role="form" class="pt-3" id="job-application-form" enctype="multipart/form-data">
         <div class="row align-items-center jobs__single-sidebar-inputs">
