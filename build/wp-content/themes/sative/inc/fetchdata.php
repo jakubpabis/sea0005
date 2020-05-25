@@ -59,8 +59,9 @@ function userDataFetch()
         $token = $body['access_token'];
         $headersUser = array('Authorization' => 'token '.$token);
         $user = Requests::get('https://api.github.com/user', $headersUser);
+        $userBody = json_decode( $user->body, true);
         echo '<pre>';
-        echo var_dump( $user );
+        echo var_dump( $userBody );
         echo '</pre>';
         //$redirect = $cookie.'?code='.$_GET['code'];
     }
