@@ -14,7 +14,7 @@ function CallAPI($method, $url, $data = false)
             curl_setopt($curl, CURLOPT_POST, true);
 
             if ($data)
-                curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
+                curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
             break;
         case "PUT":
             curl_setopt($curl, CURLOPT_PUT, 1);
