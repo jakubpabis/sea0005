@@ -12,7 +12,7 @@ function userDataFetch()
     if( isset( $_GET['code'] ) ) { ?>
         <script>
             $.ajax({
-                url: 'https://github.com/login/oauth/access_token?client_id=3b1b9252c021bbb321e0&client_secret=5afd24b3d4d0bf252e8034139ec6a00bc268236&code=<?= $_GET['code'] ?>',
+                url: 'https://github.com/login/oauth/access_token?client_id=3b1b9252c021bbb321e0&client_secret=5afd24b3d4d0bf252e8034139ec6a00bc268236&code=<?= $_GET['code']; ?>',
                 type: 'POST',
                 success: function(result) {
                     console.log(result);
