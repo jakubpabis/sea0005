@@ -3508,27 +3508,41 @@ function loadScript( url, callback ) {
 
 function afterFormOpen()
 {
-	if(isScriptLoaded('https://www.linkedin.com/autofill/js/autofill.js') == false) {
-		addScript('https://www.linkedin.com/autofill/js/autofill.js');
-	}
+	// if(isScriptLoaded('https://www.linkedin.com/autofill/js/autofill.js') == false) {
+	// 	addScript('https://www.linkedin.com/autofill/js/autofill.js');
+	// }
 	// if(isScriptLoaded('https://www.google.com/recaptcha/api.js') == false) {
 	// 	addScript('https://www.google.com/recaptcha/api.js');
 	// }
 	if(isScriptLoaded('https://connect.facebook.net/en_US/sdk.js') == false) {
 		loadScript('https://connect.facebook.net/en_US/sdk.js', function() {
-		window.fbAsyncInit = function() {
-			FB.init({
-				appId            : '382574281913074',
-				autoLogAppEvents : true,
-				xfbml            : true,
-				version          : 'v7.0'
+			window.fbAsyncInit = function() {
+				FB.init({
+					appId            : '382574281913074',
+					autoLogAppEvents : true,
+					xfbml            : true,
+					version          : 'v7.0'
+				});
+			};
+			FB.getLoginStatus(function(response) {
+				statusChangeCallback(response);
 			});
-		};
-		FB.getLoginStatus(function(response) {
-			statusChangeCallback(response);
 		});
-	});
 	}
+}
+
+function myLinkedinLogin()
+{
+	$.ajax({
+		url: "https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77dug7ogaz4ouh&redirect_uri=http%3A%2F%2Fsea0005.local%2Fauth%2Flinkedin%2Fcallback&state=fooobar&scope=r_liteprofile%20r_emailaddress%20w_member_social",
+		type: "GET",
+		success: function(result) {
+			console.log(result);
+		},
+		error: function(error) {
+			console.log(error);
+		}
+	});
 }
 
 function myFacebookLogin() {

@@ -8,10 +8,10 @@
             <i class="fab fa-facebook-square"></i>
             <span>Facebook</span>
         </button>
-        <a href="" class="btn btn__small navy icon full">
+        <button type="button" class="btn btn__small navy icon full" onclick="myLinkedinLogin()">
             <i class="fab fa-linkedin"></i>
             <span>LinkedIn</span>
-        </a>
+        </button>
         <a href="" class="btn btn__small navy icon full">
             <i class="fab fa-google"></i>
             <span>Google</span>
