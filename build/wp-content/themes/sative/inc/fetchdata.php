@@ -54,7 +54,7 @@ function userDataFetch()
             'client_secret' => '5afd24b3d4d0bf252e8034139ec6a00bc2682367',
             'code' => $_GET['code']
         ];
-        $request = Requests::get('https://github.com/login/oauth/access_token', $headers, $options);
+        $request = Requests::post('https://github.com/login/oauth/access_token', $headers, $options);
         echo '<pre>';
         echo var_dump( $request );
         echo '</pre>';
