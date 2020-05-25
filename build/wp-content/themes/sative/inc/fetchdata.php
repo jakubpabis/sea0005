@@ -55,7 +55,9 @@ function userDataFetch()
             'code' => $_GET['code']
         ];
         $request = Requests::get('https://github.com/login/oauth/access_token', $headers, $options);
-        var_dump( $request );
+        echo '<pre>';
+        echo var_dump( $request );
+        echo '</pre>';
         //$redirect = $cookie.'?code='.$_GET['code'];
     }
     
