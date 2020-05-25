@@ -7,6 +7,11 @@
  */
 function userDataFetch()
 {
-    $redirect = $_COOKIE['redirect_user_url'];
+    $cookie = $_COOKIE['redirect_user_url'];
+
+    if( isset( $_GET['code'] ) ) {
+        $redirect = $cookie.'?code='.$_GET['code'];
+    }
+    
     header("Location: $redirect");
 }
