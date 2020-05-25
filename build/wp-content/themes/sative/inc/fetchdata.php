@@ -1,5 +1,9 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 function CallAPI($method, $url, $data = false)
 {
     $curl = curl_init();
@@ -21,8 +25,8 @@ function CallAPI($method, $url, $data = false)
     }
 
     // Optional Authentication:
-    curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-    curl_setopt($curl, CURLOPT_USERPWD, "username:password");
+    // curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    // curl_setopt($curl, CURLOPT_USERPWD, "username:password");
 
     curl_setopt($curl, CURLOPT_URL, $url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -45,7 +49,7 @@ function userDataFetch()
 
     if( isset( $_GET['code'] ) ) {
         $url = 'https://github.com/login/oauth/access_token?client_id=3b1b9252c021bbb321e0&client_secret=5afd24b3d4d0bf252e8034139ec6a00bc2682367&code='.$_GET['code'];
-        echo CallAPI($url, 'POST');
+        var_dump( CallAPI($url, 'POST') );
         //$redirect = $cookie.'?code='.$_GET['code'];
     }
     
