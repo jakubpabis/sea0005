@@ -11,7 +11,7 @@
 require_once get_template_directory() . '/inc/htmlcompress.php';
 
 require_once get_template_directory() . '/inc/Requests.php';
-Requests::register_autoloader();
+//Requests::register_autoloader();
 
 function wp_html_compression_finish($html)
 {
