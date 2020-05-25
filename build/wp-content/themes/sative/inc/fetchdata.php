@@ -4,50 +4,17 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-function CallAPI($method, $url, $data = false)
-{
-    $curl = curl_init();
-
-    switch ($method)
-    {
-        case "POST":
-            curl_setopt($curl, CURLOPT_POST, true);
-
-            if ($data)
-                curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
-            break;
-        case "PUT":
-            curl_setopt($curl, CURLOPT_PUT, 1);
-            break;
-        default:
-            if ($data)
-                $url = sprintf("%s?%s", $url, http_build_query($data));
-    }
-
-    // Optional Authentication:
-    //curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-    // curl_setopt($curl, CURLOPT_USERPWD, "username:password");
-
-    curl_setopt($curl, CURLOPT_URL, $url);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-
-    $result = curl_exec($curl);
-
-    curl_close($curl);
-
-    return $result;
-}
-
 /**
- * Adding/updating jobs from XML
+ * Getting user data from social APIs
  *
  * @return void
  */
 function userDataFetch()
 {
     $cookie = $_COOKIE['redirect_user_url'];
+    $apiType = $_COOKIE['api_type'];
 
-    if( isset( $_GET['code'] ) ) {
+    if( isset( $_GET['code'] ) && $apiType === 'github' ) {
         $headers = array('Accept' => 'application/json', );
         $options = [
             'client_id' => '3b1b9252c021bbb321e0',
@@ -60,10 +27,35 @@ function userDataFetch()
         $headersUser = array('Authorization' => 'token '.$token);
         $user = Requests::get('https://api.github.com/user', $headersUser);
         $userBody = json_decode( $user->body, true);
-        echo '<pre>';
-        echo var_dump( $userBody );
-        echo '</pre>';
+        
+        $user_email = $userBody['email'];
+        $user_name = $userBody['name'];
+        $user_location = $userBody['location'];
+        $user_bio = $userBody['bio'];
+        $user_html_url = $userBody['html_url'];
         //$redirect = $cookie.'?code='.$_GET['code'];
+    } elseif ( isset( $_GET['code'] ) && $apiType === 'linkedin' ) {
+        $headers = array('Accept' => 'application/json', );
+        $options = [
+            'grant_type' => 'authorization_code',
+            'code' => $_GET['code'],
+            'redirect_uri' => 'http://sea0005.local/userdatafetch',
+            'client_id' => '77dug7ogaz4ouh',
+            'client_secret' => 'D6hJidRzoq5B0Hqc',
+        ];
+        $request = Requests::post('https://www.linkedin.com/oauth/v2/accessToken', $headers, $options);
+        $body = json_decode( $request->body, true);
+        $token = $body['access_token'];
+        
+        $headersUser = array('Authorization' => 'Bearer '.$token);
+        $user = Requests::get('https://api.linkedin.com/v2/me', $headersUser);
+        $userBody = json_decode( $user->body, true);
+        echo '<pre>';
+        echo var_dump( $user );
+        echo '</pre>';
+
+        $user_first_name = $userBody['localizedFirstName'];
+        $user_last_name = $userBody['localizedLastName'];
     }
     
     //header("Location: $redirect");

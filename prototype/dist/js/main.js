@@ -3531,10 +3531,11 @@ function afterFormOpen()
 	}
 }
 
-function myLinkedinLogin($url)
+function myLinkedinLogin($url, $src)
 {
 	setCookie('redirect_user_url', $src, 1);
-	window.location.href = "https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77dug7ogaz4ouh&redirect_uri="+$url+"&state=fooobar&scope=r_liteprofile%20r_emailaddress%20w_member_social";
+	setCookie('api_type', 'linkedin', 1);
+	window.location.href = "https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77dug7ogaz4ouh&redirect_uri="+$url+"&scope=r_liteprofile%20r_emailaddress%20w_member_social";
 	// var head = document.getElementsByTagName('head')[0];
 	// var script = document.createElement('script');
 	// script.type = 'IN/Form2';
@@ -3546,6 +3547,7 @@ function myLinkedinLogin($url)
 function myGithubLogin($src)
 {
 	setCookie('redirect_user_url', $src, 1);
+	setCookie('api_type', 'github', 1);
 	window.location.href = 'https://github.com/login/oauth/authorize?client_id=3b1b9252c021bbb321e0&scope=read:user';
 }
 
