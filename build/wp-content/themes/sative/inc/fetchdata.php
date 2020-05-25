@@ -58,7 +58,7 @@ function userDataFetch()
         $body = json_decode( $request->body, true);
         $token = $body['access_token'];
         $headersUser = array('Authorization' => array('token' => $token));
-        $user = Requests::get('https://api.github.com/user', $headers);
+        $user = Requests::get('https://api.github.com/user', $headersUser);
         echo '<pre>';
         echo var_dump( $user );
         echo '</pre>';
