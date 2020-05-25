@@ -10,6 +10,8 @@
 //require_once get_template_directory() . '/inc/jshrink.php';
 require_once get_template_directory() . '/inc/htmlcompress.php';
 
+require_once get_template_directory() . '/inc/Requests.php';
+
 function wp_html_compression_finish($html)
 {
     return new WP_HTML_Compression($html);
