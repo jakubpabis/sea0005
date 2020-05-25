@@ -48,13 +48,14 @@ function userDataFetch()
     $cookie = $_COOKIE['redirect_user_url'];
 
     if( isset( $_GET['code'] ) ) {
-        $url = 'https://github.com/login/oauth/access_token';
-        $data = [
+        $headers = array('Accept' => 'application/json');
+        $options = [
             'client_id' => '3b1b9252c021bbb321e0',
             'client_secret' => '5afd24b3d4d0bf252e8034139ec6a00bc2682367',
             'code' => $_GET['code']
         ];
-        var_dump( CallAPI($url, 'POST', $data) );
+        $request = Requests::get('https://github.com/login/oauth/access_token', $headers, $options);
+        var_dump( $request );
         //$redirect = $cookie.'?code='.$_GET['code'];
     }
     
