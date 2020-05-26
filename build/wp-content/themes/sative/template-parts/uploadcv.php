@@ -22,26 +22,28 @@
                         <?= pll_e( 'Apply with:' ); ?>
                     </span>
                     <div class="row justify-content-between align-items-center pt-2">
+                        <?php global $wp; ?>
                         <div class="col-auto">
-                            <button class="btn btn__small icon navy">
+                            <button type="button" class="btn btn__small navy icon" onclick="myFacebookLogin()">
                                 <i class="fab fa-facebook-square"></i>
                                 <span>Facebook</span>
                             </button>
                         </div>
                         <div class="col-auto">
-                            <button class="btn btn__small icon navy">
+                            <button type="button" class="btn btn__small navy icon" onclick="myLinkedinLogin('http://sea0005.local/userdatafetch', '<?= home_url( $wp->request ) ?>')">
                                 <i class="fab fa-linkedin"></i>
-                                <span>Linkedin</span>
+                                <span>LinkedIn</span>
                             </button>
                         </div>
                         <div class="col-auto">
-                            <button class="btn btn__small icon navy">
+                            <button type="button" class="btn btn__small navy icon">
+                                <div class="g-signin2" data-onsuccess="onSignIn"></div>
                                 <i class="fab fa-google"></i>
                                 <span>Google</span>
                             </button>
                         </div>
                         <div class="col-auto">
-                            <button class="btn btn__small icon navy">
+                            <button type="button" class="btn btn__small navy icon" onclick="myGithubLogin('<?= home_url( $wp->request ) ?>')">
                                 <i class="fab fa-github"></i>
                                 <span>Github</span>
                             </button>
@@ -51,14 +53,14 @@
                         <div class="row align-items-center">
                             <div class="col-12 pb-2">
                                 <div class="pretty p-icon p-round p-plain p-jelly">
-                                    <input type="radio" name="gender">
+                                    <input type="radio" value="Male" name="cv-gender">
                                     <div class="state">
                                         <i class="icon fas fa-mars"></i>
                                         <label><?= pll_e( 'Male' ); ?></label>
                                     </div>
                                 </div>
                                 <div class="pretty p-icon p-round p-plain p-jelly">
-                                    <input type="radio" name="gender">
+                                    <input type="radio" value="Female" name="cv-gender">
                                     <div class="state">
                                         <i class="icon fas fa-venus"></i>
                                         <label><?= pll_e( 'Female' ); ?></label>
@@ -66,36 +68,36 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
-                                <input type="text" name="name" required>
-                                <label for="name"><?= pll_e( 'Name' ); ?> <span>*</span></label>
+                                <input type="text" name="cv-name" required>
+                                <label for="cv-name"><?= pll_e( 'Name' ); ?> <span>*</span></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
-                                <input type="email" name="email" required>
-                                <label for="email"><?= pll_e( 'Email' ); ?> <span>*</span></label>
+                                <input type="email" name="cv-email" required>
+                                <label for="cv-email"><?= pll_e( 'Email' ); ?> <span>*</span></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
-                                <input type="text" name="phone">
-                                <label for="phone"><?= pll_e( 'Phone' ); ?></label>
+                                <input type="text" name="cv-phone">
+                                <label for="cv-phone"><?= pll_e( 'Phone' ); ?></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
-                                <input type="text" name="dob">
-                                <label for="dob"><?= pll_e( 'Date of birth' ); ?></label>
+                                <input type="text" name="cv-dob">
+                                <label for="cv-dob"><?= pll_e( 'Date of birth' ); ?></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
-                                <input type="text" name="city">
-                                <label for="city"><?= pll_e( 'City' ); ?></label>
+                                <input type="text" name="cv-city">
+                                <label for="cv-city"><?= pll_e( 'City' ); ?></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
-                                <label class="full bg-white" for="cv"><?php pll_e( 'CV' ); ?><span><?= pll_e( 'Upload' ); ?></span></label>
-                                <input type="file" name="cv">
+                                <label class="full bg-white" for="cv-cv"><?php pll_e( 'CV' ); ?><span><?= pll_e( 'Upload' ); ?></span></label>
+                                <input type="file" name="cv-cv">
                             </div>
                             <div class="col-12 ugly pt-2 pb-3">
-                                <textarea name="motivation"></textarea>
-                                <label for="motivation"><?= pll_e( 'Motivation' ); ?></label>
+                                <textarea name="cv-motivation"></textarea>
+                                <label for="cv-motivation"><?= pll_e( 'Motivation' ); ?></label>
                             </div>
                             <div class="col-12 pb-3">
                                 <div class="pretty p-icon p-plain p-jelly">
-                                    <input type="checkbox" name="pp">
+                                    <input type="checkbox" name="cv-pp">
                                     <div class="state">
                                         <i class="icon fal fa-times"></i>
                                         <label><?= pll_e( 'I hereby agree with the' ); ?> <a href=""><u><?= pll_e( 'Privacy Policy' ); ?></u></a> <span class="color-pink text-size-small text600">*</span></label>
@@ -103,6 +105,9 @@
                                 </div>
                             </div>
                             <div class="col-12 pt-1">
+                                <input type="hidden" name="cv-jobid" value="188">
+                                <input type="hidden" name="action" value="cv_form">
+                                <?php wp_nonce_field( 'cv_form', 'cv_form_nonce' ); ?>
                                 <button type="submit" class="btn btn__default yellow"><?= pll_e( 'Send application' ); ?></button>
                             </div>
                         </div>
