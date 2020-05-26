@@ -14,6 +14,11 @@ function userDataFetch()
     $cookie = $_COOKIE['redirect_user_url'];
     $apiType = $_COOKIE['api_type'];
 
+    if( isset( $_GET['error'] ) ) {
+        header("Location: $cookie");
+        return;
+    }
+
     if( isset( $_GET['code'] ) && $apiType === 'github' ) {
         $headers = array('Accept' => 'application/json', );
         $options = [

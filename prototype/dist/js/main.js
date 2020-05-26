@@ -3508,9 +3508,19 @@ function loadScript( url, callback ) {
 
 function afterFormOpen()
 {
-	// if(isScriptLoaded('https://www.linkedin.com/autofill/js/autofill.js') == false) {
-	// 	addScript('https://www.linkedin.com/autofill/js/autofill.js');
-	// }
+	if(isScriptLoaded('https://apis.google.com/js/platform.js') == false) {
+		var meta = document.createElement('meta');
+		meta.name = "google-signin-client_id";
+		meta.content = "499620265848-all65e4hmunlra2h0c6fo2efrujsri66.apps.googleusercontent.com";
+		document.getElementsByTagName('head')[0].appendChild(meta);
+		addScript('https://apis.google.com/js/platform.js');
+		// $('.g-signin2').bind('DOMSubtreeModified', function() {
+		// 	if(!$(this).hasClass('appended')) {
+		// 		$('.g-signin2').append('<i class="fab fa-google"></i><span>Google</span>');
+		// 		$('.g-signin2').addClass('appended');
+		// 	}
+		// });
+	}
 	// if(isScriptLoaded('https://www.google.com/recaptcha/api.js') == false) {
 	// 	addScript('https://www.google.com/recaptcha/api.js');
 	// }
@@ -3549,6 +3559,14 @@ function myGithubLogin($src)
 	setCookie('redirect_user_url', $src, 1);
 	setCookie('api_type', 'github', 1);
 	window.location.href = 'https://github.com/login/oauth/authorize?client_id=3b1b9252c021bbb321e0&scope=read:user';
+}
+
+function onSignIn(googleUser) {
+	var profile = googleUser.getBasicProfile();
+	console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+	console.log('Name: ' + profile.getName());
+	console.log('Image URL: ' + profile.getImageUrl());
+	console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 }
 
 function myFacebookLogin() {

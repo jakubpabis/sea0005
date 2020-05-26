@@ -10,6 +10,27 @@
     outline: 0;
     box-shadow: none!important;
 
+    .g-signin2 {
+        width: 100%!important;
+        position: absolute!important;
+        top: 0!important;
+        right: 0!important;
+        bottom: 0!important;
+        left: 0!important;
+        opacity: 0!important;
+
+        > div {
+            width: 100%!important;
+            position: absolute!important;
+            top: 0!important;
+            right: 0!important;
+            bottom: 0!important;
+            left: 0!important;
+            opacity: 0!important;
+        }
+
+    }
+
     &:before,
     &:after {
         border: none!important;

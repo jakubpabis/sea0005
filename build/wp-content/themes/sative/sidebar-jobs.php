@@ -14,6 +14,7 @@
             <span>LinkedIn</span>
         </button>
         <button type="button" class="btn btn__small navy icon full">
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
             <i class="fab fa-google"></i>
             <span>Google</span>
         </button>
