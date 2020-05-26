@@ -3563,10 +3563,17 @@ function myGithubLogin($src)
 
 function onSignIn(googleUser) {
 	var profile = googleUser.getBasicProfile();
-	console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-	console.log('Name: ' + profile.getName());
+
+	if( profile.getName() ) {
+		$('form').find('input[name="app-name"]').val(profile.getName()).next('label').css({'opacity':0});
+		$('form').find('input[name="cv-name"]').val(profile.getName()).next('label').css({'opacity':0});
+	}
+
+	if( profile.getEmail() ) {
+		$('form').find('input[name="app-email"]').val(profile.getEmail()).next('label').css({'opacity':0});
+		$('form').find('input[name="cv-email"]').val(profile.getEmail()).next('label').css({'opacity':0});
+	}
 	console.log('Image URL: ' + profile.getImageUrl());
-	console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 }
 
 function myFacebookLogin() {
