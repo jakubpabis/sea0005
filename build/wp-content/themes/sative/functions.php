@@ -10,8 +10,8 @@
 //require_once get_template_directory() . '/inc/jshrink.php';
 require_once get_template_directory() . '/inc/htmlcompress.php';
 
-ini_set( 'upload_max_size' , '6M' );
-ini_set( 'post_max_size', '6M');
+@ini_set( 'upload_max_size' , '10M' );
+@ini_set( 'post_max_size', '10M');
 
 function wp_html_compression_finish($html)
 {
