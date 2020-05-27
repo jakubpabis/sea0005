@@ -10,9 +10,6 @@
 //require_once get_template_directory() . '/inc/jshrink.php';
 require_once get_template_directory() . '/inc/htmlcompress.php';
 
-@ini_set( 'upload_max_size' , '10M' );
-@ini_set( 'post_max_size', '10M');
-
 function wp_html_compression_finish($html)
 {
     return new WP_HTML_Compression($html);
@@ -1149,3 +1146,7 @@ function template_chooser($template)
   return $template;   
 }
 add_filter('template_include', 'template_chooser'); 
+
+@ini_set( 'upload_max_size', '10M' );
+@ini_set( 'post_max_size', '10M');
+@ini_set( 'max_execution_time', '300' );
