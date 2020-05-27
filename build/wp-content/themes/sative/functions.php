@@ -661,7 +661,7 @@ function add_testimonial_taxonomies()
 add_action( 'init', 'add_testimonial_taxonomies', 0 );
 add_action( 'init', 'custom_post_type_testimonials', 0 );
 
-if( function_exist( 'pll_get_post' ) ) {
+if( function_exists( 'pll_get_post' ) ) {
 function getTplPageURL() 
 {
     global $jobtpl;
@@ -1010,7 +1010,7 @@ function resources_cpt_generating_rule($wp_rewrite)
 }
 add_filter('generate_rewrite_rules', 'resources_cpt_generating_rule');
 
-if( function_exist( 'pll_current_language' ) ) {
+if( function_exists( 'pll_current_language' ) ) {
 function change_link( $permalink, $post ) 
 {
     if( $post->post_type == 'jobs' ) {
@@ -1127,7 +1127,7 @@ $toTranslate = array(
     'Job application sucessful'
 );
 
-if( function_exist( 'pll_register_string' ) ) {
+if( function_exists( 'pll_register_string' ) ) {
     foreach($toTranslate as $string) {
         pll_register_string('sative', $string);
     }
