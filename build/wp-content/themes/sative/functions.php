@@ -163,12 +163,12 @@ function sative_widgets_init() {
 add_action( 'widgets_init', 'sative_widgets_init' );
 
 //Remove Gutenberg Block Library CSS from loading on the frontend
-// function smartwp_remove_wp_block_library_css()
-// {
-// 	wp_dequeue_style( 'wp-block-library' );
-// 	wp_dequeue_style( 'wp-block-library-theme' );
-// }
-// add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css' );
+function smartwp_remove_wp_block_library_css()
+{
+	wp_dequeue_style( 'wp-block-library' );
+	wp_dequeue_style( 'wp-block-library-theme' );
+}
+add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css' );
 
 add_action('wp_enqueue_scripts', function(){
 	if (!is_admin()) {
@@ -944,7 +944,7 @@ function jobs_filter_function()
 	die();
 } */
 
-add_action( 'admin_init', 'my_remove_admin_menus' );
+add_action( 'admin_menu', 'my_remove_admin_menus' );
 function my_remove_admin_menus() {
     remove_menu_page( 'edit-comments.php' );
 }
