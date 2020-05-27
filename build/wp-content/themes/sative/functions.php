@@ -1146,7 +1146,3 @@ function template_chooser($template)
   return $template;   
 }
 add_filter('template_include', 'template_chooser'); 
-
-@ini_set( 'upload_max_size', '10M' );
-@ini_set( 'post_max_size', '10M');
-@ini_set( 'max_execution_time', '300' );
