@@ -8,7 +8,7 @@
             </button>
             <div class="modal-container">
                 <div class="modal-header">
-                    <h3 class="modal-title" id="searchModalTitle">Search for a job!</h3>
+                    <h3 class="modal-title" id="searchModalTitle"><?php pll_e('Search for a job!'); ?></h3>
                 </div>
                 <div class="modal-body pt-3">
                     <form class="pt-3" action="<?php echo getTplPageURL(); ?>" method="GET">
