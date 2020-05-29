@@ -24,7 +24,6 @@ function add_to_queue(){
 
     $api_key = 'XoslTEyE';
     $api_secret = 'ZZXRgDovPQvPfLjklPLBoTAl';
-    
 
     $application_data = array(
 
