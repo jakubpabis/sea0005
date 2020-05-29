@@ -10,7 +10,7 @@ require('es6-promise').polyfill();
 var cssComb = require('gulp-csscomb');
 var cmq = require('gulp-merge-media-queries');
 var cleanCss = require('gulp-clean-css');
-var uglify = require('gulp-uglify');
+var uglify = require('gulp-uglify-es').default;
 var concat = require('gulp-concat');
 var imageMin = require('gulp-imagemin');
 var webp = require("imagemin-webp");

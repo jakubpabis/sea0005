@@ -2,7 +2,7 @@
     <div class="text">
         <i class="far fa-times close" onclick="chatClose()"></i>
         <span>
-            Do you need my help?
+            <?php pll_e('Do you need my help?'); ?>
         </span>
         <i class="fas fa-comment-alt-lines message"></i>
     </div>

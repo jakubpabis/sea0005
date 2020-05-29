@@ -25,6 +25,7 @@
         "gulp-server-livereload": "^1.9.2",
         "gulp-sourcemaps": "*",
         "gulp-uglify": "*",
+        "gulp-uglify-es": "^2.0.0",
         "node-neat": "*"
     },
     "dependencies": {

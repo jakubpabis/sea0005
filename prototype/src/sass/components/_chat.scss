@@ -7,6 +7,7 @@ aside#chat {
     flex-wrap: wrap;
     align-items: flex-end;
     z-index: 998;
+    cursor: pointer;
 
     &.closed {
         right: -5px;
@@ -80,6 +81,17 @@ aside#chat {
         width: 60px;
         margin-top: 10px;
         transform: rotateY(180deg);
+    }
+
+}
+
+#chat-application {
+    margin-bottom: -9999px!important;
+    display: none!important;
+
+    &.showed {
+        margin-bottom: auto!important;
+        display: block!important;
     }
 
 }

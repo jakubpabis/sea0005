@@ -122,6 +122,23 @@ function uglyInput()
 	});
 }
 
+function chatOpen()
+{
+	$('#chat').on('click', function(event) {
+		if(!$(event.target).hasClass('close')) {
+			$('#chat').addClass('d-none');
+			$('#chat-application').addClass('showed');
+			$('#chat-application-iframe').contents().find('#widgetPanel').trigger('click');
+		}
+	});
+
+	$('#chat-application, #chat-application-iframe').on('change', function() {
+		if($('#chat-application').height() < 100) {
+			$('#chat-application').removeClass('showed');
+		}
+	});
+}
+
 function chatClose()
 {
 	$('#chat').addClass('closed');
@@ -312,6 +329,7 @@ $(document).ready(function() {
 $(window).on('load', function() {
 	
 	lazyImages();
+	chatOpen();
 
 	if($('.home__clients').length != 0) {
 		homepageClients();

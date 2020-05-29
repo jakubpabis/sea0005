@@ -3459,16 +3459,16 @@ var List=function(t){function e(n){if(r[n])return r[n].exports;var i=r[n]={i:n,l
 
 })(window.Zepto || window.jQuery, window, document);
 
-// // Smartsupp Live Chat script
-// var _smartsupp = _smartsupp || {};
-// _smartsupp.key = 'f32f591b82ffa879c325ae96ca021013ef7a7d64';
-// _smartsupp.gaKey = 'UA-6319827-2';
-// window.smartsupp||(function(d) {
-//     var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-//     s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-//     c.type='text/javascript';c.charset='utf-8';c.async=true;
-//     c.src='//www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-// })(document);
+// Smartsupp Live Chat script
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = 'f32f591b82ffa879c325ae96ca021013ef7a7d64';
+_smartsupp.gaKey = 'UA-6319827-2';
+window.smartsupp||(function(d) {
+    var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+    s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+    c.type='text/javascript';c.charset='utf-8';c.async=true;
+    c.src='//www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
 function isScriptLoaded(url) {
     var scripts = document.getElementsByTagName('script');
     for (var i = scripts.length; i--;) {
@@ -3766,6 +3766,23 @@ function uglyInput()
 	});
 }
 
+function chatOpen()
+{
+	$('#chat').on('click', function(event) {
+		if(!$(event.target).hasClass('close')) {
+			$('#chat').addClass('d-none');
+			$('#chat-application').addClass('showed');
+			$('#chat-application-iframe').contents().find('#widgetPanel').trigger('click');
+		}
+	});
+
+	$('#chat-application, #chat-application-iframe').on('change', function() {
+		if($('#chat-application').height() < 100) {
+			$('#chat-application').removeClass('showed');
+		}
+	});
+}
+
 function chatClose()
 {
 	$('#chat').addClass('closed');
@@ -3956,6 +3973,7 @@ $(document).ready(function() {
 $(window).on('load', function() {
 	
 	lazyImages();
+	chatOpen();
 
 	if($('.home__clients').length != 0) {
 		homepageClients();

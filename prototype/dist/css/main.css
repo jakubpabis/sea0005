@@ -2133,6 +2133,7 @@ aside#chat {
 	bottom: 10vh;
 	display: flex;
 	flex-direction: column;
+	cursor: pointer;
 	flex-wrap: wrap;
 	align-items: flex-end;
 }
@@ -2207,6 +2208,16 @@ aside#chat .dog {
 	width: 60px;
 	margin-top: 10px;
 	transform: rotateY(180deg);
+}
+
+#chat-application {
+	display: none !important;
+	margin-bottom: -9999px !important;
+}
+
+#chat-application.showed {
+	display: block !important;
+	margin-bottom: auto !important;
 }
 
 .jobs__list {
