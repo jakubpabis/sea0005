@@ -23,6 +23,11 @@
             <span>Github</span>
         </button>
     </div>
+    <?php
+        if( isset( $_GET['app-name'] ) && $_GET['app-name'] ) {
+            $app_name = $_GET['app-name'];
+        }
+    ?>
     <form method="POST" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" accept-charset="UTF-8" role="form" class="pt-3" id="job-application-form" enctype="multipart/form-data">
         <div class="row align-items-center jobs__single-sidebar-inputs">
             <div class="col-12 pb-1">
@@ -42,7 +47,7 @@
                 </div>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
-                <input type="text" name="app-name" required>
+                <input type="text" name="app-name" required value="<?= $app_name; ?>">
                 <label for="app-name"><?php pll_e( 'Name' ); ?> <span>*</span></label>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
