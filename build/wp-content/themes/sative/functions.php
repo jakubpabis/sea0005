@@ -457,6 +457,8 @@ add_filter('post_type_link', 'change_link', 10, 2);
 }
 
 $toTranslate = array(
+    'From',
+    'To',
     'Do you need my help?',
     'Contact',
     'Get in touch',

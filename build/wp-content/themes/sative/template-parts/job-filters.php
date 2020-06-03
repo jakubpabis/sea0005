@@ -55,8 +55,8 @@
                 </span>
                 <div class="filters job-salary-filters">
                     <div class="inputs">
-                        <input type="text" name="salary_min" placeholder="From" value="<?= $salaryMin; ?>">
-                        <input type="text" name="salary_max" placeholder="To" value="<?= $salaryMax; ?>">
+                        <input type="text" name="salary_min" placeholder="<?php pll_e('From'); ?>" value="<?= $salaryMin; ?>">
+                        <input type="text" name="salary_max" placeholder="<?php pll_e('To'); ?>" value="<?= $salaryMax; ?>">
                     </div>
                 </div>
             </div>
