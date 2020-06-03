@@ -33,6 +33,10 @@ function userDataFetch()
         $user = Requests::get('https://api.github.com/user', $headersUser);
         $userBody = json_decode( $user->body, true);
         
+        echo '<pre>';
+        echo var_dump( $userBody );
+        echo '</pre>';
+
         $user_email = $userBody['email'];
         $user_name = $userBody['name'];
         $user_location = $userBody['location'];
@@ -59,9 +63,9 @@ function userDataFetch()
         $headersUser = array('Authorization' => 'Bearer '.$token);
         $user = Requests::get('https://api.linkedin.com/v2/me', $headersUser);
         $userBody = json_decode( $user->body, true);
-        // echo '<pre>';
-        // echo var_dump( $user );
-        // echo '</pre>';
+        echo '<pre>';
+        echo var_dump( $userBody );
+        echo '</pre>';
 
         $user_first_name = $userBody['localizedFirstName'];
         $user_last_name = $userBody['localizedLastName'];
@@ -70,5 +74,5 @@ function userDataFetch()
         $redirect = $cookie.'?app-name='.$user_name;
     }
     
-    header("Location: $redirect");
+    //header("Location: $redirect");
 }
