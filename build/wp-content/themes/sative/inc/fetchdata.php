@@ -32,10 +32,6 @@ function userDataFetch()
         $headersUser = array('Authorization' => 'token '.$token);
         $user = Requests::get('https://api.github.com/user', $headersUser);
         $userBody = json_decode( $user->body, true);
-        
-        echo '<pre>';
-        echo var_dump( $userBody );
-        echo '</pre>';
 
         $user_email = $userBody['email'];
         $user_name = $userBody['name'];
@@ -48,6 +44,7 @@ function userDataFetch()
 
     } elseif ( isset( $_GET['code'] ) && $apiType === 'linkedin' ) {
         $headers = array('Accept' => 'application/json', );
+        var_dump($redirect_uri);
         $redirect_uri = siteURL().'userdatafetch';
         $options = [
             'grant_type' => 'authorization_code',
