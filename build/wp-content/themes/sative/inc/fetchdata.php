@@ -46,30 +46,30 @@ function userDataFetch()
         $headers = array('Accept' => 'application/json', );
         
         $redirect_uri = siteURL().'userdatafetch';
-        var_dump($redirect_uri);
-        $options = [
-            'grant_type' => 'authorization_code',
-            'code' => $_GET['code'],
-            'redirect_uri' => $redirect_uri,
-            'client_id' => '77dug7ogaz4ouh',
-            'client_secret' => 'D6hJidRzoq5B0Hqc',
-        ];
-        $request = Requests::post('https://www.linkedin.com/oauth/v2/accessToken', $headers, $options);
-        $body = json_decode( $request->body, true);
-        $token = $body['access_token'];
+        var_dump(siteURL());
+        // $options = [
+        //     'grant_type' => 'authorization_code',
+        //     'code' => $_GET['code'],
+        //     'redirect_uri' => $redirect_uri,
+        //     'client_id' => '77dug7ogaz4ouh',
+        //     'client_secret' => 'D6hJidRzoq5B0Hqc',
+        // ];
+        // $request = Requests::post('https://www.linkedin.com/oauth/v2/accessToken', $headers, $options);
+        // $body = json_decode( $request->body, true);
+        // $token = $body['access_token'];
         
-        $headersUser = array('Authorization' => 'Bearer '.$token);
-        $user = Requests::get('https://api.linkedin.com/v2/me', $headersUser);
-        $userBody = json_decode( $user->body, true);
-        echo '<pre>';
-        echo var_dump( $userBody );
-        echo '</pre>';
+        // $headersUser = array('Authorization' => 'Bearer '.$token);
+        // $user = Requests::get('https://api.linkedin.com/v2/me', $headersUser);
+        // $userBody = json_decode( $user->body, true);
+        // echo '<pre>';
+        // echo var_dump( $userBody );
+        // echo '</pre>';
 
-        $user_first_name = $userBody['localizedFirstName'];
-        $user_last_name = $userBody['localizedLastName'];
-        $user_name = $user_first_name.' '.$user_last_name;
+        // $user_first_name = $userBody['localizedFirstName'];
+        // $user_last_name = $userBody['localizedLastName'];
+        // $user_name = $user_first_name.' '.$user_last_name;
 
-        $redirect = $cookie.'?app-name='.$user_name;
+        // $redirect = $cookie.'?app-name='.$user_name;
     }
     
     //header("Location: $redirect");
