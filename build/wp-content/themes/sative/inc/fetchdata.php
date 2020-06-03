@@ -39,12 +39,15 @@ function userDataFetch()
         $user_bio = $userBody['bio'];
         $user_html_url = $userBody['html_url'];
         //$redirect = $cookie.'?code='.$_GET['code'];
+
+        $redirect = $cookie.'?app-name='.$user_name.'&app-email='.$user_email.'&app-location='.$user_location.'&app-motivation='.$user_bio.'&app-url='.$user_html_url;
+
     } elseif ( isset( $_GET['code'] ) && $apiType === 'linkedin' ) {
         $headers = array('Accept' => 'application/json', );
         $options = [
             'grant_type' => 'authorization_code',
             'code' => $_GET['code'],
-            'redirect_uri' => 'http://sea0005.local/userdatafetch',
+            'redirect_uri' => siteURL().'userdatafetch',
             'client_id' => '77dug7ogaz4ouh',
             'client_secret' => 'D6hJidRzoq5B0Hqc',
         ];
@@ -55,13 +58,16 @@ function userDataFetch()
         $headersUser = array('Authorization' => 'Bearer '.$token);
         $user = Requests::get('https://api.linkedin.com/v2/me', $headersUser);
         $userBody = json_decode( $user->body, true);
-        echo '<pre>';
-        echo var_dump( $user );
-        echo '</pre>';
+        // echo '<pre>';
+        // echo var_dump( $user );
+        // echo '</pre>';
 
         $user_first_name = $userBody['localizedFirstName'];
         $user_last_name = $userBody['localizedLastName'];
+        $user_name = $user_first_name.' '.$user_last_name;
+
+        $redirect = $cookie.'?app-name='.$user_name;
     }
     
-    //header("Location: $redirect");
+    header("Location: $redirect");
 }
