@@ -56,7 +56,6 @@ function add_to_queue(){
 
         'job' => array(
             'id' => isset( $_POST['app-jobid'] ) ? $_POST['app-jobid'] : 188,
-            'cv_file' => 'https://url.example.com/cv.pdf' // alternatively instead of sending the file
         ),
 
         'urls' => array('https://www.example.com/some/url/123'),
