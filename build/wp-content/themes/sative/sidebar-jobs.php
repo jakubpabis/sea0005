@@ -47,8 +47,8 @@
                 </div>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
-                <input type="text" name="app-name" required value="<?= $app_name; ?>">
-                <label for="app-name"><?php pll_e( 'Name' ); ?> <span>*</span></label>
+                <input type="text" name="app-name" required value="<?= $app_name ? $app_name : null; ?>">
+                <label for="app-name" <?= $app_name ? 'style="opacity: 0;"' : null; ?> ><?php pll_e( 'Name' ); ?> <span>*</span></label>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
                 <input type="email" name="app-email" required>
