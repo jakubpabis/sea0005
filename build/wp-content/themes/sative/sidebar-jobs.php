@@ -26,18 +26,28 @@
     <?php
         if( isset( $_GET['app-name'] ) && $_GET['app-name'] ) {
             $app_name = $_GET['app-name'];
+        } else {
+            $app_name = null;
         }
         if( isset( $_GET['app-email'] ) && $_GET['app-email'] ) {
             $app_email = $_GET['app-email'];
+        } else {
+            $app_email = null;
         }
         if( isset( $_GET['app-location'] ) && $_GET['app-location'] ) {
             $app_location = $_GET['app-location'];
+        } else {
+            $app_location = null;
         }
         if( isset( $_GET['app-motivation'] ) && $_GET['app-motivation'] ) {
             $app_motivation = $_GET['app-motivation'];
+        } else {
+            $app_motivation = null;
         }
         if( isset( $_GET['app-url'] ) && $_GET['app-url'] ) {
             $app_url = $_GET['app-url'];
+        } else {
+            $app_url = null;
         }
     ?>
     <form method="POST" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" accept-charset="UTF-8" role="form" class="pt-3" id="job-application-form" enctype="multipart/form-data">
