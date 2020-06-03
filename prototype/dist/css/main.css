@@ -3490,6 +3490,32 @@ aside#chat .dog {
 	width: 100%;
 }
 
+.cc-window {
+	-webkit-clip-path: polygon(0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px));
+	clip-path: polygon(0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px));
+}
+
+.cc-window .cc-btn {
+	font-family: 'Fractul';
+	font-size: 16px;
+	font-weight: 700 !important;
+	line-height: 1;
+	position: relative;
+	display: inline-block;
+	padding: 16px 25px;
+	vertical-align: middle;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 0 !important;
+	outline: 0;
+	box-shadow: none !important;
+}
+
+.cc-window .cc-btn:hover {
+	opacity: 1;
+	color: #183153;
+}
+
 /**
  * pretty-checkbox.css
  *

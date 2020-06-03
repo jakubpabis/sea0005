@@ -520,7 +520,10 @@ $toTranslate = array(
     "Let's find the perfect job for you",
     'Clear all',
     'Your file exceeds 5mb limit...',
-    'Job application sucessful'
+    'Job application sucessful',
+    'Search X Recruitment uses cookies to improve our website and your user experience. <br/>By clicking any link or continuing to browse you are giving your consent to our',
+    'cookie policy',
+    'Accept'
 );
 
 if( function_exists( 'pll_register_string' ) ) {
