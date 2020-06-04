@@ -251,8 +251,8 @@ function quickFilters()
 			case '#executive':
 				var $input = $('.jobs__list-filters').find('.job-salary-filters').find('input[name="salary_min"]');
 				if($input) {
-					if($input.val() != 80000) {
-						$input.val(80000);
+					if($input.val() != 70000) {
+						$input.val(70000);
 					} else {
 						$input.val(0);
 					}
