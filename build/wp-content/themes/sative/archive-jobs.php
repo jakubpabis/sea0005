@@ -26,6 +26,9 @@ get_header();
                 <a href="#sales" class="btn btn__medium lgrey icon">
                     <span>Sales</span> <i class="far fa-plus"></i>
                 </a>
+                <a href="#marketing" class="btn btn__medium lgrey icon">
+                    <span>Marketing</span> <i class="far fa-plus"></i>
+                </a>
                 <a href="#executive" class="btn btn__medium lgrey icon">
                     <span>Executive</span> <i class="far fa-plus"></i>
                 </a>
