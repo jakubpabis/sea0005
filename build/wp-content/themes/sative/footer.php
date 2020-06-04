@@ -125,9 +125,9 @@ $lang = pll_current_language();
                 },
                 "position": "bottom-left",
                 "content": {
-                    "message": "<?php pll_e( 'Search X Recruitment uses cookies to improve our website and your user experience. <br/>By clicking any link or continuing to browse you are giving your consent to our' ); ?>",
+                    "message": "<?php pll_e( 'Search X Recruitment uses cookies to improve our website and your user experience. <br/>By clicking any link or continuing to browse you are giving your consent to our cookie policy.' ); ?>",
                     "dismiss": "<?php pll_e( 'Accept' ); ?>",
-                    "link": "<?php pll_e( 'cookie policy' ); ?>",
+                    "link": "<?php pll_e( 'Learn more' ); ?>",
                     "href": "/cookie-policy"
                 }
             });

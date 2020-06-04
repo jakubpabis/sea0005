@@ -459,6 +459,7 @@ add_filter('post_type_link', 'change_link', 10, 2);
 $toTranslate = array(
     'From',
     'To',
+    'Learn more',
     'Do you need my help?',
     'Contact',
     'Get in touch',
@@ -523,7 +524,7 @@ $toTranslate = array(
     'Clear all',
     'Your file exceeds 5mb limit...',
     'Job application sucessful',
-    'Search X Recruitment uses cookies to improve our website and your user experience. <br/>By clicking any link or continuing to browse you are giving your consent to our',
+    'Search X Recruitment uses cookies to improve our website and your user experience. <br/>By clicking any link or continuing to browse you are giving your consent to our cookie policy.',
     'cookie policy',
     'Accept'
 );
