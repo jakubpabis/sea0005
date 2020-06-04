@@ -248,6 +248,13 @@ function quickFilters()
 					$form.submit();
 				}
 				break;
+			case '#marketing':
+				var $input = $('.jobs__list-filters').find('.job-category-filters').find('li').find('input[data-name="marketing"]');
+				if($input) {
+					$input.prop('checked', !$input.prop('checked'));
+					$form.submit();
+				}
+				break;
 			case '#executive':
 				var $input = $('.jobs__list-filters').find('.job-salary-filters').find('input[name="salary_min"]');
 				if($input) {
