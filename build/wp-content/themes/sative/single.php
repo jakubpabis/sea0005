@@ -74,7 +74,7 @@ get_header(); ?>
 					<div class="row justify-content-center">
 					<?php foreach( $related as $post ) :
 					setup_postdata($post); ?>
-						<div class="col-lg-4 col-md-7 col-sm-9 d-flex">
+						<div class="col-lg-4 col-md-8 col-sm-10 d-flex">
 							<div class="card w-100 d-flex flex-row flex-wrap">
 								<div class="content">
 									<h3 class="title"><a href="<?= get_the_permalink(); ?>"><?= get_the_title(); ?></a></h3>
