@@ -61,21 +61,21 @@ get_header(); ?>
 <?php
 	$related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 3, 'post__not_in' => array($post->ID) ) );
 	if( $related ) : ?>
-		<section class="cards__section">
-			<div class="cards__section-img job-single">
-			<?php if( get_field( 'article_related_image', 'option' ) ) : ?>
-				<img data-src="<?= get_field( 'article_related_image', 'option' )['url']; ?>" class="bg-cover lazy">
-			<?php else: ?>
-				<img data-src="<?= get_template_directory_uri(); ?>/assets/img/searchitrecruitment_homepage.jpg" class="bg-cover lazy">
-			<?php endif; ?>
+		<div class="container my-5 py-2">
+			<div class="row justify-content-center">
+				<h2 class="text-size-xxxlarge">
+					<?php pll_e( 'Similar articles' ); ?>
+				</h2>
 			</div>
-			<div class="cards__section-content bg-sea job-single">
+		</div>
+		<section class="cards__section related">
+			<div class="cards__section-content related bg-sea job-single">
 				<div class="container">
 					<div class="row justify-content-center">
 					<?php foreach( $related as $post ) :
 					setup_postdata($post); ?>
 						<div class="col-lg-4 col-md-8 col-sm-10 d-flex">
-							<div class="card w-100 d-flex flex-row flex-wrap">
+							<div class="card w-100 d-flex flex-row flex-wrap bg-lgrey">
 								<div class="content">
 									<h3 class="title"><a href="<?= get_the_permalink(); ?>"><?= get_the_title(); ?></a></h3>
 									<?php if( get_the_excerpt() ) { 

@@ -1811,6 +1811,11 @@ i {
 	padding-bottom: 50px;
 }
 
+.cards__section-content.related {
+	position: relative;
+	border-top: solid 80px white;
+}
+
 .cards__section-content.job-single .card {
 	display: block;
 }

@@ -113,6 +113,11 @@
                 padding-bottom: 50px;
             }
 
+            &.related {
+                position: relative;
+                border-top: solid 80px white;
+            }
+
             &.job-single {
 
                 .card {
