@@ -88,7 +88,8 @@ $lang = pll_current_language();
                     <div class="container">
                         <div class="row justify-content-lg-between justify-content-center">
                             <div class="col-auto">
-                                <span>© Search X Recruitment - <?= date("Y"); ?></span>
+                                <span>© Search X Recruitment - <?= date("Y"); ?></span> | 
+                                <a href="/sitemap_index.xml"> Sitemap</a>
                             </div>
                             <div class="col-auto">
                                 <span>
