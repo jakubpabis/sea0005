@@ -129,7 +129,7 @@ $lang = pll_current_language();
                     "message": "<?php pll_e( 'Search X Recruitment uses cookies to improve our website and your user experience. <br/>By clicking any link or continuing to browse you are giving your consent to our cookie policy.' ); ?>",
                     "dismiss": "<?php pll_e( 'Accept' ); ?>",
                     "link": "<?php pll_e( 'Learn more' ); ?>",
-                    "href": <?php if( pll_current_language() === 'en' ) : ?>"/cookie-policy"<?php else: ?>"/cookiebeleid"
+                    "href": <?php if( pll_current_language() === 'en' ) : ?>"/cookie-policy"<?php else: ?>"/cookiebeleid"<?php endif; ?>
                 }
             });
         </script>
