@@ -101,7 +101,7 @@
                     <input type="checkbox" name="app-pp" required>
                     <div class="state">
                         <i class="icon fal fa-times"></i>
-                        <label><?php pll_e( 'I hereby agree with the' ); ?> <a href="/privacy-policy" style="position: relative; z-index: 9999;"><u><?php pll_e( 'Privacy Policy' ); ?></u></a> <span class="color-pink text-size-small text600">*</span></label>
+                        <label><?php pll_e( 'I hereby agree with the' ); ?> <a href="<?php if( pll_current_language() === 'en' ) : ?>/privacy-policy<?php else: ?>/privacyverklaring<?php endif; ?>" style="position: relative; z-index: 9999;"><u><?php pll_e( 'Privacy Policy' ); ?></u></a> <span class="color-pink text-size-small text600">*</span></label>
                     </div>
                 </div>
             </div>
