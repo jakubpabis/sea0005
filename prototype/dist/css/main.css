@@ -1551,6 +1551,11 @@ i {
 	justify-content: center;
 }
 
+.home__cards .card p {
+	display: block;
+	width: 100%;
+}
+
 .home__middle {
 	padding: 100px 0;
 }

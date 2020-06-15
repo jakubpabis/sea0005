@@ -243,7 +243,7 @@ function add_job_industry_taxonomies()
 {
     // Add new "Industry" taxonomy to Posts
     // Hierarchical taxonomy (like categories)
-    register_taxonomy('job-industry', 'jobs', 
+    register_taxonomy('job-induastry', 'jobs', 
         array(
             'hierarchical' => true,
             // This array of options controls the labels displayed in the WordPress Admin UI

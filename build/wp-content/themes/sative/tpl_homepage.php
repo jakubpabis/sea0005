@@ -82,8 +82,8 @@ get_header(); ?>
         <div class="container-lg">
             <div class="row">
                 <?php while ( have_rows('middle_cards') ) : the_row(); ?>
-                <div class="col-md-6">
-                    <div class="card">
+                <div class="col-md-6 d-flex">
+                    <div class="card w-100">
                         <h3 class="mb-2">
                             <?php if(get_sub_field('icon')): ?>
                             <i class="<?= get_sub_field('icon'); ?> mr-2"></i>&nbsp;

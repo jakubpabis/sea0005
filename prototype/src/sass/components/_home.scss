@@ -1,5 +1,18 @@
 .home {
 
+    &__cards {
+
+        .card {
+
+            p {
+                display: block;
+                width: 100%;
+            }
+
+        }
+
+    }
+
     &__middle {
         padding: 100px 0;
 
@@ -83,6 +96,8 @@
             }
 
         }
+
+
 
     }
 
