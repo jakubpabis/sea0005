@@ -50,4 +50,4 @@
     <!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMG8TTV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- /Google Tag Manager (noscript) --> 
-    <div id="wrapper">
+    <div id="wrapper" class="d-flex align-items-center justify-content-center py-5 bg-lgrey">

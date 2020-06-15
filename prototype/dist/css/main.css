@@ -3085,6 +3085,35 @@ aside#chat .dog {
 	border-right-color: #fdd963;
 }
 
+.dog__info.left + .triangle.white {
+	border-right-color: white;
+}
+
+.dog__info.left.up + .triangle {
+	top: 25%;
+	left: -40px;
+	border-top: none !important;
+	border-right: 60px solid transparent;
+	border-bottom: 60px solid transparent;
+	border-left: 0 solid transparent;
+}
+
+.dog__info.left.up + .triangle.grey2 {
+	border-right-color: #f1eff2;
+}
+
+.dog__info.left.up + .triangle.sea {
+	border-right-color: #94d4e9;
+}
+
+.dog__info.left.up + .triangle.yellow {
+	border-right-color: #fdd963;
+}
+
+.dog__info.left.up + .triangle.white {
+	border-right-color: white;
+}
+
 .dog__info.right + .triangle {
 	right: -40px;
 	border-right: 0 solid transparent;
@@ -3102,6 +3131,10 @@ aside#chat .dog {
 
 .dog__info.right + .triangle.yellow {
 	border-left-color: #fdd963;
+}
+
+.dog__info.right + .triangle.white {
+	border-left-color: white;
 }
 
 .team {
@@ -5577,6 +5610,11 @@ p,
 	left: -31px;
 }
 
+.dog__info.left.up + .triangle {
+	top: 25%;
+	left: -31px;
+}
+
 .dog__info.right + .triangle {
 	top: 25%;
 	right: -31px;
@@ -5906,6 +5944,13 @@ h4,
 	border-right: 40px solid transparent;
 }
 
+.dog__info.left.up + .triangle {
+	top: 20%;
+	left: -24px;
+	border-right: 40px solid transparent;
+	border-bottom: 40px solid transparent;
+}
+
 .dog__info.right {
 	margin-left: -35px;
 	padding-left: 45px;
@@ -6165,6 +6210,10 @@ p,
 
 .dog__info.left + .triangle {
 	top: 0;
+	left: -9px;
+}
+
+.dog__info.left.up + .triangle {
 	left: -9px;
 }
 

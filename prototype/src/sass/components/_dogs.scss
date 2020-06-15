@@ -221,6 +221,56 @@
                     border-right-color: $color-yellow;
                 }
 
+                &.white {
+                    border-right-color: white;
+                }
+
+            }
+
+            &.up {
+                
+                &+.triangle {
+                    top: 25%;
+                    left: -40px;
+                    border-left: 0px solid transparent;
+                    border-bottom: 60px solid transparent; 
+                    border-top: none!important;
+                    border-right: 60px solid transparent; 
+    
+                    @media(max-width: 991px) {
+                        top: 25%;
+                        left: -31px;
+                    }
+    
+                    @media(max-width: 767px) {
+                        top: 20%;
+                        left: -24px;
+                        border-bottom: 40px solid transparent; 
+                        border-right: 40px solid transparent; 
+                    }
+    
+                    @media(max-width: 575px) {
+                        left: -9px;
+                    }
+
+                    &.grey2 {
+                        border-right-color: $color-grey2;
+                    }
+    
+                    &.sea {
+                        border-right-color: $color-sea;
+                    }
+    
+                    &.yellow {
+                        border-right-color: $color-yellow;
+                    }
+    
+                    &.white {
+                        border-right-color: white;
+                    }
+
+                }
+
             }
 
         }
@@ -269,6 +319,10 @@
 
                 &.yellow {
                     border-left-color: $color-yellow;
+                }
+
+                &.white {
+                    border-left-color: white;
                 }
 
             }
