@@ -9,7 +9,8 @@
             </div>
             <div class="col-auto breadcrumbs__list">
                 <div class="breadcrumbs__items">
-                <?php $breadcrumbs = yoast_breadcrumb('','',false); 
+                <?php //bcn_display(false, true, false, false); ?>
+                <?php  $breadcrumbs = yoast_breadcrumb('','',false); 
                     $breadcrumbs = str_replace("<span>","",$breadcrumbs);
                     $breadcrumbs = str_replace("</span>","",$breadcrumbs);
                     echo $breadcrumbs;
