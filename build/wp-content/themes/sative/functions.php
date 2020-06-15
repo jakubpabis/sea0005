@@ -502,6 +502,7 @@ $toTranslate = array(
     'Back',
     'Executive search consultant',
     'Show all jobs',
+    'Show all articles',
     'Search for a job!',
     'Show less',
     'No jobs found...',

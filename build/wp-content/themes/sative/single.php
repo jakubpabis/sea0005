@@ -57,6 +57,46 @@ get_header(); ?>
 	</section>
 
 <?php endwhile; ?>
+
+<?php
+	$related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 3, 'post__not_in' => array($post->ID) ) );
+	if( $related ) : ?>
+		<section class="cards__section">
+			<div class="cards__section-img job-single">
+			<?php if( get_field( 'jobs_related_image', 'option' ) ) : ?>
+				<img data-src="<?= get_field( 'jobs_related_image', 'option' )['url']; ?>" class="bg-cover lazy">
+			<?php else: ?>
+				<img data-src="<?= get_template_directory_uri(); ?>/assets/img/searchitrecruitment_homepage.jpg" class="bg-cover lazy">
+			<?php endif; ?>
+			</div>
+			<div class="cards__section-content bg-sea job-single">
+				<div class="container">
+					<div class="row justify-content-center">
+					<?php foreach( $related as $post ) :
+					setup_postdata($post); ?>
+						<div class="col-lg-4 col-md-6 col-sm-8 d-flex">
+							<div class="card w-100">
+								<h3 class="title"><a href="<?= get_the_permalink(); ?>"><?= get_the_title(); ?></a></h3>
+								<?php if( get_the_excerpt() ) { 
+									the_excerpt(); 
+								} else {
+									echo wp_trim_words( get_the_content(), 10, '...' ); 
+								} ?>
+								<a href="<?= get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e( 'Read more' ); ?></a>
+							</div>
+						</div>   
+					<?php endforeach; ?>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="jobs__single-cta-section text-center">
+			<a href="<?php echo getTplPageURL(); ?>" class="btn btn__default yellow"><?php pll_e( 'Show all articles' ); ?></a>
+		</section>
+	<?php endif;
+	wp_reset_postdata(); 
+?>
+
 <script>
     if(window.history.length > 1) {
         document.getElementById('backBTN').classList.remove('d-none');
