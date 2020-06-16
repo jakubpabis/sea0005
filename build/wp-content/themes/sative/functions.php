@@ -312,10 +312,10 @@ if( function_exists( 'pll_get_post' ) ) {
         return $jobtpl;
         wp_reset_postdata();
     }
-    }
+}
 
 function term_has_parent($termid, $tax){
-    $term = get_term($termid, $tax);
+    $term = get_term_by('slug', $termid, $tax);
     if ($term->parent > 0){
         return $term->parent;
     }
@@ -389,7 +389,7 @@ function hierarchical_tax_tree( $cat, $tax, $active = [] ) {
 }  
 
 
-function hierarchical_tax_tree_filter( $cat, $tax, $active) {
+function hierarchical_tax_tree_filter( $cat, $tax, $active ) {
     $next = get_categories('taxonomy=' . $tax . '&orderby=count&order=DESC&hide_empty=false&parent=' . $cat);
     if( $next ) :    
         echo '<ul>';
@@ -397,15 +397,15 @@ function hierarchical_tax_tree_filter( $cat, $tax, $active) {
             if($active === null) {
                 $active = [];
             }
-            if(get_query_var('term') == $cat->category_nicename || in_array($cat->term_id, $active)) {
+            if(get_query_var('term') == $cat->category_nicename || in_array($cat->slug, $active)) {
                 echo '<li class="active">';
                 $checked = 'checked';
             } else {
                 echo '<li>';
                 $checked = null;
             }
-            echo '<span>' . $cat->name . '&nbsp;<small>('. $cat->count . ')</small><i class="far fa-times"></i><input type="checkbox" data-name="'.$cat->category_nicename.'" ' . $checked . ' name="' . $tax . '[]" value="' . $cat->term_id . '"></span>'; 
-            hierarchical_tax_tree_filter( $cat->term_id, $tax, $active);
+            echo '<span>' . $cat->name . '&nbsp;<small>('. $cat->count . ')</small><i class="far fa-times"></i><input type="checkbox" data-name="'.$cat->category_nicename.'" ' . $checked . ' name="' . $tax . '[]" value="' . $cat->slug . '"></span>'; 
+            hierarchical_tax_tree_filter( $cat->term_id, $tax, $active );
             echo '</li>';
         endforeach;   
         echo '</ul>'; 

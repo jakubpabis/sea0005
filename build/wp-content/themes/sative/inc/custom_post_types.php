@@ -133,17 +133,17 @@ function add_job_category_taxonomies()
             'hierarchical' => true,
             // This array of options controls the labels displayed in the WordPress Admin UI
             'labels' => array(
-            'name' => _x( 'Categories', 'taxonomy general name' ),
-            'singular_name' => _x( 'Category', 'taxonomy singular name' ),
-            'search_items' =>  __( 'Search Categories' ),
-            'all_items' => __( 'All Categories' ),
-            'parent_item' => __( 'Parent Category' ),
-            'parent_item_colon' => __( 'Parent Category:' ),
-            'edit_item' => __( 'Edit Category' ),
-            'update_item' => __( 'Update Category' ),
-            'add_new_item' => __( 'Add New Category' ),
-            'new_item_name' => __( 'New Category Name' ),
-            'menu_name' => __( 'Categories' ),
+            'name' => _x( 'Categories', 'taxonomy general name', 'sative' ),
+            'singular_name' => _x( 'Category', 'taxonomy singular name', 'sative' ),
+            'search_items' =>  __( 'Search Categories', 'sative' ),
+            'all_items' => __( 'All Categories', 'sative' ),
+            'parent_item' => __( 'Parent Category', 'sative' ),
+            'parent_item_colon' => __( 'Parent Category:', 'sative' ),
+            'edit_item' => __( 'Edit Category', 'sative' ),
+            'update_item' => __( 'Update Category', 'sative' ),
+            'add_new_item' => __( 'Add New Category', 'sative' ),
+            'new_item_name' => __( 'New Category Name', 'sative' ),
+            'menu_name' => __( 'Categories', 'sative' ),
         ),
         // Control the slugs used for this taxonomy
         'rewrite' => array(
@@ -272,7 +272,6 @@ function add_job_industry_taxonomies()
     ));
 }
 add_action( 'init', 'add_job_industry_taxonomies', 10 );
-
 
 function custom_post_type_team() 
 {

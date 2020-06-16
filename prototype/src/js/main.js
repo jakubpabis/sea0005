@@ -183,7 +183,7 @@ function homepageClients()
 function homeHashtags()
 {
 	$('.home__middle-hashtags').find('li').on('click', function() {
-		$('#homeSearchInput').val($(this).text()).focus();
+		$('#homeSearchInput').val($(this).text().replace('#', '')).focus();
 	});
 }
 

@@ -33,7 +33,7 @@ foreach($taxonomyFilters as $taxF) {
             foreach(filterHelper($_GET[$taxF], $taxF) as $termID) {
                 $arr = array(
                     'taxonomy' => $taxF,
-                    'field' => 'id',
+                    'field' => 'slug',
                     'terms' => $termID,
                 );
                 array_push($args['tax_query'], $arr);
@@ -41,7 +41,7 @@ foreach($taxonomyFilters as $taxF) {
         } else {
             $args['tax_query'][] = array(
                 'taxonomy' => $taxF,
-                'field' => 'id',
+                'field' => 'slug',
                 'terms' => $_GET[$taxF],
             );
         }
