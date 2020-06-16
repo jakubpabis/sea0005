@@ -137,6 +137,19 @@
 
         }
 
+        &.special {
+            padding: 0!important;
+
+            svg {
+
+                @media(max-width: 575px) {
+                    transform: translateX(-10px);
+                }
+
+            }
+
+        }
+
     }
 
     &__sit {

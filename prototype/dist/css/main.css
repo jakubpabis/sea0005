@@ -3045,6 +3045,10 @@ aside#chat .dog {
 	transform: translateX(20px);
 }
 
+.dog__stand.special {
+	padding: 0 !important;
+}
+
 .dog__sit svg {
 	top: 25px;
 }
@@ -6192,6 +6196,10 @@ p,
 	width: 150%;
 	margin-top: 20px;
 	transform: translateX(-60px);
+}
+
+.dog__stand.special svg {
+	transform: translateX(-10px);
 }
 
 .dog__sit svg {
