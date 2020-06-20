@@ -1001,6 +1001,15 @@ i {
 	height: 100%;
 }
 
+#cookie-notice {
+	padding: 15px;
+}
+
+#cookie-notice #cn-notice-text {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+}
+
 .navigation {
 	position: fixed;
 	z-index: 999;
