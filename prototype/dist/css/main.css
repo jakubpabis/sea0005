@@ -2480,6 +2480,18 @@ aside#chat .dog {
 	margin-top: 20px;
 }
 
+.jobs__list-items.fulfilled {
+	display: flex;
+	margin: 0 -15px;
+	flex: wrap;
+}
+
+.jobs__list-items.fulfilled .jobs__list-item {
+	margin-right: 15px;
+	margin-left: 15px;
+	flex-basis: calc(50% - 30px);
+}
+
 .jobs__list-item {
 	display: block;
 	margin-bottom: 40px;
@@ -5973,6 +5985,10 @@ h4,
 
 .jobs__list-filters .closethis {
 	top: 15px;
+}
+
+.jobs__list-items.fulfilled .jobs__list-item {
+	flex-basis: calc(100% - 30px);
 }
 
 .jobs__single-sidebar .card .social-login .btn {

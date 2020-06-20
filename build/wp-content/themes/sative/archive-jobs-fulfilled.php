@@ -57,7 +57,7 @@ get_header();
                 </p>
             </div>
             <div id="jobs__list-cont" class="col-12">
-                <main class="jobs__list-items">
+                <main class="jobs__list-items fulfilled">
                     <?php if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); $helper = jobDisplayHelper(); ?>
                     <article class="card bg-lgrey jobs__list-item">
                         <div class="job-title">

@@ -255,6 +255,24 @@
                 margin-top: 20px;
             }
 
+            &.fulfilled {
+                display: flex;
+                flex: wrap;
+                margin: 0 -15px;
+
+                .jobs__list-item {
+                    flex-basis: calc(50% - 30px);
+                    margin-left: 15px;
+                    margin-right: 15px;
+
+                    @media(max-width: 767px) {
+                        flex-basis: calc(100% - 30px);
+                    }
+
+                }
+
+            }
+
         }
 
         &-item {
