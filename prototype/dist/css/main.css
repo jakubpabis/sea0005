@@ -2483,7 +2483,7 @@ aside#chat .dog {
 .jobs__list-items.fulfilled {
 	display: flex;
 	margin: 0 -15px;
-	flex: wrap;
+	flex-wrap: wrap;
 }
 
 .jobs__list-items.fulfilled .jobs__list-item {

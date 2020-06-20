@@ -257,7 +257,7 @@
 
             &.fulfilled {
                 display: flex;
-                flex: wrap;
+                flex-wrap: wrap;
                 margin: 0 -15px;
 
                 .jobs__list-item {
