@@ -783,6 +783,15 @@ p,
 	background-color: #ec6278;
 }
 
+.btn.pink {
+	color: #183153 !important;
+	background-color: #ec6278;
+}
+
+.btn.pink:hover {
+	background-color: #ec6278;
+}
+
 .btn.yellow {
 	color: #183153 !important;
 	background-color: #fdd963;
