@@ -89,7 +89,8 @@ $lang = pll_current_language();
                         <div class="row justify-content-lg-between justify-content-center">
                             <div class="col-auto">
                                 <span>© Search X Recruitment - <?= date("Y"); ?></span> | 
-                                <a href="/sitemap_index.xml"> Sitemap</a>
+                                <a href="/sitemap_index.xml"> Sitemap</a> | 
+                                <a href="/<?= $lang; ?>/fulfilled-jobs"> <?php pll_e( 'Fulfilled jobs' ); ?></a>
                             </div>
                             <div class="col-auto">
                                 <span>
