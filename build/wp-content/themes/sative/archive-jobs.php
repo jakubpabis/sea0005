@@ -106,7 +106,7 @@ get_header();
                     </article>
                     <?php endwhile; endif; ?>
                     <nav class="pagination">
-                    <?php next_posts_link( 'Load more' ); ?>
+                        <?= $pagination; ?>
                     </nav>
                 </main>
             </div>
