@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Job list
+ * Template Name: Fulfilled Job list
  */
 
 get_header();
