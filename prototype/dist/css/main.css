@@ -794,20 +794,31 @@ p,
 	background-color: #ec6278;
 }
 
-.btn.yellow,
+.btn.yellow {
+	color: #183153 !important;
+	background-color: #fdd963;
+}
+
+.btn.yellow:hover {
+	background-color: #ec6278;
+}
+
 .btn#cn-accept-cookie {
 	color: #183153 !important;
 	background-color: #fdd963;
 }
 
-.btn.yellow:hover,
 .btn#cn-accept-cookie:hover {
-	background-color: #ec6278;
+	background-color: #fdd963;
 }
 
-.btn.lgrey,
-.btn#cn-more-info {
+.btn.lgrey {
 	color: #a2a2a2 !important;
+	background-color: #f8f7f8;
+}
+
+.btn#cn-more-info {
+	color: #183153 !important;
 	background-color: #f8f7f8;
 }
 

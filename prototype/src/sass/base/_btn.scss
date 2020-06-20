@@ -149,8 +149,7 @@
 
     }
 
-    &.yellow,
-    &#cn-accept-cookie {
+    &.yellow {
         background-color: $color-yellow;
         color: $color-navy!important;
 
@@ -160,10 +159,24 @@
 
     }
 
-    &.lgrey,
-    &#cn-more-info {
+    &#cn-accept-cookie {
+        background-color: $color-yellow;
+        color: $color-navy!important;
+
+        &:hover {
+            background-color: $color-yellow;
+        }
+
+    }
+
+    &.lgrey {
         background-color: $color-light-grey;
         color: $color-dark-grey!important;
+    }
+
+    &#cn-more-info {
+        background-color: $color-light-grey;
+        color: $color-primary!important;
     }
 
     &.grey {
