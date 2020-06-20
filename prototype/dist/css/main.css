@@ -783,25 +783,30 @@ p,
 	background-color: #ec6278;
 }
 
-.btn.pink {
+.btn.pink,
+.btn#cn-refuse-cookie {
 	color: #183153 !important;
 	background-color: #ec6278;
 }
 
-.btn.pink:hover {
+.btn.pink:hover,
+.btn#cn-refuse-cookie:hover {
 	background-color: #ec6278;
 }
 
-.btn.yellow {
+.btn.yellow,
+.btn#cn-accept-cookie {
 	color: #183153 !important;
 	background-color: #fdd963;
 }
 
-.btn.yellow:hover {
+.btn.yellow:hover,
+.btn#cn-accept-cookie:hover {
 	background-color: #ec6278;
 }
 
-.btn.lgrey {
+.btn.lgrey,
+.btn#cn-more-info {
 	color: #a2a2a2 !important;
 	background-color: #f8f7f8;
 }
