@@ -6,7 +6,7 @@
  *
  * @package WP_Bootstrap_Starter
  */
-
+$lang = pll_current_language();
 ?>
 			<footer class="footer">
                 <div class="container">
