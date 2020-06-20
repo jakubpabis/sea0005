@@ -16,25 +16,15 @@ get_header();
         <div class="row align-items-center justify-content-between">
             <div class="col-md-auto">
                 <h1>
-                    <span class="header__jobs-jobsno"><?= $post_no; ?></span> <?php pll_e( 'open jobs' ); ?>
+                    <span class="header__jobs-jobsno"><?= $post_no === 0 ? pll_e( 'No jobs found...' ) : $post_no; ?></span>
+                    <?php 
+                        if($post_no > 1) {
+                            pll_e( 'open jobs' );
+                        } else if($post_no > 0) {
+                            pll_e( 'open job' );
+                        }
+                    ?>
                 </h1>
-            </div>
-            <div class="col-md-auto header__jobs-cats">
-                <a href="#it" class="btn btn__medium lgrey icon">
-                    <span>IT</span> <i class="far fa-plus"></i>
-                </a>
-                <a href="#sales" class="btn btn__medium lgrey icon">
-                    <span>Sales</span> <i class="far fa-plus"></i>
-                </a>
-                <a href="#marketing" class="btn btn__medium lgrey icon">
-                    <span>Marketing</span> <i class="far fa-plus"></i>
-                </a>
-                <a href="#executive" class="btn btn__medium lgrey icon">
-                    <span>Executive</span> <i class="far fa-plus"></i>
-                </a>
-                <a href="#freelance" class="btn btn__medium lgrey icon">
-                    <span>Freelance</span> <i class="far fa-plus"></i>
-                </a>
             </div>
         </div>
         <div id="search-filter" class="row align-items-center justify-content-md-between justify-content-end header__jobs-search">
@@ -61,15 +51,12 @@ get_header();
 <section class="jobs__list">
     <div class="container">
         <div class="row justify-content-md-center justify-content-end">
-            <div class="col-lg-4">
-                <?php get_template_part( 'template-parts/job-filters' ); ?>
-            </div>
             <div class="col-12 d-lg-none d-block text-right jobs-number">
                 <p class="text-size-small font-primary">
                     <span class="jobsno"><?= $post_no; ?></span> <?php pll_e( 'jobs found' ); ?>
                 </p>
             </div>
-            <div id="jobs__list-cont" class="col-lg-8">
+            <div id="jobs__list-cont" class="col-12">
                 <main class="jobs__list-items">
                     <?php if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); $helper = jobDisplayHelper(); ?>
                     <article class="card bg-lgrey jobs__list-item">

@@ -19,34 +19,6 @@ $args = array(
         'relation' => 'AND',
     )
 );
-$taxonomyFilters = array(
-    'job-category',
-    'job-location',
-    'job-industry',
-    'job-type',
-);
-
-// for taxonomies
-foreach($taxonomyFilters as $taxF) {
-    if( isset( $_GET[$taxF] ) ) {
-        if(count($_GET[$taxF]) > 1) {
-            foreach(filterHelper($_GET[$taxF], $taxF) as $termID) {
-                $arr = array(
-                    'taxonomy' => $taxF,
-                    'field' => 'slug',
-                    'terms' => $termID,
-                );
-                array_push($args['tax_query'], $arr);
-            }
-        } else {
-            $args['tax_query'][] = array(
-                'taxonomy' => $taxF,
-                'field' => 'slug',
-                'terms' => $_GET[$taxF],
-            );
-        }
-    }
-}
 
 if( isset( $_GET['salary_min'] ) ) {
     $args['meta_query'][] = array(
