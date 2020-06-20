@@ -7,7 +7,7 @@ get_header();
 
 ?>
 
-<?php require_once get_template_directory() . '/inc/jobs-filtering.php'; ?>
+<?php require_once get_template_directory() . '/inc/jobs-fulfilled-filtering.php'; ?>
 
 <form id="main-jobs-filter-form" action="" method="GET">
 <header class="header__jobs">
