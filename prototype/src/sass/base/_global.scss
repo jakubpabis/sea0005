@@ -158,6 +158,10 @@ i {
 #cookie-notice {
 	padding: 15px;
 
+	&.cookie-notice-hidden {
+		display: none!important;
+	}
+
 	#cn-notice-text {
 		display: block;
 		text-align: center;
