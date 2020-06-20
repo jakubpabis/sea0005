@@ -403,14 +403,14 @@
                 &.fulfilled {
 
                     .info__item {
-                        flex-basis: 33.33%;
+                        flex-basis: 33.33%!important;
 
                         @media(max-width: 991px) {
-                            flex-basis: 50%;
+                            flex-basis: 50%!important;
                         }
 
                         @media(max-width: 575px) {
-                            flex-basis: 100%;
+                            flex-basis: 100%!important;
                         }
                         
                     }

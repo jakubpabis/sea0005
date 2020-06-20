@@ -2587,7 +2587,7 @@ aside#chat .dog {
 }
 
 .jobs__single article .info.fulfilled .info__item {
-	flex-basis: 33.33%;
+	flex-basis: 33.33% !important;
 }
 
 .jobs__single article .info__item {
@@ -5601,7 +5601,7 @@ p,
 }
 
 .jobs__single article .info.fulfilled .info__item {
-	flex-basis: 50%;
+	flex-basis: 50% !important;
 }
 
 .jobs__single-recruiter .recruiter-text {
@@ -6226,7 +6226,7 @@ p,
 }
 
 .jobs__single article .info.fulfilled .info__item {
-	flex-basis: 100%;
+	flex-basis: 100% !important;
 }
 
 .jobs__single article .info__item {
