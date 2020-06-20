@@ -66,7 +66,7 @@ get_header();
                             <?php endif; ?>
                             <h3 class="title"><a href="<?= get_the_permalink(); ?>"><?= get_the_title(); ?></a></h3>
                         </div>
-                        <div class="info">
+                        <div class="info fulfilled">
                             <?php if(get_field('location')): ?>
                             <div class="info__item">
                                 <i class="far fa-map-marker-alt"></i>

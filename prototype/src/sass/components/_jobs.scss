@@ -400,6 +400,23 @@
                 margin: 0 -10px;
                 padding: 30px;
 
+                &.fulfilled {
+
+                    .info__item {
+                        flex-basis: 33.33%;
+
+                        @media(max-width: 991px) {
+                            flex-basis: 50%;
+                        }
+
+                        @media(max-width: 575px) {
+                            flex-basis: 100%;
+                        }
+                        
+                    }
+
+                }
+
                 &__item {
                     flex-basis: 50%;
                     margin-top: 10px;
