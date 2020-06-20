@@ -412,6 +412,14 @@ function hierarchical_tax_tree_filter( $cat, $tax, $active ) {
     endif;    
 }
 
+// // Activate WordPress Maintenance Mode
+// function wp_maintenance_mode() {
+//     if (!current_user_can('edit_themes') || !is_user_logged_in()) {
+//         wp_die('<h1>Under Maintenance</h1><br />We’re working on updating our site, check back later.');
+//     }
+// }
+// add_action('get_header', 'wp_maintenance_mode');
+
 
 // add_action('wp_ajax_myfilter', 'jobs_filter_function'); // wp_ajax_{ACTION HERE} 
 // add_action('wp_ajax_nopriv_myfilter', 'jobs_filter_function');

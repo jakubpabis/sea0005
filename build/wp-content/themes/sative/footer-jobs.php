@@ -105,7 +105,7 @@
             <?php get_template_part( 'template-parts/uploadcv' ); ?>
         </div> <!-- #wrapper -->
 		<?php wp_footer(); ?>
-        <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+        <?php /*<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
         <script>
             window.cookieconsent.initialise({
                 "palette": {
@@ -125,6 +125,6 @@
                     "href": <?php if( pll_current_language() === 'en' ) : ?>"/cookie-policy"<?php else: ?>"/cookiebeleid"<?php endif; ?>
                 }
             });
-        </script>
+        </script> */?>
     </body>
 </html>
