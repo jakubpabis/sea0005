@@ -2541,7 +2541,7 @@ aside#chat .dog {
 }
 
 .jobs__list-item .info.fulfilled .info__item {
-	flex-basis: 33.33% !important;
+	flex-basis: 100% !important;
 }
 
 .jobs__list-item .info__item {
@@ -2600,10 +2600,6 @@ aside#chat .dog {
 	margin: 0 -10px;
 	padding: 30px;
 	flex-wrap: wrap;
-}
-
-.jobs__single article .info.fulfilled .info__item {
-	flex-basis: 33.33% !important;
 }
 
 .jobs__single article .info__item {
@@ -5616,14 +5612,6 @@ p,
 	margin-top: 4px;
 }
 
-.jobs__list-item .info.fulfilled .info__item {
-	flex-basis: 50% !important;
-}
-
-.jobs__single article .info.fulfilled .info__item {
-	flex-basis: 50% !important;
-}
-
 .jobs__single-recruiter .recruiter-text {
 	padding-top: 0;
 }
@@ -6241,20 +6229,12 @@ p,
 	margin-top: 3px;
 }
 
-.jobs__list-item .info.fulfilled .info__item {
-	flex-basis: 100% !important;
-}
-
 .jobs__list-item .info__item {
 	flex-basis: 100%;
 }
 
 .jobs__list-item .info__item span {
 	font-size: 16px !important;
-}
-
-.jobs__single article .info.fulfilled .info__item {
-	flex-basis: 100% !important;
 }
 
 .jobs__single article .info__item {
