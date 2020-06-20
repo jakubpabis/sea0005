@@ -329,6 +329,23 @@
                 flex-wrap: wrap;
                 margin: 0 -10px;
 
+                &.fulfilled {
+
+                    .info__item {
+                        flex-basis: 33.33%!important;
+
+                        @media(max-width: 991px) {
+                            flex-basis: 50%!important;
+                        }
+
+                        @media(max-width: 575px) {
+                            flex-basis: 100%!important;
+                        }
+                        
+                    }
+
+                }
+
                 &__item {
                     flex-basis: 50%;
                     margin-bottom: 15px;

@@ -2528,6 +2528,10 @@ aside#chat .dog {
 	flex-wrap: wrap;
 }
 
+.jobs__list-item .info.fulfilled .info__item {
+	flex-basis: 33.33% !important;
+}
+
 .jobs__list-item .info__item {
 	display: flex;
 	margin-bottom: 15px;
@@ -5600,6 +5604,10 @@ p,
 	margin-top: 4px;
 }
 
+.jobs__list-item .info.fulfilled .info__item {
+	flex-basis: 50% !important;
+}
+
 .jobs__single article .info.fulfilled .info__item {
 	flex-basis: 50% !important;
 }
@@ -6215,6 +6223,10 @@ p,
 
 .jobs__list-item .job-title .icon {
 	margin-top: 3px;
+}
+
+.jobs__list-item .info.fulfilled .info__item {
+	flex-basis: 100% !important;
 }
 
 .jobs__list-item .info__item {
