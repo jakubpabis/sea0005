@@ -218,7 +218,7 @@ function xmlRead()
 }
 
 /**
- * Getting all the jobs names into an array
+ * Getting all the job_ids into an array
  *
  * @return array
  */
@@ -246,7 +246,7 @@ function jobList()
 }
 
 /**
- * Removing old jobs
+ * Change the custom post type from jobs to jobs-fulfilled for jobs that are no longer present in XML feed
  *
  * @return void
  */
@@ -255,9 +255,10 @@ function jobsFulfilled($job_ids)
     echo '<br/><br/>Starting fulfilled jobs searching...<br/>';
     $inDB = jobList();
 
-    foreach($inDB as $post_slug) {
+    foreach($inDB as $post_id) {
         $args = array(
-            'name'        => $post_slug,
+            'meta_key'	  => 'job_id',
+            'meta_value'  => $post_id,
             'post_type'   => 'jobs',
             'post_status' => 'publish',
             'numberposts' => 1
