@@ -77,7 +77,7 @@ function xmlRead()
             'post_name'     => $slug,
         );
 
-        if( in_array( $slug, $postsArr ) ) {
+        if( in_array( $jobID, $postsArr ) ) {
             //var_dump('check');
             wp_reset_query();
             $args = array(
@@ -218,7 +218,7 @@ function xmlRead()
 }
 
 /**
- * Getting all the jobs
+ * Getting all the jobs names into an array
  *
  * @return array
  */
@@ -235,8 +235,9 @@ function jobList()
 
     if ( $posts->have_posts() ) :
         while ( $posts->have_posts() ) : $posts->the_post();
-            //var_dump(get_post_field( 'post_name', get_the_ID()) );
-            array_push($postsArr, get_post_field( 'post_name', get_the_ID() ));
+            $id = intval( get_field( 'job_id', get_the_ID() ) );
+            var_dump($id);
+            array_push($postsArr, $id);
         endwhile;
     endif;
 
@@ -412,20 +413,25 @@ function insertCategoriesRec($job_categories, $postID, $skillArr)
                 echo $slug.' - ';
 
                 $parent = get_term_by('slug', $slug, 'job-category');
-                $parentID = $parent->term_id;
-                echo $parentID.' | ';
+                if( is_object( $parent ) ) {
+                    $parentID = $parent->term_id;
+                    echo $parentID.' | ';
+                } else {
+                    var_dump( $parent );
+                }
+                
                 $term = get_term_by('name', strval($category), 'job-category');
-
-                echo '<br/>term ID:'.$term->term_id.'<br/>';
-                if(!$term->term_id) {
-                    var_dump($term);
+                if( is_object( $term ) ) {
+                    echo '<br/>term ID:'.$term->term_id.'<br/>';
+                    if($term !== false) {
+                        wp_insert_term(strval($category), 'job-category', array('parent' => $parentID));
+                        $term = get_term_by('name', strval($category), 'job-category');
+                    }
+                    $termID = $term->term_id;
+                    wp_set_post_terms($postID, $termID, 'job-category', true);
+                } else {
+                    var_dump( $term) ;
                 }
-                if($term !== false) {
-                    wp_insert_term(strval($category), 'job-category', array('parent' => $parentID));
-                    $term = get_term_by('name', strval($category), 'job-category');
-                }
-                $termID = $term->term_id;
-                wp_set_post_terms($postID, $termID, 'job-category', true);
 
             }
 
