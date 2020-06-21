@@ -281,6 +281,11 @@ function jobsFulfilled($job_ids)
 
 }
 
+/**
+ * Create valid slug from any string
+ *
+ * @return string
+ */
 function slugify($text)
 {
     // replace non letter or digits by -
@@ -301,6 +306,11 @@ function slugify($text)
     return $text;
 }
 
+/**
+ * Removes job-category, job-location and job-type terms from post using postID
+ *
+ * @return void
+ */
 function removeAllTerms($postID)
 {
     $category = wp_get_post_terms($postID, 'job-category');
@@ -323,6 +333,12 @@ function removeAllTerms($postID)
     wp_remove_object_terms($postID, $typs, 'job-type');
 }
 
+/**
+ * Insert terms to posts from XML
+ * Terms to be inserted: job-category, job-industry, job-type
+ *
+ * @return string
+ */
 function insertCategories($job_categories, $postID) 
 {
 
@@ -372,6 +388,11 @@ function insertCategories($job_categories, $postID)
 
 }
 
+/**
+ * Insert job-category using recursion in order to put multi-level hierarchy categories
+ *
+ * @return string
+ */
 function insertCategoriesRec($job_categories, $postID, $skillArr)
 {
 
@@ -418,7 +439,11 @@ function insertCategoriesRec($job_categories, $postID, $skillArr)
 
 }
 
-
+/**
+ * Insert job-location term into post by checking apropriate XML nodes
+ *
+ * @return string
+ */
 function insertLocation($job, $postID)
 {
     if( !empty($job->address_country) && !empty($job->address_city) ) {
