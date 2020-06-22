@@ -492,6 +492,9 @@ add_filter('post_type_link', 'change_link', 10, 2);
 }
 
 $toTranslate = array(
+    'Download',
+    'Give us your email and download the file',
+    'Put in your email address here',
     'From',
     'To',
     'Learn more',
@@ -599,3 +602,25 @@ function template_chooser($template)
   return $template;   
 }
 add_filter('template_include', 'template_chooser'); 
+
+
+
+function sative_whitepapers_form_submit() {
+
+    $jobArray = array(
+        'post_type'     => 'whitepapers-users',
+        'post_status'   => 'private',
+        'post_title'    => $_POST['whitepapers-email'],
+    );
+
+    if( !post_exists( $_POST['whitepapers-email'] ) ) {
+        wp_insert_post( $jobArray, true );
+    }
+
+    $link = $_POST['whitepapers-url'];
+
+    header("Location: $link");
+
+}
+add_action( 'admin_post_nopriv_whitepapers_form', 'sative_whitepapers_form_submit' );
+add_action( 'admin_post_whitepapers_form', 'sative_whitepapers_form_submit' );

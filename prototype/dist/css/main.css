@@ -2104,16 +2104,19 @@ i {
 	resize: none;
 }
 
-#searchModal .dog {
+#searchModal .dog,
+#whitepapersModal .dog {
 	margin-bottom: -22%;
 	margin-left: -50px;
 }
 
-#searchModal .searchInput {
+#searchModal .searchInput,
+#whitepapersModal .searchInput {
 	margin-left: 20px;
 }
 
-#searchModal .searchInput .triangle-left {
+#searchModal .searchInput .triangle-left,
+#whitepapersModal .searchInput .triangle-left {
 	position: absolute;
 	top: 15px;
 	left: -3px;
@@ -2125,7 +2128,8 @@ i {
 	border-bottom: 15px solid transparent;
 }
 
-#searchModal .searchInput input {
+#searchModal .searchInput input,
+#whitepapersModal .searchInput input {
 	font-size: 18px;
 	font-weight: 400;
 	position: relative;
@@ -2141,37 +2145,43 @@ i {
 	clip-path: polygon(0% 8px, 8px 0%, calc(100% - 8px) 0%, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px));
 }
 
-#searchModal .searchInput input::-webkit-input-placeholder {
+#searchModal .searchInput input::-webkit-input-placeholder,
+#whitepapersModal .searchInput input::-webkit-input-placeholder {
 	font-style: italic;
 	opacity: 1;
 	color: #183153;
 }
 
-#searchModal .searchInput input::-moz-placeholder {
+#searchModal .searchInput input::-moz-placeholder,
+#whitepapersModal .searchInput input::-moz-placeholder {
 	font-style: italic;
 	opacity: 1;
 	color: #183153;
 }
 
-#searchModal .searchInput input:-ms-input-placeholder {
+#searchModal .searchInput input:-ms-input-placeholder,
+#whitepapersModal .searchInput input:-ms-input-placeholder {
 	font-style: italic;
 	opacity: 1;
 	color: #183153;
 }
 
-#searchModal .searchInput input::-ms-input-placeholder {
+#searchModal .searchInput input::-ms-input-placeholder,
+#whitepapersModal .searchInput input::-ms-input-placeholder {
 	font-style: italic;
 	opacity: 1;
 	color: #183153;
 }
 
-#searchModal .searchInput input::placeholder {
+#searchModal .searchInput input::placeholder,
+#whitepapersModal .searchInput input::placeholder {
 	font-style: italic;
 	opacity: 1;
 	color: #183153;
 }
 
-#searchModal .searchInput .btn {
+#searchModal .searchInput .btn,
+#whitepapersModal .searchInput .btn {
 	font-size: 26px;
 	margin-left: -20px;
 	padding: 18px 18px 17px;
@@ -5366,6 +5376,14 @@ fieldset[disabled] .datepicker table tr td span.active:hover:hover {
 
 }
 
+@media (min-width: 991px) {
+
+.modal .modal-lg {
+	max-width: 900px;
+}
+
+}
+
 @media (max-width: 1199px) {
 
 .text-size-xxxxlarge {
@@ -5940,15 +5958,18 @@ h4,
 	left: auto;
 }
 
-#searchModal .modal-container {
+#searchModal .modal-container,
+#whitepapersModal .modal-container {
 	padding: 30px 20px;
 }
 
-#searchModal .searchInput {
+#searchModal .searchInput,
+#whitepapersModal .searchInput {
 	margin-left: 0;
 }
 
-#searchModal .searchInput .triangle-left {
+#searchModal .searchInput .triangle-left,
+#whitepapersModal .searchInput .triangle-left {
 	top: 16px;
 	left: 0;
 	border-top: 10px solid transparent;
@@ -5956,12 +5977,14 @@ h4,
 	border-bottom: 10px solid transparent;
 }
 
-#searchModal .searchInput input {
+#searchModal .searchInput input,
+#whitepapersModal .searchInput input {
 	max-width: calc(100% - 40px);
 	padding: 15px 20px 15px 15px;
 }
 
-#searchModal .searchInput .btn {
+#searchModal .searchInput .btn,
+#whitepapersModal .searchInput .btn {
 	font-size: 23px;
 	margin-left: -20px;
 	padding: 14px;
@@ -6194,7 +6217,8 @@ p,
 	padding-bottom: 50px;
 }
 
-#searchModal .dog {
+#searchModal .dog,
+#whitepapersModal .dog {
 	position: absolute;
 	top: -50px;
 	left: -100px;
@@ -6204,20 +6228,24 @@ p,
 	opacity: .3;
 }
 
-#searchModal .modal-container {
+#searchModal .modal-container,
+#whitepapersModal .modal-container {
 	overflow: hidden;
 }
 
-#searchModal .searchInput .triangle-left {
+#searchModal .searchInput .triangle-left,
+#whitepapersModal .searchInput .triangle-left {
 	display: none;
 }
 
-#searchModal .searchInput input {
+#searchModal .searchInput input,
+#whitepapersModal .searchInput input {
 	font-size: 16px;
 	max-width: calc(100% - 35px);
 }
 
-#searchModal .searchInput .btn {
+#searchModal .searchInput .btn,
+#whitepapersModal .searchInput .btn {
 	font-size: 21px;
 }
 

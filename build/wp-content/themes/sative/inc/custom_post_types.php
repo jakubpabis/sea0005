@@ -420,3 +420,68 @@ function add_testimonial_taxonomies()
 }
 add_action( 'init', 'add_testimonial_taxonomies', 0 );
 add_action( 'init', 'custom_post_type_testimonials', 0 );
+
+
+function custom_post_type_whitepapers_users() 
+{
+ 
+// Set UI labels for Custom Post Type
+$labels = array(
+    'name'                => _x( 'Whitepapers Users', 'Post Type General Name', 'sative' ),
+    'singular_name'       => _x( 'Whitepapers Users', 'Post Type Singular Name', 'sative' ),
+    'menu_name'           => __( 'Whitepapers Users', 'sative' ),
+    'parent_item_colon'   => __( 'Parent Whitepapers Users', 'sative' ),
+    'all_items'           => __( 'All Whitepapers Users', 'sative' ),
+    'view_item'           => __( 'View Whitepapers Users', 'sative' ),
+    'add_new_item'        => __( 'Add New Whitepapers Users', 'sative' ),
+    'add_new'             => __( 'Add New', 'sative' ),
+    'edit_item'           => __( 'Edit Whitepapers Users', 'sative' ),
+    'update_item'         => __( 'Update Whitepapers Users', 'sative' ),
+    'search_items'        => __( 'Search Whitepapers Users', 'sative' ),
+    'not_found'           => __( 'Not Found', 'sative' ),
+    'not_found_in_trash'  => __( 'Not found in Trash', 'sative' ),
+);
+    
+// Set other options for Custom Post Type
+$args = array(
+    'label'               => __( 'whitepapers-users', 'sative' ),
+    'description'         => __( 'Whitepapers Users', 'sative' ),
+    'labels'              => $labels,
+    // Features this CPT supports in Post Editor
+    'supports'            => array( 'title', 'custom-fields' ),
+    // You can associate this CPT with a taxonomy or custom taxonomy. 
+    'taxonomies'          => array(),
+    /* A hierarchical CPT is like Pages and can have
+    * Parent and child items. A non-hierarchical CPT
+    * is like Posts.
+    */ 
+    'hierarchical'        => false,
+    'public'              => false,
+    'show_ui'             => true,
+    'show_in_menu'        => true,
+    'show_in_nav_menus'   => false,
+    'show_in_admin_bar'   => false,
+    'menu_position'       => 20,
+    'menu_icon'           => 'dashicons-groups',
+    'can_export'          => true,
+    'has_archive'         => false,
+    'exclude_from_search' => true,
+    'publicly_queryable'  => false,
+    'capability_type'     => 'post',
+);   
+// Registering your Custom Post Type
+register_post_type( 'whitepapers-users', $args );
+}
+/* Hook into the 'init' action so that the function
+* Containing our post type registration is not 
+* unnecessarily executed. 
+*/
+add_action( 'init', 'custom_post_type_whitepapers_users', 0 );
+
+// function force_type_private($post)
+// {
+//     if ($post['post_type'] == 'whitepapers-users')
+//     $post['post_status'] = 'private';
+//     return $post;
+// }
+// add_filter('wp_insert_post_data', 'force_type_private');

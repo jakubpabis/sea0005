@@ -30,6 +30,14 @@
 
     }
 
+    .modal-lg {
+
+        @media (min-width: 991px){
+            max-width: 900px;
+        }
+
+    }
+
     .close {
         background-color: white;
         position: absolute;
@@ -154,7 +162,8 @@
 
 }
 
-#searchModal {
+#searchModal,
+#whitepapersModal {
 
     .dog {
         margin-bottom: -22%;
