@@ -45,6 +45,9 @@ get_header(); ?>
 					endif;
 
 					if(get_field('file_download')) :
+						if(get_field('button')) :
+							echo '<br/>';
+						endif;
 						echo '<a href="javascript:void(0)" data-toggle="modal" data-target="#whitepapersModal" class="btn btn__default yellow">'.pll__("Download").' '.get_field('file_download')['title'].'</a>'; 
 					endif;
 
