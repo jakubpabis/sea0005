@@ -99,7 +99,12 @@ function sendEmail()
     }
     add_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
     
-    $email = wp_mail( $_POST['app-email'], pll__('Job application sucessful'), appEmailTemplate() );
+    $to = $_POST['app-email'];
+    $subject = pll__('Job application sucessful');
+    $body = appEmailTemplate();
+    $headers = array('Content-Type: text/html; charset=UTF-8');
+
+    $email = wp_mail( $to, $subject, $body, $headers  );
 
     if($email) {
         $message = 'success';
