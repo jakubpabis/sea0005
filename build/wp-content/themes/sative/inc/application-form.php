@@ -82,21 +82,34 @@ function add_to_queue(){
     // echo '</pre>';
     // var_dump($person_response->status);
 
+    if( $person_response->status === 'ok' ) {
+        sendEmail();
+    } else {
+        $message = 'failed';
+    }
+
+    return $message;
+
+}
+
+function sendEmail()
+{
     function wpdocs_set_html_mail_content_type() {
         return 'text/html';
     }
     add_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
+    
+    $email = wp_mail( $_POST['app-email'], pll__('Job application sucessful'), appEmailTemplate() );
 
-    if( $person_response->status === 'ok' ) {
+    if($email) {
         $message = 'success';
-        wp_mail( $_POST['app-email'], pll__('Job application sucessful'), appEmailTemplate() );
     } else {
         $message = 'failed';
     }
+
     remove_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
 
     return $message;
-
 }
 
 function appEmailTemplate()
@@ -179,7 +192,9 @@ function appEmailTemplate()
 
 function sative_application_form_submit() {
 
-    $message = add_to_queue();
+    //$message = add_to_queue();
+
+    $message = sendEmail();
 
     $redirect = '/app-success?ref='.$_POST['_wp_http_referer'].'&message='.$message;
     header("Location: $redirect");
