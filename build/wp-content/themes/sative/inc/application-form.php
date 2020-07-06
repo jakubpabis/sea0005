@@ -45,7 +45,7 @@ function add_to_queue(){
 
         'sources' => array(
             array(
-                'parent_source_id' => 'test.com', // Example: Website
+                'parent_source_id' => 'Website SIR', // Example: Website
                 'name' => 'Applicant' // Example: Applicant
             ),
         ),
@@ -58,7 +58,7 @@ function add_to_queue(){
             'id' => isset( $_POST['app-jobid'] ) ? $_POST['app-jobid'] : 188,
         ),
 
-        'urls' => array('https://www.example.com/some/url/123'),
+        //'urls' => array('https://www.example.com/some/url/123'),
 
     );
 
@@ -73,11 +73,7 @@ function add_to_queue(){
         $cv_name = basename( $_FILES['app-cv']['name'] );
         $data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
 
-        //$data['cv'] = '@'.realpath( $_FILES['app-cv']['tmp_name'] );
     }
-    
-    // $data['files'] = array('@'.realpath('./my_letter.pdf'));
-    // $data['profile_picture'] = '@'.realpath('./photo.png');
 
     $person_response = postRequest('people/add_to_queue', $api_key, $api_secret, $data);
 
