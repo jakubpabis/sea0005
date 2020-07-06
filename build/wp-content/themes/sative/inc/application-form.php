@@ -190,6 +190,92 @@ function appEmailTemplate()
                     </table>
                     <hr />
                     <p>This is an automatic message. Please do not reply to it.</p>
+                    <table style="max-width: 320px; width: 100%; margin: 0 15px;" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <hr style="width: 190px; margin: 10px 0 2px 0;"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="https://www.searchitrecruitment.com">
+                                        <img id="TemplateLogo" data-class="external" src="https://www.searchitrecruitment.com/themes/searchit/assets/img/logo.png" alt="Search It Recruitment" style="display: block; margin-left: -15px; max-width: 220px;" width="220px">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <hr style="width: 190px; margin: 2px 0 10px 0;"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                            <tr>
+                                                <td style="font-family: Trebuchet MS; font-size: 9pt; padding: 1px 0;" width="70px">
+                                                    <font style="color: #333333; font-size: 9pt; font-family: Trebuchet MS">
+                                                        <strong>Phone:</strong>
+                                                    </font>
+                                                </td>
+                                                <td style="font-family: Trebuchet MS; font-size: 9pt;">
+                                                    <font style="color: #333333; font-size: 9pt; font-family: Trebuchet MS">
+                                                        <a href="tel:+31(0)207782393" style="color: #425CBB; text-decoration: none;">
+                                                            +31 (0) 20 - 7782393
+                                                        </a>
+                                                    </font>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: Trebuchet MS; font-size: 9pt; padding: 1px 0;" width="70px">
+                                                    <font style="color: #333333; font-size: 9pt; font-family: Trebuchet MS">
+                                                        <strong>Email:</strong>
+                                                    </font>
+                                                </td>
+                                                <td style="font-family: Trebuchet MS; font-size: 9pt;">
+                                                    <font style="color: #333333; font-size: 9pt; font-family: Trebuchet MS">
+                                                        <a href="mailto:info@searchitrecruitment.com" style="color: #425CBB; text-decoration: none;">
+                                                            info@searchitrecruitment.com
+                                                        </a>
+                                                    </font>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: Trebuchet MS; font-size: 9pt; padding: 1px 0;" width="70px">
+                                                    <font style="color: #333333; font-size: 9pt; font-family: Trebuchet MS">
+                                                        <strong>Website:</strong>
+                                                    </font>
+                                                </td>
+                                                <td style="font-family: Trebuchet MS; font-size: 9pt;">
+                                                    <font style="color: #333333; font-size: 9pt; font-family: Trebuchet MS">
+                                                        <a href="https://www.searchitrecruitment.com" style="color: #425CBB; text-decoration: none;">
+                                                            www.searchitrecruitment.com
+                                                        </a>
+                                                    </font>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: Trebuchet MS; font-size: 9pt; padding: 10px 0 1px 0;" width="70px">
+                                                    <font style="color: #333333; font-size: 9pt; font-family: Trebuchet MS">
+                                                        <strong>Address:<br/><br/></strong>
+                                                    </font>
+                                                </td>
+                                                <td style="font-family: Trebuchet MS; font-size: 9pt; padding: 10px 0 1px 0;">
+                                                    <font style="color: #333333; font-size: 9pt; font-family: Trebuchet MS">
+                                                        <a href="https://www.google.nl/maps/place/Search+It+Recruitment/@52.3214064,4.8767044,17z/data=!3m1!4b1!4m5!3m4!1s0x47c60a6c6573e861:0x4fb3a938d9044260!8m2!3d52.3214064!4d4.8788931" style="color: #425CBB; text-decoration: none;">
+                                                            Laan van Kronenburg 14, 1183 AS, Amstelveen, Amsterdam Area, Netherlands
+                                                        </a>
+                                                    </font>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
                 </body>
             </html>';
     return $body;
