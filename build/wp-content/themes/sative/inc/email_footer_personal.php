@@ -29,6 +29,19 @@
             </td>
         </tr>
         <tr>
+            <td style="padding-bottom: 16px;">
+                <a href="https://sea0005.sative.co.uk/nl/vacatures/?job-category%5B%5D=it" style="display: inline-block; margin: 0;">
+                    <img data-class="external" src="../assets/img/email-it.png" alt="Search X Recruitment" style="display: inline-block; max-height: 32px;" height="32px">
+                </a>
+                <a href="https://sea0005.sative.co.uk/nl/vacatures/?job-category%5B%5D=sales" style="display: inline-block; margin: 0;">
+                    <img data-class="external" src="../assets/img/email-sales.png" alt="Search X Recruitment" style="display: inline-block; max-height: 32px;" height="32px">
+                </a>
+                <a href="https://sea0005.sative.co.uk/nl/vacatures/?job-category%5B%5D=marketing" style="display: inline-block; margin: 0;">
+                    <img data-class="external" src="../assets/img/email-marketing.png" alt="Search X Recruitment" style="display: inline-block; max-height: 32px;" height="32px">
+                </a>
+            </td>
+        </tr>
+        <tr>
             <td>
                 <table cellspacing="0" cellpadding="0" border="0">
                     <tbody>
@@ -132,6 +145,16 @@
                         </tr>
                     </tbody>
                 </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="font-family: Helvetica; font-size: 9pt; padding: 10px 0 2px 0;">
+                <font style="color: #183153; font-size: 9pt; font-family: Helvetica">
+                    <strong>Schedule a meeting with me:<br/></strong>
+                    <a href="https://calendly.com/ernstjan/30min/" style="color: #183153; text-decoration: none;">
+                        https://calendly.com/ernstjan/30min/
+                    </a>
+                </font>
             </td>
         </tr>
         
