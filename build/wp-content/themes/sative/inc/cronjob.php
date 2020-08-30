@@ -233,6 +233,8 @@ function jobList()
     );
     $posts = new WP_Query( $args );
 
+    echo '<br/><br/>Listing jobs in DB<br/>';
+
     if ( $posts->have_posts() ) :
         while ( $posts->have_posts() ) : $posts->the_post();
             $id = intval( get_field( 'job_id', get_the_ID() ) );
@@ -405,25 +407,25 @@ function insertCategoriesRec($job_categories, $postID, $skillArr)
         $skillGroup = 'Skill '.$skill;
 
         foreach( $job_categories as $category ) {
-            echo has_term($category, 'job-category', get_post($postID));
+            //echo has_term($category, 'job-category', get_post($postID));
             if( strpos( $category['group'], $skillGroup ) != false && !has_term($category, 'job-category', get_post($postID)) ) {
 
                 $skills[] = strval($category);
 
                 $slug = slugify($skill);
-                echo $slug.' - ';
+                //echo $slug.' - ';
 
                 $parent = get_term_by('slug', $slug, 'job-category');
                 if( is_object( $parent ) ) {
                     $parentID = $parent->term_id;
-                    echo $parentID.' | ';
+                    //echo $parentID.' | ';
                 } else {
-                    var_dump( $parent );
+                    //var_dump( $parent );
                 }
                 
                 $term = get_term_by('name', strval($category), 'job-category');
                 if( is_object( $term ) ) {
-                    echo '<br/>term ID:'.$term->term_id.'<br/>';
+                    //echo '<br/>term ID:'.$term->term_id.'<br/>';
                     if($term !== false) {
                         wp_insert_term(strval($category), 'job-category', array('parent' => $parentID));
                         $term = get_term_by('name', strval($category), 'job-category');
@@ -431,7 +433,7 @@ function insertCategoriesRec($job_categories, $postID, $skillArr)
                     $termID = $term->term_id;
                     wp_set_post_terms($postID, $termID, 'job-category', true);
                 } else {
-                    var_dump( $term) ;
+                    //var_dump( $term) ;
                 }
 
             }

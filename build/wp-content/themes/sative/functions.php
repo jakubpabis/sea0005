@@ -632,7 +632,7 @@ add_action( 'admin_post_whitepapers_form', 'sative_whitepapers_form_submit' );
 add_filter( 'manage_jobs_posts_columns', 'set_custom_edit_jobs_columns' );
 function set_custom_edit_jobs_columns($columns) {
     $columns['jobid'] = __( 'Job ID', 'sative' );
-    //$columns['publisher'] = __( 'Publisher', 'your_text_domain' );
+    $columns['slug'] = __( 'Slug', 'sative' );
 
     return $columns;
 }
@@ -646,9 +646,9 @@ function custom_jobs_column( $column, $post_id ) {
             echo intval( get_field( 'job_id', $post_id ) ); 
             break;
 
-        // case 'publisher' :
-        //     echo get_post_meta( $post_id , 'publisher' , true ); 
-        //     break;
+        case 'slug' :
+            echo get_post_field( 'post_name', $post_id );
+            break;
 
     }
 }
@@ -656,7 +656,8 @@ function custom_jobs_column( $column, $post_id ) {
 add_filter( 'manage_edit-jobs_sortable_columns', 'my_sortable_jobs_column' );
 function my_sortable_jobs_column( $columns ) {
     $columns['jobid'] = __( 'Job ID', 'sative' );
- 
+    $columns['slug'] = __( 'Slug', 'sative' );
+    
     //To make a column 'un-sortable' remove it from the array
     //unset($columns['date']);
  
