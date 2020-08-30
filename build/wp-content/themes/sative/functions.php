@@ -590,6 +590,10 @@ require_once get_template_directory() . '/inc/cronjob.php';
 
 require_once get_template_directory() . '/inc/fetchdata.php';
 
+if ( ! wp_next_scheduled( 'sative_jobs_cron_hook' ) ) {
+    wp_schedule_event( time(), 'hourly', 'sative_jobs_cron_hook' );
+}
+
 
 function template_chooser($template)   
 {    
