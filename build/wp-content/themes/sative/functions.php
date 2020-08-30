@@ -591,7 +591,7 @@ require_once get_template_directory() . '/inc/cronjob.php';
 require_once get_template_directory() . '/inc/fetchdata.php';
 
 add_action( 'sative_jobs_cron_hook', 'xmlRead' );
-
+wp_clear_scheduled_hook( 'sative_jobs_cron_hook' );
 
 function template_chooser($template)   
 {    
