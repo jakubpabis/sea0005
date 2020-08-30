@@ -626,3 +626,52 @@ function sative_whitepapers_form_submit() {
 }
 add_action( 'admin_post_nopriv_whitepapers_form', 'sative_whitepapers_form_submit' );
 add_action( 'admin_post_whitepapers_form', 'sative_whitepapers_form_submit' );
+
+
+// Add the custom columns to the book post type:
+add_filter( 'manage_jobs_posts_columns', 'set_custom_edit_jobs_columns' );
+function set_custom_edit_jobs_columns($columns) {
+    $columns['jobid'] = __( 'Job ID', 'sative' );
+    //$columns['publisher'] = __( 'Publisher', 'your_text_domain' );
+
+    return $columns;
+}
+
+// Add the data to the custom columns for the book post type:
+add_action( 'manage_jobs_posts_custom_column' , 'custom_jobs_column', 10, 2 );
+function custom_jobs_column( $column, $post_id ) {
+    switch ( $column ) {
+
+        case 'jobid' :
+            echo intval( get_field( 'job_id', $post_id ) ); 
+            break;
+
+        // case 'publisher' :
+        //     echo get_post_meta( $post_id , 'publisher' , true ); 
+        //     break;
+
+    }
+}
+
+add_filter( 'manage_edit-jobs_sortable_columns', 'my_sortable_jobs_column' );
+function my_sortable_jobs_column( $columns ) {
+    $columns['jobid'] = __( 'Job ID', 'sative' );
+ 
+    //To make a column 'un-sortable' remove it from the array
+    //unset($columns['date']);
+ 
+    return $columns;
+}
+
+add_action( 'pre_get_posts', 'my_jobs_orderby' );
+function my_jobs_orderby( $query ) {
+    if( ! is_admin() )
+        return;
+ 
+    $orderby = $query->get( 'orderby');
+ 
+    if( 'Job ID' == $orderby ) {
+        $query->set('meta_key', 'job_id');
+        $query->set('orderby', 'meta_value_num');
+    }
+}
