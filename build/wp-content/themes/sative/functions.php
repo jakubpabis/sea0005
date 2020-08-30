@@ -591,9 +591,6 @@ require_once get_template_directory() . '/inc/cronjob.php';
 require_once get_template_directory() . '/inc/fetchdata.php';
 
 add_action( 'sative_jobs_cron_hook', 'xmlRead' );
-if ( ! wp_next_scheduled( 'sative_jobs_cron_hook' ) ) {
-    wp_schedule_event( time(), '10minutes', 'sative_jobs_cron_hook' );
-}
 
 
 function template_chooser($template)   
