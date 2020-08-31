@@ -932,6 +932,7 @@ a {
 }
 
 a:hover {
+	text-decoration: underline;
 	color: #ec6278;
 }
 
