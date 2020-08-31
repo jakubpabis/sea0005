@@ -40,29 +40,40 @@ function slideTo(el)
 	}, 500);
 }
 
+function spaceFromBottom(el)
+{
+	var eTop = $(el).offset().top; //get the offset top of the element
+	//console.log(eTop - $(window).scrollTop()); //position of the ele w.r.t window
+	if(eTop - $(window).scrollTop() < $(window).height() + 300){
+		return true;
+	} else {
+		return false;
+	}
+}
+
 function lazyImages()
 {
 
 	$('.lazyset').each(function() {
-		if($(this).visible( true ) && !$(this).hasClass('loaded')) {
+		if(spaceFromBottom($(this)) && !$(this).hasClass('loaded')) {
 			$(this).attr('srcset', $(this).data('srcset')).removeAttr('data-srcset').addClass('loaded');
 		}
 	});
 	$('.lazy').each(function() {
-		if($(this).visible( true ) && !$(this).hasClass('loaded')) {
+		if(spaceFromBottom($(this)) && !$(this).hasClass('loaded')) {
 			$(this).attr('src', $(this).data('src')).removeAttr('data-src').addClass('loaded');
 		}	
 	});
 	
-	$(window).on('scroll', function() {
+	$(window).on('scroll resize', function() {
 	
 		$('.lazyset').each(function() {
-			if($(this).visible( true ) && !$(this).hasClass('loaded')) {
+			if(spaceFromBottom($(this)) && !$(this).hasClass('loaded')) {
 				$(this).attr('srcset', $(this).data('srcset')).removeAttr('data-srcset').addClass('loaded');
 			}
 		});
 		$('.lazy').each(function() {
-			if($(this).visible( true ) && !$(this).hasClass('loaded')) {
+			if(spaceFromBottom($(this)) && !$(this).hasClass('loaded')) {
 				$(this).attr('src', $(this).data('src')).removeAttr('data-src').addClass('loaded');
 			}	
 		});
