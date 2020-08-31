@@ -21,29 +21,22 @@
                     <span class="text-size-small text500">
                         <?= pll_e( 'Apply with:' ); ?>
                     </span>
-                    <div class="row justify-content-md-start justify-content-between align-items-center pt-2">
+                    <div class="row justify-content-between align-items-center">
                         <?php global $wp; ?>
-                        <div class="col-auto">
-                            <button type="button" class="btn btn__small navy icon full" onclick="myFacebookLogin()">
+                            <button type="button" class="btn btn__small navy icon full m-2" onclick="myFacebookLogin()">
                                 <i class="fab fa-facebook-square"></i>
                                 <span>Facebook</span>
                             </button>
-                        </div>
-                        <div class="col-auto">
-                            <button type="button" class="btn btn__small navy icon full" onclick="myLinkedinLogin( '<?= siteURL().'userdatafetch'; ?>', '<?= home_url( $wp->request ) ?>' )">
+                            <button type="button" class="btn btn__small navy icon full m-2" onclick="myLinkedinLogin( '<?= siteURL().'userdatafetch'; ?>', '<?= home_url( $wp->request ) ?>' )">
                                 <i class="fab fa-linkedin"></i>
                                 <span>LinkedIn</span>
                             </button>
-                        </div>
-                        <div class="col-auto">
-                            <button type="button" class="btn btn__small navy icon full">
+                            <button type="button" class="btn btn__small navy icon full m-2">
                                 <div class="g-signin2" data-onsuccess="onSignIn"></div>
                                 <i class="fab fa-google"></i>
                                 <span>Google</span>
                             </button>
-                        </div>
-                        <div class="col-auto">
-                            <button type="button" class="btn btn__small navy icon full" onclick="myGithubLogin('<?= home_url( $wp->request ) ?>')">
+                            <button type="button" class="btn btn__small navy icon full m-2" onclick="myGithubLogin('<?= home_url( $wp->request ) ?>')">
                                 <i class="fab fa-github"></i>
                                 <span>Github</span>
                             </button>
