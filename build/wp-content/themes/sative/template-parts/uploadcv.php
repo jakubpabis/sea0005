@@ -23,20 +23,20 @@
                     </span>
                     <div class="row justify-content-between align-items-center">
                         <?php global $wp; ?>
-                        <button type="button" class="btn btn__small navy icon full m-2 px-3" onclick="myFacebookLogin()">
+                        <button type="button" class="btn btn__small navy icon full my-2 mx-3 px-3" onclick="myFacebookLogin()">
                             <i class="fab fa-facebook-square"></i>
                             <span>Facebook</span>
                         </button>
-                        <button type="button" class="btn btn__small navy icon full m-2 px-3" onclick="myLinkedinLogin( '<?= siteURL().'userdatafetch'; ?>', '<?= home_url( $wp->request ) ?>' )">
+                        <button type="button" class="btn btn__small navy icon full my-2 mx-3 px-3" onclick="myLinkedinLogin( '<?= siteURL().'userdatafetch'; ?>', '<?= home_url( $wp->request ) ?>' )">
                             <i class="fab fa-linkedin"></i>
                             <span>LinkedIn</span>
                         </button>
-                        <button type="button" class="btn btn__small navy icon full m-2 px-3">
+                        <button type="button" class="btn btn__small navy icon full my-2 mx-3 px-3">
                             <div class="g-signin2" data-onsuccess="onSignIn"></div>
                             <i class="fab fa-google"></i>
                             <span>Google</span>
                         </button>
-                        <button type="button" class="btn btn__small navy icon full m-2 px-3" onclick="myGithubLogin('<?= home_url( $wp->request ) ?>')">
+                        <button type="button" class="btn btn__small navy icon full my-2 mx-3 px-3" onclick="myGithubLogin('<?= home_url( $wp->request ) ?>')">
                             <i class="fab fa-github"></i>
                             <span>Github</span>
                         </button>
