@@ -21,7 +21,7 @@
                     <span class="text-size-small text500">
                         <?= pll_e( 'Apply with:' ); ?>
                     </span>
-                    <div class="row justify-content-between align-items-center pt-2">
+                    <div class="row justify-content-md-start justify-content-between align-items-center pt-2">
                         <?php global $wp; ?>
                         <div class="col-auto">
                             <button type="button" class="btn btn__small navy icon full" onclick="myFacebookLogin()">
