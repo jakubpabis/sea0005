@@ -21,22 +21,22 @@
                     <span class="text-size-small text500">
                         <?= pll_e( 'Apply with:' ); ?>
                     </span>
-                    <div class="row justify-content-sm-between align-items-center">
+                    <div class="row social-login">
                         <?php global $wp; ?>
-                        <button type="button" class="btn btn__small navy icon full my-2 mx-3 px-3" onclick="myFacebookLogin()">
+                        <button type="button" class="btn btn__small navy icon full" onclick="myFacebookLogin()">
                             <i class="fab fa-facebook-square"></i>
                             <span>Facebook</span>
                         </button>
-                        <button type="button" class="btn btn__small navy icon full my-2 mx-3 px-3" onclick="myLinkedinLogin( '<?= siteURL().'userdatafetch'; ?>', '<?= home_url( $wp->request ) ?>' )">
+                        <button type="button" class="btn btn__small navy icon full" onclick="myLinkedinLogin( '<?= siteURL().'userdatafetch'; ?>', '<?= home_url( $wp->request ) ?>' )">
                             <i class="fab fa-linkedin"></i>
                             <span>LinkedIn</span>
                         </button>
-                        <button type="button" class="btn btn__small navy icon full my-2 mx-3 px-3">
+                        <button type="button" class="btn btn__small navy icon full">
                             <div class="g-signin2" data-onsuccess="onSignIn"></div>
                             <i class="fab fa-google"></i>
                             <span>Google</span>
                         </button>
-                        <button type="button" class="btn btn__small navy icon full my-2 mx-3 px-3" onclick="myGithubLogin('<?= home_url( $wp->request ) ?>')">
+                        <button type="button" class="btn btn__small navy icon full" onclick="myGithubLogin('<?= home_url( $wp->request ) ?>')">
                             <i class="fab fa-github"></i>
                             <span>Github</span>
                         </button>

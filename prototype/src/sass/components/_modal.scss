@@ -64,6 +64,40 @@
 
 #uploadCVModal {
 
+    .social-login {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px;
+
+        @media(max-width: 1199px) {
+            margin: 0 -7px;
+        }
+
+        .btn {
+            flex-basis: calc(25% - 20px);
+            max-width: calc(25% - 20px);
+            margin: 7px 10px;
+
+            @media(max-width: 1199px) {
+                flex-basis: calc(25% - 14px);
+                max-width: calc(25% - 14px);
+                margin: 7px;
+            }
+
+            @media(max-width: 991px) {
+                flex-basis: calc(25% - 14px);
+                max-width: calc(25% - 14px);
+            }
+
+            @media(max-width: 767px) {
+                flex-basis: calc(50% - 14px);
+                max-width: calc(50% - 14px);
+            }
+
+        }
+
+    }
+
     form {
 
         .pretty {

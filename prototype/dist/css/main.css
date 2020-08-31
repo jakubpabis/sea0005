@@ -2025,6 +2025,18 @@ i {
 	box-shadow: none !important;
 }
 
+#uploadCVModal .social-login {
+	display: flex;
+	margin: 0 -10px;
+	flex-wrap: wrap;
+}
+
+#uploadCVModal .social-login .btn {
+	max-width: calc(25% - 20px);
+	margin: 7px 10px;
+	flex-basis: calc(25% - 20px);
+}
+
 #uploadCVModal form .pretty {
 	margin-right: 0;
 	white-space: normal;
@@ -5453,6 +5465,16 @@ h3,
 	padding: 20px;
 }
 
+#uploadCVModal .social-login {
+	margin: 0 -7px;
+}
+
+#uploadCVModal .social-login .btn {
+	max-width: calc(25% - 14px);
+	margin: 7px;
+	flex-basis: calc(25% - 14px);
+}
+
 .jobs__list-item .job-title .icon {
 	margin-top: 5px;
 }
@@ -5628,6 +5650,11 @@ p,
 .testimonials__candidates-img,
 .testimonials__clients-img {
 	max-height: 360px;
+}
+
+#uploadCVModal .social-login .btn {
+	max-width: calc(25% - 14px);
+	flex-basis: calc(25% - 14px);
 }
 
 .jobs__list-filters {
@@ -5987,6 +6014,11 @@ h4,
 
 .modal .modal-dialog .modal-content .modal-container {
 	padding: 35px 50px;
+}
+
+#uploadCVModal .social-login .btn {
+	max-width: calc(50% - 14px);
+	flex-basis: calc(50% - 14px);
 }
 
 #searchModal .modal-container,
