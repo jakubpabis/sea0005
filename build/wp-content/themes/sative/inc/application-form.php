@@ -208,7 +208,7 @@ function sendEmailCV()
     
     $to = $_POST['cv-email'];
     $subject = pll__('CV application sucessful');
-    $body = appEmailTemplate();
+    $body = cvEmailTemplate();
     $headers = array('Content-Type: text/html; charset=UTF-8');
 
     $email = wp_mail( $to, $subject, $body, $headers  );
@@ -362,8 +362,6 @@ function appEmailTemplate()
 
 function cvEmailTemplate()
 {
-    $job_link = 'https://' . $_SERVER['SERVER_NAME'] . $_POST['_wp_http_referer'];
-    $job_title = get_the_title( $_POST['postid'] );
     $body = '<html>
                 <head>
                     <style type="text/css" media="screen">
