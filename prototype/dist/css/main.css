@@ -931,6 +931,11 @@ a {
 	outline: none;
 }
 
+a:hover {
+	text-decoration: none;
+	color: #ec6278;
+}
+
 ul {
 	margin: 0;
 	list-style-image: url('../img/cubecrossUL.svg');
@@ -1396,6 +1401,11 @@ i {
 	background-color: white;
 	-webkit-clip-path: polygon(0% 15px, 15px 0%, calc(100% - 15px) 0%, 100% 15px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0% calc(100% - 15px));
 	clip-path: polygon(0% 15px, 15px 0%, calc(100% - 15px) 0%, 100% 15px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0% calc(100% - 15px));
+}
+
+.header__home .text h1 a:hover {
+	text-decoration: none;
+	color: inherit;
 }
 
 .header__home .text h1 span {

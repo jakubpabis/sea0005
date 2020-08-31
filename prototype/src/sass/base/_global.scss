@@ -49,6 +49,12 @@ a {
 	color: inherit;
 	outline: none;
 	border: none;
+
+	&:hover {
+		color: $color-pink;
+		text-decoration: none;
+	}
+
 }
 
 ul {
