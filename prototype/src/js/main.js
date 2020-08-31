@@ -44,7 +44,7 @@ function spaceFromBottom(el)
 {
 	var eTop = $(el).offset().top; //get the offset top of the element
 	//console.log(eTop - $(window).scrollTop()); //position of the ele w.r.t window
-	if(eTop - $(window).scrollTop() < $(window).height() + 300){
+	if(eTop - $(window).scrollTop() < $(window).height() + 600){
 		return true;
 	} else {
 		return false;
