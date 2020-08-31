@@ -22,8 +22,8 @@ function userDataFetch()
     if( isset( $_GET['code'] ) && $apiType === 'github' ) {
         $headers = array('Accept' => 'application/json', );
         $options = [
-            'client_id' => '3b1b9252c021bbb321e0',
-            'client_secret' => '5afd24b3d4d0bf252e8034139ec6a00bc2682367',
+            'client_id' => '1f774f6bc988fd78b1ab',
+            'client_secret' => 'da40b854a4ea1272ae2023575c92d0937456ccb6',
             'code' => $_GET['code']
         ];
         $request = Requests::post('https://github.com/login/oauth/access_token', $headers, $options);
