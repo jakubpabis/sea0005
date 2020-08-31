@@ -5526,7 +5526,7 @@ p,
 	display: flex;
 	overflow-y: scroll;
 	flex-direction: column;
-	height: 100vh;
+	height: calc(100vh - 60px);
 	padding-top: 25px;
 	padding-bottom: 90px;
 	text-align: center;
@@ -6137,6 +6137,10 @@ p,
 
 .navigation__upper {
 	top: 48px;
+	height: calc(100vh - 48px);
+}
+
+.navigation__upper > .container {
 	height: calc(100vh - 48px);
 }
 

@@ -22,7 +22,7 @@
 
             > .container {
                 overflow-y: scroll;
-                height: 100vh;
+                height: calc(100vh - 60px);
                 padding-top: 25px;
                 padding-bottom: 90px;
                 display: flex;
@@ -36,6 +36,11 @@
         @media(max-width: 575px) {
             height: calc(100vh - 48px);
             top: 48px;
+
+            > .container {
+                height: calc(100vh - 48px);
+            }
+
         }
 
         &-menu {
