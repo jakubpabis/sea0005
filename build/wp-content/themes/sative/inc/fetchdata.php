@@ -45,7 +45,7 @@ function userDataFetch()
     } elseif ( isset( $_GET['code'] ) && $apiType === 'linkedin' ) {
         $headers = array('Accept' => 'application/json', );
         $redirect_uri = siteURL().'userdatafetch';
-        var_dump($redirect_uri);
+        //var_dump($redirect_uri);
         $options = [
             'grant_type' => 'authorization_code',
             'code' => $_GET['code'],
