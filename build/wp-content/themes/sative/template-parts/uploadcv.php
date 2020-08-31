@@ -21,7 +21,7 @@
                     <span class="text-size-small text500">
                         <?= pll_e( 'Apply with:' ); ?>
                     </span>
-                    <div class="row justify-content-between align-items-center">
+                    <div class="row justify-content-sm-between align-items-center">
                         <?php global $wp; ?>
                         <button type="button" class="btn btn__small navy icon full my-2 mx-3 px-3" onclick="myFacebookLogin()">
                             <i class="fab fa-facebook-square"></i>
