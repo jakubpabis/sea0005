@@ -91,9 +91,8 @@ function add_to_queue(){
         sendEmail();
     } else {
         $message = 'failed';
+        return $message;
     }
-
-    return $message;
 
 }
 
@@ -168,9 +167,8 @@ function add_to_queue_cv(){
         sendEmailCV();
     } else {
         $message = 'failed';
+        return $message;
     }
-
-    return $message;
 
 }
 
