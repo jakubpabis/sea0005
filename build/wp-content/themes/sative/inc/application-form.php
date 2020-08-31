@@ -88,11 +88,12 @@ function add_to_queue(){
     // var_dump($person_response->status);
 
     if( $person_response->status === 'ok' ) {
-        sendEmail();
+        $message = sendEmail();
     } else {
         $message = 'failed';
-        return $message;
     }
+
+    return $message;
 
 }
 
@@ -164,11 +165,13 @@ function add_to_queue_cv(){
     // var_dump($person_response->status);
 
     if( $person_response->status === 'ok' ) {
-        sendEmailCV();
+        $message = sendEmailCV();
     } else {
         $message = 'failed';
-        return $message;
+        
     }
+
+    return $message;
 
 }
 
