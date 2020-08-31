@@ -125,7 +125,7 @@ function appEmailTemplate()
                 <head>
                     <style type="text/css" media="screen">
                         * {
-                            font-family: Trebuchet MS!important;
+                            font-family: Helvetica!important;
                             font-size: 10pt;
                         }
                         td, tr, th, table {
@@ -276,8 +276,8 @@ function sative_application_form_submit() {
     //$message = add_to_queue();
 
     $message = sendEmail();
-
-    $redirect = '/app-success?ref='.$_POST['_wp_http_referer'].'&message='.$message;
+    $referer = remove_query_arg( 'message', wp_get_referer() );
+    $redirect = '/app-success?ref='.$referer.'&message='.$message;
     header("Location: $redirect");
 
 }
