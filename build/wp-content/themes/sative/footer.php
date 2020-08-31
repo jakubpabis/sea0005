@@ -24,16 +24,16 @@ $lang = pll_current_language();
                             </a>
                         </div>
                         <div class="col-lg-4 col-md-6 order-12 text-right">
-                            <a href="https://www.facebook.com/searchitrecruitment/" class="btn btn__social notched sea" target="_blank">
+                            <a href="https://www.facebook.com/searchxrecruitment" class="btn btn__social notched sea" target="_blank">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="https://www.instagram.com/searchitjobs/" class="btn btn__social notched sea" target="_blank">
+                            <a href="https://www.instagram.com/searchxrecruitment/" class="btn btn__social notched sea" target="_blank">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="https://www.linkedin.com/company/search-it-recruitment/" class="btn btn__social notched sea" target="_blank">
+                            <a href="https://www.linkedin.com/company/search-x-recruitment" class="btn btn__social notched sea" target="_blank">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="https://twitter.com/searchitjobs" class="btn btn__social notched sea" target="_blank">
+                            <a href="https://twitter.com/searchxjobs" class="btn btn__social notched sea" target="_blank">
                                 <i class="fab fa-twitter"></i>
                             </a>
                         </div>

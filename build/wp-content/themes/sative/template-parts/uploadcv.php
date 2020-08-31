@@ -24,26 +24,26 @@
                     <div class="row justify-content-between align-items-center pt-2">
                         <?php global $wp; ?>
                         <div class="col-auto">
-                            <button type="button" class="btn btn__small navy icon" onclick="myFacebookLogin()">
+                            <button type="button" class="btn btn__small navy icon full" onclick="myFacebookLogin()">
                                 <i class="fab fa-facebook-square"></i>
                                 <span>Facebook</span>
                             </button>
                         </div>
                         <div class="col-auto">
-                            <button type="button" class="btn btn__small navy icon" onclick="myLinkedinLogin('http://sea0005.local/userdatafetch', '<?= home_url( $wp->request ) ?>')">
+                            <button type="button" class="btn btn__small navy icon full" onclick="myLinkedinLogin( '<?= siteURL().'userdatafetch'; ?>', '<?= home_url( $wp->request ) ?>' )">
                                 <i class="fab fa-linkedin"></i>
                                 <span>LinkedIn</span>
                             </button>
                         </div>
                         <div class="col-auto">
-                            <button type="button" class="btn btn__small navy icon">
+                            <button type="button" class="btn btn__small navy icon full">
                                 <div class="g-signin2" data-onsuccess="onSignIn"></div>
                                 <i class="fab fa-google"></i>
                                 <span>Google</span>
                             </button>
                         </div>
                         <div class="col-auto">
-                            <button type="button" class="btn btn__small navy icon" onclick="myGithubLogin('<?= home_url( $wp->request ) ?>')">
+                            <button type="button" class="btn btn__small navy icon full" onclick="myGithubLogin('<?= home_url( $wp->request ) ?>')">
                                 <i class="fab fa-github"></i>
                                 <span>Github</span>
                             </button>

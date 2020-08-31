@@ -3,54 +3,54 @@
  
 function custom_post_type_jobs() 
 {
- 
-// Set UI labels for Custom Post Type
-$labels = array(
-    'name'                => _x( 'Jobs', 'Post Type General Name', 'sative' ),
-    'singular_name'       => _x( 'Job', 'Post Type Singular Name', 'sative' ),
-    'menu_name'           => __( 'Jobs', 'sative' ),
-    'parent_item_colon'   => __( 'Parent Job', 'sative' ),
-    'all_items'           => __( 'All Jobs', 'sative' ),
-    'view_item'           => __( 'View Job', 'sative' ),
-    'add_new_item'        => __( 'Add New Job', 'sative' ),
-    'add_new'             => __( 'Add New', 'sative' ),
-    'edit_item'           => __( 'Edit Job', 'sative' ),
-    'update_item'         => __( 'Update Job', 'sative' ),
-    'search_items'        => __( 'Search Job', 'sative' ),
-    'not_found'           => __( 'Not Found', 'sative' ),
-    'not_found_in_trash'  => __( 'Not found in Trash', 'sative' ),
-);
     
-// Set other options for Custom Post Type
-$args = array(
-    'label'               => __( 'jobs', 'sative' ),
-    'description'         => __( 'Jobs', 'sative' ),
-    'labels'              => $labels,
-    // Features this CPT supports in Post Editor
-    'supports'            => array( 'title', 'editor', 'revisions', 'custom-fields' ),
-    // You can associate this CPT with a taxonomy or custom taxonomy. 
-    'taxonomies'          => array( 'job-category', 'job-type', 'job-location' ),
-    /* A hierarchical CPT is like Pages and can have
-    * Parent and child items. A non-hierarchical CPT
-    * is like Posts.
-    */ 
-    'hierarchical'        => false,
-    'query_var'           => true,
-    'public'              => true,
-    'show_ui'             => true,
-    'show_in_menu'        => true,
-    'show_in_nav_menus'   => true,
-    'show_in_admin_bar'   => true,
-    'menu_position'       => 1,
-    'menu_icon'           => 'dashicons-media-document',
-    'can_export'          => true,
-    'has_archive'         => true,
-    'exclude_from_search' => false,
-    'publicly_queryable'  => true,
-    'capability_type'     => 'post',
-);   
-// Registering your Custom Post Type
-register_post_type( 'jobs', $args );
+    // Set UI labels for Custom Post Type
+    $labels = array(
+        'name'                => _x( 'Jobs', 'Post Type General Name', 'sative' ),
+        'singular_name'       => _x( 'Job', 'Post Type Singular Name', 'sative' ),
+        'menu_name'           => __( 'Jobs', 'sative' ),
+        'parent_item_colon'   => __( 'Parent Job', 'sative' ),
+        'all_items'           => __( 'All Jobs', 'sative' ),
+        'view_item'           => __( 'View Job', 'sative' ),
+        'add_new_item'        => __( 'Add New Job', 'sative' ),
+        'add_new'             => __( 'Add New', 'sative' ),
+        'edit_item'           => __( 'Edit Job', 'sative' ),
+        'update_item'         => __( 'Update Job', 'sative' ),
+        'search_items'        => __( 'Search Job', 'sative' ),
+        'not_found'           => __( 'Not Found', 'sative' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'sative' ),
+    );
+        
+    // Set other options for Custom Post Type
+    $args = array(
+        'label'               => __( 'jobs', 'sative' ),
+        'description'         => __( 'Jobs', 'sative' ),
+        'labels'              => $labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'editor', 'revisions', 'custom-fields' ),
+        // You can associate this CPT with a taxonomy or custom taxonomy. 
+        'taxonomies'          => array( 'job-category', 'job-type', 'job-location' ),
+        /* A hierarchical CPT is like Pages and can have
+        * Parent and child items. A non-hierarchical CPT
+        * is like Posts.
+        */ 
+        'hierarchical'        => false,
+        'query_var'           => true,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 1,
+        'menu_icon'           => 'dashicons-media-document',
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'post',
+    );   
+    // Registering your Custom Post Type
+    register_post_type( 'jobs', $args );
 }
 /* Hook into the 'init' action so that the function
 * Containing our post type registration is not 
@@ -63,54 +63,54 @@ add_action( 'init', 'custom_post_type_jobs', 25 );
 
 function custom_post_type_jobs_fulfilled() 
 {
- 
-// Set UI labels for Custom Post Type
-$labels = array(
-    'name'                => _x( 'Fulfilled Jobs', 'Post Type General Name', 'sative' ),
-    'singular_name'       => _x( 'Fulfilled Job', 'Post Type Singular Name', 'sative' ),
-    'menu_name'           => __( 'Fulfilled Jobs', 'sative' ),
-    'parent_item_colon'   => __( 'Parent Fulfilled Job', 'sative' ),
-    'all_items'           => __( 'All Fulfilled Jobs', 'sative' ),
-    'view_item'           => __( 'View Fulfilled Job', 'sative' ),
-    'add_new_item'        => __( 'Add New Fulfilled Job', 'sative' ),
-    'add_new'             => __( 'Add New', 'sative' ),
-    'edit_item'           => __( 'Edit Fulfilled Job', 'sative' ),
-    'update_item'         => __( 'Update Fulfilled Job', 'sative' ),
-    'search_items'        => __( 'Search Fulfilled Job', 'sative' ),
-    'not_found'           => __( 'Not Found', 'sative' ),
-    'not_found_in_trash'  => __( 'Not found in Trash', 'sative' ),
-);
     
-// Set other options for Custom Post Type
-$args = array(
-    'label'               => __( 'jobs-fulfilled', 'sative' ),
-    'description'         => __( 'Jobs Fulfilled', 'sative' ),
-    'labels'              => $labels,
-    // Features this CPT supports in Post Editor
-    'supports'            => array( 'title', 'editor', 'revisions', 'custom-fields' ),
-    // You can associate this CPT with a taxonomy or custom taxonomy. 
-    'taxonomies'          => array(),
-    /* A hierarchical CPT is like Pages and can have
-    * Parent and child items. A non-hierarchical CPT
-    * is like Posts.
-    */ 
-    'hierarchical'        => false,
-    'query_var'           => true,
-    'public'              => true,
-    'show_ui'             => true,
-    'show_in_menu'        => true,
-    'show_in_nav_menus'   => true,
-    'show_in_admin_bar'   => true,
-    'menu_position'       => 1,
-    'menu_icon'           => 'dashicons-media-document',
-    'can_export'          => true,
-    'has_archive'         => true,
-    'exclude_from_search' => true,
-    'publicly_queryable'  => true,
-    'capability_type'     => 'post',
-);   
-// Registering your Custom Post Type
-register_post_type( 'jobs-fulfilled', $args );
+    // Set UI labels for Custom Post Type
+    $labels = array(
+        'name'                => _x( 'Fulfilled Jobs', 'Post Type General Name', 'sative' ),
+        'singular_name'       => _x( 'Fulfilled Job', 'Post Type Singular Name', 'sative' ),
+        'menu_name'           => __( 'Fulfilled Jobs', 'sative' ),
+        'parent_item_colon'   => __( 'Parent Fulfilled Job', 'sative' ),
+        'all_items'           => __( 'All Fulfilled Jobs', 'sative' ),
+        'view_item'           => __( 'View Fulfilled Job', 'sative' ),
+        'add_new_item'        => __( 'Add New Fulfilled Job', 'sative' ),
+        'add_new'             => __( 'Add New', 'sative' ),
+        'edit_item'           => __( 'Edit Fulfilled Job', 'sative' ),
+        'update_item'         => __( 'Update Fulfilled Job', 'sative' ),
+        'search_items'        => __( 'Search Fulfilled Job', 'sative' ),
+        'not_found'           => __( 'Not Found', 'sative' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'sative' ),
+    );
+        
+    // Set other options for Custom Post Type
+    $args = array(
+        'label'               => __( 'jobs-fulfilled', 'sative' ),
+        'description'         => __( 'Jobs Fulfilled', 'sative' ),
+        'labels'              => $labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'editor', 'revisions', 'custom-fields' ),
+        // You can associate this CPT with a taxonomy or custom taxonomy. 
+        'taxonomies'          => array(),
+        /* A hierarchical CPT is like Pages and can have
+        * Parent and child items. A non-hierarchical CPT
+        * is like Posts.
+        */ 
+        'hierarchical'        => false,
+        'query_var'           => true,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 1,
+        'menu_icon'           => 'dashicons-media-document',
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => true,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'post',
+    );   
+    // Registering your Custom Post Type
+    register_post_type( 'jobs-fulfilled', $args );
 }
 /* Hook into the 'init' action so that the function
 * Containing our post type registration is not 
@@ -275,53 +275,53 @@ add_action( 'init', 'add_job_industry_taxonomies', 10 );
 
 function custom_post_type_team() 
 {
- 
-// Set UI labels for Custom Post Type
-$labels = array(
-    'name'                => _x( 'Team', 'Post Type General Name', 'sative' ),
-    'singular_name'       => _x( 'Team', 'Post Type Singular Name', 'sative' ),
-    'menu_name'           => __( 'Team', 'sative' ),
-    'parent_item_colon'   => __( 'Parent Team', 'sative' ),
-    'all_items'           => __( 'All Team', 'sative' ),
-    'view_item'           => __( 'View Team', 'sative' ),
-    'add_new_item'        => __( 'Add New Team', 'sative' ),
-    'add_new'             => __( 'Add New', 'sative' ),
-    'edit_item'           => __( 'Edit Team', 'sative' ),
-    'update_item'         => __( 'Update Team', 'sative' ),
-    'search_items'        => __( 'Search Team', 'sative' ),
-    'not_found'           => __( 'Not Found', 'sative' ),
-    'not_found_in_trash'  => __( 'Not found in Trash', 'sative' ),
-);
     
-// Set other options for Custom Post Type
-$args = array(
-    'label'               => __( 'team', 'sative' ),
-    'description'         => __( 'Team', 'sative' ),
-    'labels'              => $labels,
-    // Features this CPT supports in Post Editor
-    'supports'            => array( 'title', 'editor', 'custom-fields', 'thumbnail' ),
-    // You can associate this CPT with a taxonomy or custom taxonomy. 
-    'taxonomies'          => array(),
-    /* A hierarchical CPT is like Pages and can have
-    * Parent and child items. A non-hierarchical CPT
-    * is like Posts.
-    */ 
-    'hierarchical'        => false,
-    'public'              => true,
-    'show_ui'             => true,
-    'show_in_menu'        => true,
-    'show_in_nav_menus'   => true,
-    'show_in_admin_bar'   => true,
-    'menu_position'       => 20,
-    'menu_icon'           => 'dashicons-groups',
-    'can_export'          => true,
-    'has_archive'         => false,
-    'exclude_from_search' => true,
-    'publicly_queryable'  => true,
-    'capability_type'     => 'post',
-);   
-// Registering your Custom Post Type
-register_post_type( 'team', $args );
+    // Set UI labels for Custom Post Type
+    $labels = array(
+        'name'                => _x( 'Team', 'Post Type General Name', 'sative' ),
+        'singular_name'       => _x( 'Team', 'Post Type Singular Name', 'sative' ),
+        'menu_name'           => __( 'Team', 'sative' ),
+        'parent_item_colon'   => __( 'Parent Team', 'sative' ),
+        'all_items'           => __( 'All Team', 'sative' ),
+        'view_item'           => __( 'View Team', 'sative' ),
+        'add_new_item'        => __( 'Add New Team', 'sative' ),
+        'add_new'             => __( 'Add New', 'sative' ),
+        'edit_item'           => __( 'Edit Team', 'sative' ),
+        'update_item'         => __( 'Update Team', 'sative' ),
+        'search_items'        => __( 'Search Team', 'sative' ),
+        'not_found'           => __( 'Not Found', 'sative' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'sative' ),
+    );
+        
+    // Set other options for Custom Post Type
+    $args = array(
+        'label'               => __( 'team', 'sative' ),
+        'description'         => __( 'Team', 'sative' ),
+        'labels'              => $labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'editor', 'custom-fields', 'thumbnail' ),
+        // You can associate this CPT with a taxonomy or custom taxonomy. 
+        'taxonomies'          => array(),
+        /* A hierarchical CPT is like Pages and can have
+        * Parent and child items. A non-hierarchical CPT
+        * is like Posts.
+        */ 
+        'hierarchical'        => false,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 20,
+        'menu_icon'           => 'dashicons-groups',
+        'can_export'          => true,
+        'has_archive'         => false,
+        'exclude_from_search' => true,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'post',
+    );   
+    // Registering your Custom Post Type
+    register_post_type( 'team', $args );
 }
 /* Hook into the 'init' action so that the function
 * Containing our post type registration is not 
@@ -331,53 +331,53 @@ add_action( 'init', 'custom_post_type_team', 0 );
 
 function custom_post_type_testimonials() 
 {
- 
-// Set UI labels for Custom Post Type
-$labels = array(
-    'name'                => _x( 'Testimonials', 'Post Type General Name', 'sative' ),
-    'singular_name'       => _x( 'Testimonial', 'Post Type Singular Name', 'sative' ),
-    'menu_name'           => __( 'Testimonials', 'sative' ),
-    'parent_item_colon'   => __( 'Parent Testimonial', 'sative' ),
-    'all_items'           => __( 'All Testimonials', 'sative' ),
-    'view_item'           => __( 'View Testimonials', 'sative' ),
-    'add_new_item'        => __( 'Add New Testimonial', 'sative' ),
-    'add_new'             => __( 'Add New', 'sative' ),
-    'edit_item'           => __( 'Edit Testimonial', 'sative' ),
-    'update_item'         => __( 'Update Testimonial', 'sative' ),
-    'search_items'        => __( 'Search Testimonials', 'sative' ),
-    'not_found'           => __( 'Not Found', 'sative' ),
-    'not_found_in_trash'  => __( 'Not found in Trash', 'sative' ),
-);
     
-// Set other options for Custom Post Type
-$args = array(
-    'label'               => __( 'testimonials', 'sative' ),
-    'description'         => __( 'Testimonials', 'sative' ),
-    'labels'              => $labels,
-    // Features this CPT supports in Post Editor
-    'supports'            => array( 'title', 'editor', 'custom-fields', 'thumbnail' ),
-    // You can associate this CPT with a taxonomy or custom taxonomy. 
-    'taxonomies'          => array(),
-    /* A hierarchical CPT is like Pages and can have
-    * Parent and child items. A non-hierarchical CPT
-    * is like Posts.
-    */ 
-    'hierarchical'        => false,
-    'public'              => true,
-    'show_ui'             => true,
-    'show_in_menu'        => true,
-    'show_in_nav_menus'   => true,
-    'show_in_admin_bar'   => true,
-    'menu_position'       => 25,
-    'menu_icon'           => 'dashicons-format-chat',
-    'can_export'          => true,
-    'has_archive'         => false,
-    'exclude_from_search' => true,
-    'publicly_queryable'  => true,
-    'capability_type'     => 'post',
-);   
-// Registering your Custom Post Type
-register_post_type( 'testimonials', $args );
+    // Set UI labels for Custom Post Type
+    $labels = array(
+        'name'                => _x( 'Testimonials', 'Post Type General Name', 'sative' ),
+        'singular_name'       => _x( 'Testimonial', 'Post Type Singular Name', 'sative' ),
+        'menu_name'           => __( 'Testimonials', 'sative' ),
+        'parent_item_colon'   => __( 'Parent Testimonial', 'sative' ),
+        'all_items'           => __( 'All Testimonials', 'sative' ),
+        'view_item'           => __( 'View Testimonials', 'sative' ),
+        'add_new_item'        => __( 'Add New Testimonial', 'sative' ),
+        'add_new'             => __( 'Add New', 'sative' ),
+        'edit_item'           => __( 'Edit Testimonial', 'sative' ),
+        'update_item'         => __( 'Update Testimonial', 'sative' ),
+        'search_items'        => __( 'Search Testimonials', 'sative' ),
+        'not_found'           => __( 'Not Found', 'sative' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'sative' ),
+    );
+        
+    // Set other options for Custom Post Type
+    $args = array(
+        'label'               => __( 'testimonials', 'sative' ),
+        'description'         => __( 'Testimonials', 'sative' ),
+        'labels'              => $labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'editor', 'custom-fields', 'thumbnail' ),
+        // You can associate this CPT with a taxonomy or custom taxonomy. 
+        'taxonomies'          => array(),
+        /* A hierarchical CPT is like Pages and can have
+        * Parent and child items. A non-hierarchical CPT
+        * is like Posts.
+        */ 
+        'hierarchical'        => false,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 25,
+        'menu_icon'           => 'dashicons-format-chat',
+        'can_export'          => true,
+        'has_archive'         => false,
+        'exclude_from_search' => true,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'post',
+    );   
+    // Registering your Custom Post Type
+    register_post_type( 'testimonials', $args );
 }
 /* Hook into the 'init' action so that the function
 * Containing our post type registration is not 
@@ -424,53 +424,53 @@ add_action( 'init', 'custom_post_type_testimonials', 0 );
 
 function custom_post_type_whitepapers_users() 
 {
- 
-// Set UI labels for Custom Post Type
-$labels = array(
-    'name'                => _x( 'Whitepapers Users', 'Post Type General Name', 'sative' ),
-    'singular_name'       => _x( 'Whitepapers Users', 'Post Type Singular Name', 'sative' ),
-    'menu_name'           => __( 'Whitepapers Users', 'sative' ),
-    'parent_item_colon'   => __( 'Parent Whitepapers Users', 'sative' ),
-    'all_items'           => __( 'All Whitepapers Users', 'sative' ),
-    'view_item'           => __( 'View Whitepapers Users', 'sative' ),
-    'add_new_item'        => __( 'Add New Whitepapers Users', 'sative' ),
-    'add_new'             => __( 'Add New', 'sative' ),
-    'edit_item'           => __( 'Edit Whitepapers Users', 'sative' ),
-    'update_item'         => __( 'Update Whitepapers Users', 'sative' ),
-    'search_items'        => __( 'Search Whitepapers Users', 'sative' ),
-    'not_found'           => __( 'Not Found', 'sative' ),
-    'not_found_in_trash'  => __( 'Not found in Trash', 'sative' ),
-);
     
-// Set other options for Custom Post Type
-$args = array(
-    'label'               => __( 'whitepapers-users', 'sative' ),
-    'description'         => __( 'Whitepapers Users', 'sative' ),
-    'labels'              => $labels,
-    // Features this CPT supports in Post Editor
-    'supports'            => array( 'title', 'custom-fields' ),
-    // You can associate this CPT with a taxonomy or custom taxonomy. 
-    'taxonomies'          => array(),
-    /* A hierarchical CPT is like Pages and can have
-    * Parent and child items. A non-hierarchical CPT
-    * is like Posts.
-    */ 
-    'hierarchical'        => false,
-    'public'              => false,
-    'show_ui'             => true,
-    'show_in_menu'        => true,
-    'show_in_nav_menus'   => false,
-    'show_in_admin_bar'   => false,
-    'menu_position'       => 20,
-    'menu_icon'           => 'dashicons-groups',
-    'can_export'          => true,
-    'has_archive'         => false,
-    'exclude_from_search' => true,
-    'publicly_queryable'  => false,
-    'capability_type'     => 'post',
-);   
-// Registering your Custom Post Type
-register_post_type( 'whitepapers-users', $args );
+    // Set UI labels for Custom Post Type
+    $labels = array(
+        'name'                => _x( 'Whitepapers Users', 'Post Type General Name', 'sative' ),
+        'singular_name'       => _x( 'Whitepapers Users', 'Post Type Singular Name', 'sative' ),
+        'menu_name'           => __( 'Whitepapers Users', 'sative' ),
+        'parent_item_colon'   => __( 'Parent Whitepapers Users', 'sative' ),
+        'all_items'           => __( 'All Whitepapers Users', 'sative' ),
+        'view_item'           => __( 'View Whitepapers Users', 'sative' ),
+        'add_new_item'        => __( 'Add New Whitepapers Users', 'sative' ),
+        'add_new'             => __( 'Add New', 'sative' ),
+        'edit_item'           => __( 'Edit Whitepapers Users', 'sative' ),
+        'update_item'         => __( 'Update Whitepapers Users', 'sative' ),
+        'search_items'        => __( 'Search Whitepapers Users', 'sative' ),
+        'not_found'           => __( 'Not Found', 'sative' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'sative' ),
+    );
+        
+    // Set other options for Custom Post Type
+    $args = array(
+        'label'               => __( 'whitepapers-users', 'sative' ),
+        'description'         => __( 'Whitepapers Users', 'sative' ),
+        'labels'              => $labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'custom-fields' ),
+        // You can associate this CPT with a taxonomy or custom taxonomy. 
+        'taxonomies'          => array(),
+        /* A hierarchical CPT is like Pages and can have
+        * Parent and child items. A non-hierarchical CPT
+        * is like Posts.
+        */ 
+        'hierarchical'        => false,
+        'public'              => false,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => false,
+        'show_in_admin_bar'   => false,
+        'menu_position'       => 20,
+        'menu_icon'           => 'dashicons-groups',
+        'can_export'          => true,
+        'has_archive'         => false,
+        'exclude_from_search' => true,
+        'publicly_queryable'  => false,
+        'capability_type'     => 'post',
+    );   
+    // Registering your Custom Post Type
+    register_post_type( 'whitepapers-users', $args );
 }
 /* Hook into the 'init' action so that the function
 * Containing our post type registration is not 

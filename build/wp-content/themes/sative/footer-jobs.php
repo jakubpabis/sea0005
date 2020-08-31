@@ -21,16 +21,16 @@ $lang = pll_current_language();
                             </a>
                         </div>
                         <div class="col-lg-4 col-md-6 order-12 text-right">
-                            <a href="https://www.facebook.com/searchitrecruitment/" class="btn btn__social notched sea" target="_blank">
+                            <a href="https://www.facebook.com/searchxrecruitment" class="btn btn__social notched sea" target="_blank">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="https://www.instagram.com/searchitjobs/" class="btn btn__social notched sea" target="_blank">
+                            <a href="https://www.instagram.com/searchxrecruitment/" class="btn btn__social notched sea" target="_blank">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="https://www.linkedin.com/company/search-it-recruitment/" class="btn btn__social notched sea" target="_blank">
+                            <a href="https://www.linkedin.com/company/search-x-recruitment" class="btn btn__social notched sea" target="_blank">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="https://twitter.com/searchitjobs" class="btn btn__social notched sea" target="_blank">
+                            <a href="https://twitter.com/searchxjobs" class="btn btn__social notched sea" target="_blank">
                                 <i class="fab fa-twitter"></i>
                             </a>
                         </div>
@@ -106,6 +106,10 @@ $lang = pll_current_language();
             <?php get_template_part( 'template-parts/uploadcv' ); ?>
         </div> <!-- #wrapper -->
 		<?php wp_footer(); ?>
+        <!-- LinkedIn Insight Tag -->		
+        <script type="text/javascript"> _linkedin_partner_id = "14266"; window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || []; window._linkedin_data_partner_ids.push(_linkedin_partner_id); </script>
+        <script type="text/javascript"> (function(){var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})(); </script> 
+        <noscript> <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=14266&fmt=gif" /> </noscript>
         <?php /*<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
         <script>
             window.cookieconsent.initialise({
