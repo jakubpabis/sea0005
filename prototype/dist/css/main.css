@@ -5968,6 +5968,10 @@ h4,
 	left: auto;
 }
 
+.modal .modal-dialog .modal-content .modal-container {
+	padding: 35px 50px;
+}
+
 #searchModal .modal-container,
 #whitepapersModal .modal-container {
 	padding: 30px 20px;
@@ -6225,6 +6229,10 @@ p,
 .testimonials__candidates-content > .container,
 .testimonials__clients-content > .container {
 	padding-bottom: 50px;
+}
+
+.modal .modal-dialog .modal-content .modal-container {
+	padding: 30px;
 }
 
 #searchModal .dog,
