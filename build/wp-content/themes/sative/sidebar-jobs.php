@@ -60,7 +60,7 @@
                         <label><?php pll_e( 'Male' ); ?></label>
                     </div>
                 </div>
-                <div class="pretty p-icon p-round p-plain p-jelly">
+                <div class="pretty p-icon p-round p-plain p-jelly ml-4">
                     <input type="radio" name="app-gender" value="Female">
                     <div class="state">
                         <i class="icon fas fa-venus"></i>
