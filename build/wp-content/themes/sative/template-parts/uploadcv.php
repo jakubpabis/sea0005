@@ -51,7 +51,7 @@
                                         <label><?= pll_e( 'Male' ); ?></label>
                                     </div>
                                 </div>
-                                <div class="pretty p-icon p-round p-plain p-jelly">
+                                <div class="pretty p-icon p-round p-plain p-jelly ml-4">
                                     <input type="radio" value="Female" name="cv-gender">
                                     <div class="state">
                                         <i class="icon fas fa-venus"></i>
