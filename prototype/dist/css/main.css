@@ -2025,13 +2025,19 @@ i {
 	box-shadow: none !important;
 }
 
+#uploadCVModal form .pretty {
+	margin-right: 0;
+	white-space: normal;
+}
+
 #uploadCVModal form .pretty .icon {
 	top: 0;
 }
 
 #uploadCVModal form .pretty label {
 	font-size: 14px;
-	text-indent: 2em;
+	padding-left: 2em;
+	text-indent: 0;
 }
 
 #uploadCVModal form .pretty label:before,
@@ -2782,13 +2788,19 @@ aside#chat .dog {
 	flex-basis: calc(50% - 20px);
 }
 
+.jobs__single-sidebar .card form .pretty {
+	margin-right: 0;
+	white-space: normal;
+}
+
 .jobs__single-sidebar .card form .pretty .icon {
 	top: 0;
 }
 
 .jobs__single-sidebar .card form .pretty label {
 	font-size: 14px;
-	text-indent: 2em;
+	padding-left: 2em;
+	text-indent: 0;
 }
 
 .jobs__single-sidebar .card form .pretty label:before,
@@ -5641,6 +5653,10 @@ p,
 	margin-top: 4px;
 }
 
+.jobs__single article {
+	padding-right: 15px;
+}
+
 .jobs__single-recruiter .recruiter-text {
 	padding-top: 0;
 }
@@ -6017,6 +6033,10 @@ h4,
 	flex-basis: calc(100% - 30px);
 }
 
+.jobs__single-sidebar .card {
+	padding: 30px 20px;
+}
+
 .jobs__single-sidebar .card .social-login .btn {
 	flex-basis: calc(50% - 14px);
 }
@@ -6237,7 +6257,7 @@ p,
 }
 
 .modal .modal-dialog .modal-content .modal-container {
-	padding: 30px;
+	padding: 30px 15px;
 }
 
 #searchModal .dog,
@@ -6294,6 +6314,10 @@ p,
 
 .jobs__single article .info__item span {
 	font-size: 16px !important;
+}
+
+.jobs__single-sidebar .card {
+	padding: 30px 15px;
 }
 
 .dog.section {

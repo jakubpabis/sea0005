@@ -23,7 +23,7 @@ get_header(); ?>
                         </script>
                         <div class="info card bg-yellow">
                             <h2 class="color-navy">
-                                <?= pll_e('Congratulations! Your application was successfully submited!'); ?>
+                                <?= pll_e('Congratulations! Your application was successfully submitted!'); ?>
                             </h2>
                         <?php else: ?>
                         <div class="info card bg-pink">
