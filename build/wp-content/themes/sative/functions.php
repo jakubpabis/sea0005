@@ -468,10 +468,22 @@ if( function_exists( 'pll_current_language' ) ) {
 function change_link( $permalink, $post ) 
 {
     if( $post->post_type == 'jobs' ) {
+        $resource_terms = get_the_terms( $post, 'job-category' );
+        $term_slug = '';
+        if( ! empty( $resource_terms ) ) {
+            foreach ( $resource_terms as $term ) {
+                // The featured resource will have another category which is the main one
+                if( $term->slug == 'featured' ) {
+                    continue;
+                }
+                $term_slug = $term->slug;
+                break;
+            }
+        }
         if(pll_current_language() == 'nl') {
-            $permalink = "/nl/vacature/" . $post->post_name;
+            $permalink = "/nl/vacatures/" . $term_slug . '/' . $post->post_name;
         } else {
-            $permalink = "/en/job/" . $post->post_name;
+            $permalink = "/en/jobs/" . $term_slug . '/' . $post->post_name;
         }
     }
     return $permalink;
@@ -563,20 +575,6 @@ if( function_exists( 'pll_register_string' ) ) {
     foreach($toTranslate as $string) {
         pll_register_string('sative', $string);
     }
-}
-
-add_filter( 'register_post_type_args', 'wpse247328_register_post_type_args', 10, 2 );
-function wpse247328_register_post_type_args( $args, $post_type ) {
-
-    if ( 'jobs' === $post_type ) {
-        if(pll_current_language() == 'nl') {
-            $args['rewrite']['slug'] = 'nl/vacature';
-        } else {
-            $args['rewrite']['slug'] = 'en/job';
-        }
-    }
-
-    return $args;
 }
 
 function siteURL()
