@@ -251,14 +251,9 @@ function appEmailTemplate()
                             <tr>
                                 <td>
                                     <h1 style="font-size: 12pt!important;">
-                                        Thank you for your application for the position of <a href="'. $job_link .'" style="color: #425CBB; font-size: 12pt!important;">'. $job_title .'</a>.<br/>
-                                        By submitting your job application on our website, you agreed to and accepted the terms of our <a href="https://www.searchxrecruitment.com/en/privacy-policy" style="color: #425CBB; font-size: 12pt!important;">Privacy Policy</a>.
-                                        <br/><br/>
-                                        We will carefully consider your application and contact you if you are selected to continue in the recruitment process.
+                                        Thank you for applying to the position of <a href="'. $job_link .'" style="color: #425CBB; font-size: 12pt!important;">'. $job_title .'</a>. We’ve received your application in good order and will carefully review your profile to see if it’s a match.<br/>
+                                        Of course, we will let you know if there is and look forward to speaking with you.
                                     </h1>
-                                    <p style="font-size: 10pt!important;">
-                                        Job link: <a href="'. $job_link .'">'. $job_link .'</a>
-                                    </p>
                                 </td>
                             </tr>
                         </tbody>
@@ -266,13 +261,22 @@ function appEmailTemplate()
                             <tr>
                                 <td style="padding-top: 40px;">
                                     <p style="font-size: 10pt!important;">
-                                        Keep up-to-date with our latest jobs. Follow us on social media and sign up for our newsletter/job alert!
+                                        In the meantime, you can stay posted on our latest jobs by following us on
                                     </p>
                                     <p style="font-size: 10pt!important;">
                                         <strong>LinkedIn: </strong><a href="https://www.linkedin.com/company/search-x-recruitment">https://www.linkedin.com/company/search-x-recruitment</a><br/>
                                         <strong>Facebook: </strong><a href="https://www.facebook.com/searchxrecruitment">https://www.facebook.com/searchxrecruitment</a><br/>
                                         <strong>Twitter: </strong><a href="https://twitter.com/searchxjobs">https://twitter.com/searchxjobs</a><br/>
-                                        <strong>Newsletter/job alert: </strong><a href="http://jobs.searchsoftware.nl/searchit/subscribe">http://jobs.searchsoftware.nl/searchit/subscribe</a> 
+                                        <strong>Instagram: </strong><a href="https://www.instagram.com/searchxrecruitment/">https://www.instagram.com/searchxrecruitment</a> 
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td style="padding-top: 30px;">
+                                    <p style="font-size: 10pt!important;">
+                                        Keep in mind that by applying on our website you have agreed to and accepted the terms of our <a href="https://www.searchxrecruitment.com/en/privacy-policy" style="color: #425CBB; font-size: 10pt!important;">Privacy Policy</a>.
                                     </p>
                                 </td>
                             </tr>
@@ -385,8 +389,8 @@ function cvEmailTemplate()
                             <tr>
                                 <td>
                                     <h1 style="font-size: 12pt!important;">
-                                        Thank you for submitting your CV.<br/>
-                                        By submitting your CV on our website, you agreed to and accepted the terms of our <a href="https://www.searchxrecruitment.com/en/privacy-policy" style="color: #425CBB; font-size: 12pt!important;">Privacy Policy</a>.
+                                        Thank you for uploading your resume. We’ve received it in good order and will carefully review your profile to see if we currently have any matching opportunities.<br/>
+                                        Of course, we will let you know if there are and look forward to working with you.
                                     </h1>
                                 </td>
                             </tr>
@@ -395,13 +399,22 @@ function cvEmailTemplate()
                             <tr>
                                 <td style="padding-top: 40px;">
                                     <p style="font-size: 10pt!important;">
-                                        Keep up-to-date with our latest jobs. Follow us on social media and sign up for our newsletter/job alert!
+                                        In the meantime, you can stay posted on our latest jobs by following us on
                                     </p>
                                     <p style="font-size: 10pt!important;">
                                         <strong>LinkedIn: </strong><a href="https://www.linkedin.com/company/search-x-recruitment">https://www.linkedin.com/company/search-x-recruitment</a><br/>
                                         <strong>Facebook: </strong><a href="https://www.facebook.com/searchxrecruitment">https://www.facebook.com/searchxrecruitment</a><br/>
                                         <strong>Twitter: </strong><a href="https://twitter.com/searchxjobs">https://twitter.com/searchxjobs</a><br/>
-                                        <strong>Newsletter/job alert: </strong><a href="http://jobs.searchsoftware.nl/searchit/subscribe">http://jobs.searchsoftware.nl/searchit/subscribe</a> 
+                                        <strong>Instagram: </strong><a href="https://www.instagram.com/searchxrecruitment/">https://www.instagram.com/searchxrecruitment</a> 
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td style="padding-top: 30px;">
+                                    <p style="font-size: 10pt!important;">
+                                        Keep in mind that by uploading your resume on our website you have agreed to and accepted the terms of our <a href="https://www.searchxrecruitment.com/en/privacy-policy" style="color: #425CBB; font-size: 10pt!important;">Privacy Policy</a>.
                                     </p>
                                 </td>
                             </tr>
