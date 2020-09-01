@@ -156,7 +156,7 @@ get_template_part( 'template-parts/breadcrumbs' ); ?>
                                         <?php endif; ?>
                                     </div>
                                 </div>
-                                <a href="tel:<?= get_field('email'); ?>" class="text-size-medium"><?= get_field('email'); ?></a><br/>
+                                <a href="mailto:<?= get_field('email'); ?>" class="text-size-medium"><?= get_field('email'); ?></a><br/>
                                 <a href="tel:<?= get_field('phone'); ?>" class="text-size-medium"><?= get_field('phone'); ?></a><br/>
                                 <?= get_field('short_bio'); ?>
                                 <div class="btns">
