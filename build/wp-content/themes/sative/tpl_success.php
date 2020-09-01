@@ -8,8 +8,10 @@ get_header();
 get_footer();
 
 if( isset($_GET['message']) ) {
-    $redirect = $_GET['ref'].'?message='.$_GET['message'];
+    $url = preg_replace('/\?.*/', '', $_GET['ref']);
+    $redirect = $url.'?message='.$_GET['message'];
 } else if( $_GET['messagecv'] ) {
-    $redirect = $_GET['ref'].'?messagecv='.$_GET['messagecv'];
+    $url = preg_replace('/\?.*/', '', $_GET['ref']);
+    $redirect = $url.'?messagecv='.$_GET['messagecv'];
 }
 header("Location: $redirect");
