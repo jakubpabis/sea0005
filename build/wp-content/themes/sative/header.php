@@ -16,6 +16,16 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-PMG8TTV');</script>
+	<!-- /Google Tag Manager -->
+	<!-- Bing Webmaster Tools -->
+		<meta name="msvalidate.01" content="DB26E7D9A02A63952EAC119AC5AB03FC" />
+	<!-- /Bing Webmaster Tools -->
     <?php wp_head(); ?>
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/fa.min.css" media="none" onload="if(media!='all')media='all'">
     <noscript>
@@ -36,7 +46,10 @@
 <body <?php body_class(); ?>>
     <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->          
+    <![endif]-->  
+    <!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMG8TTV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- /Google Tag Manager (noscript) -->        
     <div id="wrapper">
         <nav class="navigation">
             <div class="navigation__upper">
