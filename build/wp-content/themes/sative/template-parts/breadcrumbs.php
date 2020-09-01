@@ -1,4 +1,4 @@
-<?php if ( function_exists('yoast_breadcrumb') ) : ?>
+<?php /*if ( function_exists('yoast_breadcrumb') ) : ?>
 <aside class="breadcrumbs">
     <div class="container">
         <div class="row align-items-lg-center">
@@ -20,7 +20,7 @@
         </div>
     </div>
 </aside>
-<?php endif; ?>
+<?php endif; */ ?>
 <?php if( isset( $_GET['messagecv'] ) ): ?>
     <div class="row mb-5 mt-5">
         <div class="col-12 text-center">
