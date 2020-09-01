@@ -110,6 +110,7 @@
                 <input type="hidden" name="app-jobid" value="<?= get_field('job_id'); ?>">
                 <input type="hidden" name="action" value="application_form">
                 <?php wp_nonce_field( 'application_form', 'application_form_nonce' ); ?>
+                <!--<div class="g-recaptcha" data-sitekey="6LdsY8YZAAAAACIo5i0v6XeH2uZfY228s4xiA6um"></div>-->
                 <button type="submit" class="btn btn__default yellow"><?php pll_e( 'Send application' ); ?></button>
             </div>
         </div>

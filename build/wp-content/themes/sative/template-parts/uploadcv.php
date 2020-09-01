@@ -100,6 +100,7 @@
                                 <input type="hidden" name="cv-jobid" value="188">
                                 <input type="hidden" name="action" value="cv_form">
                                 <?php wp_nonce_field( 'cv_form', 'cv_form_nonce' ); ?>
+                                <!--<div class="g-recaptcha" data-sitekey="6LdsY8YZAAAAACIo5i0v6XeH2uZfY228s4xiA6um"></div>-->
                                 <button type="submit" class="btn btn__default yellow"><?= pll_e( 'Send application' ); ?></button>
                             </div>
                         </div>
@@ -109,3 +110,4 @@
         </div>
     </div>
 </div>
+
