@@ -454,10 +454,10 @@ function resources_cpt_generating_rule($wp_rewrite)
     ) );
     $post_type = 'jobs';
     foreach ($terms as $term) {    
-        $rules['vacature/([^/]*)$'] = 'index.php?post_type=' . $post_type. '&job-category=$matches[1]&name=$matches[1]';
-        $rules['nl/vacature/([^/]*)$'] = 'index.php?post_type=' . $post_type. '&job-category=$matches[1]&name=$matches[1]';
-        $rules['job/([^/]*)$'] = 'index.php?post_type=' . $post_type. '&job-category=$matches[1]&name=$matches[1]';
-        $rules['en/job/([^/]*)$'] = 'index.php?post_type=' . $post_type. '&job-category=$matches[1]&name=$matches[1]';
+        $rules['vacature/([^/]*)$'] = 'index.php?post_type=' . $post_type. '&name=$matches[1]';
+        $rules['nl/vacature/([^/]*)$'] = 'index.php?post_type=' . $post_type. '&name=$matches[1]';
+        $rules['job/([^/]*)$'] = 'index.php?post_type=' . $post_type. '&name=$matches[1]';
+        $rules['en/job/([^/]*)$'] = 'index.php?post_type=' . $post_type. '&name=$matches[1]';
     }
     // merge with global rules
     $wp_rewrite->rules = $rules + $wp_rewrite->rules;
