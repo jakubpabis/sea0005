@@ -496,7 +496,8 @@ function sative_cv_form_submit() {
 
     //$message = sendEmail();
     $referer = remove_query_arg( 'message', wp_get_referer() );
-    $redirect = '/app-success?ref='.$referer.'&message='.$message;
+    $referer = remove_query_arg( 'messagecv', wp_get_referer() );
+    $redirect = '/app-success?ref='.$referer.'&messagecv='.$message;
     header("Location: $redirect");
 
 }
@@ -509,6 +510,7 @@ function sative_application_form_submit() {
 
     //$message = sendEmail();
     $referer = remove_query_arg( 'message', wp_get_referer() );
+    $referer = remove_query_arg( 'messagecv', wp_get_referer() );
     $redirect = '/app-success?ref='.$referer.'&message='.$message;
     header("Location: $redirect");
 
