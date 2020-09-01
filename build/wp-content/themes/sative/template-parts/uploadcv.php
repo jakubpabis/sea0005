@@ -80,8 +80,8 @@
                                 <label for="cv-city"><?= pll_e( 'City' ); ?></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
-                                <label class="full bg-white" for="cv-cv"><?php pll_e( 'CV' ); ?><span><?= pll_e( 'Upload' ); ?></span></label>
-                                <input type="file" name="cv-cv">
+                                <label id="cv-cv-label" class="full bg-white" for="cv-cv"><?php pll_e( 'CV' ); ?> <span><?= pll_e( 'Upload' ); ?></span></label>
+                                <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="cv-cv" onchange="getFileName(this, 'cv-cv-label')">
                             </div>
                             <div class="col-12 ugly pt-2 pb-3">
                                 <textarea name="cv-motivation"></textarea>

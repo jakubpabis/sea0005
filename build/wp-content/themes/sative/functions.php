@@ -481,9 +481,9 @@ function change_link( $permalink, $post )
             }
         }
         if(pll_current_language() == 'nl') {
-            $permalink = "/nl/vacatures/" . $term_slug . '/' . $post->post_name;
+            $permalink = "/nl/vacature/" . $post->post_name;
         } else {
-            $permalink = "/en/jobs/" . $term_slug . '/' . $post->post_name;
+            $permalink = "/en/job/" . $post->post_name;
         }
     }
     return $permalink;
