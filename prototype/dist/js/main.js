@@ -3682,6 +3682,11 @@ function slideTo(el)
 	}, 500);
 }
 
+function disableButton(el)
+{
+	$(el).attr('disabled', true);
+}
+
 function spaceFromBottom(el)
 {
 	var eTop = $(el).offset().top; //get the offset top of the element
