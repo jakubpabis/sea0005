@@ -7,5 +7,9 @@ get_header();
 
 get_footer();
 
-$redirect = $_GET['ref'].'?message='.$_GET['message'];
+if( isset($_GET['message']) ) {
+    $redirect = $_GET['ref'].'?message='.$_GET['message'];
+} else if( $_GET['messagecv'] ) {
+    $redirect = $_GET['ref'].'?messagecv='.$_GET['messagecv'];
+}
 header("Location: $redirect");

@@ -22,19 +22,21 @@
 </aside>
 <?php endif; */ ?>
 <?php if( isset( $_GET['messagecv'] ) ): ?>
-    <div class="row mb-5 mt-5">
-        <div class="col-12 text-center">
-            <?php if( $_GET['messagecv'] === 'success' ): ?>
-            <div class="info card bg-yellow">
-                <h2 class="color-navy">
-                    <?= pll_e('Congratulations! Your CV was successfully submitted!'); ?>
-                </h2>
-            <?php else: ?>
-            <div class="info card bg-pink">
-                <h2 class="color-navy">
-                    <?= pll_e('Sorry, there was a problem with your application, please try again later...'); ?>
-                </h2>
-            <?php endif; ?>
+    <div class="container">
+        <div class="row mb-5 mt-5">
+            <div class="col-12 text-center">
+                <?php if( $_GET['messagecv'] === 'success' ): ?>
+                <div class="info card bg-yellow">
+                    <h2 class="color-navy">
+                        <?= pll_e('Congratulations! Your CV was successfully submitted!'); ?>
+                    </h2>
+                <?php else: ?>
+                <div class="info card bg-pink">
+                    <h2 class="color-navy">
+                        <?= pll_e('Sorry, there was a problem with your application, please try again later...'); ?>
+                    </h2>
+                <?php endif; ?>
+                </div>
             </div>
         </div>
     </div>
