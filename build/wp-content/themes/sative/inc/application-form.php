@@ -168,7 +168,6 @@ function add_to_queue_cv(){
         $message = sendEmailCV();
     } else {
         $message = 'failed';
-        
     }
 
     return $message;
