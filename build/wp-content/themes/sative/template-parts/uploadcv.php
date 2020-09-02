@@ -72,7 +72,7 @@
                                 <label for="cv-phone"><?= pll_e( 'Phone' ); ?></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
-                                <input type="text" name="cv-dob">
+                                <input id="cv-dob-datepicker" type="text" name="cv-dob" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}">
                                 <label for="cv-dob"><?= pll_e( 'Date of birth' ); ?></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
@@ -100,8 +100,7 @@
                                 <input type="hidden" name="cv-jobid" value="188">
                                 <input type="hidden" name="action" value="cv_form">
                                 <?php wp_nonce_field( 'cv_form', 'cv_form_nonce' ); ?>
-                                <!--<div class="g-recaptcha" data-sitekey="6LdsY8YZAAAAACIo5i0v6XeH2uZfY228s4xiA6um"></div>-->
-                                <button type="submit" class="btn btn__default yellow"><?= pll_e( 'Send application' ); ?></button>
+                                <button type="submit" disabled class="btn btn__default yellow"><?= pll_e( 'Send application' ); ?></button>
                             </div>
                         </div>
                     </form>
@@ -110,4 +109,3 @@
         </div>
     </div>
 </div>
-

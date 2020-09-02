@@ -366,7 +366,13 @@ $(document).ready(function() {
 			format: "dd-mm-yyyy",
 			weekStart: 1,
 			autoclose: true,
-			startDate: "01-01-1991"
+			startDate: "01-01-1920"
+		});
+		$('#cv-dob-datepicker').datepicker({
+			format: "dd-mm-yyyy",
+			weekStart: 1,
+			autoclose: true,
+			startDate: "01-01-1920"
 		});
 	}
 
@@ -382,32 +388,3 @@ $(window).on('load', function() {
 	}
 
 });
-
-$(window).on('load resize', function() {
-	// if($(window).width() < 768) {
-	// 	$('.navigation__menu').addClass('dropdown-menu dropdown-menu-right');
-	// } else {
-	// 	$('.dropdown-toggle').dropdown('dispose');
-	// 	$('.navigation__menu').removeClass('dropdown-menu dropdown-menu-right').removeAttr('style').removeAttr('x-placement');
-	// }
-});
-
-// jQuery(function($){
-// 	$('#filter').submit(function(){
-// 		var filter = $('#filter');
-// 		$.ajax({
-// 			url:filter.attr('action'),
-// 			data:filter.serialize(), // form data
-// 			type:filter.attr('method'), // POST
-// 			beforeSend:function(xhr){
-// 				filter.find('button').text('Processing...'); // changing the button label
-// 			},
-// 			success:function(data){
-// 				filter.find('button').text('Filter'); // changing the button label back
-// 				$('main.jobs__list-items').html(data); // insert data
-// 				$('nav.pagination').trigger('yith-wcan-ajax-filtered');
-// 			}
-// 		});
-// 		return false;
-// 	});
-// });
