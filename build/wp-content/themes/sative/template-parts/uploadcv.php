@@ -97,10 +97,11 @@
                                 </div>
                             </div>
                             <div class="col-12 pt-1">
+                                <input type="hidden" name="applicant-find" val="Website SIR">
                                 <input type="hidden" name="cv-jobid" value="188">
                                 <input type="hidden" name="action" value="cv_form">
                                 <?php wp_nonce_field( 'cv_form', 'cv_form_nonce' ); ?>
-                                <button type="submit" class="btn btn__default yellow"><?= pll_e( 'Send application' ); ?></button>
+                                <button class="g-recaptcha btn btn__default yellow" data-sitekey="6LfL9cYZAAAAAHyx8j1J63IRKKMb1IXhyA6nyQFk" data-callback='onCVSubmit'><?= pll_e( 'Send application' ); ?></button>
                             </div>
                         </div>
                     </form>

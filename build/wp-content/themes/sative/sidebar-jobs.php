@@ -106,11 +106,12 @@
                 </div>
             </div>
             <div class="col-12 pt-4">
+                <input type="hidden" name="applicant-find" val="Website SIR">
                 <input type="hidden" name="postid" value="<?= get_the_ID(); ?>">
                 <input type="hidden" name="app-jobid" value="<?= get_field('job_id'); ?>">
                 <input type="hidden" name="action" value="application_form">
                 <?php wp_nonce_field( 'application_form', 'application_form_nonce' ); ?>
-                <button type="submit" class="btn btn__default yellow"><?php pll_e( 'Send application' ); ?></button>
+                <button class="g-recaptcha btn btn__default yellow" data-sitekey="6LfL9cYZAAAAAHyx8j1J63IRKKMb1IXhyA6nyQFk" data-callback='onAppSubmit'><?= pll_e( 'Send application' ); ?></button>
             </div>
         </div>
     </form>

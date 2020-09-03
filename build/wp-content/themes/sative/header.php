@@ -32,7 +32,7 @@
         <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/fa.min.css"/>
     </noscript>
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/main.min.css">
-    <!--<script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body <?php body_class(); ?>>
     <!--[if lt IE 7]>
