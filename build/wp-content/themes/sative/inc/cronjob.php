@@ -77,7 +77,7 @@ function xmlRead()
             'post_name'     => $slug,
         );
 
-        if( in_array( $jobID, $postsArr ) ) {
+        if( in_array( $jobID, $postsArr, true ) ) {
             //var_dump('check');
             wp_reset_query();
             $args = array(
@@ -164,7 +164,7 @@ function xmlRead()
 
             wp_reset_query();
 
-        } else {
+        } else if( sative_post_exists_by_slug( $slug ) === false ) {
 
             /**
              * General fields insert
@@ -491,5 +491,18 @@ function insertLocation($job, $postID)
         }
         $termID = $term->term_id;
         wp_set_post_terms($postID, $termID, $term_type, true);
+    }
+}
+
+if ( ! function_exists( 'sative_post_exists_by_slug' ) ) {
+    /**
+     * Check if post exists by slug.
+     *
+     * @see    https://wpcodebook.com/snippets/check-if-post-exists-by-slug-in-wordpress/
+     * @return mixed boolean false if no posts exist; post ID otherwise.
+     */
+    function sative_post_exists_by_slug( $post_slug ) {
+        $loop_posts = new WP_Query( array( 'post_type' => 'jobs', 'post_status' => 'any', 'name' => $post_slug, 'posts_per_page' => 1, 'fields' => 'ids' ) );
+        return ( $loop_posts->have_posts() ? $loop_posts->posts[0] : false );
     }
 }
