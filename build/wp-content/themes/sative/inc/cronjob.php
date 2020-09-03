@@ -70,7 +70,7 @@ function xmlRead()
 
         $jobArray = array(
             'post_type'     => 'jobs',
-            'post_status'   => 'any',
+            'post_status'   => 'publish',
             'post_title'    => $job->title,
             'post_content'  => $job->description,
             'post_date'     => $date,
