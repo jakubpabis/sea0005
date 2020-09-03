@@ -100,7 +100,7 @@
                                 <input type="hidden" name="cv-jobid" value="188">
                                 <input type="hidden" name="action" value="cv_form">
                                 <?php wp_nonce_field( 'cv_form', 'cv_form_nonce' ); ?>
-                                <button type="submit" disabled class="btn btn__default yellow"><?= pll_e( 'Send application' ); ?></button>
+                                <button type="submit" class="btn btn__default yellow"><?= pll_e( 'Send application' ); ?></button>
                             </div>
                         </div>
                     </form>
