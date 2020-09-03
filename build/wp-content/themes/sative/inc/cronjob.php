@@ -77,7 +77,7 @@ function xmlRead()
             'post_name'     => $slug,
         );
 
-        if( in_array( $jobID, $postsArr ) ) {
+        if( in_array( $jobID, $postsArr, true ) ) {
             //var_dump('check');
             wp_reset_query();
             $args = array(
