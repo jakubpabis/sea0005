@@ -16,6 +16,7 @@ function postRequest($request, $api_key, $api_secret, $json)
 
     $response = curl_exec($ch);
     $response = json_decode($response);
+    var_dump($response);
 
     return $response;
 }
@@ -160,14 +161,14 @@ function add_to_queue_cv(){
     //var_dump($application_data);
 
     $person_response = postRequest('people/add_to_queue', $api_key, $api_secret, $data);
+    var_dump($person_response);
+    // if( isset( $person_response->status ) && $person_response->status === 'ok' ) {
+    //     $message = 'success';
+    // } else {
+    //     $message = 'failed';
+    // }
 
-    if( isset( $person_response->status ) && $person_response->status === 'ok' ) {
-        $message = 'success';
-    } else {
-        $message = 'failed';
-    }
-
-    return $message;
+    // return $message;
 
 }
 
