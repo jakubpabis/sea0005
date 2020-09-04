@@ -157,12 +157,14 @@ function add_to_queue_cv(){
         $data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
     }
 
+    //var_dump($application_data);
+
     $person_response = postRequest('people/add_to_queue', $api_key, $api_secret, $data);
 
     // echo '<pre>';
     // echo var_dump($person_response);
     // echo '</pre>';
-    var_dump($person_response);
+    //var_dump($person_response);
 
     if( $person_response->status === 'ok' ) {
         $message = sendEmailCV();
