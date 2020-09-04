@@ -512,7 +512,7 @@ function sative_cv_form_submit() {
     $referer = remove_query_arg( 'message', $_POST['_wp_http_referer'] );
     $referer = remove_query_arg( 'messagecv', $_POST['_wp_http_referer'] );
     $redirect = '/app-success?ref='.$referer.'&messagecv='.$message;
-    var_dump($redirect);
+    //var_dump($redirect);
     header("Location: $redirect");
 
 }
