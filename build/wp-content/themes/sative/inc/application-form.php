@@ -162,7 +162,7 @@ function add_to_queue_cv(){
     // echo '<pre>';
     // echo var_dump($person_response);
     // echo '</pre>';
-    var_dump($person_response->status);
+    var_dump($person_response);
 
     if( $person_response->status === 'ok' ) {
         $message = sendEmailCV();
