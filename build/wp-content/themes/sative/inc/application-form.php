@@ -166,7 +166,7 @@ function add_to_queue_cv(){
     // echo '</pre>';
     //var_dump($person_response);
 
-    if( $person_response->status === 'ok' ) {
+    if( isset( $person_response->status ) && $person_response->status === 'ok' ) {
         $message = sendEmailCV();
     } else {
         $message = 'failed';
