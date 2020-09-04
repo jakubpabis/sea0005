@@ -60,36 +60,36 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
-                                <input type="text" name="cv-name" required>
-                                <label for="cv-name"><?= pll_e( 'Name' ); ?> <span>*</span></label>
+                                <input class="required" type="text" name="cv-name" minlength="1" required>
+                                <label class="ugly-label" for="cv-name"><?= pll_e( 'Name' ); ?> <span>*</span></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
-                                <input type="email" name="cv-email" required>
-                                <label for="cv-email"><?= pll_e( 'Email' ); ?> <span>*</span></label>
+                                <input class="required" type="email" name="cv-email" required>
+                                <label class="ugly-label" for="cv-email"><?= pll_e( 'Email' ); ?> <span>*</span></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
                                 <input type="text" name="cv-phone">
-                                <label for="cv-phone"><?= pll_e( 'Phone' ); ?></label>
+                                <label class="ugly-label" for="cv-phone"><?= pll_e( 'Phone' ); ?></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
                                 <input id="cv-dob-datepicker" type="text" name="cv-dob" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}">
-                                <label for="cv-dob"><?= pll_e( 'Date of birth' ); ?></label>
+                                <label class="ugly-label" for="cv-dob"><?= pll_e( 'Date of birth' ); ?></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
                                 <input type="text" name="cv-city">
-                                <label for="cv-city"><?= pll_e( 'City' ); ?></label>
+                                <label class="ugly-label" for="cv-city"><?= pll_e( 'City' ); ?></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
-                                <label id="cv-cv-label" class="full bg-white" for="cv-cv"><?php pll_e( 'CV' ); ?> <span><?= pll_e( 'Upload' ); ?></span></label>
+                                <label id="cv-cv-label" class="full bg-white ugly-label" for="cv-cv"><?php pll_e( 'CV' ); ?> <span><?= pll_e( 'Upload' ); ?></span></label>
                                 <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="cv-cv" onchange="getFileName(this, 'cv-cv-label')">
                             </div>
                             <div class="col-12 ugly pt-2 pb-3">
                                 <textarea name="cv-motivation"></textarea>
-                                <label for="cv-motivation"><?= pll_e( 'Motivation' ); ?></label>
+                                <label class="ugly-label" for="cv-motivation"><?= pll_e( 'Motivation' ); ?></label>
                             </div>
                             <div class="col-12 pb-3">
                                 <div class="pretty p-icon p-plain p-jelly">
-                                    <input type="checkbox" name="cv-pp">
+                                    <input class="required" type="checkbox" name="cv-pp" required>
                                     <div class="state">
                                         <i class="icon fal fa-times"></i>
                                         <label><?php pll_e( 'I hereby agree with the' ); ?> <a href="<?php if( pll_current_language() === 'en' ) : ?>/privacy-policy<?php else: ?>/privacyverklaring<?php endif; ?>" style="position: relative; z-index: 9999;"><u><?php pll_e( 'Privacy Policy' ); ?></u></a> <span class="color-pink text-size-small text600">*</span></label>
@@ -101,7 +101,8 @@
                                 <input type="hidden" name="cv-jobid" value="188">
                                 <input type="hidden" name="action" value="cv_form">
                                 <?php wp_nonce_field( 'cv_form', 'cv_form_nonce' ); ?>
-                                <button class="g-recaptcha btn btn__default yellow" data-sitekey="6LfL9cYZAAAAAHyx8j1J63IRKKMb1IXhyA6nyQFk" data-callback='onCVSubmit'><?= pll_e( 'Send application' ); ?></button>
+                                <button type="button" class="fake_btn_cv btn btn__default yellow"><?= pll_e( 'Send application' ); ?></button>
+                                <button class="g-recaptcha btn btn__default yellow d-none" data-sitekey="6LfL9cYZAAAAAHyx8j1J63IRKKMb1IXhyA6nyQFk" data-callback="onCVSubmit"><?= pll_e( 'Send application' ); ?></button>
                             </div>
                         </div>
                     </form>

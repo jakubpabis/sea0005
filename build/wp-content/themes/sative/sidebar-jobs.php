@@ -69,24 +69,24 @@
                 </div>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
-                <input type="text" name="app-name" required value="<?= $app_name ? $app_name : null; ?>">
-                <label for="app-name" <?= $app_name ? 'style="opacity: 0;"' : null; ?>><?php pll_e( 'Name' ); ?> <span>*</span></label>
+                <input class="required" type="text" name="app-name" required value="<?= $app_name ? $app_name : null; ?>">
+                <label class="ugly-label" for="app-name" <?= $app_name ? 'style="opacity: 0;"' : null; ?>><?php pll_e( 'Name' ); ?> <span>*</span></label>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
-                <input type="email" name="app-email" required value="<?= $app_email ? $app_email : null; ?>">
-                <label for="app-email" <?= $app_email ? 'style="opacity: 0;"' : null; ?>><?php pll_e( 'Email' ); ?> <span>*</span></label>
+                <input class="required" type="email" name="app-email" required value="<?= $app_email ? $app_email : null; ?>">
+                <label class="ugly-label" for="app-email" <?= $app_email ? 'style="opacity: 0;"' : null; ?>><?php pll_e( 'Email' ); ?> <span>*</span></label>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
                 <input type="tel" name="app-phone">
-                <label for="app-phone"><?php pll_e( 'Phone' ); ?></label>
+                <label class="ugly-label" for="app-phone"><?php pll_e( 'Phone' ); ?></label>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
                 <input id="app-dob-datepicker" type="text" name="app-dob" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}">
-                <label for="app-dob"><?php pll_e( 'Date of birth' ); ?></label>
+                <label class="ugly-label" for="app-dob"><?php pll_e( 'Date of birth' ); ?></label>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
                 <input type="text" name="app-city" value="<?= $app_location ? $app_location : null; ?>">
-                <label for="app-city" <?= $app_location ? 'style="opacity: 0;"' : null; ?>><?php pll_e( 'City' ); ?></label>
+                <label class="ugly-label" for="app-city" <?= $app_location ? 'style="opacity: 0;"' : null; ?>><?php pll_e( 'City' ); ?></label>
             </div>
             <div class="col-lg-12 col-sm-6 ugly pt-2">
                 <label id="app-cv-label" class="full bg-white" for="app-cv"><?php pll_e( 'CV' ); ?> <span><?= pll_e( 'Upload' ); ?></span></label>
@@ -94,11 +94,11 @@
             </div>
             <div class="col-12 ugly pt-2">
                 <textarea name="app-motivation"><?= $app_motivation ? $app_motivation : null; ?></textarea>
-                <label for="app-motivation" <?= $app_motivation ? 'style="opacity: 0;"' : null; ?>><?php pll_e( 'Motivation' ); ?></label>
+                <label class="ugly-label" for="app-motivation" <?= $app_motivation ? 'style="opacity: 0;"' : null; ?>><?php pll_e( 'Motivation' ); ?></label>
             </div>
             <div class="col-12 pt-1">
                 <div class="pretty p-icon p-plain p-jelly">
-                    <input type="checkbox" name="app-pp" required>
+                    <input type="checkbox" name="app-pp" required class="required">
                     <div class="state">
                         <i class="icon fal fa-times"></i>
                         <label><?php pll_e( 'I hereby agree with the' ); ?> <a href="<?php if( pll_current_language() === 'en' ) : ?>/privacy-policy<?php else: ?>/privacyverklaring<?php endif; ?>" style="position: relative; z-index: 9999;"><u><?php pll_e( 'Privacy Policy' ); ?></u></a> <span class="color-pink text-size-small text600">*</span></label>
@@ -111,7 +111,8 @@
                 <input type="hidden" name="app-jobid" value="<?= get_field('job_id'); ?>">
                 <input type="hidden" name="action" value="application_form">
                 <?php wp_nonce_field( 'application_form', 'application_form_nonce' ); ?>
-                <button class="g-recaptcha btn btn__default yellow" data-sitekey="6LfL9cYZAAAAAHyx8j1J63IRKKMb1IXhyA6nyQFk" data-callback='onAppSubmit'><?= pll_e( 'Send application' ); ?></button>
+                <button type="button" class="fake_btn_app btn btn__default yellow"><?= pll_e( 'Send application' ); ?></button>
+                <button class="g-recaptcha app btn btn__default yellow d-none" data-sitekey="6LfL9cYZAAAAAHyx8j1J63IRKKMb1IXhyA6nyQFk" data-callback="onAppSubmit"><?= pll_e( 'Send application' ); ?></button>
             </div>
         </div>
     </form>

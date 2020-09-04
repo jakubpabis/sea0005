@@ -25,6 +25,55 @@ function onFormLoad()
 
 }
 
+function appValidation()
+{
+
+	if( $('#job-application-form').length > 0 ) {
+		var formApp = $('#job-application-form');
+		formApp.validate();
+		$('#job-application-form').find('input.required').on('change focusout', function() {
+			if( formApp.valid() ) {
+				$('.fake_btn_app').addClass('d-none');
+				$('.g-recaptcha.app').removeClass('d-none');
+			} else {
+				$('.fake_btn_app').removeClass('d-none');
+				$('.g-recaptcha.app').addClass('d-none');
+			}
+		});
+		$('.fake_btn_app').on('click', function (e) {
+			e.preventDefault();
+			if( formApp.valid() ) {
+				$('.fake_btn_app').addClass('d-none');
+				$('.g-recaptcha.app').removeClass('d-none');
+				$(this).next('button.g-recaptcha').trigger('click');
+			}
+		});
+	}
+
+	if( $('#cv-upload-form').length > 0 ) {
+		var formCV = $('#cv-upload-form');
+		formCV.validate();
+		$('#cv-upload-form').find('input.required').on('change focusout', function() {
+			if( formCV.valid() ) {
+				$('.fake_btn_cv').addClass('d-none');
+				$('.g-recaptcha').removeClass('d-none');
+			} else {
+				$('.fake_btn_cv').removeClass('d-none');
+				$('.g-recaptcha').addClass('d-none');
+			}
+		});
+		$('.fake_btn_cv').on('click', function (e) {
+			e.preventDefault();
+			if( formCV.valid() ) {
+				$('.fake_btn_cv').addClass('d-none');
+				$('.g-recaptcha').removeClass('d-none');
+				$(this).next('button.g-recaptcha').trigger('click');
+			}
+		});
+	}
+
+}
+
 function onAppSubmit(token) 
 {
 	document.getElementById("job-application-form").submit();

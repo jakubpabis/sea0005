@@ -150,11 +150,12 @@ function uglyInput()
 {
 	$('.ugly').each(function() {
 		var $input = $(this).find('input, textarea');
-		$input.on('change', function() {
-			if(!$input.val()) {
-				$input.next('label').css({'opacity':1});
+		$input.on('change focusout', function() {
+			console.log(!$input.val());
+			if( !$input.val() === true ) {
+				$input.parent().find('.ugly-label').css({'opacity' : 1});
 			} else {
-				$input.next('label').css({'opacity':0});
+				$input.parent().find('.ugly-label').css({'opacity' : 0});
 			}
 		});
 	});
@@ -346,6 +347,7 @@ $(document).ready(function() {
 	quickFilters();
 	onFormSubmit();
 	onFormLoad();
+	appValidation();
 	$('form').preventDoubleSubmission();
 
 	if($('.home__middle-hashtags').length != 0) {
@@ -368,6 +370,9 @@ $(document).ready(function() {
 			autoclose: true,
 			startDate: "01-01-1920"
 		});
+	}
+
+	if( $('#cv-upload-form').length > 0  ) {
 		$('#cv-dob-datepicker').datepicker({
 			format: "dd-mm-yyyy",
 			weekStart: 1,

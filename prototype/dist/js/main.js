@@ -3641,6 +3641,55 @@ function onFormLoad()
 
 }
 
+function appValidation()
+{
+
+	if( $('#job-application-form').length > 0 ) {
+		var formApp = $('#job-application-form');
+		formApp.validate();
+		$('#job-application-form').find('input.required').on('change focusout', function() {
+			if( formApp.valid() ) {
+				$('.fake_btn_app').addClass('d-none');
+				$('.g-recaptcha.app').removeClass('d-none');
+			} else {
+				$('.fake_btn_app').removeClass('d-none');
+				$('.g-recaptcha.app').addClass('d-none');
+			}
+		});
+		$('.fake_btn_app').on('click', function (e) {
+			e.preventDefault();
+			if( formApp.valid() ) {
+				$('.fake_btn_app').addClass('d-none');
+				$('.g-recaptcha.app').removeClass('d-none');
+				$(this).next('button.g-recaptcha').trigger('click');
+			}
+		});
+	}
+
+	if( $('#cv-upload-form').length > 0 ) {
+		var formCV = $('#cv-upload-form');
+		formCV.validate();
+		$('#cv-upload-form').find('input.required').on('change focusout', function() {
+			if( formCV.valid() ) {
+				$('.fake_btn_cv').addClass('d-none');
+				$('.g-recaptcha').removeClass('d-none');
+			} else {
+				$('.fake_btn_cv').removeClass('d-none');
+				$('.g-recaptcha').addClass('d-none');
+			}
+		});
+		$('.fake_btn_cv').on('click', function (e) {
+			e.preventDefault();
+			if( formCV.valid() ) {
+				$('.fake_btn_cv').addClass('d-none');
+				$('.g-recaptcha').removeClass('d-none');
+				$(this).next('button.g-recaptcha').trigger('click');
+			}
+		});
+	}
+
+}
+
 function onAppSubmit(token) 
 {
 	document.getElementById("job-application-form").submit();
@@ -3885,11 +3934,12 @@ function uglyInput()
 {
 	$('.ugly').each(function() {
 		var $input = $(this).find('input, textarea');
-		$input.on('change', function() {
-			if(!$input.val()) {
-				$input.next('label').css({'opacity':1});
+		$input.on('change focusout', function() {
+			console.log(!$input.val());
+			if( !$input.val() === true ) {
+				$input.parent().find('.ugly-label').css({'opacity' : 1});
 			} else {
-				$input.next('label').css({'opacity':0});
+				$input.parent().find('.ugly-label').css({'opacity' : 0});
 			}
 		});
 	});
@@ -4081,6 +4131,7 @@ $(document).ready(function() {
 	quickFilters();
 	onFormSubmit();
 	onFormLoad();
+	appValidation();
 	$('form').preventDoubleSubmission();
 
 	if($('.home__middle-hashtags').length != 0) {
@@ -4103,6 +4154,9 @@ $(document).ready(function() {
 			autoclose: true,
 			startDate: "01-01-1920"
 		});
+	}
+
+	if( $('#cv-upload-form').length > 0  ) {
 		$('#cv-dob-datepicker').datepicker({
 			format: "dd-mm-yyyy",
 			weekStart: 1,

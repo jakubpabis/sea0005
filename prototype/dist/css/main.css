@@ -2061,6 +2061,18 @@ i {
 	background-color: white;
 }
 
+#uploadCVModal form .pretty label.error {
+	font-weight: 700;
+	font-style: italic;
+	position: absolute;
+	bottom: -13px;
+	left: 2em;
+	margin: 5px 0 0 0;
+	padding: 0 !important;
+	opacity: 1 !important;
+	color: #ec6278;
+}
+
 #uploadCVModal form .ugly label {
 	font-size: 14px;
 	font-weight: 400;
@@ -2115,7 +2127,7 @@ i {
 
 #uploadCVModal form .ugly input:focus ~ label,
 #uploadCVModal form .ugly textarea:focus ~ label {
-	opacity: 0;
+	opacity: 0 !important;
 }
 
 #uploadCVModal form .ugly input[type='file'],
@@ -2125,6 +2137,23 @@ i {
 	cursor: pointer !important;
 	opacity: 0;
 	background-color: white;
+}
+
+#uploadCVModal form .ugly input.error,
+#uploadCVModal form .ugly textarea.error {
+	background-color: #ec6278 !important;
+}
+
+#uploadCVModal form .ugly input.error + label,
+#uploadCVModal form .ugly textarea.error + label {
+	font-weight: 700;
+	top: auto;
+	bottom: -1px;
+	min-height: 1px;
+	margin: 5px 0 0 0;
+	padding: 0 !important;
+	opacity: 1 !important;
+	color: #ec6278;
 }
 
 #uploadCVModal form .ugly textarea {
@@ -2824,6 +2853,18 @@ aside#chat .dog {
 	background-color: white;
 }
 
+.jobs__single-sidebar .card form .pretty label.error {
+	font-weight: 700;
+	font-style: italic;
+	position: absolute;
+	bottom: -13px;
+	left: 2em;
+	margin: 5px 0 0 0;
+	padding: 0 !important;
+	opacity: 1 !important;
+	color: #ec6278;
+}
+
 .jobs__single-sidebar .card form .ugly {
 	position: relative;
 }
@@ -2882,7 +2923,7 @@ aside#chat .dog {
 
 .jobs__single-sidebar .card form .ugly input:focus ~ label,
 .jobs__single-sidebar .card form .ugly textarea:focus ~ label {
-	opacity: 0;
+	opacity: 0 !important;
 }
 
 .jobs__single-sidebar .card form .ugly input[type='file'],
@@ -2892,6 +2933,24 @@ aside#chat .dog {
 	cursor: pointer !important;
 	opacity: 0;
 	background-color: white;
+}
+
+.jobs__single-sidebar .card form .ugly input.error,
+.jobs__single-sidebar .card form .ugly textarea.error {
+	background-color: #ec6278 !important;
+}
+
+.jobs__single-sidebar .card form .ugly input.error + label,
+.jobs__single-sidebar .card form .ugly textarea.error + label {
+	font-weight: 700;
+	position: relative;
+	top: auto;
+	left: auto;
+	min-height: 1px;
+	margin: 5px 0 0 0;
+	padding: 0 !important;
+	opacity: 1 !important;
+	color: #ec6278;
 }
 
 .jobs__single-sidebar .card form .ugly textarea {

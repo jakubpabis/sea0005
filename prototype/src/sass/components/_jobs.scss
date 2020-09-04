@@ -705,6 +705,18 @@
                                 background-color: white;
                                 top: 0;
                             }
+
+                            &.error {
+                                position: absolute;
+                                left: 2em;
+                                bottom: -13px;
+                                padding: 0!important;
+                                margin: 5px 0 0 0;
+                                opacity: 1!important;
+                                font-weight: 700;
+                                color: $color-pink;
+                                font-style: italic;
+                            }
             
                         }
             
@@ -773,9 +785,9 @@
                             line-height: 1;
             
                             &:focus {
-            
+
                                 &~label {
-                                    opacity: 0;
+                                    opacity: 0!important;
                                 }
             
                             }
@@ -786,6 +798,23 @@
                                 background-color: white;
                                 opacity: 0;
                                 cursor: pointer!important;
+                            }
+
+                            &.error {
+                                background-color: $color-pink!important;
+                                
+                                &+label {
+                                    top: auto;
+                                    left: auto;
+                                    position: relative;
+                                    padding: 0!important;
+                                    margin: 5px 0 0 0;
+                                    opacity: 1!important;
+                                    font-weight: 700;
+                                    color: $color-pink;
+                                    min-height: 1px;
+                                }
+            
                             }
             
                         }
