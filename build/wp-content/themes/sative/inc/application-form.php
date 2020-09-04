@@ -15,12 +15,12 @@ function postRequest($request, $api_key, $api_secret, $json)
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
     $response = curl_exec($ch);
-    if(!$response)
-    {
-	    echo curl_error($ch);
-    }
+    // if(!$response)
+    // {
+	//     echo curl_error($ch);
+    // }
     $response = json_decode($response);
-    var_dump($response);
+    //var_dump($response);
 
     return $response;
 }
@@ -165,14 +165,14 @@ function add_to_queue_cv(){
     //var_dump($application_data);
 
     $person_response = postRequest('people/add_to_queue', $api_key, $api_secret, $data);
-    var_dump($person_response);
-    // if( isset( $person_response->status ) && $person_response->status === 'ok' ) {
-    //     $message = 'success';
-    // } else {
-    //     $message = 'failed';
-    // }
+    //var_dump($person_response);
+    if( isset( $person_response->status ) && $person_response->status === 'ok' ) {
+        $message = sendEmailCV();
+    } else {
+        $message = 'failed';
+    }
 
-    // return $message;
+    return $message;
 
 }
 
@@ -513,7 +513,7 @@ function sative_cv_form_submit() {
     $referer = remove_query_arg( 'messagecv', $_POST['_wp_http_referer'] );
     $redirect = '/app-success?ref='.$referer.'&messagecv='.$message;
     var_dump($redirect);
-    //header("Location: $redirect");
+    header("Location: $redirect");
 
 }
 add_action( 'admin_post_nopriv_cv_form', 'sative_cv_form_submit' );
