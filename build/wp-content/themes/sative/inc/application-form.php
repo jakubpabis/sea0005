@@ -87,7 +87,7 @@ function add_to_queue(){
     // echo '</pre>';
     // var_dump($person_response->status);
 
-    if( $person_response->status === 'ok' ) {
+    if( isset( $person_response->status ) && $person_response->status === 'ok' ) {
         $message = sendEmail();
     } else {
         $message = 'failed';
@@ -160,11 +160,6 @@ function add_to_queue_cv(){
     //var_dump($application_data);
 
     $person_response = postRequest('people/add_to_queue', $api_key, $api_secret, $data);
-
-    // echo '<pre>';
-    // echo var_dump($person_response);
-    // echo '</pre>';
-    //var_dump($person_response);
 
     if( isset( $person_response->status ) && $person_response->status === 'ok' ) {
         $message = sendEmailCV();
@@ -509,9 +504,10 @@ function sative_cv_form_submit() {
     $message = add_to_queue_cv();
 
     //$message = sendEmail();
-    $referer = remove_query_arg( 'message', wp_get_referer() );
-    $referer = remove_query_arg( 'messagecv', wp_get_referer() );
+    $referer = remove_query_arg( 'message', $_POST['_wp_http_referer'] );
+    $referer = remove_query_arg( 'messagecv', $_POST['_wp_http_referer'] );
     $redirect = '/app-success?ref='.$referer.'&messagecv='.$message;
+    //var_dump($redirect);
     header("Location: $redirect");
 
 }
@@ -523,8 +519,8 @@ function sative_application_form_submit() {
     $message = add_to_queue();
 
     //$message = sendEmail();
-    $referer = remove_query_arg( 'message', wp_get_referer() );
-    $referer = remove_query_arg( 'messagecv', wp_get_referer() );
+    $referer = remove_query_arg( 'message', $_POST['_wp_http_referer'] );
+    $referer = remove_query_arg( 'messagecv', $_POST['_wp_http_referer'] );
     $redirect = '/app-success?ref='.$referer.'&message='.$message;
     header("Location: $redirect");
 
