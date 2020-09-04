@@ -15,6 +15,10 @@ function postRequest($request, $api_key, $api_secret, $json)
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
     $response = curl_exec($ch);
+    if(!$response)
+    {
+	    echo curl_error($ch);
+    }
     $response = json_decode($response);
     //var_dump($response);
 
