@@ -50,7 +50,7 @@ function add_to_queue(){
 
         'sources' => array(
             array(
-                'parent_source_id' => 'Website SIR', // Example: Website
+                'parent_source_id' => isset( $_SESSION['referrer'] ) ? $_SESSION['referrer'] : 'Website SIR', // Example: Website
                 'name' => 'Applicant' // Example: Applicant
             ),
         ),
@@ -127,7 +127,7 @@ function add_to_queue_cv(){
 
         'sources' => array(
             array(
-                'parent_source_id' => 'Website SIR', // Example: Website
+                'parent_source_id' => isset( $_SESSION['referrer'] ) ? $_SESSION['referrer'] : 'Website SIR', // Example: Website
                 'name' => 'Applicant' // Example: Applicant
             ),
         ),
