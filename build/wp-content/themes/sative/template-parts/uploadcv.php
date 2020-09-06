@@ -97,7 +97,7 @@
                                 </div>
                             </div>
                             <div class="col-12 pt-1">
-                                <input type="hidden" name="applicant-find" val="Website SIR">
+                                <?php get_template_part( 'template-parts/referrer' ); ?>
                                 <input type="hidden" name="cv-jobid" value="188">
                                 <input type="hidden" name="action" value="cv_form">
                                 <?php wp_nonce_field( 'cv_form', 'cv_form_nonce' ); ?>

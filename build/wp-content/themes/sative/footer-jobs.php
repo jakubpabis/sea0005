@@ -105,7 +105,6 @@ $lang = pll_current_language();
             <?php get_template_part( 'template-parts/search' ); ?>
             <?php get_template_part( 'template-parts/uploadcv' ); ?>
         </div> <!-- #wrapper -->
-        <?php get_template_part( 'template-parts/referrer' ); ?>
 		<?php wp_footer(); ?>
         <!-- LinkedIn Insight Tag -->		
         <script type="text/javascript"> _linkedin_partner_id = "14266"; window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || []; window._linkedin_data_partner_ids.push(_linkedin_partner_id); </script>
