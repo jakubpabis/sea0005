@@ -91,8 +91,8 @@ get_header(); ?>
 					endif;
 
                     ?>
-                    <?php var_dump(get_field('recruiter_related')); ?>
-                    <?php if( is_array( get_field('recruiter_related') ) ): $recruiterF = get_field('recruiter_related')[0]; $recruiter = get_post($recruiterF->ID); ?>
+
+                    <?php if( is_array( get_field('recruiter_related') ) ): $recruiter = get_field('recruiter_related')[0]; ?>
 
                     <aside class="jobs__single-recruiter">
                         <h3><?php pll_e( 'Executive search consultant' ); ?></h3>
