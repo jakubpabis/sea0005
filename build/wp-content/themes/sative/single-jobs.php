@@ -84,7 +84,7 @@ get_header(); ?>
 
 					<?php 
 					
-					echo get_the_content();
+					the_content();
 
 					if(get_field('button')) :
 						echo '<a href="'.get_field('button')['url'].'" class="btn btn__default yellow">'.get_field('button')['title'].'</a>'; 
