@@ -92,7 +92,7 @@ get_header(); ?>
 
                     ?>
                     <?php $recruiterF = get_field('recruiter_related'); ?>
-                    <?php if( is_array( $recruiterF ) ): $recruiter = $recruiterF[0]; ?>
+                    <?php if( is_array( $recruiterF ) && !empty( $recruiterF ) ): $recruiter = $recruiterF[0]; ?>
 
                     <aside class="jobs__single-recruiter">
                         <h3><?php pll_e( 'Executive search consultant' ); ?></h3>
