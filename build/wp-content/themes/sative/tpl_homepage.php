@@ -95,6 +95,17 @@ get_header(); ?>
 <?php endif; ?>
 
 <?php if( have_rows('middle_cards') ): ?>
+<?php
+wp_reset_postdata();
+$args = array( 
+    'post_type' => 'jobs',
+    'post_status' => 'publish',
+    'posts_per_page' => -1,
+);
+$query = new WP_Query( $args );
+$post_no = $query->found_posts;
+wp_reset_postdata();
+?>
 <section class="home__cards cards__section">
     <div class="cards__section-img">
         <img data-src="<?= get_field('middle_cards_image')['url']; ?>" alt="<?= get_field('middle_cards_image')['alt']; ?>" class="bg-cover lazy">
@@ -102,14 +113,14 @@ get_header(); ?>
     <div class="cards__section-content bg-sea">
         <div class="container-lg">
             <div class="row">
-                <?php while ( have_rows('middle_cards') ) : the_row(); ?>
+                <?php $i = 1; while ( have_rows('middle_cards') ) : the_row(); ?>
                 <div class="col-md-6 d-flex">
                     <div class="card w-100">
                         <h3 class="mb-2">
                             <?php if(get_sub_field('icon')): ?>
                             <i class="<?= get_sub_field('icon'); ?> mr-2"></i>&nbsp;
                             <?php endif; ?>
-                            <?= get_sub_field('title'); ?>
+                            <?php echo $i === 4 ? $post_no : null ?>&nbsp;<?= get_sub_field('title'); ?>
                         </h3>
                         <?= get_sub_field('text'); ?>
                         <div class="btns mt-3">
@@ -124,7 +135,7 @@ get_header(); ?>
                         </div>
                     </div>
                 </div>
-                <?php endwhile; ?>
+                <?php $i++; endwhile; ?>
             </div>
         </div>
     </div>
