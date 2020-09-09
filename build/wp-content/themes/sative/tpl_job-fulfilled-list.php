@@ -19,9 +19,9 @@ get_header();
                     <span class="header__jobs-jobsno"><?= $post_no === 0 ? pll_e( 'No jobs found...' ) : $post_no; ?></span>
                     <?php 
                         if($post_no > 1) {
-                            pll_e( 'open jobs' );
+                            pll_e( 'fulfilled jobs' );
                         } else if($post_no > 0) {
-                            pll_e( 'open job' );
+                            pll_e( 'filfilled job' );
                         }
                     ?>
                 </h1>

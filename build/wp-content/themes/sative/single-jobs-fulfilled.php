@@ -15,7 +15,10 @@ get_header(); ?>
 		<div class="container">
 			<div class="row">
                 <header class="jobs__single-title col-lg-8 col-sm-9">
-                    <?php the_title( '<h1>', '</h1>' ); ?>
+                    <?php the_title( '<h1 class="color-sea">', '</h1>' ); ?>
+                    <h3 class="color-sales">
+                        <?php pll_e( 'This job has been fulfilled' ); ?>
+                    </h3>
                 </header>
                 <div class="col-lg-4 col-sm-3 text-right">
                     <button type="button" id="backBTN" class="btn btn__medium yellow d-none"><?php pll_e( 'Back' ); ?></button>
@@ -67,6 +70,10 @@ get_header(); ?>
 					if(get_field('button')) :
 						echo '<a href="'.get_field('button')['url'].'" class="btn btn__default yellow">'.get_field('button')['title'].'</a>'; 
 					endif;
+
+                    echo '<h3 class="color-sales">';
+                    pll_e( 'This job has been fulfilled' );
+                    echo '</h3>';
 
                     ?>
 
