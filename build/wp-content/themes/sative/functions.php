@@ -215,7 +215,7 @@ function sative_scripts() {
     wp_enqueue_script('sative-bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', array(), '4.4.1', true );
     wp_enqueue_script('sative-validate', 'https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js', array(), '1.19.2', true );
     wp_enqueue_script('sative-methods', 'https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/additional-methods.min.js', array(), '1.19.2', true );
-	wp_enqueue_script('sative-app', get_template_directory_uri() . '/assets/js/main.min.js', array(), '1.0.6', true );
+	wp_enqueue_script('sative-app', get_template_directory_uri() . '/assets/js/main.min.js', array(), '1.0.7', true );
 	// Internet Explorer HTML5 support
     wp_enqueue_script( 'html5hiv',get_template_directory_uri().'/inc/assets/js/html5.js', array(), '3.7.0', false );
     wp_script_add_data( 'html5hiv', 'conditional', 'lt IE 9' );

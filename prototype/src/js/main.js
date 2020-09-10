@@ -305,7 +305,7 @@ function quickFilters()
 					$form.submit();
 				}
 				break;
-			case 'freelance':
+			case '#freelance':
 				var $input = $('.jobs__list-filters').find('.job-type-filters').find('li').find('input[data-name="freelance"], input[data-name="freelance-interim-contractor"]');
 				if($input) {
 					$input.prop('checked', !$input.prop('checked'));
