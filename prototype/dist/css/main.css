@@ -2593,7 +2593,8 @@ aside#chat .dog {
 	background-image: url('../img/cubecross-exec.svg');
 }
 
-.jobs__list-item .job-title .icon[data-type='freelance'] {
+.jobs__list-item .job-title .icon[data-type='freelance'],
+.jobs__list-item .job-title .icon[data-type='marketing'] {
 	background-image: url('../img/cubecross-free.svg');
 }
 

@@ -326,7 +326,8 @@
                         background-image: url('../img/cubecross-exec.svg');
                     }
 
-                    &[data-type="freelance"] {
+                    &[data-type="freelance"],
+                    &[data-type="marketing"] {
                         background-image: url('../img/cubecross-free.svg');
                     }
 
