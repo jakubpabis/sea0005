@@ -4059,22 +4059,34 @@ function quickFilters()
 		switch( $(this).attr('href') ) {
 			case '#it':
 				var $input = $('.jobs__list-filters').find('.job-category-filters').find('li').find('input[data-name="it"]');
+				var $children = $('.jobs__list-filters').find('.job-category-filters').find('li').find('input[data-name="it"]').parent().next('ul').find('input');
 				if($input) {
 					$input.prop('checked', !$input.prop('checked'));
+					if($children) {
+						$children.prop('checked', false);
+					}
 					$form.submit();
 				}
 				break;
 			case '#sales':
 				var $input = $('.jobs__list-filters').find('.job-category-filters').find('li').find('input[data-name="sales"]');
+				var $children = $('.jobs__list-filters').find('.job-category-filters').find('li').find('input[data-name="sales"]').parent().next('ul').find('input');
 				if($input) {
 					$input.prop('checked', !$input.prop('checked'));
+					if($children) {
+						$children.prop('checked', false);
+					}
 					$form.submit();
 				}
 				break;
 			case '#marketing':
 				var $input = $('.jobs__list-filters').find('.job-category-filters').find('li').find('input[data-name="marketing"]');
+				var $children = $('.jobs__list-filters').find('.job-category-filters').find('li').find('input[data-name="marketing"]').parent().next('ul').find('input');
 				if($input) {
 					$input.prop('checked', !$input.prop('checked'));
+					if($children) {
+						$children.prop('checked', false);
+					}
 					$form.submit();
 				}
 				break;
