@@ -77,7 +77,7 @@ $query = new WP_Query( $args );
 				<?php dynamic_sidebar( 'sidebar-1' ); ?>
 			</div>
 			<?php endif; ?>
-			<div class="card bg-sea">
+			<div class="card bg-sea mt-5">
 				<h3>
 					<?php pll_e( 'Contact' ); ?>
 				</h3>
