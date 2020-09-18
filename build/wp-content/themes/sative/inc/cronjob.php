@@ -56,6 +56,15 @@ function xmlRead()
             $meta_description = null;
         }
 
+        $excerpt = false;
+        if( $job->custom_fields && !empty( $job->custom_fields ) ) {
+            foreach( $job->custom_fields->custom_field as $field ) {
+                if( $field['field'] == 'job_excerpt' ) {
+                    $excerpt = $field;
+                }
+            }
+        }
+
         if( strval($job->contact_first_name) && strval($job->contact_last_name) ) {
             $recruiter = strval($job->contact_first_name).' '.strval($job->contact_last_name);
         } else if( $job->contact ) {
@@ -76,6 +85,10 @@ function xmlRead()
             'post_date'     => $date,
             'post_name'     => $slug,
         );
+
+        if( $excerpt ) {
+            $jobArray['post_excerpt'] = $excerpt;
+        }
 
         if( in_array( $jobID, $postsArr, true ) ) {
             //var_dump('check');

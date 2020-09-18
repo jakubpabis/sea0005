@@ -27,7 +27,7 @@ function custom_post_type_jobs()
         'description'         => __( 'Jobs', 'sative' ),
         'labels'              => $labels,
         // Features this CPT supports in Post Editor
-        'supports'            => array( 'title', 'editor', 'custom-fields' ),
+        'supports'            => array( 'title', 'editor', 'excerpt', 'custom-fields' ),
         // You can associate this CPT with a taxonomy or custom taxonomy. 
         'taxonomies'          => array( 'job-category', 'job-type', 'job-location' ),
         /* A hierarchical CPT is like Pages and can have
