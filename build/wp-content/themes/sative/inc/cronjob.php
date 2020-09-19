@@ -83,7 +83,7 @@ function xmlRead()
                 $recruiter_translated = pll_get_post($recruiter_page->ID, 'en');
             }
             $recruiter_related[] = get_post($recruiter_translated);
-            var_dump($recruiter_related);
+            //var_dump($recruiter_related);
         }
 
         $job_categories = $job->categories->category;
