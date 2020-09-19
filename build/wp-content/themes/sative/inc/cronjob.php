@@ -71,8 +71,19 @@ function xmlRead()
             $recruiter = strval($job->contact);
         }
 
+        $recruiter_related = array();
         if($recruiter) {
-            $recruiter_related = get_page_by_title($recruiter, OBJECT, 'team');
+            $recruiter_page = get_page_by_title($recruiter, OBJECT, 'team');
+            $recruiter_related[] = $recruiter_page;
+
+            $recruiter_lang = pll_get_post_language($recruiter_page->ID);
+            if( $recruiter_lang === 'en' ) {
+                $recruiter_translated = pll_get_post($recruiter_page->ID, 'nl');
+            } else {
+                $recruiter_translated = pll_get_post($recruiter_page->ID, 'en');
+            }
+            $recruiter_related[] = get_post($recruiter_translated);
+            var_dump($recruiter_related);
         }
 
         $job_categories = $job->categories->category;
@@ -130,7 +141,7 @@ function xmlRead()
                     update_field( 'longitude', floatval($job->lng), $postID );
                     update_field( 'recruiter', $recruiter, $postID );
     
-                    if( $recruiter_related !== null ) {
+                    if( $recruiter_related !== null || !empty( $recruiter_related ) ) {
                         update_field( 'recruiter_related', $recruiter_related, $postID );   
                     }
                     
@@ -193,7 +204,7 @@ function xmlRead()
             update_field( 'longitude', floatval($job->lng), $postID );
             update_field( 'recruiter', $recruiter, $postID );
 
-            if( $recruiter_related !== null ) {
+            if( $recruiter_related !== null || !empty( $recruiter_related ) ) {
                 update_field( 'recruiter_related', $recruiter_related, $postID );   
             }
 
