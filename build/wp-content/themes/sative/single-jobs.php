@@ -5,7 +5,7 @@
  * @package Sative
  */
 
-get_header(); ?>
+get_header( 'job' ); ?>
 
 <?php while ( have_posts() ) : the_post(); 
 
