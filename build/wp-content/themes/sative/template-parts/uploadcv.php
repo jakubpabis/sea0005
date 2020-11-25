@@ -23,7 +23,7 @@
                     </span>
                     <div class="row social-login">
                         <?php global $wp; ?>
-                        <button type="button" class="btn btn__small navy icon full" onclick="myLinkedinLogin( '<?= siteURL().'userdatafetch'; ?>', '<?= home_url( $wp->request ) ?>' )">
+                        <button type="button" class="btn btn__small navy icon full d-none" onclick="myLinkedinLogin( '<?= siteURL().'userdatafetch'; ?>', '<?= home_url( $wp->request ) ?>' )">
                             <i class="fab fa-linkedin"></i>
                             <span>LinkedIn</span>
                         </button>
