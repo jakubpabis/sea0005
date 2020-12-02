@@ -34,5 +34,6 @@ $lang = pll_current_language();
                 }
             });
         </script> */ ?>
+        <!-- Start of HubSpot Embed Code --> <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/1932066.js"></script> <!-- End of HubSpot Embed Code -->
     </body>
 </html>
