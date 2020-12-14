@@ -31,7 +31,7 @@ function add_to_queue(){
 
         # Our new data
         $data = array(
-            'secret' => '6LfL9cYZAAAAACxkyqpzP8imKOGdDQzLshPNk_vC',
+            'secret' => '6LeA-gUaAAAAAItxjKANTqw14c8eK7-sEXsBYe6R',
             'response' => $_POST['g-recaptcha-response']
         );
         # Create a connection
@@ -139,7 +139,7 @@ function add_to_queue_cv(){
 
         # Our new data
         $data = array(
-            'secret' => '6LfL9cYZAAAAACxkyqpzP8imKOGdDQzLshPNk_vC',
+            'secret' => '6LeA-gUaAAAAAItxjKANTqw14c8eK7-sEXsBYe6R',
             'response' => $_POST['g-recaptcha-response']
         );
         # Create a connection

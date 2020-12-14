@@ -102,7 +102,7 @@
                                 <input type="hidden" name="action" value="cv_form">
                                 <?php wp_nonce_field( 'cv_form', 'cv_form_nonce' ); ?>
                                 <button type="button" class="fake_btn_cv btn btn__default yellow"><?= pll_e( 'Send application' ); ?></button>
-                                <button class="g-recaptcha btn btn__default yellow d-none" data-sitekey="6LfL9cYZAAAAAHyx8j1J63IRKKMb1IXhyA6nyQFk" data-callback="onCVSubmit"><?= pll_e( 'Send application' ); ?></button>
+                                <button class="g-recaptcha btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onCVSubmit"><?= pll_e( 'Send application' ); ?></button>
                             </div>
                         </div>
                     </form>
