@@ -26,6 +26,7 @@
 	<!-- Bing Webmaster Tools -->
 		<meta name="msvalidate.01" content="DB26E7D9A02A63952EAC119AC5AB03FC" />
 	<!-- /Bing Webmaster Tools -->
+    <meta name="p:domain_verify" content="40be4aba9dc0f75fdd75d97b0a233017"/>
     <?php wp_head(); ?>
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/fa.min.css" media="none" onload="if(media!='all')media='all'">
     <noscript>
