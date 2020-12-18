@@ -47,8 +47,12 @@
             "description" : "<?php echo get_the_content(); ?>",
             "identifier": {
                 "@type": "PropertyValue",
-                "name": "Google",
-                "value": "1234567"
+                "name": "SearchXRecruitment",
+                <?php 
+                    global $post;
+                    $post_slug = $post->post_name; 
+                ?>
+                "value": "$post_slug"
             },
             "datePosted" : "<?php echo get_the_date('Y-m-d'); ?>",
             <?php 
