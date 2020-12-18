@@ -52,7 +52,7 @@
                     global $post;
                     $post_slug = $post->post_name; 
                 ?>
-                "value": "$post_slug"
+                "value": "<?php echo $post_slug; ?>"
             },
             "datePosted" : "<?php echo get_the_date('Y-m-d'); ?>",
             <?php 
