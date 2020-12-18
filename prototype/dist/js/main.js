@@ -3556,7 +3556,7 @@ function myGithubLogin($src)
 {
 	setCookie('redirect_user_url', $src, 1);
 	setCookie('api_type', 'github', 1);
-	window.location.href = 'https://github.com/login/oauth/authorize?client_id=3b1b9252c021bbb321e0&scope=read:user';
+	window.location.href = 'https://github.com/login/oauth/authorize?client_id=1f774f6bc988fd78b1ab&scope=read:user';
 }
 
 function onSignIn(googleUser) {
