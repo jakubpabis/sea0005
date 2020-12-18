@@ -28,6 +28,82 @@
 	<!-- /Bing Webmaster Tools -->
     <meta name="p:domain_verify" content="40be4aba9dc0f75fdd75d97b0a233017"/>
     <?php wp_head(); ?>
+    <?php
+        $google_job = false;
+        $xml = simplexml_load_file('https://jobs.searchsoftware.nl/searchit.xml') or die("Error: Cannot create object");
+        foreach($xml->vacancy as $job) {
+            if( intval($job->id) === intval(get_field('job_id')) ) {
+                $google_job = $job;
+                break;
+            }
+        }
+    ?>
+    <?php if( $google_job ): ?>
+    <script type="application/ld+json">
+        {
+            "@context" : "https://schema.org/",
+            "@type" : "JobPosting",
+            "title" : "<?php echo get_the_title(); ?>",
+            "description" : "<?php echo get_the_content(); ?>",
+            "identifier": {
+                "@type": "PropertyValue",
+                "name": "Google",
+                "value": "1234567"
+            },
+            "datePosted" : "<?php echo get_the_date('Y-m-d'); ?>",
+            <?php 
+                $date = strtotime($google_job->date_due);
+                $valid = date('Y-m-d', $date);
+            ?>
+            "validThrough" : "<?php echo $valid; ?>",
+            <?php
+                $helper = jobDisplayHelper();
+                if( $helper['type'] ) {
+                    if( $helper['type'] === 'Fulltime employee' ) {
+                        echo '"employmentType" : "FULL_TIME",';
+                    } elseif( $helper['type'] === 'Parttime employee' ) {
+                        echo '"employmentType" : "PART_TIME",';
+                    } elseif( $helper['type'] === 'Freelance / Interim / Contractor' ) {
+                        echo 'employmentType": ["CONTRACTOR", "OTHER"],';
+                    } elseif( $helper['type'] === 'Intern / Study / Sponsor' ) {
+                        echo '"employmentType": ["INTERN", "OTHER"],';
+                    }
+                }
+            ?>
+            "hiringOrganization" : {
+                "@type" : "Organization",
+                "name" : "Search X Recruitment",
+                "sameAs" : "https://www.searchxrecruitment.com/",
+                "logo" : "https://www.searchxrecruitment.com/wp-content/uploads/2020/05/logo-dog.png"
+            },
+            "jobLocation": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "<?php echo $google_job->address_street; ?>",
+                    "addressLocality": "<?php echo $google_job->address_city; ?>",
+                    "addressRegion": "",
+                    "postalCode": "<?php echo $google_job->address_zip; ?>",
+                    "addressCountry": "<?php echo $google_job->address_country == 'The Netherlands' ? 'NL' : $google_job->address_country; ?>"
+                }
+            },
+            "baseSalary": {
+                "@type": "MonetaryAmount",
+                "currency": "EUR",
+                "value": {
+                    "@type": "QuantitativeValue",
+                    <?php if( get_field('salary_min') && get_field('salary_max') ): ?>
+                        <?php echo '"minValue": '.(int)get_field("salary_min").','; ?>
+                        <?php echo '"maxValue": '.(int)get_field("salary_max").','; ?>
+                    <?php else: ?>
+                        <?php echo '"value": '.(int)get_field("salary_min").','; ?>
+                    <?php endif; ?>
+                    "unitText": "<?php echo $google_job->contract_hours; ?>"
+                }
+            }
+        }
+    </script>
+    <?php endif; ?>
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/fa.min.css" media="none" onload="if(media!='all')media='all'">
     <noscript>
         <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/fa.min.css"/>

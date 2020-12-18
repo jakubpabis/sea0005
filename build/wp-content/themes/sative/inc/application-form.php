@@ -68,7 +68,7 @@ function add_to_queue(){
                     'zip'     => '',
                     'city'    => isset( $_POST['app-city'] ) ? $_POST['app-city'] : '',
                     'state'   => '',
-                    'country' => '',
+                    'country' => isset( $_POST['app-country'] ) ? $_POST['app-country'] : '',
                 ),
 
                 'sources' => array(
@@ -176,7 +176,7 @@ function add_to_queue_cv(){
                     'zip'     => '',
                     'city'    => isset( $_POST['cv-city'] ) ? $_POST['cv-city'] : '',
                     'state'   => '',
-                    'country' => '',
+                    'country' => isset( $_POST['cv-country'] ) ? $_POST['cv-country'] : '',
                 ),
 
                 'sources' => array(

@@ -180,6 +180,7 @@
             }
     
             input,
+            select,
             textarea {
                 border: none;
                 outline: none!important;
@@ -221,6 +222,19 @@
                         min-height: 1px;
                     }
 
+                }
+
+            }
+
+            select {
+                border-radius: 0!important;
+                padding-top: 13px;
+                padding-bottom: 13px;
+                font-style: italic!important;
+
+                &:active,
+                &:focus {
+                    font-style: normal!important;
                 }
 
             }

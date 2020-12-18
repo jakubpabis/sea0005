@@ -576,7 +576,8 @@ $toTranslate = array(
     'Search X Recruitment uses cookies to improve our website and your user experience. <br/>By clicking any link or continuing to browse you are giving your consent to our cookie policy.',
     'cookie policy',
     'Accept',
-    'Fulfilled jobs'
+    'Fulfilled jobs',
+    'Choose your country'
 );
 
 if( function_exists( 'pll_register_string' ) ) {
