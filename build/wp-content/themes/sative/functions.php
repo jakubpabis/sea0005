@@ -207,7 +207,7 @@ add_filter('tiny_mce_before_init', 'my_mce4_options');
  */
 function sative_scripts() {
     // load bootstrap css
-	wp_enqueue_style( 'sative-bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/css/bootstrap.min.css' );
+	wp_enqueue_style( 'sative-bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' );
 	wp_enqueue_style( 'sative-gfonts', 'https://fonts.googleapis.com/css?family=Roboto:300,300i,500,500i&display=swap' );
 
 	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', array(), '3.5.1', false );
