@@ -78,7 +78,7 @@
                 "@type" : "Organization",
                 "name" : "Search X Recruitment",
                 "sameAs" : "https://www.searchxrecruitment.com/",
-                "logo" : "https://www.searchxrecruitment.com/wp-content/uploads/2020/05/logo-dog.png"
+                "logo" : "https://www.searchxrecruitment.com/wp-content/uploads/2020/12/cubecross512.png"
             },
             "jobLocation": {
                 "@type": "Place",
