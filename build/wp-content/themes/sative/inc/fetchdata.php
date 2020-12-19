@@ -65,9 +65,6 @@ function userDataFetch()
         $headersUser = array('Authorization' => 'Bearer '.$token);
         $user = Requests::get('https://api.linkedin.com/v2/me', $headersUser);
         $userBody = json_decode( $user->body, true);
-        // echo '<pre>';
-        // echo var_dump( $userBody );
-        // echo '</pre>';
 
         $user_first_name = $userBody['localizedFirstName'];
         $user_last_name = $userBody['localizedLastName'];

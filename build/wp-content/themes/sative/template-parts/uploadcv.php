@@ -9,6 +9,32 @@
 
     $countries = array("Netherlands", "Netherlands Antilles", "Belgium", "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegowina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Congo, the Democratic Republic of the", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia (Hrvatska)", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "France Metropolitan", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard and Mc Donald Islands", "Holy See (Vatican City State)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran (Islamic Republic of)", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kuwait", "Kyrgyzstan", "Lao, People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia, The Former Yugoslav Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russian Federation", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Seychelles", "Sierra Leone", "Singapore", "Slovakia (Slovak Republic)", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "Spain", "Sri Lanka", "St. Helena", "St. Pierre and Miquelon", "Sudan", "Suriname", "Svalbard and Jan Mayen Islands", "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan, Province of China", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "United States Minor Outlying Islands", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Virgin Islands (British)", "Virgin Islands (U.S.)", "Wallis and Futuna Islands", "Western Sahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe");
 
+    if( isset( $_GET['app-name'] ) && $_GET['app-name'] ) {
+        $app_name = $_GET['app-name'];
+    } else {
+        $app_name = null;
+    }
+    if( isset( $_GET['app-email'] ) && $_GET['app-email'] ) {
+        $app_email = $_GET['app-email'];
+    } else {
+        $app_email = null;
+    }
+    if( isset( $_GET['app-location'] ) && $_GET['app-location'] ) {
+        $app_location = $_GET['app-location'];
+    } else {
+        $app_location = null;
+    }
+    if( isset( $_GET['app-motivation'] ) && $_GET['app-motivation'] ) {
+        $app_motivation = $_GET['app-motivation'];
+    } else {
+        $app_motivation = null;
+    }
+    if( isset( $_GET['app-url'] ) && $_GET['app-url'] ) {
+        $app_url = $_GET['app-url'];
+    } else {
+        $app_url = null;
+    }
+
 ?>
 <div id="uploadCVModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="uploadCVModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -65,12 +91,12 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
-                                <input class="required" type="text" name="cv-name" minlength="1" required>
-                                <label class="ugly-label" for="cv-name"><?= pll_e( 'Name' ); ?> <span>*</span></label>
+                                <input class="required" type="text" name="cv-name" minlength="1" value="<?= $app_name ? $app_name : null; ?>" required>
+                                <label class="ugly-label" for="cv-name" <?= $app_name ? 'style="opacity: 0;"' : null; ?>><?= pll_e( 'Name' ); ?> <span>*</span></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
-                                <input class="required" type="email" name="cv-email" required>
-                                <label class="ugly-label" for="cv-email"><?= pll_e( 'Email' ); ?> <span>*</span></label>
+                                <input class="required" type="email" name="cv-email" value="<?= $app_email ? $app_email : null; ?>" required>
+                                <label class="ugly-label" for="cv-email" <?= $app_email ? 'style="opacity: 0;"' : null; ?>><?= pll_e( 'Email' ); ?> <span>*</span></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
                                 <input type="text" name="cv-phone">
@@ -81,8 +107,8 @@
                                 <label class="ugly-label" for="cv-dob"><?= pll_e( 'Date of birth' ); ?></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
-                                <input type="text" name="cv-city">
-                                <label class="ugly-label" for="cv-city"><?= pll_e( 'City' ); ?></label>
+                                <input type="text" name="cv-city" value="<?= $app_location ? $app_location : null; ?>">
+                                <label class="ugly-label" for="cv-city" <?= $app_location ? 'style="opacity: 0;"' : null; ?>><?= pll_e( 'City' ); ?></label>
                             </div>
                             <div class="col-lg-6 ugly pt-2 pb-3">
                                 <select name="cv-country">
@@ -103,8 +129,8 @@
                                 <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="cv-cv" onchange="getFileName(this, 'cv-cv-label')">
                             </div>
                             <div class="col-12 ugly pt-2 pb-3">
-                                <textarea name="cv-motivation"></textarea>
-                                <label class="ugly-label" for="cv-motivation"><?= pll_e( 'Motivation' ); ?></label>
+                                <textarea name="cv-motivation"><?= $app_motivation ? $app_motivation : null; ?></textarea>
+                                <label class="ugly-label" for="cv-motivation" <?= $app_motivation ? 'style="opacity: 0;"' : null; ?>><?= pll_e( 'Motivation' ); ?></label>
                             </div>
                             <div class="col-12 pb-3">
                                 <div class="pretty p-icon p-plain p-jelly">
