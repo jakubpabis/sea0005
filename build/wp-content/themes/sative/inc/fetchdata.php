@@ -46,6 +46,7 @@ function userDataFetch()
             $redirect .= '&uploadcv=true';
         }
         unset( $_COOKIE['uploadcvmodal'] ); 
+        setcookie('uploadcvmodal', null, -1, '/');
 
     } elseif ( isset( $_GET['code'] ) && $apiType === 'linkedin' ) {
         $headers = array('Accept' => 'application/json', );
@@ -76,6 +77,7 @@ function userDataFetch()
             $redirect .= '&uploadcv=true';
         }
         unset( $_COOKIE['uploadcvmodal'] ); 
+        setcookie('uploadcvmodal', null, -1, '/');
 
     }
     
