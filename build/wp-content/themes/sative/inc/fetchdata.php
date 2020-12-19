@@ -37,10 +37,11 @@ function userDataFetch()
         $user_name = $userBody['name'];
         $user_location = $userBody['location'];
         $user_bio = $userBody['bio'];
-        $user_html_url = $userBody['html_url'];
+        //$user_html_url = $userBody['html_url'];
         //$redirect = $cookie.'?code='.$_GET['code'];
 
-        $redirect = $cookie.'?app-name='.$user_name.'&app-email='.$user_email.'&app-location='.$user_location.'&app-motivation='.$user_bio.'&app-url='.$user_html_url;
+        //$redirect = $cookie.'?app-name='.$user_name.'&app-email='.$user_email.'&app-location='.$user_location.'&app-motivation='.$user_bio.'&app-url='.$user_html_url;
+        $redirect = $cookie.'?app-name='.$user_name.'&app-email='.$user_email.'&app-location='.$user_location.'&app-motivation='.$user_bio;
 
         if( isset( $_COOKIE['uploadcvmodal'] ) ) {
             $redirect .= '&uploadcv=true';
