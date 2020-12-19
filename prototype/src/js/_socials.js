@@ -50,9 +50,6 @@ function afterFormOpen()
 		// 	}
 		// });
 	}
-	// if(isScriptLoaded('https://www.google.com/recaptcha/api.js') == false) {
-	// 	addScript('https://www.google.com/recaptcha/api.js');
-	// }
 	if(isScriptLoaded('https://connect.facebook.net/en_US/sdk.js') == false) {
 		loadScript('https://connect.facebook.net/en_US/sdk.js', function() {
 			window.fbAsyncInit = function() {

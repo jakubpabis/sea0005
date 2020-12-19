@@ -42,6 +42,10 @@ function userDataFetch()
 
         $redirect = $cookie.'?app-name='.$user_name.'&app-email='.$user_email.'&app-location='.$user_location.'&app-motivation='.$user_bio.'&app-url='.$user_html_url;
 
+        if( isset( $_GET['uploadcv'] ) || isset( $_POST['uploadcv'] ) ) {
+            $redirect .= '&uploadcv=true';
+        }
+
     } elseif ( isset( $_GET['code'] ) && $apiType === 'linkedin' ) {
         $headers = array('Accept' => 'application/json', );
         $redirect_uri = siteURL().'userdatafetch';
@@ -69,6 +73,11 @@ function userDataFetch()
         $user_name = $user_first_name.' '.$user_last_name;
 
         $redirect = $cookie.'?app-name='.$user_name;
+
+        if( isset( $_GET['uploadcv'] ) || isset( $_POST['uploadcv'] ) ) {
+            $redirect .= '&uploadcv=true';
+        }
+
     }
     
     header("Location: $redirect");
