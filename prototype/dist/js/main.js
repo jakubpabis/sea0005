@@ -3578,7 +3578,7 @@ function myFacebookLogin() {
 
 	FB.login(function(response) {
 		if (response.status === 'connected') {
-			FB.api('/me', {fields: 'name, email, birthday, gender, location, picture'}, function(response) {
+			FB.api('/me', {fields: 'name, email, gender, picture'}, function(response) {
 				console.log(response);
 				if(response['name']) {
                     $('form').find('input[name="app-name"]').val(response['name']).next('label').css({'opacity':0});
@@ -3596,22 +3596,22 @@ function myFacebookLogin() {
                     $('form').find('input[name="app-gender"][value="female"]').prop('checked', true);
                     $('form').find('input[name="cv-gender"][value="female"]').prop('checked', true);
 				}
-				if(response['location']['name']) {
-                    $('form').find('input[name="app-city"]').val(response['location']['name']).next('label').css({'opacity':0});
-                    $('form').find('input[name="cv-city"]').val(response['location']['name']).next('label').css({'opacity':0});
-				}
-				if(response['birthday']) {
-					var $bdayO = response['birthday'];
-					var $bdayM = $bdayO.split('/');
-					$bdayM = $bdayM[1]+'-'+$bdayM[0]+'-'+$bdayM[2];
-                    $('form').find('input[name="app-dob"]').val($bdayM).next('label').css({'opacity':0});
-                    $('form').find('input[name="cv-dob"]').val($bdayM).next('label').css({'opacity':0});
-				}
+				// if(response['location']['name']) {
+                //     $('form').find('input[name="app-city"]').val(response['location']['name']).next('label').css({'opacity':0});
+                //     $('form').find('input[name="cv-city"]').val(response['location']['name']).next('label').css({'opacity':0});
+				// }
+				// if(response['birthday']) {
+				// 	var $bdayO = response['birthday'];
+				// 	var $bdayM = $bdayO.split('/');
+				// 	$bdayM = $bdayM[1]+'-'+$bdayM[0]+'-'+$bdayM[2];
+                //     $('form').find('input[name="app-dob"]').val($bdayM).next('label').css({'opacity':0});
+                //     $('form').find('input[name="cv-dob"]').val($bdayM).next('label').css({'opacity':0});
+				// }
 			});
 		} else {
 			console.log('User cancelled login or did not fully authorize.');
 		}
-	}, {scope: 'public_profile,email,user_gender,user_location,user_birthday'});
+	}, {scope: 'public_profile,email,user_gender'});
 
 }
 function onFormSubmit()
