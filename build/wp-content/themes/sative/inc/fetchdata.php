@@ -42,9 +42,10 @@ function userDataFetch()
 
         $redirect = $cookie.'?app-name='.$user_name.'&app-email='.$user_email.'&app-location='.$user_location.'&app-motivation='.$user_bio.'&app-url='.$user_html_url;
 
-        if( isset( $_GET['uploadcv'] ) || isset( $_POST['uploadcv'] ) ) {
+        if( isset( $_COOKIE['uploadcvmodal'] ) ) {
             $redirect .= '&uploadcv=true';
         }
+        unset( $_COOKIE['uploadcvmodal'] ); 
 
     } elseif ( isset( $_GET['code'] ) && $apiType === 'linkedin' ) {
         $headers = array('Accept' => 'application/json', );
@@ -74,9 +75,10 @@ function userDataFetch()
 
         $redirect = $cookie.'?app-name='.$user_name;
 
-        if( isset( $_GET['uploadcv'] ) || isset( $_POST['uploadcv'] ) ) {
+        if( isset( $_COOKIE['uploadcvmodal'] ) ) {
             $redirect .= '&uploadcv=true';
         }
+        unset( $_COOKIE['uploadcvmodal'] ); 
 
     }
     

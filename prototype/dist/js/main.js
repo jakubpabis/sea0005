@@ -3536,10 +3536,13 @@ function afterFormOpen()
 	}
 }
 
-function myLinkedinLogin($url, $src)
+function myLinkedinLogin($url, $src, $cv = false)
 {
 	setCookie('redirect_user_url', $src, 1);
 	setCookie('api_type', 'linkedin', 1);
+	if( $cv ) {
+		setCookie('uploadcvmodal', true, 1);
+	}
 	window.location.href = "https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77dug7ogaz4ouh&redirect_uri="+$url+"&scope=r_liteprofile%20r_emailaddress%20w_member_social";
 	// var head = document.getElementsByTagName('head')[0];
 	// var script = document.createElement('script');
@@ -3549,10 +3552,13 @@ function myLinkedinLogin($url, $src)
 	// head.appendChild(script);
 }
 
-function myGithubLogin($src)
+function myGithubLogin($src, $cv = false)
 {
 	setCookie('redirect_user_url', $src, 1);
 	setCookie('api_type', 'github', 1);
+	if( $cv ) {
+		setCookie('uploadcvmodal', true, 1);
+	}
 	window.location.href = 'https://github.com/login/oauth/authorize?client_id=1f774f6bc988fd78b1ab&scope=read:user';
 }
 

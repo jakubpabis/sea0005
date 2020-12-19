@@ -28,11 +28,11 @@
                     </span>
                     <div class="row social-login">
                         <?php global $wp; ?>
-                        <button type="button" class="btn btn__small navy icon full d-none" onclick="myLinkedinLogin( '<?= siteURL().'userdatafetch'; ?>', '<?= home_url( $wp->request ) ?>' )">
+                        <button type="button" class="btn btn__small navy icon full d-none" onclick="myLinkedinLogin( '<?= siteURL().'userdatafetch'; ?>', '<?= home_url( $wp->request ) ?>', 'cv' )">
                             <i class="fab fa-linkedin"></i>
                             <span>LinkedIn</span>
                         </button>
-                        <button type="button" class="btn btn__small navy icon full" onclick="myGithubLogin('<?= home_url( $wp->request ) ?>')">
+                        <button type="button" class="btn btn__small navy icon full" onclick="myGithubLogin('<?= home_url( $wp->request ) ?>', 'cv')">
                             <i class="fab fa-github"></i>
                             <span>Github</span>
                         </button>
@@ -119,7 +119,6 @@
                                 <?php get_template_part( 'template-parts/referrer' ); ?>
                                 <input type="hidden" name="cv-jobid" value="188">
                                 <input type="hidden" name="action" value="cv_form">
-                                <input type="hidden" name="uploadcv" value="1">
                                 <?php wp_nonce_field( 'cv_form', 'cv_form_nonce' ); ?>
                                 <button type="button" class="fake_btn_cv btn btn__default yellow"><?= pll_e( 'Send application' ); ?></button>
                                 <button class="g-recaptcha btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onCVSubmit"><?= pll_e( 'Send application' ); ?></button>
