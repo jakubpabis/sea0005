@@ -1,6 +1,6 @@
 <?php if( isset( $_GET['uploadcv'] ) ) : ?>
     <script defer>
-        jQuery(window).on('load', function() {
+        jQuery(document).ready(function() {
             jQuery('#uploadCVModal').modal('show');
         });
     </script>
