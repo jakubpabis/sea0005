@@ -28,11 +28,11 @@
                     </span>
                     <div class="row social-login">
                         <?php global $wp; ?>
-                        <button type="button" class="btn btn__small navy icon full" onclick="myLinkedinLogin( '<?= siteURL().'userdatafetch'; ?>', '<?= home_url( $wp->request ) ?>', 'cv' )">
+                        <button type="button" class="btn btn__small navy icon full" onclick="myLinkedinLogin( '<?= siteURL().'userdatafetch'; ?>', '<?= home_url( $wp->request ) ?>', true )">
                             <i class="fab fa-linkedin"></i>
                             <span>LinkedIn</span>
                         </button>
-                        <button type="button" class="btn btn__small navy icon full" onclick="myGithubLogin('<?= home_url( $wp->request ) ?>', 'cv')">
+                        <button type="button" class="btn btn__small navy icon full" onclick="myGithubLogin('<?= home_url( $wp->request ) ?>', true)">
                             <i class="fab fa-github"></i>
                             <span>Github</span>
                         </button>
