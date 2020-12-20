@@ -46,7 +46,7 @@
             </button>
             <div class="modal-container">
                 <div class="modal-header">
-                    <h3 class="modal-title" id="uploadCVModalTitle"><?= pll_e( 'Upload CV here' ); ?></h3>
+                    <h3 class="modal-title" id="uploadCVModalTitle"><?= pll_e( 'Upload cv here' ); ?></h3>
                 </div>
                 <div class="modal-body pt-3">
                     <span class="text-size-small text500">
