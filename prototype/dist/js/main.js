@@ -4172,6 +4172,7 @@ $(document).ready(function() {
 	}
 
 	if( $('#cv-upload-form').length > 0  ) {
+		afterFormOpen();
 		$('#cv-dob-datepicker').datepicker({
 			format: "dd-mm-yyyy",
 			weekStart: 1,
