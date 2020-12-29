@@ -112,7 +112,7 @@
     <noscript>
         <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/fa.min.css"/>
     </noscript>
-    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/main.min.css?v=1.0.3">
+    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/main.min.css?v=1.0.4">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body <?php body_class(); ?>>

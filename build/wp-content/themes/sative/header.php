@@ -17,14 +17,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Google Tag Manager -->
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-PMG8TTV');</script>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PMG8TTV');</script>
 	<!-- /Google Tag Manager -->
 	<!-- Bing Webmaster Tools -->
-		<meta name="msvalidate.01" content="DB26E7D9A02A63952EAC119AC5AB03FC" />
+	<meta name="msvalidate.01" content="DB26E7D9A02A63952EAC119AC5AB03FC" />
 	<!-- /Bing Webmaster Tools -->
     <meta name="p:domain_verify" content="40be4aba9dc0f75fdd75d97b0a233017"/>
     <?php wp_head(); ?>
@@ -32,7 +32,7 @@
     <noscript>
         <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/fa.min.css"/>
     </noscript>
-    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/main.min.css?v=1.0.3">
+    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/main.min.css?v=1.0.4">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body <?php body_class(); ?>>

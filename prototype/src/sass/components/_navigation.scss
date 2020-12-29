@@ -57,6 +57,7 @@
 
             @media(max-width: 991px) {
                 margin: 20px auto;
+                width: 100%;
                 justify-content: center;
                 flex-wrap: wrap;
                 text-align: center;
@@ -159,6 +160,7 @@
                         transform: none!important;
                         text-align: center!important;
                         border-top: none!important;
+                        float: none!important;
                     }
 
                     li {
@@ -188,6 +190,7 @@
                                 font-size: 16px;
                                 font-weight: 400;
                                 padding: 12px 20px;
+                                white-space: normal;
                             }
 
                         }
