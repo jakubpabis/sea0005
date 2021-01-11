@@ -39,9 +39,17 @@
 
     }
 
+    .modal-sm {
+
+        @media (min-width: 768px){
+            max-width: 540px;
+        }
+
+    }
+
     .modal-lg {
 
-        @media (min-width: 991px){
+        @media (min-width: 992px){
             max-width: 900px;
         }
 
@@ -62,7 +70,9 @@
 
 }
 
-#uploadCVModal {
+#uploadCVModal,
+#subscribePopupModal,
+#contactPopupModal {
 
     .social-login {
         display: flex;

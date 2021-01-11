@@ -3649,8 +3649,13 @@ function appValidation()
 
 	if( $('#job-application-form').length > 0 ) {
 		var formApp = $('#job-application-form');
-		formApp.validate();
-		$('#job-application-form').find('input.required').on('change focusout', function() {
+		formApp.validate({
+			onfocusout: true,
+			focusInvalid: true,
+			focusCleanup: true,
+			onkeyup: false
+		});
+		formApp.find('input.required').on('change focusout', function() {
 			if( formApp.valid() ) {
 				$('.fake_btn_app').addClass('d-none');
 				$('.g-recaptcha.app').removeClass('d-none');
@@ -3659,20 +3664,25 @@ function appValidation()
 				$('.g-recaptcha.app').addClass('d-none');
 			}
 		});
-		$('.fake_btn_app').on('click', function (e) {
+		formApp.find('.fake_btn_app').on('click', function (e) {
 			e.preventDefault();
 			if( formApp.valid() ) {
 				$('.fake_btn_app').addClass('d-none');
 				$('.g-recaptcha.app').removeClass('d-none');
-				$(this).next('button.g-recaptcha').trigger('click');
+				$(this).next('button.g-recaptcha.app').trigger('click').remove();
 			}
 		});
 	}
 
 	if( $('#cv-upload-form').length > 0 ) {
 		var formCV = $('#cv-upload-form');
-		formCV.validate();
-		$('#cv-upload-form').find('input.required').on('change focusout', function() {
+		formCV.validate({
+			onfocusout: true,
+			focusInvalid: true,
+			focusCleanup: true,
+			onkeyup: false
+		});
+		formCV.find('input.required').on('change focusout', function() {
 			if( formCV.valid() ) {
 				$('.fake_btn_cv').addClass('d-none');
 				$('.g-recaptcha').removeClass('d-none');
@@ -3681,12 +3691,12 @@ function appValidation()
 				$('.g-recaptcha').addClass('d-none');
 			}
 		});
-		$('.fake_btn_cv').on('click', function (e) {
+		formCV.find('.fake_btn_cv').on('click', function (e) {
 			e.preventDefault();
 			if( formCV.valid() ) {
 				$('.fake_btn_cv').addClass('d-none');
 				$('.g-recaptcha').removeClass('d-none');
-				$(this).next('button.g-recaptcha').trigger('click');
+				$(this).next('button.g-recaptcha').trigger('click').remove();
 			}
 		});
 	}
@@ -3695,12 +3705,28 @@ function appValidation()
 
 function onAppSubmit(token) 
 {
-	document.getElementById("job-application-form").submit();
+	var $globHash = getCookie('appHash');
+	var $formHash = document.getElementById('jobUploadHash').value;
+	if( $globHash === $formHash ) {
+		setCookie('appHash', 'false', 1);
+		$('#job-application-form').find('button.g-recaptcha').remove();
+		$('#job-application-form').find('button.fake_btn_app').addClass('d-none');
+		$('#job-application-form').find('button.fake_btn_app_loading').removeClass('d-none');
+		document.getElementById('job-application-form').submit();
+	}
 }
 
 function onCVSubmit(token) 
 {
-	document.getElementById("cv-upload-form").submit();
+	var $globHash = getCookie('cvHash');
+	var $formHash = document.getElementById('cvUploadHash').value;
+	if( $globHash === $formHash ) {
+		setCookie('cvHash', 'false', 1);
+		$('#cv-upload-form').find('button.g-recaptcha').remove();
+		$('#cv-upload-form').find('button.fake_btn_cv').addClass('d-none');
+		$('#cv-upload-form').find('button.fake_btn_cv_loading').removeClass('d-none');
+		document.getElementById('cv-upload-form').submit();
+	}
 }
 
 
@@ -3843,16 +3869,6 @@ function slideTo(el)
 		scrollTop: $(el).offset().top
 	}, 500);
 }
-
-// function submitOnce()
-// {
-// 	$('form').submit(function(e){
-// 		e.preventDefault();
-// 		console.log('cos');
-// 		$(this).find('button[type="submit"]').addClass('disabled').prop('disabled', true).prop('type', 'button');
-// 		$(this).submit();
-//     });
-// }
 
 function spaceFromBottom(el)
 {
@@ -4147,19 +4163,22 @@ $(document).ready(function() {
 	onFormSubmit();
 	onFormLoad();
 	appValidation();
-	$('form').preventDoubleSubmission();
+	$('form').each(function() {
+		$(this).preventDoubleSubmission();
+		console.log('prevent');
+	});
 
 	if($('.home__middle-hashtags').length != 0) {
 		homeHashtags();
 	}
 
-	$("form").submit(function(){
-        $("input").each(function(index, obj){
-            if($(obj).val() == "") {
-                $(obj).remove();
-            }
-        });
-	});
+	// $(document).find("form").on('submit', function(){
+    //     $("input").each(function(index, obj){
+    //         if($(obj).val() == "") {
+    //             $(obj).remove();
+    //         }
+    //     });
+	// });
 	
 	if( $('#job-application-form').length > 0 ) {
 		afterFormOpen();

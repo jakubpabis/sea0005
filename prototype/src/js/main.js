@@ -57,16 +57,6 @@ function slideTo(el)
 	}, 500);
 }
 
-// function submitOnce()
-// {
-// 	$('form').submit(function(e){
-// 		e.preventDefault();
-// 		console.log('cos');
-// 		$(this).find('button[type="submit"]').addClass('disabled').prop('disabled', true).prop('type', 'button');
-// 		$(this).submit();
-//     });
-// }
-
 function spaceFromBottom(el)
 {
 	var eTop = $(el).offset().top; //get the offset top of the element
@@ -360,19 +350,22 @@ $(document).ready(function() {
 	onFormSubmit();
 	onFormLoad();
 	appValidation();
-	$('form').preventDoubleSubmission();
+	$('form').each(function() {
+		$(this).preventDoubleSubmission();
+		console.log('prevent');
+	});
 
 	if($('.home__middle-hashtags').length != 0) {
 		homeHashtags();
 	}
 
-	$("form").submit(function(){
-        $("input").each(function(index, obj){
-            if($(obj).val() == "") {
-                $(obj).remove();
-            }
-        });
-	});
+	// $(document).find("form").on('submit', function(){
+    //     $("input").each(function(index, obj){
+    //         if($(obj).val() == "") {
+    //             $(obj).remove();
+    //         }
+    //     });
+	// });
 	
 	if( $('#job-application-form').length > 0 ) {
 		afterFormOpen();

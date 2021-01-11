@@ -2025,35 +2025,49 @@ i {
 	box-shadow: none !important;
 }
 
-#uploadCVModal .social-login {
+#uploadCVModal .social-login,
+#subscribePopupModal .social-login,
+#contactPopupModal .social-login {
 	display: flex;
 	margin: 0 -10px;
 	flex-wrap: wrap;
 }
 
-#uploadCVModal .social-login .btn {
+#uploadCVModal .social-login .btn,
+#subscribePopupModal .social-login .btn,
+#contactPopupModal .social-login .btn {
 	max-width: calc(25% - 20px);
 	margin: 7px 10px;
 	flex-basis: calc(25% - 20px);
 }
 
-#uploadCVModal form .pretty {
+#uploadCVModal form .pretty,
+#subscribePopupModal form .pretty,
+#contactPopupModal form .pretty {
 	margin-right: 0;
 	white-space: normal;
 }
 
-#uploadCVModal form .pretty .icon {
+#uploadCVModal form .pretty .icon,
+#subscribePopupModal form .pretty .icon,
+#contactPopupModal form .pretty .icon {
 	top: 0;
 }
 
-#uploadCVModal form .pretty label {
+#uploadCVModal form .pretty label,
+#subscribePopupModal form .pretty label,
+#contactPopupModal form .pretty label {
 	font-size: 14px;
 	padding-left: 2em;
 	text-indent: 0;
 }
 
 #uploadCVModal form .pretty label:before,
-#uploadCVModal form .pretty label:after {
+#uploadCVModal form .pretty label:after,
+#subscribePopupModal form .pretty label:before,
+#subscribePopupModal form .pretty label:after,
+#contactPopupModal form .pretty label:before,
+#contactPopupModal form .pretty label:after {
 	top: 0;
 	width: 20px;
 	height: 20px;
@@ -2061,7 +2075,9 @@ i {
 	background-color: white;
 }
 
-#uploadCVModal form .pretty label.error {
+#uploadCVModal form .pretty label.error,
+#subscribePopupModal form .pretty label.error,
+#contactPopupModal form .pretty label.error {
 	font-weight: 700;
 	font-style: italic;
 	position: absolute;
@@ -2073,7 +2089,9 @@ i {
 	color: #ec6278;
 }
 
-#uploadCVModal form .ugly label {
+#uploadCVModal form .ugly label,
+#subscribePopupModal form .ugly label,
+#contactPopupModal form .ugly label {
 	font-size: 14px;
 	font-weight: 400;
 	font-style: italic;
@@ -2090,7 +2108,9 @@ i {
 	color: #183153;
 }
 
-#uploadCVModal form .ugly label.full {
+#uploadCVModal form .ugly label.full,
+#subscribePopupModal form .ugly label.full,
+#contactPopupModal form .ugly label.full {
 	display: flex;
 	width: calc(100% - 30px);
 	max-width: 100%;
@@ -2099,12 +2119,16 @@ i {
 	justify-content: space-between;
 }
 
-#uploadCVModal form .ugly label.full span {
+#uploadCVModal form .ugly label.full span,
+#subscribePopupModal form .ugly label.full span,
+#contactPopupModal form .ugly label.full span {
 	font-style: normal !important;
 	text-decoration: underline;
 }
 
-#uploadCVModal form .ugly label span {
+#uploadCVModal form .ugly label span,
+#subscribePopupModal form .ugly label span,
+#contactPopupModal form .ugly label span {
 	font-size: 14px;
 	font-weight: 600;
 	color: #ec6278;
@@ -2112,7 +2136,13 @@ i {
 
 #uploadCVModal form .ugly input,
 #uploadCVModal form .ugly select,
-#uploadCVModal form .ugly textarea {
+#uploadCVModal form .ugly textarea,
+#subscribePopupModal form .ugly input,
+#subscribePopupModal form .ugly select,
+#subscribePopupModal form .ugly textarea,
+#contactPopupModal form .ugly input,
+#contactPopupModal form .ugly select,
+#contactPopupModal form .ugly textarea {
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 1;
@@ -2128,13 +2158,25 @@ i {
 
 #uploadCVModal form .ugly input:focus ~ label,
 #uploadCVModal form .ugly select:focus ~ label,
-#uploadCVModal form .ugly textarea:focus ~ label {
+#uploadCVModal form .ugly textarea:focus ~ label,
+#subscribePopupModal form .ugly input:focus ~ label,
+#subscribePopupModal form .ugly select:focus ~ label,
+#subscribePopupModal form .ugly textarea:focus ~ label,
+#contactPopupModal form .ugly input:focus ~ label,
+#contactPopupModal form .ugly select:focus ~ label,
+#contactPopupModal form .ugly textarea:focus ~ label {
 	opacity: 0 !important;
 }
 
 #uploadCVModal form .ugly input[type='file'],
 #uploadCVModal form .ugly select[type='file'],
-#uploadCVModal form .ugly textarea[type='file'] {
+#uploadCVModal form .ugly textarea[type='file'],
+#subscribePopupModal form .ugly input[type='file'],
+#subscribePopupModal form .ugly select[type='file'],
+#subscribePopupModal form .ugly textarea[type='file'],
+#contactPopupModal form .ugly input[type='file'],
+#contactPopupModal form .ugly select[type='file'],
+#contactPopupModal form .ugly textarea[type='file'] {
 	width: 100%;
 	height: 40px;
 	cursor: pointer !important;
@@ -2144,13 +2186,25 @@ i {
 
 #uploadCVModal form .ugly input.error,
 #uploadCVModal form .ugly select.error,
-#uploadCVModal form .ugly textarea.error {
+#uploadCVModal form .ugly textarea.error,
+#subscribePopupModal form .ugly input.error,
+#subscribePopupModal form .ugly select.error,
+#subscribePopupModal form .ugly textarea.error,
+#contactPopupModal form .ugly input.error,
+#contactPopupModal form .ugly select.error,
+#contactPopupModal form .ugly textarea.error {
 	background-color: #ec6278 !important;
 }
 
 #uploadCVModal form .ugly input.error + label,
 #uploadCVModal form .ugly select.error + label,
-#uploadCVModal form .ugly textarea.error + label {
+#uploadCVModal form .ugly textarea.error + label,
+#subscribePopupModal form .ugly input.error + label,
+#subscribePopupModal form .ugly select.error + label,
+#subscribePopupModal form .ugly textarea.error + label,
+#contactPopupModal form .ugly input.error + label,
+#contactPopupModal form .ugly select.error + label,
+#contactPopupModal form .ugly textarea.error + label {
 	font-weight: 700;
 	top: auto;
 	bottom: -1px;
@@ -2161,7 +2215,9 @@ i {
 	color: #ec6278;
 }
 
-#uploadCVModal form .ugly select {
+#uploadCVModal form .ugly select,
+#subscribePopupModal form .ugly select,
+#contactPopupModal form .ugly select {
 	font-style: italic !important;
 	padding-top: 13px;
 	padding-bottom: 13px;
@@ -2169,11 +2225,17 @@ i {
 }
 
 #uploadCVModal form .ugly select:active,
-#uploadCVModal form .ugly select:focus {
+#uploadCVModal form .ugly select:focus,
+#subscribePopupModal form .ugly select:active,
+#subscribePopupModal form .ugly select:focus,
+#contactPopupModal form .ugly select:active,
+#contactPopupModal form .ugly select:focus {
 	font-style: normal !important;
 }
 
-#uploadCVModal form .ugly textarea {
+#uploadCVModal form .ugly textarea,
+#subscribePopupModal form .ugly textarea,
+#contactPopupModal form .ugly textarea {
 	min-height: 120px;
 	resize: none;
 }
@@ -5502,9 +5564,13 @@ fieldset[disabled] .datepicker table tr td span.active:hover:hover {
 	max-width: 730px;
 }
 
+.modal .modal-sm {
+	max-width: 540px;
 }
 
-@media (min-width: 991px) {
+}
+
+@media (min-width: 992px) {
 
 .modal .modal-lg {
 	max-width: 900px;
@@ -5559,11 +5625,15 @@ h3,
 	padding: 20px;
 }
 
-#uploadCVModal .social-login {
+#uploadCVModal .social-login,
+#subscribePopupModal .social-login,
+#contactPopupModal .social-login {
 	margin: 0 -7px;
 }
 
-#uploadCVModal .social-login .btn {
+#uploadCVModal .social-login .btn,
+#subscribePopupModal .social-login .btn,
+#contactPopupModal .social-login .btn {
 	max-width: calc(25% - 14px);
 	margin: 7px;
 	flex-basis: calc(25% - 14px);
@@ -5749,7 +5819,9 @@ p,
 	max-height: 360px;
 }
 
-#uploadCVModal .social-login .btn {
+#uploadCVModal .social-login .btn,
+#subscribePopupModal .social-login .btn,
+#contactPopupModal .social-login .btn {
 	max-width: calc(25% - 14px);
 	flex-basis: calc(25% - 14px);
 }
@@ -6113,7 +6185,9 @@ h4,
 	padding: 35px 50px;
 }
 
-#uploadCVModal .social-login .btn {
+#uploadCVModal .social-login .btn,
+#subscribePopupModal .social-login .btn,
+#contactPopupModal .social-login .btn {
 	max-width: calc(50% - 14px);
 	flex-basis: calc(50% - 14px);
 }

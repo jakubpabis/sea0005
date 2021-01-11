@@ -4,7 +4,6 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-
 function postRequest($request, $api_key, $api_secret, $json)
 {
     $hash = bin2hex(hash_hmac('sha1', $request.'/'.$api_key, $api_secret, true));
@@ -221,7 +220,7 @@ function add_to_queue_cv(){
             $person_response = postRequest('people/add_to_queue', $api_key, $api_secret, $data);
             //var_dump($person_response);
             if( isset( $person_response->status ) && $person_response->status === 'ok' ) {
-                $message = sendEmailCV();
+                $message = 'success';
             } else {
                 $message = 'failed';
             }
@@ -573,6 +572,8 @@ function sative_cv_form_submit() {
     //$message = sendEmail();
     $referer = remove_query_arg( 'message', $_POST['_wp_http_referer'] );
     $referer = remove_query_arg( 'messagecv', $_POST['_wp_http_referer'] );
+    $referer = remove_query_arg( 'messagesb', $_POST['_wp_http_referer'] );
+    $referer = remove_query_arg( 'messagect', $_POST['_wp_http_referer'] );
     $redirect = '/app-success?ref='.$referer.'&messagecv='.$message;
     //var_dump($redirect);
     header("Location: $redirect");
@@ -588,9 +589,43 @@ function sative_application_form_submit() {
     //$message = sendEmail();
     $referer = remove_query_arg( 'message', $_POST['_wp_http_referer'] );
     $referer = remove_query_arg( 'messagecv', $_POST['_wp_http_referer'] );
+    $referer = remove_query_arg( 'messagesb', $_POST['_wp_http_referer'] );
+    $referer = remove_query_arg( 'messagect', $_POST['_wp_http_referer'] );
     $redirect = '/app-success?ref='.$referer.'&message='.$message;
     header("Location: $redirect");
 
 }
 add_action( 'admin_post_nopriv_application_form', 'sative_application_form_submit' );
 add_action( 'admin_post_application_form', 'sative_application_form_submit' );
+
+function sative_subscribe_form_submit() {
+
+    // $message = add_to_queue();
+
+    //$message = sendEmail();
+    $referer = remove_query_arg( 'message', $_POST['_wp_http_referer'] );
+    $referer = remove_query_arg( 'messagecv', $_POST['_wp_http_referer'] );
+    $referer = remove_query_arg( 'messagesb', $_POST['_wp_http_referer'] );
+    $referer = remove_query_arg( 'messagect', $_POST['_wp_http_referer'] );
+    $redirect = '/app-success?ref='.$referer.'&messagesb='.$message;
+    header("Location: $redirect");
+
+}
+add_action( 'admin_post_nopriv_subscribe_form', 'sative_subscribe_form_submit' );
+add_action( 'admin_post_subscribe_form', 'sative_subscribe_form_submit' );
+
+function sative_contact_form_submit() {
+
+    // $message = ();
+
+    //$message = sendEmail();
+    $referer = remove_query_arg( 'message', $_POST['_wp_http_referer'] );
+    $referer = remove_query_arg( 'messagecv', $_POST['_wp_http_referer'] );
+    $referer = remove_query_arg( 'messagesb', $_POST['_wp_http_referer'] );
+    $referer = remove_query_arg( 'messagect', $_POST['_wp_http_referer'] );
+    $redirect = '/app-success?ref='.$referer.'&messagect='.$message;
+    header("Location: $redirect");
+
+}
+add_action( 'admin_post_nopriv_contact_form', 'sative_contact_form_submit' );
+add_action( 'admin_post_contact_form', 'sative_contact_form_submit' );

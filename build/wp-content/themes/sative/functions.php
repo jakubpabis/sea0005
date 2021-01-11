@@ -113,6 +113,12 @@ if( function_exists('acf_add_options_page') ) {
 		'page_title' 	=> 'Other',
 		'menu_title'	=> 'Other',
 		'parent_slug'	=> 'theme-general-settings',
+    ));
+    
+    acf_add_options_sub_page(array(
+		'page_title' 	=> 'Pop-ups',
+		'menu_title'	=> 'Pop-ups',
+		'parent_slug'	=> 'theme-general-settings',
 	));
 
 }
@@ -578,7 +584,9 @@ $toTranslate = array(
     'cookie policy',
     'Accept',
     'Fulfilled jobs',
-    'Choose your country'
+    'Choose your country',
+    'Sending, please wait...',
+    'Subscribing, please wait...'
 );
 
 if( function_exists( 'pll_register_string' ) ) {
@@ -686,3 +694,51 @@ function my_jobs_orderby( $query ) {
         $query->set('orderby', 'meta_value_num');
     }
 }
+
+function postRequestToken($request, $api_key, $api_secret, $json)
+{
+    $hash = bin2hex(hash_hmac('sha1', $request.'/'.$api_key, $api_secret, true));
+    $ch = curl_init('https://api.searchsoftware.nl/'.$request.'?api_key='.$api_key.'&signature='.$hash);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $response = curl_exec($ch);
+    $response = json_decode($response);
+    return $response;
+}
+
+function getRequestToken($request, $api_key)
+{
+    $ch = curl_init('https://api.searchsoftware.nl/'.$request.'?access_token='.$api_key);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $response = curl_exec($ch);
+    $response = json_decode($response);
+    return $response;
+}
+
+function generateRandomString($length = 10) 
+{
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
+
+function hashesForLashes() 
+{
+    global $hashesForLashes;
+    $hashesForLashes = array(
+        'cvHash' => generateRandomString(16),
+        'appHash' => generateRandomString(16),
+        'subscribeHash' => generateRandomString(16),
+        'contactHash' => generateRandomString(16),
+    );
+    foreach( $hashesForLashes as $key => $val ) {
+        setcookie($key, $val, time() + 3600);
+    }
+}
+add_action( 'after_setup_theme', 'hashesForLashes' );

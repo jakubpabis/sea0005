@@ -130,6 +130,8 @@
                 <input type="hidden" name="app-jobid" value="<?= get_field('job_id'); ?>">
                 <input type="hidden" name="action" value="application_form">
                 <?php wp_nonce_field( 'application_form', 'application_form_nonce' ); ?>
+                <input type="hidden" name="jobUploadHash" id="jobUploadHash" value="<?php global $hashesForLashes; echo $hashesForLashes['appHash']; ?>">
+                <button type="button" disabled class="fake_btn_app_loading btn btn__default pink d-none disabled"><?= pll_e( 'Sending, please wait...' ); ?></button>
                 <button type="button" class="fake_btn_app btn btn__default yellow"><?= pll_e( 'Send application' ); ?></button>
                 <button class="g-recaptcha app btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onAppSubmit"><?= pll_e( 'Send application' ); ?></button>
             </div>

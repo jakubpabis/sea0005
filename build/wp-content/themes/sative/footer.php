@@ -80,6 +80,7 @@ $lang = pll_current_language();
                                 <?= get_field( 'subscribe_title_'.$lang, 'option' ); ?>
                             </h4>
                             <?= get_field( 'subscribe_text_'.$lang, 'option' ); ?>
+                            <?php /* <button class="btn btn__default yellow mt-4" data-toggle="modal" data-target="#subscribePopupModal"><?= pll_e('Subscribe now'); ?></button> */ ?>
                             <a href="http://jobs.searchsoftware.nl/searchit/subscribe" target="_blank" class="btn btn__default yellow mt-4"><?= pll_e('Subscribe now'); ?></a>
                         </div>
                     </div>
@@ -107,6 +108,7 @@ $lang = pll_current_language();
             <?php get_template_part( 'template-parts/chat' ); ?>
             <?php get_template_part( 'template-parts/search' ); ?>
             <?php get_template_part( 'template-parts/uploadcv' ); ?>
+            <?php /* get_template_part( 'template-parts/popups' ); */ ?>
         </div> <!-- #wrapper -->
         <?php wp_footer(); ?>
         <!-- LinkedIn Insight Tag -->		
