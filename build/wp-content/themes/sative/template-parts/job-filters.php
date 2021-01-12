@@ -31,17 +31,17 @@
             </div>
             <?php endif; ?>
             <?php  
-                if( isset( $_GET['salary_min'] ) && $_GET['salary_min'] ){ 
+                if( isset( $_GET['salary_min'] ) && $_GET['salary_min'] !== null && $_GET['salary_min'] !== '' ){ 
                     $salaryMin = $_GET['salary_min']; 
                 } else {
                     $salaryMin = null; 
                 }
-                if( isset( $_GET['salary_max'] ) && $_GET['salary_max'] ) {
+                if( isset( $_GET['salary_max'] ) && $_GET['salary_max'] !== null && $_GET['salary_max'] !== '' ) {
                     $salaryMax = $_GET['salary_max']; 
                 } else {
                     $salaryMax = null; 
                 }
-                if( isset( $salaryMin ) || isset( $salaryMax ) ) {
+                if( isset( $salaryMin ) && $salaryMin !== null || isset( $salaryMax ) && $salaryMax !== null ) {
                     $active = 'active';
                 } else {
                     $active = null;
