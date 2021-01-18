@@ -840,7 +840,6 @@ p,
 
 .btn:active {
 	transform: translateY(2px);
-	-webkit-filter: brightness(75%);
 	filter: brightness(75%);
 }
 
@@ -855,7 +854,6 @@ p,
 
 .dropdown_container.home.show .btn {
 	transform: translateY(2px);
-	-webkit-filter: brightness(75%);
 	filter: brightness(75%);
 }
 
@@ -1524,12 +1522,6 @@ i {
 	max-width: calc(100% - 47px);
 }
 
-.header__jobs-search input::-webkit-input-placeholder {
-	font-style: italic;
-	opacity: 1;
-	color: #183153;
-}
-
 .header__jobs-search input::-moz-placeholder {
 	font-style: italic;
 	opacity: 1;
@@ -1537,12 +1529,6 @@ i {
 }
 
 .header__jobs-search input:-ms-input-placeholder {
-	font-style: italic;
-	opacity: 1;
-	color: #183153;
-}
-
-.header__jobs-search input::-ms-input-placeholder {
 	font-style: italic;
 	opacity: 1;
 	color: #183153;
@@ -1634,12 +1620,6 @@ i {
 	clip-path: polygon(0% 8px, 8px 0%, calc(100% - 8px) 0%, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px));
 }
 
-.home__middle .searchInput input::-webkit-input-placeholder {
-	font-style: italic;
-	opacity: 1;
-	color: #183153;
-}
-
 .home__middle .searchInput input::-moz-placeholder {
 	font-style: italic;
 	opacity: 1;
@@ -1647,12 +1627,6 @@ i {
 }
 
 .home__middle .searchInput input:-ms-input-placeholder {
-	font-style: italic;
-	opacity: 1;
-	color: #183153;
-}
-
-.home__middle .searchInput input::-ms-input-placeholder {
 	font-style: italic;
 	opacity: 1;
 	color: #183153;
@@ -1709,7 +1683,6 @@ i {
 
 .home__jobs-content:active {
 	transform: translateY(-10px);
-	-webkit-filter: brightness(75%);
 	filter: brightness(75%);
 }
 
@@ -1747,13 +1720,11 @@ i {
 
 .home__clients .owl-carousel .owl-item img {
 	transition: all 200ms ease-out;
-	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
 }
 
 .home__clients .owl-carousel .owl-item:hover img {
 	transform: translateY(-10px);
-	-webkit-filter: grayscale(0);
 	filter: grayscale(0);
 }
 
@@ -2281,13 +2252,6 @@ i {
 	clip-path: polygon(0% 8px, 8px 0%, calc(100% - 8px) 0%, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px));
 }
 
-#searchModal .searchInput input::-webkit-input-placeholder,
-#whitepapersModal .searchInput input::-webkit-input-placeholder {
-	font-style: italic;
-	opacity: 1;
-	color: #183153;
-}
-
 #searchModal .searchInput input::-moz-placeholder,
 #whitepapersModal .searchInput input::-moz-placeholder {
 	font-style: italic;
@@ -2297,13 +2261,6 @@ i {
 
 #searchModal .searchInput input:-ms-input-placeholder,
 #whitepapersModal .searchInput input:-ms-input-placeholder {
-	font-style: italic;
-	opacity: 1;
-	color: #183153;
-}
-
-#searchModal .searchInput input::-ms-input-placeholder,
-#whitepapersModal .searchInput input::-ms-input-placeholder {
 	font-style: italic;
 	opacity: 1;
 	color: #183153;
@@ -2509,12 +2466,6 @@ aside#chat .dog {
 	flex-basis: 48%;
 }
 
-.jobs__list-filters .filter-group .inputs input::-webkit-input-placeholder {
-	font-style: italic;
-	opacity: 1;
-	color: #183153;
-}
-
 .jobs__list-filters .filter-group .inputs input::-moz-placeholder {
 	font-style: italic;
 	opacity: 1;
@@ -2522,12 +2473,6 @@ aside#chat .dog {
 }
 
 .jobs__list-filters .filter-group .inputs input:-ms-input-placeholder {
-	font-style: italic;
-	opacity: 1;
-	color: #183153;
-}
-
-.jobs__list-filters .filter-group .inputs input::-ms-input-placeholder {
 	font-style: italic;
 	opacity: 1;
 	color: #183153;
@@ -3688,12 +3633,6 @@ aside#chat .dog {
 	outline: 0 !important;
 }
 
-.footer__middle .newsletter input::-webkit-input-placeholder {
-	font-style: italic;
-	opacity: 1;
-	color: #183153;
-}
-
 .footer__middle .newsletter input::-moz-placeholder {
 	font-style: italic;
 	opacity: 1;
@@ -3701,12 +3640,6 @@ aside#chat .dog {
 }
 
 .footer__middle .newsletter input:-ms-input-placeholder {
-	font-style: italic;
-	opacity: 1;
-	color: #183153;
-}
-
-.footer__middle .newsletter input::-ms-input-placeholder {
 	font-style: italic;
 	opacity: 1;
 	color: #183153;

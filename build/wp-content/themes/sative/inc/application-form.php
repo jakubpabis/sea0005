@@ -220,7 +220,7 @@ function add_to_queue_cv(){
             $person_response = postRequest('people/add_to_queue', $api_key, $api_secret, $data);
             //var_dump($person_response);
             if( isset( $person_response->status ) && $person_response->status === 'ok' ) {
-                $message = 'success';
+                $message = sendEmailCV();
             } else {
                 $message = 'failed';
             }
