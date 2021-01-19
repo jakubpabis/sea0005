@@ -47,14 +47,14 @@ $lang = pll_current_language();
                             <h4>
                                 <?= get_field( 'recent_title_'.$lang, 'option' ); ?>
                             </h4>
-                            <?php 
+                            <?php
                                 wp_reset_postdata();
-                                $args = array( 
+                                $args = array(
                                     'post_type' => 'jobs',
                                     'post_status' => 'publish',
                                     'posts_per_page' => 6
                                 );
-                                $query = new WP_Query( $args ); 
+                                $query = new WP_Query( $args );
                             ?>
                             <?php if($query->have_posts()) : ?>
                             <ul class="text-size-small">
@@ -77,8 +77,8 @@ $lang = pll_current_language();
                                 <?= get_field( 'subscribe_title_'.$lang, 'option' ); ?>
                             </h4>
                             <?= get_field( 'subscribe_text_'.$lang, 'option' ); ?>
-                            <?php /* <button class="btn btn__default yellow mt-4" data-toggle="modal" data-target="#subscribePopupModal"><?= pll_e('Subscribe now'); ?></button> */ ?>
-                            <a href="http://jobs.searchsoftware.nl/searchit/subscribe" target="_blank" class="btn btn__default yellow mt-4"><?= pll_e('Subscribe now'); ?></a>
+							<button class="btn btn__default yellow mt-4" data-toggle="modal" data-target="#subscribePopupModal"><?= pll_e('Subscribe now'); ?></button>
+                            <?php /* <a href="http://jobs.searchsoftware.nl/searchit/subscribe" target="_blank" class="btn btn__default yellow mt-4"><?= pll_e('Subscribe now'); ?></a> */ ?>
                         </div>
                     </div>
                 </div>
@@ -86,8 +86,8 @@ $lang = pll_current_language();
                     <div class="container">
                         <div class="row justify-content-lg-between justify-content-center">
                             <div class="col-auto">
-                                <span>© Search X Recruitment - <?= date("Y"); ?></span> | 
-                                <a href="/sitemap_index.xml"> Sitemap</a> | 
+                                <span>© Search X Recruitment - <?= date("Y"); ?></span> |
+                                <a href="/sitemap_index.xml"> Sitemap</a> |
                                 <a href="/<?= $lang; ?>/fulfilled-jobs"> <?php pll_e( 'Fulfilled jobs' ); ?></a>
                             </div>
                             <div class="col-auto">
@@ -108,9 +108,9 @@ $lang = pll_current_language();
             <?php get_template_part( 'template-parts/popups' ); ?>
         </div> <!-- #wrapper -->
 		<?php wp_footer(); ?>
-        <!-- LinkedIn Insight Tag -->		
+        <!-- LinkedIn Insight Tag -->
         <script type="text/javascript"> _linkedin_partner_id = "14266"; window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || []; window._linkedin_data_partner_ids.push(_linkedin_partner_id); </script>
-        <script type="text/javascript"> (function(){var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})(); </script> 
+        <script type="text/javascript"> (function(){var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})(); </script>
         <noscript> <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=14266&fmt=gif" /> </noscript>
         <!-- Start of HubSpot Embed Code --> <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/1932066.js"></script> <!-- End of HubSpot Embed Code -->
     </body>
