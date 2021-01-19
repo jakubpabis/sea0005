@@ -6,28 +6,6 @@
     $type = false;
     if( !empty($sub_pages) && in_array( $id, $sub_pages ) ) {
         $type = 'subscribe';
-        $api_key_groups = '6KlPHA3GzUs0Mt5ZMzIA7fBJKhvXsF37IQd3zaBj&include=groups';
-
-        $board = getRequestToken('v2/job_boards/categories', $api_key_groups);
-        $group_id = false;
-        foreach( $board->groups as $group ) {
-            if( $group->name === '#2 Skill Area' ) {
-                $group_id = $group->id;
-                break;
-            }
-        }
-
-        if( $group_id ) {
-            $cats = array();
-            foreach( $board->categories as $category ) {
-                if( $category->parent_category_id === $group_id ) {
-                    $cats[] = $category;
-                }
-            }
-        }
-
-        //var_dump($cats);
-
     } elseif( !empty($con_pages) && in_array( $id, $con_pages ) ) {
         $type = 'contact';
     }
@@ -106,7 +84,28 @@
 		});
 	</script>
 <?php endif; ?>
-<?php $type = 'subscribe'; ?>
+<?php
+	$type = 'subscribe';
+	$api_key_groups = '6KlPHA3GzUs0Mt5ZMzIA7fBJKhvXsF37IQd3zaBj&include=groups';
+
+	$board = getRequestToken('v2/job_boards/categories', $api_key_groups);
+	$group_id = false;
+	foreach( $board->groups as $group ) {
+		if( $group->name === '#2 Skill Area' ) {
+			$group_id = $group->id;
+			break;
+		}
+	}
+
+	if( $group_id ) {
+		$cats = array();
+		foreach( $board->categories as $category ) {
+			if( $category->parent_category_id === $group_id ) {
+				$cats[] = $category;
+			}
+		}
+	}
+?>
 <div id="<?php echo $type; ?>PopupModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="<?php echo $type; ?>PopupModalTitle" aria-hidden="true">
 	<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
 		<div class="modal-content">
