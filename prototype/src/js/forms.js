@@ -82,6 +82,60 @@ function appValidation()
 		});
 	}
 
+	if( $('#subscribe-popup-form').length > 0 ) {
+		var formSub = $('#subscribe-popup-form');
+		formSub.validate({
+			onfocusout: true,
+			focusInvalid: true,
+			focusCleanup: true,
+			onkeyup: false
+		});
+		formSub.find('input.required').on('change focusout', function() {
+			if( formSub.valid() ) {
+				$('.fake_btn_subscribe').addClass('d-none');
+				$('.g-recaptcha.subscribe').removeClass('d-none');
+			} else {
+				$('.fake_btn_subscribe').removeClass('d-none');
+				$('.g-recaptcha.subscribe').addClass('d-none');
+			}
+		});
+		formSub.find('.fake_btn_subscribe').on('click', function (e) {
+			e.preventDefault();
+			if( formSub.valid() ) {
+				$('.fake_btn_subscribe').addClass('d-none');
+				$('.g-recaptcha.subscribe').removeClass('d-none');
+				$(this).next('button.g-recaptcha.subscribe').trigger('click').remove();
+			}
+		});
+	}
+
+	if( $('#contact-popup-form').length > 0 ) {
+		var formCon = $('#contact-popup-form');
+		formCon.validate({
+			onfocusout: true,
+			focusInvalid: true,
+			focusCleanup: true,
+			onkeyup: false
+		});
+		formCon.find('input.required').on('change focusout', function() {
+			if( formCon.valid() ) {
+				$('.fake_btn_contact').addClass('d-none');
+				$('.g-recaptcha.contact').removeClass('d-none');
+			} else {
+				$('.fake_btn_contact').removeClass('d-none');
+				$('.g-recaptcha.contact').addClass('d-none');
+			}
+		});
+		formCon.find('.fake_btn_contact').on('click', function (e) {
+			e.preventDefault();
+			if( formCon.valid() ) {
+				$('.fake_btn_contact').addClass('d-none');
+				$('.g-recaptcha.contact').removeClass('d-none');
+				$(this).next('button.g-recaptcha.contact').trigger('click').remove();
+			}
+		});
+	}
+
 }
 
 function onAppSubmit(token) 
@@ -107,6 +161,32 @@ function onCVSubmit(token)
 		$('#cv-upload-form').find('button.fake_btn_cv').addClass('d-none');
 		$('#cv-upload-form').find('button.fake_btn_cv_loading').removeClass('d-none');
 		document.getElementById('cv-upload-form').submit();
+	}
+}
+
+function onSubscribeSubmit(token) 
+{
+	var $globHash = getCookie('subscribeHash');
+	var $formHash = document.getElementById('subscribeHash').value;
+	if( $globHash === $formHash ) {
+		setCookie('subscribeHash', 'false', 1);
+		$('#subscribe-popup-form').find('button.g-recaptcha').remove();
+		$('#subscribe-popup-form').find('button.fake_btn_subscribe').addClass('d-none');
+		$('#subscribe-popup-form').find('button.fake_btn_subscribe_loading').removeClass('d-none');
+		document.getElementById('subscribe-popup-form').submit();
+	}
+}
+
+function onContactSubmit(token) 
+{
+	var $globHash = getCookie('contactHash');
+	var $formHash = document.getElementById('contactHash').value;
+	if( $globHash === $formHash ) {
+		setCookie('cvHash', 'false', 1);
+		$('#contact-popup-form').find('button.g-recaptcha').remove();
+		$('#contact-popup-form').find('button.fake_btn_contact').addClass('d-none');
+		$('#contact-popup-form').find('button.fake_btn_contact_loading').removeClass('d-none');
+		document.getElementById('contact-popup-form').submit();
 	}
 }
 

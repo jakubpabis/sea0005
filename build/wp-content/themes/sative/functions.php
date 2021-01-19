@@ -221,7 +221,7 @@ function sative_scripts() {
     wp_enqueue_script('sative-bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', array(), '4.4.1', true );
     wp_enqueue_script('sative-validate', 'https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js', array(), '1.19.2', true );
     wp_enqueue_script('sative-methods', 'https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/additional-methods.min.js', array(), '1.19.2', true );
-	wp_enqueue_script('sative-app', get_template_directory_uri() . '/assets/js/main.min.js', array(), '1.1.2', true );
+	wp_enqueue_script('sative-app', get_template_directory_uri() . '/assets/js/main.min.js', array(), '1.1.3', true );
 	// Internet Explorer HTML5 support
     wp_enqueue_script( 'html5hiv',get_template_directory_uri().'/inc/assets/js/html5.js', array(), '3.7.0', false );
     wp_script_add_data( 'html5hiv', 'conditional', 'lt IE 9' );
@@ -586,7 +586,13 @@ $toTranslate = array(
     'Fulfilled jobs',
     'Choose your country',
     'Sending, please wait...',
-    'Subscribing, please wait...'
+    'Subscribing, please wait...',
+    'Congratulations! You subscribe to our newsletter!',
+    'Sorry, there was a problem with your subscribtion, please try again later...',
+    'Thank you! You’re message was sent successfully!',
+    'Sorry, there was a problem with your message, please try again later...',
+    'Contact form submitted successfully',
+    'Contact form message from website'
 );
 
 if( function_exists( 'pll_register_string' ) ) {
@@ -707,6 +713,20 @@ function postRequestToken($request, $api_key, $api_secret, $json)
     return $response;
 }
 
+function putRequestToken($request, $api_key, $json = false)
+{
+    $ch = curl_init('https://api.searchsoftware.nl/'.$request.'?access_token='.$api_key);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+    if($json) {
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+    }
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $response = curl_exec($ch);
+    $response = json_decode($response);
+    return $response;
+}
+
 function getRequestToken($request, $api_key)
 {
     $ch = curl_init('https://api.searchsoftware.nl/'.$request.'?access_token='.$api_key);
@@ -731,6 +751,7 @@ function generateRandomString($length = 10)
 function hashesForLashes() 
 {
     global $hashesForLashes;
+    global $wp;
     $hashesForLashes = array(
         'cvHash' => generateRandomString(16),
         'appHash' => generateRandomString(16),
@@ -738,7 +759,7 @@ function hashesForLashes()
         'contactHash' => generateRandomString(16),
     );
     foreach( $hashesForLashes as $key => $val ) {
-        setcookie($key, $val, time() + 3600);
+        setcookie($key, $val, time() + 3600, '/');
     }
 }
 add_action( 'after_setup_theme', 'hashesForLashes' );
