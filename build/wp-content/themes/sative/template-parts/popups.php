@@ -4,7 +4,7 @@
     $sub_pages = get_field( 'subscribe_popup_on_pages', 'option' );
     $con_pages = get_field( 'contact_popup_on_pages', 'option' );
     $type = false;
-    if( !empty($sub_pages) in_array( $id, $sub_pages ) ) {
+    if( !empty($sub_pages) && in_array( $id, $sub_pages ) ) {
         $type = 'subscribe';
         $api_key_groups = '6KlPHA3GzUs0Mt5ZMzIA7fBJKhvXsF37IQd3zaBj&include=groups';
 
