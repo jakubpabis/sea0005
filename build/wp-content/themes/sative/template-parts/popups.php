@@ -4,16 +4,16 @@
     $sub_pages = get_field( 'subscribe_popup_on_pages', 'option' );
     $con_pages = get_field( 'contact_popup_on_pages', 'option' );
     $type = false;
-    if( in_array( $id, $sub_pages ) ) {
+    if( !empty($sub_pages) in_array( $id, $sub_pages ) ) {
         $type = 'subscribe';
         $api_key_groups = '6KlPHA3GzUs0Mt5ZMzIA7fBJKhvXsF37IQd3zaBj&include=groups';
-        
+
         $board = getRequestToken('v2/job_boards/categories', $api_key_groups);
         $group_id = false;
         foreach( $board->groups as $group ) {
             if( $group->name === '#2 Skill Area' ) {
                 $group_id = $group->id;
-                break; 
+                break;
             }
         }
 
@@ -28,7 +28,7 @@
 
         //var_dump($cats);
 
-    } elseif( in_array( $id, $con_pages ) ) {
+    } elseif( !empty($con_pages) && in_array( $id, $con_pages ) ) {
         $type = 'contact';
     }
 ?>
@@ -152,13 +152,13 @@
             </div>
         </div>
     <?php endif; ?>
-    
+
     <script defer>
         jQuery(document).ready(function() {
             if( ! getCookie('<?php echo $type; ?>_popup') ) {
                 setTimeout(function() {
                     jQuery('#<?php echo $type; ?>PopupModal').modal('show');
-                }, <?php echo get_field( $type.'_popup_timeout', 'option' ); ?>); 
+                }, <?php echo get_field( $type.'_popup_timeout', 'option' ); ?>);
                 jQuery('#<?php echo $type; ?>PopupModal').find('button.close').on('click', function() {
                     setCookie( '<?php echo $type; ?>_popup' , true, <?php echo get_field( $type.'_popup_cookie', 'option' ); ?>);
                 });
