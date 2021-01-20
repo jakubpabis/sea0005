@@ -3739,25 +3739,25 @@ function appValidation()
 		formCon.find('input.required').on('change focusout', function() {
 			if( formCon.valid() ) {
 				$('.fake_btn_contact').addClass('d-none');
-				$('.g-recaptcha.contact').removeClass('d-none');
+				$('.g-recaptcha.contactF').removeClass('d-none');
 			} else {
 				$('.fake_btn_contact').removeClass('d-none');
-				$('.g-recaptcha.contact').addClass('d-none');
+				$('.g-recaptcha.contactF').addClass('d-none');
 			}
 		});
 		formCon.find('.fake_btn_contact').on('click', function (e) {
 			e.preventDefault();
 			if( formCon.valid() ) {
 				$('.fake_btn_contact').addClass('d-none');
-				$('.g-recaptcha.contact').removeClass('d-none');
-				$(this).next('button.g-recaptcha.contact').trigger('click').remove();
+				$('.g-recaptcha.contactF').removeClass('d-none');
+				$(this).next('button.g-recaptcha.contactF').trigger('click').remove();
 			}
 		});
 	}
 
 }
 
-function onAppSubmit(token) 
+function onAppSubmit(token)
 {
 	var $globHash = getCookie('appHash');
 	var $formHash = document.getElementById('jobUploadHash').value;
@@ -3770,7 +3770,7 @@ function onAppSubmit(token)
 	}
 }
 
-function onCVSubmit(token) 
+function onCVSubmit(token)
 {
 	var $globHash = getCookie('cvHash');
 	var $formHash = document.getElementById('cvUploadHash').value;
@@ -3783,7 +3783,7 @@ function onCVSubmit(token)
 	}
 }
 
-function onSubscribeSubmit(token) 
+function onSubscribeSubmit(token)
 {
 	var $globHash = getCookie('subscribeHash');
 	var $formHash = document.getElementById('subscribeHash').value;
@@ -3796,7 +3796,7 @@ function onSubscribeSubmit(token)
 	}
 }
 
-function onContactSubmit(token) 
+function onContactSubmit(token)
 {
 	var $globHash = getCookie('contactHash');
 	var $formHash = document.getElementById('contactHash').value;
@@ -3814,7 +3814,7 @@ function onContactSubmit(token)
  * Parse url
  */
 function urlParser($url)
-{	
+{
 	var parser = document.createElement('a');
 	parser.href = $url;
 
@@ -3835,7 +3835,7 @@ function getReferrer()
 	}
 
 	if($url.length > 0 || $oldURL) {
-		
+
 		if(typeof($oldURL) != "undefined" && $oldURL !== null) {
 			var $hostname = urlParser($oldURL);
 			var $search = $oldURL.split("?")[1];
@@ -3847,7 +3847,7 @@ function getReferrer()
 
 		var $searchAdwords = false;
 		var $host = $hostname;
-		
+
 		if(typeof($search) != "undefined" && $search !== null) {
 			var $searchParts = $search.split("&");
 			var $searchPhrase = 'gclid';
@@ -3860,7 +3860,7 @@ function getReferrer()
 			for(var $i = 0; $i < $searchPartsArr.length; $i++) {
 				var $part = $searchPartsArr[$i];
 				for(var $j = 0; $j < $part.length; $j++) {
-					
+
 					if( $part[$j].match($searchPhrase) !== null ) {
 						console.log($part[$j]);
 						$searchAdwords = true;
@@ -3878,19 +3878,20 @@ function getReferrer()
 			if(!$oldURL) {
 				setCookie('referrerURL', $url, '7');
 			}
-			
+
 			if( $searchAdwords === true ) {
 				console.log('selecting Adwords!');
 				$('#cv-upload-form, #job-application-form').find('input[name="applicant-find"]').val('Google Adwords');
 			} else {
 				$('#cv-upload-form, #job-application-form').find('input[name="applicant-find"]').val($host);
 			}
-			
+
 		}
 
 	}
 
 }
+
 'use strict';
 
 (function($) {

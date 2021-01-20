@@ -61,7 +61,7 @@
                                         <input type="hidden" name="contactHash" id="contactHash" value="<?php global $hashesForLashes; echo $hashesForLashes['contactHash']; ?>">
                                         <button type="button" disabled class="fake_btn_<?php echo $type; ?>_loading btn btn__default pink d-none disabled"><?= pll_e( 'Sending, please wait...' ); ?></button>
                                         <button type="button" class="fake_btn_<?php echo $type; ?> btn btn__default yellow"><?= pll_e( 'Send message' ); ?></button>
-                                        <button class="g-recaptcha contact btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onContactSubmit"><?= pll_e( 'Send message' ); ?></button>
+                                        <button class="g-recaptcha contactF btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onContactSubmit"><?= pll_e( 'Send message' ); ?></button>
                                     </div>
                                 </div>
                             </form>
