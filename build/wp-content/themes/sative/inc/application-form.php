@@ -120,7 +120,7 @@ function add_to_queue()
             } else {
                 $message = 'failed';
             }
-            
+
         } else {
             $message = 'failed';
         }
@@ -272,7 +272,7 @@ function subscribe_person()
 
             $data = json_encode($subscriber_data);
             $subscribe_response = putRequestToken($path, $api_key, $data);
-            
+
             if( isset( $subscribe_response->status ) && $subscribe_response->status === 'ok'  ) {
                 $message = 'success';
             } else {
@@ -296,7 +296,7 @@ function sendEmail()
         return 'text/html';
     }
     add_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
-    
+
     $to = $_POST['app-email'];
     $subject = pll__('Job application successful');
     $body = appEmailTemplate();
@@ -321,7 +321,7 @@ function sendEmailCV()
         return 'text/html';
     }
     add_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
-    
+
     $to = $_POST['cv-email'];
     $subject = pll__('CV application successful');
     $body = cvEmailTemplate();
@@ -346,7 +346,7 @@ function sendEmailContact()
         return 'text/html';
     }
     add_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
-    
+
     if( isset($_POST['contact_email']) ) {
         $from = $_POST['contact_email'];
     }
@@ -362,7 +362,7 @@ function sendEmailContact()
     if( isset($_POST['contact_message']) ) {
         $message = $_POST['contact_message'];
     }
-    $to = 'pabis91@gmail.com';
+    $to = 'ernst@searchxrecruitment.com';
     $subject = pll__('Contact form submitted successfully');
     $subjectA = pll__('Contact form message from website');
     $body = contactEmailTemplate();
@@ -425,7 +425,7 @@ function appEmailTemplate()
                                         <strong>LinkedIn: </strong><a href="https://www.linkedin.com/company/search-x-recruitment">https://www.linkedin.com/company/search-x-recruitment</a><br/>
                                         <strong>Facebook: </strong><a href="https://www.facebook.com/searchxrecruitment">https://www.facebook.com/searchxrecruitment</a><br/>
                                         <strong>Twitter: </strong><a href="https://twitter.com/searchxjobs">https://twitter.com/searchxjobs</a><br/>
-                                        <strong>Instagram: </strong><a href="https://www.instagram.com/searchxrecruitment/">https://www.instagram.com/searchxrecruitment</a> 
+                                        <strong>Instagram: </strong><a href="https://www.instagram.com/searchxrecruitment/">https://www.instagram.com/searchxrecruitment</a>
                                     </p>
                                 </td>
                             </tr>
@@ -515,7 +515,7 @@ function appEmailTemplate()
                                     </table>
                                 </td>
                             </tr>
-                            
+
                         </tbody>
                     </table>
                 </body>
@@ -563,7 +563,7 @@ function cvEmailTemplate()
                                         <strong>LinkedIn: </strong><a href="https://www.linkedin.com/company/search-x-recruitment">https://www.linkedin.com/company/search-x-recruitment</a><br/>
                                         <strong>Facebook: </strong><a href="https://www.facebook.com/searchxrecruitment">https://www.facebook.com/searchxrecruitment</a><br/>
                                         <strong>Twitter: </strong><a href="https://twitter.com/searchxjobs">https://twitter.com/searchxjobs</a><br/>
-                                        <strong>Instagram: </strong><a href="https://www.instagram.com/searchxrecruitment/">https://www.instagram.com/searchxrecruitment</a> 
+                                        <strong>Instagram: </strong><a href="https://www.instagram.com/searchxrecruitment/">https://www.instagram.com/searchxrecruitment</a>
                                     </p>
                                 </td>
                             </tr>
@@ -653,7 +653,7 @@ function cvEmailTemplate()
                                     </table>
                                 </td>
                             </tr>
-                            
+
                         </tbody>
                     </table>
                 </body>
@@ -702,7 +702,7 @@ function contactEmailTemplate()
                                         <strong>LinkedIn: </strong><a href="https://www.linkedin.com/company/search-x-recruitment">https://www.linkedin.com/company/search-x-recruitment</a><br/>
                                         <strong>Facebook: </strong><a href="https://www.facebook.com/searchxrecruitment">https://www.facebook.com/searchxrecruitment</a><br/>
                                         <strong>Twitter: </strong><a href="https://twitter.com/searchxjobs">https://twitter.com/searchxjobs</a><br/>
-                                        <strong>Instagram: </strong><a href="https://www.instagram.com/searchxrecruitment/">https://www.instagram.com/searchxrecruitment</a> 
+                                        <strong>Instagram: </strong><a href="https://www.instagram.com/searchxrecruitment/">https://www.instagram.com/searchxrecruitment</a>
                                     </p>
                                 </td>
                             </tr>
@@ -783,7 +783,7 @@ function contactEmailTemplate()
                                     </table>
                                 </td>
                             </tr>
-                            
+
                         </tbody>
                     </table>
                 </body>
@@ -850,7 +850,7 @@ function contactEmailTemplateA( $from, $name, $phone = false, $company = false, 
     return $body;
 }
 
-function sative_cv_form_submit() 
+function sative_cv_form_submit()
 {
     $message = add_to_queue_cv();
 
@@ -865,7 +865,7 @@ function sative_cv_form_submit()
 add_action( 'admin_post_nopriv_cv_form', 'sative_cv_form_submit' );
 add_action( 'admin_post_cv_form', 'sative_cv_form_submit' );
 
-function sative_application_form_submit() 
+function sative_application_form_submit()
 {
     $message = add_to_queue();
 
@@ -880,7 +880,7 @@ function sative_application_form_submit()
 add_action( 'admin_post_nopriv_application_form', 'sative_application_form_submit' );
 add_action( 'admin_post_application_form', 'sative_application_form_submit' );
 
-function sative_subscribe_form_submit() 
+function sative_subscribe_form_submit()
 {
     $message = subscribe_person();
     $referer = remove_query_arg( 'message', $_POST['_wp_http_referer'] );
@@ -894,7 +894,7 @@ function sative_subscribe_form_submit()
 add_action( 'admin_post_nopriv_subscribe_form', 'sative_subscribe_form_submit' );
 add_action( 'admin_post_subscribe_form', 'sative_subscribe_form_submit' );
 
-function sative_contact_form_submit() 
+function sative_contact_form_submit()
 {
     $message = sendEmailContact();
     $referer = remove_query_arg( 'message', $_POST['_wp_http_referer'] );
