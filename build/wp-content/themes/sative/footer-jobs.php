@@ -52,7 +52,7 @@ $lang = pll_current_language();
                                 $args = array(
                                     'post_type' => 'jobs',
                                     'post_status' => 'publish',
-                                    'posts_per_page' => 6
+                                    'posts_per_page' => 9
                                 );
                                 $query = new WP_Query( $args );
                             ?>
