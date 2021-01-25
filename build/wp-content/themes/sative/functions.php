@@ -94,7 +94,7 @@ add_action( 'after_setup_theme', 'sative_content_width', 0 );
 show_admin_bar(false);
 
 if( function_exists('acf_add_options_page') ) {
-    
+
     acf_add_options_page(array(
         'page_title'    => __('Theme General Settings'),
         'menu_title'    => __('Theme Settings'),
@@ -108,13 +108,13 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_title'	=> 'Footer',
 		'parent_slug'	=> 'theme-general-settings',
     ));
-    
+
     acf_add_options_sub_page(array(
 		'page_title' 	=> 'Other',
 		'menu_title'	=> 'Other',
 		'parent_slug'	=> 'theme-general-settings',
     ));
-    
+
     acf_add_options_sub_page(array(
 		'page_title' 	=> 'Pop-ups',
 		'menu_title'	=> 'Pop-ups',
@@ -184,9 +184,9 @@ add_action('wp_enqueue_scripts', function(){
 	}
 });
 
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 ); 
-remove_action( 'admin_print_scripts', 'print_emoji_detection_script' ); 
-remove_action( 'wp_print_styles', 'print_emoji_styles' ); 
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 function my_mce4_options($init) {
@@ -221,7 +221,7 @@ function sative_scripts() {
     wp_enqueue_script('sative-bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', array(), '4.4.1', true );
     wp_enqueue_script('sative-validate', 'https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js', array(), '1.19.2', true );
     wp_enqueue_script('sative-methods', 'https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/additional-methods.min.js', array(), '1.19.2', true );
-	wp_enqueue_script('sative-app', get_template_directory_uri() . '/assets/js/main.min.js', array(), '1.1.3', true );
+	wp_enqueue_script('sative-app', get_template_directory_uri() . '/assets/js/main.min.js', array(), '1.1.4', true );
 	// Internet Explorer HTML5 support
     wp_enqueue_script( 'html5hiv',get_template_directory_uri().'/inc/assets/js/html5.js', array(), '3.7.0', false );
     wp_script_add_data( 'html5hiv', 'conditional', 'lt IE 9' );
@@ -269,7 +269,7 @@ if ( ! class_exists( 'wp_bootstrap_navwalker' )) {
 require_once get_template_directory() . '/inc/custom_post_types.php';
 
 if( function_exists( 'pll_get_post' ) ) {
-function getTplPageURL() 
+function getTplPageURL()
 {
     global $jobtpl;
     wp_reset_query();
@@ -284,8 +284,8 @@ function getTplPageURL()
     $pages_tpl = get_posts( $args_tpl );
     //var_dump($pages);
     // cycle through $pages here and either grab the URL
-    // from the results or do get_page_link($id) with 
-    // the id of the page you want 
+    // from the results or do get_page_link($id) with
+    // the id of the page you want
     $jobtpl = null;
     if(isset($pages_tpl[0])) {
         $jobtpl= get_page_link( pll_get_post( $pages_tpl[0] ) );
@@ -296,7 +296,7 @@ function getTplPageURL()
 }
 
 if( function_exists( 'pll_get_post' ) ) {
-    function getTplPageKnowledgeURL() 
+    function getTplPageKnowledgeURL()
     {
         global $jobtpl;
         wp_reset_query();
@@ -311,8 +311,8 @@ if( function_exists( 'pll_get_post' ) ) {
         $pages_tpl = get_posts( $args_tpl );
         //var_dump($pages);
         // cycle through $pages here and either grab the URL
-        // from the results or do get_page_link($id) with 
-        // the id of the page you want 
+        // from the results or do get_page_link($id) with
+        // the id of the page you want
         $jobtpl = null;
         if(isset($pages_tpl[0])) {
             $jobtpl= get_page_link( pll_get_post( $pages_tpl[0] ) );
@@ -342,7 +342,7 @@ function jobDisplayHelper()
         'type' => '',
         'industry' => '',
     );
-    
+
     $categories = get_the_terms(get_the_ID(), 'job-category');
     if(is_array($categories)) {
         foreach($categories as $category) {
@@ -378,7 +378,7 @@ function jobDisplayHelper()
 
 function hierarchical_tax_tree( $cat, $tax, $active = [] ) {
     $next = get_categories('taxonomy=' . $tax . '&orderby=count&order=DESC&hide_empty=false&parent=' . $cat);
-    if( $next ) :    
+    if( $next ) :
         echo '<ul>';
         foreach( $next as $cat ) :
             if(get_query_var('term') == $cat->category_nicename || in_array($cat->term_id, $active)) {
@@ -388,18 +388,18 @@ function hierarchical_tax_tree( $cat, $tax, $active = [] ) {
                 echo '<li>';
                 $checked = null;
             }
-            echo '<a href="' . get_category_link( $cat->term_id ) . '">' . $cat->name . '&nbsp;<small>('. $cat->count . ')</small><i class="far fa-times"></i></a>'; 
+            echo '<a href="' . get_category_link( $cat->term_id ) . '">' . $cat->name . '&nbsp;<small>('. $cat->count . ')</small><i class="far fa-times"></i></a>';
             hierarchical_tax_tree( $cat->term_id, $tax, $active = [] );
             echo '</li>';
-        endforeach;   
-        echo '</ul>'; 
-    endif;    
-}  
+        endforeach;
+        echo '</ul>';
+    endif;
+}
 
 
 function hierarchical_tax_tree_filter( $cat, $tax, $active ) {
     $next = get_categories('taxonomy=' . $tax . '&orderby=count&order=DESC&hide_empty=false&parent=' . $cat);
-    if( $next ) :    
+    if( $next ) :
         echo '<ul>';
         foreach( $next as $cat ) :
             if($active === null) {
@@ -412,12 +412,12 @@ function hierarchical_tax_tree_filter( $cat, $tax, $active ) {
                 echo '<li>';
                 $checked = null;
             }
-            echo '<span>' . $cat->name . '&nbsp;<small>('. $cat->count . ')</small><i class="far fa-times"></i><input type="checkbox" data-name="'.$cat->category_nicename.'" ' . $checked . ' name="' . $tax . '[]" value="' . $cat->slug . '"></span>'; 
+            echo '<span>' . $cat->name . '&nbsp;<small>('. $cat->count . ')</small><i class="far fa-times"></i><input type="checkbox" data-name="'.$cat->category_nicename.'" ' . $checked . ' name="' . $tax . '[]" value="' . $cat->slug . '"></span>';
             hierarchical_tax_tree_filter( $cat->term_id, $tax, $active );
             echo '</li>';
-        endforeach;   
-        echo '</ul>'; 
-    endif;    
+        endforeach;
+        echo '</ul>';
+    endif;
 }
 
 // // Activate WordPress Maintenance Mode
@@ -429,9 +429,9 @@ function hierarchical_tax_tree_filter( $cat, $tax, $active ) {
 // add_action('get_header', 'wp_maintenance_mode');
 
 
-// add_action('wp_ajax_myfilter', 'jobs_filter_function'); // wp_ajax_{ACTION HERE} 
+// add_action('wp_ajax_myfilter', 'jobs_filter_function'); // wp_ajax_{ACTION HERE}
 // add_action('wp_ajax_nopriv_myfilter', 'jobs_filter_function');
- 
+
 
 function filterHelper($els, $tax)
 {
@@ -453,7 +453,7 @@ function my_remove_admin_menus() {
     remove_menu_page( 'edit-comments.php' );
 }
 
-function resources_cpt_generating_rule($wp_rewrite) 
+function resources_cpt_generating_rule($wp_rewrite)
 {
     $rules = array();
     $terms = get_terms( array(
@@ -461,7 +461,7 @@ function resources_cpt_generating_rule($wp_rewrite)
         'hide_empty' => false,
     ) );
     $post_type = 'jobs';
-    foreach ($terms as $term) {    
+    foreach ($terms as $term) {
         $rules['vacature/([^/]*)$'] = 'index.php?post_type=' . $post_type. '&name=$matches[1]';
         $rules['nl/vacature/([^/]*)$'] = 'index.php?post_type=' . $post_type. '&name=$matches[1]';
         $rules['job/([^/]*)$'] = 'index.php?post_type=' . $post_type. '&name=$matches[1]';
@@ -473,7 +473,7 @@ function resources_cpt_generating_rule($wp_rewrite)
 add_filter('generate_rewrite_rules', 'resources_cpt_generating_rule');
 
 if( function_exists( 'pll_current_language' ) ) {
-function change_link( $permalink, $post ) 
+function change_link( $permalink, $post )
 {
     if( $post->post_type == 'jobs' ) {
         $resource_terms = get_the_terms( $post, 'job-category' );
@@ -617,17 +617,17 @@ require_once get_template_directory() . '/inc/fetchdata.php';
 add_action( 'sative_jobs_cron_hook', 'xmlRead' );
 //wp_clear_scheduled_hook( 'sative_jobs_cron_hook' );
 
-function template_chooser($template)   
-{    
-  global $wp_query;   
-  $post_type = get_query_var('post_type');   
-  if( $wp_query->is_search && $post_type == 'jobs' )   
+function template_chooser($template)
+{
+  global $wp_query;
+  $post_type = get_query_var('post_type');
+  if( $wp_query->is_search && $post_type == 'jobs' )
   {
     return locate_template('archive-jobs.php');  //  redirect to archive-search.php
-  }   
-  return $template;   
+  }
+  return $template;
 }
-add_filter('template_include', 'template_chooser'); 
+add_filter('template_include', 'template_chooser');
 
 
 
@@ -667,7 +667,7 @@ function custom_jobs_column( $column, $post_id ) {
     switch ( $column ) {
 
         case 'jobid' :
-            echo intval( get_field( 'job_id', $post_id ) ); 
+            echo intval( get_field( 'job_id', $post_id ) );
             break;
 
         case 'slug' :
@@ -681,10 +681,10 @@ add_filter( 'manage_edit-jobs_sortable_columns', 'my_sortable_jobs_column' );
 function my_sortable_jobs_column( $columns ) {
     $columns['jobid'] = __( 'Job ID', 'sative' );
     $columns['slug'] = __( 'Slug', 'sative' );
-    
+
     //To make a column 'un-sortable' remove it from the array
     //unset($columns['date']);
- 
+
     return $columns;
 }
 
@@ -692,9 +692,9 @@ add_action( 'pre_get_posts', 'my_jobs_orderby' );
 function my_jobs_orderby( $query ) {
     if( ! is_admin() )
         return;
- 
+
     $orderby = $query->get( 'orderby');
- 
+
     if( 'Job ID' == $orderby ) {
         $query->set('meta_key', 'job_id');
         $query->set('orderby', 'meta_value_num');
@@ -737,7 +737,7 @@ function getRequestToken($request, $api_key)
     return $response;
 }
 
-function generateRandomString($length = 10) 
+function generateRandomString($length = 10)
 {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
@@ -748,7 +748,7 @@ function generateRandomString($length = 10)
     return $randomString;
 }
 
-function hashesForLashes() 
+function hashesForLashes()
 {
     global $hashesForLashes;
     global $wp;

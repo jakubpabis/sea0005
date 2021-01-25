@@ -3907,7 +3907,7 @@ function getReferrer()
 jQuery.fn.preventDoubleSubmission = function() {
 	$(this).on('submit',function(e){
 		var $form = $(this);
-	
+
 		if ($form.data('submitted') === true) {
 			// Previously submitted - don't submit again
 			e.preventDefault();
@@ -3916,7 +3916,7 @@ jQuery.fn.preventDoubleSubmission = function() {
 			$form.data('submitted', true);
 		}
 	});
-  
+
 	// Keep chainability
 	return this;
 };
@@ -3973,11 +3973,11 @@ function lazyImages()
 	$('.lazy').each(function() {
 		if(spaceFromBottom($(this)) && !$(this).hasClass('loaded')) {
 			$(this).attr('src', $(this).data('src')).removeAttr('data-src').addClass('loaded');
-		}	
+		}
 	});
-	
+
 	$(window).on('scroll resize', function() {
-	
+
 		$('.lazyset').each(function() {
 			if(spaceFromBottom($(this)) && !$(this).hasClass('loaded')) {
 				$(this).attr('srcset', $(this).data('srcset')).removeAttr('data-srcset').addClass('loaded');
@@ -3986,7 +3986,7 @@ function lazyImages()
 		$('.lazy').each(function() {
 			if(spaceFromBottom($(this)) && !$(this).hasClass('loaded')) {
 				$(this).attr('src', $(this).data('src')).removeAttr('data-src').addClass('loaded');
-			}	
+			}
 		});
 
 	});
@@ -4030,7 +4030,7 @@ function getFileName($input, $el)
 	document.getElementById($el).innerHTML = $text.split('\\')[2];
 }
 
-function uglyInput() 
+function uglyInput()
 {
 	$('.ugly').each(function() {
 		var $input = $(this).find('input, textarea');
@@ -4212,7 +4212,7 @@ function quickFilters()
 	});
 
 	$('.jobs__list-filters').find('li.active').each(function() {
-	
+
 		if( $(this).find('input[data-name="it"]').is(':checked') ) {
 			$('.header__jobs-cats').find('a[href="#it"]').addClass('active');
 		}
@@ -4232,7 +4232,7 @@ function quickFilters()
 }
 
 $(document).ready(function() {
-	
+
 	lazyImages();
 	uglyInput();
 	filterSelect();
@@ -4253,6 +4253,12 @@ $(document).ready(function() {
 		homeHashtags();
 	}
 
+	if( $('#searchModal') ) {
+		$('#searchModal').on('shown.bs.modal', function (e) {
+			$('#searchModal').find('.searchInput').find('input').focus();
+	  	});
+	}
+
 	// $(document).find("form").on('submit', function(){
     //     $("input").each(function(index, obj){
     //         if($(obj).val() == "") {
@@ -4260,7 +4266,7 @@ $(document).ready(function() {
     //         }
     //     });
 	// });
-	
+
 	if( $('#job-application-form').length > 0 ) {
 		afterFormOpen();
 		$('#app-dob-datepicker').datepicker({
@@ -4284,7 +4290,7 @@ $(document).ready(function() {
 });
 
 $(window).on('load', function() {
-	
+
 	lazyImages();
 	chatOpen();
 
