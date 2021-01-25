@@ -28,7 +28,7 @@
 	<!-- /Bing Webmaster Tools -->
     <meta name="p:domain_verify" content="40be4aba9dc0f75fdd75d97b0a233017"/>
     <?php wp_head(); ?>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" media="none" onload="if(media!='all')media='all'" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,300;1,500&display=swap" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
     <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/main.min.css?v=1.0.5">
