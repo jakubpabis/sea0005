@@ -28,17 +28,16 @@
 	<!-- /Bing Webmaster Tools -->
     <meta name="p:domain_verify" content="40be4aba9dc0f75fdd75d97b0a233017"/>
     <?php wp_head(); ?>
-    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/fa.min.css" media="none" onload="if(media!='all')media='all'">
-    <noscript>
-        <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/fa.min.css"/>
-    </noscript>
-    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/main.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" media="none" onload="if(media!='all')media='all'" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,300;1,500&display=swap" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/main.min.css?v=1.0.5">
 </head>
 <body <?php body_class(); ?>>
     <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->          
+    <![endif]-->
     <!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMG8TTV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- /Google Tag Manager (noscript) --> 
+	<!-- /Google Tag Manager (noscript) -->
     <div id="wrapper" class="d-flex align-items-center justify-content-center py-5 bg-lgrey">
