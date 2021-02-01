@@ -8,18 +8,18 @@
  */
 
 //require_once get_template_directory() . '/inc/jshrink.php';
-require_once get_template_directory() . '/inc/htmlcompress.php';
+//require_once get_template_directory() . '/inc/htmlcompress.php';
 
-function wp_html_compression_finish($html)
-{
-    return new WP_HTML_Compression($html);
-}
-
-function wp_html_compression_start()
-{
-    ob_start('wp_html_compression_finish');
-}
-add_action('get_header', 'wp_html_compression_start');
+// function wp_html_compression_finish($html)
+// {
+//     return new WP_HTML_Compression($html);
+// }
+//
+// function wp_html_compression_start()
+// {
+//     ob_start('wp_html_compression_finish');
+// }
+// add_action('get_header', 'wp_html_compression_start');
 
 if ( ! function_exists( 'sative_setup' ) ) :
 /**
