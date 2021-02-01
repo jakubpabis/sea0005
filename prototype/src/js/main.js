@@ -60,7 +60,6 @@ function slideTo(el)
 function spaceFromBottom(el)
 {
 	var eTop = $(el).offset().top; //get the offset top of the element
-	//console.log(eTop - $(window).scrollTop()); //position of the ele w.r.t window
 	if(eTop - $(window).scrollTop() < $(window).height() + 600){
 		return true;
 	} else {
@@ -117,7 +116,6 @@ function knowledgeFilterToggle()
 function jobsFilterToggle()
 {
 	$('.jobs__list-filters').find('.card').on('click', function(e) {
-		console.log(e.target);
 		if( $(window).width() <= 991 && $('.jobs__list-filters').hasClass('not-opened') ) {
 			$('.jobs__list-filters').removeClass('not-opened');
 		}
@@ -141,7 +139,6 @@ function uglyInput()
 	$('.ugly').each(function() {
 		var $input = $(this).find('input, textarea');
 		$input.on('change focusout', function() {
-			console.log(!$input.val());
 			if( !$input.val() === true ) {
 				$input.parent().find('.ugly-label').css({'opacity' : 1});
 			} else {
@@ -230,7 +227,6 @@ function filterSelect()
 		if($(this).hasClass('active')) {
 			$(this).removeClass('active').parent().removeClass('active');
 			$(this).next('.filters').find('li').find('input').prop('checked', false).parent().parent().removeClass('active');
-			console.log($(this).next('.filters').find('li').find('input:checked').length);
 		} else {
 			$(this).addClass('active').parent().addClass('active');
 		}
@@ -352,7 +348,7 @@ $(document).ready(function() {
 	appValidation();
 	$('form').each(function() {
 		$(this).preventDoubleSubmission();
-		console.log('prevent');
+		console.log('prevent double submittion');
 	});
 
 	if($('.home__middle-hashtags').length != 0) {

@@ -30,7 +30,7 @@ function loadScript( url, callback ) {
 			callback();
 		};
 	}
-  
+
 	script.src = url;
 	document.getElementsByTagName( "head" )[0].appendChild( script );
 }
@@ -105,7 +105,6 @@ function onSignIn(googleUser) {
 		$('form').find('input[name="app-email"]').val(profile.getEmail()).next('label').css({'opacity':0});
 		$('form').find('input[name="cv-email"]').val(profile.getEmail()).next('label').css({'opacity':0});
 	}
-	console.log('Image URL: ' + profile.getImageUrl());
 }
 
 function myFacebookLogin() {
@@ -113,7 +112,6 @@ function myFacebookLogin() {
 	FB.login(function(response) {
 		if (response.status === 'connected') {
 			FB.api('/me', {fields: 'name, email, gender, picture'}, function(response) {
-				console.log(response);
 				if(response['name']) {
                     $('form').find('input[name="app-name"]').val(response['name']).next('label').css({'opacity':0});
                     $('form').find('input[name="cv-name"]').val(response['name']).next('label').css({'opacity':0});

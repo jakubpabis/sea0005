@@ -149,7 +149,7 @@
                                 <?php wp_nonce_field( 'cv_form', 'cv_form_nonce' ); ?>
                                 <button type="button" disabled class="fake_btn_cv_loading btn btn__default pink d-none disabled"><?= pll_e( 'Sending, please wait...' ); ?></button>
                                 <button type="button" class="fake_btn_cv btn btn__default yellow"><?= pll_e( 'Send application' ); ?></button>
-                                <button class="g-recaptcha btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onCVSubmit"><?= pll_e( 'Send application' ); ?></button>
+                                <button class="g-recaptcha cvBTN btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onCVSubmit"><?= pll_e( 'Send application' ); ?></button>
                             </div>
                         </div>
                     </form>

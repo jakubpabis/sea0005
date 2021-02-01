@@ -66,18 +66,18 @@ function appValidation()
 		formCV.find('input.required').on('change focusout', function() {
 			if( formCV.valid() ) {
 				$('.fake_btn_cv').addClass('d-none');
-				$('.g-recaptcha').removeClass('d-none');
+				$('.g-recaptcha.cvBTN').removeClass('d-none');
 			} else {
 				$('.fake_btn_cv').removeClass('d-none');
-				$('.g-recaptcha').addClass('d-none');
+				$('.g-recaptcha.cvBTN').addClass('d-none');
 			}
 		});
 		formCV.find('.fake_btn_cv').on('click', function (e) {
 			e.preventDefault();
 			if( formCV.valid() ) {
 				$('.fake_btn_cv').addClass('d-none');
-				$('.g-recaptcha').removeClass('d-none');
-				$(this).next('button.g-recaptcha').trigger('click').remove();
+				$('.g-recaptcha.cvBTN').removeClass('d-none');
+				$(this).next('button.g-recaptcha.cvBTN').trigger('click').remove();
 			}
 		});
 	}
@@ -224,7 +224,6 @@ function getReferrer()
 			var $hostname = urlParser($url);
 			var $search = $url.split("?")[1];
 		}
-		console.log($search);
 
 		var $searchAdwords = false;
 		var $host = $hostname;
@@ -237,15 +236,12 @@ function getReferrer()
 			for(var $i = 0; $i < $searchParts.length; $i++) {
 				$searchPartsArr.push($searchParts[$i].split("="));
 			}
-			console.log($searchPartsArr);
 			for(var $i = 0; $i < $searchPartsArr.length; $i++) {
 				var $part = $searchPartsArr[$i];
 				for(var $j = 0; $j < $part.length; $j++) {
 
 					if( $part[$j].match($searchPhrase) !== null ) {
-						console.log($part[$j]);
 						$searchAdwords = true;
-						console.log($searchAdwords);
 						break;
 					}
 				}
@@ -254,14 +250,11 @@ function getReferrer()
 
 		if($hostname !== window.location.hostname) {
 
-			console.log('from:'+ $host +' yay!');
-
 			if(!$oldURL) {
 				setCookie('referrerURL', $url, '7');
 			}
 
 			if( $searchAdwords === true ) {
-				console.log('selecting Adwords!');
 				$('#cv-upload-form, #job-application-form').find('input[name="applicant-find"]').val('Google Adwords');
 			} else {
 				$('#cv-upload-form, #job-application-form').find('input[name="applicant-find"]').val($host);

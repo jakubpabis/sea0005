@@ -3499,7 +3499,7 @@ function loadScript( url, callback ) {
 			callback();
 		};
 	}
-  
+
 	script.src = url;
 	document.getElementsByTagName( "head" )[0].appendChild( script );
 }
@@ -3574,7 +3574,6 @@ function onSignIn(googleUser) {
 		$('form').find('input[name="app-email"]').val(profile.getEmail()).next('label').css({'opacity':0});
 		$('form').find('input[name="cv-email"]').val(profile.getEmail()).next('label').css({'opacity':0});
 	}
-	console.log('Image URL: ' + profile.getImageUrl());
 }
 
 function myFacebookLogin() {
@@ -3582,7 +3581,6 @@ function myFacebookLogin() {
 	FB.login(function(response) {
 		if (response.status === 'connected') {
 			FB.api('/me', {fields: 'name, email, gender, picture'}, function(response) {
-				console.log(response);
 				if(response['name']) {
                     $('form').find('input[name="app-name"]').val(response['name']).next('label').css({'opacity':0});
                     $('form').find('input[name="cv-name"]').val(response['name']).next('label').css({'opacity':0});
@@ -3617,6 +3615,7 @@ function myFacebookLogin() {
 	}, {scope: 'public_profile,email,user_gender'});
 
 }
+
 function onFormSubmit()
 {
 	$(document).on('submit', '#job-application-form, #cv-upload-form', function() {
@@ -3685,18 +3684,18 @@ function appValidation()
 		formCV.find('input.required').on('change focusout', function() {
 			if( formCV.valid() ) {
 				$('.fake_btn_cv').addClass('d-none');
-				$('.g-recaptcha').removeClass('d-none');
+				$('.g-recaptcha.cvBTN').removeClass('d-none');
 			} else {
 				$('.fake_btn_cv').removeClass('d-none');
-				$('.g-recaptcha').addClass('d-none');
+				$('.g-recaptcha.cvBTN').addClass('d-none');
 			}
 		});
 		formCV.find('.fake_btn_cv').on('click', function (e) {
 			e.preventDefault();
 			if( formCV.valid() ) {
 				$('.fake_btn_cv').addClass('d-none');
-				$('.g-recaptcha').removeClass('d-none');
-				$(this).next('button.g-recaptcha').trigger('click').remove();
+				$('.g-recaptcha.cvBTN').removeClass('d-none');
+				$(this).next('button.g-recaptcha.cvBTN').trigger('click').remove();
 			}
 		});
 	}
@@ -3843,7 +3842,6 @@ function getReferrer()
 			var $hostname = urlParser($url);
 			var $search = $url.split("?")[1];
 		}
-		console.log($search);
 
 		var $searchAdwords = false;
 		var $host = $hostname;
@@ -3856,15 +3854,12 @@ function getReferrer()
 			for(var $i = 0; $i < $searchParts.length; $i++) {
 				$searchPartsArr.push($searchParts[$i].split("="));
 			}
-			console.log($searchPartsArr);
 			for(var $i = 0; $i < $searchPartsArr.length; $i++) {
 				var $part = $searchPartsArr[$i];
 				for(var $j = 0; $j < $part.length; $j++) {
 
 					if( $part[$j].match($searchPhrase) !== null ) {
-						console.log($part[$j]);
 						$searchAdwords = true;
-						console.log($searchAdwords);
 						break;
 					}
 				}
@@ -3873,14 +3868,11 @@ function getReferrer()
 
 		if($hostname !== window.location.hostname) {
 
-			console.log('from:'+ $host +' yay!');
-
 			if(!$oldURL) {
 				setCookie('referrerURL', $url, '7');
 			}
 
 			if( $searchAdwords === true ) {
-				console.log('selecting Adwords!');
 				$('#cv-upload-form, #job-application-form').find('input[name="applicant-find"]').val('Google Adwords');
 			} else {
 				$('#cv-upload-form, #job-application-form').find('input[name="applicant-find"]').val($host);
@@ -3954,7 +3946,6 @@ function slideTo(el)
 function spaceFromBottom(el)
 {
 	var eTop = $(el).offset().top; //get the offset top of the element
-	//console.log(eTop - $(window).scrollTop()); //position of the ele w.r.t window
 	if(eTop - $(window).scrollTop() < $(window).height() + 600){
 		return true;
 	} else {
@@ -4011,7 +4002,6 @@ function knowledgeFilterToggle()
 function jobsFilterToggle()
 {
 	$('.jobs__list-filters').find('.card').on('click', function(e) {
-		console.log(e.target);
 		if( $(window).width() <= 991 && $('.jobs__list-filters').hasClass('not-opened') ) {
 			$('.jobs__list-filters').removeClass('not-opened');
 		}
@@ -4035,7 +4025,6 @@ function uglyInput()
 	$('.ugly').each(function() {
 		var $input = $(this).find('input, textarea');
 		$input.on('change focusout', function() {
-			console.log(!$input.val());
 			if( !$input.val() === true ) {
 				$input.parent().find('.ugly-label').css({'opacity' : 1});
 			} else {
@@ -4124,7 +4113,6 @@ function filterSelect()
 		if($(this).hasClass('active')) {
 			$(this).removeClass('active').parent().removeClass('active');
 			$(this).next('.filters').find('li').find('input').prop('checked', false).parent().parent().removeClass('active');
-			console.log($(this).next('.filters').find('li').find('input:checked').length);
 		} else {
 			$(this).addClass('active').parent().addClass('active');
 		}
@@ -4246,7 +4234,7 @@ $(document).ready(function() {
 	appValidation();
 	$('form').each(function() {
 		$(this).preventDoubleSubmission();
-		console.log('prevent');
+		console.log('prevent double submittion');
 	});
 
 	if($('.home__middle-hashtags').length != 0) {
