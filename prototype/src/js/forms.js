@@ -31,7 +31,7 @@ function appValidation()
 	if( $('#job-application-form').length > 0 ) {
 		var formApp = $('#job-application-form');
 		formApp.validate({
-			onfocusout: true,
+			onfocusout: false,
 			focusInvalid: true,
 			focusCleanup: true,
 			onkeyup: false
@@ -58,7 +58,7 @@ function appValidation()
 	if( $('#cv-upload-form').length > 0 ) {
 		var formCV = $('#cv-upload-form');
 		formCV.validate({
-			onfocusout: true,
+			onfocusout: false,
 			focusInvalid: true,
 			focusCleanup: true,
 			onkeyup: false
@@ -85,7 +85,7 @@ function appValidation()
 	if( $('#subscribe-popup-form').length > 0 ) {
 		var formSub = $('#subscribe-popup-form');
 		formSub.validate({
-			onfocusout: true,
+			onfocusout: false,
 			focusInvalid: true,
 			focusCleanup: true,
 			onkeyup: false
@@ -112,7 +112,7 @@ function appValidation()
 	if( $('#contact-popup-form').length > 0 ) {
 		var formCon = $('#contact-popup-form');
 		formCon.validate({
-			onfocusout: true,
+			onfocusout: false,
 			focusInvalid: true,
 			focusCleanup: true,
 			onkeyup: false
