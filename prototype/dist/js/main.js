@@ -3530,11 +3530,33 @@ function afterFormOpen()
 				});
 			};
 			FB.getLoginStatus(function(response) {
-				statusChangeCallback(response);
+				console.log(response.status);
 			});
 		});
 	}
 }
+
+// function statusChangeCallback(response) {
+//     console.log('statusChangeCallback');
+//     console.log(response);
+//     // The response object is returned with a status field that lets the
+//     // app know the current login status of the person.
+//     // Full docs on the response object can be found in the documentation
+//     // for FB.getLoginStatus().
+//     if (response.status === 'connected') {
+//         // Logged into your app and Facebook.
+//         console.log('Welcome!  Fetching your information.... ');
+//         FB.api('/me', function (response) {
+//             console.log('Successful login for: ' + response.name);
+//             document.getElementById('status').innerHTML =
+//               'Thanks for logging in, ' + response.name + '!';
+//         });
+//     } else {
+//         // The person is not logged into your app or we are unable to tell.
+//         document.getElementById('status').innerHTML = 'Please log ' +
+//           'into this app.';
+//     }
+// }
 
 function myLinkedinLogin($url, $src, $cv = false)
 {
@@ -3903,6 +3925,7 @@ jQuery.fn.preventDoubleSubmission = function() {
 		if ($form.data('submitted') === true) {
 			// Previously submitted - don't submit again
 			e.preventDefault();
+			console.log('prevent double submittion');
 		} else {
 			// Mark it so that the next submit can be ignored
 			$form.data('submitted', true);
@@ -4234,7 +4257,6 @@ $(document).ready(function() {
 	appValidation();
 	$('form').each(function() {
 		$(this).preventDoubleSubmission();
-		console.log('prevent double submittion');
 	});
 
 	if($('.home__middle-hashtags').length != 0) {

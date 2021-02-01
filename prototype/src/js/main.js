@@ -17,6 +17,7 @@ jQuery.fn.preventDoubleSubmission = function() {
 		if ($form.data('submitted') === true) {
 			// Previously submitted - don't submit again
 			e.preventDefault();
+			console.log('prevent double submittion');
 		} else {
 			// Mark it so that the next submit can be ignored
 			$form.data('submitted', true);
@@ -348,7 +349,6 @@ $(document).ready(function() {
 	appValidation();
 	$('form').each(function() {
 		$(this).preventDoubleSubmission();
-		console.log('prevent double submittion');
 	});
 
 	if($('.home__middle-hashtags').length != 0) {
