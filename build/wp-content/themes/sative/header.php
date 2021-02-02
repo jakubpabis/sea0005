@@ -32,11 +32,11 @@
 		(function(h,o,t,j,a,r){
 			h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
 			h._hjSettings={hjid:467663,hjsv:6};
-			a=o.getElementsByTagName(‘head’)[0];
-			r=o.createElement(‘script’);r.async=1;
+			a=o.getElementsByTagName('head')[0];
+			r=o.createElement('script');r.async=1;
 			r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
 			a.appendChild(r);
-		})(window,document,‘https://static.hotjar.com/c/hotjar-','.js?sv=’);
+		})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 	</script>
     <?php wp_head(); ?>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">

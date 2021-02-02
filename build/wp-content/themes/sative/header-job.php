@@ -29,14 +29,14 @@
     <meta name="p:domain_verify" content="40be4aba9dc0f75fdd75d97b0a233017"/>
 	<!-- Hotjar Tracking Code for www.searchxrecruitment.com -->
 	<script>
-	    (function(h,o,t,j,a,r){
-	        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-	        h._hjSettings={hjid:467663,hjsv:6};
-	        a=o.getElementsByTagName(‘head’)[0];
-	        r=o.createElement(‘script’);r.async=1;
-	        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-	        a.appendChild(r);
-	    })(window,document,‘https://static.hotjar.com/c/hotjar-','.js?sv=’);
+		(function(h,o,t,j,a,r){
+			h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+			h._hjSettings={hjid:467663,hjsv:6};
+			a=o.getElementsByTagName('head')[0];
+			r=o.createElement('script');r.async=1;
+			r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+			a.appendChild(r);
+		})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 	</script>
     <?php wp_head(); ?>
     <?php
