@@ -17,16 +17,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Google Tag Manager -->
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-PMG8TTV');</script>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-PMG8TTV');</script>
 	<!-- /Google Tag Manager -->
 	<!-- Bing Webmaster Tools -->
-		<meta name="msvalidate.01" content="DB26E7D9A02A63952EAC119AC5AB03FC" />
+	<meta name="msvalidate.01" content="DB26E7D9A02A63952EAC119AC5AB03FC" />
 	<!-- /Bing Webmaster Tools -->
-    <meta name="p:domain_verify" content="40be4aba9dc0f75fdd75d97b0a233017"/>
+	<meta name="p:domain_verify" content="40be4aba9dc0f75fdd75d97b0a233017"/>
 	<!-- Hotjar Tracking Code for www.searchxrecruitment.com -->
 	<script>
 		(function(h,o,t,j,a,r){
@@ -50,7 +50,7 @@
         }
     ?>
     <?php if( $google_job ): ?>
-    <script type="application/ld+json">
+    	<script type="application/ld+json">
         {
             "@context" : "https://schema.org/",
             "@type" : "JobPosting",
@@ -119,11 +119,7 @@
         }
     </script>
     <?php endif; ?>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,300;1,500&display=swap" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
-	<link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/fa.min.css" media="none" onload="if(media!='all')media='all'">
-    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/main.min.css?v=1.0.5">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body <?php body_class(); ?>>
