@@ -4235,7 +4235,7 @@ function quickFilters()
 
 }
 
-$(document).ready(function() {
+jQuery(document).ready(function() {
 
 	lazyImages();
 	uglyInput();
@@ -4292,7 +4292,7 @@ $(document).ready(function() {
 
 });
 
-$(window).on('load', function() {
+jQuery(window).on('load', function() {
 
 	lazyImages();
 	chatOpen();
