@@ -31,8 +31,7 @@ function appValidation()
 	if( $('#job-application-form').length > 0 ) {
 		var formApp = $('#job-application-form');
 		formApp.validate({
-			onfocusout: false,
-			focusInvalid: true,
+			onfocusout: function(element) { $(element).valid(); },
 			focusCleanup: true,
 			onkeyup: false
 		});
@@ -56,83 +55,86 @@ function appValidation()
 	}
 
 	if( $('#cv-upload-form').length > 0 ) {
-		var formCV = $('#cv-upload-form');
-		formCV.validate({
-			onfocusout: false,
-			focusInvalid: true,
-			focusCleanup: true,
-			onkeyup: false
-		});
-		formCV.find('input.required').on('change focusout', function() {
-			if( formCV.valid() ) {
-				$('.fake_btn_cv').addClass('d-none');
-				$('.g-recaptcha.cvBTN').removeClass('d-none');
-			} else {
-				$('.fake_btn_cv').removeClass('d-none');
-				$('.g-recaptcha.cvBTN').addClass('d-none');
-			}
-		});
-		formCV.find('.fake_btn_cv').on('click', function (e) {
-			e.preventDefault();
-			if( formCV.valid() ) {
-				$('.fake_btn_cv').addClass('d-none');
-				$('.g-recaptcha.cvBTN').removeClass('d-none');
-				$(this).next('button.g-recaptcha.cvBTN').trigger('click').remove();
-			}
+		$('#uploadCVModal').on('show.bs.modal', function (e) {
+			var formCV = $('#cv-upload-form');
+			formCV.validate({
+				onfocusout: function(element) { $(element).valid(); },
+				focusCleanup: true,
+				onkeyup: false
+			});
+			formCV.find('input.required').on('change focusout', function() {
+				if( formCV.valid() ) {
+					$('.fake_btn_cv').addClass('d-none');
+					$('.g-recaptcha.cvBTN').removeClass('d-none');
+				} else {
+					$('.fake_btn_cv').removeClass('d-none');
+					$('.g-recaptcha.cvBTN').addClass('d-none');
+				}
+			});
+			formCV.find('.fake_btn_cv').on('click', function (e) {
+				e.preventDefault();
+				if( formCV.valid() ) {
+					$('.fake_btn_cv').addClass('d-none');
+					$('.g-recaptcha.cvBTN').removeClass('d-none');
+					$(this).next('button.g-recaptcha.cvBTN').trigger('click').remove();
+				}
+			});
 		});
 	}
 
 	if( $('#subscribe-popup-form').length > 0 ) {
-		var formSub = $('#subscribe-popup-form');
-		formSub.validate({
-			onfocusout: false,
-			focusInvalid: true,
-			focusCleanup: true,
-			onkeyup: false
-		});
-		formSub.find('input.required').on('change focusout', function() {
-			if( formSub.valid() ) {
-				$('.fake_btn_subscribe').addClass('d-none');
-				$('.g-recaptcha.subscribe').removeClass('d-none');
-			} else {
-				$('.fake_btn_subscribe').removeClass('d-none');
-				$('.g-recaptcha.subscribe').addClass('d-none');
-			}
-		});
-		formSub.find('.fake_btn_subscribe').on('click', function (e) {
-			e.preventDefault();
-			if( formSub.valid() ) {
-				$('.fake_btn_subscribe').addClass('d-none');
-				$('.g-recaptcha.subscribe').removeClass('d-none');
-				$(this).next('button.g-recaptcha.subscribe').trigger('click').remove();
-			}
+		$('#subscribePopupModal').on('show.bs.modal', function (e) {
+			var formSub = $('#subscribe-popup-form');
+			formSub.validate({
+				onfocusout: function(element) { $(element).valid(); },
+				focusCleanup: true,
+				onkeyup: false
+			});
+			formSub.find('input.required').on('change focusout', function() {
+				if( formSub.valid() ) {
+					$('.fake_btn_subscribe').addClass('d-none');
+					$('.g-recaptcha.subscribe').removeClass('d-none');
+				} else {
+					$('.fake_btn_subscribe').removeClass('d-none');
+					$('.g-recaptcha.subscribe').addClass('d-none');
+				}
+			});
+			formSub.find('.fake_btn_subscribe').on('click', function (e) {
+				e.preventDefault();
+				if( formSub.valid() ) {
+					$('.fake_btn_subscribe').addClass('d-none');
+					$('.g-recaptcha.subscribe').removeClass('d-none');
+					$(this).next('button.g-recaptcha.subscribe').trigger('click').remove();
+				}
+			});
 		});
 	}
 
 	if( $('#contact-popup-form').length > 0 ) {
-		var formCon = $('#contact-popup-form');
-		formCon.validate({
-			onfocusout: false,
-			focusInvalid: true,
-			focusCleanup: true,
-			onkeyup: false
-		});
-		formCon.find('input.required').on('change focusout', function() {
-			if( formCon.valid() ) {
-				$('.fake_btn_contact').addClass('d-none');
-				$('.g-recaptcha.contactF').removeClass('d-none');
-			} else {
-				$('.fake_btn_contact').removeClass('d-none');
-				$('.g-recaptcha.contactF').addClass('d-none');
-			}
-		});
-		formCon.find('.fake_btn_contact').on('click', function (e) {
-			e.preventDefault();
-			if( formCon.valid() ) {
-				$('.fake_btn_contact').addClass('d-none');
-				$('.g-recaptcha.contactF').removeClass('d-none');
-				$(this).next('button.g-recaptcha.contactF').trigger('click').remove();
-			}
+		$('#contactPopupModal').on('show.bs.modal', function (e) {
+			var formCon = $('#contact-popup-form');
+			formCon.validate({
+				onfocusout: function(element) { $(element).valid(); },
+				focusCleanup: true,
+				onkeyup: false
+			});
+			formCon.find('input.required').on('change focusout', function() {
+				if( formCon.valid() ) {
+					$('.fake_btn_contact').addClass('d-none');
+					$('.g-recaptcha.contactF').removeClass('d-none');
+				} else {
+					$('.fake_btn_contact').removeClass('d-none');
+					$('.g-recaptcha.contactF').addClass('d-none');
+				}
+			});
+			formCon.find('.fake_btn_contact').on('click', function (e) {
+				e.preventDefault();
+				if( formCon.valid() ) {
+					$('.fake_btn_contact').addClass('d-none');
+					$('.g-recaptcha.contactF').removeClass('d-none');
+					$(this).next('button.g-recaptcha.contactF').trigger('click').remove();
+				}
+			});
 		});
 	}
 
@@ -188,80 +190,4 @@ function onContactSubmit(token)
 		$('#contact-popup-form').find('button.fake_btn_contact_loading').removeClass('d-none');
 		document.getElementById('contact-popup-form').submit();
 	}
-}
-
-
-/**
- * Parse url
- */
-function urlParser($url)
-{
-	var parser = document.createElement('a');
-	parser.href = $url;
-
-	var $result = parser.hostname;
-
-	return $result;
-}
-
-/**
- * Get referrer address
- */
-function getReferrer()
-{
-	var $url = document.referrer;
-
-	if( getCookie('referrerURL') ) {
-		var $oldURL = getCookie('referrerURL');
-	}
-
-	if($url.length > 0 || $oldURL) {
-
-		if(typeof($oldURL) != "undefined" && $oldURL !== null) {
-			var $hostname = urlParser($oldURL);
-			var $search = $oldURL.split("?")[1];
-		} else {
-			var $hostname = urlParser($url);
-			var $search = $url.split("?")[1];
-		}
-
-		var $searchAdwords = false;
-		var $host = $hostname;
-
-		if(typeof($search) != "undefined" && $search !== null) {
-			var $searchParts = $search.split("&");
-			var $searchPhrase = 'gclid';
-			var $searchPartsArr = [];
-
-			for(var $i = 0; $i < $searchParts.length; $i++) {
-				$searchPartsArr.push($searchParts[$i].split("="));
-			}
-			for(var $i = 0; $i < $searchPartsArr.length; $i++) {
-				var $part = $searchPartsArr[$i];
-				for(var $j = 0; $j < $part.length; $j++) {
-
-					if( $part[$j].match($searchPhrase) !== null ) {
-						$searchAdwords = true;
-						break;
-					}
-				}
-			}
-		}
-
-		if($hostname !== window.location.hostname) {
-
-			if(!$oldURL) {
-				setCookie('referrerURL', $url, '7');
-			}
-
-			if( $searchAdwords === true ) {
-				$('#cv-upload-form, #job-application-form').find('input[name="applicant-find"]').val('Google Adwords');
-			} else {
-				$('#cv-upload-form, #job-application-form').find('input[name="applicant-find"]').val($host);
-			}
-
-		}
-
-	}
-
 }

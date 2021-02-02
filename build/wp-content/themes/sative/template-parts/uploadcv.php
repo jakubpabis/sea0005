@@ -124,7 +124,7 @@
                                     <?php $i++; endforeach; ?>
                                 </select>
                             </div>
-                            <div class="col-12 ugly pt-2 pb-3">
+                            <div class="col-12 ugly upload pt-2 pb-3">
                                 <label id="cv-cv-label" class="full bg-white ugly-label" for="cv-cv"><?php pll_e( 'CV' ); ?> <span><?= pll_e( 'Upload' ); ?></span></label>
                                 <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="cv-cv" onchange="getFileName(this, 'cv-cv-label')">
                             </div>

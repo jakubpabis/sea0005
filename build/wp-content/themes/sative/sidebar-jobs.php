@@ -107,7 +107,7 @@
                     <?php $i++; endforeach; ?>
                 </select>
             </div>
-            <div class="col-12 ugly pt-2">
+            <div class="col-12 ugly upload pt-2">
                 <label id="app-cv-label" class="full bg-white" for="app-cv"><?php pll_e( 'CV' ); ?> <span><?= pll_e( 'Upload' ); ?></span></label>
                 <input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="app-cv" onchange="getFileName(this, 'app-cv-label')">
             </div>
@@ -141,7 +141,7 @@
 <div class="share">
     <h5 class="text500"><?php pll_e( 'Share this content' ); ?></h5>
     <div class="btns">
-        <?php 
+        <?php
             global $wp;
             $current_url = home_url( add_query_arg( array(), $wp->request ) );
         ?>

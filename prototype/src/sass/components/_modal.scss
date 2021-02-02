@@ -150,6 +150,22 @@
 
         .ugly {
 
+			&.upload {
+
+				&:focus {
+
+					label {
+						opacity: 1!important;
+					}
+
+				}
+
+				label {
+					opacity: 1!important;
+				}
+
+			}
+
             label {
                 top: 8px;
                 left: 15px;
@@ -188,7 +204,7 @@
                 }
 
             }
-    
+
             input,
             select,
             textarea {
@@ -220,7 +236,7 @@
 
                 &.error {
                     background-color: $color-pink!important;
-                    
+
                     &+label {
                         top: auto;
                         bottom: -1px;
@@ -297,22 +313,22 @@
         @media(max-width: 767px) {
             margin-left: 0;
         }
-    
+
         .triangle-left {
             position: absolute;
             top: 15px;
             left: -3px;
-            width: 0; 
-            height: 0; 
+            width: 0;
+            height: 0;
             border-top: 15px solid transparent;
-            border-bottom: 15px solid transparent; 
-            border-right: 20px solid white; 
+            border-bottom: 15px solid transparent;
+            border-right: 20px solid white;
             content: '';
 
             @media(max-width: 767px) {
                 border-top: 10px solid transparent;
-                border-bottom: 10px solid transparent; 
-                border-right: 16px solid white; 
+                border-bottom: 10px solid transparent;
+                border-right: 16px solid white;
                 top: 16px;
                 left: 0;
             }
@@ -322,7 +338,7 @@
             }
 
         }
-    
+
         input {
             position: relative;
             padding: 20px 30px 20px 20px;
@@ -346,15 +362,15 @@
                 max-width: calc(100% - 35px);
                 font-size: 16px;
             }
-    
+
             &::placeholder {
                 color: $color-primary;
                 opacity: 1;
                 font-style: italic;
             }
-    
+
         }
-    
+
         .btn {
             background-color: $color-tertiary;
             color: white;
@@ -373,7 +389,7 @@
             }
 
         }
-        
+
     }
 
 }

@@ -10,14 +10,14 @@
             <h3><?php pll_e('Filter jobs'); ?></h3>
         </div>
         <div id="filter">
-            <?php if(get_categories(array('taxonomy' => 'job-category'))): 
-                if( isset($_GET['job-category']) && !empty($_GET['job-category']) ){ 
-                    $activeJobCats = $_GET['job-category']; 
+            <?php if(get_categories(array('taxonomy' => 'job-category'))):
+                if( isset($_GET['job-category']) && !empty($_GET['job-category']) ){
+                    $activeJobCats = $_GET['job-category'];
                     $active = 'active';
                 } else {
                     $activeJobCats = null;
                     $active = null;
-                } 
+                }
             ?>
             <div class="filter-group <?= $active ?>">
                 <span class="filter-title <?= $active ?>">
@@ -30,16 +30,16 @@
                 </div>
             </div>
             <?php endif; ?>
-            <?php  
-                if( isset( $_GET['salary_min'] ) && $_GET['salary_min'] !== null && $_GET['salary_min'] !== '' ){ 
-                    $salaryMin = $_GET['salary_min']; 
+            <?php
+                if( isset( $_GET['salary_min'] ) && $_GET['salary_min'] !== null && $_GET['salary_min'] !== '' ){
+                    $salaryMin = $_GET['salary_min'];
                 } else {
-                    $salaryMin = null; 
+                    $salaryMin = null;
                 }
                 if( isset( $_GET['salary_max'] ) && $_GET['salary_max'] !== null && $_GET['salary_max'] !== '' ) {
-                    $salaryMax = $_GET['salary_max']; 
+                    $salaryMax = $_GET['salary_max'];
                 } else {
-                    $salaryMax = null; 
+                    $salaryMax = null;
                 }
                 if( isset( $salaryMin ) && $salaryMin !== null || isset( $salaryMax ) && $salaryMax !== null ) {
                     $active = 'active';
@@ -60,14 +60,14 @@
                     </div>
                 </div>
             </div>
-            <?php if(get_categories(array('taxonomy' => 'job-location'))): 
-                if( isset($_GET['job-location']) && !empty($_GET['job-location']) ){ 
-                    $activeJobLocs = $_GET['job-location']; 
+            <?php if(get_categories(array('taxonomy' => 'job-location'))):
+                if( isset($_GET['job-location']) && !empty($_GET['job-location']) ){
+                    $activeJobLocs = $_GET['job-location'];
                     $active = 'active';
                 } else {
                     $activeJobLocs = null;
                     $active = null;
-                }    
+                }
             ?>
             <div class="filter-group <?= $active ?>">
                 <span class="filter-title <?= $active ?>">
@@ -80,14 +80,14 @@
                 </div>
             </div>
             <?php endif; ?>
-            <?php if(get_categories(array('taxonomy' => 'job-industry'))): 
-                if( isset($_GET['job-industry']) && !empty($_GET['job-industry']) ){ 
-                    $activeJobInds = $_GET['job-industry']; 
+            <?php if(get_categories(array('taxonomy' => 'job-industry'))):
+                if( isset($_GET['job-industry']) && !empty($_GET['job-industry']) ){
+                    $activeJobInds = $_GET['job-industry'];
                     $active = 'active';
                 } else {
                     $activeJobInds = null;
                     $active = null;
-                }    
+                }
             ?>
             <div class="filter-group <?= $active ?>"">
                 <span class="filter-title <?= $active ?>"">
@@ -100,14 +100,14 @@
                 </div>
             </div>
             <?php endif; ?>
-            <?php if(get_categories(array('taxonomy' => 'job-type'))): 
-                if( isset($_GET['job-type']) && !empty($_GET['job-type']) ){ 
-                    $activeJobTyps = $_GET['job-type']; 
+            <?php if(get_categories(array('taxonomy' => 'job-type'))):
+                if( isset($_GET['job-type']) && !empty($_GET['job-type']) ){
+                    $activeJobTyps = $_GET['job-type'];
                     $active = 'active';
                 } else {
                     $activeJobTyps = null;
                     $active = null;
-                }       
+                }
             ?>
             <div class="filter-group <?= $active ?>">
                 <span class="filter-title <?= $active ?>">
@@ -121,7 +121,6 @@
             </div>
             <?php endif; ?>
             <button type="submit" class="btn btn__default yellow"><?php pll_e('Filter'); ?></button>
-            <!-- <input type="hidden" name="action" value="myfilter"> -->
         </div>
     </div>
 </aside>

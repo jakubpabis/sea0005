@@ -2060,6 +2060,18 @@ i {
 	color: #ec6278;
 }
 
+#uploadCVModal form .ugly.upload:focus label,
+#subscribePopupModal form .ugly.upload:focus label,
+#contactPopupModal form .ugly.upload:focus label {
+	opacity: 1 !important;
+}
+
+#uploadCVModal form .ugly.upload label,
+#subscribePopupModal form .ugly.upload label,
+#contactPopupModal form .ugly.upload label {
+	opacity: 1 !important;
+}
+
 #uploadCVModal form .ugly label,
 #subscribePopupModal form .ugly label,
 #contactPopupModal form .ugly label {
@@ -2892,6 +2904,14 @@ aside#chat .dog {
 
 .jobs__single-sidebar .card form .ugly {
 	position: relative;
+}
+
+.jobs__single-sidebar .card form .ugly.upload:focus label {
+	opacity: 1 !important;
+}
+
+.jobs__single-sidebar .card form .ugly.upload label {
+	opacity: 1 !important;
 }
 
 .jobs__single-sidebar .card form .ugly label {

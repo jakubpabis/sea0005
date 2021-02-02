@@ -1,73 +1,5 @@
 'use strict';
 
-(function($) {
-	$.each(['show', 'hide'], function(i, ev) {
-		var el = $.fn[ev];
-		$.fn[ev] = function() {
-			this.trigger(ev);
-			return el.apply(this, arguments);
-		};
-	});
-})(jQuery);
-
-jQuery.fn.preventDoubleSubmission = function() {
-	$(this).on('submit',function(e){
-		var $form = $(this);
-
-		if ($form.data('submitted') === true) {
-			// Previously submitted - don't submit again
-			e.preventDefault();
-			console.log('prevent double submittion');
-		} else {
-			// Mark it so that the next submit can be ignored
-			$form.data('submitted', true);
-		}
-	});
-
-	// Keep chainability
-	return this;
-};
-
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-
-function slideTo(el)
-{
-	$('html, body').animate({
-		scrollTop: $(el).offset().top
-	}, 500);
-}
-
-function spaceFromBottom(el)
-{
-	var eTop = $(el).offset().top; //get the offset top of the element
-	if(eTop - $(window).scrollTop() < $(window).height() + 600){
-		return true;
-	} else {
-		return false;
-	}
-}
-
 function lazyImages()
 {
 
@@ -127,12 +59,6 @@ function jobsFilterToggle()
 			$('.jobs__list-filters').addClass('not-opened');
 		}
 	});
-}
-
-function getFileName($input, $el)
-{
-	$text = $input.value;
-	document.getElementById($el).innerHTML = $text.split('\\')[2];
 }
 
 function uglyInput()
@@ -361,14 +287,6 @@ jQuery(document).ready(function() {
 	  	});
 	}
 
-	// $(document).find("form").on('submit', function(){
-    //     $("input").each(function(index, obj){
-    //         if($(obj).val() == "") {
-    //             $(obj).remove();
-    //         }
-    //     });
-	// });
-
 	if( $('#job-application-form').length > 0 ) {
 		afterFormOpen();
 		$('#app-dob-datepicker').datepicker({
@@ -380,13 +298,15 @@ jQuery(document).ready(function() {
 	}
 
 	if( $('#cv-upload-form').length > 0  ) {
-		afterFormOpen();
-		$('#cv-dob-datepicker').datepicker({
-			format: "dd-mm-yyyy",
-			weekStart: 1,
-			autoclose: true,
-			startDate: "01-01-1920"
-		});
+		$('#uploadCVModal').on('show.bs.modal', function (e) {
+			afterFormOpen();
+			$('#cv-dob-datepicker').datepicker({
+				format: "dd-mm-yyyy",
+				weekStart: 1,
+				autoclose: true,
+				startDate: "01-01-1920"
+			});
+	  	});
 	}
 
 });
