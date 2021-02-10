@@ -42,13 +42,13 @@ $lang = pll_current_language();
                     <div class="row footer__middle">
                         <div class="col-lg-3 col-md-6 mb-5">
                             <h4>
-                                <?= get_field( 'contact_title_'.$lang, 'option' ); ?>
+                                <?php echo get_field( 'contact_title_'.$lang, 'option' ); ?>
                             </h4>
-                            <?= get_field( 'contact_text_'.$lang, 'option' ); ?>
+                            <?php echo get_field( 'contact_text_'.$lang, 'option' ); ?>
                         </div>
                         <div class="col-lg-3 col-md-6 mb-5">
                             <h4>
-                                <?= get_field( 'recent_title_'.$lang, 'option' ); ?>
+                                <?php echo get_field( 'recent_title_'.$lang, 'option' ); ?>
                             </h4>
                             <?php
                                 wp_reset_postdata();
@@ -63,7 +63,7 @@ $lang = pll_current_language();
                             <ul class="text-size-small">
                                 <?php while($query->have_posts()) : $query->the_post(); ?>
                                 <li>
-                                    <a href="<?= get_the_permalink(); ?>"><?= get_the_title(); ?></a>
+                                    <a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a>
                                 </li>
                                 <?php endwhile; ?>
                             </ul>
@@ -71,17 +71,17 @@ $lang = pll_current_language();
                         </div>
                         <div class="col-lg-3 col-md-6 mb-5">
                             <h4>
-                                <?= get_field( 'hot_skills_title_'.$lang, 'option' ); ?>
+                                <?php echo get_field( 'hot_skills_title_'.$lang, 'option' ); ?>
                             </h4>
-                            <?= get_field( 'hot_skills_text_'.$lang, 'option' ); ?>
+                            <?php echo get_field( 'hot_skills_text_'.$lang, 'option' ); ?>
                         </div>
                         <div class="col-lg-3 col-md-6 mb-5">
                             <h4>
-                                <?= get_field( 'subscribe_title_'.$lang, 'option' ); ?>
+                                <?php echo get_field( 'subscribe_title_'.$lang, 'option' ); ?>
                             </h4>
-                            <?= get_field( 'subscribe_text_'.$lang, 'option' ); ?>
-                            <button class="btn btn__default yellow mt-4" data-toggle="modal" data-target="#subscribePopupModal"><?= pll_e('Subscribe now'); ?></button>
-                            <?php /* <a href="http://jobs.searchsoftware.nl/searchit/subscribe" target="_blank" class="btn btn__default yellow mt-4"><?= pll_e('Subscribe now'); ?></a> */ ?>
+                            <?php echo get_field( 'subscribe_text_'.$lang, 'option' ); ?>
+                            <button class="btn btn__default yellow mt-4" data-toggle="modal" data-target="#subscribePopupModal"><?php echo pll_e('Subscribe now'); ?></button>
+                            <?php /* <a href="http://jobs.searchsoftware.nl/searchit/subscribe" target="_blank" class="btn btn__default yellow mt-4"><?php echo pll_e('Subscribe now'); ?></a> */ ?>
                         </div>
                     </div>
                 </div>
@@ -89,9 +89,9 @@ $lang = pll_current_language();
                     <div class="container">
                         <div class="row justify-content-lg-between justify-content-center">
                             <div class="col-auto">
-                                <span>© Search X Recruitment - <?= date("Y"); ?></span> |
+                                <span>© Search X Recruitment - <?php echo date("Y"); ?></span> |
                                 <a href="/sitemap_index.xml"> Sitemap</a> |
-                                <a href="/<?= $lang; ?>/fulfilled-jobs"> <?php pll_e( 'Fulfilled jobs' ); ?></a>
+                                <a href="/<?php echo $lang; ?>/<?php pll_e( 'fulfilled-jobs' ); "> <?php pll_e( 'Fulfilled jobs' ); ?></a>
                             </div>
                             <div class="col-auto">
                                 <span>

@@ -194,6 +194,69 @@ function getReferrer()
 headTemplate:'<thead><tr><th colspan="7" class="datepicker-title"></th></tr><tr><th class="prev">'+o.templates.leftArrow+'</th><th colspan="5" class="datepicker-switch"></th><th class="next">'+o.templates.rightArrow+"</th></tr></thead>",contTemplate:'<tbody><tr><td colspan="7"></td></tr></tbody>',footTemplate:'<tfoot><tr><th colspan="7" class="today"></th></tr><tr><th colspan="7" class="clear"></th></tr></tfoot>'};r.template='<div class="datepicker"><div class="datepicker-days"><table class="table-condensed">'+r.headTemplate+"<tbody></tbody>"+r.footTemplate+'</table></div><div class="datepicker-months"><table class="table-condensed">'+r.headTemplate+r.contTemplate+r.footTemplate+'</table></div><div class="datepicker-years"><table class="table-condensed">'+r.headTemplate+r.contTemplate+r.footTemplate+'</table></div><div class="datepicker-decades"><table class="table-condensed">'+r.headTemplate+r.contTemplate+r.footTemplate+'</table></div><div class="datepicker-centuries"><table class="table-condensed">'+r.headTemplate+r.contTemplate+r.footTemplate+"</table></div></div>",a.fn.datepicker.DPGlobal=r,a.fn.datepicker.noConflict=function(){return a.fn.datepicker=m,this},a.fn.datepicker.version="1.9.0",a.fn.datepicker.deprecated=function(a){var b=window.console;b&&b.warn&&b.warn("DEPRECATED: "+a)},a(document).on("focus.datepicker.data-api click.datepicker.data-api",'[data-provide="datepicker"]',function(b){var c=a(this);c.data("datepicker")||(b.preventDefault(),n.call(c,"show"))}),a(function(){n.call(a('[data-provide="datepicker-inline"]'))})});
 !function(t){var i=t(window);t.fn.visible=function(t,e,o){if(!(this.length<1)){var r=this.length>1?this.eq(0):this,n=r.get(0),f=i.width(),h=i.height(),o=o?o:"both",l=e===!0?n.offsetWidth*n.offsetHeight:!0;if("function"==typeof n.getBoundingClientRect){var g=n.getBoundingClientRect(),u=g.top>=0&&g.top<h,s=g.bottom>0&&g.bottom<=h,c=g.left>=0&&g.left<f,a=g.right>0&&g.right<=f,v=t?u||s:u&&s,b=t?c||a:c&&a;if("both"===o)return l&&v&&b;if("vertical"===o)return l&&v;if("horizontal"===o)return l&&b}else{var d=i.scrollTop(),p=d+h,w=i.scrollLeft(),m=w+f,y=r.offset(),z=y.top,B=z+r.height(),C=y.left,R=C+r.width(),j=t===!0?B:z,q=t===!0?z:B,H=t===!0?R:C,L=t===!0?C:R;if("both"===o)return!!l&&p>=q&&j>=d&&m>=L&&H>=w;if("vertical"===o)return!!l&&p>=q&&j>=d;if("horizontal"===o)return!!l&&m>=L&&H>=w}}}}(jQuery);
 
+// http://bootstrap-menu.com
+
+$(document).ready(function(){
+/// Prevent closing from click inside dropdown
+$(document).on('click', '.dropdown-menu', function (e) {
+  e.stopPropagation();
+});
+
+
+// refresh window on resize
+$(window).on('resize',function(){location.reload();});
+
+
+if ($(window).width() < 992) {
+    $('.has-megasubmenu a').click(function(e){
+        e.preventDefault();
+        $(this).next('.megasubmenu').toggle();
+
+        $('.dropdown').on('hide.bs.dropdown', function () {
+           $(this).find('.megasubmenu').hide();
+        })
+    });
+
+    $('.dropdown-menu a').click(function(e){
+      e.preventDefault();
+        if($(this).next('.submenu').length){
+          $(this).next('.submenu').toggle();
+        }
+        $('.dropdown').on('hide.bs.dropdown', function () {
+       $(this).find('.submenu').hide();
+    })
+    });
+}
+
+
+/// offcanvas onmobile
+$("[data-trigger]").on("click", function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var offcanvas_id =  $(this).attr('data-trigger');
+      $(offcanvas_id).toggleClass("show");
+      $('body').toggleClass("offcanvas-active");
+      $(".screen-overlay").toggleClass("show");
+  }); 
+
+/// Close menu when pressing ESC
+$(document).on('keydown', function(event) {
+    if(event.keyCode === 27) {
+       $(".mobile-offcanvas").removeClass("show");
+       $("body").removeClass("overlay-active");
+    }
+});
+
+$(".btn-close, .screen-overlay").click(function(e){
+  $(".screen-overlay").removeClass("show");
+    $(".mobile-offcanvas").removeClass("show");
+    $("body").removeClass("offcanvas-active");
+
+}); 
+
+
+
+}); // document ready //end
 /**
  * Owl Carousel v2.3.4
  * Copyright 2013-2018 David Deutsch
@@ -4198,6 +4261,24 @@ function quickFilters()
 
 }
 
+function itemsDown($item)
+{
+	var item = $('.'+$item);
+	var cont = item.parent();
+	var elH = 0;
+	var dropH = cont.height();
+	cont.children().each(function() {
+		if( !$(this).hasClass($item) ) {
+			elH = elH + $(this).outerHeight(true);
+			console.log($(this));
+		}
+	});
+	var fH = dropH - elH - item.height() - 50;
+	if( fH > 0 ) {
+		item.css({ 'margin-top' : fH+'px' });
+	}
+}
+
 jQuery(document).ready(function() {
 
 	lazyImages();
@@ -4211,6 +4292,11 @@ jQuery(document).ready(function() {
 	onFormSubmit();
 	onFormLoad();
 	appValidation();
+
+	$('div.dropdown-menu').parent().on('shown.bs.dropdown', function () {
+		itemsDown( 'sub-extra' );
+	});
+
 	$('form').each(function() {
 		$(this).preventDoubleSubmission();
 	});
@@ -4253,9 +4339,27 @@ jQuery(window).on('load', function() {
 
 	lazyImages();
 	chatOpen();
+	itemsDown( 'sub-extra' );
 
 	if($('.home__clients').length != 0) {
 		homepageClients();
 	}
 
+	// make it as accordion for smaller screens
+	if ($(window).width() < 992) {
+		$('.dropdown-menu a').click(function(e){
+			e.preventDefault();
+			  	if($(this).next('.submenu').length){
+			    	$(this).next('.submenu').toggle();
+			  	}
+			  	$('.dropdown').on('hide.bs.dropdown', function () {
+			 	$(this).find('.submenu').hide();
+			});
+		});
+	}
+
+});
+
+$(document).on('click', '.dropdown-menu', function (e) {
+	e.stopPropagation();
 });
