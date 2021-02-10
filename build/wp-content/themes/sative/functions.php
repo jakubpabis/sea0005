@@ -591,7 +591,8 @@ $toTranslate = array(
     'Thank you! You’re message was sent successfully!',
     'Sorry, there was a problem with your message, please try again later...',
     'Contact form submitted successfully',
-    'Contact form message from website'
+    'Contact form message from website',
+	'fulfilled-jobs'
 );
 
 if( function_exists( 'pll_register_string' ) ) {
