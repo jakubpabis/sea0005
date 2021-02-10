@@ -11,6 +11,8 @@ function xmlRead()
     $job_ids = array();
     $xml = simplexml_load_file('https://jobs.searchsoftware.nl/searchit.xml') or die("Error: Cannot create object");
 
+	echo '<hr/><br/><br/><strong>START</strong> inserting/updating jobs...<br/>';
+
     foreach($xml->vacancy as $job) {
 
         if( !empty($job->id) ) {
@@ -72,8 +74,11 @@ function xmlRead()
         }
 
         $recruiter_related = array();
-        if($recruiter) {
-            $recruiter_page = get_page_by_title($recruiter, OBJECT, 'team');
+		if( isset($recruiter) && $recruiter ) {
+			$recruiter_page = get_page_by_title($recruiter, OBJECT, 'team');
+		}
+        if( isset($recruiter_page) && $recruiter_page ) {
+
             $recruiter_related[] = $recruiter_page;
 
             $recruiter_lang = pll_get_post_language($recruiter_page->ID);
@@ -91,18 +96,17 @@ function xmlRead()
         $jobArray = array(
             'post_type'     => 'jobs',
             'post_status'   => 'publish',
-            'post_title'    => $job->title,
-            'post_content'  => $job->description,
+            'post_title'    => strval( $job->title ),
+            'post_content'  => strval( $job->description ),
             'post_date'     => $date,
             'post_name'     => $slug,
         );
 
         if( $excerpt ) {
-            $jobArray['post_excerpt'] = $excerpt;
+            $jobArray['post_excerpt'] = strval( $excerpt );
         }
 
         if( in_array( $jobID, $postsArr, true ) ) {
-            //var_dump('check');
             wp_reset_query();
             $args = array(
                 'name'        => $slug,
@@ -111,6 +115,7 @@ function xmlRead()
                 'numberposts' => 1
             );
             $my_posts = get_posts($args);
+
             if( $my_posts ) {
                 $postDate = $my_posts[0]->post_date;
                 $postID = $my_posts[0]->ID;
@@ -120,66 +125,73 @@ function xmlRead()
                 } else {
                     $force = false;
                 }
-    
+
                 if( strval($postDate) !== strval($date) || $force) {
-    
-                    //var_dump( strval($postDate) );
-                    //var_dump( strval($date) );
-    
+
                     unset($jobArray['post_name']);
                     unset($jobArray['post_type']);
                     unset($jobArray['post_status']);
                     $jobArray['ID'] = $postID;
-    
-                    wp_update_post( $jobArray, true );
-    
-                    update_field( 'job_id', $jobID, $postID );
-                    update_field( 'salary_min', $salary_min, $postID );
-                    update_field( 'salary_max', $salary_max, $postID );
-                    update_field( 'location', strval($job->address), $postID );
-                    update_field( 'latitude', floatval($job->lat), $postID );
-                    update_field( 'longitude', floatval($job->lng), $postID );
-                    update_field( 'recruiter', $recruiter, $postID );
-    
-                    if( $recruiter_related !== null || !empty( $recruiter_related ) ) {
-                        update_field( 'recruiter_related', $recruiter_related, $postID );   
-                    }
-                    
-                    if( $meta_title !== null ) {
-                        update_field( 'meta_title', $meta_title, $postID );
-                        if( get_post_meta( $postID, '_yoast_wpseo_title', true ) ) {
-                            update_post_meta( $postID, '_yoast_wpseo_title', $meta_title);
-                        } else {
-                            add_post_meta( $postID, '_yoast_wpseo_title', $meta_title);
-                        }
-                    }
-    
-                    if( $meta_description !== null ) {
-                        update_field( 'meta_description', $meta_description, $postID );
-                        if( get_post_meta( $postID, '_yoast_wpseo_metadesc', true ) ) {
-                            update_post_meta( $postID, '_yoast_wpseo_metadesc', $meta_description);
-                        } else {
-                            add_post_meta( $postID, '_yoast_wpseo_metadesc', $meta_description);
-                        }
-                    }
-    
-                    if( $meta_keywords !== null ) {
-                        update_field( 'meta_keywords', $meta_keywords, $postID );
-                        $meta_keywords = str_replace(',', '', $meta_keywords);
-                        if( get_post_meta( $postID, '_yoast_wpseo_focuskw', true ) ) {
-                            update_post_meta( $postID, '_yoast_wpseo_focuskw', $meta_keywords);
-                        } else {
-                            add_post_meta( $postID, '_yoast_wpseo_focuskw', $meta_keywords);
-                        }
-                    }
-    
+
+                    $update = wp_update_post( $jobArray, true );
+
+					if( $update ) {
+
+	                    update_field( 'job_id', $jobID, $postID );
+	                    update_field( 'salary_min', $salary_min, $postID );
+	                    update_field( 'salary_max', $salary_max, $postID );
+	                    update_field( 'location', strval($job->address), $postID );
+	                    update_field( 'latitude', floatval($job->lat), $postID );
+	                    update_field( 'longitude', floatval($job->lng), $postID );
+	                    update_field( 'recruiter', $recruiter, $postID );
+
+	                    if( $recruiter_related !== null || !empty( $recruiter_related ) ) {
+	                        update_field( 'recruiter_related', $recruiter_related, $postID );
+	                    }
+
+	                    if( $meta_title !== null ) {
+	                        update_field( 'meta_title', $meta_title, $postID );
+	                        if( get_post_meta( $postID, '_yoast_wpseo_title', true ) ) {
+	                            update_post_meta( $postID, '_yoast_wpseo_title', $meta_title);
+	                        } else {
+	                            add_post_meta( $postID, '_yoast_wpseo_title', $meta_title);
+	                        }
+	                    }
+
+	                    if( $meta_description !== null ) {
+	                        update_field( 'meta_description', $meta_description, $postID );
+	                        if( get_post_meta( $postID, '_yoast_wpseo_metadesc', true ) ) {
+	                            update_post_meta( $postID, '_yoast_wpseo_metadesc', $meta_description);
+	                        } else {
+	                            add_post_meta( $postID, '_yoast_wpseo_metadesc', $meta_description);
+	                        }
+	                    }
+
+	                    if( $meta_keywords !== null ) {
+	                        update_field( 'meta_keywords', $meta_keywords, $postID );
+	                        $meta_keywords = str_replace(',', '', $meta_keywords);
+	                        if( get_post_meta( $postID, '_yoast_wpseo_focuskw', true ) ) {
+	                            update_post_meta( $postID, '_yoast_wpseo_focuskw', $meta_keywords);
+	                        } else {
+	                            add_post_meta( $postID, '_yoast_wpseo_focuskw', $meta_keywords);
+	                        }
+	                    }
+
+						if( $force ) {
+							echo '<br/><strong>FORCE</strong> updating a job with an ID of: <a href="'.get_the_permalink($postID).'" target="_blank">'.get_field( 'job_id', $postID ).'</a>';
+						} else {
+							echo '<br/>Updating a job with an ID of: <a href="'.get_the_permalink($postID).'" target="_blank">'.get_field( 'job_id', $postID ).'</a>';
+						}
+
+					}
+
                 }
-    
+
                 /**
                  * Categories insert
                  */
                 insertCategories($job_categories, $postID);
-    
+
                 /**
                  * Location insert
                  */
@@ -188,6 +200,7 @@ function xmlRead()
             }
 
             wp_reset_query();
+
 
         } else if( sative_post_exists_by_slug( $slug ) === false ) {
 
@@ -205,7 +218,7 @@ function xmlRead()
             update_field( 'recruiter', $recruiter, $postID );
 
             if( $recruiter_related !== null || !empty( $recruiter_related ) ) {
-                update_field( 'recruiter_related', $recruiter_related, $postID );   
+                update_field( 'recruiter_related', $recruiter_related, $postID );
             }
 
             if( $meta_title !== null ) {
@@ -234,10 +247,13 @@ function xmlRead()
              */
             insertLocation($job, $postID);
 
+			echo '<br/>Insert new job with an ID of: <a href="'.get_the_permalink($postID).'" target="_blank">'.get_field( 'job_id', $postID ).'</a>';
+
         }
 
     }
 
+	echo '<br/><br/><strong>END</strong> inserting/updating jobs.<br/><br/>';
     jobsFulfilled($job_ids);
 
 }
@@ -258,15 +274,17 @@ function jobList()
     );
     $posts = new WP_Query( $args );
 
-    echo '<br/><br/>Listing jobs in DB<br/>';
+    echo '<hr/><br/><br/><strong>START</strong> listing jobs in Wordpress...<br/>';
 
     if ( $posts->have_posts() ) :
         while ( $posts->have_posts() ) : $posts->the_post();
             $id = intval( get_field( 'job_id', get_the_ID() ) );
-            var_dump($id);
+            echo '<br/> Job ID: <a href="'.get_the_permalink(get_the_ID()).'" target="_blank">'.get_field( 'job_id', get_the_ID() ).'</a>';
             array_push($postsArr, $id);
         endwhile;
     endif;
+
+	echo '<br/><br/><strong>END</strong> listing jobs in Wordpress.<br/><br/>';
 
     wp_reset_query();
     return $postsArr;
@@ -279,7 +297,7 @@ function jobList()
  */
 function jobsFulfilled($job_ids)
 {
-    echo '<br/><br/>Starting fulfilled jobs searching...<br/>';
+    echo '<hr/><br/><br/><strong>START</strong> Searching for fulfilled jobs in Wordpress...<br/>';
     $inDB = jobList();
 
     foreach($inDB as $post_id) {
@@ -304,9 +322,10 @@ function jobsFulfilled($job_ids)
                 'post_type'     => 'jobs-fulfilled',
             );
             wp_update_post( $jobArray, true );
-            echo 'job fulfilled with ID: '.$postID.'<br/>';
+            echo '<br/>Job with ID of: <a href="'.get_the_permalink($postID).'" target="_blank">'.$postID.'</a> got fulfilled.';
         }
     }
+	echo '<br/><br/><strong>END</strong> Searching for fulfilled jobs in Wordpress.<br/><br/>';
 
 }
 
@@ -368,7 +387,7 @@ function removeAllTerms($postID)
  *
  * @return string
  */
-function insertCategories($job_categories, $postID) 
+function insertCategories($job_categories, $postID)
 {
 
     $skillArr = array();
@@ -378,7 +397,7 @@ function insertCategories($job_categories, $postID)
         if($category['group'] == '#2 Skill Area') {
 
             $skillArr[] = strval($category);
-            
+
             $term = get_term_by('name', strval($category), 'job-category');
             if(!$term) {
                 wp_insert_term(strval($category), 'job-category');
@@ -447,7 +466,7 @@ function insertCategoriesRec($job_categories, $postID, $skillArr)
                 } else {
                     //var_dump( $parent );
                 }
-                
+
                 $term = get_term_by('name', strval($category), 'job-category');
                 if( is_object( $term ) ) {
                     //echo '<br/>term ID:'.$term->term_id.'<br/>';

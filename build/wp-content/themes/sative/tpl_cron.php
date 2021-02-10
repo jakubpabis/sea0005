@@ -3,4 +3,6 @@
  * Template Name: Cron
  */
 
-xmlRead();
+if( is_user_logged_in() ) {
+	xmlRead();
+}
