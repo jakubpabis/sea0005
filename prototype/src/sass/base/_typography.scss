@@ -24,6 +24,7 @@
 }
 
 h1,
+.h1,
 .text-size-xxxlarge {
 	font-size: 42px;
 	font-weight: 600;
@@ -50,19 +51,20 @@ h1,
 }
 
 h2,
+.h2,
 .text-size-xxlarge {
-	font-size: 30px;
+	font-size: 36px;
 	font-weight: 600;
 	line-height: 1.25;
 	margin: 0;
 	font-family: $font-primary;
 
 	@media(max-width: 1199px) {
-		font-size: 29px;
+		font-size: 33px;
 	}
 
 	@media(max-width: 991px) {
-		font-size: 28px;
+		font-size: 29px;
 	}
 
 	@media(max-width: 767px) {
@@ -76,15 +78,16 @@ h2,
 }
 
 h3,
+.h3,
 .text-size-xlarge {
-	font-size: 26px;
+	font-size: 28px;
 	font-weight: 600;
 	line-height: 1.25;
 	margin: 0;
 	font-family: $font-primary;
 
 	@media(max-width: 1199px) {
-		font-size: 25px;
+		font-size: 26px;
 	}
 
 	@media(max-width: 991px) {
@@ -102,6 +105,7 @@ h3,
 }
 
 h4,
+.h4,
 .text-size-large {
 	font-size: 20px;
 	font-weight: 600;
@@ -116,6 +120,7 @@ h4,
 }
 
 h5,
+.h5,
 .text-size-medium {
 	font-family: $font-primary;
 	font-size: 17px;
@@ -124,6 +129,7 @@ h5,
 }
 
 p,
+.p,
 .text-size-normal {
 	font-size: 18px;
 	font-weight: 300;
@@ -145,6 +151,15 @@ p,
 .text-size-small * {
 	font-size: 15px;
 	line-height: 1.66;
+}
+
+.display-1 {
+	font-size: 100px;
+}
+
+.display-2 {
+	font-size: 84px;
+	line-height: 1;
 }
 
 .font-primary {
@@ -173,4 +188,8 @@ p,
 
 .text700 {
 	font-weight: 700!important;
+}
+
+.text900 {
+	font-weight: 900!important;
 }

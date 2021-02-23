@@ -45,20 +45,31 @@
 
 		a {
 			font-size: 15px;
-			color: $color-sea;
+			color: white;
 			display: flex;
 			align-items: center;
 
 			i,
 			img {
 				margin-right: 10px;
-				color: white;
+				color: $color-sea;
 				font-size: 16px;
+
+                &.fa-whatsapp {
+                    font-size: 19px;
+                }
+
 			}
 
 			img {
 				width: 20px;
 			}
+
+            &:hover,
+            &:active,
+            &:focus {
+                text-decoration: none;
+            }
 
 		}
 
@@ -68,7 +79,7 @@
             justify-content: center;
             align-items: center;
             list-style: none;
-            margin-bottom: 35px;
+            margin-left: -7px;
 
             li {
                 font-size: 16px;
@@ -79,6 +90,7 @@
                 a {
                     padding: 2px;
                     text-transform: uppercase;
+                    color: white;
 
                     &:hover {
                         color: inherit;
@@ -161,44 +173,44 @@
 
         }
 
-		&-lang {
+		// &-lang {
 
-			* {
-                vertical-align: middle;
-                display: inline-block;
-            }
+		// 	* {
+        //         vertical-align: middle;
+        //         display: inline-block;
+        //     }
 
-			.lang {
-                font-size: 14px;
-                margin: 0 5px;
-                padding: 0;
+		// 	.lang {
+        //         font-size: 14px;
+        //         margin: 0 5px;
+        //         padding: 0;
 
-                li {
+        //         li {
 
-                    a {
-                        padding: 2px;
-                        text-transform: uppercase;
+        //             a {
+        //                 padding: 2px;
+        //                 text-transform: uppercase;
 
-                        &:hover {
-                            color: inherit;
-                        }
+        //                 &:hover {
+        //                     color: inherit;
+        //                 }
 
-                    }
+        //             }
 
-                    &.current-lang {
+        //             &.current-lang {
 
-                        a {
-                            font-weight: 600;
-                            text-decoration: underline;
-                        }
+        //                 a {
+        //                     font-weight: 600;
+        //                     text-decoration: underline;
+        //                 }
 
-                    }
+        //             }
 
-                }
+        //         }
 
-            }
+        //     }
 
-		}
+		// }
 
         &-contact {
             font-size: 15px;

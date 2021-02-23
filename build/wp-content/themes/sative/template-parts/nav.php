@@ -1,30 +1,36 @@
 <nav class="navigation">
 	<div class="navigation__upper">
 		<div class="container">
-			<div class="row justify-content-end align-items-center">
-				<div class="col-lg-auto py-2">
-					<a href="mailto:info@searchxrecruitment.com"><i class="far fa-envelope"></i>info@searchxrecruitment.com</a>
+			<div class="row justify-content-between align-items-center">
+				<div class="col-md-auto">
+					<ul class="lang d-none d-md-flex">
+						<?php
+							pll_the_languages(array(
+								'show_names' => 0,
+								'display_names_as' => 'slug'
+							));
+						?>
+					</ul>
 				</div>
-				<div class="col-lg-auto py-2 pl-4">
-					<a href="tel:+31207782393"><i class="fas fa-mobile-android-alt"></i>+31 (0)20 - 7782393</a>
-				</div>
-				<div class="col-lg-auto py-2 pl-4">
-					<a href="https://wa.me/31207782393" target="_blank"><img src="<?= get_template_directory_uri(); ?>/assets/img/whatsapp.png" alt="" width="22" height="22">+31 6 - 83 93 28 22</a>
+				<div class="col-md-10">
+					<div class="row justify-content-end align-items-center">
+						<div class="col-lg-auto py-2">
+							<a href="mailto:info@searchxrecruitment.com"><i class="far fa-envelope"></i>info@searchxrecruitment.com</a>
+						</div>
+						<div class="col-lg-auto py-2 pl-4">
+							<a href="tel:+31207782393"><i class="far fa-phone-alt"></i>+31 (0)20 - 7782393</a>
+						</div>
+						<div class="col-lg-auto py-2 pl-4">
+							<a href="https://wa.me/31207782393" target="_blank"><i class="fab fa-whatsapp"></i><?php /*<img src="<?= get_template_directory_uri(); ?>/assets/img/whatsapp.png" alt="" width="22" height="22">*/ ?>+31 6 - 83 93 28 22</a>
+						</div>
+					</div>
 				</div>
 			</div>
-			<ul class="lang d-lg-none d-flex">
-				<?php
-					pll_the_languages(array(
-						'show_names' => 0,
-						'display_names_as' => 'slug'
-					));
-				?>
-			</ul>
 			<a href="javascript:void(0)" class="btn btn__small yellow d-lg-none d-inline-block" data-toggle="modal" data-target="#uploadCVModal">
 				<?php pll_e('Upload CV'); ?>
 			</a>
 			<div class="navigation__upper-contact d-lg-none d-flex">
-				<a class="mb-1" href="tel:+31207782393"><i class="fas fa-mobile-android-alt"></i>+31 (0)20 - 7782393</a>
+				<a class="mb-1" href="tel:+31207782393"><i class="far fa-phone-alt"></i>+31 (0)20 - 7782393</a>
 				<a href="mailto:info@searchxrecruitment.com"><i class="far fa-envelope"></i>info@searchxrecruitment.com</a>
 			</div>
 		</div>
@@ -40,32 +46,10 @@
 						<svg viewBox="0 0 587.84 116.74" xmlns="http://www.w3.org/2000/svg"><path d="M3.87 116.56V105h43.78l7.41-7.58v-9.98l-7.92-7.92H14.48L0 65.38V48.71l14.48-14.65h46.64v11.62H21.21L14 52.75v8.08l7.58 7.58h33L69 82.72v19.36l-14.28 14.48zm93.45-47.31h42.26V53.59l-8.76-8.75H105.9l-8.75 8.75v15.66zm2.68 47.31L83.34 99.89v-49.5L100 33.73h36.87l16.67 16.66V80.2H97.32v16l8.75 8.76h46v11.61H100m88.74-11.12h19.53l16.34-16.16v-14l-35.87.17-8.74 8.61V96.7zm-6.23 11.11L166 99.89V81l16.5-16.67h42.1V54.1l-8.6-8.76h-39.21V33.73h45.29l16.5 16.66v66.17h-14v-12.79l-12.8 12.79h-29.3m73.44 0V33.89h14v14.82l14.31-14.82h21.21v14h-20.56l-15 15.49v53.2h-14m76.99-.02L316.2 99.89v-49.5l16.67-16.66h37.71L385.06 48v13.17h-14v-8.59l-7.92-7.91h-24.55l-8.75 8.75V96l8.75 8.93h45.46v11.61h-51.18m67.13.03V0h13.93v46.9l12.58-13.08h30.59l16.49 16.65v66.1h-13.94V54l-8.33-9h-21.07l-16.31 16.68v55.06zm167.8-11.99l-21.9-21.9-21.9 21.9-8.25-8.25 21.9-21.9-21.9-21.9 8.25-8.25 21.9 21.9 21.9-21.9 8.25 8.25-21.9 21.9 21.9 21.9zM504 32.49v83.88h83.88V32.49z" fill="#173751"/></svg>
 					</a>
 				</div>
-				<div class="col-md-1 navigation__lower-lang">
-					<ul class="lang d-none d-sm-inline-block">
-						<?php
-							pll_the_languages(array(
-								'show_names' => 0,
-								'display_names_as' => 'slug'
-							));
-						?>
-					</ul>
-				</div>
 				<div class="col">
 					<div class="row align-items-center justify-content-end">
 						<div class="col-xl-auto col-md-6">
-							<?php
-								wp_nav_menu(array(
-									'theme_location'  => 'primary',
-									'container'       => '',
-									'container_id'    => '',
-									'container_class' => '',
-									'menu_id'         => false,
-									'menu_class'      => 'navigation__lower-menu',
-									'depth'           => 5,
-									'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
-									'walker'          => new wp_bootstrap_navwalker()
-								));
-							?>
+							<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 						</div>
 						<div class="col-md-auto navigation__lower-utils">
 							<a href="javascript:void(0)" data-toggle="modal" data-target="#searchModal"><i class="far fa-search"></i></a>

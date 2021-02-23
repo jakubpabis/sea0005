@@ -143,6 +143,10 @@
         background-color: $color-pink;
         color: $color-primary!important;
 
+        &.color-white {
+            color: white!important;
+        }
+
         &:hover {
             background-color: $color-pink;
         }

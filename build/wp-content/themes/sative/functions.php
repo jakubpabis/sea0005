@@ -209,7 +209,7 @@ add_filter('tiny_mce_before_init', 'my_mce4_options');
  */
 function sative_scripts() {
 	wp_enqueue_style( 'sative-bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css', array(), _S_VERSION, 'all' );
-	wp_enqueue_style( 'sative-gfonts', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,300;1,500&display=swap', array(), _S_VERSION, 'all' );
+	wp_enqueue_style( 'sative-gfonts', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap', array(), _S_VERSION, 'all' );
 	wp_enqueue_style( 'sative-icons', get_template_directory_uri() . '/assets/css/fa.min.css', array(), _S_VERSION, 'all' );
 	wp_enqueue_style( 'sative-styles', get_template_directory_uri() . '/assets/css/main.min.css', array(), _S_VERSION, 'all' );
 

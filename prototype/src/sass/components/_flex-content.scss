@@ -1,0 +1,216 @@
+.flex_content {
+    position: relative;
+    display: block;
+
+    &-main_title {
+        margin-bottom: 50px;
+    }
+
+    &-copy_section {
+        margin: 100px 0;
+    }
+
+    &-video_section {
+        margin: 200px 0;
+
+        &-subtitle {
+
+        }
+
+        &-title {
+            
+        }
+
+        &-video {
+            position: relative;
+
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 24px;
+                width: 100%;
+                height: 100%;
+                background-color: $color-navy;
+            }
+
+            &.left {
+
+                &:before {
+                    left: 24px;
+                }
+
+            }
+
+            &.right {
+
+                &:before {
+                    right: 24px;
+                }
+
+            }
+
+        }
+
+        &-dog {
+            --notchSize: 164px;
+
+            &.right {
+                clip-path: polygon(0 0, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% 100%, var(--notchSize) 100%, 0 calc(100% - var(--notchSize)));
+
+                svg {
+                    right: -35%;
+                }
+
+            }
+
+            &.left {
+                clip-path: polygon(var(--notchSize) 0%, 100% 0, 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize))  100%, 0 100%, 0% var(--notchSize));
+
+                svg {
+                    left: -35%;
+                }
+
+            }
+
+            svg {
+                width: 40vw;
+                max-height: 60%;
+                min-height: 40%;
+                position: absolute;
+                bottom: 80px;
+            }
+
+        }
+
+    }
+
+    &-tags {
+        margin: 200px 0;
+
+        .continuous-slider {
+
+            a,
+            span {
+                font-size: 126px;
+                font-weight: 700;
+                padding: 15px 25px;
+                color: $color-sea;
+                font-style: italic;
+                cursor: pointer;
+                line-height: 1;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    text-decoration: none;
+                    color: $color-navy;
+                }
+
+            }
+
+        }
+
+    }
+
+    &-reviews {
+        margin: 300px 0 150px;
+    }
+
+    &-carousel {
+        margin: 200px 0;
+
+        .custom-owl-prev,
+        .custom-owl-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .custom-owl-prev {
+            left: -80px;
+        }
+
+        .custom-owl-next {
+            right: -80px;
+        }
+
+    }
+
+    &-cta {
+        margin: 250px 0;
+
+        &-bg {
+            --notchSize: 164px;
+            margin-top: 100px;
+            height: calc(100% - 100px)!important;
+
+            &.right {
+                clip-path: polygon(0 0, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% 100%, var(--notchSize) 100%, 0 calc(100% - var(--notchSize)));
+            }
+
+            &.left {
+                clip-path: polygon(var(--notchSize) 0%, 100% 0, 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize))  100%, 0 100%, 0% var(--notchSize));
+            }
+        }
+
+    }
+
+    &-bubbles {
+        margin: 200px 0;
+
+        &-bubble {
+            @include notch(16px);
+            background-color: white;
+            padding: 30px 20px;
+            height: 100%;
+
+            &-cont {
+                position: relative;
+
+                .triangle {
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    display: block;
+                    position: absolute;
+                    bottom: -38px;
+                    z-index: 9;
+                    border-width: 0 40px 40px 0;
+                    border-color: transparent white transparent transparent;
+                    right: 40px;
+                }
+    
+                &:nth-child(2n - 1) {
+    
+                    .triangle {
+                        border-width: 40px 40px 0 0;
+                        border-color: white transparent transparent transparent;
+                        left: 40px;
+                        right: auto;
+                    }
+    
+                }
+
+            }
+
+        }
+
+    }
+
+    &-contact {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        position: relative;
+
+        &-dog {
+            position: relative;
+            margin-left: -50%;
+            transform: translateX(-33%);
+        }
+
+    }
+
+}

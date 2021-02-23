@@ -91,7 +91,7 @@ $lang = pll_current_language();
                             <div class="col-auto">
                                 <span>© Search X Recruitment - <?php echo date("Y"); ?></span> |
                                 <a href="/sitemap_index.xml"> Sitemap</a> |
-                                <a href="/<?php echo $lang; ?>/<?php pll_e( 'fulfilled-jobs' ); "> <?php pll_e( 'Fulfilled jobs' ); ?></a>
+                                <a href="/<?php echo $lang; ?>/<?php pll_e( 'fulfilled-jobs' ); ?>"> <?php pll_e( 'Fulfilled jobs' ); ?></a>
                             </div>
                             <div class="col-auto">
                                 <span>

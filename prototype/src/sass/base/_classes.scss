@@ -42,6 +42,10 @@
     color: $color-light-grey!important;
 }
 
+.color-white {
+    color: white!important;
+}
+
 .bg-navy {
     background-color: $color-navy!important;
 }
@@ -68,4 +72,21 @@
 
 .bg-yellow {
     background-color: $color-yellow!important;
+}
+
+.top-80 {
+    top: 80px;
+}
+
+.right-0 {
+    right: 0;
+}
+
+.left-0 {
+    left: 0;
+}
+
+.flip-vertical {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
