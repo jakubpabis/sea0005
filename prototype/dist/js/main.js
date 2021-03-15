@@ -4278,42 +4278,6 @@ function chatClose()
 	$('#chat').addClass('closed');
 }
 
-// function homepageClients()
-// {
-// 	var $owl = $('.owl-carousel');
-// 	$owl.owlCarousel({
-// 		loop: true,
-// 		margin: 0,
-// 		nav: false,
-// 		dots: false,
-// 		lazyLoad: true,
-// 		autoplay: true,
-// 		autoplayTimeout: 2500,
-// 		autoplayHoverPause: true,
-// 		responsive: {
-// 			0: {
-// 				items: 1
-// 			},
-// 			420: {
-// 				items: 2
-// 			},
-// 			767: {
-// 				items: 3
-// 			},
-// 			991: {
-// 				items: 6
-// 			}
-// 		}
-// 	});
-
-// 	$('.custom-owl-prev').click(function() {
-// 		$owl.trigger('prev.owl.carousel');
-// 	});
-// 	$('.custom-owl-next').click(function() {
-// 		$owl.trigger('next.owl.carousel');
-// 	});
-// }
-
 function homeHashtags()
 {
 	$('.home__middle-hashtags').find('li').on('click', function() {
@@ -4462,11 +4426,12 @@ function itemsDown($item)
 function bodyGradient()
 {
 	var $blue = '#94D4E9';
+	var $light = '#C0E5F2';
 	var $top = $('.flex_content-tags').offset().top - $('.body-bg-gradient').offset().top + ($('.flex_content-tags').height() / 2);
 	//var $bottom = $('.flex_content-tags').offset().bottom - $('.body-bg-gradient').offset().bottom;
 	var $height = $('.body-bg-gradient').height();
 	var $middle = $top * 100 / $height; 
-	var $gradient = '(180deg, '+$blue+' 0%, '+'rgba(255,255,255,1) '+$middle+'%, '+$blue+' 100%)';
+	var $gradient = '(180deg, '+$blue+' 0%, '+$light+' '+$middle+'%, '+$blue+' 100%)';
 	var $normal = 'linear-gradient'+$gradient;
 	var $moz = '-moz-linear-gradient'+$gradient;
 	var $webkit = '-webkit-linear-gradient'+$gradient;
@@ -4487,6 +4452,10 @@ jQuery(document).ready(function() {
 	onFormLoad();
 	appValidation();
 
+	if( $('.body-bg-gradient').length > 0 ) {
+		bodyGradient();
+	}
+
 	$('div.dropdown-menu').parent().on('shown.bs.dropdown', function () {
 		itemsDown( 'sub-extra' );
 	});
@@ -4495,7 +4464,7 @@ jQuery(document).ready(function() {
 		$(this).preventDoubleSubmission();
 	});
 
-	if($('.home__middle-hashtags').length != 0) {
+	if( $('.home__middle-hashtags').length != 0 ) {
 		homeHashtags();
 	}
 

@@ -173,45 +173,6 @@
 
         }
 
-		// &-lang {
-
-		// 	* {
-        //         vertical-align: middle;
-        //         display: inline-block;
-        //     }
-
-		// 	.lang {
-        //         font-size: 14px;
-        //         margin: 0 5px;
-        //         padding: 0;
-
-        //         li {
-
-        //             a {
-        //                 padding: 2px;
-        //                 text-transform: uppercase;
-
-        //                 &:hover {
-        //                     color: inherit;
-        //                 }
-
-        //             }
-
-        //             &.current-lang {
-
-        //                 a {
-        //                     font-weight: 600;
-        //                     text-decoration: underline;
-        //                 }
-
-        //             }
-
-        //         }
-
-        //     }
-
-		// }
-
         &-contact {
             font-size: 15px;
 
@@ -381,82 +342,6 @@
 					}
 
                 }
-
-                // > ul {
-                //     padding: 0;
-                //     margin: 0;
-                //     margin-left: -5px;
-                //     list-style: none;
-                //     border: none;
-                //     border-radius: 0;
-                //     border-top: 1px solid $color-tertiary;
-				//
-                //     @media(max-width: 991px) {
-                //         margin-left: -15px!important;
-                //         margin-right: -15px!important;
-                //         min-width: calc(100% + 30px);
-                //         width: auto!important;
-                //         position: relative!important;
-                //         top: auto!important;
-                //         left: auto!important;
-                //         right: auto!important;
-                //         transform: none!important;
-                //         text-align: center!important;
-                //         border-top: none!important;
-                //         float: none!important;
-                //     }
-				//
-                //     li {
-                //         padding: 0;
-                //         line-height: 1;
-                //         border-bottom: 1px solid $color-secondary;
-				//
-                //         @media(max-width: 991px) {
-                //             border-bottom: 2px solid $color-navy;
-                //         }
-				//
-                //         a {
-                //             background-color: $color-primary;
-                //             padding: 15px 20px;
-                //             font-size: 13px;
-                //             text-transform: uppercase;
-                //             color: white;
-                //             font-weight: 600;
-                //             line-height: 1;
-                //             display: block;
-                //             position: relative;
-                //             @include trans200;
-                //             white-space: nowrap;
-				//
-                //             @media(max-width: 991px) {
-                //                 background-color: #0F2441!important;
-                //                 font-size: 16px;
-                //                 font-weight: 400;
-                //                 padding: 12px 20px;
-                //                 white-space: normal;
-                //             }
-				//
-                //         }
-				//
-                //         &:last-of-type {
-                //             border-bottom: none;
-                //         }
-				//
-                //         &:hover {
-                //             color: $color-tertiary;
-				//
-                //             a {
-                //                 text-decoration: none;
-                //                 font-weight: 500;
-                //                 color: $color-tertiary;
-                //                 background-color: rgba($color: $color-primary, $alpha: 0.8);
-                //             }
-				//
-                //         }
-				//
-                //     }
-				//
-                // }
 
             }
 

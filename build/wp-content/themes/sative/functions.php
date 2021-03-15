@@ -9,7 +9,7 @@
 
  if ( ! defined( '_S_VERSION' ) ) {
  	// Replace the version number of the theme on each release.
- 	define( '_S_VERSION', '3.1.2' );
+ 	define( '_S_VERSION', '3.1.7' );
 }
 
 if ( ! function_exists( 'sative_setup' ) ) :
@@ -169,16 +169,6 @@ add_action( 'widgets_init', 'sative_widgets_init' );
 // }
 // add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css' );
 
-add_action('wp_enqueue_scripts', function(){
-	if (!is_admin()) {
-		wp_deregister_script('jquery');
-		wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', array(), _S_VERSION, false );
-		wp_deregister_script( 'jquery-migrate' );
-    	wp_register_script( 'jquery-migrate', "https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.2.0/jquery-migrate.min.js", array(), _S_VERSION, false );
-		wp_deregister_script('wp-embed');
-		wp_deregister_script('wp-emoji');
-	}
-});
 
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
@@ -207,36 +197,42 @@ add_filter('tiny_mce_before_init', 'my_mce4_options');
 /**
  * Enqueue scripts and styles.
  */
-function sative_scripts() {
+function sative_scripts() 
+{
+
+    wp_dequeue_style( 'wp-block-library' );
+    wp_dequeue_style( 'wp-block-library-theme' );
+
 	wp_enqueue_style( 'sative-bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css', array(), _S_VERSION, 'all' );
 	wp_enqueue_style( 'sative-gfonts', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap', array(), _S_VERSION, 'all' );
 	wp_enqueue_style( 'sative-icons', get_template_directory_uri() . '/assets/css/fa.min.css', array(), _S_VERSION, 'all' );
 	wp_enqueue_style( 'sative-styles', get_template_directory_uri() . '/assets/css/main.min.css', array(), _S_VERSION, 'all' );
 
+    if (!is_admin()) {
+		wp_deregister_script('wp-embed');
+		wp_deregister_script('wp-emoji');
+	}
+
+    wp_deregister_script('jquery');
+    wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', array(), false, false );
+    wp_deregister_script( 'jquery-migrate' );
+    wp_register_script( 'jquery-migrate', "https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.2.0/jquery-migrate.min.js", array(), false, false );
+
+    //wp_register_script( 'sative-ajax', get_template_directory_uri() . '/assets/js/ajax.js', array('jquery'), _S_VERSION, true );
+    //wp_localize_script( 'sative-ajax', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+    //wp_enqueue_script( 'sative-ajax' );
+
     wp_enqueue_script('sative-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js', array('jquery'), _S_VERSION, true );
-    wp_enqueue_script('sative-validate', 'https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js', array('jquery'), _S_VERSION, true );
-    wp_enqueue_script('sative-methods', 'https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/additional-methods.min.js', array('jquery'), _S_VERSION, true );
 	wp_enqueue_script('sative-app', get_template_directory_uri() . '/assets/js/main.min.js', array('jquery'), _S_VERSION, true );
 	// Internet Explorer HTML5 support
-    wp_enqueue_script( 'html5hiv',get_template_directory_uri().'/inc/assets/js/html5.js', array(), _S_VERSION, false );
-    wp_script_add_data( 'html5hiv', 'conditional', 'lt IE 9' );
+    // wp_enqueue_script( 'html5hiv',get_template_directory_uri().'/inc/assets/js/html5.js', array(), _S_VERSION, false );
+    // wp_script_add_data( 'html5hiv', 'conditional', 'lt IE 9' );
 
 	// if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 	// 	wp_enqueue_script( 'comment-reply' );
 	// }
 }
-add_action( 'wp_enqueue_scripts', 'sative_scripts', 0 );
-
-function sative_password_form() {
-    global $post;
-    $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
-    $o = '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
-    <div class="d-block mb-3">' . __( "To view this protected post, enter the password below:", "sative" ) . '</div>
-    <div class="form-group form-inline"><label for="' . $label . '" class="mr-2">' . __( "Password:", "sative" ) . ' </label><input name="post_password" id="' . $label . '" type="password" size="20" maxlength="20" class="form-control mr-2" /> <input type="submit" name="Submit" value="' . esc_attr__( "Submit", "sative" ) . '" class="btn btn-primary"/></div>
-    </form>';
-    return $o;
-}
-add_filter( 'the_password_form', 'sative_password_form' );
+add_action( 'wp_enqueue_scripts', 'sative_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -255,46 +251,41 @@ require get_template_directory() . '/inc/extras.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 /**
- * Load plugin compatibility file.
- */
-require get_template_directory() . '/inc/plugin-compatibility/plugin-compatibility.php';
-/**
  * Load custom WordPress nav walker.
  */
 if ( ! class_exists( 'wp_bootstrap_navwalker' )) {
     require_once(get_template_directory() . '/inc/wp_bootstrap_navwalker.php');
 }
 
-require_once get_template_directory() . '/inc/custom_post_types.php';
+require get_template_directory() . '/inc/custom_post_types.php';
 
 if( function_exists( 'pll_get_post' ) ) {
-function getTplPageURL()
-{
-    global $jobtpl;
-    wp_reset_query();
-    wp_reset_postdata();
-    $args_tpl = [
-        'post_type' => 'page',
-        'fields' => 'ids',
-        'nopaging' => true,
-        'meta_key' => '_wp_page_template',
-        'meta_value' => 'tpl_job-list.php'
-    ];
-    $pages_tpl = get_posts( $args_tpl );
-    //var_dump($pages);
-    // cycle through $pages here and either grab the URL
-    // from the results or do get_page_link($id) with
-    // the id of the page you want
-    $jobtpl = null;
-    if(isset($pages_tpl[0])) {
-        $jobtpl= get_page_link( pll_get_post( $pages_tpl[0] ) );
+    
+    function getTplPageURL()
+    {
+        global $jobtpl;
+        wp_reset_query();
+        wp_reset_postdata();
+        $args_tpl = [
+            'post_type' => 'page',
+            'fields' => 'ids',
+            'nopaging' => true,
+            'meta_key' => '_wp_page_template',
+            'meta_value' => 'tpl_job-list.php'
+        ];
+        $pages_tpl = get_posts( $args_tpl );
+        //var_dump($pages);
+        // cycle through $pages here and either grab the URL
+        // from the results or do get_page_link($id) with
+        // the id of the page you want
+        $jobtpl = null;
+        if(isset($pages_tpl[0])) {
+            $jobtpl= get_page_link( pll_get_post( $pages_tpl[0] ) );
+        }
+        return $jobtpl;
+        wp_reset_postdata();
     }
-    return $jobtpl;
-    wp_reset_postdata();
-}
-}
 
-if( function_exists( 'pll_get_post' ) ) {
     function getTplPageKnowledgeURL()
     {
         global $jobtpl;
@@ -319,6 +310,7 @@ if( function_exists( 'pll_get_post' ) ) {
         return $jobtpl;
         wp_reset_postdata();
     }
+
 }
 
 function term_has_parent($termid, $tax){
@@ -395,7 +387,6 @@ function hierarchical_tax_tree( $cat, $tax, $active = [] ) {
     endif;
 }
 
-
 function hierarchical_tax_tree_filter( $cat, $tax, $active ) {
     $next = get_categories('taxonomy=' . $tax . '&orderby=count&order=DESC&hide_empty=false&parent=' . $cat);
     if( $next ) :
@@ -418,19 +409,6 @@ function hierarchical_tax_tree_filter( $cat, $tax, $active ) {
         echo '</ul>';
     endif;
 }
-
-// // Activate WordPress Maintenance Mode
-// function wp_maintenance_mode() {
-//     if (!current_user_can('edit_themes') || !is_user_logged_in()) {
-//         wp_die('<h1>Under Maintenance</h1><br />We’re working on updating our site, check back later.');
-//     }
-// }
-// add_action('get_header', 'wp_maintenance_mode');
-
-
-// add_action('wp_ajax_myfilter', 'jobs_filter_function'); // wp_ajax_{ACTION HERE}
-// add_action('wp_ajax_nopriv_myfilter', 'jobs_filter_function');
-
 
 function filterHelper($els, $tax)
 {

@@ -48,10 +48,10 @@
 				</div>
 				<div class="col">
 					<div class="row align-items-center justify-content-end">
-						<div class="col-xl-auto col-md-6">
+						<div class="col-xl-auto col-md-6 pr-0">
 							<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 						</div>
-						<div class="col-md-auto navigation__lower-utils">
+						<div class="col-md-auto pl-1 navigation__lower-utils">
 							<a href="javascript:void(0)" data-toggle="modal" data-target="#searchModal"><i class="far fa-search"></i></a>
 							<a href="javascript:void(0)" class="btn btn__small navy d-none d-lg-inline-block" data-toggle="modal" data-target="#uploadCVModal">
 								<?php pll_e('Upload CV'); ?>
