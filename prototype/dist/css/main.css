@@ -142,6 +142,10 @@
 	top: 80px;
 }
 
+.bottom-8vh {
+	bottom: 8vh;
+}
+
 .right-0 {
 	right: 0;
 }
@@ -152,6 +156,14 @@
 
 .flip-vertical {
 	transform: scaleX(-1);
+}
+
+.w-80 {
+	width: 80%;
+}
+
+.w-90 {
+	width: 90%;
 }
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -576,58 +588,57 @@ th {
 
 .text-size-xxxxlarge {
 	font-family: 'Fractul';
-	font-size: 54px;
-	font-weight: 600;
+	font-size: 50px;
+	font-weight: 700;
 	line-height: 1.44;
-	margin: 0;
 }
 
 h1,
 .h1,
 .text-size-xxxlarge {
 	font-family: 'Fractul';
-	font-size: 42px;
-	font-weight: 600;
+	font-size: 50px;
+	font-weight: 700;
 	line-height: 1.25;
-	margin: 0;
+	margin: .5em auto;
 }
 
 h2,
 .h2,
 .text-size-xxlarge {
 	font-family: 'Fractul';
-	font-size: 36px;
-	font-weight: 600;
+	font-size: 35px;
+	font-weight: 700;
 	line-height: 1.25;
-	margin: 0;
+	margin: .5em auto;
 }
 
 h3,
 .h3,
 .text-size-xlarge {
 	font-family: 'Fractul';
-	font-size: 28px;
-	font-weight: 600;
+	font-size: 25px;
+	font-weight: 700;
 	line-height: 1.25;
-	margin: 0;
+	margin: 1em auto;
 }
 
 h4,
 .h4,
 .text-size-large {
-	font-family: 'Fractul';
 	font-size: 20px;
 	font-weight: 600;
 	line-height: 1.25;
+	margin: 1em auto;
 }
 
 h5,
 .h5,
 .text-size-medium {
-	font-family: 'Fractul';
-	font-size: 17px;
-	font-weight: 400;
+	font-size: 18px;
+	font-weight: 700;
 	line-height: 1.64;
+	margin: 1em auto;
 }
 
 p,
@@ -651,8 +662,13 @@ p,
 }
 
 .display-2 {
-	font-size: 84px;
-	line-height: 1;
+	font-size: 80px;
+	line-height: .75;
+}
+
+.display-3 {
+	font-size: 70px;
+	line-height: 1 !important;
 }
 
 .font-primary {
@@ -661,6 +677,10 @@ p,
 
 .font-secondary {
 	font-family: 'Roboto', sans-serif;
+}
+
+.text-italic {
+	font-style: italic;
 }
 
 .text-upper {
@@ -1089,6 +1109,95 @@ i {
 	min-width: 90%;
 	margin: 0 auto 15px;
 	text-align: center;
+}
+
+.text-bubble {
+	position: relative;
+	width: 0;
+	height: 0;
+	margin-top: -1px;
+	border-style: solid;
+}
+
+.text-bubble-left {
+	margin-right: auto;
+	margin-left: 40px;
+	border-width: 40px 40px 0 0;
+	border-color: #fff transparent transparent transparent;
+}
+
+.text-bubble-right {
+	margin-right: 40px;
+	margin-left: auto;
+	border-width: 0 40px 40px 0;
+	border-color: transparent #fff transparent transparent;
+}
+
+.search-input {
+	line-height: 1;
+	height: 60px;
+	padding: 0 20px;
+	color: #183153;
+	border: none;
+	border-radius: 3px;
+	outline: 0;
+	background-image: url('../img/search.svg');
+	background-repeat: no-repeat;
+	background-position: calc(100% - 20px) center;
+}
+
+.search-input::-moz-placeholder {
+	font-size: 18px;
+	font-weight: 400;
+	font-style: italic;
+	opacity: 1;
+	color: #183153;
+}
+
+.search-input:-ms-input-placeholder {
+	font-size: 18px;
+	font-weight: 400;
+	font-style: italic;
+	opacity: 1;
+	color: #183153;
+}
+
+.search-input::placeholder {
+	font-size: 18px;
+	font-weight: 400;
+	font-style: italic;
+	opacity: 1;
+	color: #183153;
+}
+
+ul.lined {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+ul.lined li {
+	font-size: 25px;
+	font-weight: 500;
+	line-height: 1;
+	margin: 0;
+	padding: 0;
+}
+
+ul.lined li a {
+	display: block;
+	width: 100%;
+	padding: 25px 0;
+	padding-right: 40px;
+	border-bottom: 1px solid rgba(24, 49, 83, .5);
+	background-image: url('../img/arrow-right.svg');
+	background-repeat: no-repeat;
+	background-position: center right;
+}
+
+ul.lined li:first-child a {
+	border-top: 1px solid rgba(24, 49, 83, .5);
 }
 
 /* --- bootstrap-menu styling http://bootstrap-menu.com  */
@@ -2157,6 +2266,11 @@ body.offcanvas-active {
 .flex_content-cta-bg.left {
 	-webkit-clip-path: polygon(var(--notchSize) 0%, 100% 0, 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, 0 100%, 0% var(--notchSize));
 	clip-path: polygon(var(--notchSize) 0%, 100% 0, 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, 0 100%, 0% var(--notchSize));
+}
+
+.flex_content-cta-bg.max {
+	height: 100% !important;
+	margin-top: 0;
 }
 
 .flex_content-bubbles {
@@ -6124,7 +6238,7 @@ fieldset[disabled] .datepicker table tr td span.active:hover:hover {
 @media (max-width: 1199px) {
 
 .text-size-xxxxlarge {
-	font-size: 50px;
+	font-size: 48px;
 }
 
 h1,
@@ -6142,7 +6256,7 @@ h2,
 h3,
 .h3,
 .text-size-xlarge {
-	font-size: 26px;
+	font-size: 24px;
 }
 
 .navigation__lower-menu {
@@ -6288,7 +6402,7 @@ h2,
 h3,
 .h3,
 .text-size-xlarge {
-	font-size: 24px;
+	font-size: 23px;
 }
 
 p,
@@ -6592,7 +6706,7 @@ h2,
 h3,
 .h3,
 .text-size-xlarge {
-	font-size: 23px;
+	font-size: 22px;
 }
 
 h4,

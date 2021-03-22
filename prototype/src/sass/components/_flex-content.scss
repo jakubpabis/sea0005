@@ -152,6 +152,12 @@
             &.left {
                 clip-path: polygon(var(--notchSize) 0%, 100% 0, 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize))  100%, 0 100%, 0% var(--notchSize));
             }
+
+            &.max {
+                margin-top: 0;
+                height: 100%!important;
+            }
+
         }
 
     }

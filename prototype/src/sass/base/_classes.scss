@@ -78,6 +78,10 @@
     top: 80px;
 }
 
+.bottom-8vh {
+    bottom: 8vh;
+}
+
 .right-0 {
     right: 0;
 }
@@ -89,4 +93,12 @@
 .flip-vertical {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
+}
+
+.w-80 {
+    width: 80%;
+}
+
+.w-90 {
+    width: 90%;
 }

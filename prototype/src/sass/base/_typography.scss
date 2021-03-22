@@ -1,12 +1,11 @@
 .text-size-xxxxlarge {
-	font-size: 54px;
-	font-weight: 600;
+	font-size: 50px;
+	font-weight: 700;
 	line-height: 1.44;
-	margin: 0;
 	font-family: $font-primary;
 
 	@media(max-width: 1199px) {
-		font-size: 50px;
+		font-size: 48px;
 	}
 
 	@media(max-width: 991px) {
@@ -26,11 +25,11 @@
 h1,
 .h1,
 .text-size-xxxlarge {
-	font-size: 42px;
-	font-weight: 600;
+	font-size: 50px;
+	font-weight: 700;
 	line-height: 1.25;
-	margin: 0;
 	font-family: $font-primary;
+	margin: 0.5em auto;
 
 	@media(max-width: 1199px) {
 		font-size: 40px;
@@ -53,11 +52,11 @@ h1,
 h2,
 .h2,
 .text-size-xxlarge {
-	font-size: 36px;
-	font-weight: 600;
+	font-size: 35px;
+	font-weight: 700;
 	line-height: 1.25;
-	margin: 0;
 	font-family: $font-primary;
+	margin: 0.5em auto;
 
 	@media(max-width: 1199px) {
 		font-size: 33px;
@@ -80,22 +79,22 @@ h2,
 h3,
 .h3,
 .text-size-xlarge {
-	font-size: 28px;
-	font-weight: 600;
+	font-size: 25px;
+	font-weight: 700;
 	line-height: 1.25;
-	margin: 0;
 	font-family: $font-primary;
+	margin: 1em auto;
 
 	@media(max-width: 1199px) {
-		font-size: 26px;
-	}
-
-	@media(max-width: 991px) {
 		font-size: 24px;
 	}
 
-	@media(max-width: 767px) {
+	@media(max-width: 991px) {
 		font-size: 23px;
+	}
+
+	@media(max-width: 767px) {
+		font-size: 22px;
 	}
 
 	@media(max-width: 575px) {
@@ -110,7 +109,7 @@ h4,
 	font-size: 20px;
 	font-weight: 600;
 	line-height: 1.25;
-	font-family: $font-primary;
+	margin: 1em auto;
 
 	@media(max-width: 767px) {
 		font-size: 19px;
@@ -122,9 +121,9 @@ h4,
 h5,
 .h5,
 .text-size-medium {
-	font-family: $font-primary;
-	font-size: 17px;
-	font-weight: 400;
+	font-size: 18px;
+	margin: 1em auto;
+	font-weight: 700;
 	line-height: 1.64;
 }
 
@@ -158,8 +157,13 @@ p,
 }
 
 .display-2 {
-	font-size: 84px;
-	line-height: 1;
+	font-size: 80px;
+	line-height: 0.75;
+}
+
+.display-3 {
+	font-size: 70px;
+	line-height: 1!important;
 }
 
 .font-primary {
@@ -168,6 +172,10 @@ p,
 
 .font-secondary {
 	font-family: $font-secondary;
+}
+
+.text-italic {
+	font-style: italic;
 }
 
 .text-upper {
