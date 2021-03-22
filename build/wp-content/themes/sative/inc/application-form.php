@@ -14,10 +14,10 @@ function postRequest($request, $api_key, $api_secret, $json)
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
     $response = curl_exec($ch);
-    // if(!$response)
-    // {
-	//     echo curl_error($ch);
-    // }
+    if(!$response)
+    {
+	    echo curl_error($ch);
+    }
     $response = json_decode($response);
     //var_dump($response);
 
@@ -31,7 +31,7 @@ function add_to_queue()
 
         # Our new data
         $data = array(
-            'secret' => '6LeA-gUaAAAAAItxjKANTqw14c8eK7-sEXsBYe6R',
+            'secret' => '6LfehooaAAAAAM4h_z9FM0e7vpKhva-kicLu-EV8',
             'response' => $_POST['g-recaptcha-response']
         );
         # Create a connection
@@ -110,10 +110,10 @@ function add_to_queue()
 
             $person_response = postRequest('people/add_to_queue', $api_key, $api_secret, $data);
 
-            // echo '<pre>';
-            // echo var_dump($person_response);
-            // echo '</pre>';
-            // var_dump($person_response->status);
+            echo '<pre>';
+            echo var_dump($person_response);
+            echo '</pre>';
+            var_dump($person_response->status);
 
             if( isset( $person_response->status ) && $person_response->status === 'ok' ) {
                 $message = sendEmail();
@@ -140,7 +140,7 @@ function add_to_queue_cv()
 
         # Our new data
         $data = array(
-            'secret' => '6LeA-gUaAAAAAItxjKANTqw14c8eK7-sEXsBYe6R',
+            'secret' => '6LfehooaAAAAAM4h_z9FM0e7vpKhva-kicLu-EV8',
             'response' => $_POST['g-recaptcha-response']
         );
         # Create a connection

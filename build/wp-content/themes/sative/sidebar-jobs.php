@@ -133,7 +133,7 @@
                 <input type="hidden" name="jobUploadHash" id="jobUploadHash" value="<?php global $hashesForLashes; echo $hashesForLashes['appHash']; ?>">
                 <button type="button" disabled class="fake_btn_app_loading btn btn__default pink d-none disabled"><?= pll_e( 'Sending, please wait...' ); ?></button>
                 <button type="button" class="fake_btn_app btn btn__default yellow"><?= pll_e( 'Send application' ); ?></button>
-                <button class="g-recaptcha app btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onAppSubmit"><?= pll_e( 'Send application' ); ?></button>
+                <button class="g-recaptcha app btn btn__default yellow d-none" data-sitekey="6LfehooaAAAAAG62wPsHf3VLUbStgPP94_lKpw1u" data-callback="onAppSubmit"><?= pll_e( 'Send application' ); ?></button>
             </div>
         </div>
     </form>
