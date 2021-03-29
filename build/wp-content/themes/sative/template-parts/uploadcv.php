@@ -142,14 +142,14 @@
                                 </div>
                             </div>
                             <div class="col-12 pt-1">
+                                <input type="email" id="form__cv__email" name="email" value="" />
+                                <input type="text" id="form__cv__website" name="website" value="" />
                                 <?php get_template_part( 'template-parts/referrer' ); ?>
                                 <input type="hidden" name="cv-jobid" value="188">
                                 <input type="hidden" name="action" value="cv_form">
-                                <input type="hidden" name="cvUploadHash" id="cvUploadHash" value="<?php global $hashesForLashes; echo $hashesForLashes['cvHash']; ?>">
                                 <?php wp_nonce_field( 'cv_form', 'cv_form_nonce' ); ?>
-                                <button type="button" disabled class="fake_btn_cv_loading btn btn__default pink d-none disabled"><?= pll_e( 'Sending, please wait...' ); ?></button>
-                                <button type="button" class="fake_btn_cv btn btn__default yellow"><?= pll_e( 'Send application' ); ?></button>
-                                <button class="g-recaptcha cvBTN btn btn__default yellow d-none" data-sitekey="6LfehooaAAAAAG62wPsHf3VLUbStgPP94_lKpw1u" data-callback="onCVSubmit"><?= pll_e( 'Send application' ); ?></button>
+                                <button type="button" disabled data-btn="load" class="btn_cv_loading btn btn__default pink d-none disabled"><?= pll_e( 'Sending, please wait...' ); ?></button>
+                                <button type="submit" data-btn="submit" class="btn btn__default yellow"><?= pll_e( 'Send application' ); ?></button>
                             </div>
                         </div>
                     </form>

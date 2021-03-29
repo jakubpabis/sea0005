@@ -19,6 +19,8 @@ jQuery.fn.preventDoubleSubmission = function() {
 		} else {
 			// Mark it so that the next submit can be ignored
 			$form.data('submitted', true);
+			$form.find('*[data-btn="load"]').removeClass('d-none');
+			$form.find('*[data-btn="submit"]').addClass('d-none');
 		}
 	});
 

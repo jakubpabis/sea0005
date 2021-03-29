@@ -9,7 +9,7 @@
 
  if ( ! defined( '_S_VERSION' ) ) {
  	// Replace the version number of the theme on each release.
- 	define( '_S_VERSION', '3.1.2' );
+ 	define( '_S_VERSION', '3.1.4' );
 }
 
 if ( ! function_exists( 'sative_setup' ) ) :
@@ -172,7 +172,7 @@ add_action( 'widgets_init', 'sative_widgets_init' );
 add_action('wp_enqueue_scripts', function(){
 	if (!is_admin()) {
 		wp_deregister_script('jquery');
-		wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', array(), _S_VERSION, false );
+		wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js', array(), _S_VERSION, false );
 		wp_deregister_script( 'jquery-migrate' );
     	wp_register_script( 'jquery-migrate', "https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.2.0/jquery-migrate.min.js", array(), _S_VERSION, false );
 		wp_deregister_script('wp-embed');
@@ -214,8 +214,6 @@ function sative_scripts() {
 	wp_enqueue_style( 'sative-styles', get_template_directory_uri() . '/assets/css/main.min.css', array(), _S_VERSION, 'all' );
 
     wp_enqueue_script('sative-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js', array('jquery'), _S_VERSION, true );
-    wp_enqueue_script('sative-validate', 'https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js', array('jquery'), _S_VERSION, true );
-    wp_enqueue_script('sative-methods', 'https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/additional-methods.min.js', array('jquery'), _S_VERSION, true );
 	wp_enqueue_script('sative-app', get_template_directory_uri() . '/assets/js/main.min.js', array('jquery'), _S_VERSION, true );
 	// Internet Explorer HTML5 support
     wp_enqueue_script( 'html5hiv',get_template_directory_uri().'/inc/assets/js/html5.js', array(), _S_VERSION, false );
@@ -748,18 +746,18 @@ function generateRandomString($length = 10)
     return $randomString;
 }
 
-function hashesForLashes()
-{
-    global $hashesForLashes;
-    global $wp;
-    $hashesForLashes = array(
-        'cvHash' => generateRandomString(16),
-        'appHash' => generateRandomString(16),
-        'subscribeHash' => generateRandomString(16),
-        'contactHash' => generateRandomString(16),
-    );
-    foreach( $hashesForLashes as $key => $val ) {
-        setcookie($key, $val, time() + 3600, '/');
-    }
-}
-add_action( 'after_setup_theme', 'hashesForLashes' );
+// function hashesForLashes()
+// {
+//     global $hashesForLashes;
+//     global $wp;
+//     $hashesForLashes = array(
+//         'cvHash' => generateRandomString(16),
+//         'appHash' => generateRandomString(16),
+//         'subscribeHash' => generateRandomString(16),
+//         'contactHash' => generateRandomString(16),
+//     );
+//     foreach( $hashesForLashes as $key => $val ) {
+//         setcookie($key, $val, time() + 3600, '/');
+//     }
+// }
+// add_action( 'after_setup_theme', 'hashesForLashes' );

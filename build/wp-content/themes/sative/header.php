@@ -40,7 +40,6 @@
 	</script>
     <?php wp_head(); ?>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body <?php body_class(); ?>>
     <!--[if lt IE 7]>

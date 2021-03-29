@@ -393,3 +393,18 @@
     }
 
 }
+
+form {
+
+    #form__app__email,
+    #form__app__website,
+    #form__cv__email,
+    #form__cv__website,
+    #form__subscribe__email,
+    #form__subscribe__website,
+    #form__contact__email,
+    #form__contact__website {
+        display: none!important;
+    }
+
+}

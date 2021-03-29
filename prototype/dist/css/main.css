@@ -2294,6 +2294,17 @@ i {
 	background-color: #ec6278;
 }
 
+form #form__app__email,
+form #form__app__website,
+form #form__cv__email,
+form #form__cv__website,
+form #form__subscribe__email,
+form #form__subscribe__website,
+form #form__contact__email,
+form #form__contact__website {
+	display: none !important;
+}
+
 aside#chat {
 	position: fixed;
 	z-index: 998;

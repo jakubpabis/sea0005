@@ -272,7 +272,7 @@ jQuery(document).ready(function() {
 	quickFilters();
 	onFormSubmit();
 	onFormLoad();
-	appValidation();
+	//appValidation();
 	$('form').each(function() {
 		$(this).preventDoubleSubmission();
 	});

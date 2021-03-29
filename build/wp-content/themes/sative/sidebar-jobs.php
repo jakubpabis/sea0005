@@ -125,15 +125,15 @@
                 </div>
             </div>
             <div class="col-12 pt-4">
+                <input type="email" id="form__app__email" name="email" value="" />
+                <input type="text" id="form__app__website" name="website" value="" />
                 <?php get_template_part( 'template-parts/referrer' ); ?>
                 <input type="hidden" name="postid" value="<?= get_the_ID(); ?>">
                 <input type="hidden" name="app-jobid" value="<?= get_field('job_id'); ?>">
                 <input type="hidden" name="action" value="application_form">
                 <?php wp_nonce_field( 'application_form', 'application_form_nonce' ); ?>
-                <input type="hidden" name="jobUploadHash" id="jobUploadHash" value="<?php global $hashesForLashes; echo $hashesForLashes['appHash']; ?>">
-                <button type="button" disabled class="fake_btn_app_loading btn btn__default pink d-none disabled"><?= pll_e( 'Sending, please wait...' ); ?></button>
-                <button type="button" class="fake_btn_app btn btn__default yellow"><?= pll_e( 'Send application' ); ?></button>
-                <button class="g-recaptcha app btn btn__default yellow d-none" data-sitekey="6LfehooaAAAAAG62wPsHf3VLUbStgPP94_lKpw1u" data-callback="onAppSubmit"><?= pll_e( 'Send application' ); ?></button>
+                <button type="button" data-btn="load" disabled class="btn_app_loading btn btn__default pink d-none disabled"><?= pll_e( 'Sending, please wait...' ); ?></button>
+                <button type="submit" data-btn="submit" class="btn btn__default yellow"><?= pll_e( 'Send application' ); ?></button>
             </div>
         </div>
     </form>

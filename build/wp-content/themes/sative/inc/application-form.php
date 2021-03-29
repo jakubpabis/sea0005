@@ -27,106 +27,82 @@ function postRequest($request, $api_key, $api_secret, $json)
 function add_to_queue()
 {
 
-    if( isset( $_POST['g-recaptcha-response'] ) ) {
+    if( !empty($_POST['website']) || !empty($_POST['email']) ) {
+        
+        die();
+    
+    } else {
 
-        # Our new data
-        $data = array(
-            'secret' => '6LfehooaAAAAAM4h_z9FM0e7vpKhva-kicLu-EV8',
-            'response' => $_POST['g-recaptcha-response']
+        $api_key = 'XoslTEyE';
+        $api_secret = 'ZZXRgDovPQvPfLjklPLBoTAl';
+
+        $application_data = array(
+
+            'name'          => isset( $_POST['app-name'] ) ? $_POST['app-name'] : '',
+            'email'         => isset( $_POST['app-email'] ) ? $_POST['app-email'] : '',
+            'date_of_birth' => isset( $_POST['app-dob'] ) ? $_POST['app-dob'] : '',
+            'gender'        => isset( $_POST['app-gender'] ) ? $_POST['app-gender'] : '',
+            'phone'         => isset( $_POST['app-phone'] ) ? $_POST['app-phone'] : '',
+
+            'location' => array(
+                'line1'   => '',
+                'line2'   => '',
+                'line3'   => '',
+                'zip'     => '',
+                'city'    => isset( $_POST['app-city'] ) ? $_POST['app-city'] : '',
+                'state'   => '',
+                'country' => isset( $_POST['app-country'] ) ? $_POST['app-country'] : '',
+            ),
+
+            'sources' => array(
+                array(
+                    'parent_source_id' => isset( $_POST['the_user_referrer'] ) ? $_POST['the_user_referrer'] : 'Website SIR',
+                    'name' => 'Applicant' // Example: Applicant
+                ),
+            ),
+
+            'note' => array(
+                'text' => isset( $_POST['app-motivation'] ) ? $_POST['app-motivation'] : '',
+            ),
+
+            'job' => array(
+                'id' => isset( $_POST['app-jobid'] ) ? $_POST['app-jobid'] : 188,
+            ),
+
+            //'urls' => array('https://www.example.com/some/url/123'),
+
         );
-        # Create a connection
-        $url = 'https://www.google.com/recaptcha/api/siteverify';
-        $ch = curl_init($url);
-        # Form data string
-        $postString = http_build_query($data, '', '&');
-        # Setting our options
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $postString);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        # Get the response
-        $responseJson = curl_exec($ch);
-        curl_close($ch);
-        $response = json_decode( $responseJson );
 
-        if( $response->success === true ) {
+        $data['json'] = json_encode($application_data);
 
-            $api_key = 'XoslTEyE';
-            $api_secret = 'ZZXRgDovPQvPfLjklPLBoTAl';
+        if( isset( $_FILES['app-cv'] ) && $_FILES['app-cv'] ) {
 
-            $application_data = array(
+            // if( $_FILES['app-cv']['size'] <= 5248000 ) {
 
-                'name'          => isset( $_POST['app-name'] ) ? $_POST['app-name'] : '',
-                'email'         => isset( $_POST['app-email'] ) ? $_POST['app-email'] : '',
-                'date_of_birth' => isset( $_POST['app-dob'] ) ? $_POST['app-dob'] : '',
-                'gender'        => isset( $_POST['app-gender'] ) ? $_POST['app-gender'] : '',
-                'phone'         => isset( $_POST['app-phone'] ) ? $_POST['app-phone'] : '',
+            $uploaded_cv = realpath( $_FILES['app-cv']['tmp_name'] );
+            $cv_ext = $_FILES['app-cv']['type'];
+            $cv_name = basename( $_FILES['app-cv']['name'] );
+            $data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
 
-                'location' => array(
-                    'line1'   => '',
-                    'line2'   => '',
-                    'line3'   => '',
-                    'zip'     => '',
-                    'city'    => isset( $_POST['app-city'] ) ? $_POST['app-city'] : '',
-                    'state'   => '',
-                    'country' => isset( $_POST['app-country'] ) ? $_POST['app-country'] : '',
-                ),
+        } else if ( isset( $_FILES['cv-cv'] ) && $_FILES['cv-cv'] ) {
+            $uploaded_cv = realpath( $_FILES['cv-cv']['tmp_name'] );
+            $cv_ext = $_FILES['cv-cv']['type'];
+            $cv_name = basename( $_FILES['cv-cv']['name'] );
+            $data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
+        }
 
-                'sources' => array(
-                    array(
-                        'parent_source_id' => isset( $_POST['the_user_referrer'] ) ? $_POST['the_user_referrer'] : 'Website SIR',
-                        'name' => 'Applicant' // Example: Applicant
-                    ),
-                ),
+        $person_response = postRequest('people/add_to_queue', $api_key, $api_secret, $data);
 
-                'note' => array(
-                    'text' => isset( $_POST['app-motivation'] ) ? $_POST['app-motivation'] : '',
-                ),
+        // echo '<pre>';
+        // echo var_dump($person_response);
+        // echo '</pre>';
+        // var_dump($person_response->status);
 
-                'job' => array(
-                    'id' => isset( $_POST['app-jobid'] ) ? $_POST['app-jobid'] : 188,
-                ),
-
-                //'urls' => array('https://www.example.com/some/url/123'),
-
-            );
-
-            $data['json'] = json_encode($application_data);
-
-            if( isset( $_FILES['app-cv'] ) && $_FILES['app-cv'] ) {
-
-                // if( $_FILES['app-cv']['size'] <= 5248000 ) {
-
-                $uploaded_cv = realpath( $_FILES['app-cv']['tmp_name'] );
-                $cv_ext = $_FILES['app-cv']['type'];
-                $cv_name = basename( $_FILES['app-cv']['name'] );
-                $data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
-
-            } else if ( isset( $_FILES['cv-cv'] ) && $_FILES['cv-cv'] ) {
-                $uploaded_cv = realpath( $_FILES['cv-cv']['tmp_name'] );
-                $cv_ext = $_FILES['cv-cv']['type'];
-                $cv_name = basename( $_FILES['cv-cv']['name'] );
-                $data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
-            }
-
-            $person_response = postRequest('people/add_to_queue', $api_key, $api_secret, $data);
-
-            // echo '<pre>';
-            // echo var_dump($person_response);
-            // echo '</pre>';
-            // var_dump($person_response->status);
-
-            if( isset( $person_response->status ) && $person_response->status == 'ok' ) {
-                $message = sendEmail();
-            } else {
-                $message = 'failed';
-            }
-
+        if( isset( $person_response->status ) && $person_response->status == 'ok' ) {
+            $message = sendEmail();
         } else {
             $message = 'failed';
         }
-
-    } else {
-        $message = 'failed';
     }
 
     return $message;
@@ -136,103 +112,80 @@ function add_to_queue()
 function add_to_queue_cv()
 {
 
-    if( isset( $_POST['g-recaptcha-response'] ) ) {
+    if( !empty($_POST['website']) || !empty($_POST['email']) ) {
+        
+        die();
+    
+    } else {
 
-        # Our new data
-        $data = array(
-            'secret' => '6LfehooaAAAAAM4h_z9FM0e7vpKhva-kicLu-EV8',
-            'response' => $_POST['g-recaptcha-response']
+        $api_key = 'XoslTEyE';
+        $api_secret = 'ZZXRgDovPQvPfLjklPLBoTAl';
+
+        $application_data = array(
+
+            'name'          => isset( $_POST['cv-name'] ) ? $_POST['cv-name'] : '',
+            'email'         => isset( $_POST['cv-email'] ) ? $_POST['cv-email'] : '',
+            'date_of_birth' => isset( $_POST['cv-dob'] ) ? $_POST['cv-dob'] : '',
+            'gender'        => isset( $_POST['cv-gender'] ) ? $_POST['cv-gender'] : '',
+            'phone'         => isset( $_POST['cv-phone'] ) ? $_POST['cv-phone'] : '',
+
+            'location' => array(
+                'line1'   => '',
+                'line2'   => '',
+                'line3'   => '',
+                'zip'     => '',
+                'city'    => isset( $_POST['cv-city'] ) ? $_POST['cv-city'] : '',
+                'state'   => '',
+                'country' => isset( $_POST['cv-country'] ) ? $_POST['cv-country'] : '',
+            ),
+
+            'sources' => array(
+                array(
+                    'parent_source_id' => isset( $_POST['the_user_referrer'] ) ? $_POST['the_user_referrer'] : 'Website SIR',
+                    'name' => 'Applicant' // Example: Applicant
+                ),
+            ),
+
+            'note' => array(
+                'text' => isset( $_POST['cv-motivation'] ) ? $_POST['cv-motivation'] : '',
+            ),
+
+            'job' => array(
+                'id' => isset( $_POST['cv-jobid'] ) ? $_POST['cv-jobid'] : 188,
+            ),
+
+            //'urls' => array('https://www.example.com/some/url/123'),
+
         );
-        # Create a connection
-        $url = 'https://www.google.com/recaptcha/api/siteverify';
-        $ch = curl_init($url);
-        # Form data string
-        $postString = http_build_query($data, '', '&');
-        # Setting our options
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $postString);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        # Get the response
-        $responseJson = curl_exec($ch);
-        curl_close($ch);
-        $response = json_decode( $responseJson );
 
-        if( $response->success === true ) {
+        $data['json'] = json_encode($application_data);
 
-            $api_key = 'XoslTEyE';
-            $api_secret = 'ZZXRgDovPQvPfLjklPLBoTAl';
+        if( isset( $_FILES['app-cv'] ) && $_FILES['app-cv'] ) {
 
-            $application_data = array(
+            // if( $_FILES['app-cv']['size'] <= 5248000 ) {
 
-                'name'          => isset( $_POST['cv-name'] ) ? $_POST['cv-name'] : '',
-                'email'         => isset( $_POST['cv-email'] ) ? $_POST['cv-email'] : '',
-                'date_of_birth' => isset( $_POST['cv-dob'] ) ? $_POST['cv-dob'] : '',
-                'gender'        => isset( $_POST['cv-gender'] ) ? $_POST['cv-gender'] : '',
-                'phone'         => isset( $_POST['cv-phone'] ) ? $_POST['cv-phone'] : '',
+            $uploaded_cv = realpath( $_FILES['app-cv']['tmp_name'] );
+            $cv_ext = $_FILES['app-cv']['type'];
+            $cv_name = basename( $_FILES['app-cv']['name'] );
+            $data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
 
-                'location' => array(
-                    'line1'   => '',
-                    'line2'   => '',
-                    'line3'   => '',
-                    'zip'     => '',
-                    'city'    => isset( $_POST['cv-city'] ) ? $_POST['cv-city'] : '',
-                    'state'   => '',
-                    'country' => isset( $_POST['cv-country'] ) ? $_POST['cv-country'] : '',
-                ),
+        } else if ( isset( $_FILES['cv-cv'] ) && $_FILES['cv-cv'] ) {
+            $uploaded_cv = realpath( $_FILES['cv-cv']['tmp_name'] );
+            $cv_ext = $_FILES['cv-cv']['type'];
+            $cv_name = basename( $_FILES['cv-cv']['name'] );
+            $data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
+        }
 
-                'sources' => array(
-                    array(
-                        'parent_source_id' => isset( $_POST['the_user_referrer'] ) ? $_POST['the_user_referrer'] : 'Website SIR',
-                        'name' => 'Applicant' // Example: Applicant
-                    ),
-                ),
+        //var_dump($application_data);
 
-                'note' => array(
-                    'text' => isset( $_POST['cv-motivation'] ) ? $_POST['cv-motivation'] : '',
-                ),
-
-                'job' => array(
-                    'id' => isset( $_POST['cv-jobid'] ) ? $_POST['cv-jobid'] : 188,
-                ),
-
-                //'urls' => array('https://www.example.com/some/url/123'),
-
-            );
-
-            $data['json'] = json_encode($application_data);
-
-            if( isset( $_FILES['app-cv'] ) && $_FILES['app-cv'] ) {
-
-                // if( $_FILES['app-cv']['size'] <= 5248000 ) {
-
-                $uploaded_cv = realpath( $_FILES['app-cv']['tmp_name'] );
-                $cv_ext = $_FILES['app-cv']['type'];
-                $cv_name = basename( $_FILES['app-cv']['name'] );
-                $data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
-
-            } else if ( isset( $_FILES['cv-cv'] ) && $_FILES['cv-cv'] ) {
-                $uploaded_cv = realpath( $_FILES['cv-cv']['tmp_name'] );
-                $cv_ext = $_FILES['cv-cv']['type'];
-                $cv_name = basename( $_FILES['cv-cv']['name'] );
-                $data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
-            }
-
-            //var_dump($application_data);
-
-            $person_response = postRequest('people/add_to_queue', $api_key, $api_secret, $data);
-            //var_dump($person_response);
-            if( isset( $person_response->status ) && $person_response->status == 'ok' ) {
-                $message = sendEmailCV();
-            } else {
-                $message = 'failed';
-            }
-
+        $person_response = postRequest('people/add_to_queue', $api_key, $api_secret, $data);
+        //var_dump($person_response);
+        if( isset( $person_response->status ) && $person_response->status == 'ok' ) {
+            $message = sendEmailCV();
         } else {
             $message = 'failed';
         }
 
-    } else {
-        $message = 'failed';
     }
 
     return $message;
@@ -241,50 +194,27 @@ function add_to_queue_cv()
 
 function subscribe_person()
 {
-    if( isset( $_POST['g-recaptcha-response'] ) ) {
+    if( !empty($_POST['website']) || !empty($_POST['email']) ) {
+        
+        die();
+    
+    } else {
+        $api_key = '6KlPHA3GzUs0Mt5ZMzIA7fBJKhvXsF37IQd3zaBj';
+        $path = 'v2/job_boards/subscribers/'.$_POST['subscribe_email'];
 
-        # Our new data
-        $data = array(
-            'secret' => '6LeA-gUaAAAAAItxjKANTqw14c8eK7-sEXsBYe6R',
-            'response' => $_POST['g-recaptcha-response']
+        $subscriber_data = array(
+            'categories' => $_POST['subscribe_checkbox']
         );
-        # Create a connection
-        $url = 'https://www.google.com/recaptcha/api/siteverify';
-        $ch = curl_init($url);
-        # Form data string
-        $postString = http_build_query($data, '', '&');
-        # Setting our options
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $postString);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        # Get the response
-        $responseJson = curl_exec($ch);
-        curl_close($ch);
-        $response = json_decode( $responseJson );
 
-        if( $response->success === true ) {
-            $api_key = '6KlPHA3GzUs0Mt5ZMzIA7fBJKhvXsF37IQd3zaBj';
-            $path = 'v2/job_boards/subscribers/'.$_POST['subscribe_email'];
+        $data = json_encode($subscriber_data);
+        $subscribe_response = putRequestToken($path, $api_key, $data);
 
-            $subscriber_data = array(
-                'categories' => $_POST['subscribe_checkbox']
-            );
-
-            $data = json_encode($subscriber_data);
-            $subscribe_response = putRequestToken($path, $api_key, $data);
-
-            if( isset( $subscribe_response->status ) && $subscribe_response->status === 'ok'  ) {
-                $message = 'success';
-            } else {
-                $message = json_encode($subscribe_response);
-            }
-
+        if( isset( $subscribe_response->status ) && $subscribe_response->status === 'ok'  ) {
+            $message = 'success';
         } else {
-            $message = 'failed';
+            $message = json_encode($subscribe_response);
         }
 
-    } else {
-        $message = 'failed';
     }
 
     return $message;
@@ -342,45 +272,52 @@ function sendEmailCV()
 
 function sendEmailContact()
 {
-    function wpdocs_set_html_mail_content_type() {
-        return 'text/html';
-    }
-    add_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
-
-    if( isset($_POST['contact_email']) ) {
-        $from = $_POST['contact_email'];
-    }
-    if( isset($_POST['contact_name']) ) {
-        $name = $_POST['contact_name'];
-    }
-    if( isset($_POST['contact_phone']) ) {
-        $phone = $_POST['contact_phone'];
-    }
-    if( isset($_POST['contact_company']) ) {
-        $company = $_POST['contact_company'];
-    }
-    if( isset($_POST['contact_message']) ) {
-        $message = $_POST['contact_message'];
-    }
-    $to = 'ernst@searchxrecruitment.com';
-    $subject = pll__('Contact form submitted successfully');
-    $subjectA = pll__('Contact form message from website');
-    $body = contactEmailTemplate();
-    $bodyA = contactEmailTemplateA($from, $name, $phone, $company, $message);
-    $headers = array('Content-Type: text/html; charset=UTF-8');
-
-    $email = wp_mail( $from, $subject, $body, $headers  );
-    $emailA = wp_mail( $to, $subjectA, $bodyA, $headers  );
-
-    if($email && $emailA) {
-        $message = 'success';
+    if( !empty($_POST['website']) || !empty($_POST['email']) ) {
+        
+        die();
+    
     } else {
-        $message = 'failed';
+        function wpdocs_set_html_mail_content_type() {
+            return 'text/html';
+        }
+        add_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
+
+        if( isset($_POST['contact_email']) ) {
+            $from = $_POST['contact_email'];
+        }
+        if( isset($_POST['contact_name']) ) {
+            $name = $_POST['contact_name'];
+        }
+        if( isset($_POST['contact_phone']) ) {
+            $phone = $_POST['contact_phone'];
+        }
+        if( isset($_POST['contact_company']) ) {
+            $company = $_POST['contact_company'];
+        }
+        if( isset($_POST['contact_message']) ) {
+            $message = $_POST['contact_message'];
+        }
+        $to = 'ernst@searchxrecruitment.com';
+        $subject = pll__('Contact form submitted successfully');
+        $subjectA = pll__('Contact form message from website');
+        $body = contactEmailTemplate();
+        $bodyA = contactEmailTemplateA($from, $name, $phone, $company, $message);
+        $headers = array('Content-Type: text/html; charset=UTF-8');
+
+        $email = wp_mail( $from, $subject, $body, $headers  );
+        $emailA = wp_mail( $to, $subjectA, $bodyA, $headers  );
+
+        if($email && $emailA) {
+            $message = 'success';
+        } else {
+            $message = 'failed';
+        }
+
+        remove_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
+
+        return $message;
+        
     }
-
-    remove_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
-
-    return $message;
 }
 
 function appEmailTemplate()

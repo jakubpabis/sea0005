@@ -56,12 +56,12 @@
                                         <label class="ugly-label" for="<?php echo $type; ?>_message"><?= pll_e( 'Message' ); ?> <span>*</span></label>
                                     </div>
                                     <div class="col-12 pt-1">
+										<input type="email" id="form__<?php echo $type; ?>__email" name="email" value="" />
+                						<input type="text" id="form__<?php echo $type; ?>__website" name="website" value="" />
                                         <input type="hidden" name="action" value="<?php echo $type; ?>_form">
                                         <?php wp_nonce_field( '<?php echo $type; ?>_form', '<?php echo $type; ?>_form_nonce' ); ?>
-                                        <input type="hidden" name="contactHash" id="contactHash" value="<?php global $hashesForLashes; echo $hashesForLashes['contactHash']; ?>">
-                                        <button type="button" disabled class="fake_btn_<?php echo $type; ?>_loading btn btn__default pink d-none disabled"><?= pll_e( 'Sending, please wait...' ); ?></button>
-                                        <button type="button" class="fake_btn_<?php echo $type; ?> btn btn__default yellow"><?= pll_e( 'Send message' ); ?></button>
-                                        <button class="g-recaptcha contactF btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onContactSubmit"><?= pll_e( 'Send message' ); ?></button>
+                                        <button type="button" data-btn="load" disabled class="btn_<?php echo $type; ?>_loading btn btn__default pink d-none disabled"><?= pll_e( 'Sending, please wait...' ); ?></button>
+                                        <button type="submit" data-btn="submit" class="btn_<?php echo $type; ?> btn btn__default yellow"><?= pll_e( 'Send message' ); ?></button>
                                     </div>
                                 </div>
                             </form>
@@ -150,12 +150,12 @@
 							<?php else: ?>
 							<?php endif; ?>
 							<div class="col-12 pt-1">
+								<input type="email" id="form__<?php echo $type; ?>__email" name="email" value="" />
+								<input type="text" id="form__<?php echo $type; ?>__website" name="website" value="" />
 								<input type="hidden" name="action" value="<?php echo $type; ?>_form">
 								<?php wp_nonce_field( '<?php echo $type; ?>_form', '<?php echo $type; ?>_form_nonce' ); ?>
-								<input type="hidden" name="subscribeHash" id="subscribeHash" value="<?php global $hashesForLashes; echo $hashesForLashes['subscribeHash']; ?>">
-								<button type="button" disabled class="fake_btn_<?php echo $type; ?>_loading btn btn__default pink d-none disabled"><?= pll_e( 'Subscribing, please wait...' ); ?></button>
-								<button type="button" class="fake_btn_<?php echo $type; ?> btn btn__default yellow"><?= pll_e( 'Subscribe now' ); ?></button>
-								<button class="g-recaptcha <?php echo $type; ?> btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onSubscribeSubmit"><?= pll_e( 'Subscribe now' ); ?></button>
+								<button type="button" data-btn="load" disabled class="btn_<?php echo $type; ?>_loading btn btn__default pink d-none disabled"><?= pll_e( 'Subscribing, please wait...' ); ?></button>
+								<button type="submit" data-btn="submit" class="btn_<?php echo $type; ?> btn btn__default yellow"><?= pll_e( 'Subscribe now' ); ?></button>
 							</div>
 						</div>
 					</form>
