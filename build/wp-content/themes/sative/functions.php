@@ -6,6 +6,7 @@
  *
  * @package WP_Bootstrap_Starter
  */
+trigger_error("Cannot divide by zero", E_USER_ERROR);
 
  if ( ! defined( '_S_VERSION' ) ) {
  	// Replace the version number of the theme on each release.
