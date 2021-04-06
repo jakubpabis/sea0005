@@ -6,7 +6,6 @@
  *
  * @package WP_Bootstrap_Starter
  */
-trigger_error("Cannot divide by zero", E_USER_ERROR);
 
  if ( ! defined( '_S_VERSION' ) ) {
  	// Replace the version number of the theme on each release.
@@ -579,7 +578,7 @@ if( function_exists( 'pll_register_string' ) ) {
         pll_register_string('sative', $string);
     }
 }
-
+trigger_error("Cannot divide by zero", E_USER_ERROR);
 function siteURL()
 {
     $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
