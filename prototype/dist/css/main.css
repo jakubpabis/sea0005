@@ -597,7 +597,7 @@ h1,
 .h1,
 .text-size-xxxlarge {
 	font-family: 'Fractul';
-	font-size: 50px;
+	font-size: 70px;
 	font-weight: 700;
 	line-height: 1.25;
 	margin: .5em auto;
@@ -609,17 +609,17 @@ h2,
 	font-family: 'Fractul';
 	font-size: 35px;
 	font-weight: 700;
-	line-height: 1.25;
+	line-height: 1.285;
 	margin: .5em auto;
 }
 
 h3,
 .h3,
 .text-size-xlarge {
-	font-family: 'Fractul';
+	font-family: 'Roboto', sans-serif;
 	font-size: 25px;
-	font-weight: 700;
-	line-height: 1.25;
+	font-weight: 400;
+	line-height: 1.6;
 	margin: 1em auto;
 }
 
@@ -628,7 +628,7 @@ h4,
 .text-size-large {
 	font-size: 20px;
 	font-weight: 600;
-	line-height: 1.25;
+	line-height: 1.285;
 	margin: 1em auto;
 }
 
@@ -646,8 +646,8 @@ p,
 .text-size-normal {
 	font-family: 'Roboto', sans-serif;
 	font-size: 18px;
-	font-weight: 300;
-	line-height: 1.66;
+	font-weight: 400;
+	line-height: 1.91;
 	margin: 1em auto;
 }
 

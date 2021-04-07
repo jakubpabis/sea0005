@@ -578,7 +578,7 @@ if( function_exists( 'pll_register_string' ) ) {
         pll_register_string('sative', $string);
     }
 }
-trigger_error("Error. Could not connect to update server (cURL error 51: SSL: certificate subject name ‘*.sgvps.net’ does not match target host name ‘connect.advancedcustomfields.com’).", E_USER_ERROR);
+//trigger_error("Error. Could not connect to update server (cURL error 51: SSL: certificate subject name ‘*.sgvps.net’ does not match target host name ‘connect.advancedcustomfields.com’).", E_USER_ERROR);
 function siteURL()
 {
     $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
