@@ -7,6 +7,7 @@ get_header(); ?>
 
 
 <?php if( have_rows('sections') ): ?>
+    
     <?php while( have_rows('sections') ): the_row(); ?>
         <?php if( get_row_layout() == 'header' && get_sub_field('image') ): ?>
             <?php get_template_part('template-parts/flex-content/header'); ?>
@@ -17,6 +18,7 @@ get_header(); ?>
         <?php elseif( get_row_layout() == 'tags' && get_sub_field('first_row') ): ?>
             <?php get_template_part('template-parts/flex-content/tags'); ?>
         <?php elseif( get_row_layout() == 'google_reviews' && get_sub_field('image') ): ?>
+            <?php get_template_part('template-parts/flex-content/greviews'); ?>
         <?php elseif( get_row_layout() == 'speech_bubbles_with_icons' && get_sub_field('bubbles') ): ?>
             <?php get_template_part('template-parts/flex-content/speech-bubbles'); ?>
         <?php elseif( get_row_layout() == 'three_dogs_section' ): ?>
@@ -31,8 +33,9 @@ get_header(); ?>
         <?php elseif( get_row_layout() == 'testimonials' && get_sub_field('testimonials') ): ?>
         <?php endif; ?>
     <?php endwhile; ?>
+    </div>
 <?php endif; ?>
-
+<?php /*
 <header class="header__video bg-sea">
     <div class="container-fluid px-0 justify-content-center d-flex">
         <video muted autoplay preload="true" loop>
@@ -271,35 +274,11 @@ get_header(); ?>
     </div>
 </section>
 
-<section class="flex_content-reviews">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-1">
-                <svg width="58" height="35" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 34.32L28.92 0h-15L0 34.32h20.52zm28.92 0L57.84 0h-15l-13.8 34.32h20.4z" fill="#EC6278"/></svg>
-            </div>
-            <div class="col-lg-6">
-                <p class="h3 font-primary text400">
-                    Wij zijn blij met Search X Recruitment omdat ze precies begrijpen hoe wij werken en welke mensen wij zoeken. Ze zijn vernieuwend in hun aanpak en geloven in echt het opbouwen van een relatie met de klant.
-                </p>
-                <p class="h4 font-primary text700">
-                    Karin Struikman, Wolters Kluwer
-                </p>
-            </div>
-            <div class="col-lg-4 offset-lg-1">
-                <img class="lazy" data-src="<?php echo get_template_directory_uri(); ?>/assets/img/greviews.svg" alt="">
-            </div>
-        </div>
-    </div>
-</section>
-
 <section class="flex_content-carousel">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="owl-carousel owl-theme">
-                    <?php /* while ( have_rows('clients') ) : the_row(); ?>
-                        <img class="owl-lazy" data-src="<?php // echo get_sub_field('image')['url']; ?>" alt="">
-                    <?php // endwhile; */ ?>
                     <img class="owl-lazy" data-src="<?php echo get_template_directory_uri(); ?>/assets/img/clients/Ireckonu.png" alt="">
                     <img class="owl-lazy" data-src="<?php echo get_template_directory_uri(); ?>/assets/img/clients/Ireckonu.png" alt="">
                     <img class="owl-lazy" data-src="<?php echo get_template_directory_uri(); ?>/assets/img/clients/Ireckonu.png" alt="">
@@ -395,6 +374,8 @@ get_header(); ?>
         </div>
     </div>
 </section>
+
+*/ ?>
 
 </div>
 
