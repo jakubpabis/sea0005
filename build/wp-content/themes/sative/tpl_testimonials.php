@@ -1,7 +1,4 @@
 <?php
-/**
- * Template Name: Testimonials
- */
 
 get_header();
 

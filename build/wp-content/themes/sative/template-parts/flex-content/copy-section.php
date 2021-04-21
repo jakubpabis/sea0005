@@ -23,7 +23,7 @@
         </div>
     </div>
     <?php elseif( get_sub_field('type') === 'dog' ): ?>
-        <section class="flex_content-cta">
+        <section>
             <div class="container position-absolute h-100 right-0 top-0">
                 <div class="row">
                     <div class="col-lg-11 position-absolute h-100 p-0 right-0">

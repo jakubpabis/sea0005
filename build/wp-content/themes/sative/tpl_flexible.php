@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<?php $gradient = false; ?>
+<?php //$gradient = false; ?>
 <?php if( have_rows('sections') ): ?>
     <div class="body-bg-gradient pt-5 pb-5">
         <?php while( have_rows('sections') ): the_row(); ?>

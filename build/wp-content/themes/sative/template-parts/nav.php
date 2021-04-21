@@ -49,7 +49,74 @@
 				<div class="col">
 					<div class="row align-items-center justify-content-end">
 						<div class="col-xl-auto col-md-6 pr-0">
-							<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+							<?php // wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+							<?php $menu_items = get_field( 'menu_items', 'option' ); ?>
+							<?php if( have_rows( 'menu_items', 'option' ) ): ?>
+								<ul class="navigation__lower-menu">
+									<?php while(have_rows( 'menu_items', 'option' )): the_row(); ?>
+										<?php if( get_sub_field('item_type') === 'link' ): ?>
+											<li>
+												<a href="<?php echo get_sub_field('menu_link')['url']; ?>"><?php echo get_sub_field('menu_link')['title']; ?></a>
+										<?php else: ?>
+											<li class="mega-menu-parent">
+												<a href="javascript:void(0)"><?php echo get_sub_field('submenu')[0]['link_title']; ?></a>
+												<section class="mega-menu-container">
+													<div class="mega-menu">
+														<div class="container">
+															<div class="row justify-content-center">
+																<div class="col-12">
+																	<hr>
+																</div>
+																<div class="col-lg-10 pt-4">
+																	<h2 class="text400 font-primary">
+																		<?php echo get_sub_field('submenu')[0]['big_title']; ?>
+																	</h2>
+																	<?php if( get_sub_field('submenu')[0] ): $layout = get_sub_field('submenu')[0]['acf_fc_layout']; ?>
+																		<?php if( $layout == 'standard_submenu' ): ?>
+																			<div class="row justify-content-between">
+																				<div class="col-12">
+																					<?php if(get_sub_field('submenu')[0]['second_level_submenu']): ?>
+																						<ul class="mega-menu__big-submenu">
+																							<?php foreach(get_sub_field('submenu')[0]['second_level_submenu'] as $item): ?>
+																								<?php if( $item['item_type'] === 'link' ): ?>
+																									<li>
+																										<a class="h2" href="<?php echo $item['menu_item']['url']; ?>"><?php echo $item['menu_item']['url']; ?></a>
+																								<?php else: ?>
+																									<li class="mega-menu__side-submenu-parent">
+																										<a class="h2" href="javascript:void(0)"><?php echo $item['submenu_item']; ?></a>
+																										<?php if( !empty($item['submenu_links']) ): ?>
+																											<ul class="mega-menu__side-submenu">
+																												<?php foreach( $item['submenu_links'] as $sub ): ?>
+																													<li>
+																														<a class="h3 font-primary text500" href="<?php echo $sub['third_level_menu_item']['url']; ?>">
+																															<?php echo $sub['third_level_menu_item']['title']; ?>
+																															<svg height="18" width="34" xmlns="http://www.w3.org/2000/svg"><path d="M25.885.278l7.844 8.051a.947.947 0 01.078.091l-.078-.09a.95.95 0 01.236.412l.006.023A.895.895 0 0134 9l-.006.11-.002.011a.974.974 0 01-.02.114c-.003.007-.004.014-.006.022a.91.91 0 01-.159.323l-.01.013-.068.078-7.844 8.051a.91.91 0 01-1.307 0 .966.966 0 010-1.342l6.265-6.432H.924C.414 9.949 0 9.525 0 9s.414-.949.924-.949h29.92L24.578 1.62a.966.966 0 010-1.342.908.908 0 011.307 0z" fill="#183153"/></svg>
+																														</a>
+																													</li>
+																												<?php endforeach; ?>
+																											</ul>
+																										<?php endif; ?>
+																								<?php endif; ?>
+																									</li>
+																							<?php endforeach; ?>
+																						</ul>
+																					<?php endif; ?>
+																				</div>
+																			</div>
+																		<?php elseif( $layout == 'search_submenu' ): ?>
+																		<?php elseif( $layout == 'text_submenu' ): ?>
+																		<?php endif; ?>
+																	<?php endif; ?>
+																</div>
+															</div>
+														</div>
+													</div>
+												</section>
+										<?php endif; ?>
+											</li>
+									<?php endwhile; ?>
+								</ul>
+							<?php endif; ?>
 						</div>
 						<div class="col-md-auto pl-1 navigation__lower-utils">
 							<a href="javascript:void(0)" data-toggle="modal" data-target="#searchModal"><i class="far fa-search"></i></a>

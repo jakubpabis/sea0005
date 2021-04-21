@@ -1,7 +1,4 @@
 <?php
-/**
- * Template Name: Team
- */
 
 get_header(); 
 

@@ -1,7 +1,4 @@
 <?php
-/**
- * Template Name: Filtered articles
- */
 
 get_header(); 
 

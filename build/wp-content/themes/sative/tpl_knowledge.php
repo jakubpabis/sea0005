@@ -1,7 +1,4 @@
 <?php
-/**
- * Template Name: Knowledge
- */
 
 get_header();
 
