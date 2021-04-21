@@ -7,41 +7,41 @@ get_header(); ?>
 
 <?php $gradient = false; ?>
 <?php if( have_rows('sections') ): ?>
-    
-    <?php while( have_rows('sections') ): the_row(); ?>
-        <?php if( get_row_layout() == 'header' && get_sub_field('image') ): ?>
-            <?php get_template_part('template-parts/flex-content/header'); ?>
-            <?php if( !$gradient ): ?><div class="body-bg-gradient pt-5 pb-5"><?php endif; $gradient = true; ?>
-        <?php elseif( get_row_layout() == 'home_header' && get_sub_field('video') ): ?> 
-            <?php if( !$gradient ): ?><div class="body-bg-gradient pt-5 pb-5"><?php endif; $gradient = true; ?>
-            <?php get_template_part('template_parts/flex-content/header-video'); ?>
-        <?php elseif( get_row_layout() == 'copy_section' && (get_sub_field('text') || get_sub_field('first_column')) ): ?>
-            <?php get_template_part('template-parts/flex-content/copy-section'); ?>
-        <?php elseif( get_row_layout() == 'video_section' && get_sub_field('video') ): ?>
-            <?php get_template_part('template-parts/flex-content/video-section'); ?>
-        <?php elseif( get_row_layout() == 'tags' && get_sub_field('first_row') ): ?>
-            <?php get_template_part('template-parts/flex-content/tags'); ?>
-        <?php elseif( get_row_layout() == 'google_reviews' && get_sub_field('image') ): ?>
-            <?php get_template_part('template-parts/flex-content/greviews'); ?>
-        <?php elseif( get_row_layout() == 'speech_bubbles_with_icons' && get_sub_field('bubbles') ): ?>
-            <?php get_template_part('template-parts/flex-content/speech-bubbles'); ?>
-        <?php elseif( get_row_layout() == 'job_categories_menus' ): ?>
-            <div class="container"><p>Categories menu will be here...</p></div>
-        <?php elseif( get_row_layout() == 'dogs_section' ): ?>
-            <?php get_template_part('template-parts/flex-content/dogs-section'); ?>
-        <?php elseif( get_row_layout() == 'call_to_action_section' && get_sub_field('image') ): ?>
-            <?php get_template_part('template-parts/flex-content/cta-section'); ?>
-        <?php elseif( get_row_layout() == 'articles_slider' ): ?> 
-        <?php elseif( get_row_layout() == 'cards_links' && get_sub_field('links') ): ?>
-            <?php get_template_part('template-parts/flex-content/card-links'); ?>
-        <?php elseif( get_row_layout() == 'client_logos_big' && get_sub_field('logos') ): ?>
-        <?php elseif( get_row_layout() == 'client_logos_small' && get_sub_field('logos') ): ?>
-        <?php elseif( get_row_layout() == 'team' && get_sub_field('people') ): ?>
-        <?php elseif( get_row_layout() == 'testimonials' && get_sub_field('testimonials') ): ?>
-        <?php elseif( get_row_layout() == 'copy_section_with_speech_bubble' ): ?>
-            <?php get_template_part('template-parts/flex-content/copy-speech-bubble'); ?>
-        <?php endif; ?>
-    <?php endwhile; ?>
+    <div class="body-bg-gradient pt-5 pb-5">
+        <?php while( have_rows('sections') ): the_row(); ?>
+            <?php if( get_row_layout() == 'header' && get_sub_field('image') ): ?>
+                <?php get_template_part('template-parts/flex-content/header'); ?>
+                <?php /* if( !$gradient ): ?><div class="body-bg-gradient pt-5 pb-5"><?php endif; $gradient = true; */ ?>
+            <?php elseif( get_row_layout() == 'home_header' && get_sub_field('video') ): ?> 
+                <?php /* if( !$gradient ): ?><div class="body-bg-gradient pt-5 pb-5"><?php endif; $gradient = true; */ ?>
+                <?php get_template_part('template_parts/flex-content/header-video'); ?>
+            <?php elseif( get_row_layout() == 'copy_section' && (get_sub_field('text') || get_sub_field('first_column')) ): ?>
+                <?php get_template_part('template-parts/flex-content/copy-section'); ?>
+            <?php elseif( get_row_layout() == 'video_section' && get_sub_field('video') ): ?>
+                <?php get_template_part('template-parts/flex-content/video-section'); ?>
+            <?php elseif( get_row_layout() == 'tags' && get_sub_field('first_row') ): ?>
+                <?php get_template_part('template-parts/flex-content/tags'); ?>
+            <?php elseif( get_row_layout() == 'google_reviews' && get_sub_field('image') ): ?>
+                <?php get_template_part('template-parts/flex-content/greviews'); ?>
+            <?php elseif( get_row_layout() == 'speech_bubbles_with_icons' && get_sub_field('bubbles') ): ?>
+                <?php get_template_part('template-parts/flex-content/speech-bubbles'); ?>
+            <?php elseif( get_row_layout() == 'job_categories_menus' ): ?>
+                <div class="container"><p>Categories menu will be here...</p></div>
+            <?php elseif( get_row_layout() == 'dogs_section' ): ?>
+                <?php get_template_part('template-parts/flex-content/dogs-section'); ?>
+            <?php elseif( get_row_layout() == 'call_to_action_section' && get_sub_field('image') ): ?>
+                <?php get_template_part('template-parts/flex-content/cta-section'); ?>
+            <?php elseif( get_row_layout() == 'articles_slider' ): ?> 
+            <?php elseif( get_row_layout() == 'cards_links' && get_sub_field('links') ): ?>
+                <?php get_template_part('template-parts/flex-content/card-links'); ?>
+            <?php elseif( get_row_layout() == 'client_logos_big' && get_sub_field('logos') ): ?>
+            <?php elseif( get_row_layout() == 'client_logos_small' && get_sub_field('logos') ): ?>
+            <?php elseif( get_row_layout() == 'team' && get_sub_field('people') ): ?>
+            <?php elseif( get_row_layout() == 'testimonials' && get_sub_field('testimonials') ): ?>
+            <?php elseif( get_row_layout() == 'copy_section_with_speech_bubble' ): ?>
+                <?php get_template_part('template-parts/flex-content/copy-speech-bubble'); ?>
+            <?php endif; ?>
+        <?php endwhile; ?>
     </div>
 <?php endif; ?>
 <?php /*
@@ -307,7 +307,7 @@ get_header(); ?>
 </section>
 
 */ ?>
-<?php if($gradient) echo '</div>'; ?>
+<?php // if($gradient) echo '</div>'; ?>
 
 
 
