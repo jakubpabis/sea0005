@@ -1200,6 +1200,11 @@ ul.lined li:first-child a {
 	border-top: 1px solid rgba(24, 49, 83, .5);
 }
 
+.owl-carousel.owl-center .owl-stage {
+	display: flex !important;
+	align-items: center !important;
+}
+
 /* --- bootstrap-menu styling http://bootstrap-menu.com  */
 
 body.offcanvas-active {
@@ -2273,6 +2278,14 @@ body.offcanvas-active {
 	margin-top: 0;
 }
 
+.flex_content-cta-bg.dog img,
+.flex_content-cta-bg.dog svg {
+	position: absolute;
+	right: -30%;
+	bottom: 10%;
+	width: 80%;
+}
+
 .flex_content-bubbles {
 	margin: 200px 0;
 }
@@ -2331,6 +2344,14 @@ body.offcanvas-active {
 	clip-path: polygon(0% 15px, 15px 0%, calc(100% - 15px) 0%, 100% 15px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0% calc(100% - 15px));
 }
 
+.card-notched {
+	padding: 30px;
+	background-color: white;
+	--notchSize: 20px;
+	-webkit-clip-path: polygon(var(--notchSize) 0%, 100% 0, 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, 0 100%, 0% var(--notchSize));
+	clip-path: polygon(var(--notchSize) 0%, 100% 0, 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, 0 100%, 0% var(--notchSize));
+}
+
 .card.grey {
 	background-color: #e3e0e5;
 }
@@ -2357,6 +2378,10 @@ body.offcanvas-active {
 
 .card.navy {
 	background-color: #183153;
+}
+
+.card.white {
+	background-color: white;
 }
 
 .card .title a:hover {

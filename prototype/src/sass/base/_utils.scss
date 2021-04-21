@@ -78,3 +78,8 @@ ul.lined {
     }
 
 }
+
+.owl-carousel.owl-center .owl-stage {
+    display: flex!important;
+    align-items: center!important;
+}

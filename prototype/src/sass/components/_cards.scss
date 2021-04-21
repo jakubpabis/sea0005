@@ -12,6 +12,13 @@
         padding: 30px;
     }
 
+    &-notched {
+        background-color: white;
+        padding: 30px;
+        --notchSize: 20px;
+        clip-path: polygon(var(--notchSize) 0%, 100% 0, 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize))  100%, 0 100%, 0% var(--notchSize));
+    }
+
     &.grey {
         background-color: $color-grey;
     }
@@ -38,6 +45,10 @@
 
     &.navy {
         background-color: $color-navy;
+    }
+
+    &.white {
+        background-color: white;
     }
 
     .title {

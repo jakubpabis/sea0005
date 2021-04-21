@@ -5,116 +5,47 @@
 
 get_header(); ?>
 
-
+<?php $gradient = false; ?>
 <?php if( have_rows('sections') ): ?>
     
     <?php while( have_rows('sections') ): the_row(); ?>
         <?php if( get_row_layout() == 'header' && get_sub_field('image') ): ?>
             <?php get_template_part('template-parts/flex-content/header'); ?>
-            <div class="body-bg-gradient pt-5 pb-5">
-        <?php elseif( get_row_layout() == 'copy_section' && get_sub_field('text') || get_sub_field('first_column') ): ?>
+            <?php if( !$gradient ): ?><div class="body-bg-gradient pt-5 pb-5"><?php endif; $gradient = true; ?>
+        <?php elseif( get_row_layout() == 'home_header' && get_sub_field('video') ): ?> 
+            <?php if( !$gradient ): ?><div class="body-bg-gradient pt-5 pb-5"><?php endif; $gradient = true; ?>
+            <?php get_template_part('template_parts/flex-content/header-video'); ?>
+        <?php elseif( get_row_layout() == 'copy_section' && (get_sub_field('text') || get_sub_field('first_column')) ): ?>
             <?php get_template_part('template-parts/flex-content/copy-section'); ?>
         <?php elseif( get_row_layout() == 'video_section' && get_sub_field('video') ): ?>
+            <?php get_template_part('template-parts/flex-content/video-section'); ?>
         <?php elseif( get_row_layout() == 'tags' && get_sub_field('first_row') ): ?>
             <?php get_template_part('template-parts/flex-content/tags'); ?>
         <?php elseif( get_row_layout() == 'google_reviews' && get_sub_field('image') ): ?>
             <?php get_template_part('template-parts/flex-content/greviews'); ?>
         <?php elseif( get_row_layout() == 'speech_bubbles_with_icons' && get_sub_field('bubbles') ): ?>
             <?php get_template_part('template-parts/flex-content/speech-bubbles'); ?>
-        <?php elseif( get_row_layout() == 'three_dogs_section' ): ?>
+        <?php elseif( get_row_layout() == 'job_categories_menus' ): ?>
+            <div class="container"><p>Categories menu will be here...</p></div>
+        <?php elseif( get_row_layout() == 'dogs_section' ): ?>
             <?php get_template_part('template-parts/flex-content/dogs-section'); ?>
         <?php elseif( get_row_layout() == 'call_to_action_section' && get_sub_field('image') ): ?>
             <?php get_template_part('template-parts/flex-content/cta-section'); ?>
         <?php elseif( get_row_layout() == 'articles_slider' ): ?> 
         <?php elseif( get_row_layout() == 'cards_links' && get_sub_field('links') ): ?>
+            <?php get_template_part('template-parts/flex-content/card-links'); ?>
         <?php elseif( get_row_layout() == 'client_logos_big' && get_sub_field('logos') ): ?>
         <?php elseif( get_row_layout() == 'client_logos_small' && get_sub_field('logos') ): ?>
         <?php elseif( get_row_layout() == 'team' && get_sub_field('people') ): ?>
         <?php elseif( get_row_layout() == 'testimonials' && get_sub_field('testimonials') ): ?>
+        <?php elseif( get_row_layout() == 'copy_section_with_speech_bubble' ): ?>
+            <?php get_template_part('template-parts/flex-content/copy-speech-bubble'); ?>
         <?php endif; ?>
     <?php endwhile; ?>
     </div>
 <?php endif; ?>
 <?php /*
-<header class="header__video bg-sea">
-    <div class="container-fluid px-0 justify-content-center d-flex">
-        <video muted autoplay preload="true" loop>
-            <source src="<?php echo get_template_directory_uri(); ?>/assets/video/home.mp4" type="video/mp4">
-            <source src="<?php echo get_template_directory_uri(); ?>/assets/video/home.webm" type="video/webm">
-            <source src="<?php echo get_template_directory_uri(); ?>/assets/video/home.ogg" type="video/ogg">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    <div class="container">
-        <div class="row position-absolute bottom-8vh justify-content-center w-100">
-            <div class="col-lg-7 px-0 text-center">
-                <span class="text-size-xxxxlarge d-block mb-0">
-                    Wij zijn de eerste die je belt
-                </span>
-                <span class="mt-0 text-size-large d-block text400 font-secondary">
-                    als je van plan bent om te groeien
-                </span>
-                <div class="card notched bg-white d-flex align-items-center mt-4 py-4 px-3 flex-row">
-                    <a href="" class="btn btn__default yellow mx-2 w-50">
-                        Ik zoek een baan
-                    </a>
-                    <a href="" class="btn btn__default navy mx-2 w-50">
-                        Ik zoek een professional
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
 
-
-
-
-<section class="flex_content">
-    <div class="container">
-        <div class="row justify-content-between align-items-end">
-            <div class="col-lg-9">
-                <h4 class="text-uppercase mb-0 text700">
-                    Jouw groei is ons instinct
-                </h4>
-                <span class="display-3 text700">
-                    Niet wat je zoekt maar<br/>
-                    <span class="bg-yellow px-3">
-                        wat je nodig hebt!
-                    </span>
-                </span>
-            </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col-lg-6 offset-lg-1">
-                <p class="h3">
-                    Search X Recruitment is gespecialiseerd in het bemiddelen van IT, Sales en Marketing professionals voor vaste vacatures en freelance opdrachten.
-                </p>
-                <p>
-                    Ons werk is meer dan alleen het zoeken naar een passende kandidaat of het voorstellen van een interessante vacature. Wij zoeken een antwoord op de vraag van onze klant. En om dat antwoord te vinden, moeten we eerst de vraag echt begrijpen. Hoe we dat doen? Door te luisteren. Naar onze klanten, onze kandidaten en naar de markt.
-                </p>
-                <a href="" class="btn btn__default navy">
-                    Wij zijn Search X.
-                </a>
-            </div>
-            <div class="col-lg-5 mt-4">
-                <div class="bg-white card d-block">
-                    <p class="h2 text700 m-0">
-                        Zo vinden wij jouw
-                    </p>
-                    <p>
-                        Speuren, graven, ontleden… Alles om de mens achter de kandidaat en de opdrachtgever te leren kennen. Wij zijn eigenwijs en hebben een gezond jachtinstinct. Wij bewaken en teckelen alles. 
-                        Opgeven is geen optie.
-                    </p>
-                    <a href="" class="btn btn__default yellow">
-                        Onze kernwaarden
-                    </a>
-                </div>
-                <div class="text-bubble text-bubble-left"></div>
-            </div>
-        </div>
-    </div>
-</section>
 
 
 
@@ -376,8 +307,8 @@ get_header(); ?>
 </section>
 
 */ ?>
+<?php if($gradient) echo '</div>'; ?>
 
-</div>
 
 
 

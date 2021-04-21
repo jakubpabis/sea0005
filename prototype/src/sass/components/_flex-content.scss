@@ -158,6 +158,18 @@
                 height: 100%!important;
             }
 
+            &.dog {
+
+                img,
+                svg {
+                    width: 80%;
+                    position: absolute;
+                    bottom: 10%;
+                    right: -30%;
+                }
+
+            }
+
         }
 
     }
