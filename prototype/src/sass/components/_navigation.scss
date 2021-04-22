@@ -359,6 +359,10 @@
                     background-color: $color-sea;
                     color: $color-primary;
 
+                    > .container {
+                        min-height: 100%;
+                    }
+
                     ul {
                         list-style: none;
                         padding: 0;
@@ -394,7 +398,7 @@
                         position: absolute;
                         right: 0;
                         top: 15px;
-                        width: 50%;
+                        width: 45%;
                         border-top: 1px solid $color-navy;
 
                         > li {

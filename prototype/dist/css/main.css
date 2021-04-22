@@ -1648,6 +1648,10 @@ body.offcanvas-active {
 	background-color: #94d4e9;
 }
 
+.navigation__lower-menu .mega-menu-container .mega-menu > .container {
+	min-height: 100%;
+}
+
 .navigation__lower-menu .mega-menu-container .mega-menu ul {
 	margin: 0;
 	padding: 0;
@@ -1680,7 +1684,7 @@ body.offcanvas-active {
 	top: 15px;
 	right: 0;
 	display: none;
-	width: 50%;
+	width: 45%;
 	border-top: 1px solid #183153;
 }
 

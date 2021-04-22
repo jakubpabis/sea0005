@@ -61,8 +61,8 @@
 											<li class="mega-menu-parent">
 												<a href="javascript:void(0)"><?php echo get_sub_field('submenu')[0]['link_title']; ?></a>
 												<section class="mega-menu-container">
-													<div class="mega-menu">
-														<div class="container">
+													<div class="mega-menu d-flex">
+														<div class="container d-flex flex-column justify-content-between">
 															<div class="row justify-content-center">
 																<div class="col-12">
 																	<hr>
@@ -109,6 +109,23 @@
 																	<?php endif; ?>
 																</div>
 															</div>
+															<?php if( get_sub_field('submenu')[0] ): $layout = get_sub_field('submenu')[0]['acf_fc_layout']; ?>
+																<?php if( $layout == 'standard_submenu' || $layout == 'text_submenu' ): ?>
+																	<?php if( get_sub_field('submenu')[0]['other_links'] ): ?>
+																		<div class="row justify-content-center pb-5">
+																			<div class="col-lg-10 mt-auto mb-0">
+																				<ul>
+																					<?php foreach( get_sub_field('submenu')[0]['other_links'] as $sub ): ?>
+																						<li>
+																							<a class="h3 text500 font-primary" href="<?php echo $sub['link']['url']; ?>"><?php echo $sub['link']['title']; ?></a>
+																						</li>
+																					<?php endforeach; ?>
+																				</ul>
+																			</div>
+																		</div>
+																	<?php endif; ?>
+																<?php endif; ?>
+															<?php endif; ?>
 														</div>
 													</div>
 												</section>
