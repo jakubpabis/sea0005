@@ -423,6 +423,40 @@
 
                     }
 
+                    &__lower-submenu {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+
+                        > li {
+                            border-bottom: 1px solid $color-navy;
+                            padding: 18px 0;
+                            width: calc(50% - 15px);
+                            position: relative;
+
+                            &:nth-child(1),
+                            &:nth-child(2) {
+                                border-top: 1px solid $color-navy;
+                            }
+
+                            > a {
+                                display: block;
+                                width: 100%;
+                                padding-right: 50px;
+                                margin: 0;
+
+                                svg {
+                                    position: absolute;
+                                    right: 0;
+                                    top: 29px;
+                                }
+
+                            }
+                             
+                        }
+
+                    }
+
                 }
 
             }
