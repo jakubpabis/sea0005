@@ -104,7 +104,42 @@
 																				</div>
 																			</div>
 																		<?php elseif( $layout == 'search_submenu' ): ?>
-
+																			<div class="row">
+																				<div class="col-12">
+																					<form action="" class="pb-3">
+																						<input class="mb-3" type="search" name="" id="" placeholder="<?php echo get_sub_field('submenu')[0]['search_placeholder_text']; ?>">
+																						<?php if( !empty(get_sub_field('submenu')[0]['hashtags']) ): ?>
+																							<div class="mega-menu__hashtags">
+																								<?php foreach( get_sub_field('submenu')[0]['hashtags'] as $item ): ?>
+																									<a href="<?php echo $item['hashtag']['url']; ?>" class="font-primary pr-2 pb-2 d-inline-block text-italic">
+																										<?php echo $item['hashtag']['title']; ?>
+																									</a>
+																								<?php endforeach; ?>
+																							</div>
+																						<?php endif; ?>
+																					</form>
+																					<?php if( get_sub_field('submenu')[0]['button'] ): ?>
+																						<a href="<?php echo get_sub_field('submenu')[0]['button']['url']; ?>" class="btn btn__default yellow">
+																							<?php echo get_sub_field('submenu')[0]['button']['title']; ?>
+																						</a>
+																					<?php endif; ?>
+																					<h2 class="text400 font-primary pt-5 mt-5 mb-4">
+																						<?php echo get_sub_field('submenu')[0]['other_links_title']; ?>
+																					</h2>
+																					<?php if(get_sub_field('submenu')[0]['other_links']): ?>
+																						<ul class="mega-menu__lower-submenu">
+																							<?php foreach(get_sub_field('submenu')[0]['other_links'] as $item): ?>
+																								<li>
+																									<a class="h3 font-primary text500" href="<?php echo $item['link']['url']; ?>">
+																										<?php echo $item['link']['url']; ?>
+																										<svg height="18" width="34" xmlns="http://www.w3.org/2000/svg"><path d="M25.885.278l7.844 8.051a.947.947 0 01.078.091l-.078-.09a.95.95 0 01.236.412l.006.023A.895.895 0 0134 9l-.006.11-.002.011a.974.974 0 01-.02.114c-.003.007-.004.014-.006.022a.91.91 0 01-.159.323l-.01.013-.068.078-7.844 8.051a.91.91 0 01-1.307 0 .966.966 0 010-1.342l6.265-6.432H.924C.414 9.949 0 9.525 0 9s.414-.949.924-.949h29.92L24.578 1.62a.966.966 0 010-1.342.908.908 0 011.307 0z" fill="#183153"/></svg>
+																									</a>
+																								</li>
+																							<?php endforeach; ?>
+																						</ul>
+																					<?php endif; ?>
+																				</div>
+																			</div>
 																		<?php elseif( $layout == 'text_submenu' ): ?>
 																			<?php echo get_sub_field('submenu')[0]['submenu_text']; ?>
 																			<?php if( get_sub_field('submenu')[0]['button'] ): ?>
