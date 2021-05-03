@@ -3910,6 +3910,18 @@ aside#chat .dog {
 	margin: 4px;
 }
 
+.articles-slider-cards .owl-stage-outer {
+	overflow: visible !important;
+}
+
+.articles-slider-cards .owl-stage {
+	display: flex !important;
+}
+
+.articles-slider-cards .owl-item {
+	min-height: 100%;
+}
+
 .dog.section {
 	margin-bottom: 100px;
 }

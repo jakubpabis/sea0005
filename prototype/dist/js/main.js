@@ -4554,38 +4554,60 @@ jQuery(window).on('load', function() {
 	// }
 
 	if( $('.owl-carousel').length > 0 ) {
-		var $owl = $('.owl-carousel');
-		$owl.owlCarousel({
-			loop: true,
-			margin: 50,
-			nav: false,
-			dots: false,
-			lazyLoad: true,
-			autoplay: true,
-			autoplayTimeout: 2500,
-			autoplayHoverPause: true,
-			responsive: {
-				0: {
-					items: 1
-				},
-				420: {
-					items: 2
-				},
-				767: {
-					items: 3
-				},
-				991: {
-					items: 6
+		if( $('.articles-slider-cards') ) {
+			var $owl = $('.articles-slider-cards');
+			$owl.owlCarousel({
+				loop: true,
+				margin: 30,
+				nav: false,
+				dots: false,
+				lazyLoad: true,
+				autoplay: true,
+				autoplayTimeout: 5000,
+				autoplayHoverPause: true,
+				responsive: {
+					0: {
+						items: 1
+					},
+					575: {
+						items: 2
+					},
 				}
-			}
-		});
+			});
+		} else {
+			var $owl = $('.owl-carousel');
+			$owl.owlCarousel({
+				loop: true,
+				margin: 50,
+				nav: false,
+				dots: false,
+				lazyLoad: true,
+				autoplay: true,
+				autoplayTimeout: 2500,
+				autoplayHoverPause: true,
+				responsive: {
+					0: {
+						items: 1
+					},
+					420: {
+						items: 2
+					},
+					767: {
+						items: 3
+					},
+					991: {
+						items: 6
+					}
+				}
+			});
 
-		$('.custom-owl-prev').click(function() {
-			$owl.trigger('prev.owl.carousel');
-		});
-		$('.custom-owl-next').click(function() {
-			$owl.trigger('next.owl.carousel');
-		});
+			$('.custom-owl-prev').click(function() {
+				$owl.trigger('prev.owl.carousel');
+			});
+			$('.custom-owl-next').click(function() {
+				$owl.trigger('next.owl.carousel');
+			});
+		}
 	}
 
 	// make it as accordion for smaller screens

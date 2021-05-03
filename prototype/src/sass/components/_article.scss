@@ -244,3 +244,23 @@
     }
 
 }
+
+.articles-slider {
+
+    &-cards {
+
+        .owl-stage-outer {
+            overflow: visible!important;
+        }
+
+        .owl-stage {
+            display: flex!important;
+        }
+
+        .owl-item {
+            min-height: 100%;
+        }
+    
+    }
+
+}

@@ -31,7 +31,8 @@ get_header(); ?>
                 <?php get_template_part('template-parts/flex-content/dogs-section'); ?>
             <?php elseif( get_row_layout() == 'call_to_action_section' && get_sub_field('image') ): ?>
                 <?php get_template_part('template-parts/flex-content/cta-section'); ?>
-            <?php elseif( get_row_layout() == 'articles_slider' ): ?> 
+            <?php elseif( get_row_layout() == 'articles' ): ?>
+                <?php get_template_part('template-parts/flex-content/articles'); ?>
             <?php elseif( get_row_layout() == 'cards_links' && get_sub_field('links') ): ?>
                 <?php get_template_part('template-parts/flex-content/card-links'); ?>
             <?php elseif( get_row_layout() == 'client_logos_big' && get_sub_field('logos') ): ?>
@@ -41,7 +42,7 @@ get_header(); ?>
             <?php elseif( get_row_layout() == 'team' && get_sub_field('people') ): ?>
                 <?php get_template_part('template-parts/flex-content/team'); ?>
             <?php elseif( get_row_layout() == 'testimonials' && get_sub_field('testimonials') ): ?>
-                
+                <?php get_template_part('template-parts/flex-content/testimonials'); ?>
             <?php elseif( get_row_layout() == 'copy_section_with_speech_bubble' ): ?>
                 <?php get_template_part('template-parts/flex-content/copy-speech-bubble'); ?>
             <?php endif; ?>
