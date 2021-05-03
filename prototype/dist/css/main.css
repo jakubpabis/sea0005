@@ -2557,6 +2557,12 @@ body.offcanvas-active {
 	margin-bottom: 30px;
 }
 
+.client-logos__small .card {
+	max-width: calc(20% - 20px);
+	margin: 10px;
+	flex-basis: calc(20% - 20px);
+}
+
 .testimonials__section-img,
 .testimonials__candidates-img,
 .testimonials__clients-img {
