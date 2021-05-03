@@ -1943,8 +1943,9 @@ body.offcanvas-active {
 
 .header__jobs-dog {
 	position: absolute;
-	top: 0;
-	left: -450px;
+	right: -450px;
+	bottom: -50px;
+	transform: rotateY(180deg);
 }
 
 .header__jobs-dog object,
@@ -6621,7 +6622,7 @@ p,
 }
 
 .header__jobs-dog {
-	left: -310px;
+	right: -310px;
 }
 
 .header__jobs-dog object,
@@ -6888,7 +6889,7 @@ h4,
 }
 
 .header__jobs-dog {
-	left: -270px;
+	right: -270px;
 }
 
 .header__jobs-search {

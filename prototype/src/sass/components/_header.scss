@@ -184,15 +184,16 @@
 
         &-dog {
             position: absolute;
-            left: -450px;
-            top: 0;
+            right: -450px;
+            bottom: -50px;
+            transform: rotateY(180deg);
 
             @media(max-width: 991px) {
-                left: -310px;
+                right: -310px;
             }
 
             @media(max-width: 767px) {
-                left: -270px;
+                right: -270px;
             }
 
             object,
