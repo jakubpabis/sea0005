@@ -21,10 +21,10 @@
             </div>
         <?php elseif( get_sub_field( 'image_position' ) === 'left' ): ?>
             <div class="row justify-content-between align-items-end">
-                <div class="col-lg-6">
+                <div class="col-lg-5">
                     <img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>" class="lazy img-fluid">
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-7">
                     <h4 class="text-uppercase mb-3 text700">
                         <?php echo get_sub_field('sub_title'); ?>
                     </h4>
@@ -35,7 +35,7 @@
             </div>
         <?php elseif( get_sub_field( 'image_position' ) === 'right' ): ?>
             <div class="row justify-content-between align-items-end">
-                <div class="col-lg-6">
+                <div class="col-lg-5">
                     <h4 class="text-uppercase mb-3 text700">
                         <?php echo get_sub_field('sub_title'); ?>
                     </h4>
@@ -43,7 +43,7 @@
                         <?php echo get_sub_field('title'); ?>
                     </span>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 text-right">
                     <img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>" class="lazy img-fluid">
                 </div>
             </div>
