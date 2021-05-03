@@ -1,4 +1,4 @@
-.jobs {
+.posts {
 
     &__list {
         margin-bottom: 100px;
@@ -7,7 +7,7 @@
             display: block;
 
             &-container {
-                margin-top: -120px;
+                margin-top: 50px;
             }
 
             .card {
@@ -264,7 +264,7 @@
                 flex-wrap: wrap;
                 margin: 0 -15px;
 
-                .jobs__list-item {
+                .posts__list-item {
                     flex-basis: calc(50% - 30px);
                     margin-left: 15px;
                     margin-right: 15px;
@@ -440,7 +440,7 @@
 
         }
 
-        .jobs-number {
+        .posts-number {
             margin-bottom: 30px;
         }
 

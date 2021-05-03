@@ -11,9 +11,9 @@ get_header();
 
 <form id="main-jobs-filter-form" action="" method="GET">
     
-    <header class="header__jobs bg-sea pb-5">
+    <header class="header__jobs bg-sea">
         <div class="container">
-            <div class="row">
+            <div class="row py-4">
                 <div class="col-lg-8">
                     <h4 class="text-uppercase mb-3 text700">
                         <?php pll_e('Vacatures'); ?>
@@ -29,6 +29,7 @@ get_header();
                 </div>
                 <div class="offset-md-4 col-md-8 col-11">
                     <input type="text" name="job-title" value="<?= isset($_GET['job-title']) ? $_GET['job-title'] : null ?>" placeholder="<?php pll_e('Enter job title here'); ?>">
+                    <i class="far fa-search color-pink"></i>
                 </div>
             </div>
         </div>
@@ -37,7 +38,7 @@ get_header();
     <section class="jobs__list">
         <div class="container">
             <div class="row justify-content-md-center justify-content-end">
-                <div class="col-lg-4 col-12 mt-n5">
+                <div class="col-lg-4 col-12 jobs__list-filters-container">
                     <?php get_template_part( 'template-parts/job-filters' ); ?>
                 </div>
                 <div class="col-12 d-lg-none d-block text-right jobs-number">
@@ -51,52 +52,52 @@ get_header();
                     </p>
                     <main class="jobs__list-items">
                         <?php if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); $helper = jobDisplayHelper(); ?>
-                        <article class="card bg-lgrey jobs__list-item">
-                            <div class="job-title">
-                                <?php if(strlen($helper['supCatName']) > 0) : ?>
-                                    <span class="icon" data-type="<?= $helper['supCatName']; ?>"></span>
-                                <?php endif; ?>
-                                <h3 class="title"><a href="<?= get_the_permalink(); ?>"><?= get_the_title(); ?></a></h3>
-                            </div>
-                            <div class="info">
-                                <?php if(get_field('location')): ?>
-                                <div class="info__item">
-                                    <i class="far fa-map-marker-alt"></i>
-                                    <span class="text-size-medium location"><?= get_field('location'); ?></span>
+                            <article class="card jobs__list-item">
+                                <div class="job-title">
+                                    <?php if(strlen($helper['supCatName']) > 0) : ?>
+                                        <span class="icon" data-type="<?= $helper['supCatName']; ?>"></span>
+                                    <?php endif; ?>
+                                    <h3 class="title m-0"><a href="<?= get_the_permalink(); ?>"><?= get_the_title(); ?></a></h3>
                                 </div>
-                                <?php endif; ?>
-                                <?php if($helper['type']): ?>
-                                <div class="info__item">
-                                    <i class="far fa-clock"></i>
-                                    <span class="text-size-medium type"><?= $helper['type']; ?></span>
+                                <div class="info">
+                                    <?php if(get_field('location')): ?>
+                                        <div class="info__item">
+                                            <i class="place"></i>
+                                            <span class="location"><?= get_field('location'); ?></span>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if($helper['type']): ?>
+                                        <div class="info__item">
+                                            <i class="clock"></i>
+                                            <span class="type"><?= $helper['type']; ?></span>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if(get_field('salary_min') || get_field('salary_max')): ?>
+                                        <div class="info__item">
+                                            <i class="coins"></i>
+                                            <span>
+                                                <number class="salarymin">
+                                                    € <?= number_format((int)get_field('salary_min'), 0, ".", "."); ?>,-
+                                                </number>
+                                                <?= get_field('salary_min') && get_field('salary_max') ? '&nbsp;-&nbsp;' : null ?>
+                                                <number class="salarymax">
+                                                    € <?= number_format((int)get_field('salary_max'), 0, ".", "."); ?>,-
+                                                </number>
+                                            </span>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if($helper['industry']): ?>
+                                        <div class="info__item">
+                                            <i class="briefcase"></i>
+                                            <span class="industry"><?= $helper['industry']; ?></span>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
-                                <?php endif; ?>
-                                <?php if(get_field('salary_min') || get_field('salary_max')): ?>
-                                <div class="info__item">
-                                    <i class="far fa-euro-sign"></i>
-                                    <span class="text-size-medium">
-                                        <number class="salarymin">
-                                            <?= number_format((int)get_field('salary_min'), 0, ".", "."); ?>
-                                        </number>
-                                        <?= get_field('salary_min') && get_field('salary_max') ? '&nbsp;-&nbsp;' : null ?>
-                                        <number class="salarymax">
-                                            <?= number_format((int)get_field('salary_max'), 0, ".", "."); ?>
-                                        </number>
-                                    </span>
-                                </div>
-                                <?php endif; ?>
-                                <?php if($helper['industry']): ?>
-                                <div class="info__item">
-                                    <i class="far fa-industry"></i>
-                                    <span class="text-size-medium industry"><?= $helper['industry']; ?></span>
-                                </div>
-                                <?php endif; ?>
-                            </div>
-                            <p class="text-size-small excerpt">
-                                <?= wp_specialchars_decode( get_the_excerpt() ); ?>
-                            </p>
-                            <a href="<?= get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e( 'More info' ); ?></a>
-                        </article>
+                                <p class="text-size-small excerpt">
+                                    <?= wp_specialchars_decode( get_the_excerpt() ); ?>
+                                </p>
+                                <a href="<?= get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e( 'More info' ); ?></a>
+                            </article>
                         <?php endwhile; endif; ?>
                         <nav class="pagination">
                             <?= $pagination; ?>

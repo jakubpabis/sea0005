@@ -127,7 +127,7 @@
     }
 
     &__jobs {
-        margin-top: 40px;
+        padding-bottom: calc( 120px - 62px );
 
         &-cats {
             display: flex;
@@ -185,7 +185,7 @@
         &-dog {
             position: absolute;
             right: -450px;
-            bottom: -50px;
+            bottom: calc( -120px + 62px );
             transform: rotateY(180deg);
 
             @media(max-width: 991px) {
@@ -219,11 +219,6 @@
         &-search {
             position: relative;
             margin-top: 50px;
-            margin-bottom: 10px;
-
-            @media(max-width: 767px) {
-                margin-bottom: 0;
-            }
 
             &.knowledge {
                 margin-top: 90px;
@@ -235,37 +230,6 @@
                         margin-bottom: 10px;
                     }
 
-                }
-
-            }
-
-            .triangle-left {
-                position: absolute;
-                top: 15px;
-                left: -3px;
-                width: 0; 
-                height: 0; 
-                border-top: 15px solid transparent;
-                border-bottom: 15px solid transparent; 
-                border-right: 20px solid $color-light-grey; 
-                content: '';
-
-                @media(max-width: 767px) {
-                    display: none;
-                }
-
-            }
-
-            .gradient {
-                height: 62px;
-                width: 62px;
-                background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $color-light-grey 70%);
-                position: absolute;
-                bottom: 0;
-                right: calc(62px + 15px);
-
-                @media(max-width: 767px) {
-                    bottom: 10px;
                 }
 
             }
@@ -282,21 +246,11 @@
                 vertical-align: middle;
                 border: none;
                 outline: 0!important;
-                @include notch(8px);
+                @include notch(4px);
 
                 @media(max-width: 767px) {
                     margin-top: 80px;
                     margin-bottom: 15px;
-                }
-
-                &.location {
-                    max-width: calc(100% - 47px);
-
-                    @media(max-width: 767px) {
-                        margin-top: 0;
-                        margin-bottom: 0;
-                    }
-
                 }
 
                 &::placeholder {
@@ -304,6 +258,129 @@
                     opacity: 1;
                     font-style: italic;
                 }
+
+                &+i {
+                    position: absolute;
+                    right: 32px;
+                    bottom: 20px;
+                    font-size: 24px;
+                    pointer-events: none;
+                }
+
+            }
+
+            .btn {
+                background-color: $color-tertiary;
+                color: white;
+                font-size: 26px;
+                padding: 18px 18px 17px;
+                margin-left: -20px;
+
+                &.knowledge {
+                    position: absolute;
+                    bottom: 0;
+                    right: 15px;
+
+                    @media(max-width: 767px) {
+                        bottom: 10px;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    &__posts {
+        padding-bottom: calc( 120px - 62px );
+
+        &-dog {
+            position: absolute;
+            right: -250px;
+            bottom: calc( -120px + 62px );
+            transform: rotateY(180deg);
+
+            @media(max-width: 991px) {
+                right: -310px;
+            }
+
+            @media(max-width: 767px) {
+                right: -270px;
+            }
+
+            object,
+            svg {
+                height: 280px;
+
+                @media(max-width: 991px) {
+                    height: 200px;
+                }
+
+            }
+
+            &-search {
+
+                @media(max-width: 575px) {
+                    margin-top: 70px;
+                }
+
+            }
+
+        }
+
+        &-search {
+            position: relative;
+            margin-top: 50px;
+
+            &.knowledge {
+                margin-top: 90px;
+
+                input {
+
+                    @media(max-width: 767px) {
+                        margin-top: 0;
+                        margin-bottom: 10px;
+                    }
+
+                }
+
+            }
+
+            input {
+                position: relative;
+                padding: 20px 30px 20px 20px;
+                font-size: 18px;
+                font-weight: 400;
+                color: $color-primary;
+                background-color: $color-light-grey;
+                width: 100%;
+                display: inline-block;
+                vertical-align: middle;
+                border: none;
+                outline: 0!important;
+                @include notch(4px);
+
+                @media(max-width: 767px) {
+                    margin-top: 80px;
+                    margin-bottom: 15px;
+                }
+
+                &::placeholder {
+                    color: $color-primary;
+                    opacity: 1;
+                    font-style: italic;
+                }
+
+                &+i {
+                    position: absolute;
+                    right: 32px;
+                    bottom: 20px;
+                    font-size: 24px;
+                    pointer-events: none;
+                }
+
             }
 
             .btn {
