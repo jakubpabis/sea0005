@@ -32,11 +32,11 @@
 
     &__item {
         background-color: white;
-        @include notch(15px);
+        @include notch(20px);
         margin-top: 60px;
+        overflow: hidden;
 
         &-img {
-            @include notch(15px);
             padding: 0;
             overflow: hidden;
             width: 100%;
@@ -57,12 +57,7 @@
             margin-bottom: 15px;
 
             a {
-                margin-left: 5px;
-
-                &:first-of-type {
-                    margin-left: 0;
-                }
-
+                margin-bottom: 5px;
             }
 
         }
@@ -107,6 +102,8 @@
 
                 .btn {
                     margin-right: 30px;
+                    color: white!important;
+                    text-decoration: none!important;
                 }
                 
             }

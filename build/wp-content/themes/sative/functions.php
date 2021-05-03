@@ -9,7 +9,7 @@
 
  if ( ! defined( '_S_VERSION' ) ) {
  	// Replace the version number of the theme on each release.
- 	define( '_S_VERSION', '3.1.8' );
+ 	define( '_S_VERSION', '3.2.0' );
 }
 
 if ( ! function_exists( 'sative_setup' ) ) :
@@ -576,7 +576,8 @@ $toTranslate = array(
     'Sorry, there was a problem with your message, please try again later...',
     'Contact form submitted successfully',
     'Contact form message from website',
-	'fulfilled-jobs'
+	'fulfilled-jobs',
+    'Plan een (video)call of meeting'
 );
 
 if( function_exists( 'pll_register_string' ) ) {

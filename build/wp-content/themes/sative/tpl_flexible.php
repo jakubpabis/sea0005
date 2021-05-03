@@ -39,7 +39,9 @@ get_header(); ?>
             <?php elseif( get_row_layout() == 'client_logos_small' && get_sub_field('logos') ): ?>
                 <?php get_template_part('template-parts/flex-content/client-logos-small'); ?>
             <?php elseif( get_row_layout() == 'team' && get_sub_field('people') ): ?>
+                <?php get_template_part('template-parts/flex-content/team'); ?>
             <?php elseif( get_row_layout() == 'testimonials' && get_sub_field('testimonials') ): ?>
+                
             <?php elseif( get_row_layout() == 'copy_section_with_speech_bubble' ): ?>
                 <?php get_template_part('template-parts/flex-content/copy-speech-bubble'); ?>
             <?php endif; ?>

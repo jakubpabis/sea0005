@@ -4070,10 +4070,11 @@ aside#chat .dog {
 }
 
 .team__item {
+	overflow: hidden;
 	margin-top: 60px;
 	background-color: white;
-	-webkit-clip-path: polygon(0% 15px, 15px 0%, calc(100% - 15px) 0%, 100% 15px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0% calc(100% - 15px));
-	clip-path: polygon(0% 15px, 15px 0%, calc(100% - 15px) 0%, 100% 15px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0% calc(100% - 15px));
+	-webkit-clip-path: polygon(0% 20px, 20px 0%, calc(100% - 20px) 0%, 100% 20px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 20px 100%, 0% calc(100% - 20px));
+	clip-path: polygon(0% 20px, 20px 0%, calc(100% - 20px) 0%, 100% 20px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 20px 100%, 0% calc(100% - 20px));
 }
 
 .team__item-img {
@@ -4083,8 +4084,6 @@ aside#chat .dog {
 	height: 100%;
 	padding: 0;
 	padding-bottom: 100%;
-	-webkit-clip-path: polygon(0% 15px, 15px 0%, calc(100% - 15px) 0%, 100% 15px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0% calc(100% - 15px));
-	clip-path: polygon(0% 15px, 15px 0%, calc(100% - 15px) 0%, 100% 15px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0% calc(100% - 15px));
 }
 
 .team__item-img img {
@@ -4099,11 +4098,7 @@ aside#chat .dog {
 }
 
 .team__item-social a {
-	margin-left: 5px;
-}
-
-.team__item-social a:first-of-type {
-	margin-left: 0;
+	margin-bottom: 5px;
 }
 
 .team__item-text,
@@ -4137,6 +4132,8 @@ aside#chat .dog {
 .team__item-text .btns .btn,
 .team__item-hidden .btns .btn {
 	margin-right: 30px;
+	text-decoration: none !important;
+	color: white !important;
 }
 
 .team__item-hidden {
