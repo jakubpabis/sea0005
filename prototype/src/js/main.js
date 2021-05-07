@@ -246,7 +246,11 @@ function bodyGradient()
 {
 	var $blue = '#94D4E9';
 	var $light = '#C0E5F2';
-	var $top = $('.flex_content-tags').offset().top - $('.body-bg-gradient').offset().top + ($('.flex_content-tags').height() / 2);
+	if( $('.flex_content-tags') ) {
+		var $top = $('.flex_content-tags').offset().top - $('.body-bg-gradient').offset().top + ($('.flex_content-tags').height() / 2);
+	} else {
+		var $top = $('.body-bg-gradient').height() / 2;
+	}
 	//var $bottom = $('.flex_content-tags').offset().bottom - $('.body-bg-gradient').offset().bottom;
 	var $height = $('.body-bg-gradient').height();
 	var $middle = $top * 100 / $height; 
