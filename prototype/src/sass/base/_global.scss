@@ -37,6 +37,12 @@ video {
 	max-width: 100%;
 	height: auto;
 	vertical-align: middle;
+
+	&.scaled-image {
+		border: none!important;
+		margin: auto;
+	}
+
 }
 
 object,

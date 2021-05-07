@@ -981,6 +981,17 @@ video {
 	vertical-align: middle;
 }
 
+img.scaled-image,
+object.scaled-image,
+svg.scaled-image,
+picture.scaled-image,
+embed.scaled-image,
+iframe.scaled-image,
+video.scaled-image {
+	margin: auto;
+	border: none !important;
+}
+
 object,
 svg {
 	pointer-events: none;
