@@ -1,7 +1,7 @@
 <header class="header__video bg-sea">
     <div class="container-fluid px-0 justify-content-center d-flex">
         <video muted autoplay preload="true" loop>
-            <source src="<?php echo get_sub_field('video')['url']; ?>" type="video/mp4">
+            <source src="<?php echo get_sub_field('video_file'); ?>" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
