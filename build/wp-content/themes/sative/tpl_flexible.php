@@ -11,9 +11,7 @@ get_header(); ?>
         <?php while( have_rows('sections') ): the_row(); ?>
             <?php if( get_row_layout() == 'header' && get_sub_field('image') ): ?>
                 <?php get_template_part('template-parts/flex-content/header'); ?>
-                <?php /* if( !$gradient ): ?><div class="body-bg-gradient pt-5 pb-5"><?php endif; $gradient = true; */ ?>
             <?php elseif( get_row_layout() == 'home_header' && get_sub_field('video') ): ?> 
-                <?php /* if( !$gradient ): ?><div class="body-bg-gradient pt-5 pb-5"><?php endif; $gradient = true; */ ?>
                 <?php get_template_part('template_parts/flex-content/header-video'); ?>
             <?php elseif( get_row_layout() == 'copy_section' && (get_sub_field('text') || get_sub_field('first_column')) ): ?>
                 <?php get_template_part('template-parts/flex-content/copy-section'); ?>
