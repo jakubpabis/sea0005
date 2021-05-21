@@ -207,9 +207,9 @@
 																	<?php if (get_sub_field('submenu')[0]['other_links']) : ?>
 																		<div class="row justify-content-center pb-5">
 																			<div class="col-lg-10 mt-auto mb-0">
-																				<ul>
+																				<ul class="d-flex align-items-end">
 																					<?php foreach (get_sub_field('submenu')[0]['other_links'] as $sub) : ?>
-																						<li>
+																						<li class="mr-5">
 																							<a class="h3 text500 font-primary" href="<?php echo $sub['link']['url']; ?>">
 																								<?php echo $sub['link']['title']; ?>
 																							</a>
