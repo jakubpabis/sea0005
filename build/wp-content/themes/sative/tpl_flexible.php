@@ -15,7 +15,7 @@ get_header(); ?>
 				<?php get_template_part('template-parts/flex-content/header'); ?>
 			<?php elseif (get_row_layout() == 'home_header' && get_sub_field('video_file')) : ?>
 				<?php get_template_part('template_parts/flex-content/header-video'); ?>
-			<?php elseif (get_row_layout() == 'copy_section' && (get_sub_field('text') || get_sub_field('first_column'))) : ?>
+			<?php elseif (get_row_layout() == 'copy_section' && (get_sub_field('title') || get_sub_field('text') || get_sub_field('first_column'))) : ?>
 				<?php get_template_part('template-parts/flex-content/copy-section'); ?>
 			<?php elseif (get_row_layout() == 'video_section' && get_sub_field('video')) : ?>
 				<?php get_template_part('template-parts/flex-content/video-section'); ?>
