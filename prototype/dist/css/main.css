@@ -2537,11 +2537,11 @@ body.offcanvas-active {
 .categories-menus-section ul li {
 	position: relative;
 	padding: 18px 0;
-	border-bottom: 1px solid #183153;
+	border-bottom: 1px solid white;
 }
 
 .categories-menus-section ul li:nth-child(1) {
-	border-top: 1px solid #183153;
+	border-top: 1px solid white;
 }
 
 .categories-menus-section ul li a {

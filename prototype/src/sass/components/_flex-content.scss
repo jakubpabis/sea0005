@@ -251,12 +251,12 @@
     list-style: none;
 
     li {
-      border-bottom: 1px solid $color-navy;
+      border-bottom: 1px solid white;
       padding: 18px 0;
       position: relative;
 
       &:nth-child(1) {
-        border-top: 1px solid $color-navy;
+        border-top: 1px solid white;
       }
 
       a {
