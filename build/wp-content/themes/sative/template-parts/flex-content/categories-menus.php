@@ -7,8 +7,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="container flex_content-video_section-dog left bg-navy w-100 h-100">
-		<div class="row color-white justify-content-around">
+	<div class="container categories-menus-section bg-navy w-100 h-100">
+		<div class="row color-white">
 			<div class="col-12 pb-5 pt-5">
 				<h2>
 					<?php echo get_sub_field('sub_title'); ?>
@@ -18,7 +18,7 @@
 				</span>
 			</div>
 			<?php if (!empty(get_sub_field('first_column'))) : $column = get_sub_field('first_column');  ?>
-				<div class="col-lg-4">
+				<div class="offset-lg-1 col-lg-4">
 					<?php if ($column['title']) : ?>
 						<h2 class="text700">
 							<?php echo $column['title']; ?>
@@ -41,7 +41,7 @@
 				</div>
 			<?php endif; ?>
 			<?php if (!empty(get_sub_field('second_column'))) : $column = get_sub_field('second_column'); ?>
-				<div class="col-lg-4">
+				<div class="offset-lg-1 col-lg-4">
 					<?php if ($column['title']) : ?>
 						<h2 class="text700">
 							<?php echo $column['title']; ?>
