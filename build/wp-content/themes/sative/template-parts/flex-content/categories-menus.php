@@ -20,7 +20,7 @@
 			<?php if (!empty(get_sub_field('first_column'))) : $column = get_sub_field('first_column');  ?>
 				<div class="offset-lg-1 col-lg-4">
 					<?php if ($column['title']) : ?>
-						<h2 class="text700">
+						<h2 class="text700 mb-4 pb-3">
 							<?php echo $column['title']; ?>
 						</h2>
 					<?php endif; ?>
@@ -43,7 +43,7 @@
 			<?php if (!empty(get_sub_field('second_column'))) : $column = get_sub_field('second_column'); ?>
 				<div class="offset-lg-1 col-lg-4">
 					<?php if ($column['title']) : ?>
-						<h2 class="text700">
+						<h2 class="text700 mb-4 pb-3">
 							<?php echo $column['title']; ?>
 						</h2>
 					<?php endif; ?>
