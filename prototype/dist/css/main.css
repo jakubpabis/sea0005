@@ -2528,6 +2528,35 @@ body.offcanvas-active {
 	clip-path: polygon(0 0%, 100% 0, 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, 0 100%, 0% var(--notchSize));
 }
 
+.categories-menus-section ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.categories-menus-section ul li {
+	position: relative;
+	padding: 18px 0;
+	border-bottom: 1px solid #183153;
+}
+
+.categories-menus-section ul li:nth-child(1) {
+	border-top: 1px solid #183153;
+}
+
+.categories-menus-section ul li a {
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding-right: 50px;
+}
+
+.categories-menus-section ul li a svg {
+	position: absolute;
+	top: 29px;
+	right: 0;
+}
+
 .card {
 	padding: 40px;
 	border: none;

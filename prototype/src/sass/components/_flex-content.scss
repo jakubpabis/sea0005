@@ -244,4 +244,33 @@
     0 100%,
     0% var(--notchSize)
   );
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      border-bottom: 1px solid $color-navy;
+      padding: 18px 0;
+      position: relative;
+
+      &:nth-child(1) {
+        border-top: 1px solid $color-navy;
+      }
+
+      a {
+        display: block;
+        width: 100%;
+        padding-right: 50px;
+        margin: 0;
+
+        svg {
+          position: absolute;
+          right: 0;
+          top: 29px;
+        }
+      }
+    }
+  }
 }
