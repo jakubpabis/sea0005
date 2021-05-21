@@ -237,7 +237,7 @@
 .categories-menus-section {
   --notchSize: 164px;
   clip-path: polygon(
-    var(--notchSize) 0%,
+    0 0%,
     100% 0,
     100% calc(100% - var(--notchSize)),
     calc(100% - var(--notchSize)) 100%,

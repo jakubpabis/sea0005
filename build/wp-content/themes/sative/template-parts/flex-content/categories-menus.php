@@ -8,7 +8,7 @@
 		</div>
 	</div>
 	<div class="container categories-menus-section bg-navy w-100 h-100">
-		<div class="row color-white">
+		<div class="row color-white pb-5">
 			<div class="col-12 pb-5 pt-5">
 				<h2>
 					<?php echo get_sub_field('sub_title'); ?>

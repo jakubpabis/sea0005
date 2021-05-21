@@ -2524,8 +2524,8 @@ body.offcanvas-active {
 
 .categories-menus-section {
 	--notchSize: 164px;
-	-webkit-clip-path: polygon(var(--notchSize) 0%, 100% 0, 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, 0 100%, 0% var(--notchSize));
-	clip-path: polygon(var(--notchSize) 0%, 100% 0, 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, 0 100%, 0% var(--notchSize));
+	-webkit-clip-path: polygon(0 0%, 100% 0, 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, 0 100%, 0% var(--notchSize));
+	clip-path: polygon(0 0%, 100% 0, 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, 0 100%, 0% var(--notchSize));
 }
 
 .card {
