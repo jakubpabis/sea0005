@@ -24,7 +24,7 @@
 							<?php echo $column['title']; ?>
 						</h2>
 					<?php endif; ?>
-					<?php if (!empty($column['links'])) : ?>
+					<?php if (!empty($column['links'])) : var_dump($column['links']); ?>
 						<ul>
 							<?php foreach ($column['links']['link'] as $link) : ?>
 								<li>
