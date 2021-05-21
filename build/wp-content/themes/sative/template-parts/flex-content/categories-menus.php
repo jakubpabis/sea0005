@@ -7,7 +7,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container flex_content-video_section-dog left bg-navy w-100 h-100">
 		<div class="row color-white justify-content-around">
 			<div class="col-12 pb-5 pt-5">
 				<h2>
