@@ -26,9 +26,7 @@ get_header(); ?>
 			<?php elseif (get_row_layout() == 'speech_bubbles_with_icons' && get_sub_field('bubbles')) : ?>
 				<?php get_template_part('template-parts/flex-content/speech-bubbles'); ?>
 			<?php elseif (get_row_layout() == 'job_categories_menus') : ?>
-				<div class="container">
-					<p>Categories menu will be here...</p>
-				</div>
+				<?php get_template_part('template-parts/flex-content/categories-menus'); ?>
 			<?php elseif (get_row_layout() == 'dogs_section') : ?>
 				<?php get_template_part('template-parts/flex-content/dogs-section'); ?>
 			<?php elseif (get_row_layout() == 'call_to_action_section' && get_sub_field('image')) : ?>
