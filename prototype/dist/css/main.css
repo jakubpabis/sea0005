@@ -1700,6 +1700,7 @@ body.offcanvas-active {
 }
 
 .navigation__lower-menu .mega-menu-container .mega-menu__side-submenu > li {
+	position: relative;
 	padding: 18px 0;
 	border-bottom: 1px solid #183153;
 }
@@ -1721,6 +1722,7 @@ body.offcanvas-active {
 	display: flex;
 	width: 100%;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .navigation__lower-menu .mega-menu-container .mega-menu__lower-submenu > li {
