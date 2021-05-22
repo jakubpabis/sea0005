@@ -11,7 +11,7 @@
 			</div>
 		</div>
 		<div class="row mt-3">
-			<div class="col-lg-6 offset-lg-1">
+			<div class="col-lg-6 offset-lg-1 mt-4">
 				<?php echo get_sub_field('text'); ?>
 				<?php if (get_sub_field('button')) : ?>
 					<a href="<?php echo get_sub_field('button')['url']; ?>" class="btn btn__default navy">
