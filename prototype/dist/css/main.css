@@ -2557,6 +2557,40 @@ body.offcanvas-active {
 	right: 0;
 }
 
+.job-search-categories .flex_content-cta-bg {
+	height: 100% !important;
+	margin: 0;
+}
+
+.job-search-categories ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.job-search-categories ul li {
+	position: relative;
+	padding: 18px 0;
+	border-bottom: 1px solid #183153;
+}
+
+.job-search-categories ul li:nth-child(1) {
+	border-top: 1px solid #183153;
+}
+
+.job-search-categories ul li a {
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding-right: 50px;
+}
+
+.job-search-categories ul li a svg {
+	position: absolute;
+	top: 29px;
+	right: 0;
+}
+
 .card {
 	padding: 40px;
 	border: none;
