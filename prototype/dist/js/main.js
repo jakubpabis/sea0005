@@ -4561,8 +4561,8 @@ jQuery(window).on('load', function() {
 	// }
 
 	if( $('.owl-carousel').length > 0 ) {
-		if( $('.articles-slider-cards') ) {
-			var $owl = $('.articles-slider-cards');
+		if( $('.owl-carousel.articles-slider-cards') ) {
+			var $owl = $('.owl-carousel.articles-slider-cards');
 			$owl.owlCarousel({
 				loop: true,
 				margin: 30,

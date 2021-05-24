@@ -1,266 +1,282 @@
 .article {
-    margin-top: 40px;
-    margin-bottom: 70px;
+  margin-top: 40px;
+  margin-bottom: 70px;
 
-    @media(max-width: 991px) {
-        margin-top: 30px;
-        margin-bottom: 60px;
+  @media (max-width: 991px) {
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+
+  @media (max-width: 767px) {
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+
+  article {
+    padding-right: 45px;
+
+    @media (max-width: 991px) {
+      padding-right: 15px;
     }
 
-    @media(max-width: 767px) {
-        margin-top: 20px;
-        margin-bottom: 50px;
+    h1 {
+      margin-bottom: 40px;
     }
 
-    article {
-        padding-right: 45px;
+    h2 {
+      margin-top: 50px;
+      margin-bottom: 20px;
+    }
 
-        @media(max-width: 991px) {
-            padding-right: 15px;
+    h3 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    h4 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      font-family: $font-secondary;
+      font-size: 17px;
+      font-weight: 300;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+
+      li {
+        line-height: 1.44;
+      }
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.75;
+
+      img {
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+    }
+
+    a {
+      color: $color-pink;
+      font-weight: 400;
+    }
+
+    .btn {
+      margin-top: 30px;
+    }
+  }
+
+  aside {
+    @media (max-width: 1199px) {
+      padding-left: 0 !important;
+    }
+
+    @media (max-width: 991px) {
+      margin-top: 70px;
+      padding-left: 15px !important;
+    }
+
+    #backBTN {
+      // margin-left: 100%;
+      // transform: translateX(-100%);
+      // margin-top: 10px;
+      // margin-bottom: 30px;
+    }
+
+    .card {
+      padding: 35px;
+
+      @media (max-width: 1199px) {
+        padding: 25px 5px 25px 20px;
+      }
+    }
+
+    .share {
+      margin-top: 50px;
+
+      h5 {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 20px;
+
+        @media (max-width: 1199px) {
+          margin-bottom: 10px;
         }
+      }
 
-        h1 {
-            margin-bottom: 40px;
-        }
-
-        h2 {
-            margin-top: 50px;
-            margin-bottom: 20px;
-        }
-
-        h3 {
-            margin-top: 40px;
-            margin-bottom: 20px;
-        }
-
-        h4 {
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        ul {
-            font-family: $font-secondary;
-            font-size: 17px;
-            font-weight: 300;
-            margin-top: 0.5em;
-            margin-bottom: 0.5em;
-
-            li {
-                line-height: 1.44;
-                
-            }
-
-        }
-
-        p {
-            font-size: 17px;
-            line-height: 1.75;
-
-            img {
-                margin-top: 15px;
-                margin-bottom: 15px;
-            }
-
-        }
-
-        a {
-            color: $color-pink;
-            font-weight: 400;
-        }
+      .btns {
+        margin: 0 -4px;
+        width: auto;
 
         .btn {
-            margin-top: 30px;
+          margin: 4px;
         }
-
+      }
     }
-
-    aside {
-
-        @media(max-width: 1199px) {
-            padding-left: 0!important;
-        }
-
-        @media(max-width: 991px) {
-            margin-top: 70px;
-            padding-left: 15px!important;
-        }
-
-        #backBTN {
-            // margin-left: 100%;
-            // transform: translateX(-100%);
-            // margin-top: 10px;
-            // margin-bottom: 30px;
-        }
-
-        .card {
-            padding: 35px;
-
-            @media(max-width: 1199px) {
-                padding: 25px 5px 25px 20px;
-            }
-
-        }
-
-        .share {
-            margin-top: 50px;
-
-            h5 {
-                font-size: 18px;
-                font-weight: 500;
-                margin-bottom: 20px;
-
-                @media(max-width: 1199px) {
-                    margin-bottom: 10px;
-                }
-
-            }
-
-            .btns {
-                margin: 0 -4px;
-                width: auto;
-
-                .btn {
-                    margin: 4px;
-                }
-
-            }
-
-        }
-
-    }
-
+  }
 }
 
 .filtered-articles {
-    margin-top: 50px;
-    margin-bottom: 70px;
+  margin-top: 50px;
+  margin-bottom: 70px;
 
-    article {
-        padding-right: 45px;
-        margin-bottom: 80px;
+  article {
+    padding-right: 45px;
+    margin-bottom: 80px;
 
-        h1 {
-            margin-bottom: 40px;
-        }
+    h1 {
+      margin-bottom: 40px;
+    }
 
-        h2 {
-            margin-bottom: 30px;
-        }
+    h2 {
+      margin-bottom: 30px;
+    }
 
-        h2 {
-            margin-top: 50px;
-            margin-bottom: 20px;
-        }
+    h2 {
+      margin-top: 50px;
+      margin-bottom: 20px;
+    }
 
-        h3 {
-            margin-top: 40px;
-            margin-bottom: 20px;
-        }
+    h3 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
 
-        ul {
-            font-family: $font-secondary;
-            font-size: 17px;
-            font-weight: 300;
-            list-style-image: url('../img/cubecrossUL.svg');
+    ul {
+      font-family: $font-secondary;
+      font-size: 17px;
+      font-weight: 300;
+      list-style-image: url("../img/cubecrossUL.svg");
 
-            li {
-                line-height: 1.44;                
-            }
+      li {
+        line-height: 1.44;
+      }
+    }
 
-        }
+    p {
+      font-size: 17px;
+      line-height: 1.75;
 
-        p {
-            font-size: 17px;
-            line-height: 1.75;
+      img {
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+    }
 
-            img {
-                margin-top: 15px;
-                margin-bottom: 15px;
-            }
+    a {
+      &:hover {
+        color: inherit;
+      }
+    }
 
-        }
+    .btn {
+      margin-top: 10px;
+    }
+  }
 
-        a {
+  aside {
+    .card {
+      padding: 35px;
 
+      ul {
+        margin: 10px 0 0 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+          a {
             &:hover {
-                color: inherit;
+              color: inherit;
             }
-
+          }
         }
+      }
+    }
+
+    .share {
+      margin-top: 50px;
+
+      h5 {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+
+      .btns {
+        margin: 0 -4px;
+        width: auto;
 
         .btn {
-            margin-top: 10px;
+          margin: 4px;
         }
-
+      }
     }
-
-    aside {
-
-        .card {
-            padding: 35px;
-
-            ul {
-                margin: 10px 0 0 0;
-                padding: 0;
-                list-style: none;
-
-                li {
-
-                    a {
-
-                        &:hover {
-                            color: inherit;
-                        }
-
-                    }
-
-                }
-
-            }
-
-        }
-
-        .share {
-            margin-top: 50px;
-
-            h5 {
-                font-size: 18px;
-                font-weight: 500;
-                margin-bottom: 20px;
-            }
-
-            .btns {
-                margin: 0 -4px;
-                width: auto;
-
-                .btn {
-                    margin: 4px;
-                }
-
-            }
-
-        }
-
-    }
-
+  }
 }
 
 .articles-slider {
-
-    &-cards {
-
-        .owl-stage-outer {
-            overflow: visible!important;
+  &-cards {
+    .owl-item {
+      .triangle {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        display: block;
+        position: absolute;
+        bottom: -38px;
+        z-index: 9;
+        border-width: 0 40px 40px 0;
+        border-color: transparent white transparent transparent;
+        right: 40px;
+      }
+      &:nth-child(2n - 1) {
+        .triangle {
+          border-width: 40px 40px 0 0;
+          border-color: white transparent transparent transparent;
+          left: 40px;
+          right: auto;
         }
-
-        .owl-stage {
-            display: flex!important;
-        }
-
-        .owl-item {
-            min-height: 100%;
-        }
-    
+      }
     }
 
+    &.testimonials {
+      .owl-item {
+        &:nth-child(2n - 1) {
+          span.display-1 {
+            color: $color-yellow;
+          }
+
+          .triangle {
+            border-width: 0 40px 40px 0;
+        		border-color: transparent white transparent transparent;
+            left: auto;
+            right: 40px;
+          }
+        }
+
+        &:nth-child(2n) {
+          span.display-1 {
+            color: $color-pink;
+          }
+        }
+      }
+    }
+
+    .owl-stage-outer {
+      overflow: visible !important;
+    }
+
+    .owl-stage {
+      display: flex !important;
+    }
+
+    .owl-item {
+      min-height: 100%;
+    }
+  }
 }

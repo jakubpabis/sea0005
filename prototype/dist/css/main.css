@@ -4753,6 +4753,42 @@ aside#chat .dog {
 	margin: 4px;
 }
 
+.articles-slider-cards .owl-item .triangle {
+	position: absolute;
+	z-index: 9;
+	right: 40px;
+	bottom: -38px;
+	display: block;
+	width: 0;
+	height: 0;
+	content: '';
+	border-width: 0 40px 40px 0;
+	border-style: solid;
+	border-color: transparent white transparent transparent;
+}
+
+.articles-slider-cards .owl-item:nth-child(2n - 1) .triangle {
+	right: auto;
+	left: 40px;
+	border-width: 40px 40px 0 0;
+	border-color: white transparent transparent transparent;
+}
+
+.articles-slider-cards.testimonials .owl-item:nth-child(2n - 1) span.display-1 {
+	color: #fdd963;
+}
+
+.articles-slider-cards.testimonials .owl-item:nth-child(2n - 1) .triangle {
+	right: 40px;
+	left: auto;
+	border-width: 0 40px 40px 0;
+	border-color: transparent white transparent transparent;
+}
+
+.articles-slider-cards.testimonials .owl-item:nth-child(2n) span.display-1 {
+	color: #ec6278;
+}
+
 .articles-slider-cards .owl-stage-outer {
 	overflow: visible !important;
 }

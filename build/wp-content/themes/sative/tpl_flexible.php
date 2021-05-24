@@ -45,6 +45,8 @@ get_header(); ?>
 				<?php get_template_part('template-parts/flex-content/testimonials'); ?>
 			<?php elseif (get_row_layout() == 'copy_section_with_speech_bubble') : ?>
 				<?php get_template_part('template-parts/flex-content/copy-speech-bubble'); ?>
+			<?php elseif ( get_row_layout() == 'job_search_and_categories' ) : ?>
+				<?php get_template_part('template-parts/flex-content/job-search-categories'); ?>
 			<?php endif; ?>
 		<?php endwhile; ?>
 	</div>
