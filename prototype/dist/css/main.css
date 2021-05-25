@@ -7296,6 +7296,20 @@ fieldset[disabled] .datepicker table tr td span.active:hover:hover {
 
 }
 
+@media (max-width: 1440px) {
+
+h1,
+.h1,
+.text-size-xxxlarge {
+	font-size: 64px;
+}
+
+.display-3 {
+	font-size: 64px !important;
+}
+
+}
+
 @media (max-width: 1199px) {
 
 .text-size-xxxxlarge {
@@ -7305,13 +7319,17 @@ fieldset[disabled] .datepicker table tr td span.active:hover:hover {
 h1,
 .h1,
 .text-size-xxxlarge {
-	font-size: 40px;
+	font-size: 60px;
+}
+
+.display-3 {
+	font-size: 60px !important;
 }
 
 h2,
 .h2,
 .text-size-xxlarge {
-	font-size: 33px;
+	font-size: 34px;
 }
 
 h3,
@@ -7464,13 +7482,17 @@ h3,
 h1,
 .h1,
 .text-size-xxxlarge {
-	font-size: 38px;
+	font-size: 50px;
+}
+
+.display-3 {
+	font-size: 50px !important;
 }
 
 h2,
 .h2,
 .text-size-xxlarge {
-	font-size: 29px;
+	font-size: 33px;
 }
 
 h3,
@@ -7844,13 +7866,17 @@ p,
 h1,
 .h1,
 .text-size-xxxlarge {
-	font-size: 36px;
+	font-size: 45px;
+}
+
+.display-3 {
+	font-size: 45px !important;
 }
 
 h2,
 .h2,
 .text-size-xxlarge {
-	font-size: 27px;
+	font-size: 32px;
 }
 
 h3,
@@ -8191,19 +8217,17 @@ h4,
 h1,
 .h1,
 .text-size-xxxlarge {
-	font-size: 34px;
+	font-size: 40px;
+}
+
+.display-3 {
+	font-size: 40px !important;
 }
 
 h2,
 .h2,
 .text-size-xxlarge {
-	font-size: 26px;
-}
-
-h3,
-.h3,
-.text-size-xlarge {
-	font-size: 22px;
+	font-size: 30px;
 }
 
 p,
