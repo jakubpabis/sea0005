@@ -160,19 +160,27 @@ p,
 	margin: 1em auto;
 	font-family: $font-secondary;
 
-	@media(max-width: 991px) {
+	@media(max-width: 1199px) {
 		font-size: 17px;
 	}
 
-	@media(max-width: 575px) {
+	@media(max-width: 991px) {
 		font-size: 16px;
+	}
+
+	@media(max-width: 767px) {
+		font-size: 15px;
+	}
+
+	@media(max-width: 575px) {
+		font-size: 14px;
 	}
 
 }
 
 .text-size-small,
 .text-size-small * {
-	font-size: 15px;
+	font-size: 14px;
 	line-height: 1.66;
 }
 

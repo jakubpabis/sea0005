@@ -653,7 +653,7 @@ p,
 
 .text-size-small,
 .text-size-small * {
-	font-size: 15px;
+	font-size: 14px;
 	line-height: 1.66;
 }
 
@@ -7338,6 +7338,12 @@ h3,
 	font-size: 24px;
 }
 
+p,
+.p,
+.text-size-normal {
+	font-size: 17px;
+}
+
 .navigation__lower-menu > li > a {
 	padding: 12px;
 }
@@ -7504,7 +7510,7 @@ h3,
 p,
 .p,
 .text-size-normal {
-	font-size: 17px;
+	font-size: 16px;
 }
 
 #wrapper {
@@ -7892,6 +7898,12 @@ h4,
 	line-height: 1.25;
 }
 
+p,
+.p,
+.text-size-normal {
+	font-size: 15px;
+}
+
 .navigation__lower-logo svg {
 	width: 151px;
 	height: 30px;
@@ -8233,7 +8245,7 @@ h2,
 p,
 .p,
 .text-size-normal {
-	font-size: 16px;
+	font-size: 14px;
 }
 
 #wrapper {
