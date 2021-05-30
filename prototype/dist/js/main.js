@@ -4709,7 +4709,7 @@ jQuery(window).on("load", function () {
       lazyLoad: true,
       autoplay: true,
       autoplayTimeout: 5000,
-      autoplayHoverPause: true,
+      autoplayHoverPause: false,
       responsive: {
         0: {
           items: 1,
