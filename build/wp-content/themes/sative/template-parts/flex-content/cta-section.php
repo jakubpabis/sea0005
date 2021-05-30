@@ -29,7 +29,7 @@
 <section class="flex_content-bubbles">
 	<div class="container">
 		<div class="row align-items-end">
-			<div class="col-lg-auto">
+			<div class="col-lg-6">
 				<span class="d-block display-3 text700">
 					<?php echo get_sub_field('contact_title'); ?>
 				</span>
