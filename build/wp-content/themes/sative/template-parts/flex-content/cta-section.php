@@ -34,7 +34,7 @@
 					<?php echo get_sub_field('contact_title'); ?>
 				</span>
 			</div>
-			<div class="offset-lg-1 col-lg-5">
+			<div class="col-lg-5">
 				<h2 class="m-0">
 					<?php echo get_sub_field('contact_sub_title'); ?>
 					<svg class="position-absolute ml-4 mt-3" width="118" height="445" xmlns="http://www.w3.org/2000/svg">
