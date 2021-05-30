@@ -9,7 +9,7 @@
 								”
 							</span>
 							<p class="mb-4 pb-2">
-								<?php echo get_the_content(null, false, $item->ID); ?>
+								<?php echo wp_trim_words( get_the_content(null, false, $item->ID), 40, '...' ); ?>
 							</p>
 							<span class="d-block text700">
 								<?php echo get_the_title($item->ID); ?>
