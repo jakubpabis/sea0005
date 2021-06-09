@@ -246,16 +246,25 @@
 
     &.testimonials {
       .owl-item {
+
+				.testimonials-card-logo {
+					margin-top: 100px;
+				}
+
+				.triangle {
+					bottom: 62px;
+				}
+
         &:nth-child(2n - 1) {
           span.display-1 {
             color: $color-yellow;
           }
 
           .triangle {
-            border-width: 0 40px 40px 0;
-        		border-color: transparent white transparent transparent;
-            left: auto;
-            right: 40px;
+            border-width: 40px 40px 0 0;
+            border-color: white transparent transparent transparent;
+            left: 40px;
+            right: auto;
           }
         }
 
