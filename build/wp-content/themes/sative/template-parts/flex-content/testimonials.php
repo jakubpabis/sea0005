@@ -17,7 +17,7 @@
 						</div>
 					</div>
 					<div class="triangle"></div>
-					<img class="w-25 testimonials-card-logo" src="<?php echo get_the_post_thumbnail_url($item->ID, 'medium'); ?>" alt="<?php echo esc_html(get_post_meta($item->ID, '_wp_attachment_image_alt', true)); ?>">
+					<?php /* <img class="w-25 testimonials-card-logo" src="<?php echo get_the_post_thumbnail_url($item->ID, 'medium'); ?>" alt="<?php echo esc_html(get_post_meta($item->ID, '_wp_attachment_image_alt', true)); ?>"> */ ?>
 				</div>
 			<?php endforeach; ?>
 		</div>

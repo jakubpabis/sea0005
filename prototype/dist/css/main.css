@@ -4808,14 +4808,6 @@ aside#chat .dog {
 	border-color: white transparent transparent transparent;
 }
 
-.articles-slider-cards.testimonials .owl-item .testimonials-card-logo {
-	margin-top: 100px;
-}
-
-.articles-slider-cards.testimonials .owl-item .triangle {
-	bottom: 62px;
-}
-
 .articles-slider-cards.testimonials .owl-item:nth-child(2n - 1) span.display-1 {
 	color: #fdd963;
 }
