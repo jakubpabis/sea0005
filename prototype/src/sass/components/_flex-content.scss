@@ -276,11 +276,10 @@
 }
 
 .job-search-categories {
-
-	.flex_content-cta-bg {
-		height: 100%!important;
-		margin: 0;
-	}
+  .flex_content-cta-bg {
+    height: 100% !important;
+    margin: 0;
+  }
 
   ul {
     padding: 0;
@@ -309,5 +308,28 @@
         }
       }
     }
+  }
+}
+
+.job-search-nice {
+  width: 100%;
+  font-size: 18px;
+  color: $color-navy;
+  padding: 15px 50px 15px 15px;
+  line-height: 1;
+  appearance: none;
+  border: none;
+  outline: 0;
+  box-shadow: none;
+  background-image: url("../img/search.svg");
+  background-position: calc(100% - 15px) 50%;
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+
+  &::placeholder {
+    font-size: 18px;
+    color: $color-navy;
+    opacity: 1;
+    font-style: italic;
   }
 }

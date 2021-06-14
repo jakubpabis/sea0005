@@ -135,11 +135,11 @@
 																			<div class="row">
 																				<div class="col-12">
 																					<form action="" class="pb-3">
-																						<input class="mb-3" type="search" name="" id="" placeholder="<?php echo get_sub_field('submenu')[0]['search_placeholder_text']; ?>">
+																						<input class="mb-3 job-search-nice" type="search" name="" id="" placeholder="<?php echo get_sub_field('submenu')[0]['search_placeholder_text']; ?>">
 																						<?php if (!empty(get_sub_field('submenu')[0]['hashtags'])) : ?>
 																							<div class="mega-menu__hashtags">
 																								<?php foreach (get_sub_field('submenu')[0]['hashtags'] as $item) : ?>
-																									<a href="<?php echo $item['hashtag']['url']; ?>" class="font-primary pr-2 pb-2 d-inline-block text-italic">
+																									<a href="<?php echo $item['hashtag']['url']; ?>" class="font-primary pr-2 pb-2 d-inline-block text-italic text500">
 																										<?php echo $item['hashtag']['title']; ?>
 																									</a>
 																								<?php endforeach; ?>

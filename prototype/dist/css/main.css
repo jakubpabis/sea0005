@@ -2591,6 +2591,45 @@ body.offcanvas-active {
 	right: 0;
 }
 
+.job-search-nice {
+	font-size: 18px;
+	line-height: 1;
+	width: 100%;
+	padding: 15px 50px 15px 15px;
+	color: #183153;
+	border: none;
+	outline: 0;
+	background-image: url('../img/search.svg');
+	background-repeat: no-repeat;
+	background-position: calc(100% - 15px) 50%;
+	background-size: 30px 30px;
+	box-shadow: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.job-search-nice::-moz-placeholder {
+	font-size: 18px;
+	font-style: italic;
+	opacity: 1;
+	color: #183153;
+}
+
+.job-search-nice:-ms-input-placeholder {
+	font-size: 18px;
+	font-style: italic;
+	opacity: 1;
+	color: #183153;
+}
+
+.job-search-nice::placeholder {
+	font-size: 18px;
+	font-style: italic;
+	opacity: 1;
+	color: #183153;
+}
+
 .card {
 	padding: 40px;
 	border: none;

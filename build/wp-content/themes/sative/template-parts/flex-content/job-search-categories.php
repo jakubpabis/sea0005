@@ -16,7 +16,7 @@
 					<?php echo get_sub_field('title'); ?>
 				</span>
 				<form action="" class="pb-3">
-					<input class="mb-3" type="search" name="" id="" placeholder="Waar ben jij naar op zoek?">
+					<input class="mb-3 job-search-nice" type="search" name="job-search" placeholder="Waar ben jij naar op zoek?">
 					<?php if (!empty(get_sub_field('tags'))) : ?>
 						<div class="mega-menu__hashtags">
 							<?php foreach (get_sub_field('tags') as $item) : ?>
