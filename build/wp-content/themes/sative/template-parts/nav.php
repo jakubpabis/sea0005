@@ -91,7 +91,7 @@
 																<div class="col-12">
 																	<hr>
 																</div>
-																<div class="col-lg-10 pt-4">
+																<div class="col-lg-10 pt-4 pb-5">
 																	<h2 class="text400 font-primary">
 																		<?php echo get_sub_field('submenu')[0]['big_title']; ?>
 																	</h2>

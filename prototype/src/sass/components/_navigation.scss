@@ -313,7 +313,8 @@
 
       .mega-menu-container {
         display: none;
-        height: 100vh;
+        height: calc(100vh - 100px);
+        overflow: hidden;
         width: 100%;
         left: 0;
         right: 0;
@@ -322,7 +323,8 @@
         background: transparent !important;
 
         .mega-menu {
-          min-height: 100vh;
+          height: calc(100vh - 100px);
+          overflow-y: auto;
           width: 100%;
           position: relative;
           padding-bottom: 150px;
