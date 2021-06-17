@@ -7339,22 +7339,8 @@ fieldset[disabled] .datepicker table tr td span.active:hover:hover {
 
 @media (max-width: 1440px) {
 
-h1,
-.h1,
-.text-size-xxxlarge {
-	font-size: 64px;
-}
-
-.display-3 {
-	font-size: 64px !important;
-}
-
-}
-
-@media (max-width: 1199px) {
-
 .text-size-xxxxlarge {
-	font-size: 48px;
+	font-size: 46px;
 }
 
 h1,
@@ -7370,7 +7356,31 @@ h1,
 h2,
 .h2,
 .text-size-xxlarge {
-	font-size: 34px;
+	font-size: 33px;
+}
+
+}
+
+@media (max-width: 1199px) {
+
+.text-size-xxxxlarge {
+	font-size: 42px;
+}
+
+h1,
+.h1,
+.text-size-xxxlarge {
+	font-size: 54px;
+}
+
+.display-3 {
+	font-size: 54px !important;
+}
+
+h2,
+.h2,
+.text-size-xxlarge {
+	font-size: 32px;
 }
 
 h3,
@@ -7478,52 +7488,10 @@ p,
 
 }
 
-@media all and (max-width: 991px) {
-
-.offcanvas-header {
-	display: block;
-}
-
-.mobile-offcanvas {
-	position: fixed;
-	z-index: 1200;
-	top: 0;
-	left: 0;
-	display: block;
-	visibility: hidden;
-	overflow-x: hidden;
-	overflow-y: scroll;
-	width: 80%;
-	height: 100%;
-	transition: visibility .2s ease-in-out, transform .2s ease-in-out;
-	transform: translateX(-100%);
-	border-radius: 0;
-}
-
-.mobile-offcanvas .container {
-	display: block;
-}
-
-.mobile-offcanvas.show {
-	visibility: visible;
-	transform: translateX(0);
-}
-
-.navbar-soft .navbar-nav {
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-
-.navbar-soft .navbar-nav .nav-link {
-	padding: .6rem 0rem;
-}
-
-}
-
 @media (max-width: 991px) {
 
 .text-size-xxxxlarge {
-	font-size: 44px;
+	font-size: 38px;
 }
 
 h1,
@@ -7534,12 +7502,6 @@ h1,
 
 .display-3 {
 	font-size: 50px !important;
-}
-
-h2,
-.h2,
-.text-size-xxlarge {
-	font-size: 33px;
 }
 
 h3,
@@ -7865,6 +7827,48 @@ p,
 
 }
 
+@media all and (max-width: 991px) {
+
+.offcanvas-header {
+	display: block;
+}
+
+.mobile-offcanvas {
+	position: fixed;
+	z-index: 1200;
+	top: 0;
+	left: 0;
+	display: block;
+	visibility: hidden;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	width: 80%;
+	height: 100%;
+	transition: visibility .2s ease-in-out, transform .2s ease-in-out;
+	transform: translateX(-100%);
+	border-radius: 0;
+}
+
+.mobile-offcanvas .container {
+	display: block;
+}
+
+.mobile-offcanvas.show {
+	visibility: visible;
+	transform: translateX(0);
+}
+
+.navbar-soft .navbar-nav {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.navbar-soft .navbar-nav .nav-link {
+	padding: .6rem 0rem;
+}
+
+}
+
 @media (max-width: 991px) and (max-width: 991px) {
 
 .jobs__list-filters.not-opened .card .title {
@@ -7907,7 +7911,7 @@ p,
 @media (max-width: 767px) {
 
 .text-size-xxxxlarge {
-	font-size: 36px;
+	font-size: 34px;
 }
 
 h1,
@@ -7923,7 +7927,7 @@ h1,
 h2,
 .h2,
 .text-size-xxlarge {
-	font-size: 32px;
+	font-size: 31px;
 }
 
 h3,
