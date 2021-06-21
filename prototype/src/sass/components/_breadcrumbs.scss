@@ -1,48 +1,52 @@
 .breadcrumbs {
-    padding: 10px 0;
+  padding: 10px 0;
+  margin: 0;
+  background-color: $color-sea;
+  line-height: 1;
+
+  &__list {
+    max-width: calc(100vw - 70px) !important;
+    margin-top: 4px;
+  }
+
+  &__items {
     margin: 0;
-    line-height: 1;
+    padding: 0;
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    white-space: normal;
+    font-family: $font-secondary !important;
 
-    &__list {
-        max-width: calc(100vw - 70px)!important;
-        margin-top: 4px;
+    i {
+      font-size: 12px !important;
+      line-height: 1;
     }
 
-    &__items {
-        margin: 0;
-        margin-left: -19px;
-        padding: 0;
-        position: relative;
-        list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        white-space: normal;
+    a,
+    strong,
+    span {
+      display: inline-block;
+      padding: 0 5px;
+      margin: 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1;
+      vertical-align: middle;
+      white-space: normal;
 
-        a,
-        i,
-        strong {
-            display: inline-block;
-            padding: 0 4px;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 1;
-            vertical-align: middle;
-            white-space: normal;
-
-            &:hover {
-                color: inherit;
-            }
-
-        }
-
-        i {
-            font-weight: 700;
-        }
-
-        strong {
-            font-weight: 600;
-        }
-
+      &:hover {
+        color: $color-pink;
+      }
     }
 
+    i {
+      font-weight: 700;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+  }
 }

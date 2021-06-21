@@ -59,6 +59,11 @@ a {
     color: $color-pink;
     text-decoration: underline;
   }
+
+  &.no-hover {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 ul {

@@ -603,6 +603,10 @@ h1,
 	margin: .5em auto;
 }
 
+.display-3 {
+	font-size: 70px;
+}
+
 h2,
 .h2,
 .text-size-xxlarge {
@@ -707,6 +711,10 @@ p,
 	font-weight: 900 !important;
 }
 
+.line-height-1 {
+	line-height: 1.44 !important;
+}
+
 .btn {
 	font-weight: 700 !important;
 	line-height: 1;
@@ -801,22 +809,32 @@ p,
 
 .btn__social {
 	font-weight: 400;
-	line-height: 38px;
-	width: 40px;
-	height: 40px;
+	line-height: 45px;
+	width: 48px;
+	height: 48px;
 	padding: 0;
 	text-align: center;
 	vertical-align: middle;
 }
 
+.btn__social.smaller {
+	line-height: 31px;
+	width: 34px;
+	height: 34px;
+}
+
+.btn__social.smaller i {
+	font-size: 16px;
+}
+
 .btn__social i {
-	font-size: 21px;
+	font-size: 19px;
 	vertical-align: middle;
 }
 
 .btn__social.notched {
-	-webkit-clip-path: polygon(0% 6px, 6px 0%, calc(100% - 6px) 0%, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0% calc(100% - 6px));
-	clip-path: polygon(0% 6px, 6px 0%, calc(100% - 6px) 0%, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0% calc(100% - 6px));
+	-webkit-clip-path: polygon(0% 4px, 4px 0%, calc(100% - 4px) 0%, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0% calc(100% - 4px));
+	clip-path: polygon(0% 4px, 4px 0%, calc(100% - 4px) 0%, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0% calc(100% - 4px));
 }
 
 .btn__notched {
@@ -1007,6 +1025,11 @@ a {
 a:hover {
 	text-decoration: underline;
 	color: #ec6278;
+}
+
+a.no-hover {
+	text-decoration: none;
+	color: inherit;
 }
 
 ul {
@@ -1822,6 +1845,7 @@ body.offcanvas-active {
 	line-height: 1;
 	margin: 0;
 	padding: 10px 0;
+	background-color: #94d4e9;
 }
 
 .breadcrumbs__list {
@@ -1830,32 +1854,38 @@ body.offcanvas-active {
 }
 
 .breadcrumbs__items {
+	font-family: 'Roboto', sans-serif !important;
 	position: relative;
 	display: flex;
 	margin: 0;
-	margin-left: -19px;
 	padding: 0;
 	list-style: none;
 	white-space: normal;
 	flex-wrap: wrap;
 }
 
+.breadcrumbs__items i {
+	font-size: 12px !important;
+	line-height: 1;
+}
+
 .breadcrumbs__items a,
-.breadcrumbs__items i,
-.breadcrumbs__items strong {
-	font-size: 12px;
+.breadcrumbs__items strong,
+.breadcrumbs__items span {
+	font-size: 16px;
 	font-weight: 400;
 	line-height: 1;
 	display: inline-block;
-	padding: 0 4px;
+	margin: 0;
+	padding: 0 5px;
 	vertical-align: middle;
 	white-space: normal;
 }
 
 .breadcrumbs__items a:hover,
-.breadcrumbs__items i:hover,
-.breadcrumbs__items strong:hover {
-	color: inherit;
+.breadcrumbs__items strong:hover,
+.breadcrumbs__items span:hover {
+	color: #ec6278;
 }
 
 .breadcrumbs__items i {
@@ -1918,7 +1948,7 @@ body.offcanvas-active {
 }
 
 .header__jobs {
-	padding-bottom: calc( 120px - 62px);
+	padding-bottom: 120px;
 }
 
 .header__jobs-cats {
@@ -1958,8 +1988,8 @@ body.offcanvas-active {
 
 .header__jobs-dog {
 	position: absolute;
-	right: -450px;
-	bottom: calc( -120px + 62px);
+	right: -200px;
+	bottom: -120px;
 	transform: rotateY(180deg);
 }
 
@@ -2034,13 +2064,13 @@ body.offcanvas-active {
 }
 
 .header__posts {
-	padding-bottom: calc( 120px - 62px);
+	padding-bottom: calc(120px - 62px);
 }
 
 .header__posts-dog {
 	position: absolute;
 	right: -250px;
-	bottom: calc( -120px + 62px);
+	bottom: calc(-120px + 62px);
 	transform: rotateY(180deg);
 }
 
@@ -3283,11 +3313,11 @@ aside#chat .dog {
 }
 
 .jobs__list-filters-container {
-	margin-top: -120px;
+	margin-top: -80px;
 }
 
 .jobs__list-filters .card {
-	padding: 35px;
+	padding: 30px;
 }
 
 .jobs__list-filters.not-opened .closethis {
@@ -3613,6 +3643,36 @@ aside#chat .dog {
 
 .jobs__list .jobs-number {
 	margin-bottom: 30px;
+}
+
+.jobs__list nav.pagination .page-numbers.prev {
+	margin-right: auto;
+	margin-left: 0;
+}
+
+.jobs__list nav.pagination .page-numbers.next {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+.jobs__list nav.pagination .page-numbers {
+	font-weight: 500;
+	line-height: 33px;
+	width: 34px;
+	height: 34px;
+	margin: 0 4px;
+	padding: 0;
+	text-align: center;
+	vertical-align: middle;
+	-webkit-clip-path: polygon(0% 4px, 4px 0%, calc(100% - 4px) 0%, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0% calc(100% - 4px));
+	clip-path: polygon(0% 4px, 4px 0%, calc(100% - 4px) 0%, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0% calc(100% - 4px));
+}
+
+.jobs__list nav.pagination .page-numbers.current,
+.jobs__list nav.pagination .page-numbers:hover {
+	text-decoration: none;
+	color: white;
+	background: #183153;
 }
 
 .jobs__single {
@@ -5274,7 +5334,7 @@ aside#chat .dog {
 	background-color: #94d4e9;
 }
 
-.footer__middle h4 {
+.footer__middle h5 {
 	margin-bottom: 25px;
 }
 
@@ -5292,61 +5352,43 @@ aside#chat .dog {
 	padding: 0;
 }
 
+.footer__middle ul li a {
+	font-family: 'Roboto', sans-serif;
+	line-height: 1.41;
+}
+
 .footer__middle a:hover {
 	color: inherit;
 }
 
-.footer__middle .newsletter {
+.footer__middle-ul > li {
 	position: relative;
-	margin-top: 30px;
+	display: block;
+	padding: 13px 0 !important;
+	border-bottom: 1px solid rgba(255, 255, 255, .5);
 }
 
-.footer__middle .newsletter input {
-	font-size: 15px;
-	font-weight: 400;
-	position: relative;
-	display: inline-block;
+.footer__middle-ul > li:first-child {
+	border-top: 1px solid rgba(255, 255, 255, .5);
+}
+
+.footer__middle-ul > li > a {
+	display: block;
 	width: 100%;
-	padding: 12px 30px 12px 15px;
-	vertical-align: middle;
-	color: #183153;
-	border: none;
-	outline: 0 !important;
-}
-
-.footer__middle .newsletter input::-moz-placeholder {
-	font-style: italic;
-	opacity: 1;
-	color: #183153;
-}
-
-.footer__middle .newsletter input:-ms-input-placeholder {
-	font-style: italic;
-	opacity: 1;
-	color: #183153;
-}
-
-.footer__middle .newsletter input::placeholder {
-	font-style: italic;
-	opacity: 1;
-	color: #183153;
-}
-
-.footer__middle .newsletter button {
-	font-size: 22px;
-	position: absolute;
-	top: 0;
-	right: 0;
-	height: auto;
 	margin: 0;
-	padding: 5px 12px;
-	color: #ec6278;
-	border: none;
-	outline: 0;
-	background-color: transparent;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+	padding-right: 50px;
+}
+
+.footer__middle-ul > li > a svg {
+	position: absolute;
+	top: 21px;
+	right: 0;
+	width: 30px;
+	height: 15px;
+}
+
+.footer__middle-ul > li > a:hover {
+	text-decoration: none;
 }
 
 .footer__lower {
@@ -7821,7 +7863,7 @@ p,
 	display: block;
 }
 
-.footer__middle h4 {
+.footer__middle h5 {
 	margin-bottom: 20px;
 }
 
@@ -8248,15 +8290,6 @@ p,
 
 .footer__middle * {
 	text-align: center !important;
-}
-
-.footer__middle .newsletter {
-	max-width: 360px;
-	margin: 30px auto 0;
-}
-
-.footer__middle .newsletter input {
-	text-align: left !important;
 }
 
 .footer__lower * {

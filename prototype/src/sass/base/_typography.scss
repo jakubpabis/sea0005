@@ -56,6 +56,8 @@ h1,
 }
 
 .display-3 {
+  font-size: 70px;
+
   @media (max-width: 1440px) {
     font-size: 60px !important;
   }
@@ -228,4 +230,8 @@ p,
 
 .text900 {
   font-weight: 900 !important;
+}
+
+.line-height-1 {
+  line-height: 1.44 !important;
 }
