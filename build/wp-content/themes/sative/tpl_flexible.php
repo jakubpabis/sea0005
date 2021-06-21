@@ -47,6 +47,10 @@ get_header(); ?>
 				<?php get_template_part('template-parts/flex-content/copy-speech-bubble'); ?>
 			<?php elseif (get_row_layout() == 'job_search_and_categories') : ?>
 				<?php get_template_part('template-parts/flex-content/job-search-categories'); ?>
+			<?php elseif (get_row_layout() == 'full_width_image') : ?>
+				<?php get_template_part('template-parts/flex-content/full-image'); ?>
+			<?php elseif (get_row_layout() == 'contact_form_section') : ?>
+				<?php get_template_part('template-parts/flex-content/contact-section'); ?>
 			<?php endif; ?>
 		<?php endwhile; ?>
 	</div>

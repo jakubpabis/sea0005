@@ -14,14 +14,51 @@ $lang = pll_current_language();
 
 <footer class="footer">
 	<div class="container">
-		<div class="row align-items-center footer__upper">
-			<div class="col-lg-4 col-md-6 order-lg-1 order-6 my-md-auto my-4 footer__upper-contact">
-				<a class="d-inline-block mt-1 text-size-medium" href="mailto:info@searchxrecruitment.com"><i class="far fa-envelope mr-lg-3 mr-2"></i>info@searchxrecruitment.com</a><br />
-				<a class="d-inline-block mt-1 text-size-medium" href="tel:+31207782393"><i class="fas fa-mobile-android-alt mr-lg-4 mr-2"></i>+31 (0)20 - 7782393</a>
+		<div class="row footer__upper">
+			<div class="col">
+				<a href="/" class="d-flex no-hover">
+					<span class="display-3 text700">
+						Search
+					</span>
+					<svg class="mx-3" width="50" height="50" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M13.365 15L9 10.64 4.635 15 3 13.367l4.365-4.36L7.36 9l.006-.006L3 4.633 4.635 3 9 7.36 13.365 3 15 4.633l-4.365 4.36.006.007-.006.006L15 13.367 13.365 15zM0 18h18V0H0v18z" fill="#FFFFFF" />
+					</svg>
+					<span class="display-3 text700">
+						Recruitment
+					</span>
+				</a>
 			</div>
-			<div class="col-lg-4 mb-lg-auto mb-md-4 mb-auto text-center order-lg-6 order-1">
-				<a href="/">
-					<svg width="250" viewBox="0 0 587.71 172.93" xmlns="http://www.w3.org/2000/svg">
+		</div>
+		<hr>
+		<div class="row footer__middle justify-content-between">
+			<div class="col-lg-3 col-md-6 mb-5">
+				<h5 class="text-uppercase">
+					<?php echo get_field('contact_title_' . $lang, 'option'); ?>
+				</h5>
+				<div class="row mb-4">
+					<div class="col-auto">
+						<i class="fal fa-map-marker-alt"></i>
+					</div>
+					<div class="col pl-0">
+						<?php echo get_field('contact_text_' . $lang, 'option'); ?>
+					</div>
+				</div>
+				<div class="mb-4">
+					<a href="https://www.facebook.com/searchxrecruitment" class="btn btn__social notched sea" target="_blank">
+						<i class="fab fa-facebook-f"></i>
+					</a>
+					<a href="https://www.instagram.com/searchxrecruitment/" class="btn btn__social notched sea" target="_blank">
+						<i class="fab fa-instagram"></i>
+					</a>
+					<a href="https://www.linkedin.com/company/search-x-recruitment" class="btn btn__social notched sea" target="_blank">
+						<i class="fab fa-linkedin-in"></i>
+					</a>
+					<a href="https://twitter.com/searchxjobs" class="btn btn__social notched sea" target="_blank">
+						<i class="fab fa-twitter"></i>
+					</a>
+				</div>
+				<a href="/" class="mt-4">
+					<svg width="205" viewBox="0 0 587.71 172.93" xmlns="http://www.w3.org/2000/svg">
 						<g fill="#fff">
 							<path d="m129.47 138.42v7.45c-6.42 0-10.19 3.94-10.19 10.1v16.19h-7.28v-33.23h7.28v5.4c2.4-3.68 5.91-5.91 10.19-5.91" />
 							<path d="m139.66 152.38h19.7a10.18 10.18 0 0 0 -19.7 0zm27.4 5.91h-27.48a9.86 9.86 0 0 0 9.93 8c4.19 0 7.71-2 9.08-4.71h8c-2.4 6.68-8.91 11.3-17.13 11.3-10.1 0-17.72-7.45-17.72-17.38s7.62-17.38 17.72-17.38 17.81 7.45 17.81 17.47a14.84 14.84 0 0 1 -.17 2.74" />
@@ -45,33 +82,27 @@ $lang = pll_current_language();
 					</svg>
 				</a>
 			</div>
-			<div class="col-lg-4 col-md-6 order-12 text-right">
-				<a href="https://www.facebook.com/searchxrecruitment" class="btn btn__social notched sea" target="_blank">
-					<i class="fab fa-facebook-f"></i>
-				</a>
-				<a href="https://www.instagram.com/searchxrecruitment/" class="btn btn__social notched sea" target="_blank">
-					<i class="fab fa-instagram"></i>
-				</a>
-				<a href="https://www.linkedin.com/company/search-x-recruitment" class="btn btn__social notched sea" target="_blank">
-					<i class="fab fa-linkedin-in"></i>
-				</a>
-				<a href="https://twitter.com/searchxjobs" class="btn btn__social notched sea" target="_blank">
-					<i class="fab fa-twitter"></i>
-				</a>
-			</div>
-		</div>
-		<hr>
-		<div class="row footer__middle">
-			<div class="col-lg-3 col-md-6 mb-5">
-				<h4>
-					<?php echo get_field('contact_title_' . $lang, 'option'); ?>
-				</h4>
-				<?php echo get_field('contact_text_' . $lang, 'option'); ?>
+			<div class="col-lg-4 col-md-6 mb-5">
+				<h5 class="text-uppercase">
+					<?php echo get_field('job_categories_title_' . $lang, 'option'); ?>
+				</h5>
+				<ul class="footer__middle-ul">
+					<?php foreach (get_field('job_categories_links_' . $lang, 'option') as $item) : ?>
+						<li>
+							<a href="<?php echo $item['link']['url']; ?>">
+								<?php echo $item['link']['title']; ?>
+								<svg viewbox="0 0 14 27" xmlns="http://www.w3.org/2000/svg">
+									<path d="M25.885.278l7.844 8.051a.947.947 0 01.078.091l-.078-.09a.95.95 0 01.236.412l.006.023A.895.895 0 0134 9l-.006.11-.002.011a.974.974 0 01-.02.114c-.003.007-.004.014-.006.022a.91.91 0 01-.159.323l-.01.013-.068.078-7.844 8.051a.91.91 0 01-1.307 0 .966.966 0 010-1.342l6.265-6.432H.924C.414 9.949 0 9.525 0 9s.414-.949.924-.949h29.92L24.578 1.62a.966.966 0 010-1.342.908.908 0 011.307 0z" fill="#FFFFFF" />
+								</svg>
+							</a>
+						</li>
+					<?php endforeach; ?>
+				</ul>
 			</div>
 			<div class="col-lg-3 col-md-6 mb-5">
-				<h4>
+				<h5 class="text-uppercase">
 					<?php echo get_field('recent_title_' . $lang, 'option'); ?>
-				</h4>
+				</h5>
 				<?php
 				wp_reset_postdata();
 				$args = array(
@@ -82,7 +113,7 @@ $lang = pll_current_language();
 				$query = new WP_Query($args);
 				?>
 				<?php if ($query->have_posts()) : ?>
-					<ul class="text-size-small">
+					<ul>
 						<?php while ($query->have_posts()) : $query->the_post(); ?>
 							<li>
 								<a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a>
@@ -90,20 +121,6 @@ $lang = pll_current_language();
 						<?php endwhile; ?>
 					</ul>
 				<?php endif; ?>
-			</div>
-			<div class="col-lg-3 col-md-6 mb-5">
-				<h4>
-					<?php echo get_field('hot_skills_title_' . $lang, 'option'); ?>
-				</h4>
-				<?php echo get_field('hot_skills_text_' . $lang, 'option'); ?>
-			</div>
-			<div class="col-lg-3 col-md-6 mb-5">
-				<h4>
-					<?php echo get_field('subscribe_title_' . $lang, 'option'); ?>
-				</h4>
-				<?php echo get_field('subscribe_text_' . $lang, 'option'); ?>
-				<button class="btn btn__default yellow mt-4" data-toggle="modal" data-target="#subscribePopupModal"><?php echo pll_e('Subscribe now'); ?></button>
-				<?php /* <a href="http://jobs.searchsoftware.nl/searchit/subscribe" target="_blank" class="btn btn__default yellow mt-4"><?php echo pll_e('Subscribe now'); ?></a> */ ?>
 			</div>
 		</div>
 	</div>
@@ -116,9 +133,9 @@ $lang = pll_current_language();
 					<a href="/<?php echo $lang; ?>/<?php pll_e('fulfilled-jobs'); ?>"> <?php pll_e('Fulfilled jobs'); ?></a>
 				</div>
 				<div class="col-auto">
-					<span>
+					<!-- <span>
 						Design by <a href="http://loyals.com" target="blank">loyals.com</a>
-					</span>
+					</span> -->
 					<span class="sative">
 						<a href="https://www.sative.co.uk" target="_blank">Made with <i class="fas fa-heart"></i> by <span>sative</span></a>
 					</span>
@@ -127,9 +144,9 @@ $lang = pll_current_language();
 		</div>
 	</div>
 </footer>
-<?php get_template_part('template-parts/search'); ?>
+<?php /* get_template_part('template-parts/search'); ?>
 <?php get_template_part('template-parts/uploadcv'); ?>
-<?php get_template_part('template-parts/popups'); ?>
+<?php get_template_part('template-parts/popups'); */ ?>
 </div> <!-- #wrapper -->
 <?php wp_footer(); ?>
 <!-- LinkedIn Insight Tag -->
