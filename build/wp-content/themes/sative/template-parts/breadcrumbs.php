@@ -1,4 +1,4 @@
-<?php if (function_exists('bcn_display')) : ?>
+<?php if (function_exists('bcn_display') && !is_home()) : ?>
 	<aside class="breadcrumbs">
 		<div class="container">
 			<div class="row align-items-lg-center">
