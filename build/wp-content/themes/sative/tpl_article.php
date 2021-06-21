@@ -2,9 +2,10 @@
 
 get_header(); ?>
 
-<?php while (have_posts()) : the_post();
+<div class="body-bg-gradient">
+	<?php while (have_posts()) : the_post();
 
-	if (get_the_post_thumbnail_url()) : ?>
+		/* if (get_the_post_thumbnail_url()) : ?>
 
 		<header class="header__article">
 			<picture class="bg-cover">
@@ -13,50 +14,102 @@ get_header(); ?>
 			</picture>
 		</header>
 
-	<?php endif;
+	<?php endif; */ ?>
 
-	get_template_part('template-parts/breadcrumbs'); ?>
-
-	<section class="article">
-		<div class="container">
-			<div class="row">
-				<div class="col-12 mb-4 d-flex justify-content-end">
+		<section class="article mt-0 pt-5">
+			<div class="container">
+				<div class="row">
+					<?php /* <div class="col-12 mb-4 d-flex justify-content-end">
 					<button type="button" id="backBTN" class="btn btn__medium yellow d-none"><?php pll_e('Back'); ?></button>
+				</div> */ ?>
+					<article class="col-12">
+						<?php
+						$cat = get_the_category();
+						echo '<h5 class="mb-0 text-uppercase">' . end($cat)->name . '</h5>';
+						?>
+						<?php the_title('<h1 class="mt-1">', '</h1>'); ?>
+
+						<div class="row justify-content-center">
+							<div class="col-lg-10">
+								<?php the_content();
+
+								if (get_field('button')) :
+									echo '<a href="' . get_field('button')['url'] . '" class="btn btn__default yellow">' . get_field('button')['title'] . '</a>';
+								endif;
+
+								if (get_field('file_download')) :
+									if (get_field('button')) :
+										echo '<br />';
+									endif;
+									echo '<a href="javascript:void(0)" data-toggle="modal" data-target="#whitepapersModal" class="btn btn__default yellow">' . pll__("Download") . ' ' . get_field('file_download')['title'] . '</a>';
+								endif;
+
+								?>
+							</div>
+							<div class="col-lg-10">
+								<hr>
+							</div>
+						</div>
+
+
+
+					</article>
 				</div>
-				<article class="col-xl-8 col-lg-7 col-12">
+			</div>
+		</section>
 
-					<?php
+	<?php endwhile; ?>
 
-					if ('post' === get_post_type()) :
-						wp_bootstrap_starter_posted_on();
-					endif;
-
-					the_title('<h1>', '</h1>');
-
-					the_content();
-
-					if (get_field('button')) :
-						echo '<a href="' . get_field('button')['url'] . '" class="btn btn__default yellow">' . get_field('button')['title'] . '</a>';
-					endif;
-
-					if (get_field('file_download')) :
-						if (get_field('button')) :
-							echo '<br/>';
-						endif;
-						echo '<a href="javascript:void(0)" data-toggle="modal" data-target="#whitepapersModal" class="btn btn__default yellow">' . pll__("Download") . ' ' . get_field('file_download')['title'] . '</a>';
-					endif;
-
-					?>
-
-				</article>
-				<aside class="col-xl-4 col-lg-5 col-md-7 col-sm-9">
-					<?php get_sidebar(); ?>
-				</aside>
+	<?php
+	$related = get_posts(array('category__in' => wp_get_post_categories($post->ID), 'numberposts' => 6, 'post__not_in' => array($post->ID)));
+	if ($related) : ?>
+		<div class="container my-5 py-2">
+			<div class="row justify-content-between align-items-end">
+				<div class="col-auto">
+					<h5 class="text-uppercase mb-2"><?php pll_e('Artikelen'); ?></h5>
+					<h2 class="text-size-xxxlarge my-0">
+						<?php pll_e('Vergelijkbare artikelen'); ?>
+					</h2>
+				</div>
+				<div class="col-auto">
+					<a href="<?php echo getTplPageKnowledgeURL(); ?>" class="btn btn__default navy"><?php pll_e('Show all articles'); ?></a>
+				</div>
 			</div>
 		</div>
-	</section>
-
-<?php endwhile; ?>
+		<section class="cards__section related py-5">
+			<div class="cards__section-content py-5">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="owl-carousel owl-theme articles-slider-cards">
+							<?php foreach ($related as $item) :
+								setup_postdata($item); ?>
+								<div class="item d-flex h-100 w-100">
+									<div class="card nothed h-100 w-100">
+										<div class="card-body">
+											<h4 class="text-uppercase mb-0 text700">
+												<?php echo get_the_category($item->ID)[0]->name; ?>
+											</h4>
+											<span class="h2 text700">
+												<?php echo wp_trim_words(get_the_title($item->ID), 10, '...'); ?>
+											</span>
+											<p>
+												<?php echo wp_trim_words(get_the_content(null, false, $item->ID), 40, '...'); ?>
+											</p>
+											<a href="<?php get_the_permalink($item->ID); ?>" class="btn btn__default navy"><?php pll_e('Lees meer'); ?></a>
+										</div>
+									</div>
+									<div class="triangle"></div>
+								</div>
+							<?php endforeach; ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	<?php endif;
+	wp_reset_postdata();
+	?>
+</div>
 <script>
 	if (window.history.length > 1) {
 		document.getElementById('backBTN').classList.remove('d-none');
