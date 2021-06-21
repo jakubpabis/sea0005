@@ -105,9 +105,11 @@ get_header();
 					</p>
 				</div>
 				<div id="jobs__list-cont" class="col-lg-8">
-					<p class="text-size-small font-primary">
-						<span class="jobsno"><?= $post_no; ?></span> <?php pll_e('jobs found'); ?>
-					</p>
+					<aside class="additionals py-4">
+						<p class="text-size-small font-primary">
+							<span class="jobsno"><?= $post_no; ?></span> <?php pll_e('jobs found'); ?>
+						</p>
+					</aside>
 					<main class="jobs__list-items">
 						<?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
 								$helper = jobDisplayHelper(); ?>
