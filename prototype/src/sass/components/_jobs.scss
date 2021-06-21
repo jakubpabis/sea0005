@@ -7,6 +7,10 @@
 
       &-container {
         margin-top: -80px;
+
+        &.posts-filters {
+          margin-top: 0;
+        }
       }
 
       .card {

@@ -3316,6 +3316,10 @@ aside#chat .dog {
 	margin-top: -80px;
 }
 
+.jobs__list-filters-container.posts-filters {
+	margin-top: 0;
+}
+
 .jobs__list-filters .card {
 	padding: 30px;
 }
