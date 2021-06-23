@@ -758,6 +758,26 @@ p,
 	padding: 16px 25px;
 }
 
+.btn__default.square {
+	line-height: 48px;
+	width: 48px;
+	height: 48px;
+	padding: 0;
+}
+
+.btn__default.square i {
+	font-size: 22px;
+}
+
+.btn__default.outline {
+	border: 2px solid #183153;
+}
+
+.btn__default.outline.navy {
+	color: #183153 !important;
+	background-color: transparent;
+}
+
 .btn__small {
 	font-size: 14px;
 	padding: 12px 18px;
@@ -3688,43 +3708,6 @@ aside#chat .dog {
 	padding-right: 45px;
 }
 
-.jobs__single article .info {
-	display: flex;
-	flex-direction: row;
-	margin: 0 -10px;
-	padding: 30px;
-	flex-wrap: wrap;
-}
-
-.jobs__single article .info__item {
-	display: flex;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	padding: 0 10px;
-	flex-basis: 50%;
-}
-
-.jobs__single article .info__item i {
-	margin-right: 8px;
-}
-
-.jobs__single article .info__item span {
-	line-height: 1.21 !important;
-	display: inline-block;
-}
-
-.jobs__single article .info__item:nth-child(2) {
-	order: 3;
-}
-
-.jobs__single article .info__item:nth-child(3) {
-	order: 2;
-}
-
-.jobs__single article .info__item:nth-child(4) {
-	order: 4;
-}
-
 .jobs__single article h1 {
 	margin-bottom: 40px;
 }
@@ -4027,6 +4010,111 @@ aside#chat .dog {
 
 .jobs__single-sidebar .share .btns .btn {
 	margin: 4px;
+}
+
+.jobs__single-related {
+	-webkit-clip-path: polygon(200px 0%, 100% 0, 100% 100%, 0 100%, 0% 200px);
+	clip-path: polygon(200px 0%, 100% 0, 100% 100%, 0 100%, 0% 200px);
+}
+
+.jobs__single-related .info__item {
+	display: flex;
+	margin-top: 12px;
+	align-items: center;
+}
+
+.jobs__single-related .info__item i {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-right: 12px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: auto 19px;
+}
+
+.jobs__single-related .info__item i.place {
+	background-image: url('../img/place-sea.svg');
+}
+
+.jobs__single-related .info__item i.briefcase {
+	background-image: url('../img/briefcase-sea.svg');
+}
+
+.jobs__single-related .info__item i.coins {
+	background-image: url('../img/coins-sea.svg');
+}
+
+.jobs__single-related .info__item i.clock {
+	background-image: url('../img/clock-sea.svg');
+}
+
+.jobs__single-related .info__item span {
+	line-height: 1.21 !important;
+	display: inline-block;
+}
+
+.header__job-single .info {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.header__job-single .info.fulfilled .info__item {
+	flex-basis: 100% !important;
+}
+
+.header__job-single .info__item {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	display: flex;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 0 10px;
+	flex-basis: 50%;
+}
+
+.header__job-single .info__item i {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-right: 15px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: auto 19px;
+}
+
+.header__job-single .info__item i.place {
+	background-image: url('../img/place-sea.svg');
+}
+
+.header__job-single .info__item i.briefcase {
+	background-image: url('../img/briefcase-sea.svg');
+}
+
+.header__job-single .info__item i.coins {
+	background-image: url('../img/coins-sea.svg');
+}
+
+.header__job-single .info__item i.clock {
+	background-image: url('../img/clock-sea.svg');
+}
+
+.header__job-single .info__item span {
+	line-height: 1.21 !important;
+	display: inline-block;
+	margin-top: 2px;
+}
+
+.header__job-single .info__item:nth-child(2) {
+	order: 3;
+}
+
+.header__job-single .info__item:nth-child(3) {
+	order: 2;
+}
+
+.header__job-single .info__item:nth-child(4) {
+	order: 4;
 }
 
 .posts__list {
@@ -8487,16 +8575,12 @@ p,
 	flex-basis: 100%;
 }
 
-.jobs__single article .info__item {
-	flex-basis: 100%;
-}
-
-.jobs__single article .info__item span {
-	font-size: 16px !important;
-}
-
 .jobs__single-sidebar .card {
 	padding: 30px 15px;
+}
+
+.header__job-single .info__item {
+	flex-basis: 100%;
 }
 
 .posts__list-item {
