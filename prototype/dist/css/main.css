@@ -3750,6 +3750,12 @@ aside#chat .dog {
 	margin-top: 30px;
 }
 
+.jobs__single-process {
+	min-height: 500px;
+	-webkit-clip-path: polygon(200px 0%, 100% 0, 100% calc(100% - 200px), calc(100% - 200px) 100%, 0 100%, 0% 200px);
+	clip-path: polygon(200px 0%, 100% 0, 100% calc(100% - 200px), calc(100% - 200px) 100%, 0 100%, 0% 200px);
+}
+
 .jobs__single-recruiter .recruiter {
 	margin-top: 25px;
 }
@@ -3815,47 +3821,40 @@ aside#chat .dog {
 	margin-left: 10px;
 }
 
-.jobs__single-cta-section {
-	padding: 50px 0;
-}
-
-.jobs__single-sidebar .card {
-	padding: 30px;
-}
-
-.jobs__single-sidebar .card h3 {
-	margin-bottom: 15px;
-}
-
-.jobs__single-sidebar .card .social-login {
+.jobs__single-recruiter .job-apply-form .social-login {
 	display: flex;
-	margin: 0 -10px;
+	max-width: 320px;
+	margin: 0 -5px;
 	flex-wrap: wrap;
 }
 
-.jobs__single-sidebar .card .social-login .btn {
+.jobs__single-recruiter .job-apply-form .social-login .btn {
 	max-width: 50%;
-	margin: 7px 10px;
-	flex-basis: calc(50% - 20px);
+	margin: 5px;
+	flex-basis: calc(50% - 10px);
 }
 
-.jobs__single-sidebar .card form .pretty {
+.jobs__single-recruiter .job-apply-form form * {
+	font-family: 'Roboto', sans-serif !important;
+}
+
+.jobs__single-recruiter .job-apply-form form .pretty {
 	margin-right: 0;
 	white-space: normal;
 }
 
-.jobs__single-sidebar .card form .pretty .icon {
+.jobs__single-recruiter .job-apply-form form .pretty .icon {
 	top: 0;
 }
 
-.jobs__single-sidebar .card form .pretty label {
-	font-size: 14px;
-	padding-left: 2em;
+.jobs__single-recruiter .job-apply-form form .pretty label {
+	font-size: 16px;
+	padding-left: 1em;
 	text-indent: 0;
 }
 
-.jobs__single-sidebar .card form .pretty label:before,
-.jobs__single-sidebar .card form .pretty label:after {
+.jobs__single-recruiter .job-apply-form form .pretty label:before,
+.jobs__single-recruiter .job-apply-form form .pretty label:after {
 	top: 0;
 	width: 20px;
 	height: 20px;
@@ -3863,7 +3862,7 @@ aside#chat .dog {
 	background-color: white;
 }
 
-.jobs__single-sidebar .card form .pretty label.error {
+.jobs__single-recruiter .job-apply-form form .pretty label.error {
 	font-weight: 700;
 	font-style: italic;
 	position: absolute;
@@ -3875,36 +3874,37 @@ aside#chat .dog {
 	color: #ec6278;
 }
 
-.jobs__single-sidebar .card form .ugly {
+.jobs__single-recruiter .job-apply-form form .ugly {
 	position: relative;
 }
 
-.jobs__single-sidebar .card form .ugly.upload:focus label {
+.jobs__single-recruiter .job-apply-form form .ugly.upload:focus label {
 	opacity: 1 !important;
 }
 
-.jobs__single-sidebar .card form .ugly.upload label {
+.jobs__single-recruiter .job-apply-form form .ugly.upload label {
+	padding: 15px 15px 10px;
 	opacity: 1 !important;
+	border: 1px solid #183153;
 }
 
-.jobs__single-sidebar .card form .ugly label {
-	font-size: 14px;
+.jobs__single-recruiter .job-apply-form form .ugly label {
+	font-size: 16px;
 	font-weight: 400;
-	font-style: italic;
 	line-height: 1;
 	position: absolute;
 	top: 8px;
 	left: 15px;
-	min-height: 40px;
+	min-height: 50px;
 	margin: 0;
-	padding: 12px 15px;
+	padding: 15px 15px 10px;
 	transition: all 200ms ease-out;
 	pointer-events: none;
 	opacity: 1;
 	color: #183153;
 }
 
-.jobs__single-sidebar .card form .ugly label.full {
+.jobs__single-recruiter .job-apply-form form .ugly label.full {
 	display: flex;
 	width: calc(100% - 30px);
 	max-width: 100%;
@@ -3913,26 +3913,26 @@ aside#chat .dog {
 	justify-content: space-between;
 }
 
-.jobs__single-sidebar .card form .ugly label.full span {
+.jobs__single-recruiter .job-apply-form form .ugly label.full span {
 	font-style: normal !important;
 	text-decoration: underline;
 }
 
-.jobs__single-sidebar .card form .ugly label span {
-	font-size: 14px;
+.jobs__single-recruiter .job-apply-form form .ugly label span {
+	font-size: 16px;
 	font-weight: 600;
 	color: #ec6278;
 }
 
-.jobs__single-sidebar .card form .ugly input,
-.jobs__single-sidebar .card form .ugly select,
-.jobs__single-sidebar .card form .ugly textarea {
-	font-size: 14px;
+.jobs__single-recruiter .job-apply-form form .ugly input,
+.jobs__single-recruiter .job-apply-form form .ugly select,
+.jobs__single-recruiter .job-apply-form form .ugly textarea {
+	font-size: 16px;
 	font-weight: 400;
 	line-height: 1;
 	width: 100%;
-	padding: 11px 15px;
-	border: none;
+	padding: 15px 15px 10px;
+	border: 1px solid #183153;
 	outline: none !important;
 	box-shadow: none !important;
 	-webkit-appearance: none;
@@ -3940,31 +3940,32 @@ aside#chat .dog {
 	appearance: none;
 }
 
-.jobs__single-sidebar .card form .ugly input:focus ~ label,
-.jobs__single-sidebar .card form .ugly select:focus ~ label,
-.jobs__single-sidebar .card form .ugly textarea:focus ~ label {
+.jobs__single-recruiter .job-apply-form form .ugly input:focus ~ label,
+.jobs__single-recruiter .job-apply-form form .ugly select:focus ~ label,
+.jobs__single-recruiter .job-apply-form form .ugly textarea:focus ~ label {
 	opacity: 0 !important;
 }
 
-.jobs__single-sidebar .card form .ugly input[type='file'],
-.jobs__single-sidebar .card form .ugly select[type='file'],
-.jobs__single-sidebar .card form .ugly textarea[type='file'] {
+.jobs__single-recruiter .job-apply-form form .ugly input[type='file'],
+.jobs__single-recruiter .job-apply-form form .ugly select[type='file'],
+.jobs__single-recruiter .job-apply-form form .ugly textarea[type='file'] {
 	width: 100%;
-	height: 40px;
+	height: 50px;
 	cursor: pointer !important;
 	opacity: 0;
+	border: 1px solid #183153;
 	background-color: white;
 }
 
-.jobs__single-sidebar .card form .ugly input.error,
-.jobs__single-sidebar .card form .ugly select.error,
-.jobs__single-sidebar .card form .ugly textarea.error {
+.jobs__single-recruiter .job-apply-form form .ugly input.error,
+.jobs__single-recruiter .job-apply-form form .ugly select.error,
+.jobs__single-recruiter .job-apply-form form .ugly textarea.error {
 	background-color: #ec6278 !important;
 }
 
-.jobs__single-sidebar .card form .ugly input.error + label,
-.jobs__single-sidebar .card form .ugly select.error + label,
-.jobs__single-sidebar .card form .ugly textarea.error + label {
+.jobs__single-recruiter .job-apply-form form .ugly input.error + label,
+.jobs__single-recruiter .job-apply-form form .ugly select.error + label,
+.jobs__single-recruiter .job-apply-form form .ugly textarea.error + label {
 	font-weight: 700;
 	position: relative;
 	top: auto;
@@ -3976,21 +3977,32 @@ aside#chat .dog {
 	color: #ec6278;
 }
 
-.jobs__single-sidebar .card form .ugly select {
-	font-style: italic !important;
+.jobs__single-recruiter .job-apply-form form .ugly select {
 	padding-top: 13px;
 	padding-bottom: 13px;
 	border-radius: 0 !important;
 }
 
-.jobs__single-sidebar .card form .ugly select:active,
-.jobs__single-sidebar .card form .ugly select:focus {
+.jobs__single-recruiter .job-apply-form form .ugly select:active,
+.jobs__single-recruiter .job-apply-form form .ugly select:focus {
 	font-style: normal !important;
 }
 
-.jobs__single-sidebar .card form .ugly textarea {
+.jobs__single-recruiter .job-apply-form form .ugly textarea {
 	min-height: 120px;
 	resize: none;
+}
+
+.jobs__single-cta-section {
+	padding: 50px 0;
+}
+
+.jobs__single-sidebar .card {
+	padding: 30px;
+}
+
+.jobs__single-sidebar .card h3 {
+	margin-bottom: 15px;
 }
 
 .jobs__single-sidebar .share {
@@ -7573,15 +7585,6 @@ p,
 	padding: 25px 20px;
 }
 
-.jobs__single-sidebar .card .social-login {
-	margin: 0 -7px;
-}
-
-.jobs__single-sidebar .card .social-login .btn {
-	margin: 7px;
-	flex-basis: calc(50% - 14px);
-}
-
 .posts__list-item .job-title .icon {
 	margin-top: 5px;
 }
@@ -7784,6 +7787,18 @@ p,
 	padding-top: 0;
 }
 
+.jobs__single-recruiter .job-apply-form .social-login .btn {
+	flex-basis: calc(25% - 10px);
+}
+
+.jobs__single-recruiter .job-apply-form form .ugly label {
+	left: 7px;
+}
+
+.jobs__single-recruiter .job-apply-form form .ugly label.full {
+	width: calc(100% - 14px);
+}
+
 .jobs__single-sidebar {
 	margin-top: 70px;
 }
@@ -7800,18 +7815,6 @@ p,
 
 .jobs__single-sidebar .card {
 	padding: 30px;
-}
-
-.jobs__single-sidebar .card .social-login .btn {
-	flex-basis: calc(25% - 14px);
-}
-
-.jobs__single-sidebar .card form .ugly label {
-	left: 7px;
-}
-
-.jobs__single-sidebar .card form .ugly label.full {
-	width: calc(100% - 14px);
 }
 
 .posts__list-filters {
@@ -8287,12 +8290,12 @@ p,
 	flex-basis: calc(100% - 30px);
 }
 
-.jobs__single-sidebar .card {
-	padding: 30px 20px;
+.jobs__single-recruiter .job-apply-form .social-login .btn {
+	flex-basis: calc(50% - 10px);
 }
 
-.jobs__single-sidebar .card .social-login .btn {
-	flex-basis: calc(50% - 14px);
+.jobs__single-sidebar .card {
+	padding: 30px 20px;
 }
 
 .posts__list-filters {
