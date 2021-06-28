@@ -1,44 +1,36 @@
 .contact {
-    padding: 70px 0 50px;
+  padding: 70px 0 50px;
 
-    @media(max-width: 575px) {
-        padding: 40px 0 0;
-    }
+  @media (max-width: 575px) {
+    padding: 40px 0 0;
+  }
 
-    &__text {
+  &__text {
+    &-columns {
+      * {
+        font-size: 16px;
+      }
 
-        &-columns {
+      > div {
+        padding-top: 25px;
+        padding-bottom: 10px;
 
-            * {
-                font-size: 16px;
-            }
-
-            > div {
-                padding-top: 25px;
-                padding-bottom: 10px;
-
-                @media(max-width: 575px) {
-                    padding-top: 15px;
-                    padding-bottom: 5px;
-                }
-
-            }
-
-            a {
-
-                &:hover {
-                    color: inherit;
-                }
-
-            }
-
-            .btn.navy {
-                margin-right: 5px;
-                color: $color-yellow!important;
-            }
-
+        @media (max-width: 575px) {
+          padding-top: 15px;
+          padding-bottom: 5px;
         }
+      }
 
+      a {
+        &:hover {
+          color: inherit;
+        }
+      }
+
+      .btn.navy {
+        margin-right: 5px;
+        color: $color-yellow !important;
+      }
     }
-
+  }
 }
