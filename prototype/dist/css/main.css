@@ -2687,6 +2687,178 @@ body.offcanvas-active {
 	color: #183153;
 }
 
+form * {
+	font-family: 'Roboto', sans-serif !important;
+}
+
+form .pretty {
+	margin-right: 0;
+	white-space: normal;
+}
+
+form .pretty .icon {
+	font-style: normal !important;
+	line-height: 1em;
+	top: 0;
+	left: 1px;
+	text-align: center;
+}
+
+form .pretty label {
+	font-size: 16px;
+	padding-left: 1.75em;
+	text-indent: 0;
+}
+
+form .pretty label:before,
+form .pretty label:after {
+	top: 1px;
+	left: 1px;
+	width: 18px;
+	height: 18px;
+	border: none;
+	background-color: white;
+}
+
+form .pretty label:before {
+	top: 0;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	background-color: #183153;
+}
+
+form .pretty label.error {
+	font-weight: 700;
+	font-style: italic;
+	position: absolute;
+	bottom: -13px;
+	left: 2em;
+	margin: 5px 0 0 0;
+	padding: 0 !important;
+	opacity: 1 !important;
+	color: #ec6278;
+}
+
+form .ugly {
+	position: relative;
+}
+
+form .ugly.upload:focus label {
+	opacity: 1 !important;
+}
+
+form .ugly.upload label {
+	min-height: 48px;
+	padding: 15px 15px 10px;
+	opacity: 1 !important;
+	border: 1px solid #183153;
+}
+
+form .ugly label {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1;
+	position: absolute;
+	top: 8px;
+	left: 15px;
+	min-height: 50px;
+	margin: 0;
+	padding: 15px 15px 10px;
+	transition: all 200ms ease-out;
+	pointer-events: none;
+	opacity: 1;
+	color: #183153;
+}
+
+form .ugly label.full {
+	display: flex;
+	width: calc(100% - 30px);
+	max-width: 100%;
+	cursor: pointer !important;
+	text-align: left !important;
+	justify-content: space-between;
+}
+
+form .ugly label.full span {
+	font-style: normal !important;
+	text-decoration: underline;
+}
+
+form .ugly label span {
+	font-size: 16px;
+	font-weight: 600;
+	color: #ec6278;
+}
+
+form .ugly input,
+form .ugly select,
+form .ugly textarea {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1;
+	width: 100%;
+	padding: 15px 15px 10px;
+	border: 1px solid #183153;
+	outline: none !important;
+	box-shadow: none !important;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+form .ugly input:focus ~ label,
+form .ugly select:focus ~ label,
+form .ugly textarea:focus ~ label {
+	opacity: 0 !important;
+}
+
+form .ugly input[type='file'],
+form .ugly select[type='file'],
+form .ugly textarea[type='file'] {
+	width: 100%;
+	cursor: pointer !important;
+	opacity: 0;
+	border: 1px solid #183153;
+	background-color: white;
+}
+
+form .ugly input.error,
+form .ugly select.error,
+form .ugly textarea.error {
+	background-color: #ec6278 !important;
+}
+
+form .ugly input.error + label,
+form .ugly select.error + label,
+form .ugly textarea.error + label {
+	font-weight: 700;
+	position: relative;
+	top: auto;
+	left: auto;
+	min-height: 1px;
+	margin: 5px 0 0 0;
+	padding: 0 !important;
+	opacity: 1 !important;
+	color: #ec6278;
+}
+
+form .ugly select {
+	padding-top: 13px;
+	padding-bottom: 13px;
+	border-radius: 0 !important;
+}
+
+form .ugly select:active,
+form .ugly select:focus {
+	font-style: normal !important;
+}
+
+form .ugly textarea {
+	min-height: 120px;
+	resize: none;
+}
+
 .card {
 	padding: 40px;
 	border: none;
@@ -7857,6 +8029,14 @@ p,
 
 .home__jobs {
 	padding: 90px 0;
+}
+
+form .ugly label {
+	left: 7px;
+}
+
+form .ugly label.full {
+	width: calc(100% - 14px);
 }
 
 .cards__section-img {

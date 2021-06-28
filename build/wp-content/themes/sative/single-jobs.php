@@ -7,7 +7,9 @@
  */
 $lang = pll_current_language();
 
-get_header('job'); ?>
+get_header('job');
+
+get_template_part('template-parts/breadcrumbs'); ?>
 
 <?php while (have_posts()) : the_post(); ?>
 
