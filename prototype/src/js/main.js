@@ -538,8 +538,38 @@ jQuery(window).on("load", function () {
         },
       },
     });
-	}
-  if ($(".owl-carousel").length > 0) {
+  }
+  if ($(".owl-carousel.no-repeat").length > 0) {
+    var $owl = $(".owl-carousel.no-repeat");
+    $owl.owlCarousel({
+      loop: false,
+      margin: 20,
+      nav: false,
+      dots: false,
+      repeat: false,
+      lazyLoad: true,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      autoplayHoverPause: false,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        575: {
+          items: 2,
+        },
+        991: {
+          items: 3,
+        },
+      },
+    });
+    $(".custom-owl-prev").click(function () {
+      $owl.trigger("prev.owl.carousel");
+    });
+    $(".custom-owl-next").click(function () {
+      $owl.trigger("next.owl.carousel");
+    });
+  } else if ($(".owl-carousel").length > 0) {
     var $owl = $(".owl-carousel");
     $owl.owlCarousel({
       loop: true,

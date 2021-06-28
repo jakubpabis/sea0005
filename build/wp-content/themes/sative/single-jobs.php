@@ -5,6 +5,7 @@
  *
  * @package Sative
  */
+$lang = pll_current_language();
 
 get_header('job'); ?>
 
@@ -165,26 +166,65 @@ get_header('job'); ?>
 		</div>
 	</section>
 
-	<section class="jobs__single-process bg-sea py-5 my-5">
-		<div class="container py-5">
-			<div class="row">
-				<div class="col-12">
-					<h5 class="text-uppercase mb-2 text700">
-						<?php pll_e('Sollicitatie procedure'); ?>
-					</h5>
-					<h2 class="display-3 text700 mt-0 mb-5">
-						<?php pll_e('Wat staat je te wachten'); ?>
-					</h2>
+
+	<?php if (get_field('process_' . $lang, 'option')) : ?>
+		<section class="jobs__single-process bg-sea py-5 my-5">
+			<div class="container py-5">
+				<div class="row">
+					<div class="col-12">
+						<h5 class="text-uppercase mb-2 text700">
+							<?php pll_e('Sollicitatie procedure'); ?>
+						</h5>
+						<h2 class="display-3 text700 mt-0 mb-3">
+							<?php pll_e('Wat staat je te wachten'); ?>
+						</h2>
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+			<div class="jobs__single-process-slider">
+				<div class="owl-carousel owl-default no-repeat">
+					<?php $i = 1;
+					foreach (get_field('process_' . $lang, 'option') as $item) : ?>
+						<div class="item d-flex flex-column h-100 w-100">
+							<div class="card h-100">
+								<strong>
+									0<?php echo $i; ?>
+								</strong>
+								<h2 class="text700 my-lg-2 d-block w-100">
+									<?php echo $item['title']; ?>
+								</h2>
+								<?php echo $item['text']; ?>
+							</div>
+							<div class="triangle"></div>
+							<i class="fal fa-times fa-2x"></i>
+						</div>
+					<?php $i++;
+					endforeach; ?>
+				</div>
+				<hr>
+				<div class="pt-5 mt-5 d-flex">
+					<div class="custom-owl-prev mr-4" role="button">
+						<svg width="34" height="18" xmlns="http://www.w3.org/2000/svg">
+							<path d="M8.115.278L.271 8.329a.948.948 0 00-.078.091l.078-.09a.95.95 0 00-.236.412l-.006.023A.898.898 0 000 9l.006.11.002.011a.976.976 0 00.02.114c.003.007.004.014.006.022a.911.911 0 00.159.323l.01.013.068.078 7.844 8.051a.91.91 0 001.307 0 .966.966 0 000-1.342L3.157 9.948h29.919c.51 0 .924-.424.924-.948a.937.937 0 00-.924-.949H3.156L9.422 1.62a.966.966 0 000-1.342.908.908 0 00-1.307 0z" fill="#183153" />
+						</svg>
+						<span class="sr-only">Previous</span>
+					</div>
+					<div class="custom-owl-next" role="button">
+						<svg width="34" height="18" xmlns="http://www.w3.org/2000/svg">
+							<path d="M25.885.278l7.844 8.051a.947.947 0 01.078.091l-.078-.09a.95.95 0 01.236.412l.006.023A.895.895 0 0134 9l-.006.11-.002.011a.974.974 0 01-.02.114c-.003.007-.004.014-.006.022a.91.91 0 01-.159.323l-.01.013-.068.078-7.844 8.051a.91.91 0 01-1.307 0 .966.966 0 010-1.342l6.265-6.432H.924A.937.937 0 010 9c0-.524.414-.949.924-.949h29.92L24.578 1.62a.966.966 0 010-1.342.908.908 0 011.307 0z" fill="#183153" />
+						</svg>
+						<span class="sr-only">Next</span>
+					</div>
+				</div>
+			</div>
+		</section>
+	<?php endif; ?>
 
 	<?php $recruiterF = get_field('recruiter_related'); ?>
 	<section class="jobs__single-recruiter py-5 my-5">
 
 		<div class="container py-5">
-			<div class="row">
+			<div class="row align-items-end">
 				<div class="col-lg-6 job-apply-form">
 					<h5 class="text-uppercase mb-2 text700">
 						<?php pll_e('Iets voor jou?'); ?>
@@ -192,8 +232,8 @@ get_header('job'); ?>
 					<h2 class="display-3 text700 mt-0 mb-5">
 						<?php pll_e('Solliciteer nu!'); ?>
 					</h2>
-					<span class="text700 text-uppercase"><?php pll_e('Solliciteer met:'); ?></span>
-					<div class="social-login">
+					<span class="text700 text-uppercase mb-2"><?php pll_e('Solliciteer met:'); ?></span>
+					<div class="social-login mt-2 mb-4">
 						<?php global $wp; ?>
 						<button type="button" class="btn btn__small pink color-white icon full text-uppercase" onclick="myLinkedinLogin( '<?= siteURL() . 'userdatafetch'; ?>', '<?= home_url($wp->request) ?>')">
 							<i class="fab fa-linkedin"></i>
@@ -248,17 +288,17 @@ get_header('job'); ?>
 					<form method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" accept-charset="UTF-8" role="form" class="pt-3" id="job-application-form" enctype="multipart/form-data">
 						<div class="row align-items-center jobs__single-sidebar-inputs">
 							<div class="col-12 pb-1">
-								<div class="pretty p-icon p-round p-plain p-jelly">
+								<div class="pretty p-icon p-round p-jelly">
 									<input type="radio" name="app-gender" value="Male">
 									<div class="state">
-										<i class="icon fas fa-mars"></i>
+										<i class="icon">&times;</i>
 										<label><?php pll_e('Male'); ?></label>
 									</div>
 								</div>
-								<div class="pretty p-icon p-round p-plain p-jelly ml-4">
+								<div class="pretty p-icon p-round p-jelly ml-4">
 									<input type="radio" name="app-gender" value="Female">
 									<div class="state">
-										<i class="icon fas fa-venus"></i>
+										<i class="icon">&times;</i>
 										<label><?php pll_e('Female'); ?></label>
 									</div>
 								</div>
@@ -308,10 +348,10 @@ get_header('job'); ?>
 								<label class="ugly-label" for="app-motivation" <?= $app_motivation ? 'style="opacity: 0;"' : null; ?>><?php pll_e('Motivation'); ?></label>
 							</div>
 							<div class="col-12 pt-1">
-								<div class="pretty p-icon p-plain p-jelly">
+								<div class="pretty p-icon p-jelly">
 									<input type="checkbox" name="app-pp" required class="required">
 									<div class="state">
-										<i class="icon fal fa-times"></i>
+										<i class="icon">&times;</i>
 										<label><?php pll_e('I hereby agree with the'); ?> <a href="<?php if (pll_current_language() === 'en') : ?>/privacy-policy<?php else : ?>/privacyverklaring<?php endif; ?>" style="position: relative; z-index: 9999;"><u><?php pll_e('Privacy Policy'); ?></u></a> <span class="color-pink text-size-small text600">*</span></label>
 									</div>
 								</div>
@@ -332,31 +372,41 @@ get_header('job'); ?>
 					</form>
 				</div>
 				<?php if (is_array($recruiterF) && !empty($recruiterF)) : $recruiter = $recruiterF[0]; ?>
-					<div class="col-lg-5 offset-lg-1">
-						<div class="row recruiter">
-							<div class="col-xl-3 col-lg-4 col-md-3 col-sm-4">
-								<div class="recruiter-img">
-									<img data-src="<?= get_the_post_thumbnail_url($recruiter->ID, 'medium_large'); ?>" alt="" class="lazy bg-cover">
-								</div>
-							</div>
+					<div class="col-lg-5 offset-lg-1 mb-5 py-5">
+						<div class="row recruiter bg-yellow card mb-3 p-4 pb-5">
 							<div class="col-lg-auto col-md-9 col-sm-8">
 								<div class="recruiter-text">
-									<h2 class="text700">
-										<?php pll_e('Vragen?'); ?>
-									</h2>
+									<div class="row align-items-end">
+										<div class="col-lg">
+											<h2 class="text700">
+												<?php pll_e('Vragen?'); ?>
+											</h2>
+										</div>
+										<div class="col-lg-6">
+											<div class="recruiter-img">
+												<img data-src="<?= get_the_post_thumbnail_url($recruiter->ID, 'medium_large'); ?>" alt="" class="lazy bg-cover">
+											</div>
+										</div>
+									</div>
 									<p>
 										<?php pll_e('Stel ze je persoonlijke recruiter'); ?> <u><?php echo $recruiter->post_title; ?></u>
 									</p>
 									<div class="recruiter-contact">
-										<a href="mailto:<?= get_field('email', $recruiter->ID); ?>" class="text-size-small"><?= get_field('email', $recruiter->ID); ?></a>
-										<a href="tel:<?= get_field('phone', $recruiter->ID); ?>" class="text-size-small"><?= get_field('phone', $recruiter->ID); ?></a>
+										<a href="mailto:<?= get_field('email', $recruiter->ID); ?>" class="mb-2">
+											<i class="far fa-envelope mr-2"></i>
+											<?= get_field('email', $recruiter->ID); ?>
+										</a>
+										<a href="tel:<?= get_field('phone', $recruiter->ID); ?>" class="mb-2">
+											<i class="far fa-phone-alt mr-2"></i>
+											<?= get_field('phone', $recruiter->ID); ?>
+										</a>
 									</div>
-									<a href="" class="btn btn__default notched icon full color-white pink text-uppercase my-3">
-										<i class="fab fa-whatsapp"></i>
+									<a href="" class="btn btn__default icon color-white pink text-uppercase my-3">
+										<i class="fab fa-whatsapp mr-2 fa-21px"></i>
 										<span>Stel een vraag via Whatsapp</span>
 									</a>
-									<a href="<?= get_field('calendly', $recruiter->ID); ?>" class="btn btn__default notched icon full navy text-uppercase">
-										<i class="far fa-video"></i>
+									<a href="<?= get_field('calendly', $recruiter->ID); ?>" class="btn btn__default icon navy text-uppercase">
+										<i class="far fa-video mr-2 fa-21px"></i>
 										<?php pll_e('Plan een videocall met joost'); ?>
 									</a>
 								</div>
@@ -395,48 +445,51 @@ get_header('job'); ?>
 						<h5 class="text-uppercase mb-2 text700">
 							<?php pll_e('bekijk ook'); ?>
 						</h5>
-						<span class="display-3 text700 my-0">
+						<span class="display-3 text700 my-0 mb-4 d-block">
 							<?php pll_e('Vergelijkbare vacatures'); ?>
 						</span>
 					</div>
 					<?php while ($relatedPosts->have_posts()) : $relatedPosts->the_post();
 						$helper = jobDisplayHelper(); ?>
-						<div class="col-lg-4 col-md-8 col-sm-10 d-flex">
-							<div class="card w-100 d-flex flex-row flex-wrap p-4">
-								<div class="content mb-4">
-									<h2 class="font-primary text700 my-0"><a href="<?= get_the_permalink(); ?>"><?= get_the_title(); ?></a></h2>
-								</div>
-								<div class="btn-cont align-self-end">
-									<div class="info mb-4 pb-2">
-										<?php if (get_field('location')) : ?>
-											<div class="info__item">
-												<i class="place"></i>
-												<span class="font-secondary location"><?= get_field('location'); ?></span>
-											</div>
-										<?php endif; ?>
-										<?php if ($helper['type']) : ?>
-											<div class="info__item">
-												<i class="clock"></i>
-												<span class="font-secondary type"><?= $helper['type']; ?></span>
-											</div>
-										<?php endif; ?>
-										<?php if (get_field('salary_min') || get_field('salary_max')) : ?>
-											<div class="info__item">
-												<i class="coins"></i>
-												<span class="font-secondary">
-													<number class="salarymin">
-														<?= number_format((int)get_field('salary_min'), 0, ".", "."); ?>
-													</number>
-													<?= get_field('salary_min') && get_field('salary_max') ? '&nbsp;-&nbsp;' : null ?>
-													<number class="salarymax">
-														<?= number_format((int)get_field('salary_max'), 0, ".", "."); ?>
-													</number>
-												</span>
-											</div>
-										<?php endif; ?>
+						<div class="col-lg-4 col-md-8 col-sm-10 d-flex jobs__single-related-item">
+							<div class="item d-flex flex-column h-100 w-100">
+								<div class="card w-100 d-flex flex-row flex-wrap p-4 h-100">
+									<div class="content mb-4">
+										<h2 class="font-primary text700 my-0"><a href="<?= get_the_permalink(); ?>"><?= get_the_title(); ?></a></h2>
 									</div>
-									<a href="<?= get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e('More info'); ?></a>
+									<div class="btn-cont align-self-end">
+										<div class="info mb-4 pb-2">
+											<?php if (get_field('location')) : ?>
+												<div class="info__item">
+													<i class="place"></i>
+													<span class="font-secondary location"><?= get_field('location'); ?></span>
+												</div>
+											<?php endif; ?>
+											<?php if ($helper['type']) : ?>
+												<div class="info__item">
+													<i class="clock"></i>
+													<span class="font-secondary type"><?= $helper['type']; ?></span>
+												</div>
+											<?php endif; ?>
+											<?php if (get_field('salary_min') || get_field('salary_max')) : ?>
+												<div class="info__item">
+													<i class="coins"></i>
+													<span class="font-secondary">
+														<number class="salarymin">
+															<?= number_format((int)get_field('salary_min'), 0, ".", "."); ?>
+														</number>
+														<?= get_field('salary_min') && get_field('salary_max') ? '&nbsp;-&nbsp;' : null ?>
+														<number class="salarymax">
+															<?= number_format((int)get_field('salary_max'), 0, ".", "."); ?>
+														</number>
+													</span>
+												</div>
+											<?php endif; ?>
+										</div>
+										<a href="<?= get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e('More info'); ?></a>
+									</div>
 								</div>
+								<div class="triangle"></div>
 							</div>
 						</div>
 					<?php endwhile; ?>
