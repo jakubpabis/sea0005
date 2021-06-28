@@ -84,7 +84,7 @@
 			<div class="col-lg-6">
 				<div class="card notched bg-white p-3 mt-5">
 					<div class="card-body color-navy">
-						<h2 class="m-0">
+						<h2 class="m-0 mb-3">
 							<?php echo get_sub_field('form_title'); ?>
 						</h2>
 						<form method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" accept-charset="UTF-8" role="form" id="<?php echo $type; ?>-popup-form" enctype="multipart/form-data">
