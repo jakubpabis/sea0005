@@ -378,7 +378,7 @@ get_header('job'); ?>
 								<div class="recruiter-text">
 									<div class="row align-items-end">
 										<div class="col-lg">
-											<h2 class="text700">
+											<h2 class="text700 mb-0">
 												<?php pll_e('Vragen?'); ?>
 											</h2>
 										</div>
