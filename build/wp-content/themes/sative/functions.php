@@ -10,7 +10,7 @@
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '3.4.8');
+	define('_S_VERSION', '3.5.0');
 }
 
 if (!function_exists('sative_setup')) :
@@ -240,6 +240,9 @@ function sative_scripts()
 	//wp_enqueue_script( 'sative-ajax' );
 
 	wp_enqueue_script('sative-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js', array('jquery'), _S_VERSION, true);
+	wp_enqueue_script('sative-validate', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js', array('jquery'), _S_VERSION, true);
+	wp_enqueue_script('sative-validate-methods', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js', array('jquery'), _S_VERSION, true);
+
 	wp_enqueue_script('sative-app', get_template_directory_uri() . '/assets/js/main.min.js', array('jquery'), _S_VERSION, true);
 	// Internet Explorer HTML5 support
 	// wp_enqueue_script( 'html5hiv',get_template_directory_uri().'/inc/assets/js/html5.js', array(), _S_VERSION, false );
