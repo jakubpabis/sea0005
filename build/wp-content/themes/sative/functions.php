@@ -617,6 +617,7 @@ $toTranslate = array(
 	'bekijk ook',
 	'Vergelijkbare vacatures',
 	'Or just download the file without giving up your email',
+	'Zoek naar een artikel',
 );
 
 if (function_exists('pll_register_string')) {
