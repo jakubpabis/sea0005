@@ -142,6 +142,7 @@ $lang = pll_current_language();
 		</div>
 	</div>
 </footer>
+<?php get_template_part('template-parts/uploadcv'); ?>
 <?php /* get_template_part('template-parts/search'); ?>
 <?php get_template_part('template-parts/uploadcv'); ?>
 <?php get_template_part('template-parts/popups'); */ ?>

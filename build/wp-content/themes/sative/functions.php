@@ -10,7 +10,7 @@
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '3.5.0');
+	define('_S_VERSION', '3.5.1');
 }
 
 if (!function_exists('sative_setup')) :
@@ -510,6 +510,7 @@ $toTranslate = array(
 	'Contact',
 	'Get in touch',
 	'Share this content',
+	'Vacature',
 	'Filter jobs',
 	'Categories',
 	'Salary range',
@@ -597,7 +598,25 @@ $toTranslate = array(
 	'Plan een (video)call of meeting',
 	'Artikelen',
 	'Onze <span class="bg-yellow px-3">kennisbank</span>',
-	'Laten we de perfecte baan voor je zoeken'
+	'Laten we de perfecte baan voor je zoeken',
+	'Sluiten',
+	'Laten we de perfecte baan voor je zoeken',
+	'Hulp nodig?',
+	'Stel je vraag aan onze specialisten',
+	'Onze <span class="bg-yellow px-3">kennisbank</span>',
+	'Direct solliciteren!',
+	'Sollicitatie procedure',
+	'Wat staat je te wachten',
+	'Iets voor jou?',
+	'Solliciteer nu!',
+	'Solliciteer met:',
+	'Vragen?',
+	'Stel ze je persoonlijke recruiter',
+	'Stel een vraag via Whatsapp',
+	'Plan een videocall met',
+	'bekijk ook',
+	'Vergelijkbare vacatures',
+	'Or just download the file without giving up your email',
 );
 
 if (function_exists('pll_register_string')) {

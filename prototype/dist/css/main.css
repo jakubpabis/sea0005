@@ -1059,12 +1059,12 @@ a.no-hover {
 
 ul {
 	margin: 0;
-	list-style-image: url('../img/cubecrossUL.svg');
+	list-style-type: '×';
 }
 
 ul li {
 	line-height: 1.44;
-	padding: 8px 0;
+	padding: 8px 0 8px 8px;
 }
 
 input,
@@ -5247,7 +5247,7 @@ aside#chat .dog {
 	font-family: 'Roboto', sans-serif;
 	font-size: 17px;
 	font-weight: 300;
-	list-style-image: url('../img/cubecrossUL.svg');
+	list-style-type: '×';
 }
 
 .filtered-articles article ul li {

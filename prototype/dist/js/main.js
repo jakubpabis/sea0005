@@ -4650,6 +4650,15 @@ jQuery(document).ready(function () {
 });
 
 function megaMenu() {
+  // var $height = [];
+  // $(".mega-menu__big-submenu").each(function () {
+  //   var $this = $(this);
+  //   $this.find(".mega-menu__side-submenu").each(function () {
+  //     $height.push($(this).height());
+  //   });
+  //   console.log("some");
+  // });
+  // console.log($height);
   $(".mega-menu-parent").on("mouseenter click", function () {
     $(".mega-menu-container")
       .not($(this).find(".mega-menu-container"))
@@ -4699,6 +4708,15 @@ function megaMenu() {
         .find(".mega-menu__side-submenu")
         .stop(true, true)
         .css({ display: "none" });
+      console.log("some");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .css({
+          "min-height":
+            $(this).parent().find(".mega-menu__side-submenu").height() + "px",
+        });
     });
   $(".mega-menu__side-submenu-parent")
     .find("> a")
@@ -4752,9 +4770,7 @@ jQuery(window).on("load", function () {
       dots: false,
       repeat: false,
       lazyLoad: true,
-      autoplay: true,
-      autoplayTimeout: 5000,
-      autoplayHoverPause: false,
+      autoplay: false,
       responsive: {
         0: {
           items: 1,

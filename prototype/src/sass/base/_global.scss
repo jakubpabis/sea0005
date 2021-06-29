@@ -68,11 +68,11 @@ a {
 
 ul {
   margin: 0;
-  list-style-image: url("../img/cubecrossUL.svg");
+  list-style-type: "×";
 
   li {
     line-height: 1.44;
-    padding: 8px 0;
+    padding: 8px 0 8px 8px;
   }
 }
 

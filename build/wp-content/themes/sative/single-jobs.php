@@ -405,11 +405,12 @@ get_template_part('template-parts/breadcrumbs'); ?>
 									</div>
 									<a href="" class="btn btn__default icon color-white pink text-uppercase my-3">
 										<i class="fab fa-whatsapp mr-2 fa-21px"></i>
-										<span>Stel een vraag via Whatsapp</span>
+										<span><?php pll_e('Stel een vraag via Whatsapp'); ?></span>
 									</a>
 									<a href="<?= get_field('calendly', $recruiter->ID); ?>" class="btn btn__default icon navy text-uppercase">
 										<i class="far fa-video mr-2 fa-21px"></i>
-										<?php pll_e('Plan een videocall met joost'); ?>
+										<?php pll_e('Plan een videocall met');
+										echo $recruiter->post_title; ?>
 									</a>
 								</div>
 							</div>

@@ -157,7 +157,7 @@ get_header(); ?>
 									<input type="hidden" name="whitepapers-url" value="<?= get_field('file_download')['url']; ?>">
 									<input type="hidden" name="action" value="whitepapers_form">
 									<?php wp_nonce_field('whitepapers_form', 'whitepapers_form_nonce'); ?>
-									<button type="submit" class="btn btn__notched d-flex align-items-center"><i class="far fa-download"></i> <span class="text-size-large ml-3">Download</span></button>
+									<button type="submit" class="btn btn__notched d-flex align-items-center"><i class="far fa-download"></i> <span class="text-size-large ml-3"><?php pll_e('Download'); ?></span></button>
 								</div>
 							</div>
 						</form>
