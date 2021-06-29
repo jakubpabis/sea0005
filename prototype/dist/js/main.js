@@ -4715,7 +4715,9 @@ function megaMenu() {
         .parent()
         .css({
           "min-height":
-            $(this).parent().find(".mega-menu__side-submenu").height() + "px",
+            $(this).parent().find(".mega-menu__side-submenu").height() +
+            50 +
+            "px",
         });
     });
   $(".mega-menu__side-submenu-parent")
