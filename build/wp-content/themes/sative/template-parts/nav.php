@@ -72,12 +72,17 @@
 				<div class="col">
 					<div class="row align-items-center justify-content-end">
 						<div class="col-xl-auto col-md-6 pr-0">
-							<?php // wp_nav_menu( array( 'theme_location' => 'primary' ) ); 
+							<?php
+							$lang = pll_current_language();
+							if ($lang === 'en') {
+								$menu_items = 'menu_items_en';
+							} else {
+								$menu_items = 'menu_items';
+							}
 							?>
-							<?php $menu_items = get_field('menu_items', 'option'); ?>
-							<?php if (have_rows('menu_items', 'option')) : ?>
+							<?php if (have_rows($menu_items, 'option')) : ?>
 								<ul class="navigation__lower-menu">
-									<?php while (have_rows('menu_items', 'option')) : the_row(); ?>
+									<?php while (have_rows($menu_items, 'option')) : the_row(); ?>
 										<?php if (get_sub_field('item_type') === 'link') : ?>
 											<li>
 												<a href="<?php echo get_sub_field('menu_link')['url']; ?>"><?php echo get_sub_field('menu_link')['title']; ?></a>
