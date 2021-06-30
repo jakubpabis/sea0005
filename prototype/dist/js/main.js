@@ -4353,7 +4353,7 @@ function filterSelect() {
       var top = $(document).scrollTop();
       setCookie("topScroll", top, 0.04);
       setTimeout(function () {
-        $("#main-jobs-filter-form").submit();
+        $("#main-jobs-filter-form, #main-posts-filter-form").submit();
       }, 250);
     });
   $("#filter")

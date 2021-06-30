@@ -41,7 +41,7 @@ $args = array(
 if (isset($_GET['category'])) {
 	$args['tax_query'][] = array(
 		'taxonomy' => 'category',
-		'field' => 'id',
+		'field' => 'name',
 		'terms' => $_GET['category'],
 	);
 }
@@ -78,7 +78,7 @@ $pagination = paginate_links(array(
 			</div>
 			<div id="search-filter" class="row align-items-center justify-content-md-between justify-content-end header__jobs-search">
 				<div class="col-md-8 col-11">
-					<input type="text" name="job-title" value="<?php echo isset($_GET['job-title']) ? $_GET['job-title'] : null ?>" placeholder="<?php pll_e('Zoek naar een artikel'); ?>">
+					<input type="text" name="k-title" value="<?php echo isset($_GET['k-title']) ? $_GET['k-title'] : null ?>" placeholder="<?php pll_e('Zoek naar een artikel'); ?>">
 					<i class="far fa-search color-pink"></i>
 				</div>
 				<div class="header__jobs-dog">
