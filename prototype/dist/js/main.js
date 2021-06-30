@@ -4329,6 +4329,10 @@ function homeHashtags() {
 }
 
 function filterSelect() {
+  if ($("#filter")) {
+    var top = parseInt(getCookie("topScroll"));
+    if (top) $(document).scrollTop(top);
+  }
   $("#filter")
     .find(".filters")
     .find("li")
@@ -4346,6 +4350,11 @@ function filterSelect() {
       } else {
         $(this).parent().parent().addClass("active");
       }
+      var top = $(document).scrollTop();
+      setCookie("topScroll", top, 0.04);
+      setTimeout(function () {
+        $("#main-jobs-filter-form").submit();
+      }, 250);
     });
   $("#filter")
     .find(".filter-title")
@@ -4741,6 +4750,10 @@ jQuery(window).on("load", function () {
   // if($('.home__clients').length != 0) {
   // 	homepageClients();
   // }
+
+  $(".job-category-filters")
+    .find("li")
+    .on("click", function () {});
 
   if ($(".owl-carousel.articles-slider-cards").length > 0) {
     var $owl = $(".owl-carousel.articles-slider-cards");

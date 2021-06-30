@@ -3595,7 +3595,9 @@ aside#chat .dog {
 }
 
 .jobs__list-filters .filter-group .filter-title {
-	font-weight: 600;
+	font-family: 'Fractul' !important;
+	font-size: 18px;
+	font-weight: 700;
 	display: block;
 	margin-bottom: 10px;
 	cursor: pointer;
@@ -3661,17 +3663,46 @@ aside#chat .dog {
 }
 
 .jobs__list-filters .filter-group ul li {
-	padding: 0;
+	position: relative;
+	padding: 2px 0;
+	padding-left: 20px;
+}
+
+.jobs__list-filters .filter-group ul li:before,
+.jobs__list-filters .filter-group ul li:after {
+	position: absolute;
+	display: block;
+	content: '';
+}
+
+.jobs__list-filters .filter-group ul li:before {
+	top: 10px;
+	left: 0;
+	width: 12px;
+	height: 12px;
+	background-color: white;
+}
+
+.jobs__list-filters .filter-group ul li:after {
+	top: 13px;
+	left: 3px;
+	width: 6px;
+	height: 6px;
+	opacity: 0;
+	background-color: #ec6278;
 }
 
 .jobs__list-filters .filter-group ul li a,
 .jobs__list-filters .filter-group ul li span,
 .jobs__list-filters .filter-group ul li label {
-	font-size: 15px;
+	font-family: 'Fractul' !important;
+	font-size: 14px;
+	font-weight: 700;
 	position: relative;
-	padding: 2px 6px;
+	padding: 6px;
 	cursor: pointer;
 	transition: all 200ms ease-out;
+	text-transform: uppercase;
 }
 
 .jobs__list-filters .filter-group ul li a input,
@@ -3703,17 +3734,15 @@ aside#chat .dog {
 	background-color: #183153;
 }
 
+.jobs__list-filters .filter-group ul li.active:after {
+	opacity: 1;
+}
+
 .jobs__list-filters .filter-group ul li.active > a,
 .jobs__list-filters .filter-group ul li.active > span,
 .jobs__list-filters .filter-group ul li.active > label {
 	color: white;
 	background-color: #183153;
-}
-
-.jobs__list-filters .filter-group ul li.active > a i,
-.jobs__list-filters .filter-group ul li.active > span i,
-.jobs__list-filters .filter-group ul li.active > label i {
-	display: inline-block;
 }
 
 .jobs__list-filters .filter-group ul li.active > ul {
@@ -3726,7 +3755,7 @@ aside#chat .dog {
 
 .jobs__list-filters .filter-group ul li ul {
 	display: none;
-	padding: 3px 10px 10px;
+	padding: 3px 5px 10px;
 }
 
 .jobs__list-filters .filter-group ul li ul li:hover {

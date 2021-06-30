@@ -119,6 +119,7 @@
 					</div>
 				</div>
 			<?php endif; ?>
+			<button type="submit" class="btn btn__default yellow d-none"><?php pll_e('Filter'); ?></button>
 		</div>
 	</div>
 </aside>

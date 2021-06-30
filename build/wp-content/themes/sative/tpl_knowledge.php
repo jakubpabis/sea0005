@@ -98,7 +98,7 @@ $pagination = paginate_links(array(
 		<div class="container">
 			<div class="row justify-content-md-center justify-content-end">
 				<div class="col-lg-4 col-12 jobs__list-filters-container posts-filters">
-					<?php get_template_part('template-parts/job-filters'); ?>
+					<?php get_template_part('template-parts/posts-filters'); ?>
 					<aside class="mt-4">
 						<div class="card bg-yellow text-navy text-left" style="padding: 30px;">
 							<div class="row">

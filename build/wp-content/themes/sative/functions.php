@@ -10,7 +10,7 @@
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '3.5.2');
+	define('_S_VERSION', '3.5.3');
 }
 
 if (!function_exists('sative_setup')) :
@@ -400,7 +400,7 @@ function hierarchical_tax_tree($cat, $tax, $active = [])
 				echo '<li>';
 				$checked = null;
 			}
-			echo '<a href="' . get_category_link($cat->term_id) . '">' . $cat->name . '&nbsp;<small>(' . $cat->count . ')</small><i class="far fa-times"></i></a>';
+			echo '<a href="' . get_category_link($cat->term_id) . '">' . $cat->name . '</a>';
 			hierarchical_tax_tree($cat->term_id, $tax, $active = []);
 			echo '</li>';
 		endforeach;
@@ -424,7 +424,7 @@ function hierarchical_tax_tree_filter($cat, $tax, $active)
 				echo '<li>';
 				$checked = null;
 			}
-			echo '<span>' . $cat->name . '&nbsp;<small>(' . $cat->count . ')</small><i class="far fa-times"></i><input type="checkbox" data-name="' . $cat->category_nicename . '" ' . $checked . ' name="' . $tax . '[]" value="' . $cat->slug . '"></span>';
+			echo '<span>' . $cat->name . '<input type="checkbox" data-name="' . $cat->category_nicename . '" ' . $checked . ' name="' . $tax . '[]" value="' . $cat->slug . '"></span>';
 			hierarchical_tax_tree_filter($cat->term_id, $tax, $active);
 			echo '</li>';
 		endforeach;
