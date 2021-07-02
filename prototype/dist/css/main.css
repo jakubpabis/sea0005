@@ -677,19 +677,19 @@ p,
 }
 
 .font-primary {
-	font-family: 'Fractul';
+	font-family: 'Fractul' !important;
 }
 
 .font-secondary {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', sans-serif !important;
 }
 
 .text-italic {
-	font-style: italic;
+	font-style: italic !important;
 }
 
 .text-upper {
-	text-transform: uppercase;
+	text-transform: uppercase !important;
 }
 
 .text400 {

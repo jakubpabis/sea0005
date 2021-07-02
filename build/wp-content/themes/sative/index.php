@@ -23,10 +23,10 @@ require_once get_template_directory() . '/inc/posts-filtering.php'; ?>
 		<div class="container">
 			<div class="row py-4">
 				<div class="col-lg-8">
-					<h4 class="text-uppercase mb-3 text700">
+					<h4 class="text-uppercase mb-3 text700 font-primary">
 						<?php pll_e('Artikelen'); ?>
 					</h4>
-					<span class="display-3 text700">
+					<span class="display-3 text700 font-primary">
 						<?php pll_e('Onze <span class="bg-yellow px-3">kennisbank</span>'); ?>
 					</span>
 				</div>

@@ -16,10 +16,10 @@ get_header();
 		<div class="container">
 			<div class="row py-4">
 				<div class="col-lg-8">
-					<h4 class="text-uppercase mb-3 text700">
+					<h4 class="text-uppercase mb-3 text700 font-primary">
 						<?php pll_e('Vacatures'); ?>
 					</h4>
-					<span class="display-3 text700">
+					<span class="display-3 text700 font-primary">
 						<?php pll_e('Laten we de perfecte baan voor je zoeken'); ?>
 					</span>
 				</div>
