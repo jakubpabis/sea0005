@@ -27,7 +27,7 @@ require_once get_template_directory() . '/inc/posts-filtering.php'; ?>
 						<?php pll_e('Artikelen'); ?>
 					</h4>
 					<span class="display-3 text700 font-primary">
-						<?php pll_e('Onze <span class="bg-yellow px-3">kennisbank</span>'); ?>
+						<?php pll_e('Onze <span class="bg-yellow px-3 font-primary">kennisbank</span>'); ?>
 					</span>
 				</div>
 			</div>
