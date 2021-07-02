@@ -129,7 +129,7 @@ require_once get_template_directory() . '/inc/posts-filtering.php'; ?>
 											<?php echo wp_specialchars_decode(get_the_excerpt()); ?>
 										<?php endif; ?>
 									</p>
-									<a href="<?php echo get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e('More info'); ?></a>
+									<a href="<?php echo get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e('Less meer'); ?></a>
 								</article>
 						<?php endwhile;
 						endif; ?>
