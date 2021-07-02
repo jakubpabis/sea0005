@@ -558,6 +558,7 @@ $toTranslate = array(
 	'We are sorry, but we couldn’t find what you looking for...',
 	'Search for a job!',
 	'Show less',
+	'Less meer',
 	'No jobs found...',
 	'Schedule a call or meeting',
 	'Search our knowledge base. We have tons of useful articles for you!',
