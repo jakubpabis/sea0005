@@ -10,7 +10,7 @@
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '3.5.3');
+	define('_S_VERSION', '3.5.4');
 }
 
 if (!function_exists('sative_setup')) :
@@ -408,9 +408,9 @@ function hierarchical_tax_tree($cat, $tax, $active = [])
 	endif;
 }
 
-function hierarchical_tax_tree_filter($cat, $tax, $active)
+function hierarchical_tax_tree_filter($cat, $tax, $active, $orderby = 'count', $order = 'DESC')
 {
-	$next = get_categories('taxonomy=' . $tax . '&orderby=count&order=DESC&hide_empty=false&parent=' . $cat);
+	$next = get_categories('taxonomy=' . $tax . '&orderby=' . $orderby . '&order=' . $order . '&hide_empty=false&parent=' . $cat);
 	if ($next) :
 		echo '<ul>';
 		foreach ($next as $cat) :
@@ -619,6 +619,7 @@ $toTranslate = array(
 	'Vergelijkbare vacatures',
 	'Or just download the file without giving up your email',
 	'Zoek naar een artikel',
+	'Onze <span class="bg-yellow px-3 font-primary">kennisbank</span>',
 );
 
 if (function_exists('pll_register_string')) {

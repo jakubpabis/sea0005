@@ -95,7 +95,7 @@
 						<i class="fas fa-minus"></i>
 					</span>
 					<div class="filters">
-						<?php hierarchical_tax_tree_filter(0, 'job-industry', $activeJobInds); ?>
+						<?php hierarchical_tax_tree_filter(0, 'job-industry', $activeJobInds, 'name', 'ASC'); ?>
 					</div>
 				</div>
 			<?php endif; ?>

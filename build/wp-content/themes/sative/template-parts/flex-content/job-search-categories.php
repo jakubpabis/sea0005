@@ -1,7 +1,7 @@
 <section class="flex_content-cta job-search-categories">
-	<div class="container position-absolute h-100 left-0">
+	<div class="container-fluid position-absolute h-100 left-0">
 		<div class="row">
-			<div class="col-lg-10 position-absolute h-100 p-0 left-0">
+			<div class="col-lg-7 position-absolute h-100 p-0 left-0">
 				<div class="flex_content-cta-bg left bg-yellow w-100 h-100"></div>
 			</div>
 		</div>
@@ -15,21 +15,25 @@
 				<span class="display-3 d-block text700 mb-5">
 					<?php echo get_sub_field('title'); ?>
 				</span>
-				<form action="" class="pb-3">
-					<input class="mb-3 job-search-nice" type="search" name="job-search" placeholder="Waar ben jij naar op zoek?">
-					<?php if (!empty(get_sub_field('tags'))) : ?>
-						<div class="mega-menu__hashtags">
-							<?php foreach (get_sub_field('tags') as $item) : ?>
-								<a href="<?php echo $item['link']['url']; ?>" class="font-primary pr-2 pb-2 d-inline-block text-italic text600">
-									<?php echo $item['link']['title']; ?>
-								</a>
-							<?php endforeach; ?>
-						</div>
-					<?php endif; ?>
-				</form>
-				<a href="<?php echo get_sub_field('button')['url']; ?>" class="btn btn__default navy">
-					<?php echo get_sub_field('button')['title']; ?>
-				</a>
+				<div class="row">
+					<div class="col-lg-9">
+						<form action="" class="pb-3">
+							<input class="mb-3 job-search-nice" type="search" name="job-search" placeholder="Waar ben jij naar op zoek?">
+							<?php if (!empty(get_sub_field('tags'))) : ?>
+								<div class="mega-menu__hashtags">
+									<?php foreach (get_sub_field('tags') as $item) : ?>
+										<a href="<?php echo $item['link']['url']; ?>" class="font-primary pr-2 pb-2 d-inline-block text-italic text600">
+											<?php echo $item['link']['title']; ?>
+										</a>
+									<?php endforeach; ?>
+								</div>
+							<?php endif; ?>
+						</form>
+						<a href="<?php echo get_sub_field('button')['url']; ?>" class="btn btn__default navy">
+							<?php echo get_sub_field('button')['title']; ?>
+						</a>
+					</div>
+				</div>
 			</div>
 			<div class="col-lg-4">
 				<h5 class="text-uppercase mb-5">
