@@ -668,12 +668,12 @@ p,
 
 .display-2 {
 	font-size: 80px;
-	line-height: .75;
+	line-height: 1;
 }
 
 .display-3 {
 	font-size: 70px;
-	line-height: 1 !important;
+	line-height: 1.21 !important;
 }
 
 .font-primary {
@@ -1190,6 +1190,15 @@ i {
 	margin-left: auto;
 	border-width: 0 40px 40px 0;
 	border-color: transparent #fff transparent transparent;
+}
+
+.text-bubble-right-right {
+	position: absolute;
+	top: 100px;
+	right: -20px;
+	margin: auto;
+	border-width: 40px 40px 0 0;
+	border-color: #fff transparent transparent transparent;
 }
 
 .search-input {
