@@ -21,7 +21,7 @@
 							<a href="tel:+31207782393"><i class="far fa-phone-alt"></i>+31 (0)20 - 7782393</a>
 						</div>
 						<div class="col-lg-auto py-2 pl-4">
-							<a href="https://wa.me/31207782393" target="_blank"><i class="fab fa-whatsapp"></i><?php /*<img src="<?= get_template_directory_uri(); ?>/assets/img/whatsapp.png" alt="" width="22" height="22">*/ ?>+31 6 - 83 93 28 22</a>
+							<a href="https://wa.me/31207782393" target="_blank"><i class="fab fa-whatsapp"></i><?php /*<img src="<?= get_template_directory_uri(); ?>/assets/img/whatsapp.png" alt="" width="22" height="22">*/ ?>+31 (0)20 - 7782393</a>
 						</div>
 					</div>
 				</div>

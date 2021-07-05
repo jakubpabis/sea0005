@@ -91,7 +91,7 @@ get_header();
 										<i class="fab fa-whatsapp"></i>
 									</a>
 									<a href="https://wa.me/31207782393" class="text-size-small text400">
-										+31 6 - 83 93 28 22
+										+31 (0)20 - 7782393
 									</a>
 								</div>
 
