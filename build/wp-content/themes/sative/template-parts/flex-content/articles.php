@@ -1,5 +1,5 @@
-<section class="articles-slider">
-	<div class="container mb-5">
+<section class="articles-slider mb-5">
+	<div class="container">
 		<div class="row align-items-end">
 			<div class="col-lg-9">
 				<h5 class="text-uppercase mb-1 text700">

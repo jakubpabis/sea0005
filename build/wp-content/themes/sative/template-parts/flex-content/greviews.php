@@ -1,4 +1,4 @@
-<section class="flex_content-reviews">
+<section class="flex_content-reviews mt-5">
 	<div class="container">
 		<div class="row mb-5">
 			<div class="col-lg-8">
