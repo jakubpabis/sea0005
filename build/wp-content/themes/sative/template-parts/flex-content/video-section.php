@@ -28,13 +28,13 @@
 				<div class="col-lg-9 mt-5 pt-5">
 					<div class="flex_content-video_section-video left position-relative d-flex">
 						<div class="embed-container">
-							<video class="w-100" muted preload="auto" loop id="video_section_item_<?php $vid_id = rand(1000, 200000);
-																																										echo $vid_id; ?>" onclick="document.getElementById('video_section_item_<?php echo $vid_id; ?>').pause(); document.getElementById('video_play_button_<?php echo $vid_id; ?>').style.setProperty('display', 'flex', 'important');">
+							<video class="w-100" controls preload="auto" id="video_section_item_<?php $vid_id = rand(1000, 200000);
+																																									echo $vid_id; ?>" onclick="document.getElementById('video_section_item_<?php echo $vid_id; ?>').pause(); document.getElementById('video_section_item_<?php echo $vid_id; ?>').removeAttribute('controls'); document.getElementById('video_play_button_<?php echo $vid_id; ?>').style.setProperty('display', 'flex', 'important');">
 								<source src="<?php echo get_sub_field('video')['url']; ?>" type="video/mp4">
 								Your browser does not support the video tag.
 							</video>
 						</div>
-						<div id="video_play_button_<?php echo $vid_id; ?>" class="video_play_button position-absolute w-100 h-100 top-0 left-0 d-flex align-items-center justify-content-center" onclick="document.getElementById('video_section_item_<?php echo $vid_id; ?>').play(); document.getElementById('video_play_button_<?php echo $vid_id; ?>').style.setProperty('display', 'none', 'important');">
+						<div id="video_play_button_<?php echo $vid_id; ?>" class="video_play_button position-absolute w-100 h-100 top-0 left-0 d-flex align-items-center justify-content-center" onclick="document.getElementById('video_section_item_<?php echo $vid_id; ?>').play(); document.getElementById('video_section_item_<?php echo $vid_id; ?>').setAttribute('controls',''); document.getElementById('video_play_button_<?php echo $vid_id; ?>').style.setProperty('display', 'none', 'important');">
 							<?php if (get_sub_field('color') === 'bg-yellow') : ?>
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60">
 									<path fill="#FDD963" fill-rule="evenodd" d="M51.6 0L60 8.4v43.2L51.6 60H8.4L0 51.6V8.4L8.4 0h43.2zM21.3 16.1a1.3 1.3 0 00-.7 1.1v25.6c0 .4.3.9.7 1.1a1.2 1.2 0 001.2 0l20-12.8c.4-.2.6-.7.6-1.1 0-.4-.2-.8-.6-1L22.5 16a1.2 1.2 0 00-1.2 0z" />
@@ -78,13 +78,13 @@
 				<div class="offset-lg-3 col-lg-9 mt-5 pt-5">
 					<div class="flex_content-video_section-video right position-relative d-flex">
 						<div class="embed-container">
-							<video class="w-100" muted preload="auto" loop id="video_section_item_<?php $vid_id = rand(1000, 200000);
-																																										echo $vid_id; ?>" onclick="document.getElementById('video_section_item_<?php echo $vid_id; ?>').pause(); document.getElementById('video_play_button_<?php echo $vid_id; ?>').style.setProperty('display', 'flex', 'important');">
+							<video class="w-100" preload="auto" id="video_section_item_<?php $vid_id = rand(1000, 200000);
+																																					echo $vid_id; ?>" onclick="document.getElementById('video_section_item_<?php echo $vid_id; ?>').pause(); document.getElementById('video_section_item_<?php echo $vid_id; ?>').removeAttribute('controls'); document.getElementById('video_play_button_<?php echo $vid_id; ?>').style.setProperty('display', 'flex', 'important');">
 								<source src="<?php echo get_sub_field('video')['url']; ?>" type="video/mp4">
 								Your browser does not support the video tag.
 							</video>
 						</div>
-						<div id="video_play_button_<?php echo $vid_id; ?>" class="video_play_button position-absolute w-100 h-100 top-0 left-0 d-flex align-items-center justify-content-center" onclick="document.getElementById('video_section_item_<?php echo $vid_id; ?>').play(); document.getElementById('video_play_button_<?php echo $vid_id; ?>').style.setProperty('display', 'none', 'important');">
+						<div id="video_play_button_<?php echo $vid_id; ?>" class="video_play_button position-absolute w-100 h-100 top-0 left-0 d-flex align-items-center justify-content-center" onclick="document.getElementById('video_section_item_<?php echo $vid_id; ?>').play(); document.getElementById('video_section_item_<?php echo $vid_id; ?>').setAttribute('controls',''); document.getElementById('video_play_button_<?php echo $vid_id; ?>').style.setProperty('display', 'none', 'important');">
 							<?php if (get_sub_field('color') === 'bg-yellow') : ?>
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60">
 									<path fill="#FDD963" fill-rule="evenodd" d="M51.6 0L60 8.4v43.2L51.6 60H8.4L0 51.6V8.4L8.4 0h43.2zM21.3 16.1a1.3 1.3 0 00-.7 1.1v25.6c0 .4.3.9.7 1.1a1.2 1.2 0 001.2 0l20-12.8c.4-.2.6-.7.6-1.1 0-.4-.2-.8-.6-1L22.5 16a1.2 1.2 0 00-1.2 0z" />
