@@ -1,4 +1,4 @@
-<section class="flex_content-video_section">
+<section class="flex-section flex_content-video_section">
 	<div class="container position-absolute h-100 left-0">
 		<div class="row">
 			<div class="col-lg-12 position-absolute h-100 p-0 left-0">

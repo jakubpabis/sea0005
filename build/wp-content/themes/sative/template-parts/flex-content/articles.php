@@ -1,6 +1,6 @@
-<section class="articles-slider mb-5">
+<section class="flex-section articles-slider">
 	<div class="container">
-		<div class="row align-items-end">
+		<div class="row align-items-end mb-4 pb-3">
 			<div class="col-lg-9">
 				<h5 class="text-uppercase mb-1 text700">
 					<?php echo get_sub_field('sub_title'); ?>

@@ -1,4 +1,4 @@
-<section class="flex_content">
+<section class="flex_content flex-section">
 	<div class="container">
 		<div class="row justify-content-between align-items-end">
 			<div class="col-lg-9">

@@ -1,4 +1,4 @@
-<section class="flex_content-cta">
+<section class="flex_content-cta flex-section">
 	<div class="container position-absolute h-100 left-0">
 		<div class="row">
 			<div class="col-lg-10 position-absolute h-100 p-0 left-0">
@@ -26,7 +26,7 @@
 	</div>
 </section>
 
-<section class="flex_content-bubbles">
+<section class="flex_content-bubbles flex-section">
 	<div class="container">
 		<div class="row align-items-end">
 			<div class="col-lg-6">

@@ -1,3 +1,16 @@
+.flex-section {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.body-bg-gradient {
+  > * {
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
 .flex_content {
   position: relative;
   display: block;
@@ -136,7 +149,7 @@
   }
 
   &-cta {
-    margin: 250px 0;
+    margin: 150px 0;
 
     &-bg {
       --notchSize: 164px;

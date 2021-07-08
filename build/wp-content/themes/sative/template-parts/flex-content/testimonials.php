@@ -1,4 +1,4 @@
-<section class="articles-slider py-5">
+<section class="articles-slider flex-section">
 	<div class="container pb-5">
 		<div class="owl-carousel owl-theme articles-slider-cards testimonials">
 			<?php foreach (get_sub_field('testimonials') as $item) : ?>

@@ -1,4 +1,4 @@
-<main class="team">
+<main class="team flex-section">
 	<?php $i = 2; ?>
 	<div class="container-lg">
 		<?php foreach (get_sub_field('people') as $item) : ?>

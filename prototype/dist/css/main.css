@@ -2388,6 +2388,15 @@ body.offcanvas-active {
 	text-indent: 4px;
 }
 
+.flex-section {
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
+.body-bg-gradient > *:last-child {
+	margin-bottom: 0 !important;
+}
+
 .flex_content {
 	position: relative;
 	display: block;
@@ -2506,7 +2515,7 @@ body.offcanvas-active {
 }
 
 .flex_content-cta {
-	margin: 250px 0;
+	margin: 150px 0;
 }
 
 .flex_content-cta-bg {
@@ -3642,6 +3651,7 @@ aside#chat .dog {
 	min-width: 1px;
 	margin: 0 5px;
 	padding: 5px 10px;
+	color: #183153;
 	border: none;
 	outline: 0 !important;
 	flex-basis: 48%;

@@ -1,4 +1,4 @@
-<section class="flex_content-video_section">
+<section class="flex_content-video_section flex-section">
 	<?php if (get_sub_field('video_position') === 'left') : ?>
 		<div class="container position-absolute h-100 right-0 top-80">
 			<div class="row">

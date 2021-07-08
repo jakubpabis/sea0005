@@ -1,3 +1,12 @@
+<?php $lang = pll_current_language();
+if ($lang === 'en') {
+	$menu_items = 'menu_items_en';
+	$upper_item = 'upper_menu_en';
+} else {
+	$menu_items = 'menu_items';
+	$upper_item = 'upper_menu';
+}
+?>
 <nav class="navigation">
 	<div class="navigation__upper">
 		<div class="container">
@@ -14,7 +23,14 @@
 				</div>
 				<div class="col-md-10">
 					<div class="row justify-content-end align-items-center">
-						<div class="col-lg-auto py-2">
+						<?php if (get_field($upper_item, 'option')) : ?>
+							<div class="col-lg-auto py-2">
+								<a href="<?php echo get_field($upper_item, 'option')['url']; ?>">
+									<?php echo get_field($upper_item, 'option')['title']; ?>
+								</a>
+							</div>
+						<?php endif; ?>
+						<div class="col-lg-auto py-2 pl-4">
 							<a href="mailto:info@searchxrecruitment.com"><i class="far fa-envelope"></i>info@searchxrecruitment.com</a>
 						</div>
 						<div class="col-lg-auto py-2 pl-4">
@@ -72,14 +88,6 @@
 				<div class="col">
 					<div class="row align-items-center justify-content-end">
 						<div class="col-xl-auto col-md-6 pr-0">
-							<?php
-							$lang = pll_current_language();
-							if ($lang === 'en') {
-								$menu_items = 'menu_items_en';
-							} else {
-								$menu_items = 'menu_items';
-							}
-							?>
 							<?php if (have_rows($menu_items, 'option')) : ?>
 								<ul class="navigation__lower-menu">
 									<?php while (have_rows($menu_items, 'option')) : the_row(); ?>

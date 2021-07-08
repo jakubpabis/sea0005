@@ -1,4 +1,4 @@
-<section class="flex_content my-5">
+<section class="flex_content flex-section">
 	<?php if (get_sub_field('type') === 'default') : ?>
 		<div class="container">
 			<div class="row justify-content-center">

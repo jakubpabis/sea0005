@@ -1,4 +1,4 @@
-<section class="flex_content-copy_section my-5">
+<section class="flex_content-copy_section flex-section">
 	<div class="container">
 		<div class="row mb-5">
 			<div class="col-lg-8">

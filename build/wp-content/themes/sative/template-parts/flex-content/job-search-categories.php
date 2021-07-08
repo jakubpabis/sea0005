@@ -1,4 +1,4 @@
-<section class="flex_content-cta job-search-categories">
+<section class="flex_content-cta job-search-categories flex-section">
 	<div class="container-fluid position-absolute h-100 left-0">
 		<div class="row">
 			<div class="col-lg-7 position-absolute h-100 p-0 left-0">

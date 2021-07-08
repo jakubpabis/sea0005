@@ -1,6 +1,6 @@
-<section>
+<section class="flex-section">
 	<div class="container">
-		<div class="row py-5 mb-4">
+		<div class="row">
 			<div class="col-lg-6">
 				<?php if (get_sub_field('title') || get_sub_field('sub_title')) : ?>
 					<h4 class="text-uppercase mb-2 text700">
