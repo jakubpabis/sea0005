@@ -28,8 +28,8 @@
 				<div class="col-lg-9 mt-5 pt-5">
 					<div class="flex_content-video_section-video left position-relative d-flex">
 						<div class="embed-container">
-							<video class="w-100" controls preload="auto" id="video_section_item_<?php $vid_id = rand(1000, 200000);
-																																									echo $vid_id; ?>" onclick="document.getElementById('video_section_item_<?php echo $vid_id; ?>').pause(); document.getElementById('video_section_item_<?php echo $vid_id; ?>').removeAttribute('controls'); document.getElementById('video_play_button_<?php echo $vid_id; ?>').style.setProperty('display', 'flex', 'important');">
+							<video class="w-100" preload="auto" id="video_section_item_<?php $vid_id = rand(1000, 200000);
+																																					echo $vid_id; ?>" onclick="document.getElementById('video_section_item_<?php echo $vid_id; ?>').pause(); document.getElementById('video_section_item_<?php echo $vid_id; ?>').removeAttribute('controls'); document.getElementById('video_play_button_<?php echo $vid_id; ?>').style.setProperty('display', 'flex', 'important');">
 								<source src="<?php echo get_sub_field('video')['url']; ?>" type="video/mp4">
 								Your browser does not support the video tag.
 							</video>
