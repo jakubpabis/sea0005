@@ -2215,7 +2215,19 @@ body.offcanvas-active {
 }
 
 .header__video {
+	overflow: hidden;
+	max-height: calc(100vh - 160px);
 	padding-top: 0 !important;
+}
+
+.header__video .container-fluid {
+	max-height: calc(100vh - 160px);
+}
+
+.header__video .container-fluid video {
+	width: 100%;
+	-o-object-fit: cover;
+	object-fit: cover;
 }
 
 .home__cards .card p {

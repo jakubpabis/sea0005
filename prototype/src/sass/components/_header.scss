@@ -415,5 +415,16 @@
 
   &__video {
     padding-top: 0 !important;
+    max-height: calc(100vh - 160px);
+    overflow: hidden;
+
+    .container-fluid {
+      max-height: calc(100vh - 160px);
+
+      video {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
   }
 }
