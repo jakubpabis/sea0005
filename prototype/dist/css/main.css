@@ -2393,8 +2393,8 @@ body.offcanvas-active {
 }
 
 .flex-section {
-	margin-top: 100px;
-	margin-bottom: 100px;
+	margin-top: 150px;
+	margin-bottom: 150px;
 }
 
 .body-bg-gradient > *:first-child {
@@ -7897,8 +7897,8 @@ h2,
 }
 
 .flex-section {
-	margin-top: 80px;
-	margin-bottom: 80px;
+	margin-top: 120px;
+	margin-bottom: 120px;
 }
 
 .body-bg-gradient > *:first-child {
@@ -7965,8 +7965,8 @@ p,
 }
 
 .flex-section {
-	margin-top: 70px;
-	margin-bottom: 70px;
+	margin-top: 100px;
+	margin-bottom: 100px;
 }
 
 .body-bg-gradient > *:first-child {
@@ -8136,8 +8136,8 @@ p,
 }
 
 .flex-section {
-	margin-top: 60px;
-	margin-bottom: 60px;
+	margin-top: 70px;
+	margin-bottom: 70px;
 }
 
 .body-bg-gradient > *:first-child {
@@ -8941,11 +8941,6 @@ p,
 
 .home__clients .custom-owl-next {
 	right: -25px;
-}
-
-.flex-section {
-	margin-top: 50px;
-	margin-bottom: 50px;
 }
 
 .body-bg-gradient > *:first-child {
