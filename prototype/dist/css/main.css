@@ -2393,6 +2393,11 @@ body.offcanvas-active {
 	margin-bottom: 100px;
 }
 
+.body-bg-gradient > *:first-child {
+	margin-top: 0 !important;
+	padding-top: 100px;
+}
+
 .body-bg-gradient > *:last-child {
 	margin-bottom: 0 !important;
 }
