@@ -1,6 +1,31 @@
 .flex-section {
   margin-top: 100px;
   margin-bottom: 100px;
+
+  @media (max-width: 1440px) {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  @media (max-width: 1199px) {
+    margin-top: 70px;
+    margin-bottom: 70px;
+  }
+
+  @media (max-width: 991px) {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  @media (max-width: 767px) {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 575px) {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
 }
 
 .body-bg-gradient {
@@ -8,6 +33,26 @@
     &:first-child {
       margin-top: 0 !important;
       padding-top: 100px;
+
+      @media (max-width: 1440px) {
+        padding-top: 70px;
+      }
+
+      @media (max-width: 1199px) {
+        padding-top: 60px;
+      }
+
+      @media (max-width: 991px) {
+        padding-top: 50px;
+      }
+
+      @media (max-width: 767px) {
+        padding-top: 40px;
+      }
+
+      @media (max-width: 575px) {
+        padding-top: 30px;
+      }
     }
     &:last-child {
       margin-bottom: 0 !important;

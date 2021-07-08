@@ -2214,6 +2214,10 @@ body.offcanvas-active {
 	justify-content: center;
 }
 
+.header__video {
+	padding-top: 0 !important;
+}
+
 .home__cards .card p {
 	display: block;
 	width: 100%;
@@ -7892,6 +7896,15 @@ h2,
 	font-size: 33px;
 }
 
+.flex-section {
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+
+.body-bg-gradient > *:first-child {
+	padding-top: 70px;
+}
+
 }
 
 @media (max-width: 1199px) {
@@ -7949,6 +7962,15 @@ p,
 .header__home .btns {
 	margin-bottom: 40px;
 	padding: 20px;
+}
+
+.flex-section {
+	margin-top: 70px;
+	margin-bottom: 70px;
+}
+
+.body-bg-gradient > *:first-child {
+	padding-top: 60px;
 }
 
 .jobs__list-item .job-title .icon {
@@ -8111,6 +8133,15 @@ p,
 
 .home__jobs {
 	padding: 90px 0;
+}
+
+.flex-section {
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
+
+.body-bg-gradient > *:first-child {
+	padding-top: 50px;
 }
 
 form .ugly label {
@@ -8563,6 +8594,15 @@ p,
 	font-size: 38px;
 }
 
+.flex-section {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.body-bg-gradient > *:first-child {
+	padding-top: 40px;
+}
+
 .card {
 	padding: 35px;
 }
@@ -8901,6 +8941,15 @@ p,
 
 .home__clients .custom-owl-next {
 	right: -25px;
+}
+
+.flex-section {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.body-bg-gradient > *:first-child {
+	padding-top: 30px;
 }
 
 .card {
