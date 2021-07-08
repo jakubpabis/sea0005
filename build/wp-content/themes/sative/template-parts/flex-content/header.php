@@ -1,4 +1,4 @@
-<header class="header flex_content-header py-5">
+<header class="header flex_content-header">
 	<div class="container">
 		<?php if (get_sub_field('image_position') === 'top') : ?>
 			<div class="row">
