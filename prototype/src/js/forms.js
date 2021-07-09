@@ -126,35 +126,33 @@ function appValidation() {
     });
   }
 
-  if ($("#contact-popup-form").length > 0) {
-    $("#contactPopupModal").on("show.bs.modal", function (e) {
-      var formCon = $("#contact-popup-form");
-      formCon.validate({
-        onfocusout: function (element) {
-          $(element).valid();
-        },
-        focusCleanup: true,
-        onkeyup: false,
-      });
-      formCon.find("input.required").on("change focusout", function () {
-        if (formCon.valid()) {
-          $(".fake_btn_contact").addClass("d-none");
-          $(".g-recaptcha.contactF").removeClass("d-none");
-        } else {
-          $(".fake_btn_contact").removeClass("d-none");
-          $(".g-recaptcha.contactF").addClass("d-none");
-        }
-      });
-      formCon.find(".fake_btn_contact").on("click", function (e) {
-        e.preventDefault();
-        if (formCon.valid()) {
-          $(".fake_btn_contact").addClass("d-none");
-          $(".g-recaptcha.contactF").removeClass("d-none");
-          $(this).next("button.g-recaptcha.contactF").trigger("click").remove();
-        }
-      });
-    });
-  }
+  // if ($("#contact-popup-form").length > 0) {
+  //   var formCon = $("#contact-popup-form");
+  //   formCon.validate({
+  //     onfocusout: function (element) {
+  //       $(element).valid();
+  //     },
+  //     focusCleanup: true,
+  //     onkeyup: false,
+  //   });
+  //   formCon.find("input.required").on("change focusout", function () {
+  //     if (formCon.valid()) {
+  //       $(".fake_btn_contact").addClass("d-none");
+  //       $(".g-recaptcha.contactF").removeClass("d-none");
+  //     } else {
+  //       $(".fake_btn_contact").removeClass("d-none");
+  //       $(".g-recaptcha.contactF").addClass("d-none");
+  //     }
+  //   });
+  //   formCon.find(".fake_btn_contact").on("click", function (e) {
+  //     e.preventDefault();
+  //     if (formCon.valid()) {
+  //       $(".fake_btn_contact").addClass("d-none");
+  //       $(".g-recaptcha.contactF").removeClass("d-none");
+  //       $(this).next("button.g-recaptcha.contactF").trigger("click").remove();
+  //     }
+  //   });
+  // }
 }
 
 function onAppSubmit(token) {
@@ -201,16 +199,16 @@ function onSubscribeSubmit(token) {
   }
 }
 
-function onContactSubmit(token) {
-  var $globHash = getCookie("contactHash");
-  var $formHash = document.getElementById("contactHash").value;
-  if ($globHash === $formHash) {
-    setCookie("cvHash", "false", 1);
-    $("#contact-popup-form").find("button.g-recaptcha").remove();
-    $("#contact-popup-form").find("button.fake_btn_contact").addClass("d-none");
-    $("#contact-popup-form")
-      .find("button.fake_btn_contact_loading")
-      .removeClass("d-none");
-    document.getElementById("contact-popup-form").submit();
-  }
-}
+// function onContactSubmit() {
+//   var $globHash = getCookie("contactHash");
+//   var $formHash = document.getElementById("contactHash").value;
+//   if ($globHash === $formHash) {
+//     setCookie("cvHash", "false", 1);
+//     $("#contact-popup-form").find("button.g-recaptcha").remove();
+//     $("#contact-popup-form").find("button.fake_btn_contact").addClass("d-none");
+//     $("#contact-popup-form")
+//       .find("button.fake_btn_contact_loading")
+//       .removeClass("d-none");
+//     document.getElementById("contact-popup-form").submit();
+//   }
+// }

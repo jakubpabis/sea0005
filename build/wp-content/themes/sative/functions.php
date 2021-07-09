@@ -620,6 +620,7 @@ $toTranslate = array(
 	'Or just download the file without giving up your email',
 	'Zoek naar een artikel',
 	'Onze <span class="bg-yellow px-3 font-primary">kennisbank</span>',
+	'Sorry, it looks like you’re a robot...',
 );
 
 if (function_exists('pll_register_string')) {

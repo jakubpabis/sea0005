@@ -87,7 +87,8 @@
 						<h2 class="m-0 mb-3">
 							<?php echo get_sub_field('form_title'); ?>
 						</h2>
-						<form method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" accept-charset="UTF-8" role="form" id="<?php echo $type; ?>-popup-form" enctype="multipart/form-data">
+						<?php $type = 'contact' ?>
+						<form method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" accept-charset="UTF-8" role="form" id="<?php echo $type; ?>_section_form" enctype="multipart/form-data">
 							<div class="row align-items-center">
 								<div class="col-12 ugly py-2">
 									<input class="required" type="text" name="<?php echo $type; ?>_name" minlength="2" required>
@@ -110,13 +111,10 @@
 									<label class="ugly-label" for="<?php echo $type; ?>_message"><?= pll_e('Message'); ?> <span>*</span></label>
 								</div>
 								<div class="col-12 pt-1">
+									<input class="d-none" type="text" name="<?php echo $type; ?>_important_consent_field">
 									<input type="hidden" name="action" value="<?php echo $type; ?>_form">
 									<?php wp_nonce_field('<?php echo $type; ?>_form', '<?php echo $type; ?>_form_nonce'); ?>
-									<input type="hidden" name="contactHash" id="contactHash" value="<?php global $hashesForLashes;
-																																									echo $hashesForLashes['contactHash']; ?>">
-									<button type="button" disabled class="fake_btn_<?php echo $type; ?>_loading btn btn__default pink d-none disabled"><?= pll_e('Sending, please wait...'); ?></button>
-									<button type="button" class="fake_btn_<?php echo $type; ?> btn btn__default yellow"><?= pll_e('Send message'); ?></button>
-									<button class="g-recaptcha contactF btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onContactSubmit"><?= pll_e('Send message'); ?></button>
+									<button class="g-recaptcha contactF btn btn__default yellow" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onContactSubmit"><?= pll_e('Send message'); ?></button>
 								</div>
 							</div>
 						</form>

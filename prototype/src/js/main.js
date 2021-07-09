@@ -1,43 +1,5 @@
 "use strict";
 
-function lazyImages() {
-  $(".lazyset").each(function () {
-    if (spaceFromBottom($(this)) && !$(this).hasClass("loaded")) {
-      $(this)
-        .attr("srcset", $(this).data("srcset"))
-        .removeAttr("data-srcset")
-        .addClass("loaded");
-    }
-  });
-  $(".lazy").each(function () {
-    if (spaceFromBottom($(this)) && !$(this).hasClass("loaded")) {
-      $(this)
-        .attr("src", $(this).data("src"))
-        .removeAttr("data-src")
-        .addClass("loaded");
-    }
-  });
-
-  $(window).on("scroll resize", function () {
-    $(".lazyset").each(function () {
-      if (spaceFromBottom($(this)) && !$(this).hasClass("loaded")) {
-        $(this)
-          .attr("srcset", $(this).data("srcset"))
-          .removeAttr("data-srcset")
-          .addClass("loaded");
-      }
-    });
-    $(".lazy").each(function () {
-      if (spaceFromBottom($(this)) && !$(this).hasClass("loaded")) {
-        $(this)
-          .attr("src", $(this).data("src"))
-          .removeAttr("data-src")
-          .addClass("loaded");
-      }
-    });
-  });
-}
-
 function knowledgeFilterToggle() {
   $(".knowledge__filters")
     .find(".card")
