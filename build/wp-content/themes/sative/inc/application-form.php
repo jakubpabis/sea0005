@@ -681,9 +681,9 @@ function contactEmailTemplate()
                             <tr>
                                 <td>
                                     <h1 style="font-size: 12pt!important;">
-                                        Thank you for contacting us!<br/>
+                                        ' . pll__("Thank you for contacting us!<br/>
                                         We will reply to your message as soon as possible.<br/>
-                                        Have a nice day!
+                                        Have a nice day!") . '
                                     </h1>
                                 </td>
                             </tr>
@@ -692,7 +692,7 @@ function contactEmailTemplate()
                             <tr>
                                 <td style="padding-top: 40px;">
                                     <p style="font-size: 10pt!important;">
-                                        In the meantime, you can stay posted by following us on
+																			' . pll__("In the meantime, you can stay posted by following us on") . '  
                                     </p>
                                     <p style="font-size: 10pt!important;">
                                         <strong>LinkedIn: </strong><a href="https://www.linkedin.com/company/search-x-recruitment">https://www.linkedin.com/company/search-x-recruitment</a><br/>
@@ -705,7 +705,7 @@ function contactEmailTemplate()
                         </tbody>
                     </table>
                     <hr />
-                    <p>This is an automatic message. Please do not reply to it.</p>
+                    <p>' . pll__("This is an automatic message. Please do not reply to it.") . '</p>
                     <table style="max-width: 320px; width: 100%; margin: 0 15px;" cellspacing="0" cellpadding="0" border="0">
                         <tbody>
                             <tr>

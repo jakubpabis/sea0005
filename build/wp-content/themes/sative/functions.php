@@ -621,6 +621,11 @@ $toTranslate = array(
 	'Zoek naar een artikel',
 	'Onze <span class="bg-yellow px-3 font-primary">kennisbank</span>',
 	'Sorry, it looks like you’re a robot...',
+	'Thank you for contacting us!<br/>
+	We will reply to your message as soon as possible.<br/>
+	Have a nice day!',
+	'In the meantime, you can stay posted by following us on',
+	'This is an automatic message. Please do not reply to it.'
 );
 
 if (function_exists('pll_register_string')) {
