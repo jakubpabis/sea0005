@@ -78,7 +78,6 @@
 							<h2 class="color-navy">
 								<?= pll_e('Thank you! You’re message was sent successfully!'); ?>
 							</h2>
-							<?php setcookie('contact_popup', true, get_field('contact_popup_cookie', 'option'), '/'); ?>
 						</div>
 					<?php else : ?>
 						<div class="info card bg-pink">
