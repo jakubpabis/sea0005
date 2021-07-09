@@ -9,7 +9,7 @@ if ($lang === 'en') {
 ?>
 <nav class="navigation">
 	<div class="navigation__upper">
-		<div class="container">
+		<div class="container-xl">
 			<div class="row justify-content-between align-items-center">
 				<div class="col-md-auto">
 					<ul class="lang d-none d-md-flex">
@@ -52,7 +52,7 @@ if ($lang === 'en') {
 		</div>
 	</div>
 	<div class="navigation__lower">
-		<div class="container">
+		<div class="container-xl">
 			<div class="row align-items-center">
 				<div class="col-auto">
 					<a href="/" class="navigation__lower-logo d-none d-lg-block">
@@ -87,7 +87,7 @@ if ($lang === 'en') {
 				</div>
 				<div class="col">
 					<div class="row align-items-center justify-content-end">
-						<div class="col-xl-auto col-md-6 pr-0">
+						<div class="col-lg-auto col-md-6 pr-0">
 							<?php if (have_rows($menu_items, 'option')) : ?>
 								<ul class="navigation__lower-menu">
 									<?php while (have_rows($menu_items, 'option')) : the_row(); ?>
