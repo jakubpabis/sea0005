@@ -3152,12 +3152,14 @@ form .ugly textarea {
 }
 
 #uploadCVModal,
+#searchPopupModal,
 #subscribePopupModal,
 #contactPopupModal {
 	background-color: #94d4e9 !important;
 }
 
 #uploadCVModal .social-login,
+#searchPopupModal .social-login,
 #subscribePopupModal .social-login,
 #contactPopupModal .social-login {
 	display: flex;
@@ -3166,6 +3168,7 @@ form .ugly textarea {
 }
 
 #uploadCVModal .social-login .btn,
+#searchPopupModal .social-login .btn,
 #subscribePopupModal .social-login .btn,
 #contactPopupModal .social-login .btn {
 	max-width: calc(25% - 10px);
@@ -3174,12 +3177,14 @@ form .ugly textarea {
 }
 
 #uploadCVModal form *,
+#searchPopupModal form *,
 #subscribePopupModal form *,
 #contactPopupModal form * {
 	font-family: 'Roboto', sans-serif !important;
 }
 
 #uploadCVModal form .pretty,
+#searchPopupModal form .pretty,
 #subscribePopupModal form .pretty,
 #contactPopupModal form .pretty {
 	margin-right: 0;
@@ -3187,6 +3192,7 @@ form .ugly textarea {
 }
 
 #uploadCVModal form .pretty .icon,
+#searchPopupModal form .pretty .icon,
 #subscribePopupModal form .pretty .icon,
 #contactPopupModal form .pretty .icon {
 	font-style: normal !important;
@@ -3197,6 +3203,7 @@ form .ugly textarea {
 }
 
 #uploadCVModal form .pretty label,
+#searchPopupModal form .pretty label,
 #subscribePopupModal form .pretty label,
 #contactPopupModal form .pretty label {
 	font-size: 16px;
@@ -3206,6 +3213,8 @@ form .ugly textarea {
 
 #uploadCVModal form .pretty label:before,
 #uploadCVModal form .pretty label:after,
+#searchPopupModal form .pretty label:before,
+#searchPopupModal form .pretty label:after,
 #subscribePopupModal form .pretty label:before,
 #subscribePopupModal form .pretty label:after,
 #contactPopupModal form .pretty label:before,
@@ -3219,6 +3228,7 @@ form .ugly textarea {
 }
 
 #uploadCVModal form .pretty label:before,
+#searchPopupModal form .pretty label:before,
 #subscribePopupModal form .pretty label:before,
 #contactPopupModal form .pretty label:before {
 	top: 0;
@@ -3229,6 +3239,7 @@ form .ugly textarea {
 }
 
 #uploadCVModal form .pretty label.error,
+#searchPopupModal form .pretty label.error,
 #subscribePopupModal form .pretty label.error,
 #contactPopupModal form .pretty label.error {
 	font-weight: 700;
@@ -3243,18 +3254,21 @@ form .ugly textarea {
 }
 
 #uploadCVModal form .ugly,
+#searchPopupModal form .ugly,
 #subscribePopupModal form .ugly,
 #contactPopupModal form .ugly {
 	position: relative;
 }
 
 #uploadCVModal form .ugly.upload:focus label,
+#searchPopupModal form .ugly.upload:focus label,
 #subscribePopupModal form .ugly.upload:focus label,
 #contactPopupModal form .ugly.upload:focus label {
 	opacity: 1 !important;
 }
 
 #uploadCVModal form .ugly.upload label,
+#searchPopupModal form .ugly.upload label,
 #subscribePopupModal form .ugly.upload label,
 #contactPopupModal form .ugly.upload label {
 	min-height: 48px;
@@ -3264,6 +3278,7 @@ form .ugly textarea {
 }
 
 #uploadCVModal form .ugly label,
+#searchPopupModal form .ugly label,
 #subscribePopupModal form .ugly label,
 #contactPopupModal form .ugly label {
 	font-size: 16px;
@@ -3282,6 +3297,7 @@ form .ugly textarea {
 }
 
 #uploadCVModal form .ugly label.full,
+#searchPopupModal form .ugly label.full,
 #subscribePopupModal form .ugly label.full,
 #contactPopupModal form .ugly label.full {
 	display: flex;
@@ -3292,6 +3308,7 @@ form .ugly textarea {
 }
 
 #uploadCVModal form .ugly label.full span,
+#searchPopupModal form .ugly label.full span,
 #subscribePopupModal form .ugly label.full span,
 #contactPopupModal form .ugly label.full span {
 	font-style: normal !important;
@@ -3299,6 +3316,7 @@ form .ugly textarea {
 }
 
 #uploadCVModal form .ugly label span,
+#searchPopupModal form .ugly label span,
 #subscribePopupModal form .ugly label span,
 #contactPopupModal form .ugly label span {
 	font-size: 16px;
@@ -3309,6 +3327,9 @@ form .ugly textarea {
 #uploadCVModal form .ugly input,
 #uploadCVModal form .ugly select,
 #uploadCVModal form .ugly textarea,
+#searchPopupModal form .ugly input,
+#searchPopupModal form .ugly select,
+#searchPopupModal form .ugly textarea,
 #subscribePopupModal form .ugly input,
 #subscribePopupModal form .ugly select,
 #subscribePopupModal form .ugly textarea,
@@ -3331,6 +3352,9 @@ form .ugly textarea {
 #uploadCVModal form .ugly input:focus ~ label,
 #uploadCVModal form .ugly select:focus ~ label,
 #uploadCVModal form .ugly textarea:focus ~ label,
+#searchPopupModal form .ugly input:focus ~ label,
+#searchPopupModal form .ugly select:focus ~ label,
+#searchPopupModal form .ugly textarea:focus ~ label,
 #subscribePopupModal form .ugly input:focus ~ label,
 #subscribePopupModal form .ugly select:focus ~ label,
 #subscribePopupModal form .ugly textarea:focus ~ label,
@@ -3343,6 +3367,9 @@ form .ugly textarea {
 #uploadCVModal form .ugly input[type='file'],
 #uploadCVModal form .ugly select[type='file'],
 #uploadCVModal form .ugly textarea[type='file'],
+#searchPopupModal form .ugly input[type='file'],
+#searchPopupModal form .ugly select[type='file'],
+#searchPopupModal form .ugly textarea[type='file'],
 #subscribePopupModal form .ugly input[type='file'],
 #subscribePopupModal form .ugly select[type='file'],
 #subscribePopupModal form .ugly textarea[type='file'],
@@ -3359,6 +3386,9 @@ form .ugly textarea {
 #uploadCVModal form .ugly input.error,
 #uploadCVModal form .ugly select.error,
 #uploadCVModal form .ugly textarea.error,
+#searchPopupModal form .ugly input.error,
+#searchPopupModal form .ugly select.error,
+#searchPopupModal form .ugly textarea.error,
 #subscribePopupModal form .ugly input.error,
 #subscribePopupModal form .ugly select.error,
 #subscribePopupModal form .ugly textarea.error,
@@ -3371,6 +3401,9 @@ form .ugly textarea {
 #uploadCVModal form .ugly input.error + label,
 #uploadCVModal form .ugly select.error + label,
 #uploadCVModal form .ugly textarea.error + label,
+#searchPopupModal form .ugly input.error + label,
+#searchPopupModal form .ugly select.error + label,
+#searchPopupModal form .ugly textarea.error + label,
 #subscribePopupModal form .ugly input.error + label,
 #subscribePopupModal form .ugly select.error + label,
 #subscribePopupModal form .ugly textarea.error + label,
@@ -3389,6 +3422,7 @@ form .ugly textarea {
 }
 
 #uploadCVModal form .ugly select,
+#searchPopupModal form .ugly select,
 #subscribePopupModal form .ugly select,
 #contactPopupModal form .ugly select {
 	padding-top: 13px;
@@ -3398,6 +3432,8 @@ form .ugly textarea {
 
 #uploadCVModal form .ugly select:active,
 #uploadCVModal form .ugly select:focus,
+#searchPopupModal form .ugly select:active,
+#searchPopupModal form .ugly select:focus,
 #subscribePopupModal form .ugly select:active,
 #subscribePopupModal form .ugly select:focus,
 #contactPopupModal form .ugly select:active,
@@ -3406,6 +3442,7 @@ form .ugly textarea {
 }
 
 #uploadCVModal form .ugly textarea,
+#searchPopupModal form .ugly textarea,
 #subscribePopupModal form .ugly textarea,
 #contactPopupModal form .ugly textarea {
 	min-height: 120px;
@@ -7873,6 +7910,7 @@ fieldset[disabled] .datepicker table tr td span.active:hover:hover {
 @media (min-width: 1200px) {
 
 #uploadCVModal .modal-lg,
+#searchPopupModal .modal-lg,
 #subscribePopupModal .modal-lg,
 #contactPopupModal .modal-lg {
 	max-width: 1140px;
@@ -8175,6 +8213,7 @@ form .ugly label.full {
 }
 
 #uploadCVModal form .ugly label,
+#searchPopupModal form .ugly label,
 #subscribePopupModal form .ugly label,
 #contactPopupModal form .ugly label {
 	left: 7px;
@@ -8674,6 +8713,7 @@ p,
 }
 
 #uploadCVModal .social-login .btn,
+#searchPopupModal .social-login .btn,
 #subscribePopupModal .social-login .btn,
 #contactPopupModal .social-login .btn {
 	max-width: calc(50% - 10px);
