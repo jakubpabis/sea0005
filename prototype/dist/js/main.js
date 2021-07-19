@@ -90,7 +90,7 @@ function lazyImages() {
 function slideTo(el) {
   $("html, body").animate(
     {
-      scrollTop: $(el).offset().top,
+      scrollTop: $(el).offset().top - 160,
     },
     500
   );
