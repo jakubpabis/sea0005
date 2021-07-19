@@ -625,7 +625,9 @@ $toTranslate = array(
 	We will reply to your message as soon as possible.<br/>
 	Have a nice day!',
 	'In the meantime, you can stay posted by following us on',
-	'This is an automatic message. Please do not reply to it.'
+	'This is an automatic message. Please do not reply to it.',
+	'Vervulde vacatures',
+	'Vervulde vacatures text'
 );
 
 if (function_exists('pll_register_string')) {
