@@ -60,8 +60,8 @@ get_header();
 						<div class="row">
 							<?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
 									$helper = jobDisplayHelper(); ?>
-									<div class="col-lg-6">
-										<article class="card jobs__list-item">
+									<div class="col-lg-6 mb-5">
+										<article class="card jobs__list-item mb-0 h-100">
 											<div class="job-title">
 												<?php if (strlen($helper['supCatName']) > 0) : ?>
 													<span class="icon" data-type="<?= $helper['supCatName']; ?>"></span>
