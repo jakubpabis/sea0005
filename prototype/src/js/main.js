@@ -335,6 +335,16 @@ function bodyGradient() {
   });
 }
 
+function slideThem() {
+  var el = $('*[href*="#"]');
+  if (el) {
+    el.on("click", function (e) {
+      e.preventDefault();
+      slideTo(el.attr("href"));
+    });
+  }
+}
+
 jQuery(document).ready(function () {
   lazyImages();
   uglyInput();
@@ -347,6 +357,7 @@ jQuery(document).ready(function () {
   onFormSubmit();
   onFormLoad();
   appValidation();
+  slideThem();
 
   if ($(".body-bg-gradient").length > 0) {
     bodyGradient();

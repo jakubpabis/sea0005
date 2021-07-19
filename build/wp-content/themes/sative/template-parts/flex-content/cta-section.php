@@ -89,7 +89,7 @@
 					</g>
 				</svg>
 			</div>
-			<div class="col-lg-6">
+			<div class="col-lg-6" id="bottom-contact-dog-section">
 				Contact form will be here
 			</div>
 		</div>
