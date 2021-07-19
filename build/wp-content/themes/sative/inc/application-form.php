@@ -379,6 +379,53 @@ function sendEmailContact()
 	return $message;
 }
 
+function sendEmailContactDog()
+{
+	function searchx_set_html_mail_content_type()
+	{
+		return 'text/html';
+	}
+	add_filter('wp_mail_content_type', 'searchx_set_html_mail_content_type');
+
+	if (isset($_POST['cta_dog_contact_email']) && trim($_POST['cta_dog_contact_email']) != "") {
+		$from = $_POST['cta_dog_contact_email'];
+	}
+	if (isset($_POST['cta_dog_contact_name']) && trim($_POST['cta_dog_contact_name']) != "") {
+		$name = $_POST['cta_dog_contact_name'];
+	}
+	if (isset($_POST['cta_dog_contact_phone']) && trim($_POST['cta_dog_contact_phone']) != "") {
+		$phone = $_POST['cta_dog_contact_phone'];
+	}
+	if (isset($_POST['cta_dog_contact_company']) && trim($_POST['cta_dog_contact_company']) != "") {
+		$company = $_POST['cta_dog_contact_company'];
+	}
+	if (isset($_POST['cta_dog_contact_message']) && trim($_POST['cta_dog_contact_message']) != "") {
+		$messageForm = $_POST['cta_dog_contact_message'];
+	}
+	$to = 'ernst@searchxrecruitment.com';
+	//$to = 'office@sative.co.uk';
+	$subject = pll__('Contact form submitted successfully');
+	$subjectA = pll__('Contact form message from website');
+	$body = contactEmailTemplate();
+	$bodyA = contactEmailTemplateA($from, $name, $phone, $company, $messageForm);
+	$headers = array('Content-Type: text/html; charset=UTF-8');
+
+	$email = wp_mail($from, $subject, $body, $headers);
+	$emailA = wp_mail($to, $subjectA, $bodyA, $headers);
+
+	if (!isset($_POST['cta_dog_contact_important_consent_field']) || (isset($_POST['cta_dog_contact_important_consent_field']) && trim($_POST['cta_dog_contact_important_consent_field']) != "")) {
+		$message = 'robot';
+	} else if ($email && $emailA) {
+		$message = 'success';
+	} else {
+		$message = 'failed';
+	}
+
+	remove_filter('wp_mail_content_type', 'searchx_set_html_mail_content_type');
+
+	return $message;
+}
+
 function appEmailTemplate()
 {
 	$job_link = 'https://' . $_SERVER['SERVER_NAME'] . $_POST['_wp_http_referer'];
@@ -787,6 +834,7 @@ function contactEmailTemplate()
 	return $body;
 }
 
+
 function contactEmailTemplateA($from, $name, $phone = false, $company = false, $message)
 {
 	if ($company) {
@@ -898,3 +946,16 @@ function sative_contact_form_submit()
 }
 add_action('admin_post_nopriv_contact_form', 'sative_contact_form_submit');
 add_action('admin_post_contact_form', 'sative_contact_form_submit');
+
+function sative_cta_dog_contact_form_submit()
+{
+	$message = sendEmailContactDog();
+	$referer = remove_query_arg('message', $_POST['_wp_http_referer']);
+	$referer = remove_query_arg('messagecv', $_POST['_wp_http_referer']);
+	$referer = remove_query_arg('messagesb', $_POST['_wp_http_referer']);
+	$referer = remove_query_arg('messagect', $_POST['_wp_http_referer']);
+	$redirect = '/app-success?ref=' . $referer . '&messagect=' . $message;
+	header("Location: $redirect");
+}
+add_action('admin_post_nopriv_cta_dog_contact_form', 'sative_cta_dog_contact_form_submit');
+add_action('admin_post_cta_dog_contact_form', 'sative_cta_dog_contact_form_submit');

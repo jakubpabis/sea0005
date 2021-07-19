@@ -5828,6 +5828,36 @@ aside#chat .dog {
 	color: #fdd963 !important;
 }
 
+.contact-form-carousel .next {
+	position: absolute;
+	top: 15px;
+	right: 10px;
+	cursor: pointer;
+}
+
+.contact-form-carousel .ugly label {
+	font-family: 'Fractul' !important;
+	font-size: 24px !important;
+	font-weight: 700 !important;
+	padding-left: 0 !important;
+}
+
+.contact-form-carousel .ugly input,
+.contact-form-carousel .ugly textarea {
+	font-family: 'Fractul' !important;
+	font-size: 24px !important;
+	font-weight: 700 !important;
+	padding-left: 0 !important;
+	border: none !important;
+	border-bottom: 1px solid #183153 !important;
+	background-color: transparent !important;
+}
+
+.contact-form-carousel .ugly textarea {
+	padding-left: 10px !important;
+	border: 1px solid #183153 !important;
+}
+
 .footer {
 	padding-top: 40px;
 	color: white;

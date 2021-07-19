@@ -90,7 +90,61 @@
 				</svg>
 			</div>
 			<div class="col-lg-6" id="bottom-contact-dog-section">
-				Contact form will be here
+				<?php if (get_sub_field('links') && !empty(get_sub_field('links'))) : ?>
+				<?php else : ?>
+					<?php $type = 'cta_dog_contact'; ?>
+					<form method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" accept-charset="UTF-8" role="form" id="<?php echo $type; ?>_section_form" enctype="multipart/form-data">
+						<div class="owl-carousel owl-theme contact-form-carousel">
+							<div class="ugly p-2">
+								<input class="required pristine" type="text" name="<?php echo $type; ?>_name" minlength="2" required>
+								<label class="ugly-label" for="<?php echo $type; ?>_name"><?= pll_e('Name'); ?> <span>*</span></label>
+								<span class="d-none color-red"><?php pll_e('This field is required'); ?></span>
+								<span class="next">
+									<svg height="18" width="34" xmlns="http://www.w3.org/2000/svg">
+										<path d="M25.885.278l7.844 8.051a.947.947 0 01.078.091l-.078-.09a.95.95 0 01.236.412l.006.023A.895.895 0 0134 9l-.006.11-.002.011a.974.974 0 01-.02.114c-.003.007-.004.014-.006.022a.91.91 0 01-.159.323l-.01.013-.068.078-7.844 8.051a.91.91 0 01-1.307 0 .966.966 0 010-1.342l6.265-6.432H.924C.414 9.949 0 9.525 0 9s.414-.949.924-.949h29.92L24.578 1.62a.966.966 0 010-1.342.908.908 0 011.307 0z" fill="#183153" />
+									</svg>
+								</span>
+							</div>
+							<div class="ugly p-2">
+								<input type="text" class="pristine" name="<?php echo $type; ?>_company" minlength="1">
+								<label class="ugly-label" for="<?php echo $type; ?>_company"><?= pll_e('Company'); ?></label>
+								<span class="next">
+									<svg height="18" width="34" xmlns="http://www.w3.org/2000/svg">
+										<path d="M25.885.278l7.844 8.051a.947.947 0 01.078.091l-.078-.09a.95.95 0 01.236.412l.006.023A.895.895 0 0134 9l-.006.11-.002.011a.974.974 0 01-.02.114c-.003.007-.004.014-.006.022a.91.91 0 01-.159.323l-.01.013-.068.078-7.844 8.051a.91.91 0 01-1.307 0 .966.966 0 010-1.342l6.265-6.432H.924C.414 9.949 0 9.525 0 9s.414-.949.924-.949h29.92L24.578 1.62a.966.966 0 010-1.342.908.908 0 011.307 0z" fill="#183153" />
+									</svg>
+								</span>
+							</div>
+							<div class="ugly p-2">
+								<input class="required pristine" type="email" name="<?php echo $type; ?>_email" minlength="4" required>
+								<label class="ugly-label" for="<?php echo $type; ?>_email"><?= pll_e('Email address'); ?> <span>*</span></label>
+								<span class="d-none color-red"><?php pll_e('This field is required'); ?></span>
+								<span class="next">
+									<svg height="18" width="34" xmlns="http://www.w3.org/2000/svg">
+										<path d="M25.885.278l7.844 8.051a.947.947 0 01.078.091l-.078-.09a.95.95 0 01.236.412l.006.023A.895.895 0 0134 9l-.006.11-.002.011a.974.974 0 01-.02.114c-.003.007-.004.014-.006.022a.91.91 0 01-.159.323l-.01.013-.068.078-7.844 8.051a.91.91 0 01-1.307 0 .966.966 0 010-1.342l6.265-6.432H.924C.414 9.949 0 9.525 0 9s.414-.949.924-.949h29.92L24.578 1.62a.966.966 0 010-1.342.908.908 0 011.307 0z" fill="#183153" />
+									</svg>
+								</span>
+							</div>
+							<div class="ugly p-2">
+								<input type="tel" class="pristine" name="<?php echo $type; ?>_phone" minlength="6">
+								<label class="ugly-label" for="<?php echo $type; ?>_phone"><?= pll_e('Phone'); ?></label>
+								<span class="next">
+									<svg height="18" width="34" xmlns="http://www.w3.org/2000/svg">
+										<path d="M25.885.278l7.844 8.051a.947.947 0 01.078.091l-.078-.09a.95.95 0 01.236.412l.006.023A.895.895 0 0134 9l-.006.11-.002.011a.974.974 0 01-.02.114c-.003.007-.004.014-.006.022a.91.91 0 01-.159.323l-.01.013-.068.078-7.844 8.051a.91.91 0 01-1.307 0 .966.966 0 010-1.342l6.265-6.432H.924C.414 9.949 0 9.525 0 9s.414-.949.924-.949h29.92L24.578 1.62a.966.966 0 010-1.342.908.908 0 011.307 0z" fill="#183153" />
+									</svg>
+								</span>
+							</div>
+							<div class="ugly p-2">
+								<textarea class="required pristine" name="<?php echo $type; ?>_message" minlength="10" rows="6" required></textarea>
+								<label class="ugly-label" for="<?php echo $type; ?>_message"><?= pll_e('Message'); ?> <span>*</span></label>
+								<span class="d-none color-red"><?php pll_e('This field is required'); ?></span>
+								<input class="d-none" type="text" name="<?php echo $type; ?>_important_consent_field">
+								<input type="hidden" name="action" value="<?php echo $type; ?>_form">
+								<?php wp_nonce_field('<?php echo $type; ?>_form', '<?php echo $type; ?>_form_nonce'); ?>
+								<button class="g-recaptcha contactF btn btn__default yellow" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onContactSubmit"><?= pll_e('Send message'); ?></button>
+							</div>
+						</div>
+					</form>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>

@@ -10,7 +10,7 @@
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '3.6.3');
+	define('_S_VERSION', '3.6.7');
 }
 
 if (!function_exists('sative_setup')) :
@@ -627,7 +627,8 @@ $toTranslate = array(
 	'In the meantime, you can stay posted by following us on',
 	'This is an automatic message. Please do not reply to it.',
 	'Vervulde vacatures',
-	'Vervulde vacatures text'
+	'Vervulde vacatures text',
+	'This field is required'
 );
 
 if (function_exists('pll_register_string')) {
