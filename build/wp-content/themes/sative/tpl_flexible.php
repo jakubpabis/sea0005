@@ -53,6 +53,8 @@ get_header(); ?>
 				<?php get_template_part('template-parts/flex-content/contact-section'); ?>
 			<?php elseif (get_row_layout() == 'bottom_bar') : ?>
 				<?php get_template_part('template-parts/flex-content/bottom-bar'); ?>
+			<?php elseif (get_row_layout() == 'recruitment_labels') : ?>
+				<?php get_template_part('template-parts/flex-content/labels'); ?>
 			<?php endif; ?>
 		<?php endwhile; ?>
 	</div>
