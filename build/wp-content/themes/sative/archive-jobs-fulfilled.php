@@ -58,9 +58,9 @@ get_header();
 					</aside>
 					<main class="jobs__list-items">
 						<div class="row">
-							<div class="col-lg-6">
-								<?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
-										$helper = jobDisplayHelper(); ?>
+							<?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
+									$helper = jobDisplayHelper(); ?>
+									<div class="col-lg-6">
 										<article class="card jobs__list-item">
 											<div class="job-title">
 												<?php if (strlen($helper['supCatName']) > 0) : ?>
@@ -107,9 +107,9 @@ get_header();
 											</p>
 											<a href="<?= get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e('More info'); ?></a>
 										</article>
-								<?php endwhile;
-								endif; ?>
-							</div>
+									</div>
+							<?php endwhile;
+							endif; ?>
 						</div>
 						<nav class="pagination d-flex align-items-center justify-content-center">
 							<?= $pagination; ?>
