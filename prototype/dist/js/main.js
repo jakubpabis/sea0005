@@ -4588,6 +4588,11 @@ function slideThem() {
   }
 }
 
+function acceptCookies() {
+  setCookie("cookies-accepted", true, 365);
+  $(".cookies-notifictaion").addClass("d-none");
+}
+
 jQuery(document).ready(function () {
   lazyImages();
   uglyInput();
@@ -4601,6 +4606,11 @@ jQuery(document).ready(function () {
   onFormLoad();
   appValidation();
   slideThem();
+
+  console.log(getCookie("cookies-accepted"));
+
+  if (getCookie("cookies-accepted")) {
+  }
 
   if ($(".body-bg-gradient").length > 0) {
     bodyGradient();

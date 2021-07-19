@@ -628,7 +628,9 @@ $toTranslate = array(
 	'This is an automatic message. Please do not reply to it.',
 	'Vervulde vacatures',
 	'Vervulde vacatures text',
-	'This field is required'
+	'This field is required',
+	'Hou jij ook van koekjes?',
+	'Ja, ik wil ook een koekje!'
 );
 
 if (function_exists('pll_register_string')) {

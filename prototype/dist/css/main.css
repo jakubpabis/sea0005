@@ -1152,22 +1152,41 @@ i {
 	height: 100%;
 }
 
-#cookie-notice {
-	padding: 15px;
+.cookies-notifictaion {
+	position: fixed;
+	z-index: 999999999999999999999999;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #94d4e9;
+	background: linear-gradient(0deg, #94d4e9 30%, rgba(148, 212, 233, 0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#94d4e9",endColorstr="#94d4e9",GradientType=1);
 }
 
-#cookie-notice.cookie-notice-hidden {
-	display: none !important;
+.cookies-notifictaion .card {
+	margin-bottom: 100px !important;
 }
 
-#cookie-notice #cn-notice-text {
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	font-weight: 400;
+.cookies-notifictaion-dog {
+	position: relative;
+	position: absolute;
+	right: -450px;
+	bottom: 0;
 	display: block;
-	min-width: 90%;
-	margin: 0 auto 15px;
-	text-align: center;
+	width: 400px;
+	transform: rotateY(180deg);
+}
+
+.cookies-notifictaion .triangle {
+	position: absolute;
+	top: 35px;
+	right: -20px;
+	width: 0;
+	height: 0;
+	margin: auto;
+	border-width: 40px 40px 0 0;
+	border-style: solid;
+	border-color: #fff transparent transparent transparent;
 }
 
 .text-bubble {
