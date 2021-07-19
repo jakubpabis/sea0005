@@ -4593,6 +4593,17 @@ function acceptCookies() {
   $(".cookies-notifictaion").addClass("d-none");
 }
 
+function bottomBar() {
+  var bar = $(".bottom-bar");
+  bar.each(function () {
+    var height = $(this).outerHeight();
+    if (!$(this).hasClass("show") && $(window).scrollTop() > height) {
+      $(this).addClass("show");
+      $("#wrapper").css({ "padding-bottom": height + "px" });
+    }
+  });
+}
+
 jQuery(document).ready(function () {
   lazyImages();
   uglyInput();
@@ -4768,6 +4779,7 @@ jQuery(window).on("load", function () {
   //chatOpen();
   //itemsDown( 'sub-extra' );
   megaMenu();
+  bottomBar();
 
   // if($('.home__clients').length != 0) {
   // 	homepageClients();
@@ -5003,6 +5015,11 @@ jQuery(window).on("resize", function () {
   if ($(".body-bg-gradient").length > 0) {
     bodyGradient();
   }
+  bottomBar();
+});
+
+jQuery(window).on("scroll", function () {
+  bottomBar();
 });
 
 jQuery(document).on("click", ".dropdown-menu", function (e) {

@@ -217,3 +217,17 @@ i {
     border-style: solid;
   }
 }
+
+.bottom-bar {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  display: block;
+  @include trans(500ms);
+  z-index: 999999;
+
+  &.show {
+    bottom: 0;
+  }
+}

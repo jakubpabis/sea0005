@@ -1189,6 +1189,20 @@ i {
 	border-color: #fff transparent transparent transparent;
 }
 
+.bottom-bar {
+	position: fixed;
+	z-index: 999999;
+	right: 0;
+	bottom: -100%;
+	left: 0;
+	display: block;
+	transition: all 500ms ease-out;
+}
+
+.bottom-bar.show {
+	bottom: 0;
+}
+
 .text-bubble {
 	position: relative;
 	width: 0;
