@@ -9,7 +9,7 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-9">
+			<div class="col-lg-9 col-md-10">
 				<h4 class="text-uppercase">
 					<?php echo get_sub_field('sub_title'); ?>
 				</h4>
@@ -17,7 +17,7 @@
 					<?php echo get_sub_field('title'); ?>
 				</span>
 			</div>
-			<div class="col-lg-10 offset-lg-1 mt-5">
+			<div class="col-lg-10 col-md-11 offset-lg-1 mt-5">
 				<div class="row align-items-stretch client-logos__small">
 					<?php foreach (get_sub_field('logos') as $item) : ?>
 						<div class="card notched d-flex align-items-center justify-content-center p-2">

@@ -27,14 +27,14 @@
 </section>
 
 <section class="flex_content-bubbles flex-section">
-	<div class="container">
+	<div class="container-lg">
 		<div class="row align-items-end">
-			<div class="col-lg-6">
+			<div class="col-md-6">
 				<span class="d-block display-3 text700">
 					<?php echo get_sub_field('contact_title'); ?>
 				</span>
 			</div>
-			<div class="col-lg-5">
+			<div class="col-md-5">
 				<h2 class="m-0">
 					<?php echo get_sub_field('contact_sub_title'); ?>
 					<svg class="position-absolute ml-4 mt-3" width="118" height="445" xmlns="http://www.w3.org/2000/svg">
@@ -62,7 +62,7 @@
 						break;
 				}
 				?>
-				<div class="col-lg-4 d-flex flex_content-bubbles-bubble-cont">
+				<div class="col-md-4 d-flex flex_content-bubbles-bubble-cont">
 					<div class="flex_content-bubbles-bubble">
 						<h2 class="<?php echo $color; ?> px-2 d-inline-block my-0">
 							<?php echo $item['title']; ?>
@@ -78,9 +78,9 @@
 </section>
 
 <section class="flex_content-contact">
-	<div class="container">
+	<div class="container-lg">
 		<div class="row justify-content-end">
-			<div class="col-lg-10 flex_content-contact-dog">
+			<div class="col-md-10 flex_content-contact-dog">
 				<svg viewBox="0 0 650.13 306.3" xmlns="http://www.w3.org/2000/svg">
 					<path d="M484.68 0l-28.1 28.1v138.58h41.54l25.3-25.31v-62h-10.29v57.77l-19.38 19.38h-26.88V32.46l22-22.16H640v42.76l-26.18 26h-79.23v99H171.22L63.53 285.54H0v10.29h67.72l107.69-107.51h359.18v69.29h73v19.55L591 295.83h-95.15v-64.92l-21.3-21.3-7.33 7.33 18.33 18.33v47H215l-10.1-10.7 38.22-35.08-35.25-34.21-7.16 7.33 27.4 26.71-37.87 34.73 23.56 24.61h-64.4v-60.22h-10.3V306h98.79L225 292.52h260.55v13.78h110.13l22.17-25.13v-33.68h-73V89.54H618l32.11-32.12V0z" fill="#173751" />
 					<g fill="#ffffff">
@@ -89,7 +89,7 @@
 					</g>
 				</svg>
 			</div>
-			<div class="col-lg-6" id="bottom-contact-dog-section">
+			<div class="col-lg-6 col-md-6" id="bottom-contact-dog-section">
 				<?php if (get_sub_field('links') && !empty(get_sub_field('links'))) : ?>
 				<?php else : ?>
 					<?php $type = 'cta_dog_contact'; ?>

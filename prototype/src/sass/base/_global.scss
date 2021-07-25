@@ -225,7 +225,7 @@ i {
   right: 0;
   display: block;
   @include trans(500ms);
-  z-index: 999999;
+  z-index: 1050;
 
   &.show {
     bottom: 0;

@@ -1191,7 +1191,7 @@ i {
 
 .bottom-bar {
 	position: fixed;
-	z-index: 999999;
+	z-index: 1050;
 	right: 0;
 	bottom: -100%;
 	left: 0;
