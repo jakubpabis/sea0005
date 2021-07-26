@@ -8055,6 +8055,14 @@ p,
 	font-size: 17px;
 }
 
+#wrapper {
+	padding-top: 122px;
+}
+
+.navigation__lower-logo {
+	max-width: 144px;
+}
+
 .navigation__lower-menu > li > a {
 	padding: 12px;
 }
