@@ -11,7 +11,7 @@ if ($lang === 'en') {
 	<div class="navigation__upper">
 		<div class="container-xl">
 			<div class="row justify-content-between align-items-center">
-				<div class="col-md-auto">
+				<div class="col-auto">
 					<ul class="lang d-none d-md-flex">
 						<?php
 						pll_the_languages(array(
@@ -21,7 +21,7 @@ if ($lang === 'en') {
 						?>
 					</ul>
 				</div>
-				<div class="col-md-10">
+				<div class="col-md-10 col-auto">
 					<div class="row justify-content-end align-items-center">
 						<?php if (get_field($upper_item, 'option')) : ?>
 							<div class="col-lg-auto py-2">
