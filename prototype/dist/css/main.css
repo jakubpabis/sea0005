@@ -2279,6 +2279,10 @@ body.offcanvas-active {
 	padding-top: 0 !important;
 }
 
+.header__video-bottom {
+	bottom: 8vh;
+}
+
 .header__video .container-fluid {
 	max-height: calc(100vh - 160px);
 }
@@ -8109,6 +8113,18 @@ p,
 .header__home .btns {
 	margin-bottom: 40px;
 	padding: 20px;
+}
+
+.header__video {
+	max-height: calc(100vh - 130px);
+}
+
+.header__video-bottom {
+	bottom: 4vh;
+}
+
+.header__video .container-fluid {
+	max-height: calc(100vh - 130px);
 }
 
 .flex-section {

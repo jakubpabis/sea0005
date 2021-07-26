@@ -7,7 +7,7 @@
 	</div>
 	<?php if (get_sub_field('title') || get_sub_field('sub_title') || get_sub_field('button_first') || get_sub_field('button_second')) : ?>
 		<div class="container">
-			<div class="row position-absolute bottom-8vh justify-content-center w-100">
+			<div class="row position-absolute header__video-bottom justify-content-center w-100">
 				<div class="col-xl-7 col-lg-8 px-0 text-center">
 					<span class="text-size-xxxxlarge d-block mb-0">
 						<?php echo get_sub_field('title'); ?>

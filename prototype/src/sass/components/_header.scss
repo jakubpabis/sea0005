@@ -418,8 +418,24 @@
     max-height: calc(100vh - 160px);
     overflow: hidden;
 
+    @media (max-width: 1199px) {
+      max-height: calc(100vh - 130px);
+    }
+
+    &-bottom {
+      bottom: 8vh;
+
+      @media (max-width: 1199px) {
+        bottom: 4vh;
+      }
+    }
+
     .container-fluid {
       max-height: calc(100vh - 160px);
+
+      @media (max-width: 1199px) {
+        max-height: calc(100vh - 130px);
+      }
 
       video {
         object-fit: cover;
