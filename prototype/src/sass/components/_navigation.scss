@@ -459,7 +459,7 @@
       width: 40px;
       height: 40px;
       border: none;
-      background-color: $color-navy;
+      background-color: $color-yellow;
       appearance: none;
       outline: 0 !important;
       margin-left: 30px;
@@ -489,7 +489,7 @@
       }
 
       i {
-        color: white;
+        color: $color-navy;
         font-size: 23px;
 
         @media (max-width: 575px) {
@@ -498,7 +498,7 @@
       }
 
       &.active {
-        background-color: white;
+        background-color: $color-yellow;
         clip-path: none !important;
         padding: 0 !important;
 

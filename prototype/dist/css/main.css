@@ -1874,7 +1874,7 @@ body.offcanvas-active {
 	margin-left: 30px;
 	border: none;
 	outline: 0 !important;
-	background-color: #183153;
+	background-color: #fdd963;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -1890,12 +1890,12 @@ body.offcanvas-active {
 
 .navigation__lower-btn i {
 	font-size: 23px;
-	color: white;
+	color: #183153;
 }
 
 .navigation__lower-btn.active {
 	padding: 0 !important;
-	background-color: white;
+	background-color: #fdd963;
 	-webkit-clip-path: none !important;
 	clip-path: none !important;
 }

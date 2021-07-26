@@ -239,10 +239,12 @@ if ($lang === 'en') {
 							<?php endif; ?>
 						</div>
 						<div class="col-md-auto pl-1 navigation__lower-utils">
-							<a href="javascript:void(0)" data-toggle="modal" data-target="#searchPopupModal"><i class="far fa-search"></i></a>
+							<a href="javascript:void(0)" class="d-none d-lg-inline-block" data-toggle="modal" data-target="#searchPopupModal"><i class="far fa-search"></i></a>
 							<a href="javascript:void(0)" class="btn btn__small navy d-none d-lg-inline-block" data-toggle="modal" data-target="#uploadCVModal">
 								<?php pll_e('Upload CV'); ?>
 							</a>
+							<a href="mailto:info@searchxrecruitment.com" class="navigation__lower-btn d-lg-none d-inline-block"><i class="far fa-envelope"></i></a>
+							<a href="tel:+31207782393" class="navigation__lower-btn d-lg-none d-inline-block"><i class="far fa-phone-alt"></i></a>
 							<button type="button" class="navigation__lower-btn mobileMenu d-lg-none d-inline-block">
 								<i class="far fa-bars"></i>
 								<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
