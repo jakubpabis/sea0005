@@ -82,7 +82,7 @@ if ($lang === 'en') {
 				</div>
 				<div class="col">
 					<div class="row align-items-center justify-content-end">
-						<div class="col-lg-auto col-md-6 pr-0">
+						<div class="col-lg-auto col-md-6 pr-0 d-none d-lg-block">
 							<?php if (have_rows($menu_items, 'option')) : ?>
 								<ul class="navigation__lower-menu">
 									<?php while (have_rows($menu_items, 'option')) : the_row(); ?>
