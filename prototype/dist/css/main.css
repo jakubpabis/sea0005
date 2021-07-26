@@ -1871,6 +1871,7 @@ body.offcanvas-active {
 .navigation__lower-btn {
 	width: 40px;
 	height: 40px;
+	margin-left: 5px;
 	border: none;
 	outline: 0 !important;
 	background-color: #fdd963;
