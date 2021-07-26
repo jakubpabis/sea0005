@@ -8746,6 +8746,7 @@ p,
 .header__video-bottom {
 	position: relative !important;
 	bottom: auto;
+	width: auto !important;
 	margin-top: 30px;
 }
 
