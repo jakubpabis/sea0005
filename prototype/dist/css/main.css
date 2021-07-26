@@ -1085,7 +1085,12 @@ i {
 	font-weight: 400;
 }
 
-.container {
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
 	position: relative;
 }
 
