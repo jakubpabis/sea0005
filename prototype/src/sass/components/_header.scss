@@ -424,7 +424,11 @@
 
     @media (max-width: 991px) {
       max-height: calc(100vh - 70px);
-      margin-bottom: 100px;
+      margin-bottom: 150px;
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 50px;
     }
 
     &-bottom {
@@ -435,7 +439,12 @@
       }
 
       @media (max-width: 991px) {
-        bottom: -50px;
+        bottom: -70px;
+      }
+
+      @media (max-width: 767px) {
+        bottom: auto;
+        position: relative !important;
       }
     }
 

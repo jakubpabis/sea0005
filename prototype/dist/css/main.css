@@ -8296,11 +8296,11 @@ p,
 
 .header__video {
 	max-height: calc(100vh - 70px);
-	margin-bottom: 100px;
+	margin-bottom: 150px;
 }
 
 .header__video-bottom {
-	bottom: -50px;
+	bottom: -70px;
 }
 
 .header__video .container-fluid {
@@ -8736,6 +8736,15 @@ p,
 
 .header__posts-search .btn.knowledge {
 	bottom: 10px;
+}
+
+.header__video {
+	margin-bottom: 50px;
+}
+
+.header__video-bottom {
+	position: relative !important;
+	bottom: auto;
 }
 
 .home__middle {
