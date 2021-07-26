@@ -8294,6 +8294,19 @@ p,
 	height: 200px;
 }
 
+.header__video {
+	max-height: calc(100vh - 70px);
+	margin-bottom: 100px;
+}
+
+.header__video-bottom {
+	bottom: -50px;
+}
+
+.header__video .container-fluid {
+	max-height: calc(100vh - 70px);
+}
+
 .home__jobs {
 	padding: 90px 0;
 }

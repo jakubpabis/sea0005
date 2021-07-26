@@ -422,11 +422,20 @@
       max-height: calc(100vh - 130px);
     }
 
+    @media (max-width: 991px) {
+      max-height: calc(100vh - 70px);
+      margin-bottom: 100px;
+    }
+
     &-bottom {
       bottom: 8vh;
 
       @media (max-width: 1199px) {
         bottom: 4vh;
+      }
+
+      @media (max-width: 991px) {
+        bottom: -50px;
       }
     }
 
@@ -435,6 +444,10 @@
 
       @media (max-width: 1199px) {
         max-height: calc(100vh - 130px);
+      }
+
+      @media (max-width: 991px) {
+        max-height: calc(100vh - 70px);
       }
 
       video {
