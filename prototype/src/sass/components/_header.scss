@@ -425,6 +425,7 @@
     @media (max-width: 991px) {
       max-height: calc(100vh - 70px);
       margin-bottom: 150px;
+      overflow: visible;
     }
 
     @media (max-width: 767px) {
@@ -443,6 +444,7 @@
       }
 
       @media (max-width: 767px) {
+        margin-top: 30px;
         bottom: auto;
         position: relative !important;
       }
