@@ -1871,7 +1871,6 @@ body.offcanvas-active {
 .navigation__lower-btn {
 	width: 40px;
 	height: 40px;
-	margin-left: 10px;
 	border: none;
 	outline: 0 !important;
 	background-color: #fdd963;
@@ -1894,10 +1893,9 @@ body.offcanvas-active {
 }
 
 .navigation__lower-btn-other {
-	line-height: 40px;
+	line-height: 37px;
 	width: 40px;
 	height: 40px;
-	margin-left: 10px;
 	text-align: center;
 	border: none;
 	outline: 0 !important;
@@ -1916,7 +1914,7 @@ body.offcanvas-active {
 }
 
 .navigation__lower-btn-other i {
-	font-size: 19px;
+	font-size: 18px;
 	color: white;
 }
 

@@ -462,7 +462,6 @@
       background-color: $color-yellow;
       appearance: none;
       outline: 0 !important;
-      margin-left: 10px;
       @include notch(4px);
 
       svg {
@@ -483,9 +482,8 @@
         background-color: $color-navy;
         appearance: none;
         outline: 0 !important;
-        margin-left: 10px;
         @include notch(4px);
-        line-height: 40px;
+        line-height: 37px;
         text-align: center;
 
         svg {
@@ -496,7 +494,7 @@
 
         i {
           color: white;
-          font-size: 19px;
+          font-size: 18px;
         }
       }
 
