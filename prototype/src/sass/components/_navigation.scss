@@ -462,38 +462,41 @@
       background-color: $color-yellow;
       appearance: none;
       outline: 0 !important;
-      margin-left: 30px;
-      @include notch(6px);
-
-      @media (max-width: 575px) {
-        clip-path: none !important;
-        margin-left: 15px;
-        width: 48px;
-        height: 48px;
-        margin-right: -15px;
-      }
-
-      @media (max-width: 340px) {
-        margin-left: 5px;
-      }
+      margin-left: 10px;
+      @include notch(4px);
 
       svg {
         display: none;
         width: 40px;
         height: 40px;
-
-        @media (max-width: 575px) {
-          width: 48px;
-          height: 48px;
-        }
       }
 
       i {
         color: $color-navy;
         font-size: 23px;
+      }
 
-        @media (max-width: 575px) {
-          font-size: 27px;
+      &-other {
+        width: 40px;
+        height: 40px;
+        border: none;
+        background-color: $color-navy;
+        appearance: none;
+        outline: 0 !important;
+        margin-left: 10px;
+        @include notch(4px);
+        line-height: 40px;
+        text-align: center;
+
+        svg {
+          display: none;
+          width: 40px;
+          height: 40px;
+        }
+
+        i {
+          color: white;
+          font-size: 19px;
         }
       }
 
