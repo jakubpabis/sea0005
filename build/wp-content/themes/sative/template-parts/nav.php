@@ -238,7 +238,7 @@ if ($lang === 'en') {
 								</ul>
 							<?php endif; ?>
 						</div>
-						<div class="col-md-auto pl-1 navigation__lower-utils">
+						<div class="col-auto pl-1 navigation__lower-utils">
 							<a href="javascript:void(0)" class="d-none d-lg-inline-block" data-toggle="modal" data-target="#searchPopupModal"><i class="far fa-search"></i></a>
 							<a href="javascript:void(0)" class="btn btn__small navy d-none d-lg-inline-block" data-toggle="modal" data-target="#uploadCVModal">
 								<?php pll_e('Upload CV'); ?>
