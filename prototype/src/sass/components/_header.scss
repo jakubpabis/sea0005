@@ -449,6 +449,12 @@
         position: relative !important;
         width: auto !important;
       }
+
+      .btn {
+        @media (max-width: 575px) {
+          width: 100% !important;
+        }
+      }
     }
 
     .container-fluid {

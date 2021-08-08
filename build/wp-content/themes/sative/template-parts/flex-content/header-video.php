@@ -16,9 +16,9 @@
 						<?php echo get_sub_field('sub_title'); ?>
 					</span>
 					<?php if (get_sub_field('button_first') || get_sub_field('button_second')) : ?>
-						<div class="card notched bg-white d-flex align-items-center mt-4 py-4 px-3 flex-row">
+						<div class="card notched bg-white d-flex align-items-center mt-4 py-4 px-3 flex-row flex-wrap flex-sm-nowrap">
 							<?php if (get_sub_field('button_first')) : ?>
-								<a href="<?php echo get_sub_field('button_first')['url']; ?>" class="btn btn__default yellow mx-2 w-50">
+								<a href="<?php echo get_sub_field('button_first')['url']; ?>" class="btn btn__default yellow mx-2 w-50 mb-3 mb-sm-0">
 									<?php echo get_sub_field('button_first')['title']; ?>
 								</a>
 							<?php endif; ?>

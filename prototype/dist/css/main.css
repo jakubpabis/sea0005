@@ -9089,6 +9089,10 @@ p,
 	margin-top: 40px;
 }
 
+.header__video-bottom .btn {
+	width: 100% !important;
+}
+
 .home__middle .searchInput input {
 	max-width: calc(100% - 50px);
 }
