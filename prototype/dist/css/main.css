@@ -8682,9 +8682,8 @@ p,
 	font-size: 15px;
 }
 
-.navigation__lower-logo svg {
-	width: 151px;
-	height: 30px;
+.navigation__lower-logo {
+	max-width: 140px;
 }
 
 .header__home .dog {
@@ -9043,8 +9042,13 @@ p,
 	padding-top: 48px;
 }
 
-.navigation__lower {
-	padding: 0;
+.navigation__upper {
+	top: 48px;
+	height: calc(100vh - 48px);
+}
+
+.navigation__upper > .container {
+	height: calc(100vh - 48px);
 }
 
 .header__home .dog {
