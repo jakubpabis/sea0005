@@ -8145,6 +8145,10 @@ p,
 	--notchSize: 128px;
 }
 
+.categories-menus-section {
+	--notchSize: 128px;
+}
+
 .jobs__list-item .job-title .icon {
 	margin-top: 5px;
 }
@@ -8331,6 +8335,10 @@ p,
 }
 
 .flex_content-video_section-dog {
+	--notchSize: 96px;
+}
+
+.categories-menus-section {
 	--notchSize: 96px;
 }
 
@@ -8808,6 +8816,10 @@ p,
 	--notchSize: 72px;
 }
 
+.categories-menus-section {
+	--notchSize: 72px;
+}
+
 .card {
 	padding: 35px;
 }
@@ -9136,6 +9148,10 @@ p,
 }
 
 .flex_content-video_section-dog {
+	--notchSize: 64px;
+}
+
+.categories-menus-section {
 	--notchSize: 64px;
 }
 
