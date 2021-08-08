@@ -8141,6 +8141,10 @@ p,
 	padding-top: 60px;
 }
 
+.flex_content-video_section-dog {
+	--notchSize: 128px;
+}
+
 .jobs__list-item .job-title .icon {
 	margin-top: 5px;
 }
@@ -8324,6 +8328,10 @@ p,
 
 .body-bg-gradient > *:first-child {
 	padding-top: 50px;
+}
+
+.flex_content-video_section-dog {
+	--notchSize: 96px;
 }
 
 form .ugly label {
@@ -8796,6 +8804,10 @@ p,
 	padding-top: 40px;
 }
 
+.flex_content-video_section-dog {
+	--notchSize: 72px;
+}
+
 .card {
 	padding: 35px;
 }
@@ -9121,6 +9133,10 @@ p,
 
 .body-bg-gradient > *:first-child {
 	padding-top: 30px;
+}
+
+.flex_content-video_section-dog {
+	--notchSize: 64px;
 }
 
 .card {
