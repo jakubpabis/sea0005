@@ -153,6 +153,10 @@
       @media (max-width: 767px) {
         max-width: 140px;
       }
+
+      @media (max-width: 360px) {
+        max-width: 130px;
+      }
     }
 
     &-contact {
@@ -458,15 +462,29 @@
       outline: 0 !important;
       @include notch(4px);
 
+      @media (max-width: 360px) {
+        width: 36px;
+        height: 36px;
+      }
+
       svg {
         display: none;
         width: 40px;
         height: 40px;
+
+        @media (max-width: 360px) {
+          width: 36px;
+          height: 36px;
+        }
       }
 
       i {
         color: $color-navy;
         font-size: 23px;
+
+        @media (max-width: 360px) {
+          font-size: 21px;
+        }
       }
 
       &-other {
@@ -480,15 +498,30 @@
         line-height: 37px;
         text-align: center;
 
+        @media (max-width: 360px) {
+          width: 36px;
+          line-height: 33px;
+          height: 36px;
+        }
+
         svg {
           display: none;
           width: 40px;
           height: 40px;
+
+          @media (max-width: 360px) {
+            width: 36px;
+            height: 36px;
+          }
         }
 
         i {
           color: white;
           font-size: 18px;
+
+          @media (max-width: 360px) {
+            font-size: 16px;
+          }
         }
       }
 
