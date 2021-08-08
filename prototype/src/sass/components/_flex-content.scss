@@ -146,6 +146,26 @@
           0% var(--notchSize)
         );
 
+        @media (max-width: 1439px) {
+          margin-left: -164px !important;
+        }
+
+        @media (max-width: 991px) {
+          margin-left: -15px !important;
+        }
+
+        @media (max-width: 870px) {
+          margin-left: -100px !important;
+        }
+
+        @media (max-width: 767px) {
+          margin-left: -15px !important;
+        }
+
+        @media (max-width: 640px) {
+          margin-left: -80px !important;
+        }
+
         svg {
           left: -35%;
         }
