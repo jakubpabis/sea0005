@@ -189,6 +189,22 @@ p,
 .display-2 {
   font-size: 80px;
   line-height: 1;
+
+  @media (max-width: 1199px) {
+    font-size: 72px;
+  }
+
+  @media (max-width: 991px) {
+    font-size: 66px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 60px;
+  }
+
+  @media (max-width: 575px) {
+    font-size: 50px;
+  }
 }
 
 .display-3 {

@@ -8098,6 +8098,10 @@ p,
 	font-size: 17px;
 }
 
+.display-2 {
+	font-size: 72px;
+}
+
 #wrapper {
 	padding-top: 122px;
 }
@@ -8231,6 +8235,10 @@ p,
 .p,
 .text-size-normal {
 	font-size: 16px;
+}
+
+.display-2 {
+	font-size: 66px;
 }
 
 #wrapper {
@@ -8651,7 +8659,7 @@ form .ugly label.full {
 
 }
 
-@media (max-width: 870px) {
+@media (max-width: 880px) {
 
 .flex_content-video_section-dog.left {
 	margin-left: -100px !important;
@@ -8716,6 +8724,10 @@ p,
 .p,
 .text-size-normal {
 	font-size: 15px;
+}
+
+.display-2 {
+	font-size: 60px;
 }
 
 .navigation__lower-logo {
@@ -9057,7 +9069,7 @@ p,
 
 }
 
-@media (max-width: 640px) {
+@media (max-width: 660px) {
 
 .flex_content-video_section-dog.left {
 	margin-left: -80px !important;
@@ -9092,6 +9104,10 @@ p,
 .p,
 .text-size-normal {
 	font-size: 14px;
+}
+
+.display-2 {
+	font-size: 50px;
 }
 
 #wrapper {
