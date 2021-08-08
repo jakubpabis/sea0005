@@ -18,7 +18,7 @@
 				</span>
 			</div>
 			<?php if (!empty(get_sub_field('first_column'))) : $column = get_sub_field('first_column');  ?>
-				<div class="offset-lg-1 col-lg-4 pb-5">
+				<div class="offset-xl-1 col-xl-4 col-lg-5 pb-5">
 					<?php if ($column['title']) : ?>
 						<h2 class="text700 mb-4 pb-3">
 							<?php echo $column['title']; ?>
@@ -41,7 +41,7 @@
 				</div>
 			<?php endif; ?>
 			<?php if (!empty(get_sub_field('second_column'))) : $column = get_sub_field('second_column'); ?>
-				<div class="offset-lg-1 col-lg-4 pb-5">
+				<div class="offset-lg-1 col-xl-4 col-lg-5 pb-5">
 					<?php if ($column['title']) : ?>
 						<h2 class="text700 mb-4 pb-3">
 							<?php echo $column['title']; ?>
