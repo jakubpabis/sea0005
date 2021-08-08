@@ -9340,13 +9340,13 @@ p,
 }
 
 .navigation__lower-btn {
-	width: 36px;
-	height: 36px;
+	width: 32px;
+	height: 32px;
 }
 
 .navigation__lower-btn svg {
-	width: 36px;
-	height: 36px;
+	width: 32px;
+	height: 32px;
 }
 
 .navigation__lower-btn i {
@@ -9354,14 +9354,14 @@ p,
 }
 
 .navigation__lower-btn-other {
-	line-height: 33px;
-	width: 36px;
-	height: 36px;
+	line-height: 30px;
+	width: 32px;
+	height: 32px;
 }
 
 .navigation__lower-btn-other svg {
-	width: 36px;
-	height: 36px;
+	width: 32px;
+	height: 32px;
 }
 
 .navigation__lower-btn-other i {

@@ -463,8 +463,8 @@
       @include notch(4px);
 
       @media (max-width: 360px) {
-        width: 36px;
-        height: 36px;
+        width: 32px;
+        height: 32px;
       }
 
       svg {
@@ -473,8 +473,8 @@
         height: 40px;
 
         @media (max-width: 360px) {
-          width: 36px;
-          height: 36px;
+          width: 32px;
+          height: 32px;
         }
       }
 
@@ -499,9 +499,9 @@
         text-align: center;
 
         @media (max-width: 360px) {
-          width: 36px;
-          line-height: 33px;
-          height: 36px;
+          width: 32px;
+          line-height: 30px;
+          height: 32px;
         }
 
         svg {
@@ -510,8 +510,8 @@
           height: 40px;
 
           @media (max-width: 360px) {
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
           }
         }
 
