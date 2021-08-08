@@ -8102,6 +8102,10 @@ p,
 	font-size: 72px;
 }
 
+.display-2.bubble {
+	font-size: 64px;
+}
+
 #wrapper {
 	padding-top: 122px;
 }
@@ -8239,6 +8243,10 @@ p,
 
 .display-2 {
 	font-size: 66px;
+}
+
+.display-2.bubble {
+	font-size: 56px;
 }
 
 #wrapper {
@@ -8730,6 +8738,10 @@ p,
 	font-size: 60px;
 }
 
+.display-2.bubble {
+	font-size: 48px;
+}
+
 .navigation__lower-logo {
 	max-width: 140px;
 }
@@ -9108,6 +9120,10 @@ p,
 
 .display-2 {
 	font-size: 50px;
+}
+
+.display-2.bubble {
+	font-size: 40px;
 }
 
 #wrapper {

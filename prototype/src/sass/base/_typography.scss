@@ -205,6 +205,24 @@ p,
   @media (max-width: 575px) {
     font-size: 50px;
   }
+
+  &.bubble {
+    @media (max-width: 1199px) {
+      font-size: 64px;
+    }
+
+    @media (max-width: 991px) {
+      font-size: 56px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 48px;
+    }
+
+    @media (max-width: 575px) {
+      font-size: 40px;
+    }
+  }
 }
 
 .display-3 {
