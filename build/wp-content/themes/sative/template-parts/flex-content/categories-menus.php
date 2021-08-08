@@ -2,7 +2,7 @@
 	<div class="container position-absolute h-100 left-0">
 		<div class="row">
 			<div class="col-lg-12 position-absolute h-100 p-0 left-0">
-				<div class="flex_content-video_section-dog left bg-navy w-100 h-100">
+				<div class="flex_content-video_section-dog left ml-n4 bg-navy w-100 h-100">
 				</div>
 			</div>
 		</div>
