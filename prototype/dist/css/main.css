@@ -9043,15 +9043,6 @@ p,
 	padding-top: 48px;
 }
 
-.navigation__upper {
-	top: 48px;
-	height: calc(100vh - 48px);
-}
-
-.navigation__upper > .container {
-	height: calc(100vh - 48px);
-}
-
 .navigation__lower {
 	padding: 0;
 }

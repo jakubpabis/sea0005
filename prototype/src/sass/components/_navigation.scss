@@ -32,15 +32,6 @@
       }
     }
 
-    @media (max-width: 575px) {
-      height: calc(100vh - 48px);
-      top: 48px;
-
-      > .container {
-        height: calc(100vh - 48px);
-      }
-    }
-
     a {
       font-size: 15px;
       color: white;
