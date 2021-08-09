@@ -546,10 +546,11 @@ jQuery(window).on("load", function () {
     .find("li")
     .on("click", function () {});
   if ($(".owl-carousel").length > 0) {
+    var $i = 1;
     $(".owl-carousel").each(function () {
       if ($(this).hasClass("articles-slider-cards")) {
-        var $owl = $(".owl-carousel.articles-slider-cards");
-        $owl.owlCarousel({
+        var $owlS = $(".owl-carousel.articles-slider-cards");
+        $owlS.owlCarousel({
           loop: true,
           margin: 30,
           nav: false,
@@ -567,10 +568,9 @@ jQuery(window).on("load", function () {
             },
           },
         });
-      }
-      if ($(this).hasClass("owl-carousel.no-repeat")) {
-        var $owl = $(".owl-carousel.no-repeat");
-        $owl.owlCarousel({
+      } else if ($(this).hasClass("owl-carousel.no-repeat")) {
+        var $owlR = $(".owl-carousel.no-repeat");
+        $owlR.owlCarousel({
           loop: false,
           margin: 20,
           nav: false,
@@ -591,14 +591,14 @@ jQuery(window).on("load", function () {
           },
         });
         $(".custom-owl-prev").click(function () {
-          $owl.trigger("prev.owl.carousel");
+          $owlR.trigger("prev.owl.carousel");
         });
         $(".custom-owl-next").click(function () {
-          $owl.trigger("next.owl.carousel");
+          $owlR.trigger("next.owl.carousel");
         });
       } else if ($(this).hasClass("contact-form-carousel")) {
-        var $owl = $(".owl-carousel.contact-form-carousel");
-        $owl.owlCarousel({
+        var $owlC = $(".owl-carousel.contact-form-carousel");
+        $owlC.owlCarousel({
           loop: false,
           margin: 10,
           nav: false,
@@ -639,7 +639,7 @@ jQuery(window).on("load", function () {
           }
         });
 
-        $owl
+        $owlC
           .find('input[name="cta_dog_contact_name"]')
           .on("keyup", function () {
             if ($(this).val().length > 2) {
@@ -661,7 +661,7 @@ jQuery(window).on("load", function () {
             }
           });
 
-        $owl
+        $owlC
           .find('input[name="cta_dog_contact_email"]')
           .on("keyup", function () {
             if (validateEmail($(this).val())) {
@@ -683,7 +683,7 @@ jQuery(window).on("load", function () {
             }
           });
 
-        $owl
+        $owlC
           .find('input[name="cta_dog_contact_message"]')
           .on("keyup", function () {
             if ($(this).val().length > 9) {
@@ -705,19 +705,19 @@ jQuery(window).on("load", function () {
             }
           });
 
-        $owl.find(".next").click(function () {
+        $owlC.find(".next").click(function () {
           if (
-            !$owl
+            !$owlC
               .find(".owl-item.active")
               .find(".pristine")
               .hasClass("required")
           ) {
-            $owl.trigger("next.owl.carousel");
-          } else if ($owl.find(".owl-item.active").find(".valid").length > 0) {
-            $owl.trigger("next.owl.carousel");
+            $owlC.trigger("next.owl.carousel");
+          } else if ($owlC.find(".owl-item.active").find(".valid").length > 0) {
+            $owlC.trigger("next.owl.carousel");
           } else {
-            $owl.find(".owl-item.active").find(".not-valid").focus();
-            $owl.find(".owl-item.active").find(".pristine").focus();
+            $owlC.find(".owl-item.active").find(".not-valid").focus();
+            $owlC.find(".owl-item.active").find(".pristine").focus();
             $(this)
               .parent()
               .find("span.d-none")
@@ -759,6 +759,7 @@ jQuery(window).on("load", function () {
           $owl.trigger("next.owl.carousel");
         });
       }
+      $++;
     });
   }
 
