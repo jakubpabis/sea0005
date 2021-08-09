@@ -272,10 +272,15 @@
 
       &-inner {
         z-index: 0;
-        width: calc(((100vw - 540px) / 2) + 540px) !important;
+        width: calc(((100vw - 540px) / 2) + 100%) !important;
         height: calc(100% + 100px) !important;
         top: -50px !important;
         left: calc((-100vw + 540px) / 2) !important;
+
+        @media (max-width: 575px) {
+          left: -15px !important;
+          width: calc(100% + 30px) !important;
+        }
       }
 
       &.right {
