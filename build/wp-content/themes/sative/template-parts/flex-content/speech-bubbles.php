@@ -3,17 +3,17 @@
 		<div class="row">
 			<?php $i = 1;
 			foreach (get_sub_field('bubbles') as $item) : ?>
-				<div class="col-md-4 col-sm-8 col-10 <?php echo $i % 2 === 0 ? 'offset-md-0 offset-sm-4 offset-2' : null ?>">
+				<div class="mb-4 col-md-4 col-sm-7 col-11 <?php echo $i % 2 === 0 ? 'offset-md-0 offset-sm-5 offset-1' : null ?>">
 					<div class="card p-xl-auto p-md-4 bg-white d-block">
 						<div class="row">
-							<div class="col-sm-4">
+							<div class="col-4 px-2 px-sm-auto">
 								<img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['title']; ?>">
 							</div>
-							<div class="col-sm-8">
+							<div class="col-8 pr-0 pr-sm-auto">
 								<span class="display-2 bubble text700 m-0">
 									<?php echo $item['title']; ?>
 								</span>
-								<p class="text-size-xlarge text700 font-primary mt-3 mb-0 d-block d-md-none d-lg-block">
+								<p class="text-size-xlarge text700 font-primary mt-3">
 									<?php echo $item['text']; ?>
 								</p>
 							</div>
