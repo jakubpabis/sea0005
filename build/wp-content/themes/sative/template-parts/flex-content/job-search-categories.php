@@ -35,7 +35,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-4">
+			<div class="col-xl-4 col-lg-5 pl-xl-3 pl-lg-5">
 				<h5 class="text-uppercase mb-5">
 					<?php echo get_sub_field('menu_title'); ?>
 				</h5>
