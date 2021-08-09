@@ -9266,6 +9266,11 @@ p,
 	right: -25px;
 }
 
+.flex-section {
+	margin-top: 32px;
+	margin-bottom: 32px;
+}
+
 .body-bg-gradient > *:first-child {
 	padding-top: 30px;
 }
