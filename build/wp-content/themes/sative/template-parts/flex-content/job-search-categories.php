@@ -1,14 +1,14 @@
 <section class="flex_content-cta job-search-categories flex-section">
 	<div class="container-fluid position-absolute h-100 left-0">
 		<div class="row">
-			<div class="col-lg-7 position-absolute h-100 p-0 left-0">
+			<div class="col-md-7 position-absolute h-100 p-0 left-0">
 				<div class="flex_content-cta-bg left bg-yellow w-100 h-100"></div>
 			</div>
 		</div>
 	</div>
 	<div class="container py-5">
 		<div class="row align-items-center justify-content-between py-5">
-			<div class="col-lg-7">
+			<div class="col-md-7 px-lg-3 px-0">
 				<h5 class="text-uppercase">
 					<?php echo get_sub_field('sub_title'); ?>
 				</h5>
@@ -35,7 +35,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xl-4 col-lg-5 pl-xl-3 pl-lg-5">
+			<div class="col-xl-4 col-md-5 pl-xl-3 pl-md-5">
 				<h5 class="text-uppercase mb-5">
 					<?php echo get_sub_field('menu_title'); ?>
 				</h5>
