@@ -9,7 +9,7 @@
 	<div class="container py-5">
 		<div class="row align-items-center justify-content-between py-5">
 			<div class="col-md-7 px-lg-3 px-md-0">
-				<div class="flex_content-cta-bg flex_content-cta-bg-inner left bg-yellow position-absolute"></div>
+				<div class="flex_content-cta-bg flex_content-cta-bg-inner left bg-yellow position-absolute d-block d-md-none"></div>
 				<h5 class="text-uppercase position-relative">
 					<?php echo get_sub_field('sub_title'); ?>
 				</h5>
@@ -36,8 +36,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xl-4 col-md-5 pl-xl-3 pl-md-5">
-				<h5 class="text-uppercase mb-5">
+			<div class="col-xl-4 col-md-5 pl-xl-3 pl-md-5 mt-5 mt-md-0 pt-4 pt-md-0">
+				<h5 class="text-uppercase mb-md-5 mb-4">
 					<?php echo get_sub_field('menu_title'); ?>
 				</h5>
 				<ul>
