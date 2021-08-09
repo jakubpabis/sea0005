@@ -545,208 +545,220 @@ jQuery(window).on("load", function () {
   $(".job-category-filters")
     .find("li")
     .on("click", function () {});
-
-  if ($(".owl-carousel.articles-slider-cards").length > 0) {
-    var $owl = $(".owl-carousel.articles-slider-cards");
-    $owl.owlCarousel({
-      loop: true,
-      margin: 30,
-      nav: false,
-      dots: false,
-      lazyLoad: true,
-      autoplay: true,
-      autoplayTimeout: 5000,
-      autoplayHoverPause: false,
-      responsive: {
-        0: {
-          items: 1,
-        },
-        575: {
-          items: 2,
-        },
-      },
-    });
-  }
-  if ($(".owl-carousel.no-repeat").length > 0) {
-    var $owl = $(".owl-carousel.no-repeat");
-    $owl.owlCarousel({
-      loop: false,
-      margin: 20,
-      nav: false,
-      dots: false,
-      repeat: false,
-      lazyLoad: true,
-      autoplay: false,
-      responsive: {
-        0: {
-          items: 1,
-        },
-        575: {
-          items: 2,
-        },
-        991: {
-          items: 3,
-        },
-      },
-    });
-    $(".custom-owl-prev").click(function () {
-      $owl.trigger("prev.owl.carousel");
-    });
-    $(".custom-owl-next").click(function () {
-      $owl.trigger("next.owl.carousel");
-    });
-  } else if ($(".owl-carousel.contact-form-carousel").length > 0) {
-    var $owl = $(".owl-carousel.contact-form-carousel");
-    $owl.owlCarousel({
-      loop: false,
-      margin: 10,
-      nav: false,
-      dots: false,
-      lazyLoad: false,
-      autoplay: false,
-      mouseDrag: false,
-      touchDrag: false,
-      pullDrag: false,
-      rewind: false,
-      responsive: {
-        0: {
-          items: 1,
-        },
-      },
-    });
-
-    $("#cta_dog_contact_section_form").on("keyup keypress", function (e) {
-      var keyCode = e.keyCode || e.which;
-      if (keyCode === 13) {
-        e.preventDefault();
-        // if (
-        //   !$owl.find(".owl-item.active").find(".pristine").hasClass("required")
-        // ) {
-        //   $owl.stop(true, true).trigger("next.owl.carousel").stop(true, true);
-        // } else if ($owl.find(".owl-item.active").find(".valid").length > 0) {
-        //   $owl.stop(true, true).trigger("next.owl.carousel").stop(true, true);
-        // } else {
-        //   $owl.find(".owl-item.active").find(".not-valid").focus();
-        //   $owl.find(".owl-item.active").find(".pristine").focus();
-        //   $(this)
-        //     .parent()
-        //     .find("span.d-none")
-        //     .removeClass("d-none")
-        //     .addClass("d-block");
-        // }
-        return false;
+  if ($(".owl-carousel").length > 0) {
+    $(".owl-carousel").each(function () {
+      if ($(this).hasClass("articles-slider-cards")) {
+        var $owl = $(".owl-carousel.articles-slider-cards");
+        $owl.owlCarousel({
+          loop: true,
+          margin: 30,
+          nav: false,
+          dots: false,
+          lazyLoad: true,
+          autoplay: true,
+          autoplayTimeout: 5000,
+          autoplayHoverPause: false,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            575: {
+              items: 2,
+            },
+          },
+        });
       }
-    });
+      if ($(this).hasClass("owl-carousel.no-repeat")) {
+        var $owl = $(".owl-carousel.no-repeat");
+        $owl.owlCarousel({
+          loop: false,
+          margin: 20,
+          nav: false,
+          dots: false,
+          repeat: false,
+          lazyLoad: true,
+          autoplay: false,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            575: {
+              items: 2,
+            },
+            991: {
+              items: 3,
+            },
+          },
+        });
+        $(".custom-owl-prev").click(function () {
+          $owl.trigger("prev.owl.carousel");
+        });
+        $(".custom-owl-next").click(function () {
+          $owl.trigger("next.owl.carousel");
+        });
+      } else if ($(this).hasClass("contact-form-carousel")) {
+        var $owl = $(".owl-carousel.contact-form-carousel");
+        $owl.owlCarousel({
+          loop: false,
+          margin: 10,
+          nav: false,
+          dots: false,
+          lazyLoad: false,
+          autoplay: false,
+          mouseDrag: false,
+          touchDrag: false,
+          pullDrag: false,
+          rewind: false,
+          responsive: {
+            0: {
+              items: 1,
+            },
+          },
+        });
 
-    $owl.find('input[name="cta_dog_contact_name"]').on("keyup", function () {
-      if ($(this).val().length > 2) {
-        $(this).removeClass("not-valid");
-        $(this).addClass("valid");
-        $(this)
-          .parent()
-          .find("span.d-block")
-          .addClass("d-none")
-          .removeClass("d-block");
+        $("#cta_dog_contact_section_form").on("keyup keypress", function (e) {
+          var keyCode = e.keyCode || e.which;
+          if (keyCode === 13) {
+            e.preventDefault();
+            // if (
+            //   !$owl.find(".owl-item.active").find(".pristine").hasClass("required")
+            // ) {
+            //   $owl.stop(true, true).trigger("next.owl.carousel").stop(true, true);
+            // } else if ($owl.find(".owl-item.active").find(".valid").length > 0) {
+            //   $owl.stop(true, true).trigger("next.owl.carousel").stop(true, true);
+            // } else {
+            //   $owl.find(".owl-item.active").find(".not-valid").focus();
+            //   $owl.find(".owl-item.active").find(".pristine").focus();
+            //   $(this)
+            //     .parent()
+            //     .find("span.d-none")
+            //     .removeClass("d-none")
+            //     .addClass("d-block");
+            // }
+            return false;
+          }
+        });
+
+        $owl
+          .find('input[name="cta_dog_contact_name"]')
+          .on("keyup", function () {
+            if ($(this).val().length > 2) {
+              $(this).removeClass("not-valid");
+              $(this).addClass("valid");
+              $(this)
+                .parent()
+                .find("span.d-block")
+                .addClass("d-none")
+                .removeClass("d-block");
+            } else {
+              $(this).removeClass("valid");
+              $(this).addClass("not-valid");
+              $(this)
+                .parent()
+                .find("span.d-none")
+                .removeClass("d-none")
+                .addClass("d-block");
+            }
+          });
+
+        $owl
+          .find('input[name="cta_dog_contact_email"]')
+          .on("keyup", function () {
+            if (validateEmail($(this).val())) {
+              $(this).removeClass("not-valid");
+              $(this).addClass("valid");
+              $(this)
+                .parent()
+                .find("span.d-block")
+                .addClass("d-none")
+                .removeClass("d-block");
+            } else {
+              $(this).removeClass("valid");
+              $(this).addClass("not-valid");
+              $(this)
+                .parent()
+                .find("span.d-none")
+                .removeClass("d-none")
+                .addClass("d-block");
+            }
+          });
+
+        $owl
+          .find('input[name="cta_dog_contact_message"]')
+          .on("keyup", function () {
+            if ($(this).val().length > 9) {
+              $(this).removeClass("not-valid");
+              $(this).addClass("valid");
+              $(this)
+                .parent()
+                .find("span.d-block")
+                .addClass("d-none")
+                .removeClass("d-block");
+            } else {
+              $(this).removeClass("valid");
+              $(this).addClass("not-valid");
+              $(this)
+                .parent()
+                .find("span.d-none")
+                .removeClass("d-none")
+                .addClass("d-block");
+            }
+          });
+
+        $owl.find(".next").click(function () {
+          if (
+            !$owl
+              .find(".owl-item.active")
+              .find(".pristine")
+              .hasClass("required")
+          ) {
+            $owl.trigger("next.owl.carousel");
+          } else if ($owl.find(".owl-item.active").find(".valid").length > 0) {
+            $owl.trigger("next.owl.carousel");
+          } else {
+            $owl.find(".owl-item.active").find(".not-valid").focus();
+            $owl.find(".owl-item.active").find(".pristine").focus();
+            $(this)
+              .parent()
+              .find("span.d-none")
+              .removeClass("d-none")
+              .addClass("d-block");
+          }
+        });
       } else {
-        $(this).removeClass("valid");
-        $(this).addClass("not-valid");
-        $(this)
-          .parent()
-          .find("span.d-none")
-          .removeClass("d-none")
-          .addClass("d-block");
-      }
-    });
+        var $owl = $(".owl-carousel");
+        $owl.owlCarousel({
+          loop: true,
+          margin: 50,
+          nav: false,
+          dots: false,
+          lazyLoad: true,
+          autoplay: true,
+          autoplayTimeout: 2500,
+          autoplayHoverPause: true,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            420: {
+              items: 2,
+            },
+            767: {
+              items: 3,
+            },
+            991: {
+              items: 6,
+            },
+          },
+        });
 
-    $owl.find('input[name="cta_dog_contact_email"]').on("keyup", function () {
-      if (validateEmail($(this).val())) {
-        $(this).removeClass("not-valid");
-        $(this).addClass("valid");
-        $(this)
-          .parent()
-          .find("span.d-block")
-          .addClass("d-none")
-          .removeClass("d-block");
-      } else {
-        $(this).removeClass("valid");
-        $(this).addClass("not-valid");
-        $(this)
-          .parent()
-          .find("span.d-none")
-          .removeClass("d-none")
-          .addClass("d-block");
+        $(".custom-owl-prev").click(function () {
+          $owl.trigger("prev.owl.carousel");
+        });
+        $(".custom-owl-next").click(function () {
+          $owl.trigger("next.owl.carousel");
+        });
       }
-    });
-
-    $owl.find('input[name="cta_dog_contact_message"]').on("keyup", function () {
-      if ($(this).val().length > 9) {
-        $(this).removeClass("not-valid");
-        $(this).addClass("valid");
-        $(this)
-          .parent()
-          .find("span.d-block")
-          .addClass("d-none")
-          .removeClass("d-block");
-      } else {
-        $(this).removeClass("valid");
-        $(this).addClass("not-valid");
-        $(this)
-          .parent()
-          .find("span.d-none")
-          .removeClass("d-none")
-          .addClass("d-block");
-      }
-    });
-
-    $owl.find(".next").click(function () {
-      if (
-        !$owl.find(".owl-item.active").find(".pristine").hasClass("required")
-      ) {
-        $owl.trigger("next.owl.carousel");
-      } else if ($owl.find(".owl-item.active").find(".valid").length > 0) {
-        $owl.trigger("next.owl.carousel");
-      } else {
-        $owl.find(".owl-item.active").find(".not-valid").focus();
-        $owl.find(".owl-item.active").find(".pristine").focus();
-        $(this)
-          .parent()
-          .find("span.d-none")
-          .removeClass("d-none")
-          .addClass("d-block");
-      }
-    });
-  } else if ($(".owl-carousel").length > 0) {
-    var $owl = $(".owl-carousel");
-    $owl.owlCarousel({
-      loop: true,
-      margin: 50,
-      nav: false,
-      dots: false,
-      lazyLoad: true,
-      autoplay: true,
-      autoplayTimeout: 2500,
-      autoplayHoverPause: true,
-      responsive: {
-        0: {
-          items: 1,
-        },
-        420: {
-          items: 2,
-        },
-        767: {
-          items: 3,
-        },
-        991: {
-          items: 6,
-        },
-      },
-    });
-
-    $(".custom-owl-prev").click(function () {
-      $owl.trigger("prev.owl.carousel");
-    });
-    $(".custom-owl-next").click(function () {
-      $owl.trigger("next.owl.carousel");
     });
   }
 
