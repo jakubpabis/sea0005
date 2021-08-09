@@ -549,7 +549,7 @@ jQuery(window).on("load", function () {
     $(".owl-carousel").each(function () {
       if ($(this).hasClass("articles-slider-cards")) {
         console.log("articles-slider-cards");
-        var $owlS = $(".owl-carousel.articles-slider-cards");
+        var $owlS = $(this);
         $owlS.owlCarousel({
           loop: true,
           margin: 30,
@@ -570,7 +570,7 @@ jQuery(window).on("load", function () {
         });
       } else if ($(this).hasClass("no-repeat")) {
         console.log("no-repeat");
-        var $owlR = $(".owl-carousel.no-repeat");
+        var $owlR = $(this);
         $owlR.owlCarousel({
           loop: false,
           margin: 20,
@@ -599,7 +599,7 @@ jQuery(window).on("load", function () {
         });
       } else if ($(this).hasClass("contact-form-carousel")) {
         console.log("contact-form-carousel");
-        var $owlC = $(".owl-carousel.contact-form-carousel");
+        var $owlC = $(this);
         $owlC.owlCarousel({
           loop: false,
           margin: 10,
@@ -729,7 +729,7 @@ jQuery(window).on("load", function () {
         });
       } else {
         console.log("regular");
-        var $owl = $(".owl-carousel");
+        var $owl = $(this);
         $owl.owlCarousel({
           loop: true,
           margin: 50,
