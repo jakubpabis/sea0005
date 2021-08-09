@@ -1,12 +1,12 @@
-<section class="flex-section">
+<section class="flex-section speech-bubbles">
 	<div class="container-lg">
 		<div class="row">
 			<?php $i = 1;
 			foreach (get_sub_field('bubbles') as $item) : ?>
 				<div class="mb-4 col-md-4 col-sm-7 col-11 <?php echo $i % 2 === 0 ? 'offset-md-0 offset-sm-5 offset-1' : null ?>">
 					<div class="card bg-white d-block">
-						<div class="row">
-							<div class="col-md-4 col-auto">
+						<div class="row flex-nowrap">
+							<div class="col-md-4 col-auto card-icon">
 								<img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['title']; ?>">
 							</div>
 							<div class="col-md-8 col">

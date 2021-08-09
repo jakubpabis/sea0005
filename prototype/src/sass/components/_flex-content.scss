@@ -21,6 +21,20 @@
     margin-top: 50px;
     margin-bottom: 50px;
   }
+
+  &.speech-bubbles {
+    .card {
+      @media (max-width: 1199px) {
+        padding: 20px;
+      }
+
+      &-icon {
+        @media (max-width: 991px) {
+          padding-right: 0;
+        }
+      }
+    }
+  }
 }
 
 .body-bg-gradient {

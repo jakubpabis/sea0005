@@ -8153,6 +8153,10 @@ p,
 	margin-bottom: 100px;
 }
 
+.flex-section.speech-bubbles .card {
+	padding: 20px;
+}
+
 .body-bg-gradient > *:first-child {
 	padding-top: 60px;
 }
@@ -8352,6 +8356,10 @@ p,
 .flex-section {
 	margin-top: 70px;
 	margin-bottom: 70px;
+}
+
+.flex-section.speech-bubbles .card-icon {
+	padding-right: 0;
 }
 
 .body-bg-gradient > *:first-child {
