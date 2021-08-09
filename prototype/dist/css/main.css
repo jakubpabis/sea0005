@@ -8860,6 +8860,10 @@ p,
 	margin-bottom: 50px;
 }
 
+.flex-section.speech-bubbles .card-icon {
+	padding-right: 10px;
+}
+
 .body-bg-gradient > *:first-child {
 	padding-top: 40px;
 }
