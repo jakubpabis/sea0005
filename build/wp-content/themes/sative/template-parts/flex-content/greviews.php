@@ -40,7 +40,7 @@
 				<div class="col-12">
 					<div class="owl-carousel owl-center owl-theme">
 						<?php foreach (get_sub_field('logotypes') as $item) : ?>
-							<img class="owl-lazy" src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['image']['title']; ?>">
+							<img class="owl-lazy" data-src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['image']['title']; ?>">
 						<?php endforeach; ?>
 					</div>
 					<div class="custom-owl-prev" role="button">
