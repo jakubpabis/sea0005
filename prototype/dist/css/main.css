@@ -2617,7 +2617,7 @@ body.offcanvas-active {
 	z-index: 0;
 	top: -50px !important;
 	left: -270px !important;
-	width: 100vw !important;
+	width: calc(100vw - 270px) !important;
 	height: calc(100% + 100px) !important;
 }
 
