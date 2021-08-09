@@ -4,12 +4,12 @@
 			<?php $i = 1;
 			foreach (get_sub_field('bubbles') as $item) : ?>
 				<div class="mb-4 col-md-4 col-sm-7 col-11 <?php echo $i % 2 === 0 ? 'offset-md-0 offset-sm-5 offset-1' : null ?>">
-					<div class="card p-xl-auto p-md-4 bg-white d-block">
+					<div class="card bg-white d-block">
 						<div class="row">
-							<div class="col-4 px-2 px-sm-auto">
+							<div class="col-auto">
 								<img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['title']; ?>">
 							</div>
-							<div class="col-8 pr-0 pr-sm-auto">
+							<div class="col">
 								<span class="display-2 bubble text700 m-0">
 									<?php echo $item['title']; ?>
 								</span>
