@@ -2613,6 +2613,15 @@ body.offcanvas-active {
 	--notchSize: 164px;
 }
 
+.flex_content-cta-bg-inner {
+	z-index: 0;
+	top: -50px;
+	left: -50%;
+	width: 100vw !important;
+	height: calc(100% + 100px);
+	transform: translateX(50%);
+}
+
 .flex_content-cta-bg.right {
 	-webkit-clip-path: polygon(0 0, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% 100%, var(--notchSize) 100%, 0 calc(100% - var(--notchSize)));
 	clip-path: polygon(0 0, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% 100%, var(--notchSize) 100%, 0 calc(100% - var(--notchSize)));

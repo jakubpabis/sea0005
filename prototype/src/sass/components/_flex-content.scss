@@ -270,6 +270,15 @@
         --notchSize: 64px;
       }
 
+      &-inner {
+        z-index: 0;
+        width: 100vw !important;
+        height: calc(100% + 100px);
+        top: -50px;
+        left: -50%;
+        transform: translateX(50%);
+      }
+
       &.right {
         clip-path: polygon(
           0 0,

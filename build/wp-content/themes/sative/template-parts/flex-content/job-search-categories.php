@@ -9,11 +9,11 @@
 	<div class="container py-5">
 		<div class="row align-items-center justify-content-between py-5"></div>
 		<div class="col-md-7 px-lg-3 px-md-0">
-			<div class="flex_content-cta-bg left bg-yellow w-100 h-100 position-absolute"></div>
-			<h5 class="text-uppercase">
+			<div class="flex_content-cta-bg flex_content-cta-bg-inner left bg-yellow w-100 h-100 position-absolute"></div>
+			<h5 class="text-uppercase position-relative">
 				<?php echo get_sub_field('sub_title'); ?>
 			</h5>
-			<span class="display-3 d-block text700 mb-5">
+			<span class="display-3 d-block text700 mb-5 position-relative">
 				<?php echo get_sub_field('title'); ?>
 			</span>
 			<div class="row">
