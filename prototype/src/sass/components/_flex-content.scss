@@ -254,6 +254,22 @@
       margin-top: 100px;
       height: calc(100% - 100px) !important;
 
+      @media (max-width: 1199px) {
+        --notchSize: 128px;
+      }
+
+      @media (max-width: 991px) {
+        --notchSize: 96px;
+      }
+
+      @media (max-width: 767px) {
+        --notchSize: 72px;
+      }
+
+      @media (max-width: 575px) {
+        --notchSize: 64px;
+      }
+
       &.right {
         clip-path: polygon(
           0 0,
