@@ -2616,8 +2616,8 @@ body.offcanvas-active {
 .flex_content-cta-bg-inner {
 	z-index: 0;
 	top: -50px !important;
-	left: -270px !important;
-	width: calc(100vw - 270px) !important;
+	left: calc(- (100vw - 540px) / 2) !important;
+	width: calc(((100vw - 540px) / 2) + 540px) !important;
 	height: calc(100% + 100px) !important;
 }
 
