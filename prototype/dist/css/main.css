@@ -2616,7 +2616,7 @@ body.offcanvas-active {
 .flex_content-cta-bg-inner {
 	z-index: 0;
 	top: -50px !important;
-	left: calc(- (100vw - 540px) / 2) !important;
+	left: calc((-100vw + 540px) / 2) !important;
 	width: calc(((100vw - 540px) / 2) + 540px) !important;
 	height: calc(100% + 100px) !important;
 }
@@ -8898,6 +8898,10 @@ p,
 
 .categories-menus-section {
 	--notchSize: 72px;
+}
+
+.job-search-categories .flex_content-cta-bg {
+	height: calc(100% + 100px) !important;
 }
 
 .card {
