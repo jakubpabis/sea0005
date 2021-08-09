@@ -4806,7 +4806,7 @@ jQuery(window).on("load", function () {
             },
           },
         });
-      } else if ($(this).hasClass("owl-carousel.no-repeat")) {
+      } else if ($(this).hasClass("no-repeat")) {
         var $owlR = $(".owl-carousel.no-repeat");
         $owlR.owlCarousel({
           loop: false,
