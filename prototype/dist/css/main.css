@@ -9257,7 +9257,7 @@ p,
 
 .flex_content-cta-bg-inner {
 	left: -15px !important;
-	width: calc(100% + 30px) !important;
+	width: calc(100% + 15px) !important;
 }
 
 .categories-menus-section {
