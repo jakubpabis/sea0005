@@ -546,7 +546,6 @@ jQuery(window).on("load", function () {
     .find("li")
     .on("click", function () {});
   if ($(".owl-carousel").length > 0) {
-    var $i = 1;
     $(".owl-carousel").each(function () {
       if ($(this).hasClass("articles-slider-cards")) {
         var $owlS = $(".owl-carousel.articles-slider-cards");
@@ -759,7 +758,6 @@ jQuery(window).on("load", function () {
           $owl.trigger("next.owl.carousel");
         });
       }
-      $++;
     });
   }
 
