@@ -2615,11 +2615,11 @@ body.offcanvas-active {
 
 .flex_content-cta-bg-inner {
 	z-index: 0;
-	top: -50px;
-	left: -50%;
+	top: -50px !important;
+	left: -50% !important;
 	width: 100vw !important;
-	height: calc(100% + 100px);
-	transform: translateX(50%);
+	height: calc(100% + 100px) !important;
+	transform: translateX(50%) !important;
 }
 
 .flex_content-cta-bg.right {
