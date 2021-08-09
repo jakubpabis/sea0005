@@ -10,7 +10,7 @@
 				</span>
 			</div>
 		</div>
-		<div class="row justify-content-between flex_content-copy_section-dogs align-items-end flex-nowrap mb-5 pb-5">
+		<div class="row justify-content-between flex_content-copy_section-dogs align-items-end flex-nowrap mb-lg-5 mb-sm-4 mb-3 pb-xl-5 pb-md-4 pb-sm-3">
 			<div class="col text-center px-1 px-sm-4">
 				<img class="lazy img-fluid mx-auto" data-src="<?php echo get_template_directory_uri(); ?>/assets/img/start-up.svg" alt="">
 				<?php if (!empty(get_sub_field('dog_links')) && !empty(get_sub_field('dog_links')[0])) : ?>
