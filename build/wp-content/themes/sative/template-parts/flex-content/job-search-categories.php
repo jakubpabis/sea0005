@@ -6,7 +6,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container py-5">
+	<div class="container py-md-5 py-sm-4 pt-4 pb-3">
 		<div class="row align-items-center justify-content-between py-5">
 			<div class="col-md-7 col-11 px-lg-3 px-md-0">
 				<div class="flex_content-cta-bg flex_content-cta-bg-inner left bg-yellow position-absolute d-block d-md-none"></div>

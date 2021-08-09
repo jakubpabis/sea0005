@@ -8181,6 +8181,7 @@ p,
 .flex_content-tags .continuous-slider a,
 .flex_content-tags .continuous-slider span {
 	font-size: 96px;
+	padding: 15px 20px;
 }
 
 .flex_content-cta-bg {
@@ -8399,6 +8400,7 @@ p,
 .flex_content-tags .continuous-slider a,
 .flex_content-tags .continuous-slider span {
 	font-size: 72px;
+	padding: 15px;
 }
 
 .flex_content-cta-bg {
@@ -8910,6 +8912,7 @@ p,
 .flex_content-tags .continuous-slider a,
 .flex_content-tags .continuous-slider span {
 	font-size: 64px;
+	padding: 12px;
 }
 
 .flex_content-cta-bg {
@@ -9274,6 +9277,7 @@ p,
 .flex_content-tags .continuous-slider a,
 .flex_content-tags .continuous-slider span {
 	font-size: 56px;
+	padding: 8px;
 }
 
 .flex_content-cta-bg {
