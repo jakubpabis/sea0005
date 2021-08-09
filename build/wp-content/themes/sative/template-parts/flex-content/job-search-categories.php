@@ -1,5 +1,5 @@
 <section class="flex_content-cta job-search-categories flex-section">
-	<div class="container-fluid position-absolute h-100 left-0">
+	<div class="container-fluid position-absolute h-100 left-0 d-none d-md-block">
 		<div class="row">
 			<div class="col-md-7 position-absolute h-100 p-0 left-0">
 				<div class="flex_content-cta-bg left bg-yellow w-100 h-100"></div>
@@ -8,7 +8,7 @@
 	</div>
 	<div class="container py-5">
 		<div class="row align-items-center justify-content-between py-5">
-			<div class="col-md-7 px-lg-3 px-0">
+			<div class="col-md-7 px-lg-3 px-md-0">
 				<h5 class="text-uppercase">
 					<?php echo get_sub_field('sub_title'); ?>
 				</h5>

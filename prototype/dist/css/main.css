@@ -2758,7 +2758,7 @@ body.offcanvas-active {
 .job-search-nice {
 	font-size: 18px;
 	line-height: 1;
-	width: calc(100% - 70px);
+	width: calc(100% - 90px);
 	padding: 15px 50px 15px 15px;
 	color: #183153;
 	border: none;
