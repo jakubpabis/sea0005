@@ -40,7 +40,7 @@
 				</div>
 			<?php endforeach; ?>
 		</div>
-		<div class="row d-block d-lg-none my-3">
+		<div class="row d-block d-lg-none mt-5 pt-4">
 			<div class="col-auto">
 				<?php if (get_sub_field('link')) : ?>
 					<a href="<?php echo get_sub_field('link')['url']; ?>" class="btn btn__default navy">
