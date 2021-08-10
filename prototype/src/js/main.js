@@ -568,6 +568,7 @@ jQuery(window).on("load", function () {
               margin: 20,
             },
             991: {
+              items: 2,
               margin: 30,
             },
           },
