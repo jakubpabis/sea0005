@@ -24,7 +24,7 @@
 				<div class="item d-flex h-100 w-100">
 					<div class="card nothed h-100 w-100">
 						<div class="card-body p-lg-4 p-md-2 p-0">
-							<h4 class="text-uppercase mb-0 text700">
+							<h4 class="text-uppercase mb-2 mt-0 text700">
 								<?php echo get_the_category($item->ID)[0]->name; ?>
 							</h4>
 							<span class="h2 text700">
