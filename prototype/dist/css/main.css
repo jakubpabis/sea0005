@@ -8192,6 +8192,10 @@ p,
 	--notchSize: 128px;
 }
 
+.card {
+	padding: 35px;
+}
+
 .jobs__list-item .job-title .icon {
 	margin-top: 5px;
 }
@@ -8417,6 +8421,12 @@ form .ugly label {
 
 form .ugly label.full {
 	width: calc(100% - 14px);
+}
+
+.card {
+	padding: 30px;
+	-webkit-clip-path: polygon(0% 12px, 12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px));
+	clip-path: polygon(0% 12px, 12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px));
 }
 
 .cards__section-img {
@@ -8928,7 +8938,9 @@ p,
 }
 
 .card {
-	padding: 35px;
+	padding: 25px;
+	-webkit-clip-path: polygon(0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px));
+	clip-path: polygon(0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px));
 }
 
 .cards__section-img {
@@ -9299,7 +9311,7 @@ p,
 }
 
 .card {
-	padding: 30px;
+	padding: 20px;
 }
 
 .testimonials__section-content > .container,
