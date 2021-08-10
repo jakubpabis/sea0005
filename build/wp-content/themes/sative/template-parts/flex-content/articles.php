@@ -1,6 +1,6 @@
 <section class="flex-section articles-slider">
 	<div class="container">
-		<div class="row align-items-end mb-4 pb-3">
+		<div class="row align-items-end justify-content-between mb-4 pb-3">
 			<div class="col-lg-9">
 				<h5 class="text-uppercase mb-1 text700">
 					<?php echo get_sub_field('sub_title'); ?>
@@ -9,7 +9,7 @@
 					<?php echo get_sub_field('title'); ?>
 				</span>
 			</div>
-			<div class="col-lg-3 text-right">
+			<div class="col-auto text-right">
 				<?php if (get_sub_field('link')) : ?>
 					<a href="<?php echo get_sub_field('link')['url']; ?>" class="btn btn__default navy">
 						<?php echo get_sub_field('link')['title']; ?>
