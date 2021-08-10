@@ -9,7 +9,7 @@
 					<?php echo get_sub_field('title'); ?>
 				</span>
 			</div>
-			<div class="col-auto text-right">
+			<div class="col-auto d-none d-lg-block">
 				<?php if (get_sub_field('link')) : ?>
 					<a href="<?php echo get_sub_field('link')['url']; ?>" class="btn btn__default navy">
 						<?php echo get_sub_field('link')['title']; ?>
@@ -39,6 +39,15 @@
 					<div class="triangle"></div>
 				</div>
 			<?php endforeach; ?>
+		</div>
+		<div class="row d-block d-lg-none my-3">
+			<div class="col-auto">
+				<?php if (get_sub_field('link')) : ?>
+					<a href="<?php echo get_sub_field('link')['url']; ?>" class="btn btn__default navy">
+						<?php echo get_sub_field('link')['title']; ?>
+					</a>
+				<?php endif; ?>
+			</div>
 		</div>
 	</div>
 </section>
