@@ -571,10 +571,6 @@ jQuery(window).on("load", function () {
               items: 2,
               margin: 30,
             },
-            1600: {
-              items: 3,
-              margin: 30,
-            },
           },
         });
       } else if ($(this).hasClass("no-repeat")) {
