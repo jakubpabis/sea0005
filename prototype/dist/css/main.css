@@ -2581,11 +2581,11 @@ body.offcanvas-active {
 }
 
 .flex_content-reviews {
-	margin: 300px 0 150px;
+	margin: 200px 0 100px;
 }
 
 .flex_content-carousel {
-	margin: 200px 0;
+	margin: 100px 0;
 }
 
 .flex_content-carousel .custom-owl-prev,
@@ -8066,6 +8066,14 @@ h2,
 	font-size: 108px;
 }
 
+.flex_content-reviews {
+	margin: 150px 0 80px;
+}
+
+.flex_content-carousel {
+	margin: 90px 0;
+}
+
 }
 
 @media (max-width: 1439px) {
@@ -8182,6 +8190,14 @@ p,
 .flex_content-tags .continuous-slider span {
 	font-size: 96px;
 	padding: 15px 20px;
+}
+
+.flex_content-reviews {
+	margin: 120px 0 70px;
+}
+
+.flex_content-carousel {
+	margin: 80px 0;
 }
 
 .flex_content-cta-bg {
@@ -8405,6 +8421,14 @@ p,
 .flex_content-tags .continuous-slider span {
 	font-size: 72px;
 	padding: 15px;
+}
+
+.flex_content-reviews {
+	margin: 100px 0 60px;
+}
+
+.flex_content-carousel {
+	margin: 70px 0;
 }
 
 .flex_content-cta-bg {
@@ -8925,6 +8949,14 @@ p,
 	padding: 12px;
 }
 
+.flex_content-reviews {
+	margin: 80px 0 50px;
+}
+
+.flex_content-carousel {
+	margin: 60px 0;
+}
+
 .flex_content-cta-bg {
 	--notchSize: 72px;
 }
@@ -9295,6 +9327,14 @@ p,
 .flex_content-tags .continuous-slider span {
 	font-size: 56px;
 	padding: 8px;
+}
+
+.flex_content-reviews {
+	margin: 60px 0 40px;
+}
+
+.flex_content-carousel {
+	margin: 50px 0;
 }
 
 .flex_content-cta-bg {

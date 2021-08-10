@@ -253,11 +253,51 @@
   }
 
   &-reviews {
-    margin: 300px 0 150px;
+    margin: 200px 0 100px;
+
+    @media (max-width: 1440px) {
+      margin: 150px 0 80px;
+    }
+
+    @media (max-width: 1199px) {
+      margin: 120px 0 70px;
+    }
+
+    @media (max-width: 991px) {
+      margin: 100px 0 60px;
+    }
+
+    @media (max-width: 767px) {
+      margin: 80px 0 50px;
+    }
+
+    @media (max-width: 575px) {
+      margin: 60px 0 40px;
+    }
   }
 
   &-carousel {
-    margin: 200px 0;
+    margin: 100px 0;
+
+    @media (max-width: 1440px) {
+      margin: 90px 0;
+    }
+
+    @media (max-width: 1199px) {
+      margin: 80px 0;
+    }
+
+    @media (max-width: 991px) {
+      margin: 70px 0;
+    }
+
+    @media (max-width: 767px) {
+      margin: 60px 0;
+    }
+
+    @media (max-width: 575px) {
+      margin: 50px 0;
+    }
 
     .custom-owl-prev,
     .custom-owl-next {
