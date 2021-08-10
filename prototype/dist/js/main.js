@@ -4791,7 +4791,6 @@ jQuery(window).on("load", function () {
         var $owlS = $(this);
         $owlS.owlCarousel({
           loop: true,
-          margin: 30,
           nav: false,
           dots: false,
           lazyLoad: true,
@@ -4801,9 +4800,14 @@ jQuery(window).on("load", function () {
           responsive: {
             0: {
               items: 1,
+              margin: 15,
             },
             767: {
               items: 2,
+              margin: 20,
+            },
+            991: {
+              margin: 30,
             },
           },
         });
