@@ -4985,15 +4985,18 @@ jQuery(window).on("load", function () {
           autoplayHoverPause: true,
           responsive: {
             0: {
-              items: 1,
-            },
-            420: {
               items: 2,
             },
-            767: {
+            575: {
               items: 3,
             },
+            767: {
+              items: 4,
+            },
             991: {
+              items: 5,
+            },
+            1199: {
               items: 6,
             },
           },
