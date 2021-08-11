@@ -31,7 +31,7 @@ $lang = pll_current_language();
 		</div>
 		<hr>
 		<div class="row footer__middle justify-content-between">
-			<div class="col-xl-3 col-md-4 mb-5">
+			<div class="col-md-4 mb-5">
 				<h5 class="text-uppercase">
 					<?php echo get_field('contact_title_' . $lang, 'option'); ?>
 				</h5>
