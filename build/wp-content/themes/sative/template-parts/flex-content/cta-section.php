@@ -46,7 +46,7 @@
 				</h2>
 			</div>
 		</div>
-		<div class="row pt-5 mt-4 pb-5">
+		<div class="row pt-sm-5 pt-4 mt-sm-4 pb-5">
 			<?php $i = 1;
 			foreach (get_sub_field('bubbles') as $item) : ?>
 				<?php
