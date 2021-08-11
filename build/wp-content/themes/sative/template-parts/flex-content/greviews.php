@@ -1,7 +1,7 @@
 <section class="flex_content-reviews flex-section">
 	<div class="container">
 		<div class="row mb-5">
-			<div class="col text-right d-block d-md-none">
+			<div class="col text-right d-block d-lg-none">
 				<a href="https://goo.gl/maps/HFFmkqwHAdMfu4iG8" target="_blank">
 					<img class="lazy" data-src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>">
 				</a>
@@ -29,7 +29,7 @@
 					<?php echo get_sub_field('testimonial_author'); ?>
 				</p>
 			</div>
-			<div class="col-lg-4 offset-lg-1 d-md-block d-none">
+			<div class="col-lg-4 offset-lg-1 d-lg-block d-none">
 				<a href="https://goo.gl/maps/HFFmkqwHAdMfu4iG8" target="_blank">
 					<img class="lazy" data-src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>">
 				</a>
