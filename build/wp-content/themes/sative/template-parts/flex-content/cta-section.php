@@ -89,7 +89,7 @@
 					</g>
 				</svg>
 			</div>
-			<div class="col-md-6 ordre-md-12 order-1" id="bottom-contact-dog-section">
+			<div class="col-md-6 col-sm-9 offset-md-0 offset-sm-3 ordre-md-12 order-1" id="bottom-contact-dog-section">
 				<?php if (get_sub_field('links') && !empty(get_sub_field('links'))) : ?>
 				<?php else : ?>
 					<?php $type = 'cta_dog_contact'; ?>
