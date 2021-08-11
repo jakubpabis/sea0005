@@ -37,7 +37,7 @@
 			<div class="col-lg-5 col-auto offset-lg-0 offset-md-3 offset-0">
 				<h2 class="m-lg-0">
 					<?php echo get_sub_field('contact_sub_title'); ?>
-					<svg class="position-absolute ml-4 mt-3 d-sm-block d-none" width="118" height="445" xmlns="http://www.w3.org/2000/svg">
+					<svg class="position-absolute ml-4 mt-3 d-sm-inline-block d-none" width="118" height="445" xmlns="http://www.w3.org/2000/svg">
 						<g stroke="#183153" stroke-width="5" fill="none" fill-rule="evenodd">
 							<path d="M86 431.28l15 9.867 15-9.867" />
 							<path d="M101.492 441.347V26.505L77.72 3.048H0" />
