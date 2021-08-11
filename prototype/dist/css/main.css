@@ -9618,6 +9618,14 @@ p,
 
 }
 
+@media (max-width: 374px) {
+
+.footer__upper-logo .display-3 {
+	font-size: 28px !important;
+}
+
+}
+
 @media (max-width: 360px) {
 
 .navigation__lower-logo {
