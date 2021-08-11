@@ -34,8 +34,8 @@
 					<?php echo get_sub_field('contact_title'); ?>
 				</span>
 			</div>
-			<div class="col-lg-5">
-				<h2 class="m-0">
+			<div class="col-lg-5 col-auto offset-lg-0 offset-md-3 offset-0">
+				<h2 class="m-lg-0">
 					<?php echo get_sub_field('contact_sub_title'); ?>
 					<svg class="position-absolute ml-4 mt-3" width="118" height="445" xmlns="http://www.w3.org/2000/svg">
 						<g stroke="#183153" stroke-width="5" fill="none" fill-rule="evenodd">
@@ -62,7 +62,7 @@
 						break;
 				}
 				?>
-				<div class="col-md-4 d-flex flex_content-bubbles-bubble-cont">
+				<div class="col-md-4 col-sm-7 col-9 <?php echo $i % 2 === 0 ? 'offset-sm-5 offset-3' : null; ?> d-flex flex_content-bubbles-bubble-cont">
 					<div class="flex_content-bubbles-bubble">
 						<h2 class="<?php echo $color; ?> px-2 d-inline-block my-0">
 							<?php echo $item['title']; ?>
