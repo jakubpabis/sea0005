@@ -457,6 +457,12 @@
     overflow: hidden;
     position: relative;
 
+    .owl-item {
+      @media (max-width: 767px) {
+        padding-bottom: 30px;
+      }
+    }
+
     &-dog {
       position: relative;
       margin-left: -50%;
