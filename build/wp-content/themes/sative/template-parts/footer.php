@@ -113,14 +113,14 @@
 		</div>
 	</div>
 	<div class="footer__lower">
-		<div class="container">
-			<div class="row justify-content-lg-between justify-content-center">
+		<div class="container-lg">
+			<div class="row justify-content-sm-between justify-content-center">
 				<div class="col-auto">
 					<span>© Search X Recruitment - <?php echo date("Y"); ?></span> |
 					<a href="/sitemap_index.xml"> Sitemap</a> |
 					<a href="/<?php echo $lang; ?>/<?php pll_e('fulfilled-jobs'); ?>"> <?php pll_e('Fulfilled jobs'); ?></a>
 				</div>
-				<div class="col-auto">
+				<div class="col-auto mt-sm-0 mt-2">
 					<!-- <span>
 						Design by <a href="http://loyals.com" target="blank">loyals.com</a>
 					</span> -->
