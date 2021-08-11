@@ -9208,10 +9208,6 @@ p,
 	width: 32px;
 }
 
-.footer__middle * {
-	text-align: center !important;
-}
-
 }
 
 @media (max-width: 660px) {
