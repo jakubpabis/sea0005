@@ -8992,7 +8992,11 @@ p,
 }
 
 .flex_content-contact .owl-item {
-	padding-bottom: 30px;
+	padding-bottom: 20px !important;
+}
+
+.flex_content-contact .owl-height {
+	padding-bottom: 20px !important;
 }
 
 .categories-menus-section {
