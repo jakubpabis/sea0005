@@ -9204,6 +9204,10 @@ p,
 	text-align: center !important;
 }
 
+.footer__upper-logo svg {
+	width: 32px;
+}
+
 .footer__middle * {
 	text-align: center !important;
 }
@@ -9556,6 +9560,18 @@ p,
 .contact__text-columns > div {
 	padding-top: 15px;
 	padding-bottom: 5px;
+}
+
+}
+
+@media (max-width: 479px) {
+
+.footer__upper-logo .display-3 {
+	font-size: 32px !important;
+}
+
+.footer__upper-logo svg {
+	width: 27px;
 }
 
 }
