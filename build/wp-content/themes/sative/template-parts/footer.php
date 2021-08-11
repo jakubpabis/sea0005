@@ -19,7 +19,7 @@
 		</div>
 		<hr>
 		<div class="row footer__middle justify-content-between">
-			<div class="col-md-4 mb-5">
+			<div class="col-md-4 mb-5 order-sm-1 order-6">
 				<h5 class="text-uppercase">
 					<?php echo get_field('contact_title_' . $lang, 'option'); ?>
 				</h5>
@@ -70,7 +70,7 @@
 					</svg>
 				</a>
 			</div>
-			<div class="col-md-4 col-sm-6 mb-5 px-xl-3 px-md-4">
+			<div class="col-md-4 col-sm-6 mb-5 px-xl-3 px-md-4 order-sm-6 order-1">
 				<h5 class="text-uppercase">
 					<?php echo get_field('job_categories_title_' . $lang, 'option'); ?>
 				</h5>
@@ -87,7 +87,7 @@
 					<?php endforeach; ?>
 				</ul>
 			</div>
-			<div class="col-lg-3 col-md-4 col-sm-6 mb-5">
+			<div class="col-lg-3 col-md-4 col-sm-6 mb-5 pl-md-3 pl-sm-4 order-12">
 				<h5 class="text-uppercase">
 					<?php echo get_field('recent_title_' . $lang, 'option'); ?>
 				</h5>
