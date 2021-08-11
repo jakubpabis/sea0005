@@ -3,6 +3,10 @@
   color: white;
   padding-top: 40px;
 
+  @media (max-width: 575px) {
+    padding-top: 20px;
+  }
+
   &__upper {
     @media (max-width: 767px) {
       * {
@@ -56,6 +60,10 @@
     height: 1px;
     display: block;
     opacity: 0.4;
+
+    @media (max-width: 575px) {
+      margin: 20px auto 30px;
+    }
   }
 
   &__middle {
