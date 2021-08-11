@@ -1,17 +1,17 @@
 <section class="flex_content-cta flex-section">
 	<div class="container position-absolute h-100 left-0">
 		<div class="row">
-			<div class="col-lg-10 position-absolute h-100 p-0 left-0">
+			<div class="col-lg-10 col-md-11 position-absolute h-100 p-0 left-0">
 				<div class="flex_content-cta-bg right bg-yellow w-100 h-100"></div>
 			</div>
 		</div>
 	</div>
 	<div class="container">
 		<div class="row align-items-center">
-			<div class="col-lg-5 ml-lg-n5">
+			<div class="col-md-5 ml-md-n5">
 				<img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>" class="lazy img-fluid">
 			</div>
-			<div class="col-lg-7 pt-5 mt-5">
+			<div class="col-md-7 pt-5 mt-5">
 				<h5 class="text-uppercase">
 					<?php echo get_sub_field('sub_title'); ?>
 				</h5>
