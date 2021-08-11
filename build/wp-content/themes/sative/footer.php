@@ -82,7 +82,7 @@ $lang = pll_current_language();
 					</svg>
 				</a>
 			</div>
-			<div class="col-md-4 mb-5 px-5">
+			<div class="col-md-4 mb-5 px-lg-3 px-4">
 				<h5 class="text-uppercase">
 					<?php echo get_field('job_categories_title_' . $lang, 'option'); ?>
 				</h5>
