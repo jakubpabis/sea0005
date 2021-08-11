@@ -62,7 +62,7 @@
 						break;
 				}
 				?>
-				<div class="col-md-4 col-sm-7 col-9 <?php echo $i % 2 === 0 ? 'offset-sm-5 offset-3' : null; ?> d-flex flex_content-bubbles-bubble-cont">
+				<div class="col-md-4 col-sm-7 col-9 <?php echo $i % 2 === 0 ? 'offset-lg-0 offset-sm-5 offset-3' : null; ?> d-flex flex_content-bubbles-bubble-cont">
 					<div class="flex_content-bubbles-bubble">
 						<h2 class="<?php echo $color; ?> px-2 d-inline-block my-0">
 							<?php echo $item['title']; ?>
