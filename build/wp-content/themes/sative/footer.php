@@ -31,7 +31,7 @@ $lang = pll_current_language();
 		</div>
 		<hr>
 		<div class="row footer__middle justify-content-between">
-			<div class="col-lg-3 col-md-4 mb-5">
+			<div class="col-xl-3 col-md-4 mb-5">
 				<h5 class="text-uppercase">
 					<?php echo get_field('contact_title_' . $lang, 'option'); ?>
 				</h5>
@@ -82,7 +82,7 @@ $lang = pll_current_language();
 					</svg>
 				</a>
 			</div>
-			<div class="col-md-4 mb-5 px-lg-3 px-4">
+			<div class="col-md-4 mb-5 px-xl-3 px-4">
 				<h5 class="text-uppercase">
 					<?php echo get_field('job_categories_title_' . $lang, 'option'); ?>
 				</h5>
@@ -99,7 +99,7 @@ $lang = pll_current_language();
 					<?php endforeach; ?>
 				</ul>
 			</div>
-			<div class="col-lg-3 col-md-4 mb-5">
+			<div class="col-xl-3 col-md-4 mb-5">
 				<h5 class="text-uppercase">
 					<?php echo get_field('recent_title_' . $lang, 'option'); ?>
 				</h5>
