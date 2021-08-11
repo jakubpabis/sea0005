@@ -1,6 +1,11 @@
 <section class="flex_content-reviews flex-section">
 	<div class="container">
 		<div class="row mb-5">
+			<div class="col text-right d-block d-md-none">
+				<a href="https://goo.gl/maps/HFFmkqwHAdMfu4iG8" target="_blank">
+					<img class="lazy" data-src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>">
+				</a>
+			</div>
 			<div class="col-lg-8">
 				<h5 class="text-uppercase text700">
 					<?php echo get_sub_field('sub_title'); ?>
@@ -24,7 +29,7 @@
 					<?php echo get_sub_field('testimonial_author'); ?>
 				</p>
 			</div>
-			<div class="col-lg-4 offset-lg-1">
+			<div class="col-lg-4 offset-lg-1 d-md-block d-none">
 				<a href="https://goo.gl/maps/HFFmkqwHAdMfu4iG8" target="_blank">
 					<img class="lazy" data-src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>">
 				</a>
