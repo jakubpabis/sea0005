@@ -11,7 +11,7 @@
 			<div class="col-lg-5 col-md-6 ml-n5 order-12 order-md-1">
 				<img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>" class="lazy img-fluid">
 			</div>
-			<div class="col-lg-7 col-md-6 pt-lg-5 mt-lg-5 order-1 order-md-12">
+			<div class="col-lg-7 col-md-6 pt-lg-5 mt-lg-5 mt-md-0 mt-4 order-1 order-md-12">
 				<h5 class="text-uppercase">
 					<?php echo get_sub_field('sub_title'); ?>
 				</h5>
