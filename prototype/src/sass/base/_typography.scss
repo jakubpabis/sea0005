@@ -228,6 +228,22 @@ p,
 .display-3 {
   font-size: 70px;
   line-height: 1.21 !important;
+
+  @media (max-width: 1199px) {
+    font-size: 64px;
+  }
+
+  @media (max-width: 991px) {
+    font-size: 52px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 44px;
+  }
+
+  @media (max-width: 575px) {
+    font-size: 36px;
+  }
 }
 
 .font-primary {
