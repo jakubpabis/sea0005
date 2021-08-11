@@ -8,10 +8,10 @@
 	</div>
 	<div class="container">
 		<div class="row align-items-center">
-			<div class="col-md-5 ml-md-n5">
+			<div class="col-lg-5 col-md-6 ml-md-n5">
 				<img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>" class="lazy img-fluid">
 			</div>
-			<div class="col-md-7 pt-5 mt-5">
+			<div class="col-lg-7 col-md-6 pt-lg-5 mt-lg-5">
 				<h5 class="text-uppercase">
 					<?php echo get_sub_field('sub_title'); ?>
 				</h5>

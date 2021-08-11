@@ -8440,6 +8440,8 @@ p,
 }
 
 .flex_content-cta-bg {
+	height: 100% !important;
+	margin-top: 0;
 	--notchSize: 96px;
 }
 
