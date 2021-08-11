@@ -9212,10 +9212,6 @@ p,
 	text-align: center !important;
 }
 
-.footer__lower * {
-	text-align: center !important;
-}
-
 }
 
 @media (max-width: 660px) {

@@ -147,12 +147,6 @@
     padding: 12px 0;
     font-size: 13px;
 
-    @media (max-width: 767px) {
-      * {
-        text-align: center !important;
-      }
-    }
-
     a:hover {
       color: inherit;
     }
