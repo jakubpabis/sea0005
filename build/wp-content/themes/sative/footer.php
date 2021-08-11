@@ -99,7 +99,7 @@ $lang = pll_current_language();
 					<?php endforeach; ?>
 				</ul>
 			</div>
-			<div class="col-xl-3 col-md-4 mb-5">
+			<div class="col-lg-3 col-md-4 mb-5">
 				<h5 class="text-uppercase">
 					<?php echo get_field('recent_title_' . $lang, 'option'); ?>
 				</h5>
