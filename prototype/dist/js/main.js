@@ -4858,6 +4858,11 @@ jQuery(window).on("load", function () {
           responsive: {
             0: {
               items: 1,
+              autoHeight: true,
+            },
+            768: {
+              items: 1,
+              autoHeight: false,
             },
           },
         });
