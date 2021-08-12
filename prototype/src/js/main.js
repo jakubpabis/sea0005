@@ -159,7 +159,7 @@ function teamShowMore() {
 function menuMobile() {
   $("button.mobileMenu").on("click", function () {
     $(this).toggleClass("active");
-    $(".navigation__upper").toggleClass("d-block");
+    $(".navigation-main-menu").toggleClass("d-block");
   });
 }
 

@@ -8361,6 +8361,11 @@ p,
 	font-size: 20px;
 }
 
+.navigation-main-menu {
+	position: fixed;
+	display: block;
+}
+
 .header__home .dog {
 	padding-right: 45px;
 	padding-left: 0;
