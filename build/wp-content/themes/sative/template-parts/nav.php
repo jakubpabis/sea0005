@@ -10,7 +10,7 @@ if ($lang === 'en') {
 <nav class="navigation">
 	<div class="navigation__upper">
 		<div class="container-xl">
-			<div class="row justify-content-between align-items-center">
+			<div class="row justify-content-lg-between justify-content-center align-items-center">
 				<div class="col-auto">
 					<ul class="lang d-none d-md-flex">
 						<?php
