@@ -550,17 +550,20 @@
       right: 0;
       bottom: 0;
       background-color: $color-sea;
-      min-width: 100%;
+      min-width: calc(100% - 30px);
+      padding: 30px 15px;
 
       ul.navigation__lower-menu {
         > li {
           border-top: 1px solid $color-navy;
+          text-align: left;
 
           &:last-of-type {
             border-bottom: 1px solid $color-navy;
           }
 
           > a {
+            text-align: left;
             font-size: 16px;
             text-decoration: none;
             text-transform: none;
