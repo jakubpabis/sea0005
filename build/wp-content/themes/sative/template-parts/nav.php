@@ -21,7 +21,7 @@ if ($lang === 'en') {
 						?>
 					</ul>
 				</div>
-				<div class="col-md-10 col-auto">
+				<div class="col-md-10 col-auto d-none d-lg-block">
 					<div class="row justify-content-end align-items-center">
 						<?php if (get_field($upper_item, 'option')) : ?>
 							<div class="col-lg-auto py-2">
@@ -41,13 +41,6 @@ if ($lang === 'en') {
 						</div>
 					</div>
 				</div>
-			</div>
-			<a href="javascript:void(0)" class="btn btn__small yellow d-lg-none d-inline-block" data-toggle="modal" data-target="#uploadCVModal">
-				<?php pll_e('Upload CV'); ?>
-			</a>
-			<div class="navigation__upper-contact d-lg-none d-flex">
-				<a class="mb-1" href="tel:+31207782393"><i class="far fa-phone-alt"></i>+31 (0)20 - 7782393</a>
-				<a href="mailto:info@searchxrecruitment.com"><i class="far fa-envelope"></i>info@searchxrecruitment.com</a>
 			</div>
 		</div>
 	</div>
