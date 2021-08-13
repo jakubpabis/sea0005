@@ -75,10 +75,10 @@ if ($lang === 'en') {
 				</div>
 				<div class="col">
 					<div class="row align-items-center justify-content-end">
-						<form action="<?php echo getTplPageURL(); ?>" method="GET" class="pb-3 d-block d-lg-none">
-							<input class="mb-3 job-search-nice" type="search" name="job-title" placeholder="<?php pll_e('Let me help you find the perfect job'); ?>">
-						</form>
 						<div class="col-lg-auto col-md-6 pr-0 navigation-main-menu">
+							<form action="<?php echo getTplPageURL(); ?>" method="GET" class="pb-3 d-block d-lg-none">
+								<input class="mb-3 job-search-nice" type="search" name="job-title" placeholder="<?php pll_e('Let me help you find the perfect job'); ?>">
+							</form>
 							<?php if (have_rows($menu_items, 'option')) : ?>
 								<ul class="navigation__lower-menu">
 									<?php while (have_rows($menu_items, 'option')) : the_row(); ?>
