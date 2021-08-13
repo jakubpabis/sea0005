@@ -4760,13 +4760,15 @@ function megaMenu() {
     });
   $(".mega-menu__side-submenu-parent")
     .find("> a")
-    .on("focusout", function () {
-      $(this)
-        .removeClass("active")
-        .parent()
-        .find(".mega-menu__side-submenu")
-        .stop(true, true)
-        .css({ display: "none" });
+    .on("focusout", function (event) {
+      if (event.target !== $(".mega-menu__side-submenu")) {
+        $(this)
+          .removeClass("active")
+          .parent()
+          .find(".mega-menu__side-submenu")
+          .stop(true, true)
+          .css({ display: "none" });
+      }
     });
 }
 
