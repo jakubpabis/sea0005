@@ -92,7 +92,7 @@ if ($lang === 'en') {
 													<div class="mega-menu d-flex">
 														<div class="container d-flex flex-column justify-content-between">
 															<div class="row justify-content-center">
-																<div class="col-12">
+																<div class="col-12 d-lg-block d-none">
 																	<hr>
 																</div>
 																<div class="col-lg-10 pt-4 pb-5">
