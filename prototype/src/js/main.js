@@ -522,15 +522,15 @@ function megaMenu() {
   $(".mega-menu__side-submenu-parent")
     .find("> a")
     .on("focusout", function (event) {
-      console.log(event.target);
-      if (event.target !== $(".mega-menu__side-submenu")) {
-        $(this)
+      var $this = $(this);
+      setTimeout(function () {
+        $this
           .removeClass("active")
           .parent()
           .find(".mega-menu__side-submenu")
           .stop(true, true)
           .css({ display: "none" });
-      }
+      }, 100);
     });
 }
 
