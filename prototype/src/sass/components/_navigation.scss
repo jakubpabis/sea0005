@@ -328,7 +328,7 @@
         background: transparent !important;
 
         @media (max-width: 991px) {
-          top: 0 !important;
+          top: 56px !important;
           min-height: 100vh;
           z-index: 9;
         }
@@ -343,7 +343,7 @@
           color: $color-primary;
 
           @media (max-width: 991px) {
-            top: 55px !important;
+            top: 0 !important;
             min-height: 100vh;
             z-index: 9;
           }
