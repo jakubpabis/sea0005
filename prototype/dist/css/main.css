@@ -8391,6 +8391,10 @@ p,
 	text-align: left;
 	text-decoration: none;
 	text-transform: none;
+	background-image: url(../img/arrow-right.svg);
+	background-repeat: no-repeat;
+	background-position: center right;
+	background-size: 20px auto;
 }
 
 .header__home .dog {
