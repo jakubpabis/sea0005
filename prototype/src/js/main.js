@@ -522,6 +522,7 @@ function megaMenu() {
   $(".mega-menu__side-submenu-parent")
     .find("> a")
     .on("focusout", function (event) {
+      console.log(event.target);
       if (event.target !== $(".mega-menu__side-submenu")) {
         $(this)
           .removeClass("active")
