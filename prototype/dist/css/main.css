@@ -8365,14 +8365,14 @@ p,
 
 .navigation__lower-menu .mega-menu-container {
 	z-index: 9;
-	top: 70px !important;
-	min-height: calc(100vh - 70px);
+	top: 0 !important;
+	min-height: 100vh;
 }
 
 .navigation__lower-menu .mega-menu-container .mega-menu {
 	z-index: 9;
-	top: 70px !important;
-	min-height: calc(100vh - 70px);
+	top: 55px !important;
+	min-height: 100vh;
 }
 
 .navigation-main-menu {
