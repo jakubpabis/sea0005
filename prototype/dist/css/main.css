@@ -8368,7 +8368,7 @@ p,
 	bottom: 0;
 	left: 0;
 	display: block;
-	min-width: calc(100% - 30px);
+	min-width: 100%;
 	padding: 30px 15px !important;
 	background-color: #94d4e9;
 }

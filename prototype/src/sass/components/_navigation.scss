@@ -550,7 +550,7 @@
       right: 0;
       bottom: 0;
       background-color: $color-sea;
-      min-width: calc(100% - 30px);
+      min-width: 100%;
       padding: 30px 15px !important;
 
       ul.navigation__lower-menu {
