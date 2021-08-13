@@ -4717,46 +4717,52 @@ function megaMenu() {
   $(".mega-menu__side-submenu-parent")
     .find("> a")
     .on("click focusin mouseenter", function () {
-      $(".mega-menu__side-submenu-parent")
-        .find("> a")
-        .not($(this))
-        .stop(true, true)
-        .removeClass("active");
-      $(".mega-menu__side-submenu")
-        .not($(this).parent().find(".mega-menu__side-submenu"))
-        .stop(true, true)
-        .css({ display: "none" });
-      $(this)
-        .addClass("active")
-        .parent()
-        .find(".mega-menu__side-submenu")
-        .stop(true, true)
-        .css({ display: "block" });
+      var $this = $(this);
+      setTimeout(function () {
+        $(".mega-menu__side-submenu-parent")
+          .find("> a")
+          .not($this)
+          .stop(true, true)
+          .removeClass("active");
+        $(".mega-menu__side-submenu")
+          .not($this.parent().find(".mega-menu__side-submenu"))
+          .stop(true, true)
+          .css({ display: "none" });
+        $this
+          .addClass("active")
+          .parent()
+          .find(".mega-menu__side-submenu")
+          .stop(true, true)
+          .css({ display: "block" });
+      }, 100);
     });
   $(".mega-menu__big-submenu")
     .find("> li")
     .find("> a")
     .on("mouseenter", function () {
-      $(".mega-menu__big-submenu")
-        .find("> li")
-        .find("> a")
-        .not($(this))
-        .removeClass("active")
-        .parent()
-        .find(".mega-menu__side-submenu")
-        .stop(true, true)
-        .css({ display: "none" });
-      console.log("some");
-      $(this)
-        .parent()
-        .parent()
-        .parent()
-        .css({
-          "min-height":
-            $(this).parent().find(".mega-menu__side-submenu").height() +
-            50 +
-            "px",
-        });
+      var $this = $(this);
+      setTimeout(function () {
+        $(".mega-menu__big-submenu")
+          .find("> li")
+          .find("> a")
+          .not($this)
+          .removeClass("active")
+          .parent()
+          .find(".mega-menu__side-submenu")
+          .stop(true, true)
+          .css({ display: "none" });
+        console.log("some");
+        $this
+          .parent()
+          .parent()
+          .parent()
+          .css({
+            "min-height":
+              $this.parent().find(".mega-menu__side-submenu").height() +
+              50 +
+              "px",
+          });
+      }, 100);
     });
   $(".mega-menu__side-submenu-parent")
     .find("> a")
