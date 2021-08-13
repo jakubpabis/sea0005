@@ -8369,7 +8369,7 @@ p,
 	left: 0;
 	display: block;
 	min-width: calc(100% - 30px);
-	padding: 30px 15px;
+	padding: 30px 15px !important;
 	background-color: #94d4e9;
 }
 
@@ -8383,7 +8383,8 @@ p,
 }
 
 .navigation-main-menu ul.navigation__lower-menu > li > a {
-	font-size: 16px;
+	font-size: 18px;
+	padding: 20px 0 !important;
 	text-align: left;
 	text-decoration: none;
 	text-transform: none;
