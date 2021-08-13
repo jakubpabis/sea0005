@@ -76,7 +76,7 @@ if ($lang === 'en') {
 				<div class="col">
 					<div class="row align-items-center justify-content-end">
 						<div class="col-lg-auto col-md-6 pr-0 navigation-main-menu">
-							<form action="<?php echo getTplPageURL(); ?>" method="GET" class="pb-3 d-block d-lg-none">
+							<form action="<?php echo getTplPageURL(); ?>" method="GET" class="pb-1 d-block d-lg-none">
 								<input class="mb-3 job-search-nice" type="search" name="job-title" placeholder="<?php pll_e('Let me help you find the perfect job'); ?>">
 							</form>
 							<?php if (have_rows($menu_items, 'option')) : ?>
