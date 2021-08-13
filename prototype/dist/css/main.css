@@ -8363,6 +8363,18 @@ p,
 	font-size: 20px;
 }
 
+.navigation__lower-menu .mega-menu-container {
+	z-index: 9;
+	top: 70px !important;
+	min-height: calc(100vh - 70px);
+}
+
+.navigation__lower-menu .mega-menu-container .mega-menu {
+	z-index: 9;
+	top: 70px !important;
+	min-height: calc(100vh - 70px);
+}
+
 .navigation-main-menu {
 	position: fixed;
 	top: 70px;

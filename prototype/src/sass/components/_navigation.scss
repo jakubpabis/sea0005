@@ -327,6 +327,12 @@
         padding-top: 15px;
         background: transparent !important;
 
+        @media (max-width: 991px) {
+          top: 70px !important;
+          min-height: calc(100vh - 70px);
+          z-index: 9;
+        }
+
         .mega-menu {
           height: calc(100vh - 100px);
           overflow-y: auto;
@@ -335,6 +341,12 @@
           padding-bottom: 150px;
           background-color: $color-sea;
           color: $color-primary;
+
+          @media (max-width: 991px) {
+            top: 70px !important;
+            min-height: calc(100vh - 70px);
+            z-index: 9;
+          }
 
           > .container {
             min-height: 100%;
