@@ -8339,7 +8339,7 @@ p,
 }
 
 .navigation__lower {
-	padding: 10px 0;
+	padding: 15px 0;
 }
 
 .navigation__lower-menu {
@@ -8363,13 +8363,14 @@ p,
 
 .navigation-main-menu {
 	position: fixed;
-	top: 60px;
+	top: 70px;
 	right: 0;
 	bottom: 0;
 	left: 0;
 	display: block;
 	min-width: 100%;
 	padding: 30px 15px !important;
+	border-top: 1px solid #183153;
 	background-color: #94d4e9;
 }
 

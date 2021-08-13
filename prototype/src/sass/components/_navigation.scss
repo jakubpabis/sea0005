@@ -133,7 +133,7 @@
     padding: 20px 0;
 
     @media (max-width: 991px) {
-      padding: 10px 0;
+      padding: 15px 0;
     }
 
     &-logo {
@@ -545,13 +545,14 @@
     @media (max-width: 991px) {
       display: block;
       position: fixed;
-      top: 60px;
+      top: 70px;
       left: 0;
       right: 0;
       bottom: 0;
       background-color: $color-sea;
       min-width: 100%;
       padding: 30px 15px !important;
+      border-top: 1px solid $color-navy;
 
       ul.navigation__lower-menu {
         > li {
