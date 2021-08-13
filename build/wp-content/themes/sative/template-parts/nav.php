@@ -24,8 +24,8 @@ if ($lang === 'en') {
 				<div class="col-md-10 col-auto d-none d-lg-block">
 					<div class="row justify-content-end align-items-center">
 						<?php if (get_field($upper_item, 'option')) : ?>
-							<div class="col-lg-auto py-2">
-								<a href="<?php echo get_field($upper_item, 'option')['url']; ?>">
+							<div class="col-lg-auto py-2 bg-yellow">
+								<a class="color-navy" href="<?php echo get_field($upper_item, 'option')['url']; ?>">
 									<?php echo get_field($upper_item, 'option')['title']; ?>
 								</a>
 							</div>
