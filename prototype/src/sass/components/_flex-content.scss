@@ -576,7 +576,7 @@
 }
 
 .job-search-nice {
-  width: calc(100% - 90px);
+  width: calc(100% - 65px);
   font-size: 18px;
   color: $color-navy;
   padding: 15px 50px 15px 15px;
@@ -589,6 +589,7 @@
   background-position: calc(100% - 15px) 50%;
   background-size: 30px 30px;
   background-repeat: no-repeat;
+  @include notch(4px);
 
   &::placeholder {
     font-size: 18px;

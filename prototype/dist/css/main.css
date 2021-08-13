@@ -2766,7 +2766,7 @@ body.offcanvas-active {
 .job-search-nice {
 	font-size: 18px;
 	line-height: 1;
-	width: calc(100% - 90px);
+	width: calc(100% - 65px);
 	padding: 15px 50px 15px 15px;
 	color: #183153;
 	border: none;
@@ -2779,6 +2779,8 @@ body.offcanvas-active {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
+	-webkit-clip-path: polygon(0% 4px, 4px 0%, calc(100% - 4px) 0%, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0% calc(100% - 4px));
+	clip-path: polygon(0% 4px, 4px 0%, calc(100% - 4px) 0%, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0% calc(100% - 4px));
 }
 
 .job-search-nice::-moz-placeholder {
