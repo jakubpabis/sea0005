@@ -136,6 +136,10 @@
       padding: 15px 0;
     }
 
+    @media (max-width: 575px) {
+      padding: 10px 0;
+    }
+
     &-logo {
       max-width: 190px;
       display: block;

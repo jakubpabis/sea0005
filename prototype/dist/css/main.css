@@ -8315,7 +8315,7 @@ p,
 }
 
 #wrapper {
-	padding-top: 60px;
+	padding-top: 70px;
 }
 
 .navigation__upper {
@@ -9304,7 +9304,7 @@ p,
 }
 
 #wrapper {
-	padding-top: 48px;
+	padding-top: 60px;
 }
 
 .navigation__upper {
@@ -9314,6 +9314,10 @@ p,
 
 .navigation__upper > .container {
 	height: calc(100vh - 48px);
+}
+
+.navigation__lower {
+	padding: 10px 0;
 }
 
 .header__home .dog {
