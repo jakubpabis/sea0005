@@ -543,7 +543,7 @@
 
   &-main-menu {
     @media (max-width: 991px) {
-      display: block;
+      display: none;
       position: fixed;
       top: 70px;
       left: 0;
@@ -571,7 +571,7 @@
             text-transform: none;
             background-image: url(../img/arrow-right.svg);
             background-position: center right;
-            background-size: 20px auto;
+            background-size: 24px auto;
             background-repeat: no-repeat;
           }
         }

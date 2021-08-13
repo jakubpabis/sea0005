@@ -8369,7 +8369,7 @@ p,
 	right: 0;
 	bottom: 0;
 	left: 0;
-	display: block;
+	display: none;
 	min-width: 100%;
 	padding: 40px 15px !important;
 	border-top: 1px solid #183153;
@@ -8394,7 +8394,7 @@ p,
 	background-image: url(../img/arrow-right.svg);
 	background-repeat: no-repeat;
 	background-position: center right;
-	background-size: 20px auto;
+	background-size: 24px auto;
 }
 
 .header__home .dog {
