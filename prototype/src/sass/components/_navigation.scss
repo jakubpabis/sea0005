@@ -569,17 +569,29 @@
       min-width: 100%;
       padding: 40px 15px !important;
       border-top: 1px solid $color-navy;
+    }
 
-      ul.navigation__lower-menu {
-        > li {
+    @media (max-width: 575px) {
+      top: 61px;
+    }
+
+    @media (max-width: 360px) {
+      top: 58px;
+    }
+
+    ul.navigation__lower-menu {
+      > li {
+        @media (max-width: 991px) {
           border-top: 1px solid $color-navy;
           text-align: left;
 
           &:last-of-type {
             border-bottom: 1px solid $color-navy;
           }
+        }
 
-          > a {
+        > a {
+          @media (max-width: 991px) {
             text-align: left;
             padding: 16px 0 !important;
             font-size: 18px;

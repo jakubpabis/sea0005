@@ -53,7 +53,7 @@ if (isset($_GET['app-url']) && $_GET['app-url']) {
 			<div class="modal-container">
 				<div class="modal-body pt-3">
 					<div class="row justify-content-center">
-						<div class="col-xl-7 col-lg-9">
+						<div class="col-xl-7 col-lg-10">
 							<span class="text-size-small text700 text-uppercase mb-2">
 								<?= pll_e('Apply with:'); ?>
 							</span>

@@ -121,6 +121,10 @@ i {
   @media (max-width: 575px) {
     padding-top: 60px;
   }
+
+  @media (max-width: 360px) {
+    padding-top: 58px;
+  }
 }
 
 .bg-cover {
@@ -202,6 +206,22 @@ i {
 
   .card {
     margin-bottom: 100px !important;
+
+    @media (max-width: 991px) {
+      margin-bottom: 50px !important;
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 30px !important;
+    }
+
+    @media (max-width: 575px) {
+      margin-bottom: 240px !important;
+    }
+
+    @media (max-width: 360px) {
+      margin-bottom: 220px !important;
+    }
   }
 
   &-dog {
@@ -210,8 +230,33 @@ i {
     transform: rotateY(180deg);
     width: 400px;
     position: absolute;
-    right: -450px;
+    right: -350px;
     bottom: 0;
+
+    @media (max-width: 991px) {
+      right: -320px;
+    }
+
+    @media (max-width: 767px) {
+      right: -300px;
+    }
+
+    @media (max-width: 575px) {
+      right: auto;
+      left: 30px;
+    }
+  }
+
+  &-cookie {
+    @media (max-width: 767px) {
+      width: 90px;
+    }
+    @media (max-width: 575px) {
+      position: absolute;
+      top: -15px;
+      right: 0;
+      opacity: 0.25;
+    }
   }
 
   .triangle {
@@ -224,6 +269,17 @@ i {
     width: 0;
     height: 0;
     border-style: solid;
+
+    @media (max-width: 575px) {
+      top: auto;
+      right: auto;
+      bottom: 210px;
+      left: 35px;
+    }
+
+    @media (max-width: 360px) {
+      bottom: 190px;
+    }
   }
 }
 

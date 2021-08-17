@@ -2,14 +2,14 @@
 	<aside class="cookies-notifictaion">
 		<div class="container pt-5">
 			<div class="row">
-				<div class="col-12">
+				<div class="col-lg-11 col-md-10 col-sm-9">
 					<div class="card py-4">
 						<div class="row align-items-center">
 							<div class="col-lg-8 d-flex align-items-center">
-								<h2 class="m-0 mr-4">
+								<h2 class="m-0 mr-md-4 mr-3 w-auto">
 									<?php pll_e('Hou jij ook van koekjes?'); ?>
 								</h2>
-								<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+								<svg class="cookies-notifictaion-cookie" width="60" height="60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
 									<defs>
 										<filter id="a">
 											<feColorMatrix in="SourceGraphic" values="0.09 0 0 0 0 0 0.19 0 0 0 0 0 0.33 0 0 0 0 0 1 0" />
@@ -23,8 +23,8 @@
 									</g>
 								</svg>
 							</div>
-							<div class="col-lg-4 text-right">
-								<a href="javascript:void(0)" onclick="acceptCookies()" class="btn btn__default yellow">
+							<div class="col-lg-4 text-lg-right">
+								<a href="javascript:void(0)" onclick="acceptCookies()" class="btn btn__default yellow mt-lg-0 mt-2">
 									<?php pll_e('Ja, ik wil ook een koekje!'); ?>
 								</a>
 							</div>

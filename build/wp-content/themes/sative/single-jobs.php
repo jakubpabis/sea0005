@@ -20,14 +20,14 @@ get_template_part('template-parts/breadcrumbs'); ?>
 					<h4 class="text-uppercase mb-3 text700">
 						<?php pll_e('Vacature'); ?>
 					</h4>
-					<h1 class="display-3 text700 mt-0 mb-4">
+					<h1 class="display-3 text700 mt-0 mb-md-4 mb-0">
 						<?php echo get_the_title(); ?>
 					</h1>
 				</div>
 			</div>
-			<div class="row align-items-center justify-content-md-between justify-content-end">
-				<div class="offset-md-1 col-md-7 col-11">
-					<div class="info card notched p-3 mb-4">
+			<div class="row align-items-center justify-content-md-between">
+				<div class="offset-lg-1 col-lg-7 col-md-10 col-sm-11">
+					<div class="info card notched p-lg-3 p-0 mb-4">
 						<div class="card-body p-3">
 							<?php $helper = jobDisplayHelper(); ?>
 							<div class="info">
@@ -112,7 +112,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 				</div>
 			<?php endif; ?>
 			<div class="row justify-content-center">
-				<article class="mt-5 col-lg-10 jobs__single-article">
+				<article class="mt-xl-5 mt-md-4 col-lg-10 jobs__single-article">
 
 					<?php /* <aside class="dog-aside">
 							<div class="container position-absolute h-100 left-0 top-80">

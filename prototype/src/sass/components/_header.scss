@@ -118,6 +118,10 @@
   &__jobs {
     padding-bottom: 120px;
 
+    @media (max-width: 991px) {
+      padding-bottom: 50px;
+    }
+
     &-cats {
       display: flex;
 
@@ -175,11 +179,16 @@
       transform: rotateY(180deg);
 
       @media (max-width: 991px) {
-        right: -310px;
+        right: -250px;
+        bottom: -50px;
       }
 
       @media (max-width: 767px) {
-        right: -270px;
+        right: -310px;
+      }
+
+      @media (max-width: 575px) {
+        display: none;
       }
 
       object,
@@ -201,6 +210,10 @@
     &-search {
       position: relative;
       margin-top: 50px;
+
+      @media (max-width: 767px) {
+        margin-top: 0;
+      }
 
       &.knowledge {
         margin-top: 90px;
@@ -228,8 +241,8 @@
         @include notch(4px);
 
         @media (max-width: 767px) {
-          margin-top: 80px;
-          margin-bottom: 15px;
+          margin-top: 30px;
+          margin-bottom: 0;
         }
 
         &::placeholder {

@@ -4734,7 +4734,7 @@ function megaMenu() {
           .find(".mega-menu__side-submenu")
           .stop(true, true)
           .css({ display: "block" });
-      }, 100);
+      }, 200);
     });
   $(".mega-menu__big-submenu")
     .find("> li")
@@ -4762,7 +4762,7 @@ function megaMenu() {
               50 +
               "px",
           });
-      }, 100);
+      }, 200);
     });
   $(".mega-menu__side-submenu-parent")
     .find("> a")
@@ -4775,7 +4775,7 @@ function megaMenu() {
           .find(".mega-menu__side-submenu")
           .stop(true, true)
           .css({ display: "none" });
-      }, 100);
+      }, 200);
     });
 }
 

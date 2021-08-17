@@ -2,11 +2,19 @@
   &__list {
     margin-bottom: 100px;
 
+    @media (max-width: 991px) {
+      margin-bottom: 50px;
+    }
+
     &-filters {
       display: block;
 
       &-container {
         margin-top: -80px;
+
+        @media (max-width: 991px) {
+          margin-top: 10px;
+        }
 
         &.posts-filters {
           margin-top: 0;
@@ -433,10 +441,6 @@
       .btn {
         font-size: 15px;
       }
-    }
-
-    .jobs-number {
-      margin-bottom: 30px;
     }
 
     nav.pagination {
