@@ -42,6 +42,23 @@ get_header();
 		</div>
 	</header>
 
+	<?php
+
+	if (isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING']) {
+		$params = [];
+		$string = $_SERVER['QUERY_STRING'];
+		$items = explode('&', $string);
+		foreach ($items as $item) {
+			$param = explode('=', $item);
+			if ($param > 1 && end($param)) {
+				$key = str_replace($item, '', $string);
+				$params[$key] = end($param);
+			}
+		}
+	}
+
+	?>
+
 	<section class="jobs__list">
 		<div class="container">
 			<div class="row justify-content-md-center justify-content-end">
@@ -51,16 +68,25 @@ get_header();
 						<?php get_template_part('template-parts/jobs-sidebar'); ?>
 					</div>
 				</div>
-				<div class="col-12 d-lg-none d-block text-right jobs-number">
-					<p class="text-size-small font-primary">
-						<span class="jobsno"><?= $post_no; ?></span> <?php pll_e('jobs found'); ?>
-					</p>
-				</div>
 				<div id="jobs__list-cont" class="col-lg-8">
-					<aside class="additionals py-4">
-						<p class="text-size-small font-primary">
-							<span class="jobsno"><?= $post_no; ?></span> <?php pll_e('jobs found'); ?>
-						</p>
+					<aside class="additionals py-lg-4 py-2 d-flex justify-content-between">
+						<div class="py-3">
+							<p class="text-size-small font-primary m-0">
+								<span class="jobsno"><?= $post_no; ?></span> <?php pll_e('jobs found'); ?>
+							</p>
+						</div>
+						<?php if (!empty($params)) : ?>
+							<div class="params d-flex flex-wrap justify-content-end">
+								<?php foreach ($params as $key => $param) : ?>
+									<a href="<?php echo parse_url($_SERVER['REQUEST_URI'])['path'] . '?' . $key; ?>" class="btn btn__medium bg-grey2 color-onavy btn__small mt-3 ml-3 mr-0 d-flex align-items-center">
+										<svg width="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">
+											<path fill="#183153" fill-rule="evenodd" d="M10.975 0L13 2.014 8.524 6.467l.033.033-.033.031L13 10.986 10.975 13 6.5 8.546 2.024 13 0 10.986 4.475 6.53 4.443 6.5l.032-.033L0 2.014 2.024 0 6.5 4.453 10.975 0z" />
+										</svg>
+										<span class="ml-2"><?php echo $param; ?></span>
+									</a>
+								<?php endforeach; ?>
+							</div>
+						<?php endif; ?>
 					</aside>
 					<main class="jobs__list-items">
 						<?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
