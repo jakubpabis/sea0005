@@ -18,6 +18,10 @@
   color: $color-navy !important;
 }
 
+.color-onavy {
+  color: rgba($color: $color-navy, $alpha: 0.5) !important;
+}
+
 .color-sea {
   color: $color-sea !important;
 }
