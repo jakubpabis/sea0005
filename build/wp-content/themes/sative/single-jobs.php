@@ -48,11 +48,11 @@ get_template_part('template-parts/breadcrumbs'); ?>
 										<i class="coins"></i>
 										<span>
 											<number class="salarymin">
-												€ <?= number_format((int)get_field('salary_min'), 0, ".", "."); ?>,-
+												€ <?= number_format((int)get_field('salary_min'), 0, ".", "."); ?>
 											</number>
 											<?= get_field('salary_min') && get_field('salary_max') ? '&nbsp;-&nbsp;' : null ?>
 											<number class="salarymax">
-												€ <?= number_format((int)get_field('salary_max'), 0, ".", "."); ?>,-
+												€ <?= number_format((int)get_field('salary_max'), 0, ".", "."); ?>
 											</number>
 										</span>
 									</div>
