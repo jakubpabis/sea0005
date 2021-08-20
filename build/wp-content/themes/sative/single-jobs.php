@@ -170,7 +170,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 
 
 	<?php if (get_field('process_' . $lang, 'option')) : ?>
-		<section class="jobs__single-process bg-sea py-5 my-5">
+		<section class="jobs__single-process bg-sea py-xl-5 py-lg-4 pt-sm-4 pt-2 pb-0 my-5">
 			<div class="container py-5">
 				<div class="row">
 					<div class="col-12">
@@ -204,7 +204,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 					endforeach; ?>
 				</div>
 				<hr>
-				<div class="pt-5 mt-5 d-flex">
+				<div class="pt-md-5 pt-sm-4 pt-3 mt-5 d-flex">
 					<div class="custom-owl-prev mr-4" role="button">
 						<svg width="34" height="18" xmlns="http://www.w3.org/2000/svg">
 							<path d="M8.115.278L.271 8.329a.948.948 0 00-.078.091l.078-.09a.95.95 0 00-.236.412l-.006.023A.898.898 0 000 9l.006.11.002.011a.976.976 0 00.02.114c.003.007.004.014.006.022a.911.911 0 00.159.323l.01.013.068.078 7.844 8.051a.91.91 0 001.307 0 .966.966 0 000-1.342L3.157 9.948h29.919c.51 0 .924-.424.924-.948a.937.937 0 00-.924-.949H3.156L9.422 1.62a.966.966 0 000-1.342.908.908 0 00-1.307 0z" fill="#183153" />
@@ -223,11 +223,11 @@ get_template_part('template-parts/breadcrumbs'); ?>
 	<?php endif; ?>
 
 	<?php $recruiterF = get_field('recruiter_related'); ?>
-	<section class="jobs__single-recruiter py-5 my-5">
+	<section class="jobs__single-recruiter py-lg-5 py-0 my-5">
 
 		<div class="container py-5">
 			<div class="row align-items-end">
-				<div class="col-lg-6 job-apply-form">
+				<div class="col-md-6 job-apply-form">
 					<h5 class="text-uppercase mb-2 text700">
 						<?php pll_e('Iets voor jou?'); ?>
 					</h5>
@@ -374,17 +374,17 @@ get_template_part('template-parts/breadcrumbs'); ?>
 					</form>
 				</div>
 				<?php if (is_array($recruiterF) && !empty($recruiterF)) : $recruiter = $recruiterF[0]; ?>
-					<div class="col-lg-5 offset-lg-1 mb-5 py-5">
-						<div class="row recruiter bg-yellow card mb-3 p-4 pb-5">
-							<div class="col-lg-auto col-md-9 col-sm-8">
+					<div class="col-lg-5 col-md-6 offset-lg-1 mb-lg-5 py-md-5 pt-5">
+						<div class="row recruiter bg-yellow card mb-3 p-xl-4 p-sm-3 py-3 px-1 pb-5 mx-0">
+							<div class="col-12">
 								<div class="recruiter-text">
 									<div class="row align-items-end">
-										<div class="col-lg">
+										<div class="col">
 											<h2 class="text700 mb-0">
 												<?php pll_e('Vragen?'); ?>
 											</h2>
 										</div>
-										<div class="col-lg-6">
+										<div class="col-md-6 col-sm-8">
 											<div class="recruiter-img">
 												<img data-src="<?= get_the_post_thumbnail_url($recruiter->ID, 'medium_large'); ?>" alt="" class="lazy bg-cover">
 											</div>
@@ -403,12 +403,12 @@ get_template_part('template-parts/breadcrumbs'); ?>
 											<?= get_field('phone', $recruiter->ID); ?>
 										</a>
 									</div>
-									<a href="" class="btn btn__default icon color-white pink text-uppercase my-3">
-										<i class="fab fa-whatsapp mr-2 fa-21px"></i>
+									<a href="" class="btn btn__default icon color-white pink text-uppercase my-3 d-inline-flex text-left w-auto mr-xl-4 mr-lg-4 align-items-center">
+										<i class="fab fa-whatsapp mr-3 fa-21px"></i>
 										<span><?php pll_e('Stel een vraag via Whatsapp'); ?></span>
 									</a>
-									<a href="<?= get_field('calendly', $recruiter->ID); ?>" class="btn btn__default icon navy text-uppercase">
-										<i class="far fa-video mr-2 fa-21px"></i>
+									<a href="<?= get_field('calendly', $recruiter->ID); ?>" class="btn btn__default icon navy text-uppercase mr-xl-4 mr-lg-4 d-inline-flex text-left w-auto align-items-center">
+										<i class="far fa-video mr-3 fa-21px"></i>
 										<?php pll_e('Plan een videocall met');
 										echo $recruiter->post_title; ?>
 									</a>

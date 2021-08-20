@@ -4155,14 +4155,14 @@ aside#chat .dog {
 
 .jobs__single-process {
 	min-height: 500px;
-	-webkit-clip-path: polygon(200px 0%, 100% 0, 100% calc(100% - 200px), calc(100% - 200px) 100%, 0 100%, 0% 200px);
-	clip-path: polygon(200px 0%, 100% 0, 100% calc(100% - 200px), calc(100% - 200px) 100%, 0 100%, 0% 200px);
+	--notchSize: 164px;
+	-webkit-clip-path: polygon(var(--notchSize) 0%, 100% 0, 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, 0 100%, 0% var(--notchSize));
+	clip-path: polygon(var(--notchSize) 0%, 100% 0, 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, 0 100%, 0% var(--notchSize));
 }
 
 .jobs__single-process-slider {
 	overflow-x: hidden;
 	padding-right: 100px;
-	padding-bottom: 80px;
 }
 
 .jobs__single-process-slider hr {
@@ -4220,8 +4220,9 @@ aside#chat .dog {
 .jobs__single-recruiter .recruiter {
 	margin-top: 25px;
 	border-radius: 0 !important;
-	-webkit-clip-path: polygon(100px 0%, 100% 0, 100% calc(100% - 100px), calc(100% - 100px) 100%, 0 100%, 0% 100px);
-	clip-path: polygon(100px 0%, 100% 0, 100% calc(100% - 100px), calc(100% - 100px) 100%, 0 100%, 0% 100px);
+	--notchSize: 80px;
+	-webkit-clip-path: polygon(var(--notchSize) 0%, 100% 0, 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, 0 100%, 0% var(--notchSize));
+	clip-path: polygon(var(--notchSize) 0%, 100% 0, 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, 0 100%, 0% var(--notchSize));
 }
 
 .jobs__single-recruiter .recruiter-img {
@@ -7845,6 +7846,26 @@ fieldset[disabled] .datepicker table tr td span.active:hover:hover {
 	border-width: 1px 0;
 }
 
+@media (min-width: 1px) {
+
+.jobs__single-process-slider {
+	width: calc(100vw + 30px);
+	margin-left: 15px;
+	padding-bottom: 50px;
+}
+
+}
+
+@media (min-width: 576px) {
+
+.jobs__single-process-slider {
+	width: calc(((100vw - 510px) / 2) + 510px);
+	margin-left: calc((100vw - 510px) / 2);
+	padding-bottom: 60px;
+}
+
+}
+
 @media (min-width: 768px) {
 
 .modal .modal-dialog {
@@ -7853,6 +7874,12 @@ fieldset[disabled] .datepicker table tr td span.active:hover:hover {
 
 .modal .modal-sm {
 	max-width: 540px;
+}
+
+.jobs__single-process-slider {
+	width: calc(((100vw - 690px) / 2) + 690px);
+	margin-left: calc((100vw - 690px) / 2);
+	padding-bottom: 80px;
 }
 
 }
@@ -8009,8 +8036,8 @@ fieldset[disabled] .datepicker table tr td span.active:hover:hover {
 }
 
 .jobs__single-process-slider {
-	width: calc(((100vw - 940px) / 2) + 940px);
-	margin-left: calc((100vw - 940px) / 2);
+	width: calc(((100vw - 930px) / 2) + 930px);
+	margin-left: calc((100vw - 930px) / 2);
 }
 
 }
@@ -8078,6 +8105,10 @@ h2,
 
 .flex_content-bubbles {
 	margin: 160px 0;
+}
+
+.jobs__single-process {
+	--notchSize: 128px;
 }
 
 }
@@ -8228,6 +8259,14 @@ p,
 
 .jobs__list-item .job-title .icon {
 	margin-top: 5px;
+}
+
+.jobs__single-process {
+	--notchSize: 112px;
+}
+
+.jobs__single-recruiter .recruiter {
+	--notchSize: 64px;
 }
 
 .jobs__single-sidebar .card {
@@ -8588,12 +8627,16 @@ form .ugly label.full {
 	padding-right: 15px;
 }
 
-.jobs__single-recruiter .recruiter-text {
-	padding-top: 0;
+.jobs__single-process {
+	--notchSize: 96px;
 }
 
-.jobs__single-recruiter .job-apply-form .social-login .btn {
-	flex-basis: calc(25% - 10px);
+.jobs__single-recruiter .recruiter {
+	--notchSize: 48px;
+}
+
+.jobs__single-recruiter .recruiter-text {
+	padding-top: 0;
 }
 
 .jobs__single-recruiter .job-apply-form form .ugly label {
@@ -9204,8 +9247,12 @@ p,
 	flex-basis: calc(100% - 30px);
 }
 
-.jobs__single-recruiter .job-apply-form .social-login .btn {
-	flex-basis: calc(50% - 10px);
+.jobs__single-process {
+	--notchSize: 72px;
+}
+
+.jobs__single-recruiter .recruiter {
+	--notchSize: 42px;
 }
 
 .jobs__single-sidebar .card {
@@ -9568,6 +9615,14 @@ p,
 
 .jobs__list-item .info__item {
 	flex-basis: 100%;
+}
+
+.jobs__single-process {
+	--notchSize: 64px;
+}
+
+.jobs__single-recruiter .recruiter {
+	--notchSize: 36px;
 }
 
 .jobs__single-sidebar .card {

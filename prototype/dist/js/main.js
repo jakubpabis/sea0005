@@ -4836,10 +4836,10 @@ jQuery(window).on("load", function () {
             0: {
               items: 1,
             },
-            575: {
+            767: {
               items: 2,
             },
-            991: {
+            1199: {
               items: 3,
             },
           },
