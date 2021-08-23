@@ -4697,7 +4697,21 @@ function megaMenu() {
   //   console.log("some");
   // });
   // console.log($height);
-  $(".mega-menu-parent").on("mouseenter click", function () {
+  $(document).on("click", function (event) {
+    var $this = $(event.target);
+    //console.log($this.parent());
+    if (
+      $this.parents(".mega-menu-parent").length < 1 &&
+      $(".mega-menu-parent").is(":visible")
+    ) {
+      $(".mega-menu-parent")
+        .find(".mega-menu-container")
+        .stop(true, true)
+        .css({ display: "none" });
+    }
+  });
+
+  $(".mega-menu-parent").on("click", function () {
     $(".mega-menu-container")
       .not($(this).find(".mega-menu-container"))
       .stop(true, true)
@@ -4707,16 +4721,19 @@ function megaMenu() {
       .stop(true, true)
       .css({ display: "block" });
   });
-  $(".mega-menu-parent").on("mouseleave", function () {
-    $(this)
-      .find(".mega-menu-container")
-      .stop(true, true)
-      .css({ display: "none" });
-  });
+  // $(".mega-menu-parent").on("focusout", function () {
+  //   if ($focusout) {
+  //     $(this)
+  //       .find(".mega-menu-container")
+  //       .stop(true, true)
+  //       .css({ display: "none" });
+  //   }
+  // });
 
   $(".mega-menu__side-submenu-parent")
     .find("> a")
-    .on("click focusin mouseenter", function () {
+    .on("click focusin", function () {
+      $focusout = false;
       var $this = $(this);
       setTimeout(function () {
         $(".mega-menu__side-submenu-parent")
@@ -4739,7 +4756,8 @@ function megaMenu() {
   $(".mega-menu__big-submenu")
     .find("> li")
     .find("> a")
-    .on("mouseenter", function () {
+    .on("click focusin", function () {
+      $focusout = false;
       var $this = $(this);
       setTimeout(function () {
         $(".mega-menu__big-submenu")
