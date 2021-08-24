@@ -32,7 +32,10 @@ get_header(); ?>
 					<article class="col-12">
 						<?php
 						$cat = get_the_category();
-						echo '<h5 class="mb-0 text-uppercase">' . end($cat)->name . '</h5>';
+						if (isset($cat) && $cat) {
+							echo '<h5 class="mb-0 text-uppercase">' . end($cat)->name . '</h5>';
+						}
+
 						?>
 						<?php the_title('<h1 class="mt-1">', '</h1>'); ?>
 

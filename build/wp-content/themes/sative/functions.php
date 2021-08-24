@@ -10,7 +10,7 @@
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '3.9.1');
+	define('_S_VERSION', '3.9.2');
 }
 
 if (!function_exists('sative_setup')) :
@@ -631,7 +631,8 @@ $toTranslate = array(
 	'This field is required',
 	'Hou jij ook van koekjes?',
 	'Ja, ik wil ook een koekje!',
-	'WhatsApp us!'
+	'WhatsApp us!',
+	'Vacatures'
 );
 
 if (function_exists('pll_register_string')) {
