@@ -18,8 +18,8 @@
 				</span>
 				<div class="row">
 					<div class="col-lg-9">
-						<form action="" class="pb-3">
-							<input class="mb-3 job-search-nice" type="search" name="job-search" placeholder="Waar ben jij naar op zoek?">
+						<form action="/en/jobs" method="GET" class="pb-3">
+							<input class="mb-3 job-search-nice" type="search" name="job-title" placeholder="<?php pll_e('Waar ben jij naar op zoek?'); ?>">
 							<?php if (!empty(get_sub_field('tags'))) : ?>
 								<div class="mega-menu__hashtags">
 									<?php foreach (get_sub_field('tags') as $item) : ?>

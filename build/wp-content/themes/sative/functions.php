@@ -632,7 +632,8 @@ $toTranslate = array(
 	'Hou jij ook van koekjes?',
 	'Ja, ik wil ook een koekje!',
 	'WhatsApp us!',
-	'Vacatures'
+	'Vacatures',
+	'Waar ben jij naar op zoek?'
 );
 
 if (function_exists('pll_register_string')) {

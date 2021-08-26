@@ -42,7 +42,7 @@
 					<i class="fab fa-whatsapp"></i>
 				</a>
 				<a href="https://wa.me/31207782393" class="text-size-small text400">
-					WhatsApp us!
+					<?php pll_e('WhatsApp us!'); ?>
 				</a>
 			</div>
 
