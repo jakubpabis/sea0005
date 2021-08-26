@@ -379,7 +379,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 							<div class="col-12">
 								<div class="recruiter-text">
 									<div class="row align-items-end">
-										<div class="col">
+										<div class="col pr-0">
 											<h2 class="text700 mb-0">
 												<?php pll_e('Vragen?'); ?>
 											</h2>
