@@ -2808,7 +2808,10 @@ body.offcanvas-active {
 	color: #183153;
 }
 
-form * {
+form input,
+form label,
+form select,
+form textarea {
 	font-family: 'Roboto', sans-serif !important;
 }
 

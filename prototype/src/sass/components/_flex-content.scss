@@ -600,7 +600,10 @@
 }
 
 form {
-  * {
+  input,
+  label,
+  select,
+  textarea {
     font-family: $font-secondary !important;
   }
 

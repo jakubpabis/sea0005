@@ -45,7 +45,7 @@
 						<i class="fab fa-twitter"></i>
 					</a>
 				</div>
-				<a href="/" class="mt-4">
+				<a href="/" class="mt-4 d-none">
 					<svg width="205" viewBox="0 0 587.71 172.93" xmlns="http://www.w3.org/2000/svg">
 						<g fill="#fff">
 							<path d="m129.47 138.42v7.45c-6.42 0-10.19 3.94-10.19 10.1v16.19h-7.28v-33.23h7.28v5.4c2.4-3.68 5.91-5.91 10.19-5.91" />

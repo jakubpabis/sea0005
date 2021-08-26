@@ -41,7 +41,7 @@
 						<i class="fab fa-whatsapp"></i>
 					</div>
 					<div class="col pl-0">
-						<a class="font-secondary" href="https://wa.me/31207782393" target="_blank">+31 6 - 83 93 28 22</a>
+						<a class="font-secondary" href="https://wa.me/31207782393" target="_blank">WhatsApp us!</a>
 					</div>
 				</div>
 				<div class="mb-4">
