@@ -40,7 +40,7 @@ if (isset($_GET['app-url']) && $_GET['app-url']) {
 	<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 		<div class="modal-content py-5">
 			<div class="modal-header d-flex">
-				<span class="display-3 text700" id="uploadCVModalTitle"><?= pll_e('Upload CV'); ?></span>
+				<span class="display-3 text700" id="uploadCVModalTitle"><?php pll_e('Upload CV'); ?></span>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span class="text700 text-uppercase text-size-normal mr-2 font-primary">
 						<?php pll_e('Sluiten'); ?>
@@ -55,15 +55,15 @@ if (isset($_GET['app-url']) && $_GET['app-url']) {
 					<div class="row justify-content-center">
 						<div class="col-xl-7 col-lg-10">
 							<span class="text-size-small text700 text-uppercase mb-2">
-								<?= pll_e('Apply with:'); ?>
+								<?php pll_e('Apply with:'); ?>
 							</span>
 							<div class="row social-login">
 								<?php global $wp; ?>
-								<button type="button" class="btn btn__small pink color-white text700 icon full text-uppercase" onclick="myLinkedinLogin( '<?= siteURL() . 'userdatafetch'; ?>', '<?= home_url($wp->request) ?>', true )">
+								<button type="button" class="btn btn__small pink color-white text700 icon full text-uppercase" onclick="myLinkedinLogin( '<?php echo siteURL() . 'userdatafetch'; ?>', '<?php echo home_url($wp->request) ?>', true )">
 									<i class="fab fa-linkedin"></i>
 									<span>LinkedIn</span>
 								</button>
-								<button type="button" class="btn btn__small pink color-white text700 icon full text-uppercase" onclick="myGithubLogin('<?= home_url($wp->request) ?>', true)">
+								<button type="button" class="btn btn__small pink color-white text700 icon full text-uppercase" onclick="myGithubLogin('<?php echo home_url($wp->request) ?>', true)">
 									<i class="fab fa-github"></i>
 									<span>Github</span>
 								</button>
@@ -84,40 +84,40 @@ if (isset($_GET['app-url']) && $_GET['app-url']) {
 											<input type="radio" value="Male" name="cv-gender">
 											<div class="state">
 												<i class="icon">&times;</i>
-												<label><?= pll_e('Male'); ?></label>
+												<label><?php echo pll_e('Male'); ?></label>
 											</div>
 										</div>
 										<div class="pretty p-icon p-round p-jelly ml-4">
 											<input type="radio" value="Female" name="cv-gender">
 											<div class="state">
 												<i class="icon">&times;</i>
-												<label><?= pll_e('Female'); ?></label>
+												<label><?php echo pll_e('Female'); ?></label>
 											</div>
 										</div>
 									</div>
 									<div class="w-50 pr-2 ugly pb-2">
-										<input class="required" type="text" name="cv-name" minlength="1" value="<?= $app_name ? $app_name : null; ?>" required>
-										<label class="ugly-label" for="cv-name" <?= $app_name ? 'style="opacity: 0;"' : null; ?>><?= pll_e('Name'); ?> <span>*</span></label>
+										<input class="required" type="text" name="cv-name" minlength="1" value="<?php echo $app_name ? $app_name : null; ?>" required>
+										<label class="ugly-label" for="cv-name" <?php echo $app_name ? 'style="opacity: 0;"' : null; ?>><?php echo pll_e('Name'); ?> <span>*</span></label>
 									</div>
 									<div class="w-50 ugly pb-2">
-										<input class="required" type="email" name="cv-email" value="<?= $app_email ? $app_email : null; ?>" required>
-										<label class="ugly-label" for="cv-email" <?= $app_email ? 'style="opacity: 0;"' : null; ?>><?= pll_e('Email'); ?> <span>*</span></label>
+										<input class="required" type="email" name="cv-email" value="<?php echo $app_email ? $app_email : null; ?>" required>
+										<label class="ugly-label" for="cv-email" <?php echo $app_email ? 'style="opacity: 0;"' : null; ?>><?php echo pll_e('Email'); ?> <span>*</span></label>
 									</div>
 									<div class="w-50 pr-2 ugly pb-2">
 										<input type="text" name="cv-phone">
-										<label class="ugly-label" for="cv-phone"><?= pll_e('Phone'); ?></label>
+										<label class="ugly-label" for="cv-phone"><?php echo pll_e('Phone'); ?></label>
 									</div>
 									<div class="w-50 ugly pb-2">
 										<input id="cv-dob-datepicker" type="text" name="cv-dob" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}">
-										<label class="ugly-label" for="cv-dob"><?= pll_e('Date of birth'); ?></label>
+										<label class="ugly-label" for="cv-dob"><?php echo pll_e('Date of birth'); ?></label>
 									</div>
 									<div class="w-50 pr-2 ugly pb-2">
-										<input type="text" name="cv-city" value="<?= $app_location ? $app_location : null; ?>">
-										<label class="ugly-label" for="cv-city" <?= $app_location ? 'style="opacity: 0;"' : null; ?>><?= pll_e('City'); ?></label>
+										<input type="text" name="cv-city" value="<?php echo $app_location ? $app_location : null; ?>">
+										<label class="ugly-label" for="cv-city" <?php echo $app_location ? 'style="opacity: 0;"' : null; ?>><?php echo pll_e('City'); ?></label>
 									</div>
 									<div class="w-50 ugly pb-2">
 										<select name="cv-country">
-											<option class="default" value=""><?= pll_e('Choose your country'); ?></option>
+											<option class="default" value=""><?php echo pll_e('Choose your country'); ?></option>
 											<?php $i = 1;
 											foreach ($countries as $country) : ?>
 												<?php if ($i === 1 || $i === 4) : ?>
@@ -132,12 +132,12 @@ if (isset($_GET['app-url']) && $_GET['app-url']) {
 										</select>
 									</div>
 									<div class="w-100 ugly upload pb-2">
-										<label id="cv-cv-label" class="full bg-white ugly-label w-100" for="cv-cv"><?php pll_e('CV'); ?> <span><?= pll_e('Upload'); ?></span></label>
+										<label id="cv-cv-label" class="full bg-white ugly-label w-100" for="cv-cv"><?php pll_e('CV'); ?> <span><?php echo pll_e('Upload'); ?></span></label>
 										<input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="cv-cv" onchange="getFileName(this, 'cv-cv-label')">
 									</div>
 									<div class="w-100 ugly pb-2">
-										<textarea name="cv-motivation"><?= $app_motivation ? $app_motivation : null; ?></textarea>
-										<label class="ugly-label" for="cv-motivation" <?= $app_motivation ? 'style="opacity: 0;"' : null; ?>><?= pll_e('Motivation'); ?></label>
+										<textarea name="cv-motivation"><?php echo $app_motivation ? $app_motivation : null; ?></textarea>
+										<label class="ugly-label" for="cv-motivation" <?php echo $app_motivation ? 'style="opacity: 0;"' : null; ?>><?php echo pll_e('Motivation'); ?></label>
 									</div>
 									<div class="w-100 pb-3">
 										<div class="pretty p-icon p-jelly">
@@ -155,9 +155,9 @@ if (isset($_GET['app-url']) && $_GET['app-url']) {
 										<input type="hidden" name="cvUploadHash" id="cvUploadHash" value="<?php global $hashesForLashes;
 																																											echo $hashesForLashes['cvHash']; ?>">
 										<?php wp_nonce_field('cv_form', 'cv_form_nonce'); ?>
-										<button type="button" disabled class="fake_btn_cv_loading btn btn__default pink d-none disabled"><?= pll_e('Sending, please wait...'); ?></button>
-										<button type="button" class="fake_btn_cv btn btn__default yellow"><?= pll_e('Send application'); ?></button>
-										<button class="g-recaptcha cvBTN btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onCVSubmit"><?= pll_e('Send application'); ?></button>
+										<button type="button" disabled class="fake_btn_cv_loading btn btn__default pink d-none disabled"><?php echo pll_e('Sending, please wait...'); ?></button>
+										<button type="button" class="fake_btn_cv btn btn__default yellow"><?php echo pll_e('Send application'); ?></button>
+										<button class="g-recaptcha cvBTN btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onCVSubmit"><?php echo pll_e('Send application'); ?></button>
 									</div>
 								</div>
 							</form>

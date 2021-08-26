@@ -92,29 +92,29 @@
 							<div class="row align-items-center">
 								<div class="col-12 ugly py-2">
 									<input class="required" type="text" name="<?php echo $type; ?>_name" minlength="2" required>
-									<label class="ugly-label" for="<?php echo $type; ?>_name"><?= pll_e('Name'); ?> <span>*</span></label>
+									<label class="ugly-label" for="<?php echo $type; ?>_name"><?php echo pll_e('Name'); ?> <span>*</span></label>
 								</div>
 								<div class="col-12 ugly py-2">
 									<input type="text" name="<?php echo $type; ?>_company" minlength="1">
-									<label class="ugly-label" for="<?php echo $type; ?>_company"><?= pll_e('Company'); ?></label>
+									<label class="ugly-label" for="<?php echo $type; ?>_company"><?php echo pll_e('Company'); ?></label>
 								</div>
 								<div class="col-12 ugly py-2">
 									<input class="required" type="email" name="<?php echo $type; ?>_email" minlength="4" required>
-									<label class="ugly-label" for="<?php echo $type; ?>_email"><?= pll_e('Email address'); ?> <span>*</span></label>
+									<label class="ugly-label" for="<?php echo $type; ?>_email"><?php echo pll_e('Email address'); ?> <span>*</span></label>
 								</div>
 								<div class="col-12 ugly py-2">
 									<input type="tel" name="<?php echo $type; ?>_phone" minlength="6">
-									<label class="ugly-label" for="<?php echo $type; ?>_phone"><?= pll_e('Phone'); ?></label>
+									<label class="ugly-label" for="<?php echo $type; ?>_phone"><?php echo pll_e('Phone'); ?></label>
 								</div>
 								<div class="col-12 ugly py-2">
 									<textarea class="required" name="<?php echo $type; ?>_message" minlength="10" rows="6" required></textarea>
-									<label class="ugly-label" for="<?php echo $type; ?>_message"><?= pll_e('Message'); ?> <span>*</span></label>
+									<label class="ugly-label" for="<?php echo $type; ?>_message"><?php echo pll_e('Message'); ?> <span>*</span></label>
 								</div>
 								<div class="col-12 pt-1">
 									<input class="d-none" type="text" name="<?php echo $type; ?>_important_consent_field">
 									<input type="hidden" name="action" value="<?php echo $type; ?>_form">
 									<?php wp_nonce_field('<?php echo $type; ?>_form', '<?php echo $type; ?>_form_nonce'); ?>
-									<button class="g-recaptcha contactF btn btn__default yellow" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onContactSubmit"><?= pll_e('Send message'); ?></button>
+									<button class="g-recaptcha contactF btn btn__default yellow" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onContactSubmit"><?php echo pll_e('Send message'); ?></button>
 								</div>
 							</div>
 						</form>

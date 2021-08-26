@@ -37,32 +37,32 @@ if (!empty($sub_pages) && in_array($id, $sub_pages)) {
 								<div class="row align-items-center">
 									<div class="col-md-6 ugly pt-2 pb-3">
 										<input class="required" type="text" name="<?php echo $type; ?>_name" minlength="2" required>
-										<label class="ugly-label" for="<?php echo $type; ?>_name"><?= pll_e('Name'); ?> <span>*</span></label>
+										<label class="ugly-label" for="<?php echo $type; ?>_name"><?php echo pll_e('Name'); ?> <span>*</span></label>
 									</div>
 									<div class="col-md-6 ugly pt-2 pb-3">
 										<input type="text" name="<?php echo $type; ?>_company" minlength="1">
-										<label class="ugly-label" for="<?php echo $type; ?>_company"><?= pll_e('Company'); ?></label>
+										<label class="ugly-label" for="<?php echo $type; ?>_company"><?php echo pll_e('Company'); ?></label>
 									</div>
 									<div class="col-md-6 ugly pt-2 pb-3">
 										<input class="required" type="email" name="<?php echo $type; ?>_email" minlength="4" required>
-										<label class="ugly-label" for="<?php echo $type; ?>_email"><?= pll_e('Email address'); ?> <span>*</span></label>
+										<label class="ugly-label" for="<?php echo $type; ?>_email"><?php echo pll_e('Email address'); ?> <span>*</span></label>
 									</div>
 									<div class="col-md-6 ugly pt-2 pb-3">
 										<input type="tel" name="<?php echo $type; ?>_phone" minlength="6">
-										<label class="ugly-label" for="<?php echo $type; ?>_phone"><?= pll_e('Phone'); ?></label>
+										<label class="ugly-label" for="<?php echo $type; ?>_phone"><?php echo pll_e('Phone'); ?></label>
 									</div>
 									<div class="col-12 ugly pt-2 pb-3">
 										<textarea class="required" name="<?php echo $type; ?>_message" minlength="10" rows="6" required></textarea>
-										<label class="ugly-label" for="<?php echo $type; ?>_message"><?= pll_e('Message'); ?> <span>*</span></label>
+										<label class="ugly-label" for="<?php echo $type; ?>_message"><?php echo pll_e('Message'); ?> <span>*</span></label>
 									</div>
 									<div class="col-12 pt-1">
 										<input type="hidden" name="action" value="<?php echo $type; ?>_form">
 										<?php wp_nonce_field('<?php echo $type; ?>_form', '<?php echo $type; ?>_form_nonce'); ?>
 										<input type="hidden" name="contactHash" id="contactHash" value="<?php global $hashesForLashes;
 																																										echo $hashesForLashes['contactHash']; ?>">
-										<button type="button" disabled class="fake_btn_<?php echo $type; ?>_loading btn btn__default pink d-none disabled"><?= pll_e('Sending, please wait...'); ?></button>
-										<button type="button" class="fake_btn_<?php echo $type; ?> btn btn__default yellow"><?= pll_e('Send message'); ?></button>
-										<button class="g-recaptcha contactF btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onContactSubmit"><?= pll_e('Send message'); ?></button>
+										<button type="button" disabled class="fake_btn_<?php echo $type; ?>_loading btn btn__default pink d-none disabled"><?php echo pll_e('Sending, please wait...'); ?></button>
+										<button type="button" class="fake_btn_<?php echo $type; ?> btn btn__default yellow"><?php echo pll_e('Send message'); ?></button>
+										<button class="g-recaptcha contactF btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onContactSubmit"><?php echo pll_e('Send message'); ?></button>
 									</div>
 								</div>
 							</form>
@@ -132,7 +132,7 @@ if ($group_id) {
 							<?php if ($type === 'subscribe') : ?>
 								<div class="col-12 ugly pt-2 pb-3">
 									<input class="required" type="email" name="<?php echo $type; ?>_email" minlength="4" required>
-									<label class="ugly-label" for="<?php echo $type; ?>_email"><?= pll_e('Email address'); ?> <span>*</span></label>
+									<label class="ugly-label" for="<?php echo $type; ?>_email"><?php echo pll_e('Email address'); ?> <span>*</span></label>
 								</div>
 								<div class="col-12 pt-2">
 									<h5><?php echo pll_e('Choose your interest'); ?></h5>
@@ -155,9 +155,9 @@ if ($group_id) {
 								<?php wp_nonce_field('<?php echo $type; ?>_form', '<?php echo $type; ?>_form_nonce'); ?>
 								<input type="hidden" name="subscribeHash" id="subscribeHash" value="<?php global $hashesForLashes;
 																																										echo $hashesForLashes['subscribeHash']; ?>">
-								<button type="button" disabled class="fake_btn_<?php echo $type; ?>_loading btn btn__default pink d-none disabled"><?= pll_e('Subscribing, please wait...'); ?></button>
-								<button type="button" class="fake_btn_<?php echo $type; ?> btn btn__default yellow"><?= pll_e('Subscribe now'); ?></button>
-								<button class="g-recaptcha <?php echo $type; ?> btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onSubscribeSubmit"><?= pll_e('Subscribe now'); ?></button>
+								<button type="button" disabled class="fake_btn_<?php echo $type; ?>_loading btn btn__default pink d-none disabled"><?php echo pll_e('Subscribing, please wait...'); ?></button>
+								<button type="button" class="fake_btn_<?php echo $type; ?> btn btn__default yellow"><?php echo pll_e('Subscribe now'); ?></button>
+								<button class="g-recaptcha <?php echo $type; ?> btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onSubscribeSubmit"><?php echo pll_e('Subscribe now'); ?></button>
 							</div>
 						</div>
 					</form>

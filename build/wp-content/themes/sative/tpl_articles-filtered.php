@@ -29,7 +29,7 @@ require_once get_template_directory() . '/inc/posts-filtering.php'; ?>
 					</svg>
 				</div>
 				<div class="col-md-7 col-11">
-					<input type="text" name="article-title" value="<?= isset($_GET['article-title']) ? $_GET['article-title'] : null ?>" placeholder="<?php pll_e('Zoek naar een artikel'); ?>">
+					<input type="text" name="article-title" value="<?php echo isset($_GET['article-title']) ? $_GET['article-title'] : null ?>" placeholder="<?php pll_e('Zoek naar een artikel'); ?>">
 					<i class="far fa-search color-pink"></i>
 				</div>
 			</div>

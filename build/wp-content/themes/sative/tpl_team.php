@@ -30,11 +30,11 @@ get_header(); ?>
             <div class="col-lg-8 text-center">
                 <?php if(get_field('team_title')): ?>
                     <h2 class="text-size-xxxxlarge">
-                        <?= get_field('team_title'); ?>
+                        <?php echo get_field('team_title'); ?>
                     </h2>
                 <?php endif; ?>
                 <?php if(get_field('team_text')): ?>
-                    <?= get_field('team_text'); ?>
+                    <?php echo get_field('team_text'); ?>
                 <?php endif; ?>
             </div>
         </div>
@@ -65,7 +65,7 @@ get_header(); ?>
                         <div class="col-md-5">
                             <?php if(has_post_thumbnail()): ?>
                             <div class="team__item-img">
-                                <img class="lazy bg-cover" data-src="<?= get_the_post_thumbnail_url(); ?>" alt="">
+                                <img class="lazy bg-cover" data-src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
                             </div>
                             <?php endif; ?>
                         </div>
@@ -73,30 +73,30 @@ get_header(); ?>
                             <div class="team__item-text">
                                 <div class="row justify-content-between">
                                     <div class="col-xl-8 col-lg-7 col-auto">
-                                        <h2><?= get_the_title(); ?></h2>
-                                        <h4 class="color-pink"><?= get_field('title'); ?></h4>
+                                        <h2><?php echo get_the_title(); ?></h2>
+                                        <h4 class="color-pink"><?php echo get_field('title'); ?></h4>
                                     </div>
                                     <div class="col-auto team__item-social">
                                         <?php if(get_field('whatsapp')): ?>
-                                            <a href="<?= get_field('whatsapp'); ?>" class="btn btn__social notched sea"><i class="fab fa-whatsapp"></i></a>
+                                            <a href="<?php echo get_field('whatsapp'); ?>" class="btn btn__social notched sea"><i class="fab fa-whatsapp"></i></a>
                                         <?php endif; ?>
                                         <?php if(get_field('skype')): ?>
-                                            <a href="<?= get_field('skype'); ?>" class="btn btn__social notched sea"><i class="fab fa-skype"></i></a>
+                                            <a href="<?php echo get_field('skype'); ?>" class="btn btn__social notched sea"><i class="fab fa-skype"></i></a>
                                         <?php endif; ?>
                                         <?php if(get_field('linkedin')): ?>
-                                            <a href="<?= get_field('linkedin'); ?>" class="btn btn__social notched sea"><i class="fab fa-linkedin-in"></i></a>
+                                            <a href="<?php echo get_field('linkedin'); ?>" class="btn btn__social notched sea"><i class="fab fa-linkedin-in"></i></a>
                                         <?php endif; ?>
                                     </div>
                                 </div>
-                                <a href="mailto:<?= get_field('email'); ?>" class="text-size-medium"><?= get_field('email'); ?></a><br/>
-                                <a href="tel:<?= get_field('phone'); ?>" class="text-size-medium"><?= get_field('phone'); ?></a><br/>
-                                <?= get_field('short_bio'); ?>
+                                <a href="mailto:<?php echo get_field('email'); ?>" class="text-size-medium"><?php echo get_field('email'); ?></a><br/>
+                                <a href="tel:<?php echo get_field('phone'); ?>" class="text-size-medium"><?php echo get_field('phone'); ?></a><br/>
+                                <?php echo get_field('short_bio'); ?>
                                 <div class="btns">
                                     <?php if(get_the_content()): ?>
                                         <a href="javascript:void(0)" class="btn btn__default navy team__item-showmore"><?php pll_e( 'Read more' ); ?></a>
                                     <?php endif; ?>
                                     <?php if(get_field('calendly')): ?>
-                                        <a href="<?= get_field('calendly') ?>"><u><?php pll_e( 'Schedule a call or meeting' ); ?></u></a>
+                                        <a href="<?php echo get_field('calendly') ?>"><u><?php pll_e( 'Schedule a call or meeting' ); ?></u></a>
                                     <?php endif; ?>
                                 </div>
                             </div>
@@ -106,7 +106,7 @@ get_header(); ?>
                             <?php the_content(); ?>
                             <?php if(get_field('calendly')): ?>
                                 <div class="text-center mt-3 mb-4">
-                                    <a href="<?= get_field('calendly') ?>"><u><?php pll_e( 'Schedule a call or meeting' ); ?></u></a>
+                                    <a href="<?php echo get_field('calendly') ?>"><u><?php pll_e( 'Schedule a call or meeting' ); ?></u></a>
                                 </div>
                             <?php endif; ?>
                             <div class="text-center mt-4">

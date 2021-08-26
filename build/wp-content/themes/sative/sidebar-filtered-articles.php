@@ -5,7 +5,7 @@
 	<ul>
 		<?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
 				<li>
-					<a href=""><?= get_the_title(); ?></a>
+					<a href=""><?php echo get_the_title(); ?></a>
 				</li>
 		<?php endwhile;
 		endif; ?>
@@ -36,22 +36,22 @@
 		global $wp;
 		$current_url = home_url(add_query_arg(array(), $wp->request));
 		?>
-		<a class="btn btn__social notched navy" href="https://www.facebook.com/sharer/sharer.php?u=<?= $current_url; ?>&t=<?= get_the_title(); ?>" target="_blank">
+		<a class="btn btn__social notched navy" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $current_url; ?>&t=<?php echo get_the_title(); ?>" target="_blank">
 			<i class="fab fa-facebook-f"></i>
 		</a>
-		<a class="btn btn__social notched navy" href="https://twitter.com/intent/tweet?source=<?= $current_url; ?>&text=<?= $current_url; ?> - <?= get_the_title(); ?>" target="_blank">
+		<a class="btn btn__social notched navy" href="https://twitter.com/intent/tweet?source=<?php echo $current_url; ?>&text=<?php echo $current_url; ?> - <?php echo get_the_title(); ?>" target="_blank">
 			<i class="fab fa-twitter"></i>
 		</a>
-		<a class="btn btn__social notched navy" href="http://www.linkedin.com/shareArticle?mini=true&url=<?= $current_url; ?>&title=<?= get_the_title(); ?>&summary=Checkout%20this%20job%20offer!&source=<?= $current_url; ?>" target="_blank">
+		<a class="btn btn__social notched navy" href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo $current_url; ?>&title=<?php echo get_the_title(); ?>&summary=Checkout%20this%20job%20offer!&source=<?php echo $current_url; ?>" target="_blank">
 			<i class="fab fa-linkedin-in"></i>
 		</a>
-		<a class="btn btn__social notched navy" href="https://getpocket.com/save?url=<?= $current_url; ?>&title=<?= get_the_title(); ?>" target="_blank">
+		<a class="btn btn__social notched navy" href="https://getpocket.com/save?url=<?php echo $current_url; ?>&title=<?php echo get_the_title(); ?>" target="_blank">
 			<i class="fab fa-get-pocket"></i>
 		</a>
-		<a class="btn btn__social notched navy" href="whatsapp://send?text=<?= get_the_title(); ?>&nbsp;&nbsp;<?= $current_url; ?>" target="_blank">
+		<a class="btn btn__social notched navy" href="whatsapp://send?text=<?php echo get_the_title(); ?>&nbsp;&nbsp;<?php echo $current_url; ?>" target="_blank">
 			<i class="fab fa-whatsapp"></i>
 		</a>
-		<a class="btn btn__social notched navy" href="mailto:?subject=<?= get_the_title(); ?>&body=Checkout%20this%20job%20offer: <?= $current_url; ?>" target="_blank">
+		<a class="btn btn__social notched navy" href="mailto:?subject=<?php echo get_the_title(); ?>&body=Checkout%20this%20job%20offer: <?php echo $current_url; ?>" target="_blank">
 			<i class="far fa-envelope"></i>
 		</a>
 	</div>

@@ -5,11 +5,11 @@
 	<span class="text500 text-size-small"><?php pll_e('Apply with:'); ?></span>
 	<div class="social-login">
 		<?php global $wp; ?>
-		<button type="button" class="btn btn__small navy icon full" onclick="myLinkedinLogin( '<?= siteURL() . 'userdatafetch'; ?>', '<?= home_url($wp->request) ?>')">
+		<button type="button" class="btn btn__small navy icon full" onclick="myLinkedinLogin( '<?php echo siteURL() . 'userdatafetch'; ?>', '<?php echo home_url($wp->request) ?>')">
 			<i class="fab fa-linkedin"></i>
 			<span>LinkedIn</span>
 		</button>
-		<button type="button" class="btn btn__small navy icon full" onclick="myGithubLogin('<?= home_url($wp->request) ?>')">
+		<button type="button" class="btn btn__small navy icon full" onclick="myGithubLogin('<?php echo home_url($wp->request) ?>')">
 			<i class="fab fa-github"></i>
 			<span>Github</span>
 		</button>
@@ -74,12 +74,12 @@
 				</div>
 			</div>
 			<div class="col-lg-12 col-sm-6 ugly pt-2">
-				<input class="required" type="text" name="app-name" required value="<?= $app_name ? $app_name : null; ?>">
-				<label class="ugly-label" for="app-name" <?= $app_name ? 'style="opacity: 0;"' : null; ?>><?php pll_e('Name'); ?> <span>*</span></label>
+				<input class="required" type="text" name="app-name" required value="<?php echo $app_name ? $app_name : null; ?>">
+				<label class="ugly-label" for="app-name" <?php echo $app_name ? 'style="opacity: 0;"' : null; ?>><?php pll_e('Name'); ?> <span>*</span></label>
 			</div>
 			<div class="col-lg-12 col-sm-6 ugly pt-2">
-				<input class="required" type="email" name="app-email" required value="<?= $app_email ? $app_email : null; ?>">
-				<label class="ugly-label" for="app-email" <?= $app_email ? 'style="opacity: 0;"' : null; ?>><?php pll_e('Email'); ?> <span>*</span></label>
+				<input class="required" type="email" name="app-email" required value="<?php echo $app_email ? $app_email : null; ?>">
+				<label class="ugly-label" for="app-email" <?php echo $app_email ? 'style="opacity: 0;"' : null; ?>><?php pll_e('Email'); ?> <span>*</span></label>
 			</div>
 			<div class="col-lg-12 col-sm-6 ugly pt-2">
 				<input type="tel" name="app-phone">
@@ -90,12 +90,12 @@
 				<label class="ugly-label" for="app-dob"><?php pll_e('Date of birth'); ?></label>
 			</div>
 			<div class="col-lg-12 col-sm-6 ugly pt-2">
-				<input type="text" name="app-city" value="<?= $app_location ? $app_location : null; ?>">
-				<label class="ugly-label" for="app-city" <?= $app_location ? 'style="opacity: 0;"' : null; ?>><?php pll_e('City'); ?></label>
+				<input type="text" name="app-city" value="<?php echo $app_location ? $app_location : null; ?>">
+				<label class="ugly-label" for="app-city" <?php echo $app_location ? 'style="opacity: 0;"' : null; ?>><?php pll_e('City'); ?></label>
 			</div>
 			<div class="col-lg-12 col-sm-6 ugly pt-2">
 				<select name="app-country">
-					<option class="default" value=""><?= pll_e('Choose your country'); ?></option>
+					<option class="default" value=""><?php echo pll_e('Choose your country'); ?></option>
 					<?php $i = 1;
 					foreach ($countries as $country) : ?>
 						<?php if ($i === 1 || $i === 4) : ?>
@@ -110,12 +110,12 @@
 				</select>
 			</div>
 			<div class="col-12 ugly upload pt-2">
-				<label id="app-cv-label" class="full bg-white" for="app-cv"><?php pll_e('CV'); ?> <span><?= pll_e('Upload'); ?></span></label>
+				<label id="app-cv-label" class="full bg-white" for="app-cv"><?php pll_e('CV'); ?> <span><?php echo pll_e('Upload'); ?></span></label>
 				<input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="app-cv" onchange="getFileName(this, 'app-cv-label')">
 			</div>
 			<div class="col-12 ugly pt-2">
-				<textarea name="app-motivation"><?= $app_motivation ? $app_motivation : null; ?></textarea>
-				<label class="ugly-label" for="app-motivation" <?= $app_motivation ? 'style="opacity: 0;"' : null; ?>><?php pll_e('Motivation'); ?></label>
+				<textarea name="app-motivation"><?php echo $app_motivation ? $app_motivation : null; ?></textarea>
+				<label class="ugly-label" for="app-motivation" <?php echo $app_motivation ? 'style="opacity: 0;"' : null; ?>><?php pll_e('Motivation'); ?></label>
 			</div>
 			<div class="col-12 pt-1">
 				<div class="pretty p-icon p-plain p-jelly">
@@ -128,15 +128,15 @@
 			</div>
 			<div class="col-12 pt-4">
 				<?php get_template_part('template-parts/referrer'); ?>
-				<input type="hidden" name="postid" value="<?= get_the_ID(); ?>">
-				<input type="hidden" name="app-jobid" value="<?= get_field('job_id'); ?>">
+				<input type="hidden" name="postid" value="<?php echo get_the_ID(); ?>">
+				<input type="hidden" name="app-jobid" value="<?php echo get_field('job_id'); ?>">
 				<input type="hidden" name="action" value="application_form">
 				<?php wp_nonce_field('application_form', 'application_form_nonce'); ?>
 				<input type="hidden" name="jobUploadHash" id="jobUploadHash" value="<?php global $hashesForLashes;
 																																						echo $hashesForLashes['appHash']; ?>">
-				<button type="button" disabled class="fake_btn_app_loading btn btn__default pink d-none disabled"><?= pll_e('Sending, please wait...'); ?></button>
-				<button type="button" class="fake_btn_app btn btn__default yellow"><?= pll_e('Send application'); ?></button>
-				<button class="g-recaptcha app btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onAppSubmit"><?= pll_e('Send application'); ?></button>
+				<button type="button" disabled class="fake_btn_app_loading btn btn__default pink d-none disabled"><?php echo pll_e('Sending, please wait...'); ?></button>
+				<button type="button" class="fake_btn_app btn btn__default yellow"><?php echo pll_e('Send application'); ?></button>
+				<button class="g-recaptcha app btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onAppSubmit"><?php echo pll_e('Send application'); ?></button>
 			</div>
 		</div>
 	</form>
@@ -148,22 +148,22 @@
 		global $wp;
 		$current_url = home_url(add_query_arg(array(), $wp->request));
 		?>
-		<a class="btn btn__social notched navy" href="https://www.facebook.com/sharer/sharer.php?u=<?= $current_url; ?>&t=<?= get_the_title(); ?>" target="_blank">
+		<a class="btn btn__social notched navy" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $current_url; ?>&t=<?php echo get_the_title(); ?>" target="_blank">
 			<i class="fab fa-facebook-f"></i>
 		</a>
-		<a class="btn btn__social notched navy" href="https://twitter.com/intent/tweet?source=<?= $current_url; ?>&text=<?= $current_url; ?> - <?= get_the_title(); ?>" target="_blank">
+		<a class="btn btn__social notched navy" href="https://twitter.com/intent/tweet?source=<?php echo $current_url; ?>&text=<?php echo $current_url; ?> - <?php echo get_the_title(); ?>" target="_blank">
 			<i class="fab fa-twitter"></i>
 		</a>
-		<a class="btn btn__social notched navy" href="http://www.linkedin.com/shareArticle?mini=true&url=<?= $current_url; ?>&title=<?= get_the_title(); ?>&summary=Checkout%20this%20job%20offer!&source=<?= $current_url; ?>" target="_blank">
+		<a class="btn btn__social notched navy" href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo $current_url; ?>&title=<?php echo get_the_title(); ?>&summary=Checkout%20this%20job%20offer!&source=<?php echo $current_url; ?>" target="_blank">
 			<i class="fab fa-linkedin-in"></i>
 		</a>
-		<a class="btn btn__social notched navy" href="https://getpocket.com/save?url=<?= $current_url; ?>&title=<?= get_the_title(); ?>" target="_blank">
+		<a class="btn btn__social notched navy" href="https://getpocket.com/save?url=<?php echo $current_url; ?>&title=<?php echo get_the_title(); ?>" target="_blank">
 			<i class="fab fa-get-pocket"></i>
 		</a>
-		<a class="btn btn__social notched navy" href="whatsapp://send?text=<?= get_the_title(); ?>&nbsp;&nbsp;<?= $current_url; ?>" target="_blank">
+		<a class="btn btn__social notched navy" href="whatsapp://send?text=<?php echo get_the_title(); ?>&nbsp;&nbsp;<?php echo $current_url; ?>" target="_blank">
 			<i class="fab fa-whatsapp"></i>
 		</a>
-		<a class="btn btn__social notched navy" href="mailto:?subject=<?= get_the_title(); ?>&body=Checkout%20this%20job%20offer: <?= $current_url; ?>" target="_blank">
+		<a class="btn btn__social notched navy" href="mailto:?subject=<?php echo get_the_title(); ?>&body=Checkout%20this%20job%20offer: <?php echo $current_url; ?>" target="_blank">
 			<i class="far fa-envelope"></i>
 		</a>
 	</div>

@@ -26,7 +26,7 @@ get_header();
 			</div>
 			<div id="search-filter" class="row align-items-center justify-content-md-between justify-content-end header__jobs-search">
 				<div class="col-md-8 col-11">
-					<input type="text" name="job-title" value="<?= isset($_GET['job-title']) ? $_GET['job-title'] : null ?>" placeholder="<?php pll_e('Enter job title here'); ?>">
+					<input type="text" name="job-title" value="<?php echo isset($_GET['job-title']) ? $_GET['job-title'] : null ?>" placeholder="<?php pll_e('Enter job title here'); ?>">
 					<i class="far fa-search color-pink"></i>
 				</div>
 				<div class="header__jobs-dog">
@@ -72,7 +72,7 @@ get_header();
 					<aside class="additionals py-lg-4 py-2 d-flex justify-content-between">
 						<div class="py-3">
 							<p class="text-size-small font-primary m-0">
-								<span class="jobsno"><?= $post_no; ?></span> <?php pll_e('jobs found'); ?>
+								<span class="jobsno"><?php echo $post_no; ?></span> <?php pll_e('jobs found'); ?>
 							</p>
 						</div>
 						<?php if (!empty($params)) : ?>
@@ -94,21 +94,21 @@ get_header();
 								<article class="card jobs__list-item">
 									<div class="job-title">
 										<?php if (strlen($helper['supCatName']) > 0) : ?>
-											<span class="icon" data-type="<?= $helper['supCatName']; ?>"></span>
+											<span class="icon" data-type="<?php echo $helper['supCatName']; ?>"></span>
 										<?php endif; ?>
-										<h3 class="title m-0"><a href="<?= get_the_permalink(); ?>"><?= get_the_title(); ?></a></h3>
+										<h3 class="title m-0"><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
 									</div>
 									<div class="info">
 										<?php if (get_field('location')) : ?>
 											<div class="info__item">
 												<i class="place"></i>
-												<span class="location"><?= get_field('location'); ?></span>
+												<span class="location"><?php echo get_field('location'); ?></span>
 											</div>
 										<?php endif; ?>
 										<?php if ($helper['type']) : ?>
 											<div class="info__item">
 												<i class="clock"></i>
-												<span class="type"><?= $helper['type']; ?></span>
+												<span class="type"><?php echo $helper['type']; ?></span>
 											</div>
 										<?php endif; ?>
 										<?php if (get_field('salary_min') || get_field('salary_max')) : ?>
@@ -116,11 +116,11 @@ get_header();
 												<i class="coins"></i>
 												<span>
 													<number class="salarymin">
-														€ <?= number_format((int)get_field('salary_min'), 0, ".", "."); ?>
+														€ <?php echo number_format((int)get_field('salary_min'), 0, ".", "."); ?>
 													</number>
-													<?= get_field('salary_min') && get_field('salary_max') ? '&nbsp;-&nbsp;' : null ?>
+													<?php echo get_field('salary_min') && get_field('salary_max') ? '&nbsp;-&nbsp;' : null ?>
 													<number class="salarymax">
-														€ <?= number_format((int)get_field('salary_max'), 0, ".", "."); ?>
+														€ <?php echo number_format((int)get_field('salary_max'), 0, ".", "."); ?>
 													</number>
 												</span>
 											</div>
@@ -128,19 +128,19 @@ get_header();
 										<?php if ($helper['industry']) : ?>
 											<div class="info__item">
 												<i class="briefcase"></i>
-												<span class="industry"><?= $helper['industry']; ?></span>
+												<span class="industry"><?php echo $helper['industry']; ?></span>
 											</div>
 										<?php endif; ?>
 									</div>
 									<p class="text-size-small excerpt">
-										<?= wp_specialchars_decode(get_the_excerpt()); ?>
+										<?php echo wp_specialchars_decode(get_the_excerpt()); ?>
 									</p>
-									<a href="<?= get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e('More info'); ?></a>
+									<a href="<?php echo get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e('More info'); ?></a>
 								</article>
 						<?php endwhile;
 						endif; ?>
 						<nav class="pagination d-flex align-items-center justify-content-center">
-							<?= $pagination; ?>
+							<?php echo $pagination; ?>
 						</nav>
 					</main>
 					<div class="d-lg-none d-block mt-5 pt-sm-3 pt-1">

@@ -34,13 +34,13 @@ get_template_part('template-parts/breadcrumbs'); ?>
 								<?php if (get_field('location')) : ?>
 									<div class="info__item">
 										<i class="place"></i>
-										<span class="location"><?= get_field('location'); ?></span>
+										<span class="location"><?php echo get_field('location'); ?></span>
 									</div>
 								<?php endif; ?>
 								<?php if ($helper['type']) : ?>
 									<div class="info__item">
 										<i class="clock"></i>
-										<span class="type"><?= $helper['type']; ?></span>
+										<span class="type"><?php echo $helper['type']; ?></span>
 									</div>
 								<?php endif; ?>
 								<?php if (get_field('salary_min') || get_field('salary_max')) : ?>
@@ -48,11 +48,11 @@ get_template_part('template-parts/breadcrumbs'); ?>
 										<i class="coins"></i>
 										<span>
 											<number class="salarymin">
-												€ <?= number_format((int)get_field('salary_min'), 0, ".", "."); ?>
+												€ <?php echo number_format((int)get_field('salary_min'), 0, ".", "."); ?>
 											</number>
-											<?= get_field('salary_min') && get_field('salary_max') ? '&nbsp;-&nbsp;' : null ?>
+											<?php echo get_field('salary_min') && get_field('salary_max') ? '&nbsp;-&nbsp;' : null ?>
 											<number class="salarymax">
-												€ <?= number_format((int)get_field('salary_max'), 0, ".", "."); ?>
+												€ <?php echo number_format((int)get_field('salary_max'), 0, ".", "."); ?>
 											</number>
 										</span>
 									</div>
@@ -60,13 +60,13 @@ get_template_part('template-parts/breadcrumbs'); ?>
 								<?php if ($helper['industry']) : ?>
 									<div class="info__item">
 										<i class="briefcase"></i>
-										<span class="industry"><?= $helper['industry']; ?></span>
+										<span class="industry"><?php echo $helper['industry']; ?></span>
 									</div>
 								<?php endif; ?>
 							</div>
 						</div>
 					</div>
-					<a href="" class="btn btn__default yellow mr-2"><?php pll_e('Direct solliciteren!'); ?></a>
+					<a href="#single-job-apply" class="btn btn__default yellow mr-2 slideTo"><?php pll_e('Direct solliciteren!'); ?></a>
 					<a href="" class="btn btn__default square outline navy"><i class="fas fa-share-alt"></i></a>
 				</div>
 				<div class="header__jobs-dog">
@@ -98,12 +98,12 @@ get_template_part('template-parts/breadcrumbs'); ?>
 							</script>
 							<div class="info card bg-yellow">
 								<h2 class="color-navy">
-									<?= pll_e('Congratulations! Your application was successfully submitted!'); ?>
+									<?php echo pll_e('Congratulations! Your application was successfully submitted!'); ?>
 								</h2>
 							<?php else : ?>
 								<div class="info card bg-pink">
 									<h2 class="color-navy">
-										<?= pll_e('Sorry, there was a problem with your application, please try again later...'); ?>
+										<?php echo pll_e('Sorry, there was a problem with your application, please try again later...'); ?>
 									</h2>
 								<?php endif; ?>
 								</div>
@@ -152,7 +152,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 					endif;
 
 					?>
-					<a href="" class="btn btn__default yellow mr-2"><?php pll_e('Direct solliciteren!'); ?></a>
+					<a href="#single-job-apply" class="btn btn__default yellow mr-2 slideTo"><?php pll_e('Direct solliciteren!'); ?></a>
 					<a href="" class="btn btn__default square outline navy"><i class="fas fa-share-alt"></i></a>
 
 
@@ -225,7 +225,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 	<?php $recruiterF = get_field('recruiter_related'); ?>
 	<section class="jobs__single-recruiter py-lg-5 py-0 my-5">
 
-		<div class="container py-5">
+		<div id="single-job-apply" class="container py-5">
 			<div class="row align-items-end">
 				<div class="col-md-6 job-apply-form">
 					<h5 class="text-uppercase mb-2 text700">
@@ -237,11 +237,11 @@ get_template_part('template-parts/breadcrumbs'); ?>
 					<span class="text700 text-uppercase mb-2"><?php pll_e('Solliciteer met:'); ?></span>
 					<div class="social-login mt-2 mb-4">
 						<?php global $wp; ?>
-						<button type="button" class="btn btn__small pink color-white icon full text-uppercase" onclick="myLinkedinLogin( '<?= siteURL() . 'userdatafetch'; ?>', '<?= home_url($wp->request) ?>')">
+						<button type="button" class="btn btn__small pink color-white icon full text-uppercase" onclick="myLinkedinLogin( '<?php echo siteURL() . 'userdatafetch'; ?>', '<?php echo home_url($wp->request) ?>')">
 							<i class="fab fa-linkedin"></i>
 							<span>LinkedIn</span>
 						</button>
-						<button type="button" class="btn btn__small pink color-white icon full text-uppercase" onclick="myGithubLogin('<?= home_url($wp->request) ?>')">
+						<button type="button" class="btn btn__small pink color-white icon full text-uppercase" onclick="myGithubLogin('<?php echo home_url($wp->request) ?>')">
 							<i class="fab fa-github"></i>
 							<span>Github</span>
 						</button>
@@ -306,12 +306,12 @@ get_template_part('template-parts/breadcrumbs'); ?>
 								</div>
 							</div>
 							<div class="col-lg-12 col-sm-6 ugly pt-2">
-								<input class="required" type="text" name="app-name" required value="<?= $app_name ? $app_name : null; ?>">
-								<label class="ugly-label" for="app-name" <?= $app_name ? 'style="opacity: 0;"' : null; ?>><?php pll_e('Name'); ?> <span>*</span></label>
+								<input class="required" type="text" name="app-name" required value="<?php echo $app_name ? $app_name : null; ?>">
+								<label class="ugly-label" for="app-name" <?php echo $app_name ? 'style="opacity: 0;"' : null; ?>><?php pll_e('Name'); ?> <span>*</span></label>
 							</div>
 							<div class="col-lg-12 col-sm-6 ugly pt-2">
-								<input class="required" type="email" name="app-email" required value="<?= $app_email ? $app_email : null; ?>">
-								<label class="ugly-label" for="app-email" <?= $app_email ? 'style="opacity: 0;"' : null; ?>><?php pll_e('Email'); ?> <span>*</span></label>
+								<input class="required" type="email" name="app-email" required value="<?php echo $app_email ? $app_email : null; ?>">
+								<label class="ugly-label" for="app-email" <?php echo $app_email ? 'style="opacity: 0;"' : null; ?>><?php pll_e('Email'); ?> <span>*</span></label>
 							</div>
 							<div class="col-lg-12 col-sm-6 ugly pt-2">
 								<input type="tel" name="app-phone">
@@ -322,12 +322,12 @@ get_template_part('template-parts/breadcrumbs'); ?>
 								<label class="ugly-label" for="app-dob"><?php pll_e('Date of birth'); ?></label>
 							</div>
 							<div class="col-lg-12 col-sm-6 ugly pt-2">
-								<input type="text" name="app-city" value="<?= $app_location ? $app_location : null; ?>">
-								<label class="ugly-label" for="app-city" <?= $app_location ? 'style="opacity: 0;"' : null; ?>><?php pll_e('City'); ?></label>
+								<input type="text" name="app-city" value="<?php echo $app_location ? $app_location : null; ?>">
+								<label class="ugly-label" for="app-city" <?php echo $app_location ? 'style="opacity: 0;"' : null; ?>><?php pll_e('City'); ?></label>
 							</div>
 							<div class="col-lg-12 col-sm-6 ugly pt-2">
 								<select name="app-country">
-									<option class="default" value=""><?= pll_e('Choose your country'); ?></option>
+									<option class="default" value=""><?php echo pll_e('Choose your country'); ?></option>
 									<?php $i = 1;
 									foreach ($countries as $country) : ?>
 										<?php if ($i === 1 || $i === 4) : ?>
@@ -342,12 +342,12 @@ get_template_part('template-parts/breadcrumbs'); ?>
 								</select>
 							</div>
 							<div class="col-12 ugly upload pt-2">
-								<label id="app-cv-label" class="full bg-white" for="app-cv"><?php pll_e('CV'); ?> <span><?= pll_e('Upload'); ?></span></label>
+								<label id="app-cv-label" class="full bg-white" for="app-cv"><?php pll_e('CV'); ?> <span><?php echo pll_e('Upload'); ?></span></label>
 								<input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="app-cv" onchange="getFileName(this, 'app-cv-label')">
 							</div>
 							<div class="col-12 ugly pt-2">
-								<textarea name="app-motivation"><?= $app_motivation ? $app_motivation : null; ?></textarea>
-								<label class="ugly-label" for="app-motivation" <?= $app_motivation ? 'style="opacity: 0;"' : null; ?>><?php pll_e('Motivation'); ?></label>
+								<textarea name="app-motivation"><?php echo $app_motivation ? $app_motivation : null; ?></textarea>
+								<label class="ugly-label" for="app-motivation" <?php echo $app_motivation ? 'style="opacity: 0;"' : null; ?>><?php pll_e('Motivation'); ?></label>
 							</div>
 							<div class="col-12 pt-1">
 								<div class="pretty p-icon p-jelly">
@@ -360,15 +360,15 @@ get_template_part('template-parts/breadcrumbs'); ?>
 							</div>
 							<div class="col-12 pt-4">
 								<?php get_template_part('template-parts/referrer'); ?>
-								<input type="hidden" name="postid" value="<?= get_the_ID(); ?>">
-								<input type="hidden" name="app-jobid" value="<?= get_field('job_id'); ?>">
+								<input type="hidden" name="postid" value="<?php echo get_the_ID(); ?>">
+								<input type="hidden" name="app-jobid" value="<?php echo get_field('job_id'); ?>">
 								<input type="hidden" name="action" value="application_form">
 								<?php wp_nonce_field('application_form', 'application_form_nonce'); ?>
 								<input type="hidden" name="jobUploadHash" id="jobUploadHash" value="<?php global $hashesForLashes;
 																																										echo $hashesForLashes['appHash']; ?>">
-								<button type="button" disabled class="fake_btn_app_loading btn btn__default pink d-none disabled"><?= pll_e('Sending, please wait...'); ?></button>
-								<button type="button" class="fake_btn_app btn btn__default yellow"><?= pll_e('Send application'); ?></button>
-								<button class="g-recaptcha app btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onAppSubmit"><?= pll_e('Send application'); ?></button>
+								<button type="button" disabled class="fake_btn_app_loading btn btn__default pink d-none disabled"><?php echo pll_e('Sending, please wait...'); ?></button>
+								<button type="button" class="fake_btn_app btn btn__default yellow"><?php echo pll_e('Send application'); ?></button>
+								<button class="g-recaptcha app btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onAppSubmit"><?php echo pll_e('Send application'); ?></button>
 							</div>
 						</div>
 					</form>
@@ -386,7 +386,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 										</div>
 										<div class="col-md-6 col-sm-8">
 											<div class="recruiter-img">
-												<img data-src="<?= get_the_post_thumbnail_url($recruiter->ID, 'medium_large'); ?>" alt="" class="lazy bg-cover">
+												<img data-src="<?php echo get_the_post_thumbnail_url($recruiter->ID, 'medium_large'); ?>" alt="" class="lazy bg-cover">
 											</div>
 										</div>
 									</div>
@@ -394,20 +394,20 @@ get_template_part('template-parts/breadcrumbs'); ?>
 										<?php pll_e('Stel ze je persoonlijke recruiter'); ?> <u><?php echo $recruiter->post_title; ?></u>
 									</p>
 									<div class="recruiter-contact">
-										<a href="mailto:<?= get_field('email', $recruiter->ID); ?>" class="mb-2">
+										<a href="mailto:<?php echo get_field('email', $recruiter->ID); ?>" class="mb-2">
 											<i class="far fa-envelope mr-2"></i>
-											<?= get_field('email', $recruiter->ID); ?>
+											<?php echo get_field('email', $recruiter->ID); ?>
 										</a>
-										<a href="tel:<?= get_field('phone', $recruiter->ID); ?>" class="mb-2">
+										<a href="tel:<?php echo get_field('phone', $recruiter->ID); ?>" class="mb-2">
 											<i class="far fa-phone-alt mr-2"></i>
-											<?= get_field('phone', $recruiter->ID); ?>
+											<?php echo get_field('phone', $recruiter->ID); ?>
 										</a>
 									</div>
 									<a href="" class="btn btn__default icon color-white pink text-uppercase my-3 d-inline-flex text-left w-auto mr-xl-4 mr-lg-4 align-items-center">
 										<i class="fab fa-whatsapp mr-3 fa-21px"></i>
 										<span><?php pll_e('Stel een vraag via Whatsapp'); ?></span>
 									</a>
-									<a href="<?= get_field('calendly', $recruiter->ID); ?>" class="btn btn__default icon navy text-uppercase mr-xl-4 mr-lg-4 d-inline-flex text-left w-auto align-items-center">
+									<a href="<?php echo get_field('calendly', $recruiter->ID); ?>" class="btn btn__default icon navy text-uppercase mr-xl-4 mr-lg-4 d-inline-flex text-left w-auto align-items-center">
 										<i class="far fa-video mr-3 fa-21px"></i>
 										<?php pll_e('Plan een videocall met');
 										echo $recruiter->post_title; ?>
@@ -458,20 +458,20 @@ get_template_part('template-parts/breadcrumbs'); ?>
 							<div class="item d-flex flex-column h-100 w-100">
 								<div class="card w-100 d-flex flex-row flex-wrap p-4 h-100">
 									<div class="content mb-4">
-										<h2 class="font-primary text700 my-0"><a href="<?= get_the_permalink(); ?>"><?= get_the_title(); ?></a></h2>
+										<h2 class="font-primary text700 my-0"><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h2>
 									</div>
 									<div class="btn-cont align-self-end">
 										<div class="info mb-4 pb-2">
 											<?php if (get_field('location')) : ?>
 												<div class="info__item">
 													<i class="place"></i>
-													<span class="font-secondary location"><?= get_field('location'); ?></span>
+													<span class="font-secondary location"><?php echo get_field('location'); ?></span>
 												</div>
 											<?php endif; ?>
 											<?php if ($helper['type']) : ?>
 												<div class="info__item">
 													<i class="clock"></i>
-													<span class="font-secondary type"><?= $helper['type']; ?></span>
+													<span class="font-secondary type"><?php echo $helper['type']; ?></span>
 												</div>
 											<?php endif; ?>
 											<?php if (get_field('salary_min') || get_field('salary_max')) : ?>
@@ -479,17 +479,17 @@ get_template_part('template-parts/breadcrumbs'); ?>
 													<i class="coins"></i>
 													<span class="font-secondary">
 														<number class="salarymin">
-															<?= number_format((int)get_field('salary_min'), 0, ".", "."); ?>
+															<?php echo number_format((int)get_field('salary_min'), 0, ".", "."); ?>
 														</number>
-														<?= get_field('salary_min') && get_field('salary_max') ? '&nbsp;-&nbsp;' : null ?>
+														<?php echo get_field('salary_min') && get_field('salary_max') ? '&nbsp;-&nbsp;' : null ?>
 														<number class="salarymax">
-															<?= number_format((int)get_field('salary_max'), 0, ".", "."); ?>
+															<?php echo number_format((int)get_field('salary_max'), 0, ".", "."); ?>
 														</number>
 													</span>
 												</div>
 											<?php endif; ?>
 										</div>
-										<a href="<?= get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e('More info'); ?></a>
+										<a href="<?php echo get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e('More info'); ?></a>
 									</div>
 								</div>
 								<div class="triangle"></div>

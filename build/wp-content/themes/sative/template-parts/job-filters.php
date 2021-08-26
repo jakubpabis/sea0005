@@ -18,8 +18,8 @@
 					$active = null;
 				}
 			?>
-				<div class="filter-group <?= $active ?> mb-4">
-					<span class="filter-title <?= $active ?> d-flex align-items-center justify-content-between text-uppercase">
+				<div class="filter-group <?php echo $active ?> mb-4">
+					<span class="filter-title <?php echo $active ?> d-flex align-items-center justify-content-between text-uppercase">
 						<?php pll_e('Categories'); ?>
 						<i class="fas fa-plus"></i>
 						<i class="fas fa-minus"></i>
@@ -46,16 +46,16 @@
 				$active = null;
 			}
 			?>
-			<div class="filter-group <?= $active; ?> mb-4">
-				<span class="filter-title <?= $active; ?> d-flex align-items-center justify-content-between text-uppercase">
+			<div class="filter-group <?php echo $active; ?> mb-4">
+				<span class="filter-title <?php echo $active; ?> d-flex align-items-center justify-content-between text-uppercase">
 					<?php pll_e('Salary range'); ?>
 					<i class="fas fa-plus"></i>
 					<i class="fas fa-minus"></i>
 				</span>
 				<div class="filters job-salary-filters">
 					<div class="inputs">
-						<input type="text" name="salary_min" placeholder="<?php pll_e('From'); ?>" value="<?= $salaryMin; ?>">
-						<input type="text" name="salary_max" placeholder="<?php pll_e('To'); ?>" value="<?= $salaryMax; ?>">
+						<input type="text" name="salary_min" placeholder="<?php pll_e('From'); ?>" value="<?php echo $salaryMin; ?>">
+						<input type="text" name="salary_max" placeholder="<?php pll_e('To'); ?>" value="<?php echo $salaryMax; ?>">
 					</div>
 				</div>
 			</div>
@@ -68,8 +68,8 @@
 					$active = null;
 				}
 			?>
-				<div class="filter-group <?= $active ?> mb-4">
-					<span class="filter-title <?= $active ?> d-flex align-items-center justify-content-between text-uppercase">
+				<div class="filter-group <?php echo $active ?> mb-4">
+					<span class="filter-title <?php echo $active ?> d-flex align-items-center justify-content-between text-uppercase">
 						<?php pll_e('Location'); ?>
 						<i class="fas fa-plus"></i>
 						<i class="fas fa-minus"></i>
@@ -88,8 +88,8 @@
 					$active = null;
 				}
 			?>
-				<div class="filter-group <?= $active ?> mb-4">
-					<span class="filter-title <?= $active ?> d-flex align-items-center justify-content-between text-uppercase">
+				<div class="filter-group <?php echo $active ?> mb-4">
+					<span class="filter-title <?php echo $active ?> d-flex align-items-center justify-content-between text-uppercase">
 						<?php pll_e('Industry type'); ?>
 						<i class="fas fa-plus"></i>
 						<i class="fas fa-minus"></i>
@@ -108,8 +108,8 @@
 					$active = null;
 				}
 			?>
-				<div class="filter-group <?= $active ?> mb-4">
-					<span class="filter-title <?= $active ?> d-flex align-items-center justify-content-between text-uppercase">
+				<div class="filter-group <?php echo $active ?> mb-4">
+					<span class="filter-title <?php echo $active ?> d-flex align-items-center justify-content-between text-uppercase">
 						<?php pll_e('Job type'); ?>
 						<i class="fas fa-plus"></i>
 						<i class="fas fa-minus"></i>

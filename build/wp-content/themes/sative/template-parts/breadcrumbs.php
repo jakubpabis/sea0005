@@ -23,12 +23,12 @@
 					<?php if ($_GET['messagecv'] === 'success') : ?>
 						<div class="info card bg-yellow">
 							<h2 class="color-navy">
-								<?= pll_e('Congratulations! Your CV was successfully submitted!'); ?>
+								<?php echo pll_e('Congratulations! Your CV was successfully submitted!'); ?>
 							</h2>
 						<?php else : ?>
 							<div class="info card bg-pink">
 								<h2 class="color-navy">
-									<?= pll_e('Sorry, there was a problem with your application, please try again later...'); ?>
+									<?php echo pll_e('Sorry, there was a problem with your application, please try again later...'); ?>
 								</h2>
 							<?php endif; ?>
 							</div>
@@ -46,13 +46,13 @@
 					<?php if ($_GET['messagesb'] === 'success') : ?>
 						<div class="info card bg-yellow">
 							<h2 class="color-navy">
-								<?= pll_e('Congratulations! You subscribe to our newsletter!'); ?>
+								<?php echo pll_e('Congratulations! You subscribe to our newsletter!'); ?>
 							</h2>
 							<?php setcookie('subscribe_popup', true, get_field('subscribe_popup_cookie', 'option'), '/'); ?>
 						<?php else : ?>
 							<div class="info card bg-pink">
 								<h2 class="color-navy">
-									<?= pll_e('Sorry, there was a problem with your subscribtion, please try again later...'); ?>
+									<?php echo pll_e('Sorry, there was a problem with your subscribtion, please try again later...'); ?>
 								</h2>
 							<?php endif; ?>
 							</div>
@@ -70,19 +70,19 @@
 					<?php if ($_GET['messagect'] === 'robot') : ?>
 						<div class="info card bg-yellow">
 							<h2 class="color-navy">
-								<?= pll_e('Sorry, it looks like you’re a robot...'); ?>
+								<?php echo pll_e('Sorry, it looks like you’re a robot...'); ?>
 							</h2>
 						</div>
 					<?php elseif ($_GET['messagect'] === 'success') : ?>
 						<div class="info card bg-yellow">
 							<h2 class="color-navy">
-								<?= pll_e('Thank you! You’re message was sent successfully!'); ?>
+								<?php echo pll_e('Thank you! You’re message was sent successfully!'); ?>
 							</h2>
 						</div>
 					<?php else : ?>
 						<div class="info card bg-pink">
 							<h2 class="color-navy">
-								<?= pll_e('Sorry, there was a problem with your message, please try again later...'); ?>
+								<?php echo pll_e('Sorry, there was a problem with your message, please try again later...'); ?>
 							</h2>
 						</div>
 					<?php endif; ?>

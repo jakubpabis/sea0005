@@ -9,8 +9,8 @@ get_header(); ?>
 
 		<header class="header__article">
 			<picture class="bg-cover">
-				<source srcset="<?= get_the_post_thumbnail_url(); ?>">
-				<img class="bg-cover lazy" data-src="<?= get_the_post_thumbnail_url(); ?>" alt="">
+				<source srcset="<?php echo get_the_post_thumbnail_url(); ?>">
+				<img class="bg-cover lazy" data-src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
 			</picture>
 		</header>
 
@@ -129,7 +129,7 @@ get_header(); ?>
 				</button>
 				<div class="modal-container">
 					<div class="modal-header d-block">
-						<h3 class="modal-title d-block" id="whitepapersModalTitle"><?php pll_e('Download'); ?>&nbsp;<?= get_field('file_download')['title']; ?></h3>
+						<h3 class="modal-title d-block" id="whitepapersModalTitle"><?php pll_e('Download'); ?>&nbsp;<?php echo get_field('file_download')['title']; ?></h3>
 						<h5 class="modal-title d-block"><?php pll_e('Give us your email and download the file'); ?></h5>
 					</div>
 					<div class="modal-body pt-3">
@@ -147,7 +147,7 @@ get_header(); ?>
 								<div class="col-sm-9 searchInput d-flex justify-content-center align-items-start">
 									<div class="triangle-left"></div>
 									<input type="email" name="whitepapers-email" value="" placeholder="<?php pll_e('Put in your email address here'); ?>" required>
-									<input type="hidden" name="whitepapers-url" value="<?= get_field('file_download')['url']; ?>">
+									<input type="hidden" name="whitepapers-url" value="<?php echo get_field('file_download')['url']; ?>">
 									<input type="hidden" name="action" value="whitepapers_form">
 									<?php wp_nonce_field('whitepapers_form', 'whitepapers_form_nonce'); ?>
 									<button type="submit" class="btn btn__notched d-flex align-items-center"><i class="far fa-download"></i> <span class="text-size-large ml-3">Download</span></button>
@@ -156,7 +156,7 @@ get_header(); ?>
 						</form>
 						<div class="row justify-content-end">
 							<div class="col-auto">
-								<a class="text-size-small" href="<?= get_field('file_download')['url']; ?>"><u><?php pll_e('Or just download the file without giving up your email'); ?></u></a>
+								<a class="text-size-small" href="<?php echo get_field('file_download')['url']; ?>"><u><?php pll_e('Or just download the file without giving up your email'); ?></u></a>
 							</div>
 						</div>
 					</div>

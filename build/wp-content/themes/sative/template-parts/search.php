@@ -2,7 +2,7 @@
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content py-5">
 			<div class="modal-header d-flex">
-				<span class="display-3 text700" id="uploadCVModalTitle"><?= pll_e('Upload CV'); ?></span>
+				<span class="display-3 text700" id="uploadCVModalTitle"><?php pll_e('Search for a job!'); ?></span>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span class="text700 text-uppercase text-size-normal mr-2 font-primary">
 						<?php pll_e('Sluiten'); ?>
