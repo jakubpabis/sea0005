@@ -20,17 +20,31 @@
 		<hr>
 		<div class="row footer__middle justify-content-between">
 			<div class="col-md-4 mb-5 order-sm-1 order-6">
-				<h5 class="text-uppercase">
-					<?php echo get_field('contact_title_' . $lang, 'option'); ?>
-				</h5>
-				<div class="row mb-4">
-					<div class="col-auto">
-						<i class="fal fa-map-marker-alt"></i>
+				<?php if (get_field('contact_title_' . $lang, 'option')) : ?>
+					<h5 class="text-uppercase">
+						<?php echo get_field('contact_title_' . $lang, 'option'); ?>
+					</h5>
+				<?php endif; ?>
+				<?php if (get_field('contact_text_' . $lang, 'option')) : ?>
+					<div class="row">
+						<div class="col-auto">
+							<i class="fal fa-map-marker-alt"></i>
+						</div>
+						<div class="col pl-0">
+							<?php echo get_field('contact_text_' . $lang, 'option'); ?>
+						</div>
 					</div>
-					<div class="col pl-0">
-						<?php echo get_field('contact_text_' . $lang, 'option'); ?>
+				<?php endif; ?>
+				<?php if (get_field('contact_text2_' . $lang, 'option')) : ?>
+					<div class="row">
+						<div class="col-auto">
+							<i class="fal fa-map-marker-alt"></i>
+						</div>
+						<div class="col pl-0">
+							<?php echo get_field('contact_text2_' . $lang, 'option'); ?>
+						</div>
 					</div>
-				</div>
+				<?php endif; ?>
 				<div class="mb-4">
 					<a href="https://www.facebook.com/searchxrecruitment" class="btn btn__social notched sea" target="_blank">
 						<i class="fab fa-facebook-f"></i>
