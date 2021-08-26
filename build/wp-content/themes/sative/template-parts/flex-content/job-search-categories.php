@@ -18,7 +18,8 @@
 				</span>
 				<div class="row">
 					<div class="col-lg-9">
-						<form action="/en/jobs" method="GET" class="pb-3">
+						<?php $lang = pll_current_language(); ?>
+						<form action="<?php echo $lang === 'nl' ? '/nl/vacatures' : '/en/jobs'; ?>" method="GET" class="pb-3">
 							<input class="mb-3 job-search-nice" type="search" name="job-title" placeholder="<?php pll_e('Waar ben jij naar op zoek?'); ?>">
 							<?php if (!empty(get_sub_field('tags'))) : ?>
 								<div class="mega-menu__hashtags">
