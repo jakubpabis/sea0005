@@ -25,7 +25,7 @@
 						<?php echo get_sub_field('title'); ?>
 					</span>
 				</div>
-				<div class="col-lg-9 mt-5 pt-5">
+				<div class="col-lg-9 mt-4 pt-lg-5 pt-4">
 					<div class="flex_content-video_section-video left position-relative d-flex">
 						<div class="embed-container">
 							<video class="w-100" preload="auto" id="video_section_item_<?php $vid_id = rand(1000, 200000);
@@ -75,7 +75,7 @@
 						<?php echo get_sub_field('title'); ?>
 					</span>
 				</div>
-				<div class="offset-lg-3 col-lg-9 mt-5 pt-5">
+				<div class="offset-lg-3 col-lg-9 mt-4 pt-lg-5 pt-4">
 					<div class="flex_content-video_section-video right position-relative d-flex">
 						<div class="embed-container">
 							<video class="w-100" preload="auto" id="video_section_item_<?php $vid_id = rand(1000, 200000);
