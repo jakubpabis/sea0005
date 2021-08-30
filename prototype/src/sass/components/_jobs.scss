@@ -1014,7 +1014,30 @@
     }
 
     &-related {
-      clip-path: polygon(200px 0%, 100% 0, 100% 100%, 0 100%, 0% 200px);
+      --notchSize: 200px;
+
+      @media (max-width: 1199px) {
+        --notchSize: 164px;
+      }
+
+      @media (max-width: 991px) {
+        --notchSize: 128px;
+      }
+
+      @media (max-width: 767px) {
+        --notchSize: 96px;
+      }
+
+      @media (max-width: 575px) {
+        --notchSize: 64px;
+      }
+      clip-path: polygon(
+        var(--notchSize) 0%,
+        100% 0,
+        100% 100%,
+        0 100%,
+        0% var(--notchSize)
+      );
 
       .info__item {
         margin-top: 12px;

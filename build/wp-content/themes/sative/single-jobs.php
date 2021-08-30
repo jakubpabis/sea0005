@@ -440,21 +440,21 @@ get_template_part('template-parts/breadcrumbs'); ?>
 	);
 	$relatedPosts = new WP_Query($args);
 	?>
-	<?php if ($relatedPosts->have_posts()) : ?>
+	<?php if ($relatedPosts->have_posts()) : $i = 1; ?>
 		<section class="jobs__single-related bg-sea py-5">
-			<div class="container py-5 my-5">
-				<div class="row justify-content-center">
+			<div class="container py-lg-5 py-4 my-md-5 my-3">
+				<div class="row justify-content-lg-center">
 					<div class="col-12 mb-5">
 						<h5 class="text-uppercase mb-2 text700">
 							<?php pll_e('bekijk ook'); ?>
 						</h5>
-						<span class="display-3 text700 my-0 mb-4 d-block">
+						<span class="display-3 text700 my-0 mb-md-4 d-block">
 							<?php pll_e('Vergelijkbare vacatures'); ?>
 						</span>
 					</div>
 					<?php while ($relatedPosts->have_posts()) : $relatedPosts->the_post();
 						$helper = jobDisplayHelper(); ?>
-						<div class="col-lg-4 col-md-8 col-sm-10 d-flex jobs__single-related-item">
+						<div class="col-lg-4 col-md-8 col-sm-10 d-flex jobs__single-related-item mb-sm-4 mb-5 <?php echo $i % 2 === 0 ? 'offset-lg-0 offset-md-4 offset-sm-2 offset-0' : null; ?>">
 							<div class="item d-flex flex-column h-100 w-100">
 								<div class="card w-100 d-flex flex-row flex-wrap p-4 h-100">
 									<div class="content mb-4">
@@ -495,7 +495,8 @@ get_template_part('template-parts/breadcrumbs'); ?>
 								<div class="triangle"></div>
 							</div>
 						</div>
-					<?php endwhile; ?>
+					<?php $i++;
+					endwhile; ?>
 				</div>
 			</div>
 		</section>

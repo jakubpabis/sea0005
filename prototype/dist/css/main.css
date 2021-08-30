@@ -4504,8 +4504,9 @@ aside#chat .dog {
 }
 
 .jobs__single-related {
-	-webkit-clip-path: polygon(200px 0%, 100% 0, 100% 100%, 0 100%, 0% 200px);
-	clip-path: polygon(200px 0%, 100% 0, 100% 100%, 0 100%, 0% 200px);
+	--notchSize: 200px;
+	-webkit-clip-path: polygon(var(--notchSize) 0%, 100% 0, 100% 100%, 0 100%, 0% var(--notchSize));
+	clip-path: polygon(var(--notchSize) 0%, 100% 0, 100% 100%, 0 100%, 0% var(--notchSize));
 }
 
 .jobs__single-related .info__item {
@@ -8276,6 +8277,10 @@ p,
 	padding: 25px 20px;
 }
 
+.jobs__single-related {
+	--notchSize: 164px;
+}
+
 .posts__list-item .job-title .icon {
 	margin-top: 5px;
 }
@@ -8678,6 +8683,10 @@ form .ugly label.full {
 
 .jobs__single-sidebar .card {
 	padding: 30px;
+}
+
+.jobs__single-related {
+	--notchSize: 128px;
 }
 
 .posts__list-filters {
@@ -9286,6 +9295,10 @@ p,
 	padding: 30px 20px;
 }
 
+.jobs__single-related {
+	--notchSize: 96px;
+}
+
 .posts__list-filters {
 	margin-top: 15px;
 }
@@ -9658,6 +9671,10 @@ p,
 
 .jobs__single-sidebar .card {
 	padding: 30px 15px;
+}
+
+.jobs__single-related {
+	--notchSize: 64px;
 }
 
 .header__job-single .info__item {
