@@ -9404,8 +9404,7 @@ p,
 }
 
 .team .text-bubble-right-right {
-	top: auto !important;
-	bottom: 70px !important;
+	display: none !important;
 }
 
 .team__item-text,
@@ -9808,10 +9807,6 @@ p,
 	padding: 0 0 40px 0;
 }
 
-.team .container-lg {
-	padding: 0 60px;
-}
-
 .clients__big,
 .clients__small {
 	margin-top: 90px;
@@ -9858,14 +9853,6 @@ p,
 
 }
 
-@media (max-width: 450px) {
-
-.team .container-lg {
-	padding: 0 45px;
-}
-
-}
-
 @media (max-width: 420px) {
 
 .home__middle .searchInput input {
@@ -9897,14 +9884,6 @@ p,
 
 .clients__small {
 	margin-top: 90px;
-}
-
-}
-
-@media (max-width: 400px) {
-
-.team .container-lg {
-	padding: 0 30px;
 }
 
 }
@@ -9971,10 +9950,6 @@ p,
 .home__middle .searchInput input {
 	max-width: calc(100% - 40px);
 	padding-left: 10px;
-}
-
-.team .container-lg {
-	padding: 0 15px;
 }
 
 }
