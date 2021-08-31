@@ -9,7 +9,7 @@
 					<?php else : ?>
 						<div class="row justify-content-start">
 						<?php endif; ?>
-						<div class="col-lg-10 col-md-12 col-sm-8">
+						<div class="col-lg-10 col-md-12 col-sm-9">
 							<div class="team__item">
 								<div class="row">
 									<div class="col-md-5">
