@@ -4,18 +4,7 @@
  * Template for displaying jobs
  */
 
-get_header();
-
-$args = array(
-	'post_type' => 'jobs',
-	'post_status' => 'publish',
-	'posts_per_page' => -1
-);
-$query = new WP_Query($args);
-$post_no = $query->post_count;
-// global $wp_query;
-// var_dump($wp_query->query_vars);
-?>
+get_header(); ?>
 
 <?php require_once get_template_directory() . '/inc/jobs-filtering.php'; ?>
 
@@ -29,7 +18,7 @@ $post_no = $query->post_count;
 						<?php pll_e('Vacatures'); ?>
 					</h4>
 					<span class="display-3 text700 font-primary">
-						<?php pll_e('Laten we de perfecte baan voor je zoeken'); ?>
+						<?php echo get_queried_object()->name; ?>
 					</span>
 				</div>
 			</div>
