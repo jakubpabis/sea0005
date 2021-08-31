@@ -4,9 +4,30 @@
  * Template for displaying jobs
  */
 
-get_header(); ?>
+get_header();
 
-<?php require_once get_template_directory() . '/inc/jobs-filtering-cat.php'; ?>
+$the_category = get_queried_object();
+
+$args = array(
+	'post_type' => 'jobs',
+	'post_status' => 'publish',
+	'tax_query'     => array(
+		'relation' => 'AND',
+		array(
+			'taxonomy' => 'category',
+			'field' => 'term_id',
+			'terms' => $the_category->term_id,
+			'operator' => 'IN'
+		),
+	),
+);
+$query = new WP_Query($args);
+$post_no = $query->post_count;
+// global $wp_query;
+// var_dump($wp_query->query_vars);
+?>
+
+<?php require_once get_template_directory() . '/inc/jobs-filtering.php'; ?>
 
 <form id="main-jobs-filter-form" action="" method="GET">
 
