@@ -29,7 +29,7 @@ $post_no = $query->post_count;
 						<?php pll_e('Vacatures'); ?>
 					</h4>
 					<span class="display-3 text700 font-primary">
-						<?php pll_e('Laten we de perfecte baan voor je zoeken'); ?>
+						<?php echo get_queried_object()->name; ?>
 					</span>
 				</div>
 			</div>
