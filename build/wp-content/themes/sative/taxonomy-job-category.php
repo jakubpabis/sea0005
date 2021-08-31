@@ -6,10 +6,20 @@
 
 get_header();
 
+$the_category = get_queried_object();
+
 $args = array(
 	'post_type' => 'jobs',
 	'post_status' => 'publish',
-	'posts_per_page' => -1
+	'tax_query'     => array(
+		'relation' => 'AND',
+		array(
+			'taxonomy' => 'category',
+			'field' => 'term_id',
+			'terms' => $the_category->term_id,
+			'operator' => 'IN'
+		),
+	),
 );
 $query = new WP_Query($args);
 $post_no = $query->post_count;
