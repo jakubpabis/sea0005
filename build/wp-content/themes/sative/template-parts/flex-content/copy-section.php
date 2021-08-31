@@ -34,7 +34,7 @@
 			</div>
 		</div>
 		<div class="container">
-			<div class="row py-5 mt-5">
+			<div class="row py-lg-5 mt-lg-5">
 				<div class="col-lg-12">
 					<h4 class="text-uppercase mb-0 text700">
 						<?php echo get_sub_field('sub_title'); ?>
