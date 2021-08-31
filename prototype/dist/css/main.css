@@ -9407,6 +9407,10 @@ p,
 	display: none !important;
 }
 
+.team .container-lg {
+	padding: 0 15px;
+}
+
 .team__item-text,
 .team__item-hidden {
 	padding: 30px 20px 20px 20px;
@@ -9805,10 +9809,6 @@ p,
 
 .team {
 	padding: 0 0 40px 0;
-}
-
-.team__item {
-	margin-top: 30px;
 }
 
 .clients__big,
