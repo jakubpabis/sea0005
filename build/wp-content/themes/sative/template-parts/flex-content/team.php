@@ -3,11 +3,11 @@
 	<div class="container-lg">
 		<?php foreach (get_sub_field('people') as $item) : ?>
 			<?php if ($i % 3 == 0) : ?>
-				<div class="row justify-content-end justify-content-center">
+				<div class="row justify-content-end">
 				<?php elseif ($i % 2 == 0) : ?>
 					<div class="row justify-content-center">
 					<?php else : ?>
-						<div class="row justify-content-start justify-content-center">
+						<div class="row justify-content-start">
 						<?php endif; ?>
 						<div class="col-lg-10 col-md-12 col-sm-8">
 							<div class="team__item">
@@ -22,7 +22,7 @@
 									<div class="col-md-7">
 										<div class="team__item-text">
 											<div class="row justify-content-between">
-												<div class="col-xl-8 col-lg-7 col-auto">
+												<div class="col-xl-8 col-lg-7 col-10">
 													<h2 class="mb-2"><?php echo get_the_title($item->ID); ?></h2>
 													<h5 class="font-secondary text400 my-0"><?php echo get_field('title', $item->ID); ?></h5>
 													<a href="mailto:<?php echo get_field('email', $item->ID); ?>" class="text400 font-secondary d-inline-block mt-4">
@@ -32,7 +32,7 @@
 														<i class="fal fa-phone-alt mr-4"></i><?php echo get_field('phone', $item->ID); ?>
 													</a><br />
 												</div>
-												<div class="col-auto team__item-social d-flex flex-column">
+												<div class="col-lg-auto col-2 team__item-social d-flex flex-column">
 													<?php if (get_field('whatsapp', $item->ID)) : ?>
 														<a href="<?php echo get_field('whatsapp', $item->ID); ?>" class="btn btn__social notched navy"><i class="fab fa-whatsapp"></i></a>
 													<?php endif; ?>
