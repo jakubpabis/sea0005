@@ -14,8 +14,8 @@ get_header();
 
 	<header class="header__jobs bg-sea">
 		<div class="container">
-			<div class="row py-4">
-				<div class="col-lg-8">
+			<div class="row pt-4 pb-2">
+				<div class="col-lg-8 col-md-10 col-sm-11">
 					<h4 class="text-uppercase mb-3 text700 font-primary">
 						<?php pll_e('Vacatures'); ?>
 					</h4>
@@ -24,8 +24,8 @@ get_header();
 					</span>
 				</div>
 			</div>
-			<div id="search-filter" class="row align-items-center justify-content-md-between justify-content-end header__jobs-search">
-				<div class="col-md-8 col-11">
+			<div id="search-filter" class="row align-items-center justify-content-md-between header__jobs-search">
+				<div class="col-md-8 col-sm-11">
 					<input type="text" name="job-title" value="<?php echo isset($_GET['job-title']) ? $_GET['job-title'] : null ?>" placeholder="<?php pll_e('Enter job title here'); ?>">
 					<i class="far fa-search color-pink"></i>
 				</div>
