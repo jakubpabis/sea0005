@@ -1,7 +1,7 @@
 <?php
 
 $the_category = get_queried_object();
-var_dump($the_category);
+//var_dump($the_category);
 
 if (isset($_GET['job-title']) && $_GET['job-title']) {
 	$search = $_GET['job-title'];
