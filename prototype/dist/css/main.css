@@ -8819,6 +8819,10 @@ form .ugly label.full {
 	padding: 0 45px;
 }
 
+.team__item {
+	margin-top: 40px;
+}
+
 .team__item-text,
 .team__item-hidden {
 	padding: 20px 20px 20px 0;
@@ -8937,10 +8941,6 @@ form .ugly label.full {
 }
 
 @media (max-width: 799px) {
-
-.team .container-lg {
-	padding: 0 15px;
-}
 
 .clients__big,
 .clients__small {
@@ -9805,6 +9805,10 @@ p,
 
 .team {
 	padding: 0 0 40px 0;
+}
+
+.team__item {
+	margin-top: 30px;
 }
 
 .clients__big,
