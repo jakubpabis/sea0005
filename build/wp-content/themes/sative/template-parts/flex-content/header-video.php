@@ -16,14 +16,14 @@
 						<?php echo get_sub_field('sub_title'); ?>
 					</span>
 					<?php if (get_sub_field('button_first') || get_sub_field('button_second')) : ?>
-						<div class="card notched bg-white d-flex align-items-center mt-4 py-4 px-3 flex-row flex-wrap flex-sm-nowrap">
+						<div class="card notched bg-white d-flex align-items-stretch mt-4 py-4 px-3 flex-row flex-wrap flex-sm-nowrap">
 							<?php if (get_sub_field('button_first')) : ?>
-								<a href="<?php echo get_sub_field('button_first')['url']; ?>" class="btn btn__default yellow mx-2 w-50 mb-3 mb-sm-0">
+								<a href="<?php echo get_sub_field('button_first')['url']; ?>" class="btn btn__default yellow mx-2 w-50 mb-3 mb-sm-0 d-flex align-items-center justify-content-center">
 									<?php echo get_sub_field('button_first')['title']; ?>
 								</a>
 							<?php endif; ?>
 							<?php if (get_sub_field('button_second')) : ?>
-								<a href="<?php echo get_sub_field('button_second')['url']; ?>" class="btn btn__default navy mx-2 w-50">
+								<a href="<?php echo get_sub_field('button_second')['url']; ?>" class="btn btn__default navy mx-2 w-50 d-flex align-items-center justify-content-center">
 									<?php echo get_sub_field('button_second')['title']; ?>
 								</a>
 							<?php endif; ?>

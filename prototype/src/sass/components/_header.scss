@@ -431,14 +431,15 @@
     max-height: calc(100vh - 120px);
     overflow: hidden;
 
-    @media (max-width: 1199px) {
-      max-height: calc(100vh - 100px);
+    @media (max-width: 1440px) {
+      max-height: calc(100vh - 160px);
       margin-bottom: 150px;
       overflow: visible;
     }
 
     @media (max-width: 767px) {
       margin-bottom: 50px;
+      max-height: initial;
     }
 
     &-bottom {
@@ -449,11 +450,7 @@
       }
 
       @media (max-width: 1440px) {
-        bottom: 3vh;
-      }
-
-      @media (max-width: 1199px) {
-        bottom: -40px;
+        bottom: -55px;
       }
 
       @media (max-width: 767px) {
@@ -475,10 +472,6 @@
 
       @media (max-width: 1440px) {
         max-height: calc(100vh - 160px);
-      }
-
-      @media (max-width: 1199px) {
-        max-height: calc(100vh - 70px);
       }
 
       video {
