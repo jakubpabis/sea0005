@@ -550,6 +550,7 @@ $toTranslate = array(
 	'Send application',
 	'I hereby agree with the',
 	'Privacy Policy',
+	'Send message',
 	'Back',
 	'Executive search consultant',
 	'Show all jobs',
@@ -633,7 +634,10 @@ $toTranslate = array(
 	'Ja, ik wil ook een koekje!',
 	'WhatsApp us!',
 	'Vacatures',
-	'Waar ben jij naar op zoek?'
+	'Waar ben jij naar op zoek?',
+	'Company',
+	'Email address',
+	'Message'
 );
 
 if (function_exists('pll_register_string')) {
