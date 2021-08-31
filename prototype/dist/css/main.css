@@ -3100,12 +3100,6 @@ form .ugly textarea {
 	margin-bottom: 30px;
 }
 
-.client-logos__small .card {
-	max-width: calc(20% - 20px);
-	margin: 10px;
-	flex-basis: calc(20% - 20px);
-}
-
 .testimonials__section-img,
 .testimonials__candidates-img,
 .testimonials__clients-img {
@@ -5798,6 +5792,12 @@ aside#chat .dog {
 
 .clients__small {
 	margin-bottom: 60px;
+}
+
+.clients__small .card {
+	max-width: calc(20% - 20px);
+	margin: 10px;
+	flex-basis: calc(20% - 20px);
 }
 
 .knowledge__article {
@@ -8842,6 +8842,11 @@ form .ugly label.full {
 	padding: 40px 30px;
 }
 
+.clients__small .card {
+	max-width: calc(25% - 20px);
+	flex-basis: calc(25% - 20px);
+}
+
 .knowledge__filters {
 	margin-top: 10px;
 	margin-bottom: 0;
@@ -9425,6 +9430,11 @@ p,
 	padding: 30px;
 }
 
+.clients__small .card {
+	max-width: calc(33.3333% - 20px);
+	flex-basis: calc(33.3333% - 20px);
+}
+
 .footer__upper * {
 	text-align: center !important;
 }
@@ -9824,6 +9834,11 @@ p,
 .clients__big-item,
 .clients__small-item {
 	padding: 30px 15px;
+}
+
+.clients__small .card {
+	max-width: calc(50% - 20px);
+	flex-basis: calc(50% - 20px);
 }
 
 .contact {

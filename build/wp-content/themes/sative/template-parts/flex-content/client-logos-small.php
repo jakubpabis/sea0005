@@ -1,4 +1,4 @@
-<section class="flex-section flex_content-video_section">
+<section class="flex-section flex_content-video_section pb-5">
 	<div class="container position-absolute h-100 right-0 top-0">
 		<div class="row">
 			<div class="col-lg-11 position-absolute h-50 p-0 right-0">
@@ -17,7 +17,7 @@
 					<?php echo get_sub_field('title'); ?>
 				</span>
 			</div>
-			<div class="col-lg-10 col-md-11 offset-lg-1 mt-5">
+			<div class="col-lg-10 col-12 offset-lg-1 mt-5">
 				<div class="row align-items-stretch client-logos__small">
 					<?php foreach (get_sub_field('logos') as $item) : ?>
 						<div class="card notched d-flex align-items-center justify-content-center p-2">
