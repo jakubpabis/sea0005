@@ -2481,6 +2481,11 @@ body.offcanvas-active {
 	margin-bottom: 150px;
 }
 
+.flex-section.team {
+	margin-top: 120px;
+	margin-bottom: 120px;
+}
+
 .body-bg-gradient > *:first-child {
 	margin-top: 0 !important;
 	padding-top: 100px;
@@ -8090,6 +8095,11 @@ h2,
 	margin-bottom: 120px;
 }
 
+.flex-section.team {
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
 .body-bg-gradient > *:first-child {
 	padding-top: 70px;
 }
@@ -8219,6 +8229,11 @@ p,
 	margin-bottom: 100px;
 }
 
+.flex-section.team {
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+
 .flex-section.speech-bubbles .card {
 	padding: 20px;
 }
@@ -8308,6 +8323,10 @@ p,
 
 .article aside .share h5 {
 	margin-bottom: 10px;
+}
+
+.team {
+	padding: 50px 0 80px 0;
 }
 
 .team__item-text,
@@ -8523,6 +8542,11 @@ p,
 .flex-section {
 	margin-top: 70px;
 	margin-bottom: 70px;
+}
+
+.flex-section.team {
+	margin-top: 60px;
+	margin-bottom: 60px;
 }
 
 .flex-section.speech-bubbles .card-icon {
@@ -8785,6 +8809,10 @@ form .ugly label.full {
 .dog__info.right + .triangle {
 	top: 25%;
 	right: -31px;
+}
+
+.team {
+	padding: 40px 0 70px 0;
 }
 
 .team .container-lg {
@@ -9105,6 +9133,11 @@ p,
 	margin-bottom: 50px;
 }
 
+.flex-section.team {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
 .flex-section.speech-bubbles .card-icon {
 	padding-right: 10px;
 }
@@ -9366,6 +9399,15 @@ p,
 	border-left: 40px solid transparent;
 }
 
+.team {
+	padding: 30px 0 60px 0;
+}
+
+.team .text-bubble-right-right {
+	top: auto !important;
+	bottom: 70px !important;
+}
+
 .team__item-text,
 .team__item-hidden {
 	padding: 30px 20px 20px 20px;
@@ -9564,6 +9606,11 @@ p,
 	margin-bottom: 32px;
 }
 
+.flex-section.team {
+	margin-top: 32px;
+	margin-bottom: 32px;
+}
+
 .body-bg-gradient > *:first-child {
 	padding-top: 30px;
 }
@@ -9755,6 +9802,10 @@ p,
 
 .dog__info.right + .triangle {
 	right: -9px;
+}
+
+.team {
+	padding: 0 0 40px 0;
 }
 
 .team .container-lg {

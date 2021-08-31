@@ -3,11 +3,11 @@
 	<div class="container-lg">
 		<?php foreach (get_sub_field('people') as $item) : ?>
 			<?php if ($i % 3 == 0) : ?>
-				<div class="row justify-content-lg-end justify-content-center">
+				<div class="row justify-content-end justify-content-center">
 				<?php elseif ($i % 2 == 0) : ?>
 					<div class="row justify-content-center">
 					<?php else : ?>
-						<div class="row justify-content-lg-start justify-content-center">
+						<div class="row justify-content-start justify-content-center">
 						<?php endif; ?>
 						<div class="col-lg-10 col-md-12 col-sm-8">
 							<div class="team__item">
