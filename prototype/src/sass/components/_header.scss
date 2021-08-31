@@ -428,15 +428,11 @@
 
   &__video {
     padding-top: 0 !important;
-    max-height: calc(100vh - 160px);
+    max-height: calc(100vh - 120px);
     overflow: hidden;
 
     @media (max-width: 1199px) {
-      max-height: calc(100vh - 130px);
-    }
-
-    @media (max-width: 991px) {
-      max-height: calc(100vh - 70px);
+      max-height: calc(100vh - 100px);
       margin-bottom: 150px;
       overflow: visible;
     }
@@ -446,14 +442,18 @@
     }
 
     &-bottom {
-      bottom: 8vh;
+      bottom: 5vh;
 
-      @media (max-width: 1199px) {
+      @media (max-width: 1600px) {
         bottom: 4vh;
       }
 
-      @media (max-width: 991px) {
-        bottom: -70px;
+      @media (max-width: 1440px) {
+        bottom: 3vh;
+      }
+
+      @media (max-width: 1199px) {
+        bottom: -40px;
       }
 
       @media (max-width: 767px) {
@@ -473,11 +473,11 @@
     .container-fluid {
       max-height: calc(100vh - 160px);
 
-      @media (max-width: 1199px) {
-        max-height: calc(100vh - 130px);
+      @media (max-width: 1440px) {
+        max-height: calc(100vh - 160px);
       }
 
-      @media (max-width: 991px) {
+      @media (max-width: 1199px) {
         max-height: calc(100vh - 70px);
       }
 

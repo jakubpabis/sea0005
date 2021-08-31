@@ -2284,12 +2284,12 @@ body.offcanvas-active {
 
 .header__video {
 	overflow: hidden;
-	max-height: calc(100vh - 160px);
+	max-height: calc(100vh - 120px);
 	padding-top: 0 !important;
 }
 
 .header__video-bottom {
-	bottom: 8vh;
+	bottom: 5vh;
 }
 
 .header__video .container-fluid {
@@ -8067,6 +8067,14 @@ fieldset[disabled] .datepicker table tr td span.active:hover:hover {
 
 }
 
+@media (max-width: 1600px) {
+
+.header__video-bottom {
+	bottom: 4vh;
+}
+
+}
+
 @media (max-width: 1440px) {
 
 .text-size-xxxxlarge {
@@ -8088,6 +8096,14 @@ h2,
 .jobs__single article strong,
 .text-size-xxlarge {
 	font-size: 33px;
+}
+
+.header__video-bottom {
+	bottom: 3vh;
+}
+
+.header__video .container-fluid {
+	max-height: calc(100vh - 160px);
 }
 
 .flex-section {
@@ -8213,15 +8229,17 @@ p,
 }
 
 .header__video {
-	max-height: calc(100vh - 130px);
+	overflow: visible;
+	max-height: calc(100vh - 100px);
+	margin-bottom: 150px;
 }
 
 .header__video-bottom {
-	bottom: 4vh;
+	bottom: -40px;
 }
 
 .header__video .container-fluid {
-	max-height: calc(100vh - 130px);
+	max-height: calc(100vh - 70px);
 }
 
 .flex-section {
@@ -8519,20 +8537,6 @@ p,
 .header__posts-dog object,
 .header__posts-dog svg {
 	height: 200px;
-}
-
-.header__video {
-	overflow: visible;
-	max-height: calc(100vh - 70px);
-	margin-bottom: 150px;
-}
-
-.header__video-bottom {
-	bottom: -70px;
-}
-
-.header__video .container-fluid {
-	max-height: calc(100vh - 70px);
 }
 
 .home__jobs {
