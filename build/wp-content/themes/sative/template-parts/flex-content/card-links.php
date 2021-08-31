@@ -16,7 +16,7 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-12 pb-5 pt-5">
+			<div class="col-12 pb-xl-4 pb-lg-3 pb-md-2 pt-5">
 				<span class="display-2 text700">
 					<?php echo get_sub_field('title'); ?>
 				</span>
