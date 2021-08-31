@@ -22,7 +22,7 @@
 									<div class="col-md-7">
 										<div class="team__item-text">
 											<div class="row justify-content-between">
-												<div class="col-xl-8 col-lg-7 col-10">
+												<div class="col-xl-8 col-lg-7 col">
 													<h2 class="mb-2"><?php echo get_the_title($item->ID); ?></h2>
 													<h5 class="font-secondary text400 my-0"><?php echo get_field('title', $item->ID); ?></h5>
 													<a href="mailto:<?php echo get_field('email', $item->ID); ?>" class="text400 font-secondary d-inline-block mt-4">
@@ -32,15 +32,15 @@
 														<i class="fal fa-phone-alt mr-4"></i><?php echo get_field('phone', $item->ID); ?>
 													</a><br />
 												</div>
-												<div class="col-lg-auto col-2 team__item-social d-flex flex-column">
+												<div class="col-lg-auto col team__item-social d-flex flex-lg-column mt-lg-0 mt-4">
 													<?php if (get_field('whatsapp', $item->ID)) : ?>
-														<a href="<?php echo get_field('whatsapp', $item->ID); ?>" class="btn btn__social notched navy"><i class="fab fa-whatsapp"></i></a>
+														<a href="<?php echo get_field('whatsapp', $item->ID); ?>" class="btn btn__social notched navy mr-lg-0 mr-3"><i class="fab fa-whatsapp"></i></a>
 													<?php endif; ?>
 													<?php if (get_field('skype', $item->ID)) : ?>
-														<a href="<?php echo get_field('skype', $item->ID); ?>" class="btn btn__social notched navy"><i class="fab fa-skype"></i></a>
+														<a href="<?php echo get_field('skype', $item->ID); ?>" class="btn btn__social notched navy mr-lg-0 mr-3"><i class="fab fa-skype"></i></a>
 													<?php endif; ?>
 													<?php if (get_field('linkedin', $item->ID)) : ?>
-														<a href="<?php echo get_field('linkedin', $item->ID); ?>" class="btn btn__social notched navy"><i class="fab fa-linkedin-in"></i></a>
+														<a href="<?php echo get_field('linkedin', $item->ID); ?>" class="btn btn__social notched navy mr-lg-0 mr-3"><i class="fab fa-linkedin-in"></i></a>
 													<?php endif; ?>
 												</div>
 											</div>
