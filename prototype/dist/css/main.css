@@ -5794,7 +5794,7 @@ aside#chat .dog {
 	margin-bottom: 60px;
 }
 
-.clients__small .client-logos__small .card {
+.client-logos__small .card {
 	max-width: calc(20% - 20px);
 	margin: 10px;
 	flex-basis: calc(20% - 20px);
@@ -8842,7 +8842,7 @@ form .ugly label.full {
 	padding: 40px 30px;
 }
 
-.clients__small .client-logos__small .card {
+.client-logos__small .card {
 	max-width: calc(25% - 20px);
 	flex-basis: calc(25% - 20px);
 }
@@ -9430,7 +9430,7 @@ p,
 	padding: 30px;
 }
 
-.clients__small .client-logos__small .card {
+.client-logos__small .card {
 	max-width: calc(33.3333% - 20px);
 	flex-basis: calc(33.3333% - 20px);
 }
@@ -9836,7 +9836,7 @@ p,
 	padding: 30px 15px;
 }
 
-.clients__small .client-logos__small .card {
+.client-logos__small .card {
 	max-width: calc(50% - 20px);
 	flex-basis: calc(50% - 20px);
 }
