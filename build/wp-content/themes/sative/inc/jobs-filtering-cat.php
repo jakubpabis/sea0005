@@ -18,7 +18,7 @@ $args = array(
 	'tax_query' => array(
 		'relation' => 'AND',
 		array(
-			'taxonomy' => 'job-category',
+			'taxonomy' => $the_category->taxonomy,
 			'field' => 'term_id',
 			'terms' => $the_category->term_id,
 			'operator' => 'IN'
