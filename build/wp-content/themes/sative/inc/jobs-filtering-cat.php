@@ -46,7 +46,7 @@ foreach ($taxonomyFilters as $taxF) {
 				);
 				array_push($args['tax_query'], $arr);
 			}
-		} else {
+		} else if (count($_GET[$taxF]) > 0) {
 			$args['tax_query'][] = array(
 				'taxonomy' => $taxF,
 				'field' => 'slug',
