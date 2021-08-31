@@ -14,7 +14,7 @@ $args = array(
 	'posts_per_page' => 10,
 	'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
 	's' => $search,
-	'tax_query'     => array(
+	'tax_query' => array(
 		'relation' => 'AND',
 		array(
 			'taxonomy' => 'category',
