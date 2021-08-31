@@ -1,6 +1,7 @@
 <?php
 
 $the_category = get_queried_object();
+var_dump($the_category);
 
 if (isset($_GET['job-title']) && $_GET['job-title']) {
 	$search = $_GET['job-title'];
@@ -17,13 +18,13 @@ $args = array(
 	'tax_query' => array(
 		'relation' => 'AND',
 		array(
-			'taxonomy' => 'category',
+			'taxonomy' => 'job-category',
 			'field' => 'term_id',
 			'terms' => $the_category->term_id,
 			'operator' => 'IN'
 		),
 	),
-	'meta_query'    => array(
+	'meta_query' => array(
 		'relation' => 'AND',
 	)
 );
