@@ -390,8 +390,8 @@ get_template_part('template-parts/breadcrumbs'); ?>
 											</div>
 										</div>
 									</div>
-									<p>
-										<?php pll_e('Stel ze je persoonlijke recruiter'); ?> <u><?php echo $recruiter->post_title; ?></u>
+									<p class="line-height-1">
+										<?php pll_e('Stel ze je persoonlijke recruiter'); ?> <u class="text-nowrap"><?php echo $recruiter->post_title; ?></u>
 									</p>
 									<div class="recruiter-contact">
 										<a href="mailto:<?php echo get_field('email', $recruiter->ID); ?>" class="mb-2">
@@ -403,14 +403,14 @@ get_template_part('template-parts/breadcrumbs'); ?>
 											<?php echo get_field('phone', $recruiter->ID); ?>
 										</a>
 									</div>
-									<a href="" class="btn btn__default icon color-white pink text-uppercase my-3 d-inline-flex text-left w-auto mr-xl-4 mr-lg-4 align-items-center">
+									<a href="" class="line-height-1 btn btn__default icon color-white pink text-uppercase my-3 d-inline-flex text-left w-auto mr-xl-4 mr-lg-4 align-items-center">
 										<i class="fab fa-whatsapp mr-3 fa-21px"></i>
 										<span><?php pll_e('Stel een vraag via Whatsapp'); ?></span>
 									</a>
-									<a href="<?php echo get_field('calendly', $recruiter->ID); ?>" class="btn btn__default icon navy text-uppercase mr-xl-4 mr-lg-4 d-inline-flex text-left w-auto align-items-center">
+									<a href="<?php echo get_field('calendly', $recruiter->ID); ?>" class="line-height-1 btn btn__default icon navy text-uppercase mr-xl-4 mr-lg-4 d-inline-flex text-left w-auto align-items-center">
 										<i class="far fa-video mr-3 fa-21px"></i>
 										<?php pll_e('Plan een videocall met');
-										echo $recruiter->post_title; ?>
+										echo ' ' . $recruiter->post_title; ?>
 									</a>
 								</div>
 							</div>
