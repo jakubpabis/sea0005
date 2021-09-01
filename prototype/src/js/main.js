@@ -362,6 +362,20 @@ function bottomBar() {
 }
 
 jQuery(document).ready(function () {
+  if (mobileAndTabletCheck()) {
+    $("body").addClass("is-mobile");
+    $(".header__video")
+      .find("video")
+      .on("click", function () {
+        if ($(this).get(0).paused || $(this).get(0).ended) {
+          $(this).get(0).play();
+        } else {
+          $(this).get(0).pause();
+        }
+      });
+  } else {
+    $("body").removeClass("is-mobile");
+  }
   lazyImages();
   uglyInput();
   filterSelect();
@@ -824,6 +838,11 @@ jQuery(window).on("load", function () {
 });
 
 jQuery(window).on("resize", function () {
+  if (mobileAndTabletCheck()) {
+    $("body").addClass("is-mobile");
+  } else {
+    $("body").removeClass("is-mobile");
+  }
   if ($(".body-bg-gradient").length > 0) {
     bodyGradient();
   }
