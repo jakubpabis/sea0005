@@ -582,6 +582,14 @@
           right: 0;
           top: 29px;
         }
+
+        &:hover {
+          svg {
+            path {
+              fill: $color-pink !important;
+            }
+          }
+        }
       }
     }
   }
@@ -829,5 +837,12 @@ form {
       min-height: 120px;
       resize: none;
     }
+  }
+}
+
+.copy-section-card {
+  ul {
+    padding-left: 15px;
+    margin-bottom: 20px;
   }
 }

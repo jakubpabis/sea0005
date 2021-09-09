@@ -2738,6 +2738,10 @@ body.offcanvas-active {
 	right: 0;
 }
 
+.categories-menus-section ul li a:hover svg path {
+	fill: #ec6278 !important;
+}
+
 .job-search-categories .flex_content-cta-bg {
 	height: 100% !important;
 	margin: 0;
@@ -2986,6 +2990,11 @@ form .ugly select:focus {
 form .ugly textarea {
 	min-height: 120px;
 	resize: none;
+}
+
+.copy-section-card ul {
+	margin-bottom: 20px;
+	padding-left: 15px;
 }
 
 .card {

@@ -20,7 +20,7 @@
 				<?php endif; ?>
 			</div>
 			<div class="col-lg-5 mt-4">
-				<div class="bg-white card d-block">
+				<div class="bg-white card d-block copy-section-card">
 					<h3 class="my-0 text700">
 						<?php echo get_sub_field('speech_bubble_title'); ?>
 					</h3>
