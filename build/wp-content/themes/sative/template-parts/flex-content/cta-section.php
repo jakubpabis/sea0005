@@ -92,11 +92,14 @@
 			</div>
 			<div class="col-md-6 col-sm-9 offset-md-0 offset-sm-3 ordre-md-12 order-1 mb-md-0 mb-5" id="bottom-contact-dog-section">
 				<?php if (get_sub_field('links') && !empty(get_sub_field('links'))) : ?>
-					<?php foreach (get_sub_field('links') as $link) : ?>
-						<a href="<?php echo $link['link']['url']; ?>">
-							<?php echo $link['link']['title']; ?>
-						</a>
-					<?php endforeach; ?>
+					<div class="flex_content-contact-links d-flex">
+						<?php foreach (get_sub_field('links') as $link) : ?>
+							<a class="btn btn__default pink" href="<?php echo $link['link']['url']; ?>">
+								<?php echo $link['link']['title']; ?>
+							</a>
+						<?php endforeach; ?>
+					</div>
+
 				<?php else : ?>
 					<?php $type = 'cta_dog_contact'; ?>
 					<form method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" accept-charset="UTF-8" role="form" id="<?php echo $type; ?>_section_form" enctype="multipart/form-data">
