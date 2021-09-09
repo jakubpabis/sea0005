@@ -4595,7 +4595,11 @@ function slideThem() {
   if (el) {
     el.on("click", function (e) {
       e.preventDefault();
-      slideTo(el.attr("href"));
+      if ($(this).attr("href") === "#openCVmodal") {
+        $("#uploadCVModal").modal("show");
+      } else {
+        slideTo(el.attr("href"));
+      }
     });
   }
 }
