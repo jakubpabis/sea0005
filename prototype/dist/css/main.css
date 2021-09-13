@@ -8113,6 +8113,10 @@ h2,
 	margin-bottom: 150px;
 }
 
+.header__video.negative-margin {
+	margin-bottom: -50px;
+}
+
 .header__video-bottom {
 	bottom: -55px;
 }

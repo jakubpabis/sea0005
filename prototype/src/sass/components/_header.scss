@@ -435,6 +435,10 @@
       max-height: calc(100vh - 160px);
       margin-bottom: 150px;
       overflow: visible;
+
+      &.negative-margin {
+        margin-bottom: -50px;
+      }
     }
 
     @media (max-width: 767px) {

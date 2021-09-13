@@ -1,4 +1,10 @@
-<header class="header__video">
+<?php if (get_sub_field('title') || get_sub_field('sub_title') || get_sub_field('button_first') || get_sub_field('button_second')) : ?>
+	<?php $negative = ''; ?>
+<?php else : ?>
+	<?php $negative = 'negative-margin'; ?>
+<?php endif; ?>
+
+<header class="header__video <?php echo $negative; ?>">
 	<div class="container-fluid px-0 justify-content-center d-flex">
 		<video muted autoplay preload="true" loop>
 			<source src="<?php echo get_sub_field('video_file'); ?>" type="video/mp4">

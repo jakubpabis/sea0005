@@ -10,7 +10,7 @@
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '3.9.8');
+	define('_S_VERSION', '3.9.9');
 }
 
 if (!function_exists('sative_setup')) :
