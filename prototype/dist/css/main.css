@@ -9103,6 +9103,10 @@ p,
 	margin-bottom: 50px;
 }
 
+.header__video.negative-margin {
+	margin-bottom: 0;
+}
+
 .header__video-bottom {
 	position: relative !important;
 	bottom: auto;

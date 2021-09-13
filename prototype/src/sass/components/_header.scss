@@ -444,6 +444,9 @@
     @media (max-width: 767px) {
       margin-bottom: 50px;
       max-height: initial;
+      &.negative-margin {
+        margin-bottom: 0px;
+      }
     }
 
     &-bottom {
