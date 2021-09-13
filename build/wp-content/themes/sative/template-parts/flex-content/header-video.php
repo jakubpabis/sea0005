@@ -9,7 +9,7 @@
 		<div class="container-md">
 			<div class="row position-absolute header__video-bottom justify-content-center w-100">
 				<div class="col-xl-7 col-lg-8 px-md-0 text-center">
-					<span class="text-size-xxxxlarge d-block mb-0">
+					<span class="text-size-xxlarge d-block mb-0">
 						<?php echo get_sub_field('title'); ?>
 					</span>
 					<span class="mt-0 text-size-large d-block text400 font-secondary">
