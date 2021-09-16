@@ -366,32 +366,34 @@ function bottomBar() {
 }
 
 function playVideoButton() {
-  $(".header__video")
-    .find(".vidvid")
-    .on("click", function () {
-      var video = $(this).find("video").get(0);
-      var button = $(this).find(".play-button");
-      if (video.paused) {
-        video.play();
-        button.removeClass("d-block").addClass("d-none");
-      } else {
-        video.pause();
-        button.removeClass("d-none").addClass("d-block");
-      }
-    });
-  $(".header__video")
-    .find("video")
-    .on("click", function () {
-      var video = $(this).get(0);
-      var button = $(this).next(".play-button");
-      if (video.paused) {
-        video.play();
-        button.removeClass("d-block").addClass("d-none");
-      } else {
-        video.pause();
-        button.removeClass("d-none").addClass("d-block");
-      }
-    });
+  if (mobileAndTabletCheck()) {
+    $(".header__video")
+      .find(".vidvid")
+      .on("click", function () {
+        var video = $(this).find("video").get(0);
+        var button = $(this).find(".play-button");
+        if (video.paused) {
+          video.play();
+          button.removeClass("d-block").addClass("d-none");
+        } else {
+          video.pause();
+          button.removeClass("d-none").addClass("d-block");
+        }
+      });
+    $(".header__video")
+      .find("video")
+      .on("click", function () {
+        var video = $(this).get(0);
+        var button = $(this).next(".play-button");
+        if (video.paused) {
+          video.play();
+          button.removeClass("d-block").addClass("d-none");
+        } else {
+          video.pause();
+          button.removeClass("d-none").addClass("d-block");
+        }
+      });
+  }
 }
 
 jQuery(document).ready(function () {
