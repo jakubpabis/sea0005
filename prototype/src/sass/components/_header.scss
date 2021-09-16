@@ -449,6 +449,14 @@
       }
     }
 
+    .play-button {
+      top: 50%;
+      left: 50%;
+      margin-top: -20px;
+      margin-left: -20px;
+      display: none;
+    }
+
     &-bottom {
       bottom: 5vh;
 
@@ -485,6 +493,14 @@
         object-fit: cover;
         width: 100%;
       }
+    }
+  }
+}
+
+.is-mobile {
+  .header__video {
+    .play-button {
+      display: block;
     }
   }
 }

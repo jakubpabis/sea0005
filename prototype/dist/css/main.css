@@ -2288,6 +2288,14 @@ body.offcanvas-active {
 	padding-top: 0 !important;
 }
 
+.header__video .play-button {
+	top: 50%;
+	left: 50%;
+	display: none;
+	margin-top: -20px;
+	margin-left: -20px;
+}
+
 .header__video-bottom {
 	bottom: 5vh;
 }
@@ -2300,6 +2308,10 @@ body.offcanvas-active {
 	width: 100%;
 	-o-object-fit: cover;
 	object-fit: cover;
+}
+
+.is-mobile .header__video .play-button {
+	display: block;
 }
 
 .home__cards .card p {
