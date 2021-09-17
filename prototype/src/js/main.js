@@ -396,6 +396,29 @@ function playVideoButton() {
   }
 }
 
+function socialShareJob() {
+  $(".social-share.btn").on("mouseenter", function () {
+    $(this)
+      .stop(true, true)
+      .removeClass("square")
+      .find(".social-share-open")
+      .addClass("d-none")
+      .parent()
+      .find(".social-share-close, .social-share-buttons")
+      .removeClass("d-none");
+  });
+  $(".social-share.btn").on("mouseleave", function () {
+    $(this)
+      .stop(true, true)
+      .addClass("square")
+      .find(".social-share-open")
+      .removeClass("d-none")
+      .parent()
+      .find(".social-share-close, .social-share-buttons")
+      .addClass("d-none");
+  });
+}
+
 jQuery(document).ready(function () {
   if (mobileAndTabletCheck()) {
     $("body").addClass("is-mobile");
@@ -424,6 +447,7 @@ jQuery(document).ready(function () {
   appValidation();
   slideThem();
   playVideoButton();
+  socialShareJob();
 
   console.log(getCookie("cookies-accepted"));
 

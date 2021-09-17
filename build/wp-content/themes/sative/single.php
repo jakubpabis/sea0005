@@ -43,15 +43,16 @@ get_header(); ?>
 							<div class="col-lg-10">
 								<?php the_content();
 
-								if (get_field('button')) :
-									echo '<a href="' . get_field('button')['url'] . '" class="btn btn__default yellow">' . get_field('button')['title'] . '</a>';
-								endif;
-
 								if (get_field('file_download')) :
+
+									echo '<a href="javascript:void(0)" data-toggle="modal" data-target="#whitepapersModal" class="btn-whitepaper"><i class="far fa-arrow-to-bottom"></i>' . pll__("Download") . ' ' . get_field('file_download')['title'] . '</a>';
 									if (get_field('button')) :
 										echo '<br />';
 									endif;
-									echo '<a href="javascript:void(0)" data-toggle="modal" data-target="#whitepapersModal" class="btn btn__default yellow">' . pll__("Download") . ' ' . get_field('file_download')['title'] . '</a>';
+								endif;
+
+								if (get_field('button')) :
+									echo '<a href="' . get_field('button')['url'] . '" class="btn btn__default yellow">' . get_field('button')['title'] . '</a>';
 								endif;
 
 								?>
@@ -132,7 +133,7 @@ get_header(); ?>
 	<div id="whitepapersModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="whitepapersModalTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 			<div class="modal-content">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<button type="button" class="close position-absolute right-0 top-0" data-dismiss="modal" aria-label="Close">
 					<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path fill-rule="evenodd" clip-rule="evenodd" d="M30.3884 34.2353L20.1176 23.9745L9.84745 34.2353L6 30.3939L16.2713 20.1321L16.2568 20.1171L16.2713 20.1027L6.00107 9.84138L9.84638 6L20.1176 16.2597L30.3889 6L34.2348 9.84138L23.964 20.1027L23.979 20.1171L23.964 20.1321L34.2353 30.3939L30.3884 34.2353ZM0 40H40V0H0V40Z" fill="#EC6278" />
 					</svg>
@@ -160,7 +161,7 @@ get_header(); ?>
 									<input type="hidden" name="whitepapers-url" value="<?php echo get_field('file_download')['url']; ?>">
 									<input type="hidden" name="action" value="whitepapers_form">
 									<?php wp_nonce_field('whitepapers_form', 'whitepapers_form_nonce'); ?>
-									<button type="submit" class="btn btn__notched d-flex align-items-center"><i class="far fa-download"></i> <span class="text-size-large ml-3"><?php pll_e('Download'); ?></span></button>
+									<button type="submit" class="btn btn__notched d-flex align-items-center"><i class="far fa-download"></i> <span class="text-size-large my-0 ml-3"><?php pll_e('Download'); ?></span></button>
 								</div>
 							</div>
 						</form>

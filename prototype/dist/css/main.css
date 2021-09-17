@@ -2053,6 +2053,25 @@ body.offcanvas-active {
 	padding-bottom: 120px;
 }
 
+.header__jobs .social-share.btn.btn__default.outline.navy {
+	height: 48px !important;
+}
+
+.header__jobs .social-share.btn.btn__default.outline.navy:hover,
+.header__jobs .social-share.btn.btn__default.outline.navy:focus,
+.header__jobs .social-share.btn.btn__default.outline.navy:active {
+	padding-top: 14px !important;
+	padding-bottom: 14px !important;
+	color: #183153 !important;
+	background-color: transparent !important;
+}
+
+.header__jobs .social-share.btn.btn__default.outline.navy:hover *,
+.header__jobs .social-share.btn.btn__default.outline.navy:focus *,
+.header__jobs .social-share.btn.btn__default.outline.navy:active * {
+	color: #183153 !important;
+}
+
 .header__jobs-cats {
 	display: flex;
 }
@@ -5397,8 +5416,35 @@ aside#chat .dog {
 	color: #ec6278;
 }
 
+.article article .btn-whitepaper {
+	font-size: 16px;
+	font-weight: 700;
+	display: inline-block;
+	margin-top: 20px;
+	text-transform: uppercase;
+	color: #183153;
+}
+
+.article article .btn-whitepaper i {
+	font-size: 20px;
+	width: 32px;
+	height: 32px;
+	margin-right: 10px;
+	padding: 5px;
+	text-align: center;
+	color: white;
+	background-color: #183153;
+	-webkit-clip-path: polygon(0% 4px, 4px 0%, calc(100% - 4px) 0%, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0% calc(100% - 4px));
+	clip-path: polygon(0% 4px, 4px 0%, calc(100% - 4px) 0%, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0% calc(100% - 4px));
+}
+
 .article article .btn {
-	margin-top: 30px;
+	margin-top: 25px;
+	margin-bottom: 15px;
+}
+
+.article article hr {
+	border-top: 1px solid rgba(24, 49, 83, .5);
 }
 
 .article aside .card {
