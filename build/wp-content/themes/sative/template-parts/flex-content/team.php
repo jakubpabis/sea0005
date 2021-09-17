@@ -15,7 +15,7 @@
 									<div class="col-md-5">
 										<?php if (has_post_thumbnail($item->ID)) : ?>
 											<div class="team__item-img">
-												<img class="lazy bg-cover" data-src="<?php echo get_the_post_thumbnail_url($item->ID); ?>" alt="">
+												<img class="lazy bg-cover h-100" data-src="<?php echo get_the_post_thumbnail_url($item->ID); ?>" alt="">
 											</div>
 										<?php endif; ?>
 									</div>
