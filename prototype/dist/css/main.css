@@ -4195,6 +4195,25 @@ aside#chat .dog {
 	margin-top: 30px;
 }
 
+.jobs__single .social-share.btn.btn__default.outline.navy {
+	height: 48px !important;
+}
+
+.jobs__single .social-share.btn.btn__default.outline.navy:hover,
+.jobs__single .social-share.btn.btn__default.outline.navy:focus,
+.jobs__single .social-share.btn.btn__default.outline.navy:active {
+	padding-top: 14px !important;
+	padding-bottom: 14px !important;
+	color: #183153 !important;
+	background-color: transparent !important;
+}
+
+.jobs__single .social-share.btn.btn__default.outline.navy:hover *,
+.jobs__single .social-share.btn.btn__default.outline.navy:focus *,
+.jobs__single .social-share.btn.btn__default.outline.navy:active * {
+	color: #183153 !important;
+}
+
 .jobs__single-process {
 	min-height: 500px;
 	--notchSize: 164px;

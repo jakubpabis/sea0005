@@ -535,6 +535,21 @@
       }
     }
 
+    .social-share.btn.btn__default.outline.navy {
+      height: 48px !important;
+      &:hover,
+      &:focus,
+      &:active {
+        padding-top: 14px !important;
+        padding-bottom: 14px !important;
+        color: $color-primary !important;
+        background-color: transparent !important;
+        * {
+          color: $color-primary !important;
+        }
+      }
+    }
+
     &-process {
       --notchSize: 164px;
 
