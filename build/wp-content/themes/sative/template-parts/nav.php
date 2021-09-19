@@ -95,6 +95,9 @@ if ($lang === 'en') {
 																<div class="col-12 d-lg-block d-none">
 																	<hr>
 																</div>
+																<div class="col-12 d-lg-none d-block">
+																	<a href="javascript:void(0)" onclick="mobileMenuGoBack()" class="mega-menu-go-back"><?php pll_e('Go back') ?></a>
+																</div>
 																<div class="col-lg-10 pt-4 pb-5">
 																	<h2 class="text400 font-primary">
 																		<?php echo get_sub_field('submenu')[0]['big_title']; ?>
