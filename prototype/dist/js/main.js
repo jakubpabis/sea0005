@@ -4795,8 +4795,9 @@ function megaMenu() {
     var $this = $(event.target);
     //console.log($this.parent());
     if (
-      $this.parents(".mega-menu-parent").length < 1 &&
-      $(".mega-menu-parent").is(":visible")
+      ($this.parents(".mega-menu-parent").length < 1 &&
+        $(".mega-menu-parent").is(":visible")) ||
+      $this.hasClass("mega-menu-go-back")
     ) {
       console.log($this);
       $(".mega-menu-parent")

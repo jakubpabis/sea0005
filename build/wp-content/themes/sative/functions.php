@@ -10,7 +10,7 @@
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '4.0.6');
+	define('_S_VERSION', '4.0.7');
 }
 
 if (!function_exists('sative_setup')) :
@@ -637,7 +637,8 @@ $toTranslate = array(
 	'Waar ben jij naar op zoek?',
 	'Company',
 	'Email address',
-	'Message'
+	'Message',
+	'Go back'
 );
 
 if (function_exists('pll_register_string')) {

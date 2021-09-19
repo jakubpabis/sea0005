@@ -190,7 +190,7 @@
       justify-content: flex-end;
 
       @media (max-width: 991px) {
-        margin: 20px auto;
+        margin: 20px auto 40px;
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;
@@ -346,6 +346,7 @@
             top: 0 !important;
             min-height: 100vh;
             z-index: 9;
+            padding-bottom: 70px;
           }
 
           > .container {
@@ -356,10 +357,36 @@
             list-style: none;
             padding: 0;
             margin: 0;
+
+            @media (max-width: 991px) {
+              margin-bottom: 60px;
+            }
+          }
+
+          &__hashtags {
+            a {
+              @media (max-width: 767px) {
+                font-size: 14px !important;
+              }
+            }
           }
 
           &__big-submenu {
             margin-left: -15px !important;
+
+            &-lower {
+              @media (max-width: 575px) {
+                background-color: $color-primary;
+
+                ul {
+                  li {
+                    a {
+                      color: white !important;
+                    }
+                  }
+                }
+              }
+            }
 
             > li {
               margin: 15px 0;
@@ -387,10 +414,23 @@
             width: 45%;
             border-top: 1px solid $color-navy;
 
+            @media (max-width: 575px) {
+              position: relative;
+              width: 100%;
+              right: auto;
+              top: auto;
+              margin-top: 9px !important;
+              margin-bottom: 0 !important;
+            }
+
             > li {
               border-bottom: 1px solid $color-navy;
               padding: 18px 0;
               position: relative;
+
+              @media (max-width: 991px) {
+                padding: 10px 0;
+              }
 
               > a {
                 display: block;
@@ -398,10 +438,18 @@
                 padding-right: 50px;
                 margin: 0;
 
+                @media (max-width: 575px) {
+                  padding-left: 15px;
+                }
+
                 svg {
                   position: absolute;
                   right: 0;
                   top: 29px;
+
+                  @media (max-width: 991px) {
+                    top: 18px;
+                  }
                 }
               }
             }
@@ -419,9 +467,20 @@
               width: calc(50% - 15px);
               position: relative;
 
+              @media (max-width: 757px) {
+                width: 100%;
+                padding: 10px 0;
+              }
+
               &:nth-child(1),
               &:nth-child(2) {
                 border-top: 1px solid $color-navy;
+              }
+
+              &:nth-child(2) {
+                @media (max-width: 757px) {
+                  border-top: none;
+                }
               }
 
               > a {
@@ -434,6 +493,10 @@
                   position: absolute;
                   right: 0;
                   top: 29px;
+
+                  @media (max-width: 757px) {
+                    top: 18px;
+                  }
                 }
               }
             }
@@ -567,8 +630,20 @@
       bottom: 0;
       background-color: $color-sea;
       min-width: 100%;
-      padding: 40px 15px !important;
+      overflow: hidden;
+      padding: 0 !important;
       border-top: 1px solid $color-navy;
+    }
+
+    &-container {
+      @media (max-width: 991px) {
+        padding: 30px 15px 0;
+        position: relative;
+        overflow-y: scroll;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
     }
 
     @media (max-width: 575px) {
@@ -602,6 +677,43 @@
             background-size: 24px auto;
             background-repeat: no-repeat;
           }
+        }
+      }
+    }
+  }
+}
+
+.mobile-menu-lang {
+  margin: auto -15px 0;
+  background-color: $color-primary;
+
+  ul {
+    list-style: none;
+    padding: 15px 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    li {
+      font-size: 16px;
+      text-transform: uppercase;
+      margin: 0 5px;
+      padding: 0;
+
+      a {
+        padding: 2px;
+        text-transform: uppercase;
+        color: white;
+
+        &:hover {
+          color: inherit;
+        }
+      }
+
+      &.current-lang {
+        a {
+          font-weight: 600;
+          text-decoration: underline;
         }
       }
     }

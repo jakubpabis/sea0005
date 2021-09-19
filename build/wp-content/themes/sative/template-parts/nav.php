@@ -76,166 +76,178 @@ if ($lang === 'en') {
 				<div class="col">
 					<div class="row align-items-center justify-content-end">
 						<div class="col-lg-auto col-md-6 pr-0 navigation-main-menu">
-							<form action="<?php echo getTplPageURL(); ?>" method="GET" class="pb-1 d-block d-lg-none">
-								<input class="mb-3 job-search-nice" type="search" name="job-title" placeholder="<?php pll_e('Let me help you find the perfect job'); ?>">
-							</form>
-							<?php if (have_rows($menu_items, 'option')) : ?>
-								<ul class="navigation__lower-menu">
-									<?php while (have_rows($menu_items, 'option')) : the_row(); ?>
-										<?php if (get_sub_field('item_type') === 'link') : ?>
-											<li>
-												<a href="<?php echo get_sub_field('menu_link')['url']; ?>"><?php echo get_sub_field('menu_link')['title']; ?></a>
-											<?php else : ?>
-											<li class="mega-menu-parent">
-												<a href="javascript:void(0)"><?php echo get_sub_field('submenu')[0]['link_title']; ?></a>
-												<section class="mega-menu-container">
-													<div class="mega-menu d-flex">
-														<div class="container d-flex flex-column justify-content-between">
-															<div class="row justify-content-center">
-																<div class="col-12 d-lg-block d-none">
-																	<hr>
-																</div>
-																<div class="col-12 d-lg-none d-block">
-																	<a href="javascript:void(0)" onclick="mobileMenuGoBack()" class="mega-menu-go-back"><?php pll_e('Go back') ?></a>
-																</div>
-																<div class="col-lg-10 pt-4 pb-5">
-																	<h2 class="text400 font-primary">
-																		<?php echo get_sub_field('submenu')[0]['big_title']; ?>
-																	</h2>
-																	<?php if (get_sub_field('submenu')[0]) : $layout = get_sub_field('submenu')[0]['acf_fc_layout']; ?>
-																		<?php if ($layout == 'standard_submenu') : ?>
-																			<div class="row justify-content-between">
-																				<div class="col-12">
-																					<?php if (get_sub_field('submenu')[0]['second_level_submenu']) : ?>
-																						<ul class="mega-menu__big-submenu">
-																							<?php foreach (get_sub_field('submenu')[0]['second_level_submenu'] as $item) : ?>
-																								<?php if ($item['item_type'] === 'link') : ?>
-																									<li>
-																										<a class="h2" href="<?php echo $item['menu_item']['url']; ?>">
-																											<?php echo $item['menu_item']['title']; ?>
-																										</a>
-																									<?php else : ?>
-																									<li class="mega-menu__side-submenu-parent">
-																										<a class="h2" href="javascript:void(0)"><?php echo $item['submenu_item']; ?></a>
-																										<?php if (!empty($item['submenu_links'])) : ?>
-																											<ul class="mega-menu__side-submenu">
-																												<?php foreach ($item['submenu_links'] as $sub) : ?>
-																													<li>
-																														<a class="h3 font-primary text500" href="<?php echo $sub['third_level_menu_item']['url']; ?>">
-																															<?php echo $sub['third_level_menu_item']['title']; ?>
-																															<svg height="18" width="34" xmlns="http://www.w3.org/2000/svg">
-																																<path d="M25.885.278l7.844 8.051a.947.947 0 01.078.091l-.078-.09a.95.95 0 01.236.412l.006.023A.895.895 0 0134 9l-.006.11-.002.011a.974.974 0 01-.02.114c-.003.007-.004.014-.006.022a.91.91 0 01-.159.323l-.01.013-.068.078-7.844 8.051a.91.91 0 01-1.307 0 .966.966 0 010-1.342l6.265-6.432H.924C.414 9.949 0 9.525 0 9s.414-.949.924-.949h29.92L24.578 1.62a.966.966 0 010-1.342.908.908 0 011.307 0z" fill="#183153" />
-																															</svg>
-																														</a>
-																													</li>
-																												<?php endforeach; ?>
-																											</ul>
+							<div class="navigation-main-menu-container">
+								<form action="<?php echo getTplPageURL(); ?>" method="GET" class="pb-1 d-block d-lg-none">
+									<input class="mb-3 job-search-nice" type="search" name="job-title" placeholder="<?php pll_e('Let me help you find the perfect job'); ?>">
+								</form>
+								<?php if (have_rows($menu_items, 'option')) : ?>
+									<ul class="navigation__lower-menu">
+										<?php while (have_rows($menu_items, 'option')) : the_row(); ?>
+											<?php if (get_sub_field('item_type') === 'link') : ?>
+												<li>
+													<a href="<?php echo get_sub_field('menu_link')['url']; ?>"><?php echo get_sub_field('menu_link')['title']; ?></a>
+												<?php else : ?>
+												<li class="mega-menu-parent">
+													<a href="javascript:void(0)"><?php echo get_sub_field('submenu')[0]['link_title']; ?></a>
+													<section class="mega-menu-container">
+														<div class="mega-menu d-flex">
+															<div class="container d-flex flex-column justify-content-between">
+																<div class="row justify-content-center">
+																	<div class="col-12 d-lg-block d-none">
+																		<hr>
+																	</div>
+																	<div class="col-12 d-lg-none d-block mt-4">
+																		<a href="javascript:void(0)" onclick="mobileMenuGoBack()" class="mega-menu-go-back text-uppercase text700"><i class="fa fa-arrow-left mr-3"></i><?php pll_e('Go back') ?></a>
+																	</div>
+																	<div class="col-lg-10 pt-4 pb-5">
+																		<h2 class="text400 font-primary">
+																			<?php echo get_sub_field('submenu')[0]['big_title']; ?>
+																		</h2>
+																		<?php if (get_sub_field('submenu')[0]) : $layout = get_sub_field('submenu')[0]['acf_fc_layout']; ?>
+																			<?php if ($layout == 'standard_submenu') : ?>
+																				<div class="row justify-content-between">
+																					<div class="col-12">
+																						<?php if (get_sub_field('submenu')[0]['second_level_submenu']) : ?>
+																							<ul class="mega-menu__big-submenu">
+																								<?php foreach (get_sub_field('submenu')[0]['second_level_submenu'] as $item) : ?>
+																									<?php if ($item['item_type'] === 'link') : ?>
+																										<li>
+																											<a class="h2" href="<?php echo $item['menu_item']['url']; ?>">
+																												<?php echo $item['menu_item']['title']; ?>
+																											</a>
+																										<?php else : ?>
+																										<li class="mega-menu__side-submenu-parent">
+																											<a class="h2" href="javascript:void(0)"><?php echo $item['submenu_item']; ?></a>
+																											<?php if (!empty($item['submenu_links'])) : ?>
+																												<ul class="mega-menu__side-submenu">
+																													<?php foreach ($item['submenu_links'] as $sub) : ?>
+																														<li>
+																															<a class="h3 font-primary text500" href="<?php echo $sub['third_level_menu_item']['url']; ?>">
+																																<?php echo $sub['third_level_menu_item']['title']; ?>
+																																<svg height="18" width="34" xmlns="http://www.w3.org/2000/svg">
+																																	<path d="M25.885.278l7.844 8.051a.947.947 0 01.078.091l-.078-.09a.95.95 0 01.236.412l.006.023A.895.895 0 0134 9l-.006.11-.002.011a.974.974 0 01-.02.114c-.003.007-.004.014-.006.022a.91.91 0 01-.159.323l-.01.013-.068.078-7.844 8.051a.91.91 0 01-1.307 0 .966.966 0 010-1.342l6.265-6.432H.924C.414 9.949 0 9.525 0 9s.414-.949.924-.949h29.92L24.578 1.62a.966.966 0 010-1.342.908.908 0 011.307 0z" fill="#183153" />
+																																</svg>
+																															</a>
+																														</li>
+																													<?php endforeach; ?>
+																												</ul>
+																											<?php endif; ?>
 																										<?php endif; ?>
-																									<?php endif; ?>
+																										</li>
+																									<?php endforeach; ?>
+																							</ul>
+																						<?php endif; ?>
+																					</div>
+																				</div>
+																			<?php elseif ($layout == 'search_submenu') : ?>
+																				<div class="row">
+																					<div class="col-12">
+																						<form action="" class="pb-3">
+																							<input class="mb-3 job-search-nice" type="search" name="" id="" placeholder="<?php echo get_sub_field('submenu')[0]['search_placeholder_text']; ?>">
+																							<?php if (!empty(get_sub_field('submenu')[0]['hashtags'])) : ?>
+																								<div class="mega-menu__hashtags">
+																									<?php foreach (get_sub_field('submenu')[0]['hashtags'] as $item) : ?>
+																										<a href="<?php echo $item['hashtag']['url']; ?>" class="font-primary pr-2 pb-2 d-inline-block text-italic text500">
+																											<?php echo $item['hashtag']['title']; ?>
+																										</a>
+																									<?php endforeach; ?>
+																								</div>
+																							<?php endif; ?>
+																						</form>
+																						<?php if (get_sub_field('submenu')[0]['button']) : ?>
+																							<a href="<?php echo get_sub_field('submenu')[0]['button']['url']; ?>" class="btn btn__default yellow">
+																								<?php echo get_sub_field('submenu')[0]['button']['title']; ?>
+																							</a>
+																						<?php endif; ?>
+																						<h2 class="text400 font-primary pt-md-5 mt-5 mb-4">
+																							<?php echo get_sub_field('submenu')[0]['other_links_title']; ?>
+																						</h2>
+																						<?php if (get_sub_field('submenu')[0]['other_links']) : ?>
+																							<ul class="mega-menu__lower-submenu">
+																								<?php foreach (get_sub_field('submenu')[0]['other_links'] as $item) : ?>
+																									<li>
+																										<a class="h3 font-primary text500" href="<?php echo $item['link']['url']; ?>">
+																											<?php echo $item['link']['title']; ?>
+																											<svg height="18" width="34" xmlns="http://www.w3.org/2000/svg">
+																												<path d="M25.885.278l7.844 8.051a.947.947 0 01.078.091l-.078-.09a.95.95 0 01.236.412l.006.023A.895.895 0 0134 9l-.006.11-.002.011a.974.974 0 01-.02.114c-.003.007-.004.014-.006.022a.91.91 0 01-.159.323l-.01.013-.068.078-7.844 8.051a.91.91 0 01-1.307 0 .966.966 0 010-1.342l6.265-6.432H.924C.414 9.949 0 9.525 0 9s.414-.949.924-.949h29.92L24.578 1.62a.966.966 0 010-1.342.908.908 0 011.307 0z" fill="#183153" />
+																											</svg>
+																										</a>
 																									</li>
 																								<?php endforeach; ?>
-																						</ul>
-																					<?php endif; ?>
-																				</div>
-																			</div>
-																		<?php elseif ($layout == 'search_submenu') : ?>
-																			<div class="row">
-																				<div class="col-12">
-																					<form action="" class="pb-3">
-																						<input class="mb-3 job-search-nice" type="search" name="" id="" placeholder="<?php echo get_sub_field('submenu')[0]['search_placeholder_text']; ?>">
-																						<?php if (!empty(get_sub_field('submenu')[0]['hashtags'])) : ?>
-																							<div class="mega-menu__hashtags">
-																								<?php foreach (get_sub_field('submenu')[0]['hashtags'] as $item) : ?>
-																									<a href="<?php echo $item['hashtag']['url']; ?>" class="font-primary pr-2 pb-2 d-inline-block text-italic text500">
-																										<?php echo $item['hashtag']['title']; ?>
-																									</a>
-																								<?php endforeach; ?>
-																							</div>
+																							</ul>
 																						<?php endif; ?>
-																					</form>
-																					<?php if (get_sub_field('submenu')[0]['button']) : ?>
-																						<a href="<?php echo get_sub_field('submenu')[0]['button']['url']; ?>" class="btn btn__default yellow">
-																							<?php echo get_sub_field('submenu')[0]['button']['title']; ?>
-																						</a>
-																					<?php endif; ?>
-																					<h2 class="text400 font-primary pt-5 mt-5 mb-4">
-																						<?php echo get_sub_field('submenu')[0]['other_links_title']; ?>
-																					</h2>
-																					<?php if (get_sub_field('submenu')[0]['other_links']) : ?>
-																						<ul class="mega-menu__lower-submenu">
-																							<?php foreach (get_sub_field('submenu')[0]['other_links'] as $item) : ?>
-																								<li>
-																									<a class="h3 font-primary text500" href="<?php echo $item['link']['url']; ?>">
-																										<?php echo $item['link']['title']; ?>
-																										<svg height="18" width="34" xmlns="http://www.w3.org/2000/svg">
-																											<path d="M25.885.278l7.844 8.051a.947.947 0 01.078.091l-.078-.09a.95.95 0 01.236.412l.006.023A.895.895 0 0134 9l-.006.11-.002.011a.974.974 0 01-.02.114c-.003.007-.004.014-.006.022a.91.91 0 01-.159.323l-.01.013-.068.078-7.844 8.051a.91.91 0 01-1.307 0 .966.966 0 010-1.342l6.265-6.432H.924C.414 9.949 0 9.525 0 9s.414-.949.924-.949h29.92L24.578 1.62a.966.966 0 010-1.342.908.908 0 011.307 0z" fill="#183153" />
-																										</svg>
-																									</a>
-																								</li>
-																							<?php endforeach; ?>
-																						</ul>
-																					<?php endif; ?>
+																					</div>
 																				</div>
-																			</div>
-																		<?php elseif ($layout == 'text_submenu') : ?>
-																			<?php echo get_sub_field('submenu')[0]['submenu_text']; ?>
-																			<?php if (get_sub_field('submenu')[0]['button']) : ?>
-																				<a href="<?php echo get_sub_field('submenu')[0]['button']['url']; ?>" class="btn btn__default yellow">
-																					<?php echo get_sub_field('submenu')[0]['button']['title']; ?>
-																				</a>
+																			<?php elseif ($layout == 'text_submenu') : ?>
+																				<?php echo get_sub_field('submenu')[0]['submenu_text']; ?>
+																				<?php if (get_sub_field('submenu')[0]['button']) : ?>
+																					<a href="<?php echo get_sub_field('submenu')[0]['button']['url']; ?>" class="btn btn__default yellow">
+																						<?php echo get_sub_field('submenu')[0]['button']['title']; ?>
+																					</a>
+																				<?php endif; ?>
+																				<div class="row justify-content-between">
+																					<div class="col-12 pt-md-5 pt-4">
+																						<h2 class="text400 font-primary mt-md-5 mb-4">
+																							<?php echo get_sub_field('submenu')[0]['submenu_links_title']; ?>
+																						</h2>
+																						<?php if (get_sub_field('submenu')[0]['second_level_submenu']) : ?>
+																							<ul class="mega-menu__lower-submenu">
+																								<?php foreach (get_sub_field('submenu')[0]['second_level_submenu'] as $item) : ?>
+																									<li>
+																										<a class="h3 font-primary text500" href="<?php echo $item['link']['url']; ?>">
+																											<?php echo $item['link']['title']; ?>
+																											<svg height="18" width="34" xmlns="http://www.w3.org/2000/svg">
+																												<path d="M25.885.278l7.844 8.051a.947.947 0 01.078.091l-.078-.09a.95.95 0 01.236.412l.006.023A.895.895 0 0134 9l-.006.11-.002.011a.974.974 0 01-.02.114c-.003.007-.004.014-.006.022a.91.91 0 01-.159.323l-.01.013-.068.078-7.844 8.051a.91.91 0 01-1.307 0 .966.966 0 010-1.342l6.265-6.432H.924C.414 9.949 0 9.525 0 9s.414-.949.924-.949h29.92L24.578 1.62a.966.966 0 010-1.342.908.908 0 011.307 0z" fill="#183153" />
+																											</svg>
+																										</a>
+																									</li>
+																								<?php endforeach; ?>
+																							</ul>
+																						<?php endif; ?>
+																					</div>
+																				</div>
 																			<?php endif; ?>
-																			<div class="row justify-content-between">
-																				<div class="col-12 pt-5">
-																					<h2 class="text400 font-primary mt-5 mb-4">
-																						<?php echo get_sub_field('submenu')[0]['submenu_links_title']; ?>
-																					</h2>
-																					<?php if (get_sub_field('submenu')[0]['second_level_submenu']) : ?>
-																						<ul class="mega-menu__lower-submenu">
-																							<?php foreach (get_sub_field('submenu')[0]['second_level_submenu'] as $item) : ?>
-																								<li>
-																									<a class="h3 font-primary text500" href="<?php echo $item['link']['url']; ?>">
-																										<?php echo $item['link']['title']; ?>
-																										<svg height="18" width="34" xmlns="http://www.w3.org/2000/svg">
-																											<path d="M25.885.278l7.844 8.051a.947.947 0 01.078.091l-.078-.09a.95.95 0 01.236.412l.006.023A.895.895 0 0134 9l-.006.11-.002.011a.974.974 0 01-.02.114c-.003.007-.004.014-.006.022a.91.91 0 01-.159.323l-.01.013-.068.078-7.844 8.051a.91.91 0 01-1.307 0 .966.966 0 010-1.342l6.265-6.432H.924C.414 9.949 0 9.525 0 9s.414-.949.924-.949h29.92L24.578 1.62a.966.966 0 010-1.342.908.908 0 011.307 0z" fill="#183153" />
-																										</svg>
-																									</a>
-																								</li>
-																							<?php endforeach; ?>
-																						</ul>
-																					<?php endif; ?>
+																		<?php endif; ?>
+																	</div>
+																</div>
+																<?php if (get_sub_field('submenu')[0]) : $layout = get_sub_field('submenu')[0]['acf_fc_layout']; ?>
+																	<?php if ($layout == 'standard_submenu' || $layout == 'text_submenu') : ?>
+																		<?php if (get_sub_field('submenu')[0]['other_links']) : ?>
+																			<div class="row justify-content-center pb-sm-5 pt-sm-0 py-4 mega-menu__big-submenu-lower">
+																				<div class="col-lg-10 mt-auto mb-0">
+																					<ul class="d-sm-flex align-items-end">
+																						<?php foreach (get_sub_field('submenu')[0]['other_links'] as $sub) : ?>
+																							<li class="mr-sm-5">
+																								<a class="h3 text500 font-primary" href="<?php echo $sub['link']['url']; ?>">
+																									<?php echo $sub['link']['title']; ?>
+																								</a>
+																							</li>
+																						<?php endforeach; ?>
+																					</ul>
 																				</div>
 																			</div>
 																		<?php endif; ?>
 																	<?php endif; ?>
-																</div>
-															</div>
-															<?php if (get_sub_field('submenu')[0]) : $layout = get_sub_field('submenu')[0]['acf_fc_layout']; ?>
-																<?php if ($layout == 'standard_submenu' || $layout == 'text_submenu') : ?>
-																	<?php if (get_sub_field('submenu')[0]['other_links']) : ?>
-																		<div class="row justify-content-center pb-5">
-																			<div class="col-lg-10 mt-auto mb-0">
-																				<ul class="d-flex align-items-end">
-																					<?php foreach (get_sub_field('submenu')[0]['other_links'] as $sub) : ?>
-																						<li class="mr-5">
-																							<a class="h3 text500 font-primary" href="<?php echo $sub['link']['url']; ?>">
-																								<?php echo $sub['link']['title']; ?>
-																							</a>
-																						</li>
-																					<?php endforeach; ?>
-																				</ul>
-																			</div>
-																		</div>
-																	<?php endif; ?>
 																<?php endif; ?>
-															<?php endif; ?>
+															</div>
 														</div>
-													</div>
-												</section>
-											<?php endif; ?>
-											</li>
-										<?php endwhile; ?>
-								</ul>
-							<?php endif; ?>
+													</section>
+												<?php endif; ?>
+												</li>
+											<?php endwhile; ?>
+									</ul>
+								<?php endif; ?>
+								<div class="d-lg-none d-flex mobile-menu-lang align-items-center justify-content-center">
+									<ul>
+										<?php
+										pll_the_languages(array(
+											'show_names' => 0,
+											'display_names_as' => 'slug'
+										));
+										?>
+									</ul>
+								</div>
+							</div>
 						</div>
 						<div class="col-auto pl-1 navigation__lower-utils">
 							<a href="javascript:void(0)" class="d-none d-lg-inline-block" data-toggle="modal" data-target="#searchPopupModal"><i class="far fa-search"></i></a>
