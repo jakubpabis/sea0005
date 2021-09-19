@@ -414,19 +414,21 @@ function hierarchical_tax_tree_filter($cat, $tax, $active, $orderby = 'count', $
 	if ($next) :
 		echo '<ul>';
 		foreach ($next as $cat) :
-			if ($active === null) {
-				$active = [];
+			if ($cat->name !== 'Search X Internal Jobs') {
+				if ($active === null) {
+					$active = [];
+				}
+				if (get_query_var('term') == $cat->category_nicename || in_array($cat->slug, $active)) {
+					echo '<li class="active">';
+					$checked = 'checked';
+				} else {
+					echo '<li>';
+					$checked = null;
+				}
+				echo '<span>' . $cat->name . '<input type="checkbox" data-name="' . $cat->category_nicename . '" ' . $checked . ' name="' . $tax . '[]" value="' . $cat->slug . '"></span>';
+				hierarchical_tax_tree_filter($cat->term_id, $tax, $active);
+				echo '</li>';
 			}
-			if (get_query_var('term') == $cat->category_nicename || in_array($cat->slug, $active)) {
-				echo '<li class="active">';
-				$checked = 'checked';
-			} else {
-				echo '<li>';
-				$checked = null;
-			}
-			echo '<span>' . $cat->name . '<input type="checkbox" data-name="' . $cat->category_nicename . '" ' . $checked . ' name="' . $tax . '[]" value="' . $cat->slug . '"></span>';
-			hierarchical_tax_tree_filter($cat->term_id, $tax, $active);
-			echo '</li>';
 		endforeach;
 		echo '</ul>';
 	endif;

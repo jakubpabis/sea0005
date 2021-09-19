@@ -55,6 +55,8 @@ get_header(); ?>
 				<?php get_template_part('template-parts/flex-content/bottom-bar'); ?>
 			<?php elseif (get_row_layout() == 'recruitment_labels') : ?>
 				<?php get_template_part('template-parts/flex-content/labels'); ?>
+			<?php elseif (get_row_layout() == 'internal_jobs') : ?>
+				<?php get_template_part('template-parts/flex-content/internal-jobs'); ?>
 			<?php endif; ?>
 		<?php endwhile; ?>
 	</div>
