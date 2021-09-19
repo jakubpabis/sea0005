@@ -45,7 +45,7 @@
 						</div>
 					</div>
 				<?php endif; ?>
-				<div class="mb-4">
+				<div class="mb-4 ml-4 pl-1 pt-3">
 					<a href="https://www.facebook.com/searchxrecruitment" class="btn btn__social notched sea" target="_blank">
 						<i class="fab fa-facebook-f"></i>
 					</a>

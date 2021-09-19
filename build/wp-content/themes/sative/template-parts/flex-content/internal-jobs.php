@@ -47,7 +47,7 @@ $post_no = $query->found_posts;
 		</div>
 	</header>
 
-	<section class="jobs__list">
+	<section class="jobs__list mb-0">
 		<div class="container">
 			<div class="row justify-content-md-center justify-content-end">
 				<div id="jobs__list-cont" class="col-12">
