@@ -450,7 +450,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 											<?php echo get_field('phone', $recruiter->ID); ?>
 										</a>
 									</div>
-									<a href="" class="line-height-1 btn btn__default icon color-white pink text-uppercase my-3 d-inline-flex text-left w-auto mr-xl-4 mr-lg-4 align-items-center">
+									<a href="<?php echo get_field('whatsapp', $recruiter->ID); ?>" class="line-height-1 btn btn__default icon color-white pink text-uppercase my-3 d-inline-flex text-left w-auto mr-xl-4 mr-lg-4 align-items-center">
 										<i class="fab fa-whatsapp mr-3 fa-21px"></i>
 										<span><?php pll_e('Stel een vraag via Whatsapp'); ?></span>
 									</a>
