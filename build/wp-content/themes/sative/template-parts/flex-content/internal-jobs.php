@@ -62,8 +62,8 @@ $post_no = $query->found_posts;
 						<div class="row">
 							<?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
 									$helper = jobDisplayHelper(); ?>
-									<div class="col-lg-6">
-										<article class="card jobs__list-item bg-white">
+									<div class="col-lg-6 mb-4">
+										<article class="card jobs__list-item bg-white mb-0 h-100">
 											<div class="job-title">
 												<?php if (strlen($helper['supCatName']) > 0) : ?>
 													<span class="icon" data-type="<?php echo $helper['supCatName']; ?>"></span>
@@ -105,7 +105,7 @@ $post_no = $query->found_posts;
 												<?php endif; ?>
 											</div>
 
-											<a href="<?php echo get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e('More info'); ?></a>
+											<a href="<?php echo get_the_permalink(); ?>" class="btn btn__small navy mt-4"><?php pll_e('More info'); ?></a>
 										</article>
 									</div>
 							<?php endwhile;
