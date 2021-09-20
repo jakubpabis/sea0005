@@ -63,7 +63,7 @@ $post_no = $query->found_posts;
 							<?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
 									$helper = jobDisplayHelper(); ?>
 									<div class="col-lg-6 mb-4">
-										<article class="card jobs__list-item bg-white mb-0 h-100">
+										<article class="card jobs__list-item bg-white mb-0 h-100 d-flex flex-column">
 											<div class="job-title">
 												<?php if (strlen($helper['supCatName']) > 0) : ?>
 													<span class="icon" data-type="<?php echo $helper['supCatName']; ?>"></span>
@@ -98,14 +98,14 @@ $post_no = $query->found_posts;
 													</div>
 												<?php endif; ?>
 												<?php if ($helper['industry']) : ?>
-													<div class="info__item">
+													<div class="info__item mb-4">
 														<i class="briefcase"></i>
 														<span class="industry"><?php echo $helper['industry']; ?></span>
 													</div>
 												<?php endif; ?>
 											</div>
 
-											<a href="<?php echo get_the_permalink(); ?>" class="btn btn__small navy mt-4"><?php pll_e('More info'); ?></a>
+											<a href="<?php echo get_the_permalink(); ?>" class="btn btn__small navy mt-auto"><?php pll_e('More info'); ?></a>
 										</article>
 									</div>
 							<?php endwhile;
