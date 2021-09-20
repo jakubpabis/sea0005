@@ -70,7 +70,7 @@ $post_no = $query->found_posts;
 												<?php endif; ?>
 												<h3 class="title m-0"><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
 											</div>
-											<div class="info">
+											<div class="info mb-4">
 												<?php if (get_field('location')) : ?>
 													<div class="info__item">
 														<i class="place"></i>
@@ -98,7 +98,7 @@ $post_no = $query->found_posts;
 													</div>
 												<?php endif; ?>
 												<?php if ($helper['industry']) : ?>
-													<div class="info__item mb-4">
+													<div class="info__item">
 														<i class="briefcase"></i>
 														<span class="industry"><?php echo $helper['industry']; ?></span>
 													</div>
