@@ -664,6 +664,11 @@
           background-position: center;
           background-size: 30px 30px;
           background-repeat: no-repeat;
+
+          &.with-hashtags {
+            height: 51px;
+            bottom: auto;
+          }
         }
       }
     }

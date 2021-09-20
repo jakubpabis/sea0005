@@ -145,6 +145,7 @@ if ($lang === 'en') {
 																					<div class="col-12">
 																						<form action="" class="pb-3">
 																							<input class="mb-3 job-search-nice" type="search" name="" id="" placeholder="<?php echo get_sub_field('submenu')[0]['search_placeholder_text']; ?>">
+																							<button class="with-hashtags" type="submit"></button>
 																							<?php if (!empty(get_sub_field('submenu')[0]['hashtags'])) : ?>
 																								<div class="mega-menu__hashtags">
 																									<?php foreach (get_sub_field('submenu')[0]['hashtags'] as $item) : ?>

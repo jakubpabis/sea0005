@@ -1969,6 +1969,11 @@ body.offcanvas-active {
 	appearance: none !important;
 }
 
+.navigation-main-menu-container form button.with-hashtags {
+	bottom: auto;
+	height: 51px;
+}
+
 .mobile-menu-lang {
 	margin: auto -15px 0;
 	background-color: #183153;
