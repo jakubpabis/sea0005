@@ -644,6 +644,28 @@
         display: flex;
         flex-direction: column;
       }
+
+      form {
+        position: relative;
+        .job-search-nice {
+          background-image: none !important;
+        }
+        button {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          width: 51px;
+          appearance: none !important;
+          border: none !important;
+          outline: 0 !important;
+          background-color: transparent !important;
+          background-image: url("../img/search.svg");
+          background-position: center;
+          background-size: 30px 30px;
+          background-repeat: no-repeat;
+        }
+      }
     }
 
     @media (max-width: 575px) {

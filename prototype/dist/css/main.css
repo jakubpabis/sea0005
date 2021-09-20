@@ -1943,6 +1943,32 @@ body.offcanvas-active {
 	display: none;
 }
 
+.navigation-main-menu-container form {
+	position: relative;
+}
+
+.navigation-main-menu-container form .job-search-nice {
+	background-image: none !important;
+}
+
+.navigation-main-menu-container form button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 51px;
+	border: none !important;
+	outline: 0 !important;
+	background-color: transparent !important;
+	background-image: url('../img/search.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 30px 30px;
+	-webkit-appearance: none !important;
+	-moz-appearance: none !important;
+	appearance: none !important;
+}
+
 .mobile-menu-lang {
 	margin: auto -15px 0;
 	background-color: #183153;
@@ -2197,12 +2223,22 @@ body.offcanvas-active {
 	color: #183153;
 }
 
-.header__jobs-search input + i {
-	font-size: 24px;
+.header__jobs-search input + button {
 	position: absolute;
-	right: 32px;
-	bottom: 20px;
-	pointer-events: none;
+	top: 0;
+	right: 18px;
+	bottom: 0;
+	width: 51px;
+	border: none !important;
+	outline: 0 !important;
+	background-color: transparent !important;
+	background-image: url('../img/search.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 24px 24px;
+	-webkit-appearance: none !important;
+	-moz-appearance: none !important;
+	appearance: none !important;
 }
 
 .header__jobs-search .btn {
@@ -9219,6 +9255,10 @@ p,
 .header__jobs-search input {
 	margin-top: 30px;
 	margin-bottom: 0;
+}
+
+.header__jobs-search input + button {
+	top: 30px;
 }
 
 .header__jobs-search .btn.knowledge {

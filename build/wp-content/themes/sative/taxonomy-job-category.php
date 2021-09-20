@@ -25,7 +25,7 @@ get_header(); ?>
 			<div id="search-filter" class="row align-items-center justify-content-md-between header__jobs-search">
 				<div class="col-md-8 col-sm-11">
 					<input type="text" name="job-title" value="<?php echo isset($_GET['job-title']) ? $_GET['job-title'] : null ?>" placeholder="<?php pll_e('Enter job title here'); ?>">
-					<i class="far fa-search color-pink"></i>
+					<button type="submit"></button>
 				</div>
 				<div class="header__jobs-dog">
 					<svg viewBox="0 0 649.89 364.92" xmlns="http://www.w3.org/2000/svg">
