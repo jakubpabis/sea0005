@@ -3,12 +3,12 @@
 /**
  * Template Name: Cron
  */
-if (isset($GET['hash']) && $GET['hash'] == 'b31d032cfdcf47a399990a71e43c') {
+if (isset($_GET['hash']) && $_GET['hash'] === 'b31d032cfdcf47a399990a71e43c') {
 	$hash = true;
 } else {
 	$hash = false;
 }
-var_dump($GET['hash']);
+var_dump($_GET['hash']);
 if (is_user_logged_in() || $hash) {
 	xmlRead();
 }
