@@ -104,9 +104,7 @@ $post_no = $query->found_posts;
 													</div>
 												<?php endif; ?>
 											</div>
-											<p class="text-size-small excerpt">
-												<?php echo wp_specialchars_decode(get_the_excerpt()); ?>
-											</p>
+
 											<a href="<?php echo get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e('More info'); ?></a>
 										</article>
 									</div>
