@@ -135,9 +135,9 @@
 					<a href="/<?php echo $lang; ?>/<?php pll_e('fulfilled-jobs'); ?>"> <?php pll_e('Fulfilled jobs'); ?></a>
 				</div>
 				<div class="col-auto mt-sm-0 mt-2">
-					<!-- <span>
-						Design by <a href="http://loyals.com" target="blank">loyals.com</a>
-					</span> -->
+					<span>
+						Design by <a href="https://sumedia.nl/" target="blank">sumedia</a>
+					</span>
 					<span class="sative">
 						<a href="https://www.sative.co.uk" target="_blank">Made with <i class="fas fa-heart"></i> by <span>sative</span></a>
 					</span>
