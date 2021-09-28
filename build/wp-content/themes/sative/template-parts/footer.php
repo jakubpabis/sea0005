@@ -136,7 +136,7 @@
 				</div>
 				<div class="col-auto mt-sm-0 mt-2">
 					<span>
-						Design by <a href="https://sumedia.nl/" target="blank">sumedia</a>
+						Design by <a href="https://sumedia.nl/" target="blank"><strong>sumedia</strong></a>
 					</span>
 					<span class="sative">
 						<a href="https://www.sative.co.uk" target="_blank">Made with <i class="fas fa-heart"></i> by <span>sative</span></a>
