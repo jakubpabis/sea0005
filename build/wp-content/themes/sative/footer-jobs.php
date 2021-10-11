@@ -17,6 +17,7 @@ $lang = pll_current_language();
 </div> <!-- #wrapper -->
 <?php wp_footer(); ?>
 <?php if (isset($_COOKIE['cookies-accepted']) && $_COOKIE['cookies-accepted'] === 'true') : ?>
+	<!-- Smartsupp Chat Tag -->
 	<script type="text/javascript">
 		var _smartsupp = _smartsupp || {};
 		_smartsupp.key = 'f32f591b82ffa879c325ae96ca021013ef7a7d64';
