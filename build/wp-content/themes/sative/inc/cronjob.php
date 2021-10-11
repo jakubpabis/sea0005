@@ -61,7 +61,7 @@ function xmlRead()
 			foreach ($job->custom_fields->custom_field as $field) {
 				echo $field['field'];
 				if ($field['field'] === 'job_excerpt') {
-					$excerpt = $field->__toString();
+					$excerpt = strval($field);
 					break;
 				}
 			}
@@ -373,30 +373,30 @@ function insertCategories($job_categories, $postID)
 
 		if ($category['group'] == '#2 Skill Area') {
 
-			$skillArr[] = strval($category->__toString());
+			$skillArr[] = strval($category);
 
-			$term = get_term_by('name', strval($category->__toString()), 'job-category');
+			$term = get_term_by('name', strval($category), 'job-category');
 			if (!$term) {
-				wp_insert_term(strval($category->__toString()), 'job-category');
-				$term = get_term_by('name', strval($category->__toString()), 'job-category');
+				wp_insert_term(strval($category), 'job-category');
+				$term = get_term_by('name', strval($category), 'job-category');
 			}
 			$termID = $term->term_id;
 			wp_set_post_terms($postID, $termID, 'job-category', true);
 		} else if ($category['group'] == '#2.2 Skill Industry') {
 
-			$term = get_term_by('name', strval($category->__toString()), 'job-industry');
+			$term = get_term_by('name', strval($category), 'job-industry');
 			if (!$term) {
-				wp_insert_term(strval($category->__toString()), 'job-industry');
-				$term = get_term_by('name', strval($category->__toString()), 'job-industry');
+				wp_insert_term(strval($category), 'job-industry');
+				$term = get_term_by('name', strval($category), 'job-industry');
 			}
 			$termID = $term->term_id;
 			wp_set_post_terms($postID, $termID, 'job-industry', true);
 		} else if ($category['group'] == '#1 Availability') {
 
-			$term = get_term_by('name', strval($category->__toString()), 'job-type');
+			$term = get_term_by('name', strval($category), 'job-type');
 			if (!$term) {
-				wp_insert_term(strval($category->__toString()), 'job-type');
-				$term = get_term_by('name', strval($category->__toString()), 'job-type');
+				wp_insert_term(strval($category), 'job-type');
+				$term = get_term_by('name', strval($category), 'job-type');
 			}
 			$termID = $term->term_id;
 			wp_set_post_terms($postID, $termID, 'job-type', true);
@@ -426,7 +426,7 @@ function insertCategoriesRec($job_categories, $postID, $skillArr)
 			//echo has_term($category, 'job-category', get_post($postID));
 			if (strpos($category['group'], $skillGroup) != false && !has_term($category, 'job-category', get_post($postID))) {
 
-				$skills[] = strval($category->__toString());
+				$skills[] = strval($category);
 
 				$slug = slugify($skill);
 				//echo $slug.' - ';
@@ -439,12 +439,12 @@ function insertCategoriesRec($job_categories, $postID, $skillArr)
 					//var_dump( $parent );
 				}
 
-				$term = get_term_by('name', strval($category->__toString()), 'job-category');
+				$term = get_term_by('name', strval($category), 'job-category');
 				if (is_object($term)) {
 					//echo '<br/>term ID:'.$term->term_id.'<br/>';
 					if ($term !== false) {
-						wp_insert_term(strval($category->__toString()), 'job-category', array('parent' => $parentID));
-						$term = get_term_by('name', strval($category->__toString()), 'job-category');
+						wp_insert_term(strval($category), 'job-category', array('parent' => $parentID));
+						$term = get_term_by('name', strval($category), 'job-category');
 					}
 					$termID = $term->term_id;
 					wp_set_post_terms($postID, $termID, 'job-category', true);
