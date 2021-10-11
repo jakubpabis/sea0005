@@ -106,7 +106,7 @@ get_header(); ?>
 											<p>
 												<?php echo wp_trim_words(get_the_content(null, false, $item->ID), 40, '...'); ?>
 											</p>
-											<a href="<?php get_the_permalink($item->ID); ?>" class="btn btn__default navy"><?php pll_e('Lees meer'); ?></a>
+											<a href="<?php echo get_the_permalink($item->ID); ?>" class="btn btn__default navy"><?php pll_e('Lees meer'); ?></a>
 										</div>
 									</div>
 									<div class="triangle"></div>
