@@ -60,8 +60,9 @@ function xmlRead()
 		if ($job->custom_fields && !empty($job->custom_fields)) {
 			foreach ($job->custom_fields->custom_field as $field) {
 				echo $field['field'];
+				echo "<br/>";
 				if ($field['field'] === 'job_excerpt') {
-					$excerpt = strval($field);
+					$excerpt = $field;
 					break;
 				}
 			}
@@ -103,6 +104,7 @@ function xmlRead()
 		if ($excerpt) {
 			$jobArray['post_excerpt'] = $excerpt;
 		}
+		var_dump($jobArray);
 
 		if (in_array($jobID, $postsArr, true)) {
 			//var_dump('check');
