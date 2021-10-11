@@ -350,7 +350,7 @@ function slideThem() {
 }
 
 function acceptCookies() {
-  setCookie("cookies-accepted", true, 365);
+  setCookie("cookies-accepted", "accepted", 365);
   $(".cookies-notifictaion").addClass("d-none");
 }
 

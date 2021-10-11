@@ -20,7 +20,7 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<?php if (isset($_COOKIE['cookies-accepted']) && ($_COOKIE['cookies-accepted'] === 'true' || $_COOKIE['cookies-accepted'] === true)) : ?>
+	<?php if (isset($_COOKIE['cookies-accepted']) && $_COOKIE['cookies-accepted'] === "accepted") : ?>
 		<!-- Google Tag Manager -->
 		<script>
 			(function(w, d, s, l, i) {
@@ -147,7 +147,7 @@
 	<!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-	<?php if (isset($_COOKIE['cookies-accepted']) && $_COOKIE['cookies-accepted'] === true) : ?>
+	<?php if (isset($_COOKIE['cookies-accepted']) && $_COOKIE['cookies-accepted'] === "accepted") : ?>
 		<!-- Google Tag Manager (noscript) -->
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMG8TTV" height="0" width="0"></iframe></noscript>
 		<!-- /Google Tag Manager (noscript) -->

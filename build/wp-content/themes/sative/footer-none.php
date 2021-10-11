@@ -14,7 +14,7 @@ $lang = pll_current_language();
 <?php get_template_part('template-parts/chat'); ?>
 </div> <!-- #wrapper -->
 <?php wp_footer(); ?>
-<?php if (isset($_COOKIE['cookies-accepted']) && ($_COOKIE['cookies-accepted'] === 'true' || $_COOKIE['cookies-accepted'] === true)) : ?>
+<?php if (isset($_COOKIE['cookies-accepted']) && $_COOKIE['cookies-accepted'] === "accepted") : ?>
 	<!-- Smartsupp Chat Tag -->
 	<script type="text/javascript">
 		var _smartsupp = _smartsupp || {};
