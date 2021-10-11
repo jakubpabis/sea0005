@@ -8235,6 +8235,33 @@ fieldset[disabled] .datepicker table tr td span.active:hover:hover {
 
 }
 
+@media (min-width: 1920px) {
+
+.left-0.bg-left {
+	right: 33%;
+	left: auto;
+}
+
+}
+
+@media (min-width: 2560px) {
+
+.left-0.bg-left {
+	right: 36%;
+	left: auto;
+}
+
+}
+
+@media (min-width: 3200px) {
+
+.left-0.bg-left {
+	right: 39%;
+	left: auto;
+}
+
+}
+
 @media (max-width: 1600px) {
 
 .header__video-bottom {

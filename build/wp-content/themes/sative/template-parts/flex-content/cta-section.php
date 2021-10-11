@@ -1,5 +1,5 @@
 <section class="flex_content-cta flex-section">
-	<div class="container position-absolute h-100 left-0">
+	<div class="container position-absolute h-100 left-0 bg-left">
 		<div class="row">
 			<div class="col-lg-10 col-md-11 position-absolute h-100 p-lg-0 pl-0 pr-3 left-0">
 				<div class="flex_content-cta-bg right bg-yellow w-100 h-100"></div>

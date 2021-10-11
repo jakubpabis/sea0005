@@ -96,6 +96,21 @@
 
 .left-0 {
   left: 0;
+
+  &.bg-left {
+    @media (min-width: 3200px) {
+      left: auto;
+      right: 39%;
+    }
+    @media (min-width: 2560px) {
+      left: auto;
+      right: 36%;
+    }
+    @media (min-width: 1920px) {
+      left: auto;
+      right: 33%;
+    }
+  }
 }
 
 .flip-vertical {
