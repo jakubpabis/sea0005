@@ -61,13 +61,13 @@ function xmlRead()
 			foreach ($job->custom_fields->custom_field as $field) {
 				echo $field['field'];
 				echo "<br/>";
-				if ($field['field'] === 'job_excerpt') {
-					$excerpt = $field;
+				if (strval($field['field']) === 'job_excerpt') {
+					$excerpt = strval($field);
 					break;
 				}
 			}
 		}
-		echo $excerpt;
+		//echo $excerpt;
 
 		if (strval($job->contact_first_name) && strval($job->contact_last_name)) {
 			$recruiter = strval($job->contact_first_name) . ' ' . strval($job->contact_last_name);
@@ -105,6 +105,7 @@ function xmlRead()
 			$jobArray['post_excerpt'] = $excerpt;
 		}
 		var_dump($jobArray);
+		echo "<br/>";
 
 		if (in_array($jobID, $postsArr, true)) {
 			//var_dump('check');
