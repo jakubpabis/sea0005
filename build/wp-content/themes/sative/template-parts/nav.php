@@ -239,7 +239,7 @@ if ($lang === 'en') {
 											<?php endwhile; ?>
 									</ul>
 								<?php endif; ?>
-								<div class="d-lg-none d-flex mobile-menu-lang align-items-center justify-content-center">
+								<div class="d-lg-none d-flex flex-wrap mobile-menu-lang align-items-center justify-content-center">
 									<ul>
 										<?php
 										pll_the_languages(array(
@@ -248,14 +248,14 @@ if ($lang === 'en') {
 										));
 										?>
 									</ul>
+									<?php if (get_field($upper_item, 'option')) : ?>
+										<div class="d-lg-none py-2 bg-yellow d-flex mobile-menu-lang align-items-center justify-content-center">
+											<a class="color-navy" href="<?php echo get_field($upper_item, 'option')['url']; ?>">
+												<?php echo get_field($upper_item, 'option')['title']; ?>
+											</a>
+										</div>
+									<?php endif; ?>
 								</div>
-								<?php if (get_field($upper_item, 'option')) : ?>
-									<div class="d-lg-none py-2 bg-yellow d-flex mobile-menu-lang align-items-center justify-content-center">
-										<a class="color-navy" href="<?php echo get_field($upper_item, 'option')['url']; ?>">
-											<?php echo get_field($upper_item, 'option')['title']; ?>
-										</a>
-									</div>
-								<?php endif; ?>
 							</div>
 						</div>
 						<div class="col-auto pl-1 navigation__lower-utils">
