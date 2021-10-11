@@ -1,5 +1,7 @@
 <?php $lang = pll_current_language(); ?>
-<?php get_template_part('template-parts/chat'); ?>
+<?php if (isset($_COOKIE['cookies-accepted']) && $_COOKIE['cookies-accepted'] === 'true') : ?>
+	<?php get_template_part('template-parts/chat'); ?>
+<?php endif; ?>
 <footer class="footer">
 	<div class="container-lg">
 		<div class="row footer__upper">
