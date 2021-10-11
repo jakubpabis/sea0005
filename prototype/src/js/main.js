@@ -640,7 +640,7 @@ function megaMenu() {
 
 jQuery(window).on("load", function () {
   lazyImages();
-  //chatOpen();
+  chatOpen();
   //itemsDown( 'sub-extra' );
   megaMenu();
   bottomBar();
