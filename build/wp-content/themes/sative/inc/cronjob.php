@@ -95,8 +95,8 @@ function xmlRead()
 		$jobArray = array(
 			'post_type'     => 'jobs',
 			'post_status'   => 'publish',
-			'post_title'    => $job->title,
-			'post_content'  => $job->description,
+			'post_title'    => strval($job->title),
+			'post_content'  => strval($job->description),
 			'post_date'     => $date,
 			'post_name'     => $slug,
 		);
