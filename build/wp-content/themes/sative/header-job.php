@@ -20,7 +20,7 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<?php if (isset($_COOKIE['cookies-accepted']) && $_COOKIE['cookies-accepted'] === 'true') : ?>
+	<?php if (isset($_COOKIE['cookies-accepted']) && ($_COOKIE['cookies-accepted'] === 'true' || $_COOKIE['cookies-accepted'] === true)) : ?>
 		<!-- Google Tag Manager -->
 		<script>
 			(function(w, d, s, l, i) {
