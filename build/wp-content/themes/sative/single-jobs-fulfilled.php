@@ -10,6 +10,7 @@ get_header(); ?>
 
 <?php while (have_posts()) : the_post(); ?>
 
+
 	<section class="jobs__single">
 		<div class="container">
 			<div class="row">
@@ -80,7 +81,13 @@ get_header(); ?>
 			</div>
 		</div>
 	</section>
-
+	<?php
+	global $post;
+	$slug = $post->post_name;
+	if (isset($slug) && $slug) :
+	?>
+		<div id="thePostSlugForJobLink" class="d-none" data-url="<?php echo $slug; ?>"></div>
+	<?php endif; ?>
 <?php endwhile; ?>
 <script>
 	if (window.history.length > 1) {

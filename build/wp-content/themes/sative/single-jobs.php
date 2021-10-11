@@ -549,7 +549,13 @@ get_template_part('template-parts/breadcrumbs'); ?>
 		</section>
 	<?php endif;
 	wp_reset_postdata(); ?>
-
+	<?php
+	global $post;
+	$slug = $post->post_name;
+	if (isset($slug) && $slug) :
+	?>
+		<div id="thePostSlugForJobLink" class="d-none" data-url="<?php echo $slug; ?>"></div>
+	<?php endif; ?>
 <?php endwhile; ?>
 <script>
 	if (window.history.length > 1) {

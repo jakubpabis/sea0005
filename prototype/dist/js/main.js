@@ -4674,6 +4674,21 @@ function socialShareJob() {
   });
 }
 
+function jobsLangLink() {
+  if ($("#thePostSlugForJobLink") && $("#thePostSlugForJobLink").data("url")) {
+    var $url = $("#thePostSlugForJobLink").data("url");
+    var $langs = $("ul.lang");
+    var $en = $langs.find("li.lang-item").find('a[lang="en-GB"]');
+    var $nl = $langs.find("li.lang-item").find('a[lang="nl-NL"]');
+    $en.each(function () {
+      $(this).attr("href", "/en/job/" + $url);
+    });
+    $nl.each(function () {
+      $(this).attr("href", "/nl/vacature/" + $url);
+    });
+  }
+}
+
 jQuery(document).ready(function () {
   if (mobileAndTabletCheck()) {
     $("body").addClass("is-mobile");
@@ -4693,6 +4708,7 @@ jQuery(document).ready(function () {
   uglyInput();
   filterSelect();
   menuMobile();
+  jobsLangLink();
   knowledgeFilterToggle();
   teamShowMore();
   jobsFilterToggle();
