@@ -18,7 +18,7 @@ $lang = pll_current_language();
 <?php /* get_template_part('template-parts/popups'); */ ?>
 </div> <!-- #wrapper -->
 <?php wp_footer(); ?>
-<?php if (isset($_COOKIE['cookies-accepted']) && $_COOKIE['cookies-accepted'] === true) : ?>
+<?php if (isset($_COOKIE['cookies-accepted']) && $_COOKIE['cookies-accepted'] === 'true') : ?>
 	<script type="text/javascript">
 		var _smartsupp = _smartsupp || {};
 		_smartsupp.key = 'f32f591b82ffa879c325ae96ca021013ef7a7d64';
