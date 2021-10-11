@@ -59,7 +59,7 @@ function xmlRead()
 		$excerpt = false;
 		if ($job->custom_fields && !empty($job->custom_fields)) {
 			foreach ($job->custom_fields->custom_field as $field) {
-				var_dump($field[0]);
+				echo $field[0];
 				if ($field['field'] == 'job_excerpt') {
 					$excerpt = $field;
 					break;
