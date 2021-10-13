@@ -77,3 +77,4 @@
 		<!-- /Google Tag Manager (noscript) -->
 	<?php endif; ?>
 	<div id="wrapper" class="d-flex align-items-center justify-content-center py-5 bg-lgrey">
+		<?php get_template_part('template-parts/cookies'); ?>

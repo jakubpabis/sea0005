@@ -154,3 +154,4 @@
 	<?php endif; ?>
 	<div id="wrapper">
 		<?php get_template_part('template-parts/nav'); ?>
+		<?php get_template_part('template-parts/cookies'); ?>
