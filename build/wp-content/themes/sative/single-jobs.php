@@ -14,9 +14,9 @@ get_template_part('template-parts/breadcrumbs'); ?>
 <?php while (have_posts()) : the_post(); ?>
 
 	<?php if (isset($_GET['message'])) : ?>
-		<section id="messageAfterJobApplyForm" class="py-4 position-fixed" style="z-index:99;">
+		<section id="messageAfterJobApplyForm" class="position-fixed" style="z-index:99;">
 			<div class="container">
-				<div class="row mb-5 mt-5 position-fixed" style="z-index:99;">
+				<div class="row mb-5 mt-4">
 					<div class="col-12 text-center">
 						<button type="button" class="close position-absolute bg-white" aria-label="Close" style="z-index:99; opacity:1; right:15px; top:0;" onclick="document.getElementById('messageAfterJobApplyForm').remove();">
 							<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
