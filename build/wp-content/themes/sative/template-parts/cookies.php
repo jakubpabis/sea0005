@@ -1,4 +1,4 @@
-<?php if (!isset($_COOKIE['cookies-accepted']) && strval($_COOKIE['cookies-accepted']) !== "accepted") : ?>
+<?php if (!isset($_COOKIE["cookies-accepted"]) || strval($_COOKIE["cookies-accepted"]) !== "accepted") : ?>
 	<aside class="cookies-notifictaion">
 		<div class="container pt-5">
 			<div class="row">
