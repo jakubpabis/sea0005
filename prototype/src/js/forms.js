@@ -156,59 +156,37 @@ function appValidation() {
 }
 
 function onAppSubmit(token) {
-  var $globHash = getCookie("appHash");
-  var $formHash = document.getElementById("jobUploadHash").value;
-  if ($globHash === $formHash) {
-    setCookie("appHash", "false", 1);
-    $("#job-application-form").find("button.g-recaptcha").remove();
-    $("#job-application-form").find("button.fake_btn_app").addClass("d-none");
-    $("#job-application-form")
-      .find("button.fake_btn_app_loading")
-      .removeClass("d-none");
-    document.getElementById("job-application-form").submit();
-  }
+  $("#job-application-form").find("button.g-recaptcha").remove();
+  $("#job-application-form").find("button.fake_btn_app").addClass("d-none");
+  $("#job-application-form")
+    .find("button.fake_btn_app_loading")
+    .removeClass("d-none");
+  document.getElementById("job-application-form").submit();
 }
 
 function onCVSubmit(token) {
-  var $globHash = getCookie("cvHash");
-  var $formHash = document.getElementById("cvUploadHash").value;
-  if ($globHash === $formHash) {
-    setCookie("cvHash", "false", 1);
-    $("#cv-upload-form").find("button.g-recaptcha").remove();
-    $("#cv-upload-form").find("button.fake_btn_cv").addClass("d-none");
-    $("#cv-upload-form")
-      .find("button.fake_btn_cv_loading")
-      .removeClass("d-none");
-    document.getElementById("cv-upload-form").submit();
-  }
+  $("#cv-upload-form").find("button.g-recaptcha").remove();
+  $("#cv-upload-form").find("button.fake_btn_cv").addClass("d-none");
+  $("#cv-upload-form").find("button.fake_btn_cv_loading").removeClass("d-none");
+  document.getElementById("cv-upload-form").submit();
 }
 
 function onSubscribeSubmit(token) {
-  var $globHash = getCookie("subscribeHash");
-  var $formHash = document.getElementById("subscribeHash").value;
-  if ($globHash === $formHash) {
-    setCookie("subscribeHash", "false", 1);
-    $("#subscribe-popup-form").find("button.g-recaptcha").remove();
-    $("#subscribe-popup-form")
-      .find("button.fake_btn_subscribe")
-      .addClass("d-none");
-    $("#subscribe-popup-form")
-      .find("button.fake_btn_subscribe_loading")
-      .removeClass("d-none");
-    document.getElementById("subscribe-popup-form").submit();
-  }
+  $("#subscribe-popup-form").find("button.g-recaptcha").remove();
+  $("#subscribe-popup-form")
+    .find("button.fake_btn_subscribe")
+    .addClass("d-none");
+  $("#subscribe-popup-form")
+    .find("button.fake_btn_subscribe_loading")
+    .removeClass("d-none");
+  document.getElementById("subscribe-popup-form").submit();
 }
 
-// function onContactSubmit() {
-//   var $globHash = getCookie("contactHash");
-//   var $formHash = document.getElementById("contactHash").value;
-//   if ($globHash === $formHash) {
-//     setCookie("cvHash", "false", 1);
-//     $("#contact-popup-form").find("button.g-recaptcha").remove();
-//     $("#contact-popup-form").find("button.fake_btn_contact").addClass("d-none");
-//     $("#contact-popup-form")
-//       .find("button.fake_btn_contact_loading")
-//       .removeClass("d-none");
-//     document.getElementById("contact-popup-form").submit();
-//   }
-// }
+function onContactSubmit() {
+  $("#contact-popup-form").find("button.g-recaptcha").remove();
+  $("#contact-popup-form").find("button.fake_btn_contact").addClass("d-none");
+  $("#contact-popup-form")
+    .find("button.fake_btn_contact_loading")
+    .removeClass("d-none");
+  document.getElementById("contact-popup-form").submit();
+}
