@@ -111,8 +111,13 @@ get_template_part('template-parts/breadcrumbs'); ?>
 	<section class="jobs__single mt-4 pt-2 pb-5">
 		<div class="container">
 			<?php if (isset($_GET['message'])) : ?>
-				<div class="row mb-5 mt-5">
+				<div id="messageAfterJobApplyForm" class="row mb-5 mt-5">
 					<div class="col-12 text-center">
+						<button type="button" class="close position-absolute bg-white" aria-label="Close" style="z-index:99; opacity:1; right:15px; top:0;" onclick="document.getElementById('messageAfterJobApplyForm').remove();">
+							<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M30.3884 34.2353L20.1176 23.9745L9.84745 34.2353L6 30.3939L16.2713 20.1321L16.2568 20.1171L16.2713 20.1027L6.00107 9.84138L9.84638 6L20.1176 16.2597L30.3889 6L34.2348 9.84138L23.964 20.1027L23.979 20.1171L23.964 20.1321L34.2353 30.3939L30.3884 34.2353ZM0 40H40V0H0V40Z" fill="#183153" />
+							</svg>
+						</button>
 						<?php if ($_GET['message'] === 'success') : ?>
 							<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=1233946&conversionId=1160586&fmt=gif" />
 							<script>
@@ -126,48 +131,19 @@ get_template_part('template-parts/breadcrumbs'); ?>
 								<h2 class="color-navy">
 									<?php echo pll_e('Congratulations! Your application was successfully submitted!'); ?>
 								</h2>
-							<?php else : ?>
-								<div class="info card bg-pink">
-									<h2 class="color-navy">
-										<?php echo pll_e('Sorry, there was a problem with your application, please try again later...'); ?>
-									</h2>
-								<?php endif; ?>
-								</div>
 							</div>
+						<?php else : ?>
+							<div class="info card bg-pink">
+								<h2 class="color-navy">
+									<?php echo pll_e('Sorry, there was a problem with your application, please try again later...'); ?>
+								</h2>
+							</div>
+						<?php endif; ?>
 					</div>
 				</div>
 			<?php endif; ?>
 			<div class="row justify-content-center">
 				<article class="mt-xl-5 mt-md-4 col-lg-10 jobs__single-article">
-
-					<?php /* <aside class="dog-aside">
-							<div class="container position-absolute h-100 left-0 top-80">
-								<div class="row">
-									<div class="col-lg-11 position-absolute h-100 p-0 left-0">
-										<div class="flex_content-video_section-dog left bg-yellow w-100 h-100">
-											<svg viewBox="0 0 649.89 364.92" xmlns="http://www.w3.org/2000/svg">
-												<path d="m484.2 0-28 28.09v138.59h41.45l25.37-25.37v-62h-10.23v57.79l-19.43 19.42h-27v-124l22-22.15h151.14v42.84l-26.11 26.11h-79.19v99h-363.44l-107.65 107.52h-63.11v10.28h67.44l107.66-107.54h359.1v91.94l-37.87 46.28 26.85 27.72h-56.8v-72.26h-233.25l-46.53 44.42 26.73 27.72h-64.22v-117.4h-10.27v127.79h98.75l-36.39-37.74 36-34.4h218.9v72.27h91.33l-37.25-38.49 34.4-41.95v-194.64h73.13l32.17-32.05v-57.3h-165.68" fill="#183153" />
-												<g class="bowtie" fill="#EC6278">
-													<path d="m555.61 206.72-23.4-23.39 23.4-23.4 7.22 7.22-16.18 16.18 16.18 16.17z" />
-													<path d="m523.25 206.72-7.25-7.22 16.17-16.17-16.17-16.18 7.21-7.22 23.4 23.4-23.4 23.39" />
-												</g>
-											</svg>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="container">
-								<div class="row">
-									<div class="col-lg-9">
-										<span class="display-2 text700">
-											<?php pll_e('Waarom solliciteren via Search X Recruitment?'); ?>
-										</span>
-									</div>
-									<div class="offset-lg-3 col-lg-9 mt-5 pt-5">
-									</div>
-								</div>
-							</div>
-						</aside> */ ?>
 
 					<?php
 
