@@ -13,6 +13,43 @@ get_template_part('template-parts/breadcrumbs'); ?>
 
 <?php while (have_posts()) : the_post(); ?>
 
+	<?php if (isset($_GET['message'])) : ?>
+		<section id="messageAfterJobApplyForm" class="py-4 position-fixed" style="z-index:99;">
+			<div class="container">
+				<div class="row mb-5 mt-5 position-fixed" style="z-index:99;">
+					<div class="col-12 text-center">
+						<button type="button" class="close position-absolute bg-white" aria-label="Close" style="z-index:99; opacity:1; right:15px; top:0;" onclick="document.getElementById('messageAfterJobApplyForm').remove();">
+							<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M30.3884 34.2353L20.1176 23.9745L9.84745 34.2353L6 30.3939L16.2713 20.1321L16.2568 20.1171L16.2713 20.1027L6.00107 9.84138L9.84638 6L20.1176 16.2597L30.3889 6L34.2348 9.84138L23.964 20.1027L23.979 20.1171L23.964 20.1321L34.2353 30.3939L30.3884 34.2353ZM0 40H40V0H0V40Z" fill="#183153" />
+							</svg>
+						</button>
+						<?php if ($_GET['message'] === 'success') : ?>
+							<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=1233946&conversionId=1160586&fmt=gif" />
+							<script>
+								dataLayer.push({
+									'formulier': 'apply job',
+									'event': 'formulierVerstuurd',
+									'vacature': '{{ record.title|raw }}'
+								});
+							</script>
+							<div class="info card bg-yellow">
+								<h2 class="color-navy">
+									<?php echo pll_e('Congratulations! Your application was successfully submitted!'); ?>
+								</h2>
+							</div>
+						<?php else : ?>
+							<div class="info card bg-pink">
+								<h2 class="color-navy">
+									<?php echo pll_e('Sorry, there was a problem with your application, please try again later...'); ?>
+								</h2>
+							</div>
+						<?php endif; ?>
+					</div>
+				</div>
+			</div>
+		</section>
+	<?php endif; ?>
+
 	<header class="header__jobs header__job-single bg-sea">
 		<div class="container">
 			<div class="row py-4">
@@ -110,38 +147,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 
 	<section class="jobs__single mt-4 pt-2 pb-5">
 		<div class="container">
-			<?php if (isset($_GET['message'])) : ?>
-				<div id="messageAfterJobApplyForm" class="row mb-5 mt-5">
-					<div class="col-12 text-center">
-						<button type="button" class="close position-absolute bg-white" aria-label="Close" style="z-index:99; opacity:1; right:15px; top:0;" onclick="document.getElementById('messageAfterJobApplyForm').remove();">
-							<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M30.3884 34.2353L20.1176 23.9745L9.84745 34.2353L6 30.3939L16.2713 20.1321L16.2568 20.1171L16.2713 20.1027L6.00107 9.84138L9.84638 6L20.1176 16.2597L30.3889 6L34.2348 9.84138L23.964 20.1027L23.979 20.1171L23.964 20.1321L34.2353 30.3939L30.3884 34.2353ZM0 40H40V0H0V40Z" fill="#183153" />
-							</svg>
-						</button>
-						<?php if ($_GET['message'] === 'success') : ?>
-							<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=1233946&conversionId=1160586&fmt=gif" />
-							<script>
-								dataLayer.push({
-									'formulier': 'apply job',
-									'event': 'formulierVerstuurd',
-									'vacature': '{{ record.title|raw }}'
-								});
-							</script>
-							<div class="info card bg-yellow">
-								<h2 class="color-navy">
-									<?php echo pll_e('Congratulations! Your application was successfully submitted!'); ?>
-								</h2>
-							</div>
-						<?php else : ?>
-							<div class="info card bg-pink">
-								<h2 class="color-navy">
-									<?php echo pll_e('Sorry, there was a problem with your application, please try again later...'); ?>
-								</h2>
-							</div>
-						<?php endif; ?>
-					</div>
-				</div>
-			<?php endif; ?>
+
 			<div class="row justify-content-center">
 				<article class="mt-xl-5 mt-md-4 col-lg-10 jobs__single-article">
 
