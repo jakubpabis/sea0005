@@ -4,6 +4,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+$recaptchaKey = '6LcJe8kcAAAAABJutpNaeZ3Rf1i0VbzOI6Kp7qa7';
+
 function postRequest($request, $api_key, $api_secret, $json)
 {
 	$hash = bin2hex(hash_hmac('sha1', $request . '/' . $api_key, $api_secret, true));
@@ -26,266 +28,268 @@ function postRequest($request, $api_key, $api_secret, $json)
 
 function add_to_queue()
 {
+	global $recaptchaKey;
+	if (isset($_POST['g-recaptcha-response'])) {
 
-	// if (isset($_POST['g-recaptcha-response'])) {
+		# Our new data
+		$data = array(
+			'secret' => $recaptchaKey,
+			'response' => $_POST['g-recaptcha-response']
+		);
+		# Create a connection
+		$url = 'https://www.google.com/recaptcha/api/siteverify';
+		$ch = curl_init($url);
+		# Form data string
+		$postString = http_build_query($data, '', '&');
+		# Setting our options
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $postString);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		# Get the response
+		$responseJson = curl_exec($ch);
+		curl_close($ch);
+		$response = json_decode($responseJson);
 
-	// 	# Our new data
-	// 	$data = array(
-	// 		'secret' => '6LeA-gUaAAAAAItxjKANTqw14c8eK7-sEXsBYe6R',
-	// 		'response' => $_POST['g-recaptcha-response']
-	// 	);
-	// 	# Create a connection
-	// 	$url = 'https://www.google.com/recaptcha/api/siteverify';
-	// 	$ch = curl_init($url);
-	// 	# Form data string
-	// 	$postString = http_build_query($data, '', '&');
-	// 	# Setting our options
-	// 	curl_setopt($ch, CURLOPT_POST, 1);
-	// 	curl_setopt($ch, CURLOPT_POSTFIELDS, $postString);
-	// 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	// 	# Get the response
-	// 	$responseJson = curl_exec($ch);
-	// 	curl_close($ch);
-	// 	$response = json_decode($responseJson);
+		if ($response->success === true) {
 
-	// 	if ($response->success === true) {
+			$api_key = 'XoslTEyE';
+			$api_secret = 'ZZXRgDovPQvPfLjklPLBoTAl';
 
-	$api_key = 'XoslTEyE';
-	$api_secret = 'ZZXRgDovPQvPfLjklPLBoTAl';
+			$application_data = array(
 
-	$application_data = array(
+				'name'          => isset($_POST['app-name']) ? $_POST['app-name'] : '',
+				'email'         => isset($_POST['app-email']) ? $_POST['app-email'] : '',
+				'date_of_birth' => isset($_POST['app-dob']) ? $_POST['app-dob'] : '',
+				'gender'        => isset($_POST['app-gender']) ? $_POST['app-gender'] : '',
+				'phone'         => isset($_POST['app-phone']) ? $_POST['app-phone'] : '',
 
-		'name'          => isset($_POST['app-name']) ? $_POST['app-name'] : '',
-		'email'         => isset($_POST['app-email']) ? $_POST['app-email'] : '',
-		'date_of_birth' => isset($_POST['app-dob']) ? $_POST['app-dob'] : '',
-		'gender'        => isset($_POST['app-gender']) ? $_POST['app-gender'] : '',
-		'phone'         => isset($_POST['app-phone']) ? $_POST['app-phone'] : '',
+				'location' => array(
+					'line1'   => '',
+					'line2'   => '',
+					'line3'   => '',
+					'zip'     => '',
+					'city'    => isset($_POST['app-city']) ? $_POST['app-city'] : '',
+					'state'   => '',
+					'country' => isset($_POST['app-country']) ? $_POST['app-country'] : '',
+				),
 
-		'location' => array(
-			'line1'   => '',
-			'line2'   => '',
-			'line3'   => '',
-			'zip'     => '',
-			'city'    => isset($_POST['app-city']) ? $_POST['app-city'] : '',
-			'state'   => '',
-			'country' => isset($_POST['app-country']) ? $_POST['app-country'] : '',
-		),
+				'sources' => array(
+					array(
+						'parent_source_id' => isset($_POST['the_user_referrer']) ? $_POST['the_user_referrer'] : 'Website SIR',
+						'name' => 'Applicant' // Example: Applicant
+					),
+				),
 
-		'sources' => array(
-			array(
-				'parent_source_id' => isset($_POST['the_user_referrer']) ? $_POST['the_user_referrer'] : 'Website SIR',
-				'name' => 'Applicant' // Example: Applicant
-			),
-		),
+				'note' => array(
+					'text' => isset($_POST['app-motivation']) ? $_POST['app-motivation'] : '',
+				),
 
-		'note' => array(
-			'text' => isset($_POST['app-motivation']) ? $_POST['app-motivation'] : '',
-		),
+				'job' => array(
+					'id' => isset($_POST['app-jobid']) ? $_POST['app-jobid'] : 188,
+				),
 
-		'job' => array(
-			'id' => isset($_POST['app-jobid']) ? $_POST['app-jobid'] : 188,
-		),
+				//'urls' => array('https://www.example.com/some/url/123'),
 
-		//'urls' => array('https://www.example.com/some/url/123'),
+			);
 
-	);
+			$data['json'] = json_encode($application_data);
 
-	$data['json'] = json_encode($application_data);
+			if (isset($_FILES['app-cv']) && $_FILES['app-cv']) {
 
-	if (isset($_FILES['app-cv']) && $_FILES['app-cv']) {
+				// if( $_FILES['app-cv']['size'] <= 5248000 ) {
 
-		// if( $_FILES['app-cv']['size'] <= 5248000 ) {
+				$uploaded_cv = realpath($_FILES['app-cv']['tmp_name']);
+				$cv_ext = $_FILES['app-cv']['type'];
+				$cv_name = basename($_FILES['app-cv']['name']);
+				$data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
+			} else if (isset($_FILES['cv-cv']) && $_FILES['cv-cv']) {
+				$uploaded_cv = realpath($_FILES['cv-cv']['tmp_name']);
+				$cv_ext = $_FILES['cv-cv']['type'];
+				$cv_name = basename($_FILES['cv-cv']['name']);
+				$data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
+			}
 
-		$uploaded_cv = realpath($_FILES['app-cv']['tmp_name']);
-		$cv_ext = $_FILES['app-cv']['type'];
-		$cv_name = basename($_FILES['app-cv']['name']);
-		$data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
-	} else if (isset($_FILES['cv-cv']) && $_FILES['cv-cv']) {
-		$uploaded_cv = realpath($_FILES['cv-cv']['tmp_name']);
-		$cv_ext = $_FILES['cv-cv']['type'];
-		$cv_name = basename($_FILES['cv-cv']['name']);
-		$data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
-	}
+			$person_response = postRequest('people/add_to_queue', $api_key, $api_secret, $data);
 
-	$person_response = postRequest('people/add_to_queue', $api_key, $api_secret, $data);
+			// echo '<pre>';
+			// echo var_dump($person_response);
+			// echo '</pre>';
+			// var_dump($person_response->status);
 
-	// echo '<pre>';
-	// echo var_dump($person_response);
-	// echo '</pre>';
-	// var_dump($person_response->status);
-
-	if (isset($person_response->status) && $person_response->status === 'ok') {
-		$message = sendEmail();
+			if (isset($person_response->status) && $person_response->status === 'ok') {
+				$message = sendEmail();
+			} else {
+				$message = 'failed';
+			}
+		} else {
+			$message = 'recaptchafailed';
+		}
 	} else {
-		$message = 'failed';
+		$message = 'norecaptcha';
 	}
-	// 	} else {
-	// 		$message = 'failed';
-	// 	}
-	// } else {
-	// 	$message = 'failed';
-	// }
 
 	return $message;
 }
 
 function add_to_queue_cv()
 {
+	global $recaptchaKey;
+	if (isset($_POST['g-recaptcha-response'])) {
 
-	// if (isset($_POST['g-recaptcha-response'])) {
+		# Our new data
+		$data = array(
+			'secret' => $recaptchaKey,
+			'response' => $_POST['g-recaptcha-response']
+		);
+		# Create a connection
+		$url = 'https://www.google.com/recaptcha/api/siteverify';
+		$ch = curl_init($url);
+		# Form data string
+		$postString = http_build_query($data, '', '&');
+		# Setting our options
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $postString);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		# Get the response
+		$responseJson = curl_exec($ch);
+		curl_close($ch);
+		$response = json_decode($responseJson);
 
-	// 	# Our new data
-	// 	$data = array(
-	// 		'secret' => '6LeA-gUaAAAAAItxjKANTqw14c8eK7-sEXsBYe6R',
-	// 		'response' => $_POST['g-recaptcha-response']
-	// 	);
-	// 	# Create a connection
-	// 	$url = 'https://www.google.com/recaptcha/api/siteverify';
-	// 	$ch = curl_init($url);
-	// 	# Form data string
-	// 	$postString = http_build_query($data, '', '&');
-	// 	# Setting our options
-	// 	curl_setopt($ch, CURLOPT_POST, 1);
-	// 	curl_setopt($ch, CURLOPT_POSTFIELDS, $postString);
-	// 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	// 	# Get the response
-	// 	$responseJson = curl_exec($ch);
-	// 	curl_close($ch);
-	// 	$response = json_decode($responseJson);
+		if ($response->success === true) {
 
-	// 	if ($response->success === true) {
+			$api_key = 'XoslTEyE';
+			$api_secret = 'ZZXRgDovPQvPfLjklPLBoTAl';
 
-	$api_key = 'XoslTEyE';
-	$api_secret = 'ZZXRgDovPQvPfLjklPLBoTAl';
+			$application_data = array(
 
-	$application_data = array(
+				'name'          => isset($_POST['cv-name']) ? $_POST['cv-name'] : '',
+				'email'         => isset($_POST['cv-email']) ? $_POST['cv-email'] : '',
+				'date_of_birth' => isset($_POST['cv-dob']) ? $_POST['cv-dob'] : '',
+				'gender'        => isset($_POST['cv-gender']) ? $_POST['cv-gender'] : '',
+				'phone'         => isset($_POST['cv-phone']) ? $_POST['cv-phone'] : '',
 
-		'name'          => isset($_POST['cv-name']) ? $_POST['cv-name'] : '',
-		'email'         => isset($_POST['cv-email']) ? $_POST['cv-email'] : '',
-		'date_of_birth' => isset($_POST['cv-dob']) ? $_POST['cv-dob'] : '',
-		'gender'        => isset($_POST['cv-gender']) ? $_POST['cv-gender'] : '',
-		'phone'         => isset($_POST['cv-phone']) ? $_POST['cv-phone'] : '',
+				'location' => array(
+					'line1'   => '',
+					'line2'   => '',
+					'line3'   => '',
+					'zip'     => '',
+					'city'    => isset($_POST['cv-city']) ? $_POST['cv-city'] : '',
+					'state'   => '',
+					'country' => isset($_POST['cv-country']) ? $_POST['cv-country'] : '',
+				),
 
-		'location' => array(
-			'line1'   => '',
-			'line2'   => '',
-			'line3'   => '',
-			'zip'     => '',
-			'city'    => isset($_POST['cv-city']) ? $_POST['cv-city'] : '',
-			'state'   => '',
-			'country' => isset($_POST['cv-country']) ? $_POST['cv-country'] : '',
-		),
+				'sources' => array(
+					array(
+						'parent_source_id' => isset($_POST['the_user_referrer']) ? $_POST['the_user_referrer'] : 'Website SIR',
+						'name' => 'Applicant' // Example: Applicant
+					),
+				),
 
-		'sources' => array(
-			array(
-				'parent_source_id' => isset($_POST['the_user_referrer']) ? $_POST['the_user_referrer'] : 'Website SIR',
-				'name' => 'Applicant' // Example: Applicant
-			),
-		),
+				'note' => array(
+					'text' => isset($_POST['cv-motivation']) ? $_POST['cv-motivation'] : '',
+				),
 
-		'note' => array(
-			'text' => isset($_POST['cv-motivation']) ? $_POST['cv-motivation'] : '',
-		),
+				'job' => array(
+					'id' => isset($_POST['cv-jobid']) ? $_POST['cv-jobid'] : 188,
+				),
 
-		'job' => array(
-			'id' => isset($_POST['cv-jobid']) ? $_POST['cv-jobid'] : 188,
-		),
+				//'urls' => array('https://www.example.com/some/url/123'),
 
-		//'urls' => array('https://www.example.com/some/url/123'),
+			);
 
-	);
+			$data['json'] = json_encode($application_data);
 
-	$data['json'] = json_encode($application_data);
+			if (isset($_FILES['app-cv']) && $_FILES['app-cv']) {
 
-	if (isset($_FILES['app-cv']) && $_FILES['app-cv']) {
+				// if( $_FILES['app-cv']['size'] <= 5248000 ) {
 
-		// if( $_FILES['app-cv']['size'] <= 5248000 ) {
+				$uploaded_cv = realpath($_FILES['app-cv']['tmp_name']);
+				$cv_ext = $_FILES['app-cv']['type'];
+				$cv_name = basename($_FILES['app-cv']['name']);
+				$data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
+			} else if (isset($_FILES['cv-cv']) && $_FILES['cv-cv']) {
+				$uploaded_cv = realpath($_FILES['cv-cv']['tmp_name']);
+				$cv_ext = $_FILES['cv-cv']['type'];
+				$cv_name = basename($_FILES['cv-cv']['name']);
+				$data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
+			}
 
-		$uploaded_cv = realpath($_FILES['app-cv']['tmp_name']);
-		$cv_ext = $_FILES['app-cv']['type'];
-		$cv_name = basename($_FILES['app-cv']['name']);
-		$data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
-	} else if (isset($_FILES['cv-cv']) && $_FILES['cv-cv']) {
-		$uploaded_cv = realpath($_FILES['cv-cv']['tmp_name']);
-		$cv_ext = $_FILES['cv-cv']['type'];
-		$cv_name = basename($_FILES['cv-cv']['name']);
-		$data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
-	}
+			//var_dump($application_data);
 
-	//var_dump($application_data);
-
-	$person_response = postRequest('people/add_to_queue', $api_key, $api_secret, $data);
-	//var_dump($person_response);
-	if (isset($person_response->status) && $person_response->status === 'ok') {
-		$message = sendEmailCV();
+			$person_response = postRequest('people/add_to_queue', $api_key, $api_secret, $data);
+			//var_dump($person_response);
+			if (isset($person_response->status) && $person_response->status === 'ok') {
+				$message = sendEmailCV();
+			} else {
+				$message = 'failed';
+			}
+		} else {
+			$message = 'recaptchafailed';
+		}
 	} else {
-		$message = 'failed';
+		$message = 'norecaptcha';
 	}
-	// 	} else {
-	// 		$message = 'failed';
-	// 	}
-	// } else {
-	// 	$message = 'failed';
-	// }
 
 	return $message;
 }
 
 function subscribe_person()
 {
-	// if (isset($_POST['g-recaptcha-response'])) {
+	global $recaptchaKey;
+	if (isset($_POST['g-recaptcha-response'])) {
 
-	// 	# Our new data
-	// 	$data = array(
-	// 		'secret' => '6LeA-gUaAAAAAItxjKANTqw14c8eK7-sEXsBYe6R',
-	// 		'response' => $_POST['g-recaptcha-response']
-	// 	);
-	// 	# Create a connection
-	// 	$url = 'https://www.google.com/recaptcha/api/siteverify';
-	// 	$ch = curl_init($url);
-	// 	# Form data string
-	// 	$postString = http_build_query($data, '', '&');
-	// 	# Setting our options
-	// 	curl_setopt($ch, CURLOPT_POST, 1);
-	// 	curl_setopt($ch, CURLOPT_POSTFIELDS, $postString);
-	// 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	// 	# Get the response
-	// 	$responseJson = curl_exec($ch);
-	// 	curl_close($ch);
-	// 	$response = json_decode($responseJson);
+		# Our new data
+		$data = array(
+			'secret' => $recaptchaKey,
+			'response' => $_POST['g-recaptcha-response']
+		);
+		# Create a connection
+		$url = 'https://www.google.com/recaptcha/api/siteverify';
+		$ch = curl_init($url);
+		# Form data string
+		$postString = http_build_query($data, '', '&');
+		# Setting our options
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $postString);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		# Get the response
+		$responseJson = curl_exec($ch);
+		curl_close($ch);
+		$response = json_decode($responseJson);
 
-	// 	if ($response->success === true) {
-	$api_key = '6KlPHA3GzUs0Mt5ZMzIA7fBJKhvXsF37IQd3zaBj';
-	$path = 'v2/job_boards/subscribers/' . $_POST['subscribe_email'];
+		if ($response->success === true) {
+			$api_key = '6KlPHA3GzUs0Mt5ZMzIA7fBJKhvXsF37IQd3zaBj';
+			$path = 'v2/job_boards/subscribers/' . $_POST['subscribe_email'];
 
-	$subscriber_data = array(
-		'categories' => $_POST['subscribe_checkbox']
-	);
+			$subscriber_data = array(
+				'categories' => $_POST['subscribe_checkbox']
+			);
 
-	$data = json_encode($subscriber_data);
-	$subscribe_response = putRequestToken($path, $api_key, $data);
+			$data = json_encode($subscriber_data);
+			$subscribe_response = putRequestToken($path, $api_key, $data);
 
-	if (isset($subscribe_response->status) && $subscribe_response->status === 'ok') {
-		$message = 'success';
+			if (isset($subscribe_response->status) && $subscribe_response->status === 'ok') {
+				$message = 'success';
+			} else {
+				$message = json_encode($subscribe_response);
+			}
+		} else {
+			$message = 'recaptchafailed';
+		}
 	} else {
-		$message = json_encode($subscribe_response);
+		$message = 'norecaptcha';
 	}
-	// 	} else {
-	// 		$message = 'failed';
-	// 	}
-	// } else {
-	// 	$message = 'failed';
-	// }
 
 	return $message;
 }
 
+function wpdocs_set_html_mail_content_type()
+{
+	return 'text/html';
+}
+
 function sendEmail()
 {
-	function wpdocs_set_html_mail_content_type()
-	{
-		return 'text/html';
-	}
 	add_filter('wp_mail_content_type', 'wpdocs_set_html_mail_content_type');
 
 	$to = $_POST['app-email'];
@@ -308,10 +312,6 @@ function sendEmail()
 
 function sendEmailCV()
 {
-	function wpdocs_set_html_mail_content_type()
-	{
-		return 'text/html';
-	}
 	add_filter('wp_mail_content_type', 'wpdocs_set_html_mail_content_type');
 
 	$to = $_POST['cv-email'];
@@ -334,10 +334,6 @@ function sendEmailCV()
 
 function sendEmailContact()
 {
-	function wpdocs_set_html_mail_content_type()
-	{
-		return 'text/html';
-	}
 	add_filter('wp_mail_content_type', 'wpdocs_set_html_mail_content_type');
 
 	if (isset($_POST['contact_email']) && trim($_POST['contact_email']) != "") {
@@ -381,11 +377,7 @@ function sendEmailContact()
 
 function sendEmailContactDog()
 {
-	function searchx_set_html_mail_content_type()
-	{
-		return 'text/html';
-	}
-	add_filter('wp_mail_content_type', 'searchx_set_html_mail_content_type');
+	add_filter('wp_mail_content_type', 'wpdocs_set_html_mail_content_type');
 
 	if (isset($_POST['cta_dog_contact_email']) && trim($_POST['cta_dog_contact_email']) != "") {
 		$from = $_POST['cta_dog_contact_email'];
@@ -421,7 +413,7 @@ function sendEmailContactDog()
 		$message = 'failed';
 	}
 
-	remove_filter('wp_mail_content_type', 'searchx_set_html_mail_content_type');
+	remove_filter('wp_mail_content_type', 'wpdocs_set_html_mail_content_type');
 
 	return $message;
 }

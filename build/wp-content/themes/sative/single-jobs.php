@@ -415,7 +415,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 																																										echo $hashesForLashes['appHash']; ?>">
 								<button type="button" disabled class="fake_btn_app_loading btn btn__default pink d-none disabled"><?php echo pll_e('Sending, please wait...'); ?></button>
 								<button type="button" class="fake_btn_app btn btn__default yellow"><?php echo pll_e('Send application'); ?></button>
-								<button class="g-recaptcha app btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onAppSubmit"><?php echo pll_e('Send application'); ?></button>
+								<button class="g-recaptcha app btn btn__default yellow d-none" data-sitekey="6LcJe8kcAAAAAHiiBGXhwhYSUm8KGXpomzLZD8xD" data-callback="onAppSubmit"><?php echo pll_e('Send application'); ?></button>
 							</div>
 						</div>
 					</form>

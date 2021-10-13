@@ -157,7 +157,7 @@ if (isset($_GET['app-url']) && $_GET['app-url']) {
 										<?php wp_nonce_field('cv_form', 'cv_form_nonce'); ?>
 										<button type="button" disabled class="fake_btn_cv_loading btn btn__default pink d-none disabled"><?php echo pll_e('Sending, please wait...'); ?></button>
 										<button type="button" class="fake_btn_cv btn btn__default yellow"><?php echo pll_e('Send application'); ?></button>
-										<button class="g-recaptcha cvBTN btn btn__default yellow d-none" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onCVSubmit"><?php echo pll_e('Send application'); ?></button>
+										<button class="g-recaptcha cvBTN btn btn__default yellow d-none" data-sitekey="6LcJe8kcAAAAAHiiBGXhwhYSUm8KGXpomzLZD8xD" data-callback="onCVSubmit"><?php echo pll_e('Send application'); ?></button>
 									</div>
 								</div>
 							</form>
