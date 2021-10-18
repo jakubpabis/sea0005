@@ -29,7 +29,11 @@ function postRequest($request, $api_key, $api_secret, $json)
 function add_to_queue()
 {
 	global $recaptchaKey;
-	if (isset($_POST['g-recaptcha-response'])) {
+	if (!isset($_POST['app-name']) || !$_POST['app-name'] || $_POST['app-name'] == "") {
+		$message = 'failed wrong name';
+	} else if (!isset($_POST['app-email']) || !$_POST['app-email'] || $_POST['app-email'] == "") {
+		$message = 'failed wrong email';
+	} else if (isset($_POST['g-recaptcha-response'])) {
 
 		# Our new data
 		$data = array(
@@ -134,7 +138,11 @@ function add_to_queue()
 function add_to_queue_cv()
 {
 	global $recaptchaKey;
-	if (isset($_POST['g-recaptcha-response'])) {
+	if (!isset($_POST['cv-name']) || !$_POST['cv-name'] || $_POST['cv-name'] == "") {
+		$message = 'failed wrong name';
+	} else if (!isset($_POST['cv-email']) || !$_POST['cv-email'] || $_POST['cv-email'] == "") {
+		$message = 'failed wrong email';
+	} else if (isset($_POST['g-recaptcha-response'])) {
 
 		# Our new data
 		$data = array(
