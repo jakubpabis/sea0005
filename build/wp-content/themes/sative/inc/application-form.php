@@ -540,8 +540,8 @@ function appEmailTemplate()
                                                 </td>
                                                 <td style="font-family: Helvetica; font-size: 9pt; padding: 10px 0 1px 0;">
                                                     <font style="color: #183153; font-size: 9pt; font-family: Helvetica">
-                                                        <a href="https://www.google.nl/maps/place/Search+It+Recruitment/@52.3214064,4.8767044,17z/data=!3m1!4b1!4m5!3m4!1s0x47c60a6c6573e861:0x4fb3a938d9044260!8m2!3d52.3214064!4d4.8788931" style="color: #183153; text-decoration: none;">
-                                                            Laan van Kronenburg 14, 1183 AS, Amstelveen, Amsterdam Area, Netherlands
+                                                        <a href="https://www.google.com/maps/place/Search+X+Recruitment/@52.3895326,4.6489399,17z/data=!3m1!4b1!4m5!3m4!1s0x47c5ef9e18045179:0xfec844f9664ad6f8!8m2!3d52.3895292!4d4.6511288" style="color: #183153; text-decoration: none;">
+																														Hendrik Figeeweg 1-0013, 2031 BJ, Haarlem, Amsterdam Area, The Netherlands
                                                         </a>
                                                     </font>
                                                 </td>
@@ -678,9 +678,9 @@ function cvEmailTemplate()
                                                 </td>
                                                 <td style="font-family: Helvetica; font-size: 9pt; padding: 10px 0 1px 0;">
                                                     <font style="color: #183153; font-size: 9pt; font-family: Helvetica">
-                                                        <a href="https://www.google.nl/maps/place/Search+It+Recruitment/@52.3214064,4.8767044,17z/data=!3m1!4b1!4m5!3m4!1s0x47c60a6c6573e861:0x4fb3a938d9044260!8m2!3d52.3214064!4d4.8788931" style="color: #183153; text-decoration: none;">
-                                                            Laan van Kronenburg 14, 1183 AS, Amstelveen, Amsterdam Area, Netherlands
-                                                        </a>
+																											<a href="https://www.google.com/maps/place/Search+X+Recruitment/@52.3895326,4.6489399,17z/data=!3m1!4b1!4m5!3m4!1s0x47c5ef9e18045179:0xfec844f9664ad6f8!8m2!3d52.3895292!4d4.6511288" style="color: #183153; text-decoration: none;">
+																												Hendrik Figeeweg 1-0013, 2031 BJ, Haarlem, Amsterdam Area, The Netherlands
+																											</a>
                                                     </font>
                                                 </td>
                                             </tr>
@@ -808,9 +808,9 @@ function contactEmailTemplate()
                                                 </td>
                                                 <td style="font-family: Helvetica; font-size: 9pt; padding: 10px 0 1px 0;">
                                                     <font style="color: #183153; font-size: 9pt; font-family: Helvetica">
-                                                        <a href="https://www.google.nl/maps/place/Search+It+Recruitment/@52.3214064,4.8767044,17z/data=!3m1!4b1!4m5!3m4!1s0x47c60a6c6573e861:0x4fb3a938d9044260!8m2!3d52.3214064!4d4.8788931" style="color: #183153; text-decoration: none;">
-                                                            Laan van Kronenburg 14, 1183 AS, Amstelveen, Amsterdam Area, Netherlands
-                                                        </a>
+																											<a href="https://www.google.com/maps/place/Search+X+Recruitment/@52.3895326,4.6489399,17z/data=!3m1!4b1!4m5!3m4!1s0x47c5ef9e18045179:0xfec844f9664ad6f8!8m2!3d52.3895292!4d4.6511288" style="color: #183153; text-decoration: none;">
+																												Hendrik Figeeweg 1-0013, 2031 BJ, Haarlem, Amsterdam Area, The Netherlands
+																											</a>
                                                     </font>
                                                 </td>
                                             </tr>
