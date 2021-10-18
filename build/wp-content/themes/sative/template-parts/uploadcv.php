@@ -96,11 +96,11 @@ if (isset($_GET['app-url']) && $_GET['app-url']) {
 										</div>
 									</div>
 									<div class="w-50 pr-2 ugly pb-2">
-										<input class="required" type="text" name="cv-name" minlength="1" value="<?php echo $app_name ? $app_name : null; ?>" required>
+										<input type="text" name="cv-name" minlength="1" value="<?php echo $app_name ? $app_name : null; ?>" required>
 										<label class="ugly-label" for="cv-name" <?php echo $app_name ? 'style="opacity: 0;"' : null; ?>><?php echo pll_e('Name'); ?> <span>*</span></label>
 									</div>
 									<div class="w-50 ugly pb-2">
-										<input class="required" type="email" name="cv-email" value="<?php echo $app_email ? $app_email : null; ?>" required>
+										<input type="email" name="cv-email" value="<?php echo $app_email ? $app_email : null; ?>" required>
 										<label class="ugly-label" for="cv-email" <?php echo $app_email ? 'style="opacity: 0;"' : null; ?>><?php echo pll_e('Email'); ?> <span>*</span></label>
 									</div>
 									<div class="w-50 pr-2 ugly pb-2">
@@ -141,7 +141,7 @@ if (isset($_GET['app-url']) && $_GET['app-url']) {
 									</div>
 									<div class="w-100 pb-3">
 										<div class="pretty p-icon p-jelly">
-											<input class="required" type="checkbox" name="cv-pp" required>
+											<input type="checkbox" name="cv-pp" required>
 											<div class="state">
 												<i class="icon">&times;</i>
 												<label><?php pll_e('I hereby agree with the'); ?> <a href="<?php if (pll_current_language() === 'en') : ?>/privacy-policy<?php else : ?>/privacy-verklaring<?php endif; ?>" style="position: relative; z-index: 9999;"><u><?php pll_e('Privacy Policy'); ?></u></a> <span class="color-pink text-size-small text600">*</span></label>
@@ -156,8 +156,8 @@ if (isset($_GET['app-url']) && $_GET['app-url']) {
 																																											echo $hashesForLashes['cvHash']; ?>">
 										<?php wp_nonce_field('cv_form', 'cv_form_nonce'); ?>
 										<button type="button" disabled class="fake_btn_cv_loading btn btn__default pink d-none disabled"><?php echo pll_e('Sending, please wait...'); ?></button>
-										<button type="button" class="fake_btn_cv btn btn__default yellow"><?php echo pll_e('Send application'); ?></button>
-										<button class="g-recaptcha cvBTN btn btn__default yellow d-none" data-sitekey="6LcJe8kcAAAAAHiiBGXhwhYSUm8KGXpomzLZD8xD" data-callback="onCVSubmit"><?php echo pll_e('Send application'); ?></button>
+										<?php /* <button type="button" class="fake_btn_cv btn btn__default yellow"><?php echo pll_e('Send application'); ?></button> */ ?>
+										<button class="g-recaptcha cvBTN btn btn__default yellow" data-sitekey="6LcJe8kcAAAAAHiiBGXhwhYSUm8KGXpomzLZD8xD" data-callback="onCVSubmit"><?php echo pll_e('Send application'); ?></button>
 									</div>
 								</div>
 							</form>
