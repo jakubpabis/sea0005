@@ -4200,12 +4200,12 @@ function onSubscribeSubmit(token) {
 }
 
 function onContactSubmit() {
-  $("#contact-popup-form").find("button.g-recaptcha").remove();
-  $("#contact-popup-form").find("button.fake_btn_contact").addClass("d-none");
-  $("#contact-popup-form")
+  $("#contact_section_form").find("button.g-recaptcha").remove();
+  $("#contact_section_form").find("button.fake_btn_contact").addClass("d-none");
+  $("#contact_section_form")
     .find("button.fake_btn_contact_loading")
     .removeClass("d-none");
-  document.getElementById("contact-popup-form").submit();
+  document.getElementById("contact_section_form").submit();
 }
 
 "use strict";
