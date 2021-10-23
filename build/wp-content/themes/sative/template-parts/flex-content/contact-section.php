@@ -124,7 +124,7 @@
 									<input class="d-none" type="text" name="<?php echo $type; ?>_important_consent_field">
 									<input type="hidden" name="action" value="<?php echo $type; ?>_form">
 									<?php wp_nonce_field('<?php echo $type; ?>_form', '<?php echo $type; ?>_form_nonce'); ?>
-									<button class="g-recaptcha contactF btn btn__default yellow" data-sitekey="6LeA-gUaAAAAAE0620g-jcBqsq67NPiBtcj0NrCf" data-callback="onContactSubmit"><?php echo pll_e('Send message'); ?></button>
+									<button class="g-recaptcha contactF btn btn__default yellow" data-sitekey="6LcJe8kcAAAAAHiiBGXhwhYSUm8KGXpomzLZD8xD" data-callback="onContactSubmit"><?php echo pll_e('Send message'); ?></button>
 								</div>
 							</div>
 						</form>
