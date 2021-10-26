@@ -4208,6 +4208,17 @@ function onContactSubmit() {
   document.getElementById("contact_section_form").submit();
 }
 
+function onSmallContactSubmit() {
+  $("#cta_dog_contact_section_form").find("button.g-recaptcha").remove();
+  $("#cta_dog_contact_section_form")
+    .find("button.fake_btn_contact")
+    .addClass("d-none");
+  $("#cta_dog_contact_section_form")
+    .find("button.fake_btn_small_contact_loading")
+    .removeClass("d-none");
+  document.getElementById("cta_dog_contact_section_form").submit();
+}
+
 "use strict";
 
 function knowledgeFilterToggle() {
