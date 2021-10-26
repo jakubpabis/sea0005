@@ -386,13 +386,18 @@ function insertCategories($job_categories, $postID)
 			$termID = $term->term_id;
 			wp_set_post_terms($postID, $termID, 'job-category', true);
 		} else if ($category['group'] == '#2.2 Skill Industry') {
-
 			$term = get_term_by('name', strval($category), 'job-industry');
 			if (!$term) {
 				wp_insert_term(strval($category), 'job-industry');
 				$term = get_term_by('name', strval($category), 'job-industry');
 			}
 			$termID = $term->term_id;
+			$currentTerm = wp_get_post_terms($postID, 'job-industry');
+			if (!empty($currentTerm)) {
+				foreach ($currentTerm as $termItem) {
+					wp_remove_object_terms($postID, $termItem->term_id, 'job-industry');
+				}
+			}
 			wp_set_post_terms($postID, $termID, 'job-industry', true);
 		} else if ($category['group'] == '#1 Availability') {
 

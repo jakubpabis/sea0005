@@ -125,34 +125,6 @@ function appValidation() {
       });
     });
   }
-
-  // if ($("#contact-popup-form").length > 0) {
-  //   var formCon = $("#contact-popup-form");
-  //   formCon.validate({
-  //     onfocusout: function (element) {
-  //       $(element).valid();
-  //     },
-  //     focusCleanup: true,
-  //     onkeyup: false,
-  //   });
-  //   formCon.find("input.required").on("change focusout", function () {
-  //     if (formCon.valid()) {
-  //       $(".fake_btn_contact").addClass("d-none");
-  //       $(".g-recaptcha.contactF").removeClass("d-none");
-  //     } else {
-  //       $(".fake_btn_contact").removeClass("d-none");
-  //       $(".g-recaptcha.contactF").addClass("d-none");
-  //     }
-  //   });
-  //   formCon.find(".fake_btn_contact").on("click", function (e) {
-  //     e.preventDefault();
-  //     if (formCon.valid()) {
-  //       $(".fake_btn_contact").addClass("d-none");
-  //       $(".g-recaptcha.contactF").removeClass("d-none");
-  //       $(this).next("button.g-recaptcha.contactF").trigger("click").remove();
-  //     }
-  //   });
-  // }
 }
 
 function onAppSubmit(token) {
