@@ -48,7 +48,7 @@ require_once get_template_directory() . '/inc/posts-filtering.php'; ?>
 				</div>
 				<div class="col-lg-4 col-12 jobs__list-filters-container posts-filters">
 					<?php get_template_part('template-parts/posts-filters'); ?>
-					<aside class="mt-4">
+					<aside class="my-4">
 						<div class="card bg-yellow text-navy text-left" style="padding: 30px;">
 							<div class="row">
 								<div class="col">

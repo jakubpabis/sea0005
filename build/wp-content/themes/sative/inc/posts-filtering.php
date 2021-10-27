@@ -24,20 +24,14 @@ $args = array(
 	'posts_per_page' => 10,
 	's' => $search,
 	'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
-	'tax_query' => array(
-		'relation' => 'AND',
-		'taxonomy' => 'category',
-		'field'    => 'name',
-		'terms'    => $topTerm,
-	)
 );
-
 if (isset($_GET['category'])) {
-	$args['tax_query'][] = array(
-		'taxonomy' => 'category',
-		'field' => 'name',
-		'terms' => $_GET['category'],
-	);
+	$catArr = [];
+	foreach ($_GET['category'] as $cat) {
+		$catArr[] = get_category_by_slug($cat)->term_id;
+		//var_dump(get_category_by_slug($cat));
+	}
+	$args['category__and'] = $catArr;
 }
 
 //var_dump($args);

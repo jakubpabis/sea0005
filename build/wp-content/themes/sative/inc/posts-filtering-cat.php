@@ -23,17 +23,15 @@ $args = array(
 	'posts_per_page' => 10,
 	'category_name' => $know->slug,
 	'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
-	'tax_query' => array(
-		'relation' => 'AND',
-	)
 );
 
 if (isset($_GET['category'])) {
-	$args['tax_query'][] = array(
-		'taxonomy' => 'category',
-		'field' => 'id',
-		'terms' => $_GET['category'],
-	);
+	$catArr = [];
+	foreach ($_GET['category'] as $cat) {
+		$catArr[] = get_category_by_slug($cat)->term_id;
+		//var_dump(get_category_by_slug($cat));
+	}
+	$args['category__and'] = $catArr;
 }
 
 $query = new WP_Query($args);
