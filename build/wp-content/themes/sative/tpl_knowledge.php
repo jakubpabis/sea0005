@@ -2,86 +2,24 @@
 
 get_header();
 
-get_template_part('template-parts/breadcrumbs'); ?>
+require_once get_template_directory() . '/inc/posts-filtering.php'; ?>
 
-<?php
-wp_reset_postdata();
+<form id="main-posts-filter-form" action="" method="GET">
 
-if (pll_current_language() == 'en') :
-	$topTerm = 'knowledge';
-	$know = get_category_by_slug('knowledge');
-else :
-	$topTerm = 'kennis';
-	$know = get_category_by_slug('kennis');
-endif;
-
-if (isset($_GET['k-title']) && $_GET['k-title']) {
-	$search = $_GET['k-title'];
-} else {
-	$search = null;
-}
-
-//var_dump($know);
-
-$args = array(
-	'post_type' => 'post',
-	'post_status' => 'publish',
-	'posts_per_page' => 10,
-	'category_name' => 'knowledge',
-	's' => $search,
-	'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
-	'tax_query' => array(
-		'relation' => 'AND',
-		'taxonomy' => 'category',
-		'field'    => 'name',
-		'terms'    => $topTerm,
-	)
-);
-
-if (isset($_GET['category'])) {
-	$args['tax_query'][] = array(
-		'taxonomy' => 'category',
-		'field' => 'name',
-		'terms' => $_GET['category'],
-	);
-}
-
-//var_dump($args);
-
-$query = new WP_Query($args);
-$post_no = $query->found_posts;
-
-$big = 999999999; // need an unlikely integer
-$pagination = paginate_links(array(
-	'format' => '?paged=%#%',
-	'current' => max(1, get_query_var('paged')),
-	'total' => $query->max_num_pages,
-	'show_all' => false,
-	'add_args' => true,
-	'next_text' => '<svg height="18" width="34" xmlns="http://www.w3.org/2000/svg"><path d="M25.885.278l7.844 8.051a.947.947 0 01.078.091l-.078-.09a.95.95 0 01.236.412l.006.023A.895.895 0 0134 9l-.006.11-.002.011a.974.974 0 01-.02.114c-.003.007-.004.014-.006.022a.91.91 0 01-.159.323l-.01.013-.068.078-7.844 8.051a.91.91 0 01-1.307 0 .966.966 0 010-1.342l6.265-6.432H.924C.414 9.949 0 9.525 0 9s.414-.949.924-.949h29.92L24.578 1.62a.966.966 0 010-1.342.908.908 0 011.307 0z" fill="#183153"/></svg>',
-	'prev_text' => '<svg height="18" width="34" xmlns="http://www.w3.org/2000/svg"><path d="M8.115.278L.271 8.329a.948.948 0 00-.078.091l.078-.09a.95.95 0 00-.236.412l-.006.023A.898.898 0 000 9l.006.11.002.011a.976.976 0 00.02.114c.003.007.004.014.006.022a.911.911 0 00.159.323l.01.013.068.078 7.844 8.051a.91.91 0 001.307 0 .966.966 0 000-1.342L3.157 9.948h29.919c.51 0 .924-.424.924-.948s-.414-.949-.924-.949H3.156L9.422 1.62a.966.966 0 000-1.342.908.908 0 00-1.307 0z" fill="#183153"/></svg>'
-));
-
-?>
-<form action="" method="GET">
-	<header class="header__jobs bg-sea">
+	<header class="header__posts bg-sea">
 		<div class="container">
 			<div class="row py-4">
 				<div class="col-lg-8">
-					<h4 class="text-uppercase mb-3 text700 font-primary">
-						<?php pll_e('Vacatures'); ?>
+					<h4 class="text-uppercase mb-3 text700">
+						<?php pll_e('Artikelen'); ?>
 					</h4>
-					<span class="display-3 text700 font-primary">
-						<?php pll_e('Laten we de perfecte baan voor je zoeken'); ?>
+					<span class="display-3 text700">
+						<?php pll_e('Onze <span class="bg-yellow px-3">kennisbank</span>'); ?>
 					</span>
 				</div>
 			</div>
-			<div id="search-filter" class="row align-items-center justify-content-md-between justify-content-end header__jobs-search">
-				<div class="col-md-8 col-11">
-					<input type="text" name="k-title" value="<?php echo isset($_GET['k-title']) ? $_GET['k-title'] : null ?>" placeholder="<?php pll_e('Zoek naar een artikel'); ?>">
-					<i class="far fa-search color-pink"></i>
-				</div>
-				<div class="header__jobs-dog">
+			<div id="search-filter" class="row align-items-center justify-content-md-between justify-content-end header__posts-search">
+				<div class="header__posts-dog">
 					<svg viewBox="0 0 649.89 364.92" xmlns="http://www.w3.org/2000/svg">
 						<path d="M484.2 0l-28 28.09v138.59h41.45l25.37-25.37v-62h-10.23v57.79l-19.43 19.42h-27v-124l22-22.15H639.5v42.84l-26.11 26.11H534.2v99H170.76L63.11 285.84H0v10.28h67.44L175.1 188.58h359.1v91.94l-37.87 46.28 26.85 27.72h-56.8v-72.26H233.13l-46.53 44.42 26.73 27.72h-64.22V237h-10.27v127.79h98.75l-36.39-37.74 36-34.4h218.9v72.27h91.33l-37.25-38.49 34.4-41.95V89.84h73.13l32.17-32.05V.49H484.2" fill="#173751" />
 						<g class="bowtie" fill="#FDD963">
@@ -90,6 +28,10 @@ $pagination = paginate_links(array(
 						</g>
 					</svg>
 				</div>
+				<div class="col-md-7 col-11">
+					<input type="text" name="article-title" value="<?php echo isset($_GET['article-title']) ? $_GET['article-title'] : null ?>" placeholder="<?php pll_e('Zoek naar een artikel'); ?>">
+					<i class="far fa-search color-pink"></i>
+				</div>
 			</div>
 		</div>
 	</header>
@@ -97,6 +39,13 @@ $pagination = paginate_links(array(
 	<section class="jobs__list">
 		<div class="container">
 			<div class="row justify-content-md-center justify-content-end">
+				<div class="col-12">
+					<aside class="additionals py-4">
+						<p class="text-size-small font-primary">
+							<span class="jobsno"><?php echo $post_no; ?></span> <?php pll_e('articles found'); ?>
+						</p>
+					</aside>
+				</div>
 				<div class="col-lg-4 col-12 jobs__list-filters-container posts-filters">
 					<?php get_template_part('template-parts/posts-filters'); ?>
 					<aside class="mt-4">
@@ -151,13 +100,6 @@ $pagination = paginate_links(array(
 						</div>
 					</aside>
 				</div>
-				<div class="col-12">
-					<aside class="additionals py-4">
-						<p class="text-size-small font-primary">
-							<span class="jobsno"><?php echo $post_no; ?></span> <?php pll_e('articles found'); ?>
-						</p>
-					</aside>
-				</div>
 				<div id="jobs__list-cont" class="col-lg-8">
 					<main class="jobs__list-items">
 						<?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
@@ -174,7 +116,7 @@ $pagination = paginate_links(array(
 											<?php echo wp_specialchars_decode(get_the_excerpt()); ?>
 										<?php endif; ?>
 									</p>
-									<a href="<?php echo get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e('Less meer'); ?></a>
+									<a href="<?php echo get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e('More info'); ?></a>
 								</article>
 						<?php endwhile;
 						endif; ?>
@@ -186,6 +128,7 @@ $pagination = paginate_links(array(
 			</div>
 		</div>
 	</section>
+
 </form>
 
 
