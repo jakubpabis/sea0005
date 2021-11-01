@@ -22,7 +22,7 @@
 									<div class="col-md-7">
 										<div class="team__item-text">
 											<div class="row justify-content-between">
-												<div class="col-xl-8 col-lg-7 col-12">
+												<div class="col-xl-10 col-lg-9 col-12">
 													<h2 class="mb-2"><?php echo get_the_title($item->ID); ?></h2>
 													<h5 class="font-secondary text400 my-0"><?php echo get_field('title', $item->ID); ?></h5>
 													<a href="mailto:<?php echo get_field('email', $item->ID); ?>" class="text400 font-secondary d-inline-block mt-4">
