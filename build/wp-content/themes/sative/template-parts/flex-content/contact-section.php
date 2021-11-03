@@ -84,9 +84,9 @@
 							Sales
 						</h5>
 						<p class="line-height-1 mt-2">
-							KVK: 62737244<br />
-							BTW: NL854937274B01<br />
-							BANK: NL54INGB0006845114
+							KVK: 77335007<br />
+							BTW: NL860974984B01<br />
+							BANK: NL96INGB0007699801
 						</p>
 					</div>
 				</div>
