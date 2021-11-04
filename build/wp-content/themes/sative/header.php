@@ -35,11 +35,9 @@
 	<!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-	<?php if (isset($_COOKIE["cookies-accepted"]) && $_COOKIE["cookies-accepted"] === "accepted") : ?>
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMG8TTV" height="0" width="0"></iframe></noscript>
-		<!-- /Google Tag Manager (noscript) -->
-	<?php endif; ?>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMG8TTV" height="0" width="0"></iframe></noscript>
+	<!-- /Google Tag Manager (noscript) -->
 	<div id="wrapper">
 		<?php get_template_part('template-parts/nav'); ?>
 		<?php get_template_part('template-parts/breadcrumbs'); ?>
