@@ -1,88 +1,88 @@
-"use strict";
+'use strict';
 
 function knowledgeFilterToggle() {
-  $(".knowledge__filters")
-    .find(".card")
-    .on("click", function () {
+  $('.knowledge__filters')
+    .find('.card')
+    .on('click', function () {
       if (
         $(window).width() <= 991 &&
-        $(".knowledge__filters").hasClass("not-opened")
+        $('.knowledge__filters').hasClass('not-opened')
       ) {
-        $(".knowledge__filters").removeClass("not-opened");
+        $('.knowledge__filters').removeClass('not-opened');
       }
     });
 
-  $(".knowledge__filters")
-    .find(".closethis")
-    .on("click", function () {
+  $('.knowledge__filters')
+    .find('.closethis')
+    .on('click', function () {
       if ($(window).width() <= 991) {
-        $(".knowledge__filters").addClass("not-opened");
+        $('.knowledge__filters').addClass('not-opened');
       }
     });
 }
 
 function jobsFilterToggle() {
-  $(".jobs__list-filters")
-    .find(".card")
-    .on("click", function (e) {
+  $('.jobs__list-filters')
+    .find('.card')
+    .on('click', function (e) {
       if (
         $(window).width() <= 991 &&
-        $(".jobs__list-filters").hasClass("not-opened")
+        $('.jobs__list-filters').hasClass('not-opened')
       ) {
-        $(".jobs__list-filters").removeClass("not-opened");
+        $('.jobs__list-filters').removeClass('not-opened');
       }
     });
 
-  $(".jobs__list-filters")
-    .find(".closethis")
-    .on("click", function () {
+  $('.jobs__list-filters')
+    .find('.closethis')
+    .on('click', function () {
       if ($(window).width() <= 991) {
-        $(".jobs__list-filters").addClass("not-opened");
+        $('.jobs__list-filters').addClass('not-opened');
       }
     });
 }
 
 function uglyInput() {
-  $(".ugly").each(function () {
-    var $input = $(this).find("input, textarea");
-    $input.on("change focusout", function () {
+  $('.ugly').each(function () {
+    var $input = $(this).find('input, textarea');
+    $input.on('change focusout', function () {
       if (!$input.val() === true) {
-        $input.parent().find(".ugly-label").css({ opacity: 1 });
+        $input.parent().find('.ugly-label').css({ opacity: 1 });
       } else {
-        $input.parent().find(".ugly-label").css({ opacity: 0 });
+        $input.parent().find('.ugly-label').css({ opacity: 0 });
       }
     });
   });
 }
 
 function chatOpen() {
-  $("#chat").on("click", function (event) {
-    if (!$(event.target).hasClass("close")) {
-      $("#chat").addClass("d-none");
-      $("#chat-application").addClass("showed");
-      $("#chat-application-iframe")
+  $('#chat').on('click', function (event) {
+    if (!$(event.target).hasClass('close')) {
+      $('#chat').addClass('d-none');
+      $('#chat-application').addClass('showed');
+      $('#chat-application-iframe')
         .contents()
-        .find("#widgetPanel")
-        .trigger("click");
+        .find('#widgetPanel')
+        .trigger('click');
     }
   });
 
-  $("#chat-application, #chat-application-iframe").on("change", function () {
-    if ($("#chat-application").height() < 100) {
-      $("#chat-application").removeClass("showed");
+  $('#chat-application, #chat-application-iframe').on('change', function () {
+    if ($('#chat-application').height() < 100) {
+      $('#chat-application').removeClass('showed');
     }
   });
 }
 
 function chatClose() {
-  $("#chat").addClass("closed");
+  $('#chat').addClass('closed');
 }
 
 function homeHashtags() {
-  $(".home__middle-hashtags")
-    .find("li")
-    .on("click", function () {
-      $("#homeSearchInput").val($(this).text().replace("#", "")).focus();
+  $('.home__middle-hashtags')
+    .find('li')
+    .on('click', function () {
+      $('#homeSearchInput').val($(this).text().replace('#', '')).focus();
     });
 }
 
@@ -91,148 +91,148 @@ function filterSelect() {
   //   var top = parseInt(getCookie("topScroll"));
   //   if (top) $(document).scrollTop(top);
   // }
-  $("#filter")
-    .find(".filters")
-    .find("li")
-    .find("input")
-    .on("change", function () {
-      if ($(this).parent().parent().hasClass("active")) {
-        $(this).parent().parent().removeClass("active");
+  $('#filter')
+    .find('.filters')
+    .find('li')
+    .find('input')
+    .on('change', function () {
+      if ($(this).parent().parent().hasClass('active')) {
+        $(this).parent().parent().removeClass('active');
         $(this)
           .parent()
           .next()
-          .find("li")
-          .removeClass("active")
-          .find("input")
-          .prop("checked", false);
+          .find('li')
+          .removeClass('active')
+          .find('input')
+          .prop('checked', false);
       } else {
-        $(this).parent().parent().addClass("active");
+        $(this).parent().parent().addClass('active');
       }
       // var top = $(document).scrollTop();
       // setCookie("topScroll", top, 0.04);
-      setTimeout(function () {
-        $("#main-jobs-filter-form, #main-posts-filter-form").submit();
-      }, 250);
+      // setTimeout(function () {
+      //   $('#main-jobs-filter-form, #main-posts-filter-form').submit();
+      // }, 250);
     });
-  $("#filter")
-    .find(".filter-title")
-    .on("click", function () {
-      if ($(this).hasClass("active")) {
-        $(this).removeClass("active").parent().removeClass("active");
+  $('#filter')
+    .find('.filter-title')
+    .on('click', function () {
+      if ($(this).hasClass('active')) {
+        $(this).removeClass('active').parent().removeClass('active');
         $(this)
-          .next(".filters")
-          .find("li")
-          .find("input")
-          .prop("checked", false)
+          .next('.filters')
+          .find('li')
+          .find('input')
+          .prop('checked', false)
           .parent()
           .parent()
-          .removeClass("active");
+          .removeClass('active');
       } else {
-        $(this).addClass("active").parent().addClass("active");
+        $(this).addClass('active').parent().addClass('active');
       }
     });
 }
 
 function teamShowMore() {
-  $(".team__item-showmore").on("click", function (e) {
+  $('.team__item-showmore').on('click', function (e) {
     e.preventDefault();
     $(this)
       .parent()
-      .addClass("d-none")
+      .addClass('d-none')
       .parent()
       .parent()
-      .next(".team__item-hidden")
-      .removeClass("d-none");
+      .next('.team__item-hidden')
+      .removeClass('d-none');
   });
-  $(".team__item-showless").on("click", function (e) {
+  $('.team__item-showless').on('click', function (e) {
     e.preventDefault();
     $(this)
       .parent()
       .parent()
-      .addClass("d-none")
+      .addClass('d-none')
       .prev()
-      .find(".btns")
-      .removeClass("d-none");
+      .find('.btns')
+      .removeClass('d-none');
   });
 }
 
 function menuMobile() {
-  $("button.mobileMenu").on("click", function () {
-    $(this).toggleClass("active");
-    $(".navigation-main-menu").toggleClass("d-block");
+  $('button.mobileMenu').on('click', function () {
+    $(this).toggleClass('active');
+    $('.navigation-main-menu').toggleClass('d-block');
   });
 }
 
 function quickFilters() {
-  $(".header__jobs-cats")
-    .find("a")
-    .on("click", function (e) {
+  $('.header__jobs-cats')
+    .find('a')
+    .on('click', function (e) {
       e.preventDefault();
-      var $form = $("#main-jobs-filter-form");
-      switch ($(this).attr("href")) {
-        case "#it":
-          var $input = $(".jobs__list-filters")
-            .find(".job-category-filters")
-            .find("li")
+      var $form = $('#main-jobs-filter-form');
+      switch ($(this).attr('href')) {
+        case '#it':
+          var $input = $('.jobs__list-filters')
+            .find('.job-category-filters')
+            .find('li')
             .find('input[data-name="it"]');
-          var $children = $(".jobs__list-filters")
-            .find(".job-category-filters")
-            .find("li")
+          var $children = $('.jobs__list-filters')
+            .find('.job-category-filters')
+            .find('li')
             .find('input[data-name="it"]')
             .parent()
-            .next("ul")
-            .find("input");
+            .next('ul')
+            .find('input');
           if ($input) {
-            $input.prop("checked", !$input.prop("checked"));
+            $input.prop('checked', !$input.prop('checked'));
             if ($children) {
-              $children.prop("checked", false);
+              $children.prop('checked', false);
             }
             $form.submit();
           }
           break;
-        case "#sales":
-          var $input = $(".jobs__list-filters")
-            .find(".job-category-filters")
-            .find("li")
+        case '#sales':
+          var $input = $('.jobs__list-filters')
+            .find('.job-category-filters')
+            .find('li')
             .find('input[data-name="sales"]');
-          var $children = $(".jobs__list-filters")
-            .find(".job-category-filters")
-            .find("li")
+          var $children = $('.jobs__list-filters')
+            .find('.job-category-filters')
+            .find('li')
             .find('input[data-name="sales"]')
             .parent()
-            .next("ul")
-            .find("input");
+            .next('ul')
+            .find('input');
           if ($input) {
-            $input.prop("checked", !$input.prop("checked"));
+            $input.prop('checked', !$input.prop('checked'));
             if ($children) {
-              $children.prop("checked", false);
+              $children.prop('checked', false);
             }
             $form.submit();
           }
           break;
-        case "#marketing":
-          var $input = $(".jobs__list-filters")
-            .find(".job-category-filters")
-            .find("li")
+        case '#marketing':
+          var $input = $('.jobs__list-filters')
+            .find('.job-category-filters')
+            .find('li')
             .find('input[data-name="marketing"]');
-          var $children = $(".jobs__list-filters")
-            .find(".job-category-filters")
-            .find("li")
+          var $children = $('.jobs__list-filters')
+            .find('.job-category-filters')
+            .find('li')
             .find('input[data-name="marketing"]')
             .parent()
-            .next("ul")
-            .find("input");
+            .next('ul')
+            .find('input');
           if ($input) {
-            $input.prop("checked", !$input.prop("checked"));
+            $input.prop('checked', !$input.prop('checked'));
             if ($children) {
-              $children.prop("checked", false);
+              $children.prop('checked', false);
             }
             $form.submit();
           }
           break;
-        case "#executive":
-          var $input = $(".jobs__list-filters")
-            .find(".job-salary-filters")
+        case '#executive':
+          var $input = $('.jobs__list-filters')
+            .find('.job-salary-filters')
             .find('input[name="salary_min"]');
           if ($input) {
             if ($input.val() != 70000) {
@@ -243,47 +243,47 @@ function quickFilters() {
             $form.submit();
           }
           break;
-        case "#freelance":
-          var $input = $(".jobs__list-filters")
-            .find(".job-type-filters")
-            .find("li")
+        case '#freelance':
+          var $input = $('.jobs__list-filters')
+            .find('.job-type-filters')
+            .find('li')
             .find(
               'input[data-name="freelance"], input[data-name="freelance-interim-contractor"]'
             );
           if ($input) {
-            $input.prop("checked", !$input.prop("checked"));
+            $input.prop('checked', !$input.prop('checked'));
             $form.submit();
           }
           break;
       }
     });
 
-  $(".jobs__list-filters")
-    .find("li.active")
+  $('.jobs__list-filters')
+    .find('li.active')
     .each(function () {
-      if ($(this).find('input[data-name="it"]').is(":checked")) {
-        $(".header__jobs-cats").find('a[href="#it"]').addClass("active");
+      if ($(this).find('input[data-name="it"]').is(':checked')) {
+        $('.header__jobs-cats').find('a[href="#it"]').addClass('active');
       }
-      if ($(this).find('input[data-name="sales"]').is(":checked")) {
-        $(".header__jobs-cats").find('a[href="#sales"]').addClass("active");
+      if ($(this).find('input[data-name="sales"]').is(':checked')) {
+        $('.header__jobs-cats').find('a[href="#sales"]').addClass('active');
       }
-      if ($(this).find('input[data-name="freelance"]').is(":checked")) {
-        $(".header__jobs-cats").find('a[href="#freelance"]').addClass("active");
+      if ($(this).find('input[data-name="freelance"]').is(':checked')) {
+        $('.header__jobs-cats').find('a[href="#freelance"]').addClass('active');
       }
     });
 
   if (
-    $(".jobs__list-filters")
-      .find(".job-salary-filters")
+    $('.jobs__list-filters')
+      .find('.job-salary-filters')
       .find('input[name="salary_min"]')
       .val() == 80000
   ) {
-    $(".header__jobs-cats").find('a[href="#executive"]').addClass("active");
+    $('.header__jobs-cats').find('a[href="#executive"]').addClass('active');
   }
 }
 
 function itemsDown($item) {
-  var item = $("." + $item);
+  var item = $('.' + $item);
   var cont = item.parent();
   var elH = 0;
   var dropH = cont.height();
@@ -295,40 +295,40 @@ function itemsDown($item) {
   });
   var fH = dropH - elH - item.height() - 50;
   if (fH > 0) {
-    item.css({ "margin-top": fH + "px" });
+    item.css({ 'margin-top': fH + 'px' });
   }
 }
 
 function bodyGradient() {
-  var $blue = "#94D4E9";
-  var $light = "#C0E5F2";
-  var $height = $(".body-bg-gradient").height();
-  if ($(".flex_content-tags").length > 0) {
+  var $blue = '#94D4E9';
+  var $light = '#C0E5F2';
+  var $height = $('.body-bg-gradient').height();
+  if ($('.flex_content-tags').length > 0) {
     var $top =
-      $(".flex_content-tags").offset().top -
-      $(".body-bg-gradient").offset().top +
-      $(".flex_content-tags").height() / 2;
+      $('.flex_content-tags').offset().top -
+      $('.body-bg-gradient').offset().top +
+      $('.flex_content-tags').height() / 2;
     var $middle = ($top * 100) / $height;
   } else {
-    var $top = $(".body-bg-gradient").height() / 2;
+    var $top = $('.body-bg-gradient').height() / 2;
     var $middle = 50;
   }
   //var $bottom = $('.flex_content-tags').offset().bottom - $('.body-bg-gradient').offset().bottom;
 
   var $gradient =
-    "(180deg, " +
+    '(180deg, ' +
     $blue +
-    " 0%, " +
+    ' 0%, ' +
     $light +
-    " " +
+    ' ' +
     $middle +
-    "%, " +
+    '%, ' +
     $blue +
-    " 100%)";
-  var $normal = "linear-gradient" + $gradient;
-  var $moz = "-moz-linear-gradient" + $gradient;
-  var $webkit = "-webkit-linear-gradient" + $gradient;
-  $(".body-bg-gradient").css({
+    ' 100%)';
+  var $normal = 'linear-gradient' + $gradient;
+  var $moz = '-moz-linear-gradient' + $gradient;
+  var $webkit = '-webkit-linear-gradient' + $gradient;
+  $('.body-bg-gradient').css({
     background: $webkit,
     background: $moz,
     background: $normal,
@@ -338,108 +338,140 @@ function bodyGradient() {
 function slideThem() {
   var el = $('*[href*="#"]');
   if (el) {
-    el.on("click", function (e) {
+    el.on('click', function (e) {
       e.preventDefault();
-      if ($(this).attr("href") === "#openCVmodal") {
-        $("#uploadCVModal").modal("show");
+      if ($(this).attr('href') === '#openCVmodal') {
+        $('#uploadCVModal').modal('show');
       } else {
-        slideTo(el.attr("href"));
+        slideTo(el.attr('href'));
       }
     });
   }
 }
 
 function acceptCookies() {
-  setCookie("cookies-accepted", "accepted", 365);
-  $(".cookies-notifictaion").addClass("d-none");
+  setCookie('cookies-accepted', 'accepted', 365);
+  $('.cookies-notifictaion').addClass('d-none');
 }
 
 function bottomBar() {
-  var bar = $(".bottom-bar");
+  var bar = $('.bottom-bar');
   bar.each(function () {
     var height = $(this).outerHeight();
-    if (!$(this).hasClass("show") && $(window).scrollTop() > height) {
-      $(this).addClass("show");
-      $("#wrapper").css({ "padding-bottom": height + "px" });
+    if (!$(this).hasClass('show') && $(window).scrollTop() > height) {
+      $(this).addClass('show');
+      $('#wrapper').css({ 'padding-bottom': height + 'px' });
     }
   });
 }
 
 function playVideoButton() {
   if (mobileAndTabletCheck()) {
-    $(".header__video")
-      .find(".vidvid")
-      .on("click", function () {
-        var video = $(this).find("video").get(0);
-        var button = $(this).find(".play-button");
+    $('.header__video')
+      .find('.vidvid')
+      .on('click', function () {
+        var video = $(this).find('video').get(0);
+        var button = $(this).find('.play-button');
         if (video.paused) {
           video.play();
-          button.removeClass("d-block").addClass("d-none");
+          button.removeClass('d-block').addClass('d-none');
         } else {
           video.pause();
-          button.removeClass("d-none").addClass("d-block");
+          button.removeClass('d-none').addClass('d-block');
         }
       });
-    $(".header__video")
-      .find("video")
-      .on("click", function () {
+    $('.header__video')
+      .find('video')
+      .on('click', function () {
         var video = $(this).get(0);
-        var button = $(this).next(".play-button");
+        var button = $(this).next('.play-button');
         if (video.paused) {
           video.play();
-          button.removeClass("d-block").addClass("d-none");
+          button.removeClass('d-block').addClass('d-none');
         } else {
           video.pause();
-          button.removeClass("d-none").addClass("d-block");
+          button.removeClass('d-none').addClass('d-block');
         }
       });
   }
 }
 
 function socialShareJob() {
-  $(".social-share.btn").on("mouseenter", function () {
+  $('.social-share.btn').on('mouseenter', function () {
     $(this)
       .stop(true, true)
-      .removeClass("square")
-      .find(".social-share-open")
-      .addClass("d-none")
+      .removeClass('square')
+      .find('.social-share-open')
+      .addClass('d-none')
       .parent()
-      .find(".social-share-close, .social-share-buttons")
-      .removeClass("d-none");
+      .find('.social-share-close, .social-share-buttons')
+      .removeClass('d-none');
   });
-  $(".social-share.btn").on("mouseleave", function () {
+  $('.social-share.btn').on('mouseleave', function () {
     $(this)
       .stop(true, true)
-      .addClass("square")
-      .find(".social-share-open")
-      .removeClass("d-none")
+      .addClass('square')
+      .find('.social-share-open')
+      .removeClass('d-none')
       .parent()
-      .find(".social-share-close, .social-share-buttons")
-      .addClass("d-none");
+      .find('.social-share-close, .social-share-buttons')
+      .addClass('d-none');
   });
 }
 
 function jobsLangLink() {
-  if ($("#thePostSlugForJobLink") && $("#thePostSlugForJobLink").data("url")) {
-    var $url = $("#thePostSlugForJobLink").data("url");
-    var $langs = $("ul.lang");
-    var $en = $langs.find("li.lang-item").find('a[lang="en-GB"]');
-    var $nl = $langs.find("li.lang-item").find('a[lang="nl-NL"]');
+  if ($('#thePostSlugForJobLink') && $('#thePostSlugForJobLink').data('url')) {
+    var $url = $('#thePostSlugForJobLink').data('url');
+    var $langs = $('ul.lang');
+    var $en = $langs.find('li.lang-item').find('a[lang="en-GB"]');
+    var $nl = $langs.find('li.lang-item').find('a[lang="nl-NL"]');
     $en.each(function () {
-      $(this).attr("href", "/en/job/" + $url);
+      $(this).attr('href', '/en/job/' + $url);
     });
     $nl.each(function () {
-      $(this).attr("href", "/nl/vacature/" + $url);
+      $(this).attr('href', '/nl/vacature/' + $url);
     });
   }
 }
 
+function jobsAjaxFiltering() {
+  $('.job-category-filters')
+    .find('ul')
+    .find('li')
+    .find('a, input')
+    .on('click', function (e) {
+      //e.preventDefault();
+      var $this = $(this);
+      if ($this.parent('li').hasClass('active')) {
+        $this.parent('li').removeClass('active');
+      } else {
+        $this.parent('li').addClass('active');
+      }
+
+      $.ajax({
+        type: 'POST',
+        url: '/wp-admin/admin-ajax.php',
+        dataType: 'json',
+        data: {
+          action: 'jobs_ajax_filtering',
+          //category: $(this).data('slug'),
+        },
+        success: function (res) {
+          $('#jobs__list-cont').html(res.html);
+        },
+        error: function (err) {
+          console.error(err);
+        },
+      });
+    });
+}
+
 jQuery(document).ready(function () {
   if (mobileAndTabletCheck()) {
-    $("body").addClass("is-mobile");
-    $(".header__video")
-      .find("video")
-      .on("click", function () {
+    $('body').addClass('is-mobile');
+    $('.header__video')
+      .find('video')
+      .on('click', function () {
         if ($(this).get(0).paused || $(this).get(0).ended) {
           $(this).get(0).play();
         } else {
@@ -447,7 +479,7 @@ jQuery(document).ready(function () {
         }
       });
   } else {
-    $("body").removeClass("is-mobile");
+    $('body').removeClass('is-mobile');
   }
   lazyImages();
   uglyInput();
@@ -464,71 +496,72 @@ jQuery(document).ready(function () {
   slideThem();
   playVideoButton();
   socialShareJob();
+  jobsAjaxFiltering();
 
-  console.log(getCookie("cookies-accepted"));
+  console.log(getCookie('cookies-accepted'));
 
-  if (getCookie("cookies-accepted")) {
+  if (getCookie('cookies-accepted')) {
   }
 
-  if ($(".body-bg-gradient").length > 0) {
+  if ($('.body-bg-gradient').length > 0) {
     bodyGradient();
   }
 
-  $("div.dropdown-menu")
+  $('div.dropdown-menu')
     .parent()
-    .on("shown.bs.dropdown", function () {
-      itemsDown("sub-extra");
+    .on('shown.bs.dropdown', function () {
+      itemsDown('sub-extra');
     });
 
-  $("form").each(function () {
+  $('form').each(function () {
     $(this).preventDoubleSubmission();
   });
 
-  if ($(".home__middle-hashtags").length != 0) {
+  if ($('.home__middle-hashtags').length != 0) {
     homeHashtags();
   }
 
-  if ($("#searchModal")) {
-    $("#searchModal").on("shown.bs.modal", function (e) {
-      $("#searchModal").find(".searchInput").find("input").focus();
+  if ($('#searchModal')) {
+    $('#searchModal').on('shown.bs.modal', function (e) {
+      $('#searchModal').find('.searchInput').find('input').focus();
     });
   }
 
-  if ($("#job-application-form").length > 0) {
+  if ($('#job-application-form').length > 0) {
     afterFormOpen();
-    $("#app-dob-datepicker").datepicker({
-      format: "dd-mm-yyyy",
+    $('#app-dob-datepicker').datepicker({
+      format: 'dd-mm-yyyy',
       weekStart: 1,
       autoclose: true,
-      startDate: "01-01-1920",
+      startDate: '01-01-1920',
     });
   }
 
-  if ($("#cv-upload-form").length > 0) {
-    $("#uploadCVModal").on("show.bs.modal", function (e) {
+  if ($('#cv-upload-form').length > 0) {
+    $('#uploadCVModal').on('show.bs.modal', function (e) {
       afterFormOpen();
-      $("#cv-dob-datepicker").datepicker({
-        format: "dd-mm-yyyy",
+      $('#cv-dob-datepicker').datepicker({
+        format: 'dd-mm-yyyy',
         weekStart: 1,
         autoclose: true,
-        startDate: "01-01-1920",
+        startDate: '01-01-1920',
       });
     });
   }
 
-  if ($(".continuous-slider").length > 0) {
+  if ($('.continuous-slider').length > 0) {
     var $i = 1;
-    $(".continuous-slider").each(function () {
+    $('.continuous-slider').each(function () {
       console.log($(this));
       if ($i % 2 === 0) {
         $(this).infiniteslide({
-          direction: "left",
+          direction: 'left',
           pauseonhover: true,
           speed: 69,
         });
       } else {
         $(this).infiniteslide({
-          direction: "right",
+          direction: 'right',
           pauseonhover: true,
           speed: 69,
         });
@@ -539,7 +572,7 @@ jQuery(document).ready(function () {
 });
 
 function mobileMenuGoBack() {
-  $("nav.navigation").trigger("click");
+  $('nav.navigation').trigger('click');
 }
 
 function megaMenu() {
@@ -552,31 +585,31 @@ function megaMenu() {
   //   console.log("some");
   // });
   // console.log($height);
-  $(document).on("click", function (event) {
+  $(document).on('click', function (event) {
     var $this = $(event.target);
     //console.log($this.parent());
     if (
-      ($this.parents(".mega-menu-parent").length < 1 &&
-        $(".mega-menu-parent").is(":visible")) ||
-      $this.hasClass("mega-menu-go-back")
+      ($this.parents('.mega-menu-parent').length < 1 &&
+        $('.mega-menu-parent').is(':visible')) ||
+      $this.hasClass('mega-menu-go-back')
     ) {
       console.log($this);
-      $(".mega-menu-parent")
-        .find(".mega-menu-container")
+      $('.mega-menu-parent')
+        .find('.mega-menu-container')
         .stop(true, true)
-        .css({ display: "none" });
+        .css({ display: 'none' });
     }
   });
 
-  $(".mega-menu-parent").on("click", function () {
-    $(".mega-menu-container")
-      .not($(this).find(".mega-menu-container"))
+  $('.mega-menu-parent').on('click', function () {
+    $('.mega-menu-container')
+      .not($(this).find('.mega-menu-container'))
       .stop(true, true)
-      .css({ display: "none" });
+      .css({ display: 'none' });
     $(this)
-      .find(".mega-menu-container")
+      .find('.mega-menu-container')
       .stop(true, true)
-      .css({ display: "block" });
+      .css({ display: 'block' });
   });
   // $(".mega-menu-parent").on("focusout", function () {
   //   if ($focusout) {
@@ -587,74 +620,74 @@ function megaMenu() {
   //   }
   // });
 
-  $(".mega-menu__side-submenu-parent")
-    .find("> a")
-    .on("click focusin", function () {
+  $('.mega-menu__side-submenu-parent')
+    .find('> a')
+    .on('click focusin', function () {
       $focusout = false;
       var $this = $(this);
       setTimeout(function () {
-        $(".mega-menu__side-submenu-parent")
-          .find("> a")
+        $('.mega-menu__side-submenu-parent')
+          .find('> a')
           .not($this)
           .stop(true, true)
-          .removeClass("active");
-        $(".mega-menu__side-submenu")
-          .not($this.parent().find(".mega-menu__side-submenu"))
+          .removeClass('active');
+        $('.mega-menu__side-submenu')
+          .not($this.parent().find('.mega-menu__side-submenu'))
           .stop(true, true)
-          .css({ display: "none" });
+          .css({ display: 'none' });
         $this
-          .addClass("active")
+          .addClass('active')
           .parent()
-          .find(".mega-menu__side-submenu")
+          .find('.mega-menu__side-submenu')
           .stop(true, true)
-          .css({ display: "block" });
+          .css({ display: 'block' });
       }, 200);
     });
-  $(".mega-menu__big-submenu")
-    .find("> li")
-    .find("> a")
-    .on("click focusin", function () {
+  $('.mega-menu__big-submenu')
+    .find('> li')
+    .find('> a')
+    .on('click focusin', function () {
       $focusout = false;
       var $this = $(this);
       setTimeout(function () {
-        $(".mega-menu__big-submenu")
-          .find("> li")
-          .find("> a")
+        $('.mega-menu__big-submenu')
+          .find('> li')
+          .find('> a')
           .not($this)
-          .removeClass("active")
+          .removeClass('active')
           .parent()
-          .find(".mega-menu__side-submenu")
+          .find('.mega-menu__side-submenu')
           .stop(true, true)
-          .css({ display: "none" });
-        console.log("some");
+          .css({ display: 'none' });
+        console.log('some');
         $this
           .parent()
           .parent()
           .parent()
           .css({
-            "min-height":
-              $this.parent().find(".mega-menu__side-submenu").height() +
+            'min-height':
+              $this.parent().find('.mega-menu__side-submenu').height() +
               50 +
-              "px",
+              'px',
           });
       }, 200);
     });
-  $(".mega-menu__side-submenu-parent")
-    .find("> a")
-    .on("focusout", function (event) {
+  $('.mega-menu__side-submenu-parent')
+    .find('> a')
+    .on('focusout', function (event) {
       var $this = $(this);
       setTimeout(function () {
         $this
-          .removeClass("active")
+          .removeClass('active')
           .parent()
-          .find(".mega-menu__side-submenu")
+          .find('.mega-menu__side-submenu')
           .stop(true, true)
-          .css({ display: "none" });
+          .css({ display: 'none' });
       }, 200);
     });
 }
 
-jQuery(window).on("load", function () {
+jQuery(window).on('load', function () {
   lazyImages();
   chatOpen();
   //itemsDown( 'sub-extra' );
@@ -665,13 +698,13 @@ jQuery(window).on("load", function () {
   // 	homepageClients();
   // }
 
-  $(".job-category-filters")
-    .find("li")
-    .on("click", function () {});
-  if ($(".owl-carousel").length > 0) {
-    $(".owl-carousel").each(function () {
-      if ($(this).hasClass("articles-slider-cards")) {
-        console.log("articles-slider-cards");
+  $('.job-category-filters')
+    .find('li')
+    .on('click', function () {});
+  if ($('.owl-carousel').length > 0) {
+    $('.owl-carousel').each(function () {
+      if ($(this).hasClass('articles-slider-cards')) {
+        console.log('articles-slider-cards');
         var $owlS = $(this);
         $owlS.owlCarousel({
           loop: true,
@@ -696,8 +729,8 @@ jQuery(window).on("load", function () {
             },
           },
         });
-      } else if ($(this).hasClass("no-repeat")) {
-        console.log("no-repeat");
+      } else if ($(this).hasClass('no-repeat')) {
+        console.log('no-repeat');
         var $owlR = $(this);
         $owlR.owlCarousel({
           loop: false,
@@ -719,14 +752,14 @@ jQuery(window).on("load", function () {
             },
           },
         });
-        $(".custom-owl-prev").click(function () {
-          $owlR.trigger("prev.owl.carousel");
+        $('.custom-owl-prev').click(function () {
+          $owlR.trigger('prev.owl.carousel');
         });
-        $(".custom-owl-next").click(function () {
-          $owlR.trigger("next.owl.carousel");
+        $('.custom-owl-next').click(function () {
+          $owlR.trigger('next.owl.carousel');
         });
-      } else if ($(this).hasClass("contact-form-carousel")) {
-        console.log("contact-form-carousel");
+      } else if ($(this).hasClass('contact-form-carousel')) {
+        console.log('contact-form-carousel');
         var $owlC = $(this);
         $owlC.owlCarousel({
           loop: false,
@@ -751,7 +784,7 @@ jQuery(window).on("load", function () {
           },
         });
 
-        $("#cta_dog_contact_section_form").on("keyup keypress", function (e) {
+        $('#cta_dog_contact_section_form').on('keyup keypress', function (e) {
           var keyCode = e.keyCode || e.which;
           if (keyCode === 13) {
             e.preventDefault();
@@ -776,92 +809,92 @@ jQuery(window).on("load", function () {
 
         $owlC
           .find('input[name="cta_dog_contact_name"]')
-          .on("keyup", function () {
+          .on('keyup', function () {
             if ($(this).val().length > 2) {
-              $(this).removeClass("not-valid");
-              $(this).addClass("valid");
+              $(this).removeClass('not-valid');
+              $(this).addClass('valid');
               $(this)
                 .parent()
-                .find("span.d-block")
-                .addClass("d-none")
-                .removeClass("d-block");
+                .find('span.d-block')
+                .addClass('d-none')
+                .removeClass('d-block');
             } else {
-              $(this).removeClass("valid");
-              $(this).addClass("not-valid");
+              $(this).removeClass('valid');
+              $(this).addClass('not-valid');
               $(this)
                 .parent()
-                .find("span.d-none")
-                .removeClass("d-none")
-                .addClass("d-block");
+                .find('span.d-none')
+                .removeClass('d-none')
+                .addClass('d-block');
             }
           });
 
         $owlC
           .find('input[name="cta_dog_contact_email"]')
-          .on("keyup", function () {
+          .on('keyup', function () {
             if (validateEmail($(this).val())) {
-              $(this).removeClass("not-valid");
-              $(this).addClass("valid");
+              $(this).removeClass('not-valid');
+              $(this).addClass('valid');
               $(this)
                 .parent()
-                .find("span.d-block")
-                .addClass("d-none")
-                .removeClass("d-block");
+                .find('span.d-block')
+                .addClass('d-none')
+                .removeClass('d-block');
             } else {
-              $(this).removeClass("valid");
-              $(this).addClass("not-valid");
+              $(this).removeClass('valid');
+              $(this).addClass('not-valid');
               $(this)
                 .parent()
-                .find("span.d-none")
-                .removeClass("d-none")
-                .addClass("d-block");
+                .find('span.d-none')
+                .removeClass('d-none')
+                .addClass('d-block');
             }
           });
 
         $owlC
           .find('input[name="cta_dog_contact_message"]')
-          .on("keyup", function () {
+          .on('keyup', function () {
             if ($(this).val().length > 9) {
-              $(this).removeClass("not-valid");
-              $(this).addClass("valid");
+              $(this).removeClass('not-valid');
+              $(this).addClass('valid');
               $(this)
                 .parent()
-                .find("span.d-block")
-                .addClass("d-none")
-                .removeClass("d-block");
+                .find('span.d-block')
+                .addClass('d-none')
+                .removeClass('d-block');
             } else {
-              $(this).removeClass("valid");
-              $(this).addClass("not-valid");
+              $(this).removeClass('valid');
+              $(this).addClass('not-valid');
               $(this)
                 .parent()
-                .find("span.d-none")
-                .removeClass("d-none")
-                .addClass("d-block");
+                .find('span.d-none')
+                .removeClass('d-none')
+                .addClass('d-block');
             }
           });
 
-        $owlC.find(".next").click(function () {
+        $owlC.find('.next').click(function () {
           if (
             !$owlC
-              .find(".owl-item.active")
-              .find(".pristine")
-              .hasClass("required")
+              .find('.owl-item.active')
+              .find('.pristine')
+              .hasClass('required')
           ) {
-            $owlC.trigger("next.owl.carousel");
-          } else if ($owlC.find(".owl-item.active").find(".valid").length > 0) {
-            $owlC.trigger("next.owl.carousel");
+            $owlC.trigger('next.owl.carousel');
+          } else if ($owlC.find('.owl-item.active').find('.valid').length > 0) {
+            $owlC.trigger('next.owl.carousel');
           } else {
-            $owlC.find(".owl-item.active").find(".not-valid").focus();
-            $owlC.find(".owl-item.active").find(".pristine").focus();
+            $owlC.find('.owl-item.active').find('.not-valid').focus();
+            $owlC.find('.owl-item.active').find('.pristine').focus();
             $(this)
               .parent()
-              .find("span.d-none")
-              .removeClass("d-none")
-              .addClass("d-block");
+              .find('span.d-none')
+              .removeClass('d-none')
+              .addClass('d-block');
           }
         });
       } else {
-        console.log("regular");
+        console.log('regular');
         var $owl = $(this);
         $owl.owlCarousel({
           loop: true,
@@ -891,11 +924,11 @@ jQuery(window).on("load", function () {
           },
         });
 
-        $(".custom-owl-prev").click(function () {
-          $owl.trigger("prev.owl.carousel");
+        $('.custom-owl-prev').click(function () {
+          $owl.trigger('prev.owl.carousel');
         });
-        $(".custom-owl-next").click(function () {
-          $owl.trigger("next.owl.carousel");
+        $('.custom-owl-next').click(function () {
+          $owl.trigger('next.owl.carousel');
         });
       }
     });
@@ -914,29 +947,29 @@ jQuery(window).on("load", function () {
   // 	});
   // }
 
-  if ($(".body-bg-gradient").length > 0) {
+  if ($('.body-bg-gradient').length > 0) {
     bodyGradient();
   }
 });
 
-jQuery(window).on("resize", function () {
+jQuery(window).on('resize', function () {
   if (mobileAndTabletCheck()) {
-    $("body").addClass("is-mobile");
+    $('body').addClass('is-mobile');
   } else {
-    $("body").removeClass("is-mobile");
+    $('body').removeClass('is-mobile');
   }
-  if ($(".body-bg-gradient").length > 0) {
+  if ($('.body-bg-gradient').length > 0) {
     bodyGradient();
   }
   bottomBar();
 });
 
-jQuery(window).on("scroll", function () {
+jQuery(window).on('scroll', function () {
   bottomBar();
 });
 
-jQuery(document).on("click", ".dropdown-menu", function (e) {
-  if ($(e.target).not(".mega-menu-go-back")) {
+jQuery(document).on('click', '.dropdown-menu', function (e) {
+  if ($(e.target).not('.mega-menu-go-back')) {
     console.log(e.target);
     e.stopPropagation();
   }
