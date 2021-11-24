@@ -127,8 +127,8 @@ function is_theme_preset_active()
 
 function jobs_ajax_filtering()
 {
-	if (isset($_POST['job-title']) && $_POST['job-title']) {
-		$search = $_POST['job-title'];
+	if (isset($_POST['"job-title"']) && $_POST['"job-title"']) {
+		$search = $_POST['"job-title"'];
 	} else {
 		$search = null;
 	}
@@ -155,9 +155,9 @@ function jobs_ajax_filtering()
 
 	// for taxonomies
 	foreach ($taxonomyFilters as $taxF) {
-		if (isset($_POST[$taxF]) && !empty($_POST[$taxF]) && $_POST[$taxF] !== null) {
-			if (count($_POST[$taxF]) > 1) {
-				foreach (filterHelper($_POST[$taxF], $taxF) as $termID) {
+		if (isset($_POST['"' . $taxF . '"']) && !empty($_POST['"' . $taxF . '"']) && $_POST['"' . $taxF . '"'] !== null) {
+			if (count($_POST['"' . $taxF . '"']) > 1) {
+				foreach (filterHelper($_POST['"' . $taxF . '"'], $taxF) as $termID) {
 					$arr = array(
 						'taxonomy' => $taxF,
 						'field' => 'slug',
@@ -165,34 +165,34 @@ function jobs_ajax_filtering()
 					);
 					array_push($args['tax_query'], $arr);
 				}
-			} else if (count($_POST[$taxF]) > 0) {
+			} else if (count($_POST['"' . $taxF . '"']) > 0) {
 				$args['tax_query'][] = array(
 					'taxonomy' => $taxF,
 					'field' => 'slug',
-					'terms' => $_POST[$taxF],
+					'terms' => $_POST['"' . $taxF . '"'],
 				);
 			}
 		}
 	}
 
-	if (isset($_POST['salary_min']) && !empty($_POST['salary_min']) && $_POST['salary_min'] !== null) {
+	if (isset($_POST['"salary_min"']) && !empty($_POST['"salary_min"']) && $_POST['"salary_min"'] !== null) {
 		$args['meta_query'][] = array(
 			'key' => 'salary_min',
-			'value' => $_POST['salary_min'],
+			'value' => $_POST['"salary_min"'],
 			'compare' => '>='
 		);
 	}
-	if (isset($_POST['salary_max']) && !empty($_POST['salary_max']) && $_POST['salary_max'] !== null) {
+	if (isset($_POST['"salary_max"']) && !empty($_POST['"salary_max"']) && $_POST['"salary_max"'] !== null) {
 		$args['meta_query'][] = array(
 			'key' => 'salary_max',
-			'value' => $_POST['salary_max'],
+			'value' => $_POST['"salary_max"'],
 			'compare' => '<='
 		);
 	}
-	if (isset($_POST['location_s']) && !empty($_POST['location_s']) && $_POST['location_s'] !== null) {
+	if (isset($_POST['"location_s"']) && !empty($_POST['"location_s"']) && $_POST['"location_s"'] !== null) {
 		$args['meta_query'][] = array(
 			'key' => 'location',
-			'value' => $_POST['location_s'],
+			'value' => $_POST['"location_s"'],
 			'compare' => 'LIKE'
 		);
 	}
@@ -201,9 +201,15 @@ function jobs_ajax_filtering()
 	$query = new WP_Query($args);
 	$post_no = $query->found_posts;
 
-	$big = 999999999; // need an unlikely integer
+	if (isset($_POST["params"]) && $_POST["params"]) {
+		$paginationParams = '&' . $_POST["params"];
+	} else {
+		$paginationParams = '';
+	}
+
 	$pagination = paginate_links(array(
-		'format' => '?paged=%#%',
+		'base' => '%_%',
+		'format' => '?paged=%#%' . $paginationParams,
 		'current' => max(1, get_query_var('paged')),
 		'total' => $query->max_num_pages,
 		'show_all' => false,

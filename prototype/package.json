@@ -30,6 +30,7 @@
     },
     "dependencies": {
         "gulp-ext-replace": "^0.3.0",
-        "imagemin-webp": "^5.1.0"
+        "imagemin-webp": "^5.1.0",
+        "query-string": "^7.0.1"
     }
 }

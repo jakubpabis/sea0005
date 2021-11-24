@@ -10,7 +10,7 @@ get_header();
 
 <?php require_once get_template_directory() . '/inc/jobs-filtering.php'; ?>
 
-<form id="main-jobs-filter-form" action="" method="GET">
+<form id="main-jobs-filter-form" action="<?php echo site_url(); ?>/wp-admin/admin-ajax.php" method="POST">
 
 	<header class="header__jobs bg-sea">
 		<div class="container">
