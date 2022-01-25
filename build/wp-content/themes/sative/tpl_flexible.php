@@ -21,7 +21,7 @@ get_header(); ?>
 				<?php get_template_part('template-parts/flex-content/video-section'); ?>
 			<?php elseif (get_row_layout() == 'tags' && get_sub_field('first_row')) : ?>
 				<?php get_template_part('template-parts/flex-content/tags'); ?>
-			<?php elseif (get_row_layout() == 'google_reviews' && get_sub_field('image')) : ?>
+			<?php elseif (get_row_layout() == 'google_reviews') : ?>
 				<?php get_template_part('template-parts/flex-content/greviews'); ?>
 			<?php elseif (get_row_layout() == 'speech_bubbles_with_icons' && get_sub_field('bubbles')) : ?>
 				<?php get_template_part('template-parts/flex-content/speech-bubbles'); ?>
