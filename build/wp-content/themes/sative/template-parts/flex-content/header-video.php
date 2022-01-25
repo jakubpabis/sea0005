@@ -16,7 +16,24 @@
 			</svg>
 		</div>
 	</div>
-	<?php if (get_sub_field('title') || get_sub_field('sub_title') || (get_sub_field('button_first') && get_sub_field('button_second'))) : ?>
+	<?php if (!get_sub_field('button_second') || empty(get_sub_field('button_second'))) : ?>
+		<div class="container">
+			<div class="content">
+				<h1 class="d-block mb-0">
+					<?php echo get_sub_field('title'); ?> <br>
+					<span><?php echo get_sub_field('sub_title'); ?></span>
+				</h1>
+
+				<?php if (get_sub_field('button_first')) : ?>
+					<?php if (get_sub_field('button_first')) : ?>
+						<a href="<?php echo get_sub_field('button_first')['url']; ?>" class="btn btn__default navy mx-2 mb-3 mb-sm-0 d-flex align-items-center justify-content-center">
+							<?php echo get_sub_field('button_first')['title']; ?>
+						</a>
+					<?php endif; ?>
+				<?php endif; ?>
+			</div>
+		</div>
+	<?php elseif (get_sub_field('title') || get_sub_field('sub_title') || get_sub_field('button_first') || get_sub_field('button_second')) : ?>
 		<div class="container-md">
 			<div class="row position-absolute header__video-bottom justify-content-center w-100">
 				<div class="col-xl-8 col-lg-9 px-md-0 text-center">
@@ -43,22 +60,6 @@
 				</div>
 			</div>
 		</div>
-	<?php else : ?>
-		<div class="container">
-			<div class="content">
-				<h1 class="d-block mb-0">
-					<?php echo get_sub_field('title'); ?> <br>
-					<span><?php echo get_sub_field('sub_title'); ?></span>
-				</h1>
 
-				<?php if (get_sub_field('button_first')) : ?>
-					<?php if (get_sub_field('button_first')) : ?>
-						<a href="<?php echo get_sub_field('button_first')['url']; ?>" class="btn btn__default navy mx-2 mb-3 mb-sm-0 d-flex align-items-center justify-content-center">
-							<?php echo get_sub_field('button_first')['title']; ?>
-						</a>
-					<?php endif; ?>
-				<?php endif; ?>
-			</div>
-		</div>
 	<?php endif; ?>
 </header>
