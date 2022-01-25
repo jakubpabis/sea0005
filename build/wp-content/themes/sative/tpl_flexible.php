@@ -31,8 +31,10 @@ get_header(); ?>
 				<?php get_template_part('template-parts/flex-content/dogs-section'); ?>
 			<?php elseif (get_row_layout() == 'call_to_action_section' && get_sub_field('image')) : ?>
 				<?php get_template_part('template-parts/flex-content/cta-section'); ?>
-			<?php elseif (get_row_layout() == 'articles') : ?>
+			<?php elseif (get_row_layout() == 'articles_slider') : ?>
 				<?php get_template_part('template-parts/flex-content/articles'); ?>
+			<?php elseif (get_row_layout() == 'internal_vacancies') : ?>
+				<?php get_template_part('template-parts/flex-content/internal-vacancies'); ?>
 			<?php elseif (get_row_layout() == 'cards_links' && get_sub_field('links')) : ?>
 				<?php get_template_part('template-parts/flex-content/card-links'); ?>
 			<?php elseif (get_row_layout() == 'client_logos_big' && get_sub_field('logos')) : ?>
@@ -57,6 +59,10 @@ get_header(); ?>
 				<?php get_template_part('template-parts/flex-content/labels'); ?>
 			<?php elseif (get_row_layout() == 'internal_jobs') : ?>
 				<?php get_template_part('template-parts/flex-content/internal-jobs'); ?>
+			<?php elseif (get_row_layout() == 'videos') : ?>
+				<?php get_template_part('template-parts/flex-content/videos'); ?>
+			<?php elseif (get_row_layout() == 'dna_section') : ?>
+				<?php get_template_part('template-parts/flex-content/dna-section'); ?>
 			<?php endif; ?>
 		<?php endwhile; ?>
 	</div>
