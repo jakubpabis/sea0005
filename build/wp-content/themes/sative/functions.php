@@ -222,6 +222,7 @@ function sative_scripts()
 	wp_enqueue_style('sative-gfonts', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap', array(), _S_VERSION, 'all');
 	wp_enqueue_style('sative-icons', get_template_directory_uri() . '/assets/css/fa.min.css', array(), _S_VERSION, 'all');
 	wp_enqueue_style('sative-styles', get_template_directory_uri() . '/assets/css/main.min.css', array(), _S_VERSION, 'all');
+	wp_enqueue_style('extra-styles', get_template_directory_uri() . '/assets/css/extra.css', array(), _S_VERSION, 'all');
 
 	if (!is_admin()) {
 		wp_deregister_script('wp-embed');
