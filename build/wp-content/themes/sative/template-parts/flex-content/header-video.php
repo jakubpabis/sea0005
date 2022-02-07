@@ -6,7 +6,7 @@
 
 <header class="header__video <?php echo $negative; ?>">
 	<div class="container-fluid px-0 justify-content-center d-flex vidvid">
-		<video muted autoplay preload="true" loop>
+		<video playsinline muted autoplay preload="true" loop>
 			<source src="<?php echo get_sub_field('video_file'); ?>" type="video/mp4">
 			Your browser does not support the video tag.
 		</video>

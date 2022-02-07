@@ -1063,7 +1063,7 @@ jQuery(document).on('click', '.dropdown-menu', function (e) {
   }
 });
 
-// FROM SUMEDIA.NL
+// from SUMEDIA.NL
 
 function SUMEDIAvideoCarousel() {
   $('.video-cards').each(function () {
@@ -1081,6 +1081,14 @@ function SUMEDIAvideoCarousel() {
         1260: { items: 3, margin: 30 },
       },
     });
+  });
+
+  $('.custom-owl-prev-video').click(function () {
+    owl.trigger('prev.owl.carousel');
+  });
+
+  $('.custom-owl-next-video').click(function () {
+    owl.trigger('next.owl.carousel');
   });
 
   var owl = $('.video-cards');
@@ -1105,7 +1113,7 @@ function SUMEDIAquoteCarousel() {
   $('.quote-carousel').each(function () {
     $(this).owlCarousel({
       loop: !0,
-      nav: !1,
+      nav: 1,
       dots: !1,
       lazyLoad: 0,
       center: true,
@@ -1134,18 +1142,31 @@ function SUMEDIAswitchDNA() {
       dnaSwitcher.parentElement.parentElement.parentElement.querySelectorAll(
         '.dna__items__item'
       );
+    var dnaSwitcherItem = dnaSwitcher.querySelectorAll('.switch-dna--item');
 
     if (dnaItem[0].classList.contains('active')) {
       dnaItem[0].classList.remove('active');
       dnaItem[1].classList.add('active');
+
+      dnaSwitcherItem[0].classList.remove('active');
+      dnaSwitcherItem[1].classList.add('active');
+
       dnaSwitcher.id = dnaItem[1].id;
     } else if (dnaItem[1].classList.contains('active')) {
       dnaItem[1].classList.remove('active');
       dnaItem[2].classList.add('active');
+
+      dnaSwitcherItem[1].classList.remove('active');
+      dnaSwitcherItem[2].classList.add('active');
+
       dnaSwitcher.id = dnaItem[2].id;
     } else if (dnaItem[2].classList.contains('active')) {
       dnaItem[2].classList.remove('active');
       dnaItem[0].classList.add('active');
+
+      dnaSwitcherItem[2].classList.remove('active');
+      dnaSwitcherItem[0].classList.add('active');
+
       dnaSwitcher.id = dnaItem[0].id;
     }
   });
