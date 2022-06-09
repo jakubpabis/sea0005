@@ -333,6 +333,13 @@ get_template_part('template-parts/breadcrumbs'); ?>
 										<label><?php pll_e('Female'); ?></label>
 									</div>
 								</div>
+								<div class="pretty p-icon p-round p-jelly ml-4">
+									<input type="radio" name="app-gender" value="Other">
+									<div class="state">
+										<i class="icon">&times;</i>
+										<label><?php pll_e('Other'); ?></label>
+									</div>
+								</div>
 							</div>
 							<div class="col-lg-12 col-sm-6 ugly pt-2">
 								<input type="text" name="app-name" required value="<?php echo $app_name ? $app_name : null; ?>">

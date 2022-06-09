@@ -94,6 +94,13 @@ if (isset($_GET['app-url']) && $_GET['app-url']) {
 												<label><?php echo pll_e('Female'); ?></label>
 											</div>
 										</div>
+										<div class="pretty p-icon p-round p-jelly ml-4">
+											<input type="radio" value="Other" name="cv-gender">
+											<div class="state">
+												<i class="icon">&times;</i>
+												<label><?php echo pll_e('Other'); ?></label>
+											</div>
+										</div>
 									</div>
 									<div class="w-50 pr-2 ugly pb-2">
 										<input type="text" name="cv-name" minlength="1" value="<?php echo $app_name ? $app_name : null; ?>" required>
@@ -133,7 +140,7 @@ if (isset($_GET['app-url']) && $_GET['app-url']) {
 									</div>
 									<div class="w-100 ugly upload pb-2">
 										<label id="cv-cv-label" class="full bg-white ugly-label w-100" for="cv-cv"><?php pll_e('CV'); ?> <span><?php echo pll_e('Upload'); ?></span></label>
-										<input type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="cv-cv" onchange="getFileName(this, 'cv-cv-label')">
+										<input type="file" value="" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="cv-cv" onchange="getFileName(this, 'cv-cv-label')">
 									</div>
 									<div class="w-100 ugly pb-2">
 										<textarea name="cv-motivation"><?php echo $app_motivation ? $app_motivation : null; ?></textarea>

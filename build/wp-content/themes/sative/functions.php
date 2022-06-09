@@ -627,7 +627,8 @@ $toTranslate = array(
 	'Company',
 	'Email address',
 	'Message',
-	'Go back'
+	'Go back',
+	'Other'
 );
 
 if (function_exists('pll_register_string')) {
