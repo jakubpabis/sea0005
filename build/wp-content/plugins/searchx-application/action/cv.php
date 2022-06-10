@@ -53,7 +53,7 @@ function add_to_queue_cv()
 				'sources' => array(
 					array(
 						'parent_source_id' => isset($_POST['the_user_referrer']) ? $_POST['the_user_referrer'] : 'Website SIR',
-						'name' => 'Applicant' // Example: Applicant
+						'name' => 'Applicant'
 					),
 				),
 
@@ -64,8 +64,6 @@ function add_to_queue_cv()
 				'job' => array(
 					'id' => isset($_POST['cv-jobid']) ? $_POST['cv-jobid'] : 188,
 				),
-
-				//'urls' => array('https://www.example.com/some/url/123'),
 
 			);
 
