@@ -30,6 +30,16 @@
 						</div>
 					</div>
 				<?php endif; ?>
+				<?php if (get_field('contact_text3_' . $lang, 'option')) : ?>
+					<div class="row my-4">
+						<div class="col-auto">
+							<i class="fal fa-map-marker-alt"></i>
+						</div>
+						<div class="col pl-0">
+							<?php echo get_field('contact_text3_' . $lang, 'option'); ?>
+						</div>
+					</div>
+				<?php endif; ?>
 				<div class="row mb-2">
 					<div class="col-auto">
 						<i class="far fa-envelope"></i>
