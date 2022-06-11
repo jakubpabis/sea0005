@@ -45,6 +45,16 @@
 						</div>
 					</div>
 				<?php endif; ?>
+				<?php if (get_field('contact_text3_' . $lang, 'option')) : ?>
+					<div class="row">
+						<div class="col-auto">
+							<i class="fal fa-map-marker-alt"></i>
+						</div>
+						<div class="col pl-0">
+							<?php echo get_field('contact_text3_' . $lang, 'option'); ?>
+						</div>
+					</div>
+				<?php endif; ?>
 				<div class="mb-4 ml-4 pl-1 pt-3">
 					<a href="https://www.facebook.com/searchxrecruitment" class="btn btn__social notched sea" target="_blank">
 						<i class="fab fa-facebook-f"></i>
