@@ -69,22 +69,28 @@ function add_to_queue_cv()
 
 			$data['json'] = json_encode($application_data);
 
-			if (isset($_FILES['app-cv']) && $_FILES['app-cv'] && $_FILES['app-cv']['name'] && $_FILES['app-cv']['tmpname']) {
+			if (isset($_FILES['app-cv']) && $_FILES['app-cv'] && $_FILES['app-cv']['name']) {
 				$uploaded_cv = realpath($_FILES['app-cv']['tmp_name']);
 				$cv_ext = $_FILES['app-cv']['type'];
 				$cv_name = basename($_FILES['app-cv']['name']);
 				$data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
-			} else if (isset($_FILES['cv-cv']) && $_FILES['cv-cv'] && $_FILES['cv-cv']['name'] && $_FILES['cv-cv']['tmpname']) {
+			} else if (isset($_FILES['cv-cv']) && $_FILES['cv-cv'] && $_FILES['cv-cv']['name']) {
 				$uploaded_cv = realpath($_FILES['cv-cv']['tmp_name']);
 				$cv_ext = $_FILES['cv-cv']['type'];
 				$cv_name = basename($_FILES['cv-cv']['name']);
 				$data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
 			}
 
-			var_dump($application_data);
+
+			// echo '<pre>';
+			// var_dump($application_data);
+			// echo '</pre>';
 
 			$person_response = postRequest('people/add_to_queue', $api_key, $api_secret, $data);
-			var_dump($person_response);
+			// echo '<pre>';
+			// echo var_dump($person_response);
+			// echo '</pre>';
+			// var_dump($person_response->status);
 			if (isset($person_response->status) && $person_response->status === 'ok') {
 				$message = sendEmailCV();
 			} else {

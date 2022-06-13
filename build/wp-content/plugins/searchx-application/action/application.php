@@ -71,12 +71,12 @@ function add_to_queue()
 
 			$data['json'] = json_encode($application_data);
 
-			if (isset($_FILES['app-cv']) && $_FILES['app-cv'] && $_FILES['app-cv']['name'] && $_FILES['app-cv']['tmpname']) {
+			if (isset($_FILES['app-cv']) && $_FILES['app-cv'] && $_FILES['app-cv']['name']) {
 				$uploaded_cv = realpath($_FILES['app-cv']['tmp_name']);
 				$cv_ext = $_FILES['app-cv']['type'];
 				$cv_name = basename($_FILES['app-cv']['name']);
 				$data['cv'] = curl_file_create($uploaded_cv, $cv_ext, $cv_name);
-			} else if (isset($_FILES['cv-cv']) && $_FILES['cv-cv'] && $_FILES['cv-cv']['name'] && $_FILES['cv-cv']['tmpname']) {
+			} else if (isset($_FILES['cv-cv']) && $_FILES['cv-cv'] && $_FILES['cv-cv']['name']) {
 				$uploaded_cv = realpath($_FILES['cv-cv']['tmp_name']);
 				$cv_ext = $_FILES['cv-cv']['type'];
 				$cv_name = basename($_FILES['cv-cv']['name']);
