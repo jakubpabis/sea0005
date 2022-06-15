@@ -1,6 +1,6 @@
 <?php
 $testimonials = get_sub_field('testimonials');
-if (isset($testimonials) && count($testimonials) > 0) : ?>
+if (isset($testimonials) && !empty($testimonials)) : ?>
 	<section class="articles-slider flex-section">
 		<div class="container pb-5">
 			<div class="owl-carousel owl-theme articles-slider-cards testimonials">
