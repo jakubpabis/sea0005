@@ -79,28 +79,30 @@
 					</span>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-lg-1">
-					<svg width="58" height="35" xmlns="http://www.w3.org/2000/svg">
-						<path d="M20.52 34.32L28.92 0h-15L0 34.32h20.52zm28.92 0L57.84 0h-15l-13.8 34.32h20.4z" fill="#EC6278" />
-					</svg>
-				</div>
-				<div class="col-lg-6">
-					<div class="h3 font-primary text400">
-						<?php echo get_sub_field('testimonial'); ?>
+			<?php if (get_sub_field('testimonial') || get_sub_field('testimonial_author') || get_sub_field('image')) : ?>
+				<div class="row">
+					<div class="col-lg-1">
+						<svg width="58" height="35" xmlns="http://www.w3.org/2000/svg">
+							<path d="M20.52 34.32L28.92 0h-15L0 34.32h20.52zm28.92 0L57.84 0h-15l-13.8 34.32h20.4z" fill="#EC6278" />
+						</svg>
 					</div>
-					<p class="h4 font-primary text700">
-						<?php echo get_sub_field('testimonial_author'); ?>
-					</p>
-				</div>
-				<?php if (get_sub_field('image') && get_sub_field('image')['url']) : ?>
-					<div class="col-lg-4 offset-lg-1 d-lg-block d-none">
-						<a href="https://goo.gl/maps/HFFmkqwHAdMfu4iG8" target="_blank">
-							<img class="lazy" data-src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>">
-						</a>
+					<div class="col-lg-6">
+						<div class="h3 font-primary text400">
+							<?php echo get_sub_field('testimonial'); ?>
+						</div>
+						<p class="h4 font-primary text700">
+							<?php echo get_sub_field('testimonial_author'); ?>
+						</p>
 					</div>
-				<?php endif; ?>
-			</div>
+					<?php if (get_sub_field('image') && get_sub_field('image')['url']) : ?>
+						<div class="col-lg-4 offset-lg-1 d-lg-block d-none">
+							<a href="https://goo.gl/maps/HFFmkqwHAdMfu4iG8" target="_blank">
+								<img class="lazy" data-src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>">
+							</a>
+						</div>
+					<?php endif; ?>
+				</div>
+			<?php endif; ?>
 		</div>
 	</section>
 <?php endif; ?>
