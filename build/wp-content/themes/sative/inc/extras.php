@@ -197,7 +197,6 @@ function jobs_ajax_filtering()
 		);
 	}
 
-	//var_dump($args);
 	$query = new WP_Query($args);
 	$post_no = $query->found_posts;
 
@@ -263,7 +262,6 @@ function post_ajax_filtering()
 	);
 
 	if (isset($_GET['category'])) {
-		var_dump($_GET['category']);
 		$catArr = [];
 		foreach ($_GET['category'] as $cat) {
 			$catArr[] = get_category_by_slug($cat)->term_id;
@@ -271,7 +269,6 @@ function post_ajax_filtering()
 		$args['category__and'] = $catArr;
 	}
 
-	var_dump($args);
 	$query = new WP_Query($args);
 	$post_no = $query->found_posts;
 
