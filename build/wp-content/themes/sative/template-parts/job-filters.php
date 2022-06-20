@@ -45,7 +45,7 @@ foreach ($taxonomyFilters as $taxF) {
 						<i class="fas fa-plus"></i>
 						<i class="fas fa-minus"></i>
 					</span>
-					<div class="filters job-category-filters">
+					<div class="filters job job-category-filters">
 						<?php hierarchical_tax_tree_filter(0, 'job-category', $activeJobCats); ?>
 					</div>
 				</div>
@@ -73,7 +73,7 @@ foreach ($taxonomyFilters as $taxF) {
 					<i class="fas fa-plus"></i>
 					<i class="fas fa-minus"></i>
 				</span>
-				<div class="filters job-salary-filters">
+				<div class="filters job job-salary-filters">
 					<div class="inputs">
 						<input type="text" name="salary_min" placeholder="<?php pll_e('From'); ?>" value="<?php echo $salaryMin; ?>">
 						<input type="text" name="salary_max" placeholder="<?php pll_e('To'); ?>" value="<?php echo $salaryMax; ?>">
@@ -95,7 +95,7 @@ foreach ($taxonomyFilters as $taxF) {
 						<i class="fas fa-plus"></i>
 						<i class="fas fa-minus"></i>
 					</span>
-					<div class="filters">
+					<div class="filters job">
 						<?php hierarchical_tax_tree_filter(0, 'job-location', $activeJobLocs); ?>
 					</div>
 				</div>
@@ -115,7 +115,7 @@ foreach ($taxonomyFilters as $taxF) {
 						<i class="fas fa-plus"></i>
 						<i class="fas fa-minus"></i>
 					</span>
-					<div class="filters">
+					<div class="filters job">
 						<?php hierarchical_tax_tree_filter(0, 'job-industry', $activeJobInds, 'name', 'ASC'); ?>
 					</div>
 				</div>
@@ -135,7 +135,7 @@ foreach ($taxonomyFilters as $taxF) {
 						<i class="fas fa-plus"></i>
 						<i class="fas fa-minus"></i>
 					</span>
-					<div class="filters job-type-filters">
+					<div class="filters job job-type-filters">
 						<?php hierarchical_tax_tree_filter(0, 'job-type', $activeJobTyps); ?>
 					</div>
 				</div>

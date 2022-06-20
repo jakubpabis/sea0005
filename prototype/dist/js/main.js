@@ -4646,7 +4646,7 @@ function parseParams(querystring) {
 }
 
 function jobsAjaxFiltering() {
-  $('.filters')
+  $('.filters.job')
     .find('ul')
     .find('li')
     .find('a, input')
