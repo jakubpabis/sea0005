@@ -4747,6 +4747,108 @@ function jobsAjaxFiltering() {
     });
 }
 
+function postsAjaxFiltering() {
+  $('.filters.post')
+    .find('ul')
+    .find('li')
+    .find('a, input')
+    .on('click', function () {
+      var $current = window.location.search;
+      var $currentObj = parseParams($current.search);
+      //console.log($current);
+      //console.log(parseParams($current.search));
+
+      var $this = $(this);
+      var $key = $this.data('key');
+      var $value = $this.data('value');
+      var $data = {
+        action: 'post_ajax_filtering',
+        url: window.location.href,
+      };
+
+      $('.job-category-filters')
+        .find('*[data-key]')
+        .each(function () {
+          if ($(this).parent().parent('li').hasClass('active')) {
+            //console.log($(this));
+            var $filtersKey = $(this).data('key');
+            var $filtersValue = $(this).data('value');
+            //console.log($data);
+            if (Array.isArray($data['"' + $filtersKey + '"'])) {
+              $data['"' + $filtersKey + '"'].push($filtersValue);
+            } else {
+              $data['"' + $filtersKey + '"'] = [$filtersValue];
+            }
+            //console.log($data['"' + $filtersKey + '"']);
+          }
+        });
+
+      if ($this.parent().parent('li').hasClass('active')) {
+        var $index = $data['"' + $key + '"'].indexOf($value);
+        //console.log($data[$key]);
+        if ($index > -1) {
+          $data['"' + $key + '"'].splice($index, 1);
+        }
+        //console.log($data[$key]);
+        $this.parent().parent('li').removeClass('active');
+      } else {
+        $this.parent().parent('li').addClass('active');
+
+        if (Array.isArray($data['"' + $key + '"'])) {
+          $data['"' + $key + '"'].push($value);
+        } else {
+          $data['"' + $key + '"'] = [$value];
+        }
+        //console.log($data['"' + $key + '"']);
+      }
+
+      var $dataCopy = {};
+      for (var [key, value] of Object.entries($data)) {
+        console.log(key);
+        if (key !== 'action' && key !== 'url') {
+          $dataCopy[key] = value;
+        }
+      }
+      console.log($dataCopy);
+
+      var $cURL = $data.url;
+      // console.log($cURL);
+
+      var recursiveEncoded = $.param($dataCopy);
+      var url = new URL($cURL);
+      // console.log(`url: ` + url);
+      url.search = recursiveEncoded;
+      var params = recursiveEncoded
+        .toString()
+        .replace(/"/g, '')
+        .replace(/%22/g, '');
+      // console.log(`url: ` + url);
+      // console.log(`usr.search: ` + url.search);
+      var new_url = url.toString().replace(/"/g, '').replace(/%22/g, '');
+      console.log(`new url: ` + new_url);
+      window.history.replaceState({}, '', new_url);
+      $data['params'] = params;
+
+      console.log($data);
+
+      $.ajax({
+        type: 'POST',
+        url: '/wp-admin/admin-ajax.php',
+        dataType: 'json',
+        data: $data,
+        success: function (res) {
+          $('#jobs__list-cont').html(res.html);
+          console.log(res);
+        },
+        error: function (err) {
+          console.error(err);
+        },
+      });
+
+      return false;
+    });
+}
+
 jQuery(document).ready(function () {
   if (mobileAndTabletCheck()) {
     $('body').addClass('is-mobile');
@@ -4778,6 +4880,7 @@ jQuery(document).ready(function () {
   playVideoButton();
   socialShareJob();
   jobsAjaxFiltering();
+  postsAjaxFiltering();
 
   console.log(getCookie('cookies-accepted'));
 
