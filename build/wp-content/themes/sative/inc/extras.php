@@ -263,6 +263,7 @@ function post_ajax_filtering()
 	);
 
 	if (isset($_GET['category'])) {
+		var_dump($_GET['category']);
 		$catArr = [];
 		foreach ($_GET['category'] as $cat) {
 			$catArr[] = get_category_by_slug($cat)->term_id;
