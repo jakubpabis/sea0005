@@ -24,7 +24,7 @@
 						<i class="fas fa-plus"></i>
 						<i class="fas fa-minus"></i>
 					</span>
-					<div class="filters job-category-filters">
+					<div class="filters post job-category-filters">
 						<?php hierarchical_tax_tree_filter(0, 'category', $activeJobCats); ?>
 					</div>
 				</div>

@@ -4,10 +4,8 @@ wp_reset_postdata();
 
 if (pll_current_language() == 'en') :
 	$topTerm = 'knowledge';
-	$know = get_category_by_slug('knowledge');
 else :
 	$topTerm = 'kennis';
-	$know = get_category_by_slug('kennis');
 endif;
 
 if (isset($_GET['k-title']) && $_GET['k-title']) {
@@ -15,8 +13,6 @@ if (isset($_GET['k-title']) && $_GET['k-title']) {
 } else {
 	$search = null;
 }
-
-//var_dump($know);
 
 $args = array(
 	'post_type' => 'post',
