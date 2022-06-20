@@ -271,6 +271,7 @@ function post_ajax_filtering()
 		$args['category__and'] = $catArr;
 	}
 
+	var_dump($args);
 	$query = new WP_Query($args);
 	$post_no = $query->found_posts;
 

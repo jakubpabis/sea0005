@@ -4754,7 +4754,7 @@ function postsAjaxFiltering() {
     .find('a, input')
     .on('click', function () {
       var $current = window.location.search;
-      var $currentObj = parseParams($current.search);
+      //var $currentObj = parseParams($current.search);
       //console.log($current);
       //console.log(parseParams($current.search));
 
