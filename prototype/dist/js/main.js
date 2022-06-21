@@ -4753,7 +4753,7 @@ function postsAjaxFiltering() {
     .find('li')
     .find('a, input')
     .on('click', function () {
-      var $current = window.location.search;
+      //var $current = window.location.search;
       //var $currentObj = parseParams($current.search);
       //console.log($current);
       //console.log(parseParams($current.search));
@@ -4809,7 +4809,7 @@ function postsAjaxFiltering() {
           $dataCopy[key] = value;
         }
       }
-      console.log($dataCopy);
+      //console.log($dataCopy);
 
       var $cURL = $data.url;
       // console.log($cURL);
@@ -4818,32 +4818,33 @@ function postsAjaxFiltering() {
       var url = new URL($cURL);
       // console.log(`url: ` + url);
       url.search = recursiveEncoded;
-      var params = recursiveEncoded
-        .toString()
-        .replace(/"/g, '')
-        .replace(/%22/g, '');
+      // var params = recursiveEncoded
+      //   .toString()
+      //   .replace(/"/g, '')
+      //   .replace(/%22/g, '');
       // console.log(`url: ` + url);
       // console.log(`usr.search: ` + url.search);
       var new_url = url.toString().replace(/"/g, '').replace(/%22/g, '');
-      console.log(`new url: ` + new_url);
-      window.history.replaceState({}, '', new_url);
-      $data['params'] = params;
+      //console.log(`new url: ` + new_url);
+      //window.history.replaceState({}, '', new_url);
+      window.location.href = new_url;
+      //$data['params'] = params;
 
-      console.log($data);
+      // console.log($data);
 
-      $.ajax({
-        type: 'POST',
-        url: '/wp-admin/admin-ajax.php',
-        dataType: 'json',
-        data: $data,
-        success: function (res) {
-          $('#jobs__list-cont').html(res.html);
-          console.log(res);
-        },
-        error: function (err) {
-          console.error(err);
-        },
-      });
+      // $.ajax({
+      //   type: 'POST',
+      //   url: '/wp-admin/admin-ajax.php',
+      //   dataType: 'json',
+      //   data: $data,
+      //   success: function (res) {
+      //     $('#jobs__list-cont').html(res.html);
+      //     console.log(res);
+      //   },
+      //   error: function (err) {
+      //     console.error(err);
+      //   },
+      // });
 
       return false;
     });

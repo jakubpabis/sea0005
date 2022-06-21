@@ -38,14 +38,14 @@ require_once get_template_directory() . '/inc/posts-filtering.php'; ?>
 
 	<section id="jobs__list-cont" class="jobs__list">
 		<div class="container">
-			<div class="col-12">
-				<aside class="additionals py-4">
-					<p class="text-size-small font-primary">
-						<span class="jobsno"><?php echo $post_no; ?></span> <?php pll_e('articles found'); ?>
-					</p>
-				</aside>
-			</div>
 			<div class="row justify-content-md-center justify-content-end">
+				<div class="col-12">
+					<aside class="additionals py-4">
+						<p class="text-size-small font-primary">
+							<span class="jobsno"><?php echo $post_no; ?></span> <?php pll_e('articles found'); ?>
+						</p>
+					</aside>
+				</div>
 				<div class="col-lg-4 col-12 jobs__list-filters-container posts-filters">
 					<?php get_template_part('template-parts/posts-filters'); ?>
 					<aside class="my-4">
