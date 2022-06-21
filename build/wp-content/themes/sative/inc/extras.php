@@ -258,15 +258,36 @@ function post_ajax_filtering()
 		'post_status' => 'publish',
 		'posts_per_page' => 10,
 		'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
-		's' => $search
+		's' => $search,
+		'tax_query' => array(
+			'relation' => 'AND',
+		),
 	);
 
-	if (isset($_GET['category'])) {
-		$catArr = [];
-		foreach ($_GET['category'] as $cat) {
-			$catArr[] = get_category_by_slug($cat)->term_id;
+	$taxonomyFilters = array(
+		'category',
+	);
+
+	// for taxonomies
+	foreach ($taxonomyFilters as $taxF) {
+		if (isset($_POST['"' . $taxF . '"']) && !empty($_POST['"' . $taxF . '"']) && $_POST['"' . $taxF . '"'] !== null) {
+			if (count($_POST['"' . $taxF . '"']) > 1) {
+				foreach (filterHelper($_POST['"' . $taxF . '"'], $taxF) as $termID) {
+					$arr = array(
+						'taxonomy' => $taxF,
+						'field' => 'slug',
+						'terms' => $termID,
+					);
+					array_push($args['tax_query'], $arr);
+				}
+			} else if (count($_POST['"' . $taxF . '"']) > 0) {
+				$args['tax_query'][] = array(
+					'taxonomy' => $taxF,
+					'field' => 'slug',
+					'terms' => $_POST['"' . $taxF . '"'],
+				);
+			}
 		}
-		$args['category__and'] = $catArr;
 	}
 
 	$query = new WP_Query($args);
