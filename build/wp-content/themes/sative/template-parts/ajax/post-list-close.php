@@ -2,3 +2,4 @@
 	<?php echo $pagination; ?>
 </nav>
 </main>
+</div>

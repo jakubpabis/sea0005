@@ -39,14 +39,7 @@ require_once get_template_directory() . '/inc/posts-filtering.php'; ?>
 	<section class="jobs__list">
 		<div class="container">
 			<div class="row justify-content-md-center justify-content-end">
-				<div class="col-12">
-					<aside class="additionals py-4">
-						<p class="text-size-small font-primary">
-							<span class="jobsno"><?php echo $post_no; ?></span> <?php pll_e('articles found'); ?>
-						</p>
-					</aside>
-				</div>
-				<div class="col-lg-4 col-12 jobs__list-filters-container posts-filters">
+				<div class="col-lg-4 col-12 jobs__list-filters-container posts-filters order-6">
 					<?php get_template_part('template-parts/posts-filters'); ?>
 					<aside class="my-4">
 						<div class="card bg-yellow text-navy text-left" style="padding: 30px;">
@@ -100,7 +93,14 @@ require_once get_template_directory() . '/inc/posts-filtering.php'; ?>
 						</div>
 					</aside>
 				</div>
-				<div id="jobs__list-cont" class="col-lg-8">
+				<div class="col-12 order-0">
+					<aside class="additionals py-4">
+						<p class="text-size-small font-primary">
+							<span class="jobsno"><?php echo $post_no; ?></span> <?php pll_e('articles found'); ?>
+						</p>
+					</aside>
+				</div>
+				<div id="jobs__list-cont" class="col-lg-8 order-12">
 					<main class="jobs__list-items">
 						<?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
 								$helper = jobDisplayHelper(); ?>
