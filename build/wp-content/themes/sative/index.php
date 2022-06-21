@@ -49,7 +49,7 @@ require_once get_template_directory() . '/inc/posts-filtering.php'; ?>
 		</div>
 	</header>
 
-	<section class="jobs__list">
+	<section id="jobs__list-cont" class="jobs__list">
 		<div class="container">
 			<div class="row justify-content-md-center justify-content-end">
 				<div class="col-lg-4 col-12 jobs__list-filters-container posts-filters order-6">
@@ -113,7 +113,7 @@ require_once get_template_directory() . '/inc/posts-filtering.php'; ?>
 						</p>
 					</aside>
 				</div>
-				<div id="jobs__list-cont" class="col-lg-8 order-12">
+				<div class="col-lg-8 order-12">
 					<main class="jobs__list-items">
 						<?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
 								$helper = jobDisplayHelper(); ?>
