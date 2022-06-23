@@ -23,8 +23,8 @@ function sendEmailContact()
 	//$to = 'office@sative.co.uk';
 	$subject = pll__('Contact form submitted successfully');
 	$subjectA = pll__('Contact form message from website');
-	$body = contactEmailTemplate();
-	$bodyA = contactEmailTemplateA($from, $name, $phone, $company, $messageForm);
+	$body = contactEmailTemplateA();
+	$bodyA = contactEmailTemplateB($from, $name, $phone, $company, $messageForm);
 	$headers = array('Content-Type: text/html; charset=UTF-8');
 
 	$email = wp_mail($from, $subject, $body, $headers);
