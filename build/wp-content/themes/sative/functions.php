@@ -809,4 +809,4 @@ function yoast_is_fucking_things_up()
 	$original_user->display_name = '';
 	wp_cache_set(1, $original_user, 'users');
 }
-add_action('plugins_loaded', 'yoast_is_fucking_things_up');
+add_action('muplugins_loaded', 'yoast_is_fucking_things_up');
