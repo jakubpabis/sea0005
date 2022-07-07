@@ -801,3 +801,12 @@ function hashesForLashes()
 	}
 }
 add_action('after_setup_theme', 'hashesForLashes');
+
+function yoast_is_fucking_things_up()
+{
+	$original_user = new stdClass();
+	$original_user->ID = 1;
+	$original_user->display_name = '';
+	wp_cache_set(1, $original_user, 'users');
+}
+add_action('plugins_loaded', 'yoast_is_fucking_things_up');
