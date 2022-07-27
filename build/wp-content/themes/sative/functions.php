@@ -644,8 +644,6 @@ function siteURL()
 	return $protocol . $domainName;
 }
 
-require_once get_template_directory() . '/inc/application-form.php';
-
 require_once get_template_directory() . '/inc/cronjob.php';
 
 require_once get_template_directory() . '/inc/fetchdata.php';
