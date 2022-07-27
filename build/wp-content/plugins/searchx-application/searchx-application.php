@@ -14,7 +14,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$recaptchaKey = '6LcJe8kcAAAAABJutpNaeZ3Rf1i0VbzOI6Kp7qa7';
+$recaptchaKey = '6LdyeiQhAAAAAN_FcoL_GuLLqBVFSRUedpkNtB0H';
 $api_key = 'XoslTEyE';
 $api_secret = 'ZZXRgDovPQvPfLjklPLBoTAl';
 
