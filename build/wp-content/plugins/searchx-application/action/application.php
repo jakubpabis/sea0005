@@ -5,7 +5,9 @@ function add_to_queue()
 	global $recaptchaKey;
 	global $api_key;
 	global $api_secret;
-	if (!isset($_POST['app-name']) || !$_POST['app-name'] || $_POST['app-name'] == "") {
+	if (isset($_POST['SXHP_sn_input']) && ($_POST['SXHP_sn_input'] || $_POST['SXHP_sn_input'] !== "")) {
+		$message = 'Failed! You’re a bot!';
+	} else if (!isset($_POST['app-name']) || !$_POST['app-name'] || $_POST['app-name'] == "") {
 		$message = 'failed wrong name';
 	} else if (!isset($_POST['app-email']) || !$_POST['app-email'] || $_POST['app-email'] == "") {
 		$message = 'failed wrong email';

@@ -341,6 +341,9 @@ get_template_part('template-parts/breadcrumbs'); ?>
 									</div>
 								</div>
 							</div>
+							<div class="col-12">
+								<input type="text" minlength="2" id="SXHP_sn_input" name="SXHP_sn_input" value="">
+							</div>
 							<div class="col-lg-12 col-sm-6 ugly pt-2">
 								<input type="text" name="app-name" required value="<?php echo $app_name ? $app_name : null; ?>">
 								<label class="ugly-label" for="app-name" <?php echo $app_name ? 'style="opacity: 0;"' : null; ?>><?php pll_e('Name'); ?> <span>*</span></label>

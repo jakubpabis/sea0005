@@ -130,6 +130,9 @@
 									<textarea class="required" name="<?php echo $type; ?>_message" minlength="10" rows="6" required></textarea>
 									<label class="ugly-label" for="<?php echo $type; ?>_message"><?php echo pll_e('Message'); ?> <span>*</span></label>
 								</div>
+								<div class="col-12">
+									<input type="text" minlength="2" id="SXHP_sn_input" name="SXHP_sn_input" value="">
+								</div>
 								<div class="col-12 pt-1">
 									<input class="d-none" type="text" name="<?php echo $type; ?>_important_consent_field">
 									<input type="hidden" name="action" value="<?php echo $type; ?>_form">

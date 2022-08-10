@@ -102,6 +102,9 @@ if (isset($_GET['app-url']) && $_GET['app-url']) {
 											</div>
 										</div>
 									</div>
+									<div class="w-100">
+										<input type="text" minlength="2" id="SXHP_sn_input" name="SXHP_sn_input" value="">
+									</div>
 									<div class="w-50 pr-2 ugly pb-2">
 										<input type="text" name="cv-name" minlength="1" value="<?php echo $app_name ? $app_name : null; ?>" required>
 										<label class="ugly-label" for="cv-name" <?php echo $app_name ? 'style="opacity: 0;"' : null; ?>><?php echo pll_e('Name'); ?> <span>*</span></label>

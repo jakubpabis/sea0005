@@ -133,6 +133,9 @@
 					</div>
 				</div>
 			</div>
+			<div class="col-12">
+				<input type="text" minlength="2" id="SXHP_sn_input" name="SXHP_sn_input" value="">
+			</div>
 			<div class="col-12 pt-4">
 				<?php get_template_part('template-parts/referrer'); ?>
 				<input type="hidden" name="postid" value="<?php echo get_the_ID(); ?>">

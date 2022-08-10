@@ -37,7 +37,7 @@
   color: $color-navy;
   line-height: 1;
   padding: 0 20px;
-  background-image: url("../img/search.svg");
+  background-image: url('../img/search.svg');
   background-repeat: no-repeat;
   background-position: calc(100% - 20px) center;
 
@@ -68,7 +68,7 @@ ul.lined {
       display: block;
       padding: 25px 0;
       padding-right: 40px;
-      background-image: url("../img/arrow-right.svg");
+      background-image: url('../img/arrow-right.svg');
       background-repeat: no-repeat;
       background-position: center right;
       border-bottom: 1px solid rgba($color-navy, 0.5);
@@ -85,4 +85,17 @@ ul.lined {
 .owl-carousel.owl-center .owl-stage {
   display: flex !important;
   align-items: center !important;
+}
+
+#SXHP_sn_input,
+.SXHP_sn_input {
+  display: block !important;
+  opacity: 1 !important;
+  position: absolute !important;
+  width: 100% !important;
+  z-index: 0 !important;
+  color: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
 }

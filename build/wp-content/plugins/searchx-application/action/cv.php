@@ -5,7 +5,9 @@ function add_to_queue_cv()
 	global $recaptchaKey;
 	global $api_key;
 	global $api_secret;
-	if (!isset($_POST['cv-name']) || !$_POST['cv-name'] || $_POST['cv-name'] == "") {
+	if (isset($_POST['SXHP_sn_input']) && ($_POST['SXHP_sn_input'] || $_POST['SXHP_sn_input'] !== "")) {
+		$message = 'Failed! You’re a bot!';
+	} else if (!isset($_POST['cv-name']) || !$_POST['cv-name'] || $_POST['cv-name'] == "") {
 		$message = 'failed wrong name';
 	} else if (!isset($_POST['cv-email']) || !$_POST['cv-email'] || $_POST['cv-email'] == "") {
 		$message = 'failed wrong email';

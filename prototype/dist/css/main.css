@@ -1315,6 +1315,19 @@ ul.lined li:first-child a {
 	align-items: center !important;
 }
 
+#SXHP_sn_input,
+.SXHP_sn_input {
+	position: absolute !important;
+	z-index: 0 !important;
+	display: block !important;
+	width: 100% !important;
+	opacity: 1 !important;
+	color: transparent !important;
+	border: none !important;
+	outline: none !important;
+	background-color: transparent !important;
+}
+
 /* --- bootstrap-menu styling http://bootstrap-menu.com  */
 
 body.offcanvas-active {

@@ -180,6 +180,7 @@
 				<?php else : ?>
 					<?php $type = 'cta_dog_contact'; ?>
 					<form method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" accept-charset="UTF-8" role="form" id="<?php echo $type; ?>_section_form" enctype="multipart/form-data">
+						<input type="text" minlength="2" id="SXHP_sn_input" name="SXHP_sn_input" value="">
 						<div class="owl-carousel owl-theme contact-form-carousel">
 							<div class="ugly p-2">
 								<input class="required pristine" type="text" name="<?php echo $type; ?>_name" minlength="2" required>
