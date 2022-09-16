@@ -14,9 +14,9 @@ function xmlRead()
 	foreach ($xml->vacancy as $job) {
 
 		if ($job->id && $job->id !== "") {
-			$jobID = $job->id;
-			var_dump("---------------------------");
-			var_dump($job->id);
+			$jobID = strval($job->id);
+			var_dump(strval("---------------------------"));
+			var_dump(strval($job->id));
 		} else {
 			$jobID = null;
 		}
@@ -62,7 +62,7 @@ function xmlRead()
 		if ($job->custom_fields && !empty($job->custom_fields)) {
 			foreach ($job->custom_fields->custom_field as $field) {
 				echo $field['field'];
-				echo "<br/>";
+				echo "<br/><br/>";
 				if (strval($field['field']) === 'job_excerpt') {
 					$excerpt = strval($field);
 					break;
@@ -106,8 +106,8 @@ function xmlRead()
 		if ($excerpt) {
 			$jobArray['post_excerpt'] = $excerpt;
 		}
-		var_dump($jobArray);
-		echo "<br/>";
+		// var_dump($jobArray);
+		// echo "<br/>";
 
 		if (in_array($jobID, $postsArr, true)) {
 			//var_dump('check');
@@ -260,11 +260,12 @@ function jobList()
 	);
 	$posts = new WP_Query($args);
 
-	echo '<br/><br/>Listing jobs in DB<br/>';
+	echo '<br/><br/>Listing jobs in DB<br/><br/>';
 
 	if ($posts->have_posts()) :
 		while ($posts->have_posts()) : $posts->the_post();
 			$id = get_field('job_id', get_the_ID());
+			echo "<br/><br/>";
 			var_dump($id);
 			array_push($postsArr, $id);
 		endwhile;
@@ -296,7 +297,7 @@ function jobsFulfilled($job_ids)
 
 		if ($my_posts) {
 			$postID = $my_posts[0]->ID;
-			$job_id = get_field('job_id', $postID);
+			$job_id = strval(get_field('job_id', $postID));
 			$post_type = get_post_type($postID);
 		}
 		if (!in_array($job_id, $job_ids) && $post_type !== 'jobs-fulfilled') {
@@ -306,7 +307,7 @@ function jobsFulfilled($job_ids)
 				'post_type'     => 'jobs-fulfilled',
 			);
 			wp_update_post($jobArray, true);
-			echo 'job fulfilled with ID: ' . $postID . '<br/>';
+			echo 'job fulfilled with ID: ' . $postID . '<br/><br/>';
 		}
 	}
 }
