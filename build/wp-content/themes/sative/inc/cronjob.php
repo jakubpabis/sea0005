@@ -14,7 +14,7 @@ function xmlRead()
 	foreach ($xml->vacancy as $job) {
 
 		if (!empty($job->id)) {
-			$jobID = intval($job->id);
+			$jobID = $job->id;
 		} else {
 			$jobID = null;
 		}
