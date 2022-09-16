@@ -702,7 +702,7 @@ function custom_jobs_column($column, $post_id)
 	switch ($column) {
 
 		case 'jobid':
-			echo intval(get_field('job_id', $post_id));
+			echo get_field('job_id', $post_id);
 			break;
 
 		case 'slug':
