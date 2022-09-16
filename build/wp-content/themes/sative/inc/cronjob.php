@@ -15,6 +15,8 @@ function xmlRead()
 
 		if ($job->id && $job->id !== "") {
 			$jobID = $job->id;
+			var_dump("---------------------------");
+			var_dump($job->id);
 		} else {
 			$jobID = null;
 		}
