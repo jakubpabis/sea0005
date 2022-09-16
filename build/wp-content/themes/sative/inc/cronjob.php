@@ -262,7 +262,7 @@ function jobList()
 
 	if ($posts->have_posts()) :
 		while ($posts->have_posts()) : $posts->the_post();
-			$id = intval(get_field('job_id', get_the_ID()));
+			$id = get_field('job_id', get_the_ID());
 			var_dump($id);
 			array_push($postsArr, $id);
 		endwhile;
