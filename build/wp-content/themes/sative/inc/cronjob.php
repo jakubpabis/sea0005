@@ -13,7 +13,7 @@ function xmlRead()
 
 	foreach ($xml->vacancy as $job) {
 
-		if (!empty($job->id)) {
+		if ($job->id && $job->id !== "") {
 			$jobID = $job->id;
 		} else {
 			$jobID = null;
