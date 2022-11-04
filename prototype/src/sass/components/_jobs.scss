@@ -167,7 +167,7 @@
 
             &:before,
             &:after {
-              content: "";
+              content: '';
               position: absolute;
               display: block;
             }
@@ -317,7 +317,7 @@
           margin-right: 15px;
           background-position: center;
           background-size: cover;
-          background-image: url("../img/cubecross.svg");
+          background-image: url('../img/cubecross.svg');
 
           @media (max-width: 1199px) {
             margin-top: 5px;
@@ -331,21 +331,21 @@
             margin-top: 3px;
           }
 
-          &[data-type="it"] {
-            background-image: url("../img/cubecross-it.svg");
+          &[data-type='it'] {
+            background-image: url('../img/cubecross-it.svg');
           }
 
-          &[data-type="sales"] {
-            background-image: url("../img/cubecross-sales.svg");
+          &[data-type='sales'] {
+            background-image: url('../img/cubecross-sales.svg');
           }
 
-          &[data-type="executive"] {
-            background-image: url("../img/cubecross-exec.svg");
+          &[data-type='executive'] {
+            background-image: url('../img/cubecross-exec.svg');
           }
 
-          &[data-type="freelance"],
-          &[data-type="marketing"] {
-            background-image: url("../img/cubecross-free.svg");
+          &[data-type='freelance'],
+          &[data-type='marketing'] {
+            background-image: url('../img/cubecross-free.svg');
           }
         }
 
@@ -397,19 +397,19 @@
             background-size: auto 19px;
 
             &.place {
-              background-image: url("../img/place.svg");
+              background-image: url('../img/place.svg');
             }
 
             &.briefcase {
-              background-image: url("../img/briefcase.svg");
+              background-image: url('../img/briefcase.svg');
             }
 
             &.coins {
-              background-image: url("../img/coins.svg");
+              background-image: url('../img/coins.svg');
             }
 
             &.clock {
-              background-image: url("../img/clock.svg");
+              background-image: url('../img/clock.svg');
             }
           }
 
@@ -635,7 +635,7 @@
           display: flex;
 
           .triangle {
-            content: "";
+            content: '';
             width: 0;
             height: 0;
             border-style: solid;
@@ -711,6 +711,7 @@
           img {
             position: absolute;
             top: 0;
+            margin-top: auto !important;
             transform-origin: top;
             transform: scale(1.25);
           }
@@ -918,7 +919,7 @@
                 }
               }
 
-              &[type="file"] {
+              &[type='file'] {
                 width: 100%;
                 background-color: white;
                 opacity: 0;
@@ -1068,19 +1069,19 @@
           background-size: auto 19px;
 
           &.place {
-            background-image: url("../img/place-sea.svg");
+            background-image: url('../img/place-sea.svg');
           }
 
           &.briefcase {
-            background-image: url("../img/briefcase-sea.svg");
+            background-image: url('../img/briefcase-sea.svg');
           }
 
           &.coins {
-            background-image: url("../img/coins-sea.svg");
+            background-image: url('../img/coins-sea.svg');
           }
 
           &.clock {
-            background-image: url("../img/clock-sea.svg");
+            background-image: url('../img/clock-sea.svg');
           }
         }
 
@@ -1092,7 +1093,7 @@
 
       &-item {
         .triangle {
-          content: "";
+          content: '';
           width: 0;
           height: 0;
           border-style: solid;
@@ -1153,19 +1154,19 @@
         background-size: auto 19px;
 
         &.place {
-          background-image: url("../img/place-sea.svg");
+          background-image: url('../img/place-sea.svg');
         }
 
         &.briefcase {
-          background-image: url("../img/briefcase-sea.svg");
+          background-image: url('../img/briefcase-sea.svg');
         }
 
         &.coins {
-          background-image: url("../img/coins-sea.svg");
+          background-image: url('../img/coins-sea.svg');
         }
 
         &.clock {
-          background-image: url("../img/clock-sea.svg");
+          background-image: url('../img/clock-sea.svg');
         }
       }
 
@@ -1186,6 +1187,16 @@
       &:nth-child(4) {
         order: 4;
       }
+    }
+  }
+}
+
+.recruiter {
+  &-img {
+    img {
+      transform-origin: top;
+      margin-top: -30% !important;
+      transform: scale(2);
     }
   }
 }

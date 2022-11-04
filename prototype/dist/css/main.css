@@ -4390,6 +4390,7 @@ aside#chat .dog {
 .jobs__single-recruiter .recruiter-img img {
 	position: absolute;
 	top: 0;
+	margin-top: auto !important;
 	transform: scale(1.25);
 	transform-origin: top;
 }
@@ -4780,6 +4781,12 @@ aside#chat .dog {
 
 .header__job-single .info__item:nth-child(4) {
 	order: 4;
+}
+
+.recruiter-img img {
+	margin-top: -30% !important;
+	transform: scale(2);
+	transform-origin: top;
 }
 
 .posts__list {

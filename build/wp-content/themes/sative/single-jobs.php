@@ -53,7 +53,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 	<header class="header__jobs header__job-single bg-sea">
 		<div class="container">
 			<div class="row py-4">
-				<div class="col-lg-8">
+				<div class="col-lg-9">
 					<h4 class="text-uppercase mb-3 text700">
 						<?php pll_e('Vacature'); ?>
 					</h4>
@@ -107,29 +107,60 @@ get_template_part('template-parts/breadcrumbs'); ?>
 					global $wp;
 					$current_url = home_url(add_query_arg(array(), $wp->request));
 					?>
-					<div class="d-flex flex-wrap flex-row">
-						<a href="#single-job-apply" class="btn btn__default yellow mr-2 mb-3 slideTo"><?php pll_e('Direct solliciteren!'); ?></a>
-						<span class="social-share btn btn__default square outline navy d-sm-inline-block d-none">
-							<span class="social-share-open"><i class="fas fa-share-alt"></i></span>
-							<span class="social-share-close ml-sm-n2 ml-n3 mr-2 d-none"><i class="fas fa-times"></i></span>
-							<span class="social-share-buttons d-none">
-								<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $current_url; ?>&t=<?php echo get_the_title(); ?>" target="_blank"><i class="fab fa-facebook-f ml-3"></i></a>
-								<a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo $current_url; ?>&title=<?php echo get_the_title(); ?>&summary=Checkout%20this%20job%20offer!&source=<?php echo $current_url; ?>" target="_blank"><i class="fab fa-linkedin-in ml-3"></i></a>
-								<a href="https://twitter.com/intent/tweet?source=<?php echo $current_url; ?>&text=<?= $current_url; ?> - <?php echo get_the_title(); ?>" target="_blank"><i class="fab fa-twitter ml-3"></i></a>
-								<a href="whatsapp://send?text=<?php echo get_the_title(); ?>&nbsp;&nbsp;<?php echo $current_url; ?>" target="_blank"><i class="fab fa-whatsapp ml-3"></i></a>
-								<a href="mailto:?subject=<?php echo get_the_title(); ?>&body=Checkout%20this%20job%20offer: <?php echo $current_url; ?>"><i class="far fa-envelope ml-3"></i></a>
+					<div class="row">
+						<?php $recruiterF = get_field('recruiter_related'); ?>
+						<?php if (is_array($recruiterF) && !empty($recruiterF)) : $recruiter = $recruiterF[0]; ?>
+							<div class="col-xl-11 col-12 mb-4">
+								<div class="recruiter bg-yellow card p-4">
+									<div class="recruiter-text row align-items-center">
+										<div class="col-xl-3 recruiter-img">
+											<img data-src="<?php echo get_the_post_thumbnail_url($recruiter->ID, 'medium_large'); ?>" alt="" class="lazy bg-cover">
+										</div>
+										<div class="col-xl-9">
+											<div class="recruiter-contact">
+												<a href="tel:<?php echo get_field('phone', $recruiter->ID); ?>" class="mb-2">
+													<i class="far fa-phone-alt mr-2"></i>
+													<?php echo get_field('phone', $recruiter->ID); ?>
+												</a>
+											</div>
+											<a href="<?php echo get_field('whatsapp', $recruiter->ID); ?>" class="line-height-1 btn btn__small icon color-white pink text-uppercase my-3 d-inline-flex text-left w-auto align-items-center">
+												<i class="fab fa-whatsapp mr-3 fa-21px"></i>
+												<span><?php pll_e('Stel een vraag via Whatsapp'); ?></span>
+											</a>
+											<a href="<?php echo get_field('calendly', $recruiter->ID); ?>" class="line-height-1 btn btn__small icon navy text-uppercase d-inline-flex text-left w-auto align-items-center">
+												<i class="far fa-video mr-3 fa-21px"></i>
+												<?php pll_e('Plan een videocall met');
+												echo ' ' . $recruiter->post_title; ?>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						<?php endif; ?>
+						<div class="col-12 d-flex flex-row">
+							<a href="#single-job-apply" class="btn btn__default yellow mr-2 mb-3 slideTo"><?php pll_e('Direct solliciteren!'); ?></a>
+							<span class="social-share btn btn__default square outline navy d-sm-inline-block d-none">
+								<span class="social-share-open"><i class="fas fa-share-alt"></i></span>
+								<span class="social-share-close ml-sm-n2 ml-n3 mr-2 d-none"><i class="fas fa-times"></i></span>
+								<span class="social-share-buttons d-none">
+									<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $current_url; ?>&t=<?php echo get_the_title(); ?>" target="_blank"><i class="fab fa-facebook-f ml-3"></i></a>
+									<a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo $current_url; ?>&title=<?php echo get_the_title(); ?>&summary=Checkout%20this%20job%20offer!&source=<?php echo $current_url; ?>" target="_blank"><i class="fab fa-linkedin-in ml-3"></i></a>
+									<a href="https://twitter.com/intent/tweet?source=<?php echo $current_url; ?>&text=<?= $current_url; ?> - <?php echo get_the_title(); ?>" target="_blank"><i class="fab fa-twitter ml-3"></i></a>
+									<a href="whatsapp://send?text=<?php echo get_the_title(); ?>&nbsp;&nbsp;<?php echo $current_url; ?>" target="_blank"><i class="fab fa-whatsapp ml-3"></i></a>
+									<a href="mailto:?subject=<?php echo get_the_title(); ?>&body=Checkout%20this%20job%20offer: <?php echo $current_url; ?>"><i class="far fa-envelope ml-3"></i></a>
+								</span>
 							</span>
-						</span>
-						<span class="btn btn__default outline navy d-sm-none d-inline-block mb-3">
-							<span class="social-share-open ml-n2 mr-3"><i class="fas fa-share-alt"></i></span>
-							<span class="social-share-buttons">
-								<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $current_url; ?>&t=<?php echo get_the_title(); ?>" target="_blank"><i class="fab fa-facebook-f ml-3"></i></a>
-								<a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo $current_url; ?>&title=<?php echo get_the_title(); ?>&summary=Checkout%20this%20job%20offer!&source=<?php echo $current_url; ?>" target="_blank"><i class="fab fa-linkedin-in ml-3"></i></a>
-								<a href="https://twitter.com/intent/tweet?source=<?php echo $current_url; ?>&text=<?= $current_url; ?> - <?php echo get_the_title(); ?>" target="_blank"><i class="fab fa-twitter ml-3"></i></a>
-								<a href="whatsapp://send?text=<?php echo get_the_title(); ?>&nbsp;&nbsp;<?php echo $current_url; ?>" target="_blank"><i class="fab fa-whatsapp ml-3"></i></a>
-								<a href="mailto:?subject=<?php echo get_the_title(); ?>&body=Checkout%20this%20job%20offer: <?php echo $current_url; ?>"><i class="far fa-envelope ml-3"></i></a>
+							<span class="btn btn__default outline navy d-sm-none d-inline-block mb-3">
+								<span class="social-share-open ml-n2 mr-3"><i class="fas fa-share-alt"></i></span>
+								<span class="social-share-buttons">
+									<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $current_url; ?>&t=<?php echo get_the_title(); ?>" target="_blank"><i class="fab fa-facebook-f ml-3"></i></a>
+									<a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo $current_url; ?>&title=<?php echo get_the_title(); ?>&summary=Checkout%20this%20job%20offer!&source=<?php echo $current_url; ?>" target="_blank"><i class="fab fa-linkedin-in ml-3"></i></a>
+									<a href="https://twitter.com/intent/tweet?source=<?php echo $current_url; ?>&text=<?= $current_url; ?> - <?php echo get_the_title(); ?>" target="_blank"><i class="fab fa-twitter ml-3"></i></a>
+									<a href="whatsapp://send?text=<?php echo get_the_title(); ?>&nbsp;&nbsp;<?php echo $current_url; ?>" target="_blank"><i class="fab fa-whatsapp ml-3"></i></a>
+									<a href="mailto:?subject=<?php echo get_the_title(); ?>&body=Checkout%20this%20job%20offer: <?php echo $current_url; ?>"><i class="far fa-envelope ml-3"></i></a>
+								</span>
 							</span>
-						</span>
+						</div>
 					</div>
 				</div>
 				<div class="header__jobs-dog">
@@ -251,7 +282,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 		</section>
 	<?php endif; ?>
 
-	<?php $recruiterF = get_field('recruiter_related'); ?>
+
 	<section class="jobs__single-recruiter py-lg-5 py-0 my-5">
 
 		<div id="single-job-apply" class="container py-5">
