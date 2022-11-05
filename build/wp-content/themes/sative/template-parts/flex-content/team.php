@@ -34,7 +34,7 @@
 												</div>
 												<div class="col-lg-auto col-12 team__item-social d-flex flex-lg-column mt-lg-0 mt-3">
 													<?php if (get_field('whatsapp', $item->ID)) : ?>
-														<a href="<?php echo get_field('whatsapp', $item->ID); ?>" class="btn btn__social notched navy mr-lg-0 mr-2"><i class="fab fa-whatsapp"></i></a>
+														<a href="<?php echo get_field('whatsapp', $item->ID); ?>" class="btn btn__social notched color-white bg-green mr-lg-0 mr-2"><i class="fab fa-whatsapp"></i></a>
 													<?php endif; ?>
 													<?php if (get_field('skype', $item->ID)) : ?>
 														<a href="<?php echo get_field('skype', $item->ID); ?>" class="btn btn__social notched navy mr-lg-0 mr-2"><i class="fab fa-skype"></i></a>

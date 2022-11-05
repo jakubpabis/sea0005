@@ -37,7 +37,7 @@ if ($lang === 'en') {
 							<a href="tel:+31207782393"><i class="far fa-phone-alt"></i>+31 (0)20 - 7782393</a>
 						</div>
 						<div class="col-lg-auto py-2 pl-4">
-							<a href="https://wa.me/31207782393" target="_blank"><i class="fab fa-whatsapp"></i><?php pll_e('WhatsApp us!'); ?></a>
+							<a class="color-green" href="https://wa.me/31207782393" target="_blank"><i class="fab fa-whatsapp color-green"></i><?php pll_e('WhatsApp us!'); ?></a>
 						</div>
 					</div>
 				</div>

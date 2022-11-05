@@ -114,6 +114,14 @@
 	color: white !important;
 }
 
+.color-green {
+	color: #48c353 !important;
+}
+
+.bg-green {
+	background-color: #48c353 !important;
+}
+
 .bg-navy {
 	background-color: #183153 !important;
 }
@@ -1174,6 +1182,17 @@ i {
 
 .cookies-notifictaion .card {
 	margin-bottom: 100px !important;
+}
+
+.cookies-notifictaion-close {
+	position: absolute;
+	z-index: 999;
+	top: -20px;
+	left: -5px;
+	cursor: pointer;
+	opacity: 1 !important;
+	border: 5px solid #183153 !important;
+	background-color: #183153 !important;
 }
 
 .cookies-notifictaion-dog {
