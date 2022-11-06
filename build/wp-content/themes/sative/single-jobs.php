@@ -110,13 +110,13 @@ get_template_part('template-parts/breadcrumbs'); ?>
 					<div class="row">
 						<?php $recruiterF = get_field('recruiter_related'); ?>
 						<?php if (is_array($recruiterF) && !empty($recruiterF)) : $recruiter = $recruiterF[0]; ?>
-							<div class="col-xl-11 col-12 mb-4">
+							<div class="col-xl-11 col-md-12 col-sm-10 col-md-11 col-12 mb-4">
 								<div class="recruiter bg-yellow card p-4">
-									<div class="recruiter-text row align-items-center">
-										<div class="col-xl-3 recruiter-img">
+									<div class="recruiter-text row align-items-stretch">
+										<div class="col-md-3 col-sm-4 col-6 recruiter-img overflow-hidden mb-md-0 mb-3">
 											<img data-src="<?php echo get_the_post_thumbnail_url($recruiter->ID, 'medium_large'); ?>" alt="" class="lazy bg-cover">
 										</div>
-										<div class="col-xl-9">
+										<div class="col-md-9">
 											<div class="recruiter-contact">
 												<a href="tel:<?php echo get_field('phone', $recruiter->ID); ?>" class="mb-2">
 													<i class="far fa-phone-alt mr-2"></i>
@@ -137,7 +137,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 								</div>
 							</div>
 						<?php endif; ?>
-						<div class="col-12 d-flex flex-row">
+						<div class="col-12 d-flex flex-row flex-wrap">
 							<a href="#single-job-apply" class="btn btn__default yellow mr-2 mb-3 slideTo"><?php pll_e('Direct solliciteren!'); ?></a>
 							<span class="social-share btn btn__default square outline navy d-sm-inline-block d-none">
 								<span class="social-share-open"><i class="fas fa-share-alt"></i></span>
