@@ -1111,7 +1111,7 @@ i {
 	display: block;
 	overflow: hidden;
 	min-height: 100vh;
-	padding-top: 133px;
+	padding-top: 128px;
 }
 
 .bg-cover {
@@ -1636,7 +1636,7 @@ body.offcanvas-active {
 
 .navigation__lower-logo {
 	display: block;
-	max-width: 190px;
+	max-width: 164px;
 }
 
 .navigation__lower-logo object,
@@ -8249,6 +8249,10 @@ fieldset[disabled] .datepicker table tr td span.active:hover:hover {
 
 @media (min-width: 992px) {
 
+.navigation__lower-btn.mobileMenu {
+	margin-left: 16px;
+}
+
 .modal .modal-lg {
 	max-width: 900px;
 }
@@ -8256,6 +8260,22 @@ fieldset[disabled] .datepicker table tr td span.active:hover:hover {
 .jobs__single-process-slider {
 	width: calc(((100vw - 930px) / 2) + 930px);
 	margin-left: calc((100vw - 930px) / 2);
+}
+
+}
+
+@media (min-width: 1079px) {
+
+.d-1079-flex {
+	display: flex !important;
+}
+
+.d-1079-block {
+	display: block !important;
+}
+
+.d-1079-none {
+	display: none !important;
 }
 
 }
@@ -8590,78 +8610,10 @@ p,
 
 }
 
-@media (max-width: 991px) {
-
-.text-size-xxxxlarge {
-	font-size: 38px;
-}
-
-h1,
-.h1,
-.text-size-xxxlarge {
-	font-size: 50px;
-}
-
-.display-3 {
-	font-size: 50px !important;
-}
-
-h3,
-.h3,
-.text-size-xlarge {
-	font-size: 23px;
-}
-
-p,
-.p,
-.text-size-normal {
-	font-size: 16px;
-}
-
-.display-2 {
-	font-size: 66px;
-}
-
-.display-2.bubble {
-	font-size: 56px;
-}
-
-.display-3 {
-	font-size: 52px;
-}
+@media (max-width: 1079px) {
 
 #wrapper {
 	padding-top: 70px;
-}
-
-.cookies-notifictaion .card {
-	margin-bottom: 50px !important;
-}
-
-.cookies-notifictaion-dog {
-	right: -320px;
-}
-
-.navigation__upper {
-	position: fixed;
-	top: 60px;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	display: none;
-	overflow: hidden;
-	height: calc(100vh - 60px);
-}
-
-.navigation__upper > .container {
-	display: flex;
-	overflow-y: scroll;
-	flex-direction: column;
-	height: calc(100vh - 60px);
-	padding-top: 25px;
-	padding-bottom: 90px;
-	text-align: center;
-	align-items: center;
 }
 
 .navigation__lower {
@@ -8714,7 +8666,7 @@ p,
 
 .navigation-main-menu {
 	position: fixed;
-	top: 70px;
+	top: 113px;
 	right: 0;
 	bottom: 0;
 	left: 0;
@@ -8754,6 +8706,146 @@ p,
 	background-repeat: no-repeat;
 	background-position: center right;
 	background-size: 24px auto;
+}
+
+}
+
+@media (max-width: 991px) and (max-width: 991px) {
+
+.jobs__list-filters.not-opened .card .title {
+	margin-bottom: 0;
+	text-align: center;
+	justify-content: center;
+}
+
+.posts__list-filters.not-opened .card .title {
+	margin-bottom: 0;
+	text-align: center;
+	justify-content: center;
+}
+
+.knowledge__filters.not-opened .card .title {
+	margin-bottom: 0;
+	text-align: center;
+	justify-content: center;
+}
+
+}
+
+@media all and (max-width: 991px) {
+
+.offcanvas-header {
+	display: block;
+}
+
+.mobile-offcanvas {
+	position: fixed;
+	z-index: 1200;
+	top: 0;
+	left: 0;
+	display: block;
+	visibility: hidden;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	width: 80%;
+	height: 100%;
+	transition: visibility .2s ease-in-out, transform .2s ease-in-out;
+	transform: translateX(-100%);
+	border-radius: 0;
+}
+
+.mobile-offcanvas .container {
+	display: block;
+}
+
+.mobile-offcanvas.show {
+	visibility: visible;
+	transform: translateX(0);
+}
+
+.navbar-soft .navbar-nav {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.navbar-soft .navbar-nav .nav-link {
+	padding: .6rem 0rem;
+}
+
+}
+
+@media (max-width: 991px) {
+
+.text-size-xxxxlarge {
+	font-size: 38px;
+}
+
+h1,
+.h1,
+.text-size-xxxlarge {
+	font-size: 50px;
+}
+
+.display-3 {
+	font-size: 50px !important;
+}
+
+h3,
+.h3,
+.text-size-xlarge {
+	font-size: 23px;
+}
+
+p,
+.p,
+.text-size-normal {
+	font-size: 16px;
+}
+
+.display-2 {
+	font-size: 66px;
+}
+
+.display-2.bubble {
+	font-size: 56px;
+}
+
+.display-3 {
+	font-size: 52px;
+}
+
+.cookies-notifictaion .card {
+	margin-bottom: 50px !important;
+}
+
+.cookies-notifictaion-dog {
+	right: -320px;
+}
+
+.navigation__upper {
+	position: fixed;
+	top: 60px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: none;
+	overflow: hidden;
+	height: calc(100vh - 60px);
+}
+
+.navigation__upper > .container {
+	display: flex;
+	overflow-y: scroll;
+	flex-direction: column;
+	height: calc(100vh - 60px);
+	padding-top: 25px;
+	padding-bottom: 90px;
+	text-align: center;
+	align-items: center;
+}
+
+.navigation-main-menu {
+	top: 70px;
 }
 
 .header__home .dog {
@@ -9128,70 +9220,6 @@ form .ugly label.full {
 
 .footer__middle h5 {
 	margin-bottom: 20px;
-}
-
-}
-
-@media all and (max-width: 991px) {
-
-.offcanvas-header {
-	display: block;
-}
-
-.mobile-offcanvas {
-	position: fixed;
-	z-index: 1200;
-	top: 0;
-	left: 0;
-	display: block;
-	visibility: hidden;
-	overflow-x: hidden;
-	overflow-y: scroll;
-	width: 80%;
-	height: 100%;
-	transition: visibility .2s ease-in-out, transform .2s ease-in-out;
-	transform: translateX(-100%);
-	border-radius: 0;
-}
-
-.mobile-offcanvas .container {
-	display: block;
-}
-
-.mobile-offcanvas.show {
-	visibility: visible;
-	transform: translateX(0);
-}
-
-.navbar-soft .navbar-nav {
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-
-.navbar-soft .navbar-nav .nav-link {
-	padding: .6rem 0rem;
-}
-
-}
-
-@media (max-width: 991px) and (max-width: 991px) {
-
-.jobs__list-filters.not-opened .card .title {
-	margin-bottom: 0;
-	text-align: center;
-	justify-content: center;
-}
-
-.posts__list-filters.not-opened .card .title {
-	margin-bottom: 0;
-	text-align: center;
-	justify-content: center;
-}
-
-.knowledge__filters.not-opened .card .title {
-	margin-bottom: 0;
-	text-align: center;
-	justify-content: center;
 }
 
 }

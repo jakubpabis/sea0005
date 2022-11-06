@@ -107,14 +107,14 @@ i {
   position: relative;
   display: block;
   overflow: hidden;
-  padding-top: 133px;
+  padding-top: 128px;
   min-height: 100vh;
 
   @media (max-width: 1199px) {
     padding-top: 122px;
   }
 
-  @media (max-width: 991px) {
+  @media (max-width: 1079px) {
     padding-top: 70px;
   }
 

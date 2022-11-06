@@ -99,3 +99,21 @@ ul.lined {
   border: none !important;
   outline: none !important;
 }
+
+.d-1079-flex {
+  @media (min-width: 1079px) {
+    display: flex !important;
+  }
+}
+
+.d-1079-block {
+  @media (min-width: 1079px) {
+    display: block !important;
+  }
+}
+
+.d-1079-none {
+  @media (min-width: 1079px) {
+    display: none !important;
+  }
+}
