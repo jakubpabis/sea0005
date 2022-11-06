@@ -4022,12 +4022,14 @@ aside#chat .dog {
 .jobs__list-filters .filter-group ul li span input,
 .jobs__list-filters .filter-group ul li label input {
 	position: absolute;
+	z-index: 9;
 	top: 0;
 	right: 0;
 	bottom: 0;
-	left: 0;
-	width: 100%;
+	left: -30px;
+	width: calc(100% + 30px);
 	height: 100%;
+	padding-left: 30px !important;
 	cursor: pointer;
 	opacity: 0 !important;
 }
