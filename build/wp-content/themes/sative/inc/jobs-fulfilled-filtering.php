@@ -23,14 +23,14 @@ $args = array(
 if (isset($_GET['salary_min'])) {
 	$args['meta_query'][] = array(
 		'key' => 'salary_min',
-		'value' => $_GET['salary_min'],
+		'value' => intval($_GET['salary_min']),
 		'compare' => '>='
 	);
 }
 if (isset($_GET['salary_max'])) {
 	$args['meta_query'][] = array(
 		'key' => 'salary_max',
-		'value' => $_GET['salary_max'],
+		'value' => intval($_GET['salary_max']),
 		'compare' => '<='
 	);
 }

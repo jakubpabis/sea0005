@@ -10,7 +10,7 @@
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '4.5.9');
+	define('_S_VERSION', '4.7.0');
 }
 
 if (!function_exists('sative_setup')) :
@@ -218,7 +218,6 @@ function sative_scripts()
 	wp_dequeue_style('wp-block-library');
 	wp_dequeue_style('wp-block-library-theme');
 
-	wp_enqueue_style('sative-bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css', array(), _S_VERSION, 'all');
 	wp_enqueue_style('sative-gfonts', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap', array(), _S_VERSION, 'all');
 	wp_enqueue_style('sative-icons', get_template_directory_uri() . '/assets/css/fa.min.css', array(), _S_VERSION, 'all');
 	wp_enqueue_style('sative-styles', get_template_directory_uri() . '/assets/css/main.min.css', array(), _S_VERSION, 'all');
@@ -230,16 +229,11 @@ function sative_scripts()
 	}
 
 	wp_deregister_script('jquery');
-	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js', array(), false, false);
 	wp_deregister_script('jquery-migrate');
-	wp_register_script('jquery-migrate', "https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.2.0/jquery-migrate.min.js", array(), false, false);
 
-	wp_enqueue_script('sative-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js', array('jquery'), _S_VERSION, true);
-	wp_enqueue_script('sative-validate', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js', array('jquery'), _S_VERSION, true);
-	wp_enqueue_script('sative-validate-methods', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js', array('jquery'), _S_VERSION, true);
 	wp_enqueue_script('sative-recaptcha', 'https://www.google.com/recaptcha/api.js', array(), _S_VERSION, true);
 
-	wp_enqueue_script('sative-app', get_template_directory_uri() . '/assets/js/main.min.js', array('jquery'), _S_VERSION, true);
+	wp_enqueue_script('sative-app', get_template_directory_uri() . '/assets/js/main.min.js', array(), _S_VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'sative_scripts');
 
@@ -384,10 +378,8 @@ function hierarchical_tax_tree($cat, $tax, $active = [])
 		foreach ($next as $cat) :
 			if (get_query_var('term') == $cat->category_nicename || in_array($cat->term_id, $active)) {
 				echo '<li class="active">';
-				$checked = 'checked';
 			} else {
 				echo '<li>';
-				$checked = null;
 			}
 			echo '<a href="' . get_category_link($cat->term_id) . '" data-key="' . $tax . '" data-value="' . $cat->slug . '" data-' . $tax . '="' . get_category_link($cat->term_id) . '">' . $cat->name . '</a>';
 			hierarchical_tax_tree($cat->term_id, $tax, $active = []);
@@ -401,16 +393,16 @@ function hierarchical_tax_tree_filter($cat, $tax, $active, $orderby = 'count', $
 {
 	$next = get_categories('taxonomy=' . $tax . '&orderby=' . $orderby . '&order=' . $order . '&hide_empty=false&parent=' . $cat);
 	if ($next) :
-		echo '<ul>';
+		echo '<ul class="filter-ul">';
 		foreach ($next as $cat) :
 			if ($active === null) {
 				$active = [];
 			}
 			if (get_query_var('term') == $cat->category_nicename || in_array($cat->slug, $active)) {
-				echo '<li class="active">';
+				echo '<li class="filter-input-li active">';
 				$checked = 'checked';
 			} else {
-				echo '<li>';
+				echo '<li class="filter-input-li">';
 				$checked = null;
 			}
 			echo '<span>' . $cat->name . '<input type="checkbox" data-key="' . $tax . '" data-value="' . $cat->slug . '" data-name="' . $cat->category_nicename . '" ' . $checked . ' name="' . $tax . '[]" value="' . $cat->slug . '"></span>';

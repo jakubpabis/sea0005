@@ -51,14 +51,14 @@ foreach ($taxonomyFilters as $taxF) {
 if (isset($_GET['salary_min']) && !empty($_GET['salary_min']) && $_GET['salary_min'] !== null) {
 	$args['meta_query'][] = array(
 		'key' => 'salary_min',
-		'value' => $_GET['salary_min'],
+		'value' => intval($_GET['salary_min']),
 		'compare' => '>='
 	);
 }
 if (isset($_GET['salary_max']) && !empty($_GET['salary_max']) && $_GET['salary_max'] !== null) {
 	$args['meta_query'][] = array(
 		'key' => 'salary_max',
-		'value' => $_GET['salary_max'],
+		'value' => intval($_GET['salary_max']),
 		'compare' => '<='
 	);
 }
@@ -73,6 +73,22 @@ if (isset($_GET['location_s']) && !empty($_GET['location_s']) && $_GET['location
 //var_dump($args);
 $query = new WP_Query($args);
 $post_no = $query->found_posts;
+
+
+
+if (isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING']) {
+	$params = [];
+	$string = $_SERVER['QUERY_STRING'];
+	$items = explode('&', $string);
+	foreach ($items as $item) {
+		$param = explode('=', $item);
+		if ($param > 1 && end($param)) {
+			$key = str_replace($item, '', $string);
+			$params[$key] = end($param);
+		}
+	}
+}
+
 
 $big = 999999999; // need an unlikely integer
 $pagination = paginate_links(array(

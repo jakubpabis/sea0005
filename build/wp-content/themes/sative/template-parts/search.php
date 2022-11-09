@@ -26,10 +26,3 @@
 		</div>
 	</div>
 </div>
-<script defer>
-	jQuery(document).ready(function() {
-		jQuery('#searchPopupModal').on('shown.bs.modal', function() {
-			jQuery('#searchPopupModal').find('.job-search-nice').focus();
-		});
-	});
-</script>

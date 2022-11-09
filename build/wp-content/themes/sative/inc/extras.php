@@ -178,14 +178,14 @@ function jobs_ajax_filtering()
 	if (isset($_POST['"salary_min"']) && !empty($_POST['"salary_min"']) && $_POST['"salary_min"'] !== null) {
 		$args['meta_query'][] = array(
 			'key' => 'salary_min',
-			'value' => $_POST['"salary_min"'],
+			'value' => intval($_POST['"salary_min"']),
 			'compare' => '>='
 		);
 	}
 	if (isset($_POST['"salary_max"']) && !empty($_POST['"salary_max"']) && $_POST['"salary_max"'] !== null) {
 		$args['meta_query'][] = array(
 			'key' => 'salary_max',
-			'value' => $_POST['"salary_max"'],
+			'value' => intval($_POST['"salary_max"']),
 			'compare' => '<='
 		);
 	}

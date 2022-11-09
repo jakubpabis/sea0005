@@ -42,23 +42,6 @@ get_header();
 		</div>
 	</header>
 
-	<?php
-
-	if (isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING']) {
-		$params = [];
-		$string = $_SERVER['QUERY_STRING'];
-		$items = explode('&', $string);
-		foreach ($items as $item) {
-			$param = explode('=', $item);
-			if ($param > 1 && end($param)) {
-				$key = str_replace($item, '', $string);
-				$params[$key] = end($param);
-			}
-		}
-	}
-
-	?>
-
 	<section class="jobs__list">
 		<div class="container">
 			<div class="row justify-content-md-center justify-content-end">
