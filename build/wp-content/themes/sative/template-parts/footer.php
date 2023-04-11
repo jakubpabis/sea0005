@@ -109,6 +109,16 @@
 						</li>
 					<?php endforeach; ?>
 				</ul>
+				<div class="row mt-4 pt-2">
+					<div class="col-8">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/gazelle.png" alt="FD Gazelle 2022 prize">
+					</div>
+					<div class="col-4">
+						<a href="https://goo.gl/maps/qmD2gL1rQeBmKrYo7" target="_blank" rel="noreferrer">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/greviewscore.png" alt="Google Reviews Score">
+						</a>
+					</div>
+				</div>
 			</div>
 			<div class="col-lg-3 col-md-4 col-sm-6 mb-5 pl-md-3 pl-sm-4 order-12">
 				<h5 class="text-uppercase">
