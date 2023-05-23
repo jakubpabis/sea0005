@@ -22,6 +22,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php get_template_part('template-parts/cookies-js'); ?>
 
+	<!-- SalesFeed tracking code -->
+	<script type="text/javascript" async src="https://searchxrecruitment.stackbase.nl/"></script>
 	<!-- Leadinfo tracking code -->
 	<script>
 		(function(l, e, a, d, i, n, f, o) {
