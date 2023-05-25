@@ -45,7 +45,7 @@
 						<i class="far fa-envelope"></i>
 					</div>
 					<div class="col pl-0">
-						<a class="font-secondary" href="mailto:info@searchxrecruitment.com">info@searchxrecruitment.com</a>
+						<a class="font-secondary" href="mailto:contact@searchxrecruitment.com">contact@searchxrecruitment.com</a>
 					</div>
 				</div>
 				<div class="row mb-2">

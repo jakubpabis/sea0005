@@ -31,7 +31,7 @@ if ($lang === 'en') {
 							</div>
 						<?php endif; ?>
 						<div class="col-lg-auto py-2 pl-4">
-							<a href="mailto:info@searchxrecruitment.com"><i class="far fa-envelope"></i>info@searchxrecruitment.com</a>
+							<a href="mailto:contact@searchxrecruitment.com"><i class="far fa-envelope"></i>contact@searchxrecruitment.com</a>
 						</div>
 						<div class="col-lg-auto py-2 pl-4">
 							<a href="tel:+31207782393"><i class="far fa-phone-alt"></i>+31 (0)20 - 7782393</a>
@@ -263,7 +263,7 @@ if ($lang === 'en') {
 							<a href="javascript:void(0)" class="btn btn__small navy d-none d-lg-inline-block" data-toggle="modal" data-target="#uploadCVModal">
 								<?php pll_e('Upload CV'); ?>
 							</a>
-							<a href="mailto:info@searchxrecruitment.com" class="navigation__lower-btn-other d-lg-none d-inline-block"><i class="far fa-envelope"></i></a>
+							<a href="mailto:contact@searchxrecruitment.com" class="navigation__lower-btn-other d-lg-none d-inline-block"><i class="far fa-envelope"></i></a>
 							<a href="tel:+31207782393" class="navigation__lower-btn-other d-lg-none d-inline-block"><i class="far fa-phone-alt"></i></a>
 							<button type="button" class="navigation__lower-btn mobileMenu d-1079-none d-inline-block text-center">
 								<i class="far fa-bars text-center"></i>

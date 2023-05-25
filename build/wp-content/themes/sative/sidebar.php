@@ -4,7 +4,7 @@
 	</h3>
 	<div class="btns mt-4">
 		<a class="mt-1 text-size-medium" href="tel:+31207782393"><i class="fas fa-mobile-android-alt mr-3"></i>+31 (0)20 - 7782393</a><br />
-		<a class="mt-2 text-size-medium" href="mailto:info@searchxrecruitment.com"><i class="far fa-envelope mr-2"></i>info@searchxrecruitment.com</a><br />
+		<a class="mt-2 text-size-medium" href="mailto:contact@searchxrecruitment.com"><i class="far fa-envelope mr-2"></i>contact@searchxrecruitment.com</a><br />
 		<a href="/contact" class="btn btn__default yellow mt-4"><?php pll_e('Get in touch'); ?></a>
 	</div>
 </div>

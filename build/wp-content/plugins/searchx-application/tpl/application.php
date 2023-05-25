@@ -94,8 +94,8 @@ function appEmailTemplate()
                                                 </td>
                                                 <td style="font-family: Helvetica; font-size: 9pt;">
                                                     <font style="color: #183153; font-size: 9pt; font-family: Helvetica">
-                                                        <a href="mailto:info@searchxrecruitment.com" style="color: #183153; text-decoration: none;">
-                                                            info@searchxrecruitment.com
+                                                        <a href="mailto:contact@searchxrecruitment.com" style="color: #183153; text-decoration: none;">
+                                                            contact@searchxrecruitment.com
                                                         </a>
                                                     </font>
                                                 </td>

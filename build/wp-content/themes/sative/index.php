@@ -85,11 +85,11 @@ require_once get_template_directory() . '/inc/posts-filtering.php'; ?>
 							</div>
 							<div class="mt-4">
 								<div class="d-flex align-items-center mb-3">
-									<a href="info@searchxrecruitment.com" class="btn btn__social notched navy smaller mr-3" target="_blank">
+									<a href="contact@searchxrecruitment.com" class="btn btn__social notched navy smaller mr-3" target="_blank">
 										<i class="far fa-envelope"></i>
 									</a>
-									<a href="mailto:info@searchxrecruitment.com" class="text-size-small text400">
-										info@searchxrecruitment.com
+									<a href="mailto:contact@searchxrecruitment.com" class="text-size-small text400">
+										contact@searchxrecruitment.com
 									</a>
 								</div>
 								<div class="d-flex align-items-center mb-3">
