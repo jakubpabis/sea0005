@@ -107,41 +107,43 @@
 						<h2 class="m-0 mb-3">
 							<?php echo get_sub_field('form_title'); ?>
 						</h2>
-						<?php $type = 'contact' ?>
-						<form method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" accept-charset="UTF-8" role="form" id="<?php echo $type; ?>_section_form" enctype="multipart/form-data">
-							<div class="row align-items-center">
-								<div class="col-12 ugly py-2">
-									<input class="required" type="text" name="<?php echo $type; ?>_name" minlength="2" required>
-									<label class="ugly-label" for="<?php echo $type; ?>_name"><?php echo pll_e('Name'); ?> <span>*</span></label>
+						<?php if (get_sub_field('form')) : echo get_sub_field('form'); ?>
+						<?php else : $type = 'contact' ?>
+							<form method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" accept-charset="UTF-8" role="form" id="<?php echo $type; ?>_section_form" enctype="multipart/form-data">
+								<div class="row align-items-center">
+									<div class="col-12 ugly py-2">
+										<input class="required" type="text" name="<?php echo $type; ?>_name" minlength="2" required>
+										<label class="ugly-label" for="<?php echo $type; ?>_name"><?php echo pll_e('Name'); ?> <span>*</span></label>
+									</div>
+									<div class="col-12 ugly py-2">
+										<input type="text" name="<?php echo $type; ?>_company" minlength="1">
+										<label class="ugly-label" for="<?php echo $type; ?>_company"><?php echo pll_e('Company'); ?></label>
+									</div>
+									<div class="col-12 ugly py-2">
+										<input class="required" type="email" name="<?php echo $type; ?>_email" minlength="4" required>
+										<label class="ugly-label" for="<?php echo $type; ?>_email"><?php echo pll_e('Email address'); ?> <span>*</span></label>
+									</div>
+									<div class="col-12 ugly py-2">
+										<input type="tel" name="<?php echo $type; ?>_phone" minlength="6">
+										<label class="ugly-label" for="<?php echo $type; ?>_phone"><?php echo pll_e('Phone'); ?></label>
+									</div>
+									<div class="col-12 ugly py-2">
+										<textarea class="required" name="<?php echo $type; ?>_message" minlength="10" rows="6" required></textarea>
+										<label class="ugly-label" for="<?php echo $type; ?>_message"><?php echo pll_e('Message'); ?> <span>*</span></label>
+									</div>
+									<div class="col-12">
+										<input type="text" minlength="2" id="SXHP_sn_input" name="SXHP_sn_input" value="">
+									</div>
+									<div class="col-12 pt-1">
+										<input class="d-none" type="text" name="<?php echo $type; ?>_important_consent_field">
+										<input type="hidden" name="action" value="<?php echo $type; ?>_form">
+										<?php wp_nonce_field('<?php echo $type; ?>_form', '<?php echo $type; ?>_form_nonce'); ?>
+										<button type="button" disabled class="fake_btn_contact_loading btn btn__default pink d-none disabled"><?php echo pll_e('Sending, please wait...'); ?></button>
+										<button class="g-recaptcha contactF btn btn__default yellow" data-sitekey="6LdyeiQhAAAAAMsMwMmCkriZI74RsG7oPP5nqWoV" data-callback="onContactSubmit"><?php echo pll_e('Send message'); ?></button>
+									</div>
 								</div>
-								<div class="col-12 ugly py-2">
-									<input type="text" name="<?php echo $type; ?>_company" minlength="1">
-									<label class="ugly-label" for="<?php echo $type; ?>_company"><?php echo pll_e('Company'); ?></label>
-								</div>
-								<div class="col-12 ugly py-2">
-									<input class="required" type="email" name="<?php echo $type; ?>_email" minlength="4" required>
-									<label class="ugly-label" for="<?php echo $type; ?>_email"><?php echo pll_e('Email address'); ?> <span>*</span></label>
-								</div>
-								<div class="col-12 ugly py-2">
-									<input type="tel" name="<?php echo $type; ?>_phone" minlength="6">
-									<label class="ugly-label" for="<?php echo $type; ?>_phone"><?php echo pll_e('Phone'); ?></label>
-								</div>
-								<div class="col-12 ugly py-2">
-									<textarea class="required" name="<?php echo $type; ?>_message" minlength="10" rows="6" required></textarea>
-									<label class="ugly-label" for="<?php echo $type; ?>_message"><?php echo pll_e('Message'); ?> <span>*</span></label>
-								</div>
-								<div class="col-12">
-									<input type="text" minlength="2" id="SXHP_sn_input" name="SXHP_sn_input" value="">
-								</div>
-								<div class="col-12 pt-1">
-									<input class="d-none" type="text" name="<?php echo $type; ?>_important_consent_field">
-									<input type="hidden" name="action" value="<?php echo $type; ?>_form">
-									<?php wp_nonce_field('<?php echo $type; ?>_form', '<?php echo $type; ?>_form_nonce'); ?>
-									<button type="button" disabled class="fake_btn_contact_loading btn btn__default pink d-none disabled"><?php echo pll_e('Sending, please wait...'); ?></button>
-									<button class="g-recaptcha contactF btn btn__default yellow" data-sitekey="6LdyeiQhAAAAAMsMwMmCkriZI74RsG7oPP5nqWoV" data-callback="onContactSubmit"><?php echo pll_e('Send message'); ?></button>
-								</div>
-							</div>
-						</form>
+							</form>
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>
