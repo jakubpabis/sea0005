@@ -9,7 +9,7 @@ $args = array(
 		array(
 			'taxonomy' => 'job-type',
 			'field' => 'slug',
-			'terms' => 'search-x-internal-jobs',
+			'terms' => 'x-internal-jobs',
 		),
 	),
 );

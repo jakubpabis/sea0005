@@ -68,3 +68,21 @@
     }
   }
 }
+
+.hs-form-iframe {
+  input,
+  textarea {
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid $color-primary !important;
+    padding-left: 0 !important;
+    font-family: $font-primary !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+  }
+
+  textarea {
+    border: 1px solid $color-primary !important;
+    padding-left: 10px !important;
+  }
+}
