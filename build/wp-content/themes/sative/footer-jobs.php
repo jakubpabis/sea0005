@@ -40,6 +40,9 @@ $lang = pll_current_language();
 <?php if (isset($_COOKIE['cookies-accepted']) && $_COOKIE['cookies-accepted'] === "accepted") : ?>
 	<noscript> <img height="1" width="1" alt="" src="https://px.ads.linkedin.com/collect/?pid=14266&fmt=gif" /> </noscript>
 <?php endif; ?>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/1932066.js"></script>
+<!-- End of HubSpot Embed Code -->
 </body>
 
 </html>

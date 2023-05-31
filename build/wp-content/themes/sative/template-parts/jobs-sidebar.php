@@ -37,14 +37,14 @@
 					+31 (0)20 - 7782393
 				</a>
 			</div>
-			<div class="d-flex align-items-center mb-3">
+			<?php /*			<div class="d-flex align-items-center mb-3">
 				<a href="https://wa.me/31207782393" class="btn btn__social notched navy smaller mr-xl-3 mr-lg-2 mr-sm-3 mr-2" target="_blank">
 					<i class="fab fa-whatsapp"></i>
 				</a>
 				<a href="https://wa.me/31207782393" class="text-size-small text400">
 					<?php pll_e('WhatsApp us!'); ?>
 				</a>
-			</div>
+			</div> */ ?>
 
 		</div>
 	</div>
