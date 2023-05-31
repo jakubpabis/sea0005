@@ -22,7 +22,7 @@ function sendEmailContact()
 		if (isset($_POST['contact_message']) && trim($_POST['contact_message']) != "") {
 			$messageForm = $_POST['contact_message'];
 		}
-		$to = 'ernst@searchxrecruitment.com';
+		$to = 'info@searchxrecruitment.com';
 		//$to = 'office@sative.co.uk';
 		$subject = pll__('Contact form submitted successfully');
 		$subjectA = pll__('Contact form message from website');
@@ -70,7 +70,7 @@ function sendEmailContactDog()
 		if (isset($_POST['cta_dog_contact_message']) && trim($_POST['cta_dog_contact_message']) != "") {
 			$messageForm = $_POST['cta_dog_contact_message'];
 		}
-		$to = 'ernst@searchxrecruitment.com';
+		$to = 'info@searchxrecruitment.com';
 		//$to = 'office@sative.co.uk';
 		$subject = pll__('Contact form submitted successfully');
 		$subjectA = pll__('Contact form message from website');
