@@ -149,7 +149,7 @@ foreach ($taxonomyFilters as $taxF) {
 						<i class="fas fa-minus"></i>
 					</span>
 					<div class="filters job">
-						<?php hierarchical_tax_tree_filter(0, 'job-location', $activeJobLocs); ?>
+						<?php hierarchical_tax_tree_filter(0, 'job-location', $activeJobLocs, 'name', 'ASC'); ?>
 					</div>
 				</div>
 			<?php endif; ?>

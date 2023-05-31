@@ -405,8 +405,8 @@ function hierarchical_tax_tree_filter($cat, $tax, $active, $orderby = 'count', $
 				echo '<li class="filter-input-li">';
 				$checked = null;
 			}
-			echo '<span>' . $cat->name . '<input type="checkbox" data-key="' . $tax . '" data-value="' . $cat->slug . '" data-name="' . $cat->category_nicename . '" ' . $checked . ' name="' . $tax . '[]" value="' . $cat->slug . '"></span>';
-			hierarchical_tax_tree_filter($cat->term_id, $tax, $active);
+			echo '<span>' . $cat->name . ' ' . '<small>(' . $cat->category_count . ')</small>' . '<input type="checkbox" data-key="' . $tax . '" data-value="' . $cat->slug . '" data-name="' . $cat->category_nicename . '" ' . $checked . ' name="' . $tax . '[]" value="' . $cat->slug . '"></span>';
+			hierarchical_tax_tree_filter($cat->term_id, $tax, $active, $orderby = 'name', $order = 'ASC');
 			echo '</li>';
 		endforeach;
 		echo '</ul>';
