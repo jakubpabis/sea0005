@@ -403,7 +403,14 @@ function insertCategories($job_categories, $postID)
 			}
 			wp_set_post_terms($postID, $termID, 'job-industry', true);
 		} else if ($category['group'] == '#1 Availability') {
-
+			$term = get_term_by('name', strval($category), 'job-type');
+			if (!$term) {
+				wp_insert_term(strval($category), 'job-type');
+				$term = get_term_by('name', strval($category), 'job-type');
+			}
+			$termID = $term->term_id;
+			wp_set_post_terms($postID, $termID, 'job-type', true);
+		} else if ($category['group'] == '#1.2 Websites') {
 			$term = get_term_by('name', strval($category), 'job-type');
 			if (!$term) {
 				wp_insert_term(strval($category), 'job-type');
