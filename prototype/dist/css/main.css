@@ -7718,7 +7718,7 @@ i {
 	display: block;
 	overflow: hidden;
 	min-height: 100vh;
-	padding-top: 128px;
+	padding-top: 126px;
 }
 
 .bg-cover {
@@ -8146,7 +8146,6 @@ body.offcanvas-active {
 }
 
 .navigation__upper {
-	padding: 0 0 2px 0;
 	color: white;
 	background-color: #183153;
 }
@@ -19066,7 +19065,7 @@ p,
 }
 
 #wrapper {
-	padding-top: 122px;
+	padding-top: 120px;
 }
 
 .navigation__lower-logo {
@@ -19214,7 +19213,7 @@ p,
 @media (max-width: 1079px) {
 
 #wrapper {
-	padding-top: 70px;
+	padding-top: 68px;
 }
 
 .navigation__lower {
@@ -20496,7 +20495,7 @@ p,
 }
 
 #wrapper {
-	padding-top: 60px;
+	padding-top: 58px;
 }
 
 .cookies-notifictaion .card {
@@ -21027,7 +21026,7 @@ p,
 @media (max-width: 360px) {
 
 #wrapper {
-	padding-top: 58px;
+	padding-top: 56px;
 }
 
 .cookies-notifictaion .card {

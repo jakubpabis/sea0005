@@ -80,7 +80,7 @@ foreach ($taxonomyFilters as $taxF) {
 						$range2 = range(100000, 225000, 25000);
 						$range3 = range(250000, 500000, 50000);
 						?>
-						<select name="salary_min" data-name="salary_min" data-value="<?php echo $salaryMin; ?>">
+						<select data-key="salary_min" name="salary_min" data-name="salary_min" data-value="<?php echo $salaryMin; ?>">
 							<?php if ($salaryMin) : ?>
 								<option value="" disabled><?php pll_e('From'); ?></option>
 								<option value="0">0</option>
@@ -105,7 +105,7 @@ foreach ($taxonomyFilters as $taxF) {
 							}
 							?>
 						</select>
-						<select name="salary_max" data-name="salary_max" data-value="<?php echo $salaryMax; ?>">
+						<select data-key="salary_max" name="salary_max" data-name="salary_max" data-value="<?php echo $salaryMax; ?>">
 							<?php if ($salaryMax) : ?>
 								<option value="" disabled><?php pll_e('To'); ?></option>
 								<option value="0">0</option>

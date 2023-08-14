@@ -1,6 +1,6 @@
 function jobsAjaxFiltering() {
   $('.filters.job')
-    .find('input, select')
+    .find('input')
     .on('click', function () {
       var $this = $(this);
       var $key = $this.data('key');
@@ -11,7 +11,7 @@ function jobsAjaxFiltering() {
       };
 
       $('.job-category-filters')
-        .find('input, select')
+        .find('input')
         .each(function () {
           if ($(this).closest('.filter-input-li').hasClass('active')) {
             var $filtersKey = $(this).data('key');
@@ -32,7 +32,7 @@ function jobsAjaxFiltering() {
         $this
           .closest('.filter-input-li')
           .find('.filter-input-li.active')
-          .find('input, select')
+          .find('input')
           .each(function () {
             var $dataKey = $(this).data('key');
             var $dataValue = $(this).data('value');
