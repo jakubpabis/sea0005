@@ -159,6 +159,7 @@ get_header(); ?>
 									<div class="triangle-left"></div>
 									<input type="email" name="whitepapers-email" value="" placeholder="<?php pll_e('Put in your email address here'); ?>" required>
 									<input type="hidden" name="whitepapers-url" value="<?php echo get_field('file_download')['url']; ?>">
+									<input type="hidden" name="whitepapers-filename" value="<?php echo get_field('file_download')['title']; ?>">
 									<input type="hidden" name="action" value="whitepapers_form">
 									<?php wp_nonce_field('whitepapers_form', 'whitepapers_form_nonce'); ?>
 									<button type="submit" class="btn btn__notched d-flex align-items-center"><i class="far fa-download"></i> <span class="text-size-large my-0 ml-3"><?php pll_e('Download'); ?></span></button>

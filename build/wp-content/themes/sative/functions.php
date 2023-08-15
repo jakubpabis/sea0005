@@ -662,11 +662,14 @@ function sative_whitepapers_form_submit()
 	$jobArray = array(
 		'post_type'     => 'whitepapers-users',
 		'post_status'   => 'private',
-		'post_title'    => $_POST['whitepapers-email'],
+		'post_title'    => $_POST['whitepapers-email']
 	);
 
 	if (!post_exists($_POST['whitepapers-email'])) {
-		wp_insert_post($jobArray, true);
+		$postID = wp_insert_post($jobArray, true);
+		if ($_POST['whitepapers-filename']) {
+			update_field('filename', $_POST['whitepapers-filename'], $postID);
+		}
 	}
 
 	$link = $_POST['whitepapers-url'];

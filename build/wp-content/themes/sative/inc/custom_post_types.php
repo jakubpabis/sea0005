@@ -493,6 +493,28 @@ function custom_post_type_whitepapers_users()
 */
 add_action('init', 'custom_post_type_whitepapers_users', 0);
 
+
+add_filter('manage_whitepapers-users_posts_columns', 'add_custom_column_header');
+function add_custom_column_header($columns)
+{
+	$custom['custom_field_column'] = 'File downloaded'; // Replace 'Custom Field Name' with whatever you want your column header to be named
+	$offset = array_search('title', array_keys($columns)) + 1;
+
+	// Splice the original columns array and inject the custom column array at the specified offset
+	$columns = array_slice($columns, 0, $offset, true) + $custom + array_slice($columns, $offset, NULL, true);
+
+	return $columns;
+}
+
+add_action('manage_whitepapers-users_posts_custom_column', 'add_custom_column_content', 10, 2);
+function add_custom_column_content($column_name, $post_id)
+{
+	if ($column_name == 'custom_field_column') {
+		$custom_field_value = get_field('filename', $post_id); // Replace 'your_acf_field_name' with the field key/name of your ACF field
+		echo $custom_field_value;
+	}
+}
+
 // function force_type_private($post)
 // {
 //     if ($post['post_type'] == 'whitepapers-users')
