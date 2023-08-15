@@ -114,9 +114,15 @@
 						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/gazelle.png" alt="FD Gazelle 2022 prize">
 					</div>
 					<div class="col-4">
-						<a href="https://goo.gl/maps/qmD2gL1rQeBmKrYo7" target="_blank" rel="noreferrer">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/greviewscore.png" alt="Google Reviews Score">
-						</a>
+						<?php if (get_field('google_reviews_image_' . $lang, 'option') && get_field('google_reviews_image_' . $lang, 'option')['url']) : ?>
+							<a href="<?php echo get_field('google_reviews_image_' . $lang, 'option')['caption'] ? get_field('google_reviews_image_' . $lang, 'option')['caption'] : 'https://goo.gl/maps/qmD2gL1rQeBmKrYo7'; ?>" target="_blank" rel="noreferrer">
+								<img src="<?php echo get_field('google_reviews_image_' . $lang, 'option')['url']; ?>" alt="<?php echo get_field('google_reviews_image_' . $lang, 'option')['title'] ? get_field('google_reviews_image_' . $lang, 'option')['title'] : get_field('google_reviews_image_' . $lang, 'option')['alt']; ?>">
+							</a>
+						<?php else : ?>
+							<a href="https://goo.gl/maps/qmD2gL1rQeBmKrYo7" target="_blank" rel="noreferrer">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/greviewscore.png" alt="Google Reviews Score">
+							</a>
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>
