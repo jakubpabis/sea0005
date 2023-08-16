@@ -14,6 +14,31 @@
 			'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
 		f.parentNode.insertBefore(j, f);
 	})(window, document, 'script', 'dataLayer', 'GTM-PMG8TTV');
+
+	function trackEvent(action, category, label, value) {
+		window.gtag('event', action, {
+			source: category,
+			type: label,
+			value: value,
+		});
+	}
+
+	window.addEventListener('message', function (event) {
+		if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onBeforeFormSubmit') {
+			console.log(event.data);
+			if( event.data.data && event.data.data.length > 0 ) {
+				const contactType = event.data.data.find( item => item.name === "i_m_a" );
+				const contextJSON = event.data.data.find( item => item.name === "hs_context" );
+				if (contactType && contextJSON) {
+					const context = JSON.parse(contextJSON.value);
+					console.log(context.lang + ' - ' + contactType.value);
+					trackEvent('form_submit', 'hubspot', 'contact_form', context.lang + ' - ' + contactType.value);
+				}
+			}
+			
+		}
+	});
+	
 </script>
 <!-- /Google Tag Manager -->
 <!-- Hotjar Tracking Code for www.searchxrecruitment.com -->

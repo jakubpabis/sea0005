@@ -68,6 +68,7 @@
 						<i class="fab fa-twitter"></i>
 					</a>
 				</div>
+				<button type="button" class="ml-4 btn btn__default btn__notched yellow pleaseOpenSubscribeModalPopup"><?php echo pll_e('Subscribe now'); ?></button>
 				<a href="/" class="mt-4 d-none">
 					<svg width="205" viewBox="0 0 587.71 172.93" xmlns="http://www.w3.org/2000/svg">
 						<g fill="#fff">

@@ -52,7 +52,7 @@ get_header();
 					</div>
 				</div>
 				<div id="jobs__list-cont" class="col-lg-8">
-					<aside class="additionals py-lg-4 py-2 d-flex justify-content-between">
+					<aside class="additionals py-lg-4 py-2 d-flex justify-content-between align-items-center">
 						<div class="py-3">
 							<p class="text-size-small font-primary m-0">
 								<span class="jobsno"><?php echo $post_no; ?></span> <?php pll_e('jobs found'); ?>
@@ -70,6 +70,7 @@ get_header();
 								<?php endforeach; ?>
 							</div>
 						<?php endif; ?>
+						<button type="button" class="btn btn__default btn__notched yellow pleaseOpenSubscribeModalPopup"><?php echo pll_e('Subscribe now'); ?></button>
 					</aside>
 					<main class="jobs__list-items">
 						<?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();

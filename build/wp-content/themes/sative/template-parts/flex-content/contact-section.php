@@ -56,16 +56,6 @@
 						<a class="font-secondary" href="tel:+31207782393">+31 (0)20 - 7782393</a>
 					</div>
 				</div>
-				<?php /*
-				<div class="row mb-4">
-					<div class="col-auto">
-						<i class="fab fa-whatsapp color-green"></i>
-					</div>
-					<div class="col pl-0">
-						<a class="font-secondary color-green" href="https://wa.me/31207782393" target="_blank"><?php pll_e('WhatsApp us!'); ?></a>
-					</div>
-				</div>
-				*/ ?>
 				<div class="mb-4">
 					<a href="https://www.facebook.com/searchxrecruitment" class="btn btn__social notched navy" target="_blank">
 						<i class="fab fa-facebook-f"></i>

@@ -32,6 +32,7 @@ jQuery(document).ready(function () {
   socialShareJob();
   jobsAjaxFiltering();
   postsAjaxFiltering();
+  openNewsletterSubscribeModal();
 
   if ($('.body-bg-gradient').length > 0) {
     bodyGradient();

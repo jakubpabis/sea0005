@@ -17370,25 +17370,30 @@ jQuery(document).ready(function () {
     jQuery('#uploadCVModal').modal('show');
   }
   if (jQuery('#pleaseAddCookiesScriptForPopups').length > 0) {
-    var $type = jQuery('#pleaseAddCookiesScriptForPopups').data('popupname');
-    var $cookie = jQuery('#pleaseAddCookiesScriptForPopups').data(
-      'popupcookie'
-    );
-    var $cookieTime = jQuery('#pleaseAddCookiesScriptForPopups').data(
-      'popupcookietime'
-    );
-    if (!getCookie($type + '_popup')) {
-      setTimeout(function () {
-        jQuery('#' + $type + 'PopupModal').modal('show');
-      }, $cookieTime);
-      jQuery('#' + $type + 'PopupModal')
-        .find('button.close')
-        .on('click', function () {
-          setCookie($type + '_popup', true, $cookie);
-        });
-    }
+    // var $type = jQuery('#pleaseAddCookiesScriptForPopups').data('popupname');
+    // var $cookie = jQuery('#pleaseAddCookiesScriptForPopups').data(
+    //   'popupcookie'
+    // );
+    // var $cookieTime = jQuery('#pleaseAddCookiesScriptForPopups').data(
+    //   'popupcookietime'
+    // );
+    // setTimeout(function () {
+    //   jQuery('#' + $type + 'PopupModal').modal('show');
+    // }, $cookieTime);
+    // jQuery('#' + $type + 'PopupModal')
+    //   .find('button.close')
+    //   .on('click', function () {
+    //     setCookie($type + '_popup', true, $cookie);
+    //   });
   }
 });
+
+function openNewsletterSubscribeModal() {
+  jQuery('.pleaseOpenSubscribeModalPopup').on('click', function (e) {
+    e.preventDefault();
+    jQuery('#subscribePopupModal').modal('show');
+  });
+}
 
 function onFormSubmit() {
   $(document).on(
@@ -17600,6 +17605,7 @@ jQuery(document).ready(function () {
   socialShareJob();
   jobsAjaxFiltering();
   postsAjaxFiltering();
+  openNewsletterSubscribeModal();
 
   if ($('.body-bg-gradient').length > 0) {
     bodyGradient();
