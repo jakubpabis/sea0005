@@ -64,6 +64,8 @@ $lang = pll_current_language();
 				<?php get_template_part('template-parts/flex-content/videos'); ?>
 			<?php elseif (get_row_layout() == 'dna_section') : ?>
 				<?php get_template_part('template-parts/flex-content/dna-section'); ?>
+			<?php elseif (get_row_layout() == 'content_block') : ?>
+				<?php get_template_part('template-parts/flex-content/content-block'); ?>
 			<?php endif; ?>
 		<?php endwhile; ?>
 		<?php if (!$contact_form_present && get_field('footer_form_' . $lang, 'option')) : ?>
