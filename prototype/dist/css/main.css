@@ -7504,6 +7504,15 @@ p,
 	background-color: #ec6278;
 }
 
+.btn.green {
+	color: #183153 !important;
+	background-color: #48c353;
+}
+
+.btn.green:hover {
+	background-color: #fdd963;
+}
+
 .btn.pink,
 .btn#cn-refuse-cookie {
 	color: #183153 !important;

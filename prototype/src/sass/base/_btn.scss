@@ -160,6 +160,15 @@
     }
   }
 
+  &.green {
+    background-color: $color-green;
+    color: $color-primary !important;
+
+    &:hover {
+      background-color: $color-yellow;
+    }
+  }
+
   &.pink,
   &#cn-refuse-cookie {
     background-color: $color-pink;
