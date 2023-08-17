@@ -293,3 +293,8 @@ p,
 .fa-21px {
   font-size: 21px !important;
 }
+
+.line-break-anywhere {
+  word-break: break-all;
+  line-break: anywhere;
+}

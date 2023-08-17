@@ -85,7 +85,7 @@ require_once get_template_directory() . '/inc/posts-filtering.php'; ?>
 							</div>
 							<div class="mt-4">
 								<div class="d-flex align-items-center mb-3">
-									<a href="contact@searchxrecruitment.com" class="btn btn__social notched navy smaller mr-3" target="_blank">
+									<a href="contact@searchxrecruitment.com" class="flex-shrink-0 btn btn__social notched navy smaller mr-3" target="_blank">
 										<i class="far fa-envelope"></i>
 									</a>
 									<a href="mailto:contact@searchxrecruitment.com" class="text-size-small text400">
@@ -98,14 +98,6 @@ require_once get_template_directory() . '/inc/posts-filtering.php'; ?>
 									</a>
 									<a href="tel:+31207782393" class="text-size-small text400">
 										+31 (0)20 - 7782393
-									</a>
-								</div>
-								<div class="d-flex align-items-center mb-3">
-									<a href="https://wa.me/31207782393" class="btn btn__social notched navy smaller mr-3" target="_blank">
-										<i class="fab fa-whatsapp"></i>
-									</a>
-									<a href="https://wa.me/31207782393" class="text-size-small text400">
-										+31 6 - 83 93 28 22
 									</a>
 								</div>
 

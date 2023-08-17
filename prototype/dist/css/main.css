@@ -7343,6 +7343,11 @@ p,
 	font-size: 21px !important;
 }
 
+.line-break-anywhere {
+	word-break: break-all;
+	line-break: anywhere;
+}
+
 .btn {
 	font-weight: 700 !important;
 	line-height: 1;
