@@ -285,6 +285,49 @@ function add_job_industry_taxonomies()
 }
 add_action('init', 'add_job_industry_taxonomies', 10);
 
+/**
+ * Add job industry taxonomies
+ *
+ * Additional custom taxonomies can be defined here
+ * http://codex.wordpress.org/Function_Reference/register_taxonomy
+ */
+function add_job_language_taxonomies()
+{
+	// Add new "Industry" taxonomy to Posts
+	// Hierarchical taxonomy (like categories)
+	register_taxonomy(
+		'job-language',
+		'jobs',
+		array(
+			'hierarchical' => true,
+			// This array of options controls the labels displayed in the WordPress Admin UI
+			'labels' => array(
+				'name' => _x('Languages', 'taxonomy general name'),
+				'singular_name' => _x('Language', 'taxonomy singular name'),
+				'search_items' =>  __('Search Languages'),
+				'all_items' => __('All Languages'),
+				'parent_item' => __('Parent Language'),
+				'parent_item_colon' => __('Parent Language:'),
+				'edit_item' => __('Edit Language'),
+				'update_item' => __('Update Language'),
+				'add_new_item' => __('Add New Language'),
+				'new_item_name' => __('New Language Name'),
+				'menu_name' => __('Languages'),
+			),
+			// Control the slugs used for this taxonomy
+			'rewrite' => array(
+				'slug' => 'jobs/language', // This controls the base slug that will display before each term
+				'with_front' => true, // Don't display the category base before "/locations/"
+				'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
+			),
+			'query_var'    => true,
+			'hierarchical' => true,
+			'has_archive' => true
+		)
+	);
+}
+add_action('init', 'add_job_language_taxonomies', 10);
+
 function custom_post_type_team()
 {
 

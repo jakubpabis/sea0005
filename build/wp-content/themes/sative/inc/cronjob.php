@@ -418,7 +418,23 @@ function insertCategories($job_categories, $postID)
 			}
 			$termID = $term->term_id;
 			wp_set_post_terms($postID, $termID, 'job-type', true);
-		}
+		} else if ($category['group'] == '#9 Language') {
+			$lang = false;
+			if(strval($category) === '1 English') {
+				$lang = 'English';
+			} else if (strval($category) === '2 Dutch') {
+				$lang = 'Dutch';
+			}
+			if($lang) {
+				$term = get_term_by('name', $lang, 'job-language');
+				if (!$term) {
+					wp_insert_term($lang, 'job-language');
+					$term = get_term_by('name', $lang, 'job-language');
+				}
+				$termID = $term->term_id;
+				wp_set_post_terms($postID, $termID, 'job-language', true);
+			}
+		} 
 	}
 
 	if (!empty($skillArr)) {
