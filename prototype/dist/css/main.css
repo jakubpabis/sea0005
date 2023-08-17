@@ -7335,6 +7335,10 @@ p,
 	line-height: 1.44 !important;
 }
 
+.lh-1 {
+	line-height: 1 !important;
+}
+
 .fa-21px {
 	font-size: 21px !important;
 }

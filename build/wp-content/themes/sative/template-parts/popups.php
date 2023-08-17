@@ -102,13 +102,13 @@ if ($group_id) {
 <div id="<?php echo $type; ?>PopupModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="<?php echo $type; ?>PopupModalTitle" aria-hidden="true">
 	<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
 		<div class="modal-content py-5">
-			<div class="modal-header d-flex align-items-center">
+			<div class="modal-header d-flex">
 				<?php if (get_field($type . '_popup_title', 'option')) : ?>
-					<span class="display-4 text700" id="<?php echo $type; ?>PopupModalTitle">
+					<span class="display-4 text700 pr-4 lh-1" id="<?php echo $type; ?>PopupModalTitle">
 						<?php echo get_field($type . '_popup_title', 'option'); ?>
 					</span>
 				<?php endif; ?>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<button type="button" class="close pt-2" data-dismiss="modal" aria-label="Close">
 					<span class="text700 text-uppercase text-size-normal mr-2 font-primary">
 						<?php pll_e('Sluiten'); ?>
 					</span>
