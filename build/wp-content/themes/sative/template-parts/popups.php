@@ -108,7 +108,7 @@ if ($group_id) {
 						<?php echo get_field($type . '_popup_title', 'option'); ?>
 					</span>
 				<?php endif; ?>
-				<button type="button" class="close pt-2" data-dismiss="modal" aria-label="Close">
+				<button type="button" class="close d-flex align-items-center" data-dismiss="modal" aria-label="Close">
 					<span class="text700 text-uppercase text-size-normal mr-2 font-primary">
 						<?php pll_e('Sluiten'); ?>
 					</span>
