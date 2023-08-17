@@ -602,6 +602,7 @@ $toTranslate = array(
 	'Or just download the file without giving up your email',
 	'Zoek naar een artikel',
 	'Onze <span class="bg-yellow px-3 font-primary">kennisbank</span>',
+	'Congratulations! You subscribed to our job alert!',
 	'Sorry, it looks like you’re a robot...',
 	'Thank you for contacting us!<br/>
 	We will reply to your message as soon as possible.<br/>

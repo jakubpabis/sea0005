@@ -92,7 +92,9 @@ if ($group_id) {
 	$cats = array();
 	foreach ($board->categories as $category) {
 		if ($category->parent_category_id === $group_id) {
-			$cats[] = $category;
+			if($category->name === 'Engineering' || $category->name === 'IT' || $category->name === 'Renewable Engineering') {
+				$cats[] = $category;
+			}
 		}
 	}
 }
@@ -135,7 +137,7 @@ if ($group_id) {
 							</div>
 							<div class="col-12 pb-3 d-flex flex-wrap">
 								<?php foreach ($cats as $cat) : ?>
-									<div class="pretty p-icon p-jelly w-50 my-2 pr-3">
+									<div class="pretty p-icon p-jelly w-100 my-2 pr-3">
 										<input class="required" type="checkbox" name="<?php echo $type; ?>_checkbox[]" value="<?php echo $cat->id; ?>">
 										<div class="state">
 										<i class="icon">&times;</i>

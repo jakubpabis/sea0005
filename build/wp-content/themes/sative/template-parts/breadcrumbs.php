@@ -56,7 +56,7 @@
 					<?php if ($_GET['messagesb'] === 'success') : ?>
 						<div class="info card bg-yellow">
 							<h2 class="color-navy">
-								<?php echo pll_e('Congratulations! You subscribe to our newsletter!'); ?>
+								<?php echo pll_e('Congratulations! You subscribed to our job alert!'); ?>
 							</h2>
 							<?php setcookie('subscribe_popup', true, get_field('subscribe_popup_cookie', 'option'), '/'); ?>
 						</div>
