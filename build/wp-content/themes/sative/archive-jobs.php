@@ -70,7 +70,7 @@ get_header();
 								<?php endforeach; ?>
 							</div>
 						<?php endif; ?>
-						<button type="button" class="btn btn__default btn__notched yellow pleaseOpenSubscribeModalPopup"><?php echo pll_e('Subscribe now'); ?></button>
+						<button type="button" class="btn btn__default btn__notched yellow pleaseOpenSubscribeModalPopup"><?php echo pll_e('Make a job alert'); ?></button>
 					</aside>
 					<main class="jobs__list-items">
 						<?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
