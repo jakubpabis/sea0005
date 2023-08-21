@@ -35,7 +35,7 @@ jQuery(document).ready(function () {
   openNewsletterSubscribeModal();
 
   $('select[multiple]').multiselect({
-    columns: 1,
+    columns: 2,
     search: true,
     selectAll: true,
     minHeight: 300,

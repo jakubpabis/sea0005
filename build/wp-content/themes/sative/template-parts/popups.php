@@ -146,18 +146,15 @@ unset($group);
 								<h5><?php echo pll_e('Choose your interest'); ?></h5>
 							</div>
 							<div class="col-12 pb-3">
-								<div class="row">
+								<select class="w-100 required" multiple required name="<?php echo $type; ?>_checkbox[]">
 									<?php foreach ($groups as $group) : ?>
-										<div class="col-md-4 pb-3 px-3">
-											<label for="<?php echo $type; ?>_checkbox[]" class="mb-1"><strong><?php echo $group['name']; ?></strong></label>
-											<select multiple name="<?php echo $type; ?>_checkbox[]">
-												<?php foreach ($group['categories'] as $cat) : ?>
-													<option value="<?php echo $cat->id; ?>"><?php echo $cat->name; ?></option>
-												<?php endforeach; ?>
-											</select>
-										</div>
+										<optgroup label="<?php echo $group['name']; ?>">
+											<?php foreach ($group['categories'] as $cat) : ?>
+												<option value="<?php echo $cat->id; ?>"><?php echo $cat->name; ?></option>
+											<?php endforeach; ?>
+										</optgroup>
 									<?php endforeach; ?>
-								</div>
+									</select>
 							</div>
 						<?php endif; ?>
 						<div class="col-12 pt-1">

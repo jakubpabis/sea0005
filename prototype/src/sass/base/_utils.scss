@@ -129,6 +129,14 @@ ul.lined {
     height: 0;
     ul {
       li {
+        &.optgroup {
+          > span.label {
+            padding-left: 5px;
+            padding-top: 10px;
+            padding-bottom: 5px;
+            font-size: 21px;
+          }
+        }
         padding: 0 !important;
         label {
           // display: flex !important;

@@ -103,8 +103,12 @@ function appValidation() {
         focusCleanup: true,
         onkeyup: false,
       });
-      formSub.find('input.required').on('change focusout', function () {
-        if (formSub.valid()) {
+      formSub.find('.required').on('change focusout', function () {
+        if (
+          formSub.valid() &&
+          formSub.find('select.required').val() &&
+          formSub.find('select.required').val().length > 0
+        ) {
           $('.fake_btn_subscribe').addClass('d-none');
           $('.g-recaptcha.subscribe').removeClass('d-none');
         } else {
@@ -114,7 +118,11 @@ function appValidation() {
       });
       formSub.find('.fake_btn_subscribe').on('click', function (e) {
         e.preventDefault();
-        if (formSub.valid()) {
+        if (
+          formSub.valid() &&
+          formSub.find('select.required').val() &&
+          formSub.find('select.required').val().length > 0
+        ) {
           $('.fake_btn_subscribe').addClass('d-none');
           $('.g-recaptcha.subscribe').removeClass('d-none');
           $(this)
