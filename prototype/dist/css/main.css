@@ -7972,6 +7972,29 @@ ul.lined li:first-child a {
 	background-color: transparent !important;
 }
 
+.ms-options-wrap > button {
+	font-size: 16px !important;
+	padding: 8px 10px !important;
+	border: 1px solid #183153 !important;
+}
+
+.ms-options-wrap .ms-options {
+	height: 0;
+}
+
+.ms-options-wrap .ms-options ul li {
+	padding: 0 !important;
+}
+
+.ms-options-wrap .ms-options ul li label {
+	padding-left: 24px !important;
+}
+
+.ms-options-wrap .ms-options ul li label input {
+	top: 9px !important;
+	margin-right: 8px !important;
+}
+
 /* --- bootstrap-menu styling http://bootstrap-menu.com  */
 
 body.offcanvas-active {
@@ -14706,6 +14729,165 @@ fieldset[disabled] .datepicker table tr td span.active:hover:hover {
 	margin-left: -5px;
 	padding: 4px 5px;
 	border-width: 1px 0;
+}
+
+.ms-options-wrap {
+	position: relative;
+}
+
+.ms-options-wrap,
+.ms-options-wrap * {
+	box-sizing: border-box;
+}
+
+.ms-options-wrap > button:focus,
+.ms-options-wrap > button {
+	font-size: 13px;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	margin-top: 1px;
+	padding: 5px 20px 5px 5px;
+	text-align: left;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	color: #aaa;
+	border: 1px solid #aaa;
+	outline-offset: -2px;
+	background-color: #fff;
+}
+
+.ms-options-wrap > button[disabled] {
+	opacity: .6;
+	color: #808080;
+	background-color: #e5e9ed;
+}
+
+.ms-options-wrap > button:after {
+	position: absolute;
+	top: 50%;
+	right: 5px;
+	width: 0;
+	height: 0;
+	margin-top: -3px;
+	content: ' ';
+	border: 6px solid rgba(0, 0, 0, 0);
+	border-top-color: #999;
+}
+
+.ms-options-wrap.ms-has-selections > button {
+	color: #333;
+}
+
+.ms-options-wrap > .ms-options {
+	position: absolute;
+	z-index: 2000;
+	left: 0;
+	visibility: hidden;
+	overflow: auto;
+	width: 100%;
+	margin-top: 1px;
+	margin-bottom: 20px;
+	border: 1px solid #aaa;
+	background: white;
+}
+
+.ms-options-wrap.ms-active > .ms-options {
+	visibility: visible;
+}
+
+.ms-options-wrap > .ms-options > .ms-search input {
+	width: 100%;
+	padding: 4px 5px;
+	border: none;
+	border-bottom: 1px groove;
+	outline: none;
+}
+
+.ms-options-wrap > .ms-options > .no-result-message {
+	display: none;
+	padding: 4px 5px;
+}
+
+.ms-options-wrap > .ms-options .ms-selectall {
+	font-size: .9em;
+	display: inline-block;
+	text-decoration: none;
+	text-transform: lowercase;
+}
+
+.ms-options-wrap > .ms-options .ms-selectall:hover {
+	text-decoration: underline;
+}
+
+.ms-options-wrap > .ms-options > .ms-selectall.global {
+	margin: 4px 5px;
+}
+
+.ms-options-wrap > .ms-options > ul,
+.ms-options-wrap > .ms-options > ul > li.optgroup ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.ms-options-wrap > .ms-options > ul li.ms-hidden {
+	display: none;
+}
+
+.ms-options-wrap > .ms-options > ul > li.optgroup {
+	padding: 5px;
+}
+
+.ms-options-wrap > .ms-options > ul > li.optgroup + li.optgroup {
+	border-top: 1px solid #aaa;
+}
+
+.ms-options-wrap > .ms-options > ul > li.optgroup .label {
+	font-weight: bold;
+	display: block;
+	padding: 5px 0 0 0;
+}
+
+.ms-options-wrap > .ms-options > ul label {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	margin: 1px 0;
+	padding: 4px 4px 4px 20px;
+	border: 1px dotted transparent;
+}
+
+.ms-options-wrap > .ms-options.checkbox-autofit > ul label,
+.ms-options-wrap > .ms-options.hide-checkbox > ul label {
+	padding: 4px;
+}
+
+.ms-options-wrap > .ms-options > ul label.focused,
+.ms-options-wrap > .ms-options > ul label:hover {
+	border-color: #999;
+	background-color: #efefef;
+}
+
+.ms-options-wrap > .ms-options > ul li.selected label {
+	border-color: transparent;
+	background-color: #efefef;
+}
+
+.ms-options-wrap > .ms-options > ul input[type='checkbox'] {
+	position: absolute;
+	top: 7px;
+	left: 4px;
+	margin: 0 5px 0 0;
+}
+
+.ms-options-wrap > .ms-options.hide-checkbox > ul input[type='checkbox'] {
+	position: absolute !important;
+	overflow: hidden;
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px, 1px, 1px, 1px);
+	width: 1px;
+	height: 1px;
 }
 
 @media (prefers-reduced-motion: reduce) {

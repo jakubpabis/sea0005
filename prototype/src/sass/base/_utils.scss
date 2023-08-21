@@ -117,3 +117,29 @@ ul.lined {
     display: none !important;
   }
 }
+.ms-options-wrap {
+  > button {
+    border: 1px solid $color-navy !important;
+    font-size: 16px !important;
+    padding: 8px 10px !important;
+  }
+  .ms-options {
+    // min-width: 50vh;
+    // width: auto;
+    height: 0;
+    ul {
+      li {
+        padding: 0 !important;
+        label {
+          // display: flex !important;
+          // align-items: center !important;
+          padding-left: 24px !important;
+          input {
+            top: 9px !important;
+            margin-right: 8px !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -80,27 +80,37 @@ $type = 'subscribe';
 $api_key_groups = '6KlPHA3GzUs0Mt5ZMzIA7fBJKhvXsF37IQd3zaBj&include=groups';
 
 $board = getRequestToken('v2/job_boards/categories', $api_key_groups);
-$group_id = false;
-foreach ($board->groups as $group) {
-	if ($group->name === '#2 Skill Area') {
-		$group_id = $group->id;
-		break;
+$groups = [];
+foreach($board->groups as $group) {
+	if($group->name !== '#2 Skill Area' && $group->name !== '#1 Availability') {
+		$groups[] = ['id' => $group->id, 'name' => explode('Skill', $group->name)[1], 'categories' => []];
 	}
 }
 
-if ($group_id) {
-	$cats = array();
-	foreach ($board->categories as $category) {
-		if ($category->parent_category_id === $group_id) {
-			if($category->name === 'Engineering' || $category->name === 'IT' || $category->name === 'Renewable Engineering') {
-				$cats[] = $category;
+foreach($board->categories as $category) {
+	foreach($groups as $key => $group) {
+			if($category->parent_category_id == $group['id']) {
+					// NOTE: Assuming that $category is also an object. If it's an array, this line doesn't need modification.
+					$groups[$key]['categories'][] = $category;
 			}
-		}
 	}
 }
+
+usort($groups, function($a, $b) {
+	return strcmp($a['name'], $b['name']);
+});
+
+// Sorting inner categories
+foreach ($groups as $key => &$group) {  // using & for reference
+	usort($group['categories'], function($a, $b) {
+			// NOTE: Assuming that category_name is a property of $category. Adjust if this isn't correct.
+			return strcmp($a->name, $b->name);
+	});
+}
+unset($group); 
 ?>
 <div id="<?php echo $type; ?>PopupModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="<?php echo $type; ?>PopupModalTitle" aria-hidden="true">
-	<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content py-5">
 			<div class="modal-header d-flex">
 				<?php if (get_field($type . '_popup_title', 'option')) : ?>
@@ -135,16 +145,19 @@ if ($group_id) {
 							<div class="col-12 pt-2">
 								<h5><?php echo pll_e('Choose your interest'); ?></h5>
 							</div>
-							<div class="col-12 pb-3 d-flex flex-wrap">
-								<?php foreach ($cats as $cat) : ?>
-									<div class="pretty p-icon p-jelly w-100 my-2 pr-3">
-										<input class="required" type="checkbox" name="<?php echo $type; ?>_checkbox[]" value="<?php echo $cat->id; ?>">
-										<div class="state">
-										<i class="icon">&times;</i>
-											<label><?php echo $cat->name; ?></label>
+							<div class="col-12 pb-3">
+								<div class="row">
+									<?php foreach ($groups as $group) : ?>
+										<div class="col-md-4 pb-3 px-3">
+											<label for="<?php echo $type; ?>_checkbox[]" class="mb-1"><strong><?php echo $group['name']; ?></strong></label>
+											<select multiple name="<?php echo $type; ?>_checkbox[]">
+												<?php foreach ($group['categories'] as $cat) : ?>
+													<option value="<?php echo $cat->id; ?>"><?php echo $cat->name; ?></option>
+												<?php endforeach; ?>
+											</select>
 										</div>
-									</div>
-								<?php endforeach; ?>
+									<?php endforeach; ?>
+								</div>
 							</div>
 						<?php endif; ?>
 						<div class="col-12 pt-1">
@@ -163,3 +176,12 @@ if ($group_id) {
 </div>
 
 <div id="pleaseAddCookiesScriptForPopups" data-popupName="<?php echo $type; ?>" data-popupCookie="<?php echo get_field($type . '_popup_cookie', 'option'); ?>" data-popupCookieTime="<?php echo get_field($type . '_popup_timeout', 'option'); ?>" class="d-none">
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+    var form = document.getElementById('<?php echo $type; ?>-popup-form');
+    form.addEventListener('submit', function(event) {
+			event.preventDefault(); // This prevents the form from submitting
+    });
+	});
+</script>

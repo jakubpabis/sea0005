@@ -34,6 +34,13 @@ jQuery(document).ready(function () {
   postsAjaxFiltering();
   openNewsletterSubscribeModal();
 
+  $('select[multiple]').multiselect({
+    columns: 1,
+    search: true,
+    selectAll: true,
+    minHeight: 300,
+  });
+
   if ($('.body-bg-gradient').length > 0) {
     bodyGradient();
   }

@@ -84,7 +84,10 @@ function slideThem() {
     el.on('click', function (e) {
       e.preventDefault();
       if ($(this).attr('href') === '#openCVmodal') {
-        $('#uploadCVModal').modal('show');
+        $('#uploadCVModal').modal(
+          { backdrop: 'static', keyboard: false },
+          'show'
+        );
       } else {
         slideTo(el.attr('href'));
       }
@@ -177,7 +180,10 @@ jQuery(document).ready(function () {
     jQuery('#searchPopupModal').find('.job-search-nice').focus();
   });
   if (jQuery('#pleaseShowUploadCVModal').length > 0) {
-    jQuery('#uploadCVModal').modal('show');
+    jQuery('#uploadCVModal').modal(
+      { backdrop: 'static', keyboard: false },
+      'show'
+    );
   }
   if (jQuery('#pleaseAddCookiesScriptForPopups').length > 0) {
     // var $type = jQuery('#pleaseAddCookiesScriptForPopups').data('popupname');
@@ -201,6 +207,9 @@ jQuery(document).ready(function () {
 function openNewsletterSubscribeModal() {
   jQuery('.pleaseOpenSubscribeModalPopup').on('click', function (e) {
     e.preventDefault();
-    jQuery('#subscribePopupModal').modal('show');
+    jQuery('#subscribePopupModal').modal(
+      { backdrop: 'static', keyboard: false },
+      'show'
+    );
   });
 }
