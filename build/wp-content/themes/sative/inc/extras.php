@@ -151,6 +151,7 @@ function jobs_ajax_filtering()
 		'job-location',
 		'job-industry',
 		'job-type',
+		'jog-language'
 	);
 
 	// for taxonomies

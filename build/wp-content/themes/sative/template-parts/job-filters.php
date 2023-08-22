@@ -7,7 +7,8 @@ $taxonomyFilters = array(
 	'job-type',
 	'salary_min',
 	'salary_max',
-	'location_s'
+	'location_s',
+	'job-language'
 );
 $opened = false;
 // for taxonomies
@@ -190,6 +191,26 @@ foreach ($taxonomyFilters as $taxF) {
 					</span>
 					<div class="filters job job-type-filters">
 						<?php hierarchical_tax_tree_filter(0, 'job-type', $activeJobTyps); ?>
+					</div>
+				</div>
+			<?php endif; ?>
+			<?php if (get_categories(array('taxonomy' => 'job-language'))) :
+				if (isset($_GET['job-language']) && !empty($_GET['job-language'])) {
+					$activeJobLang = $_GET['job-language'];
+					$active = 'active';
+				} else {
+					$activeJobLang = null;
+					$active = null;
+				}
+			?>
+				<div class="filter-group <?php echo $active ?> mb-4">
+					<span class="filter-title <?php echo $active ?> d-flex align-items-center justify-content-between text-uppercase">
+						<?php pll_e('Language'); ?>
+						<i class="fas fa-plus"></i>
+						<i class="fas fa-minus"></i>
+					</span>
+					<div class="filters job">
+						<?php hierarchical_tax_tree_filter(0, 'job-language', $activeJobLang, 'name', 'ASC'); ?>
 					</div>
 				</div>
 			<?php endif; ?>

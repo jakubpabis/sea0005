@@ -24,6 +24,7 @@ $taxonomyFilters = array(
 	'job-location',
 	'job-industry',
 	'job-type',
+	'job-language'
 );
 
 // for taxonomies
