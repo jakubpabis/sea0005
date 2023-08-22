@@ -12117,7 +12117,7 @@ function itemsDown($item) {
 function jobsAjaxFiltering() {
   $('.filters.job')
     .find('input')
-    .on('click', function () {
+    .on('click change', function () {
       var $this = $(this);
       var $key = $this.data('key');
       var $value = $this.data('value');

@@ -69,11 +69,35 @@ foreach ($taxonomyFilters as $taxF) {
 			}
 			?>
 			<div class="filter-group <?php echo $active; ?> mb-4">
+				<script>
+					function changeInputSalaryFilter(e, target) {
+						if(target === 'salary_min') {
+							console.log(e.value);
+							document.getElementById('salary_min_input_for_select').value = e.value;
+							document.getElementById('salary_min_input_for_select').dataset.value = e.value;
+							document.getElementById('salary_min_input_for_select').click();
+						} else if(target === 'salary_max') {
+							document.getElementById('salary_max_input_for_select').value = e.value;
+							document.getElementById('salary_max_input_for_select').dataset.value = e.value;
+							document.getElementById('salary_max_input_for_select').click();
+						}
+					}
+				</script>
 				<span class="filter-title <?php echo $active; ?> d-flex align-items-center justify-content-between text-uppercase">
 					<?php pll_e('Salary range'); ?>
 					<i class="fas fa-plus"></i>
 					<i class="fas fa-minus"></i>
 				</span>
+				<div class="filters job job-category-filters d-none hidden">
+					<ul class="filter-ul">
+						<li class="filter-input-li">
+							<input id="salary_min_input_for_select" data-key="salary_min" data-value="" data-name="salary_min" name="salary_min[]" value=""/>
+						</li>
+						<li class="filter-input-li">
+							<input id="salary_max_input_for_select" data-key="salary_max" data-value="" data-name="salary_max" name="salary_max[]" value=""/>
+						</li>
+					</ul>
+				</div>
 				<div class="filters job job-salary-filters">
 					<div class="inputs">
 						<?php
@@ -81,7 +105,7 @@ foreach ($taxonomyFilters as $taxF) {
 						$range2 = range(100000, 225000, 25000);
 						$range3 = range(250000, 500000, 50000);
 						?>
-						<select data-key="salary_min" name="salary_min" data-name="salary_min" data-value="<?php echo $salaryMin; ?>">
+						<select onchange="changeInputSalaryFilter(this, 'salary_min')" data-key="salary_min" name="salary_min" data-name="salary_min" data-value="<?php echo $salaryMin; ?>">
 							<?php if ($salaryMin) : ?>
 								<option value="" disabled><?php pll_e('From'); ?></option>
 								<option value="0">0</option>
@@ -106,7 +130,7 @@ foreach ($taxonomyFilters as $taxF) {
 							}
 							?>
 						</select>
-						<select data-key="salary_max" name="salary_max" data-name="salary_max" data-value="<?php echo $salaryMax; ?>">
+						<select onchange="changeInputSalaryFilter(this, 'salary_max')" data-key="salary_max" name="salary_max" data-name="salary_max" data-value="<?php echo $salaryMax; ?>">
 							<?php if ($salaryMax) : ?>
 								<option value="" disabled><?php pll_e('To'); ?></option>
 								<option value="0">0</option>
