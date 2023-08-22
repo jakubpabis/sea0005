@@ -34,6 +34,13 @@ jQuery(document).ready(function () {
   postsAjaxFiltering();
   openNewsletterSubscribeModal();
 
+  if (getParameterByName('modal') === 'job-alert') {
+    $('#subscribePopupModal').modal(
+      { backdrop: 'static', keyboard: false },
+      'show'
+    );
+  }
+
   $('select[multiple]').multiselect({
     columns: 2,
     search: true,

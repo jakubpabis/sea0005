@@ -18597,6 +18597,16 @@ function openNewsletterSubscribeModal() {
   });
 }
 
+function getParameterByName(name, url) {
+  if (!url) url = window.location.href;
+  name = name.replace(/[\[\]]/g, '\\$&');
+  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+    results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
 function onFormSubmit() {
   $(document).on(
     'submit',
@@ -18817,6 +18827,13 @@ jQuery(document).ready(function () {
   jobsAjaxFiltering();
   postsAjaxFiltering();
   openNewsletterSubscribeModal();
+
+  if (getParameterByName('modal') === 'job-alert') {
+    $('#subscribePopupModal').modal(
+      { backdrop: 'static', keyboard: false },
+      'show'
+    );
+  }
 
   $('select[multiple]').multiselect({
     columns: 2,
