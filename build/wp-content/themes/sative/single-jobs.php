@@ -376,11 +376,11 @@ get_template_part('template-parts/breadcrumbs'); ?>
 								<input type="text" minlength="2" id="SXHP_sn_input" name="SXHP_sn_input" value="">
 							</div>
 							<div class="col-lg-12 col-sm-6 ugly pt-2">
-								<input type="text" name="app-name" required value="<?php echo $app_name ? $app_name : null; ?>">
+								<input class="required" type="text" name="app-name" required value="<?php echo $app_name ? $app_name : null; ?>">
 								<label class="ugly-label" for="app-name" <?php echo $app_name ? 'style="opacity: 0;"' : null; ?>><?php pll_e('Name'); ?> <span>*</span></label>
 							</div>
 							<div class="col-lg-12 col-sm-6 ugly pt-2">
-								<input type="email" name="app-email" required value="<?php echo $app_email ? $app_email : null; ?>">
+								<input class="required" type="email" name="app-email" required value="<?php echo $app_email ? $app_email : null; ?>">
 								<label class="ugly-label" for="app-email" <?php echo $app_email ? 'style="opacity: 0;"' : null; ?>><?php pll_e('Email'); ?> <span>*</span></label>
 							</div>
 							<div class="col-lg-12 col-sm-6 ugly pt-2">
@@ -421,7 +421,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 							</div>
 							<div class="col-12 pt-1">
 								<div class="pretty p-icon p-jelly">
-									<input type="checkbox" name="app-pp" required>
+									<input class="required" type="checkbox" name="app-pp" required>
 									<div class="state">
 										<i class="icon">&times;</i>
 										<label><?php pll_e('I hereby agree with the'); ?> <a href="<?php if (pll_current_language() === 'en') : ?>/privacy-policy<?php else : ?>/privacyverklaring<?php endif; ?>" style="position: relative; z-index: 9999;"><u><?php pll_e('Privacy Policy'); ?></u></a> <span class="color-pink text-size-small text600">*</span></label>
@@ -434,11 +434,10 @@ get_template_part('template-parts/breadcrumbs'); ?>
 								<input type="hidden" name="app-jobid" value="<?php echo get_field('job_id'); ?>">
 								<input type="hidden" name="action" value="application_form">
 								<?php wp_nonce_field('application_form', 'application_form_nonce'); ?>
-								<input type="hidden" name="jobUploadHash" id="jobUploadHash" value="<?php global $hashesForLashes;
-																																										echo $hashesForLashes['appHash']; ?>">
+								<input type="hidden" name="jobUploadHash" id="jobUploadHash" value="<?php global $hashesForLashes; echo $hashesForLashes['appHash']; ?>">
 								<button type="button" disabled class="fake_btn_app_loading btn btn__default pink d-none disabled"><?php echo pll_e('Sending, please wait...'); ?></button>
-								<?php /* <button type="button" class="fake_btn_app btn btn__default yellow"><?php echo pll_e('Send application'); ?></button> */ ?>
-								<button class="g-recaptcha app btn btn__default yellow" data-sitekey="6LdyeiQhAAAAAMsMwMmCkriZI74RsG7oPP5nqWoV" data-callback="onAppSubmit"><?php echo pll_e('Send application'); ?></button>
+								<button type="button" class="fake_btn_app btn btn__default yellow"><?php echo pll_e('Send application'); ?></button>
+								<button class="g-recaptcha app btn btn__default yellow d-none" data-sitekey="6LdyeiQhAAAAAMsMwMmCkriZI74RsG7oPP5nqWoV" data-callback="onAppSubmit"><?php echo pll_e('Send application'); ?></button>
 							</div>
 						</div>
 					</form>
