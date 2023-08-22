@@ -151,7 +151,7 @@ function jobs_ajax_filtering()
 		'job-location',
 		'job-industry',
 		'job-type',
-		'jog-language'
+		'job-language'
 	);
 
 	// for taxonomies
@@ -230,7 +230,11 @@ function jobs_ajax_filtering()
 		$output = ob_get_contents();
 		ob_end_clean();
 	} else {
-		echo __('No products found');
+		ob_start();
+		$response .= include $_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/sative/template-parts/ajax/jobs-list-open.php';
+		$response .= include $_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/sative/template-parts/ajax/jobs-list-close.php';
+		$output = ob_get_contents();
+		ob_end_clean();
 	}
 
 	$result = [

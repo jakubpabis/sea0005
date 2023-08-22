@@ -4,11 +4,11 @@ $taxonomyFilters = array(
 	'job-category',
 	'job-location',
 	'job-industry',
+	'job-language',
 	'job-type',
 	'salary_min',
 	'salary_max',
-	'location_s',
-	'job-language'
+	'location_s'
 );
 $opened = false;
 // for taxonomies
@@ -149,7 +149,7 @@ foreach ($taxonomyFilters as $taxF) {
 						<i class="fas fa-plus"></i>
 						<i class="fas fa-minus"></i>
 					</span>
-					<div class="filters job">
+					<div class="filters job job-category-filters">
 						<?php hierarchical_tax_tree_filter(0, 'job-location', $activeJobLocs, 'name', 'ASC'); ?>
 					</div>
 				</div>
@@ -169,7 +169,7 @@ foreach ($taxonomyFilters as $taxF) {
 						<i class="fas fa-plus"></i>
 						<i class="fas fa-minus"></i>
 					</span>
-					<div class="filters job">
+					<div class="filters job job-category-filters">
 						<?php hierarchical_tax_tree_filter(0, 'job-industry', $activeJobInds, 'name', 'ASC'); ?>
 					</div>
 				</div>
@@ -189,7 +189,7 @@ foreach ($taxonomyFilters as $taxF) {
 						<i class="fas fa-plus"></i>
 						<i class="fas fa-minus"></i>
 					</span>
-					<div class="filters job job-type-filters">
+					<div class="filters job job-type-filters job-category-filters">
 						<?php hierarchical_tax_tree_filter(0, 'job-type', $activeJobTyps); ?>
 					</div>
 				</div>
@@ -209,7 +209,7 @@ foreach ($taxonomyFilters as $taxF) {
 						<i class="fas fa-plus"></i>
 						<i class="fas fa-minus"></i>
 					</span>
-					<div class="filters job">
+					<div class="filters job job-category-filters">
 						<?php hierarchical_tax_tree_filter(0, 'job-language', $activeJobLang, 'name', 'ASC'); ?>
 					</div>
 				</div>
