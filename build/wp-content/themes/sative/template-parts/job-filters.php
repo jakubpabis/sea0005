@@ -53,12 +53,12 @@ foreach ($taxonomyFilters as $taxF) {
 			<?php endif; ?>
 			<?php
 			if (isset($_GET['salary_min']) && $_GET['salary_min'] !== null && $_GET['salary_min'] !== '') {
-				$salaryMin = $_GET['salary_min'];
+				$salaryMin = $_GET['salary_min'][0];
 			} else {
 				$salaryMin = null;
 			}
 			if (isset($_GET['salary_max']) && $_GET['salary_max'] !== null && $_GET['salary_max'] !== '') {
-				$salaryMax = $_GET['salary_max'];
+				$salaryMax = $_GET['salary_max'][0];
 			} else {
 				$salaryMax = null;
 			}
@@ -72,13 +72,14 @@ foreach ($taxonomyFilters as $taxF) {
 				<script>
 					function changeInputSalaryFilter(e, target) {
 						if(target === 'salary_min') {
-							console.log(e.value);
-							document.getElementById('salary_min_input_for_select').value = e.value;
+							document.getElementById('salary_min_input_for_select').parentElement.classList.remove('active');
 							document.getElementById('salary_min_input_for_select').dataset.value = e.value;
+							document.getElementById('salary_min_input_for_select').value = e.value;
 							document.getElementById('salary_min_input_for_select').click();
 						} else if(target === 'salary_max') {
-							document.getElementById('salary_max_input_for_select').value = e.value;
+							document.getElementById('salary_max_input_for_select').parentElement.classList.remove('active');
 							document.getElementById('salary_max_input_for_select').dataset.value = e.value;
+							document.getElementById('salary_max_input_for_select').value = e.value;
 							document.getElementById('salary_max_input_for_select').click();
 						}
 					}
@@ -91,10 +92,10 @@ foreach ($taxonomyFilters as $taxF) {
 				<div class="filters job job-category-filters d-none hidden">
 					<ul class="filter-ul">
 						<li class="filter-input-li">
-							<input id="salary_min_input_for_select" data-key="salary_min" data-value="" data-name="salary_min" name="salary_min[]" value=""/>
+							<input id="salary_min_input_for_select" type="text" data-key="salary_min" data-value="" data-name="salary_min" name="salary_min" value=""/>
 						</li>
 						<li class="filter-input-li">
-							<input id="salary_max_input_for_select" data-key="salary_max" data-value="" data-name="salary_max" name="salary_max[]" value=""/>
+							<input id="salary_max_input_for_select" type="text" data-key="salary_max" data-value="" data-name="salary_max" name="salary_max" value=""/>
 						</li>
 					</ul>
 				</div>
@@ -108,7 +109,7 @@ foreach ($taxonomyFilters as $taxF) {
 						<select onchange="changeInputSalaryFilter(this, 'salary_min')" data-key="salary_min" name="salary_min" data-name="salary_min" data-value="<?php echo $salaryMin; ?>">
 							<?php if ($salaryMin) : ?>
 								<option value="" disabled><?php pll_e('From'); ?></option>
-								<option value="0">0</option>
+								<option value="<?php echo $salaryMin; ?>"><?php echo $salaryMin; ?></option>
 							<?php else : ?>
 								<option value="" disabled selected><?php pll_e('From'); ?></option>
 							<?php endif; ?>
@@ -133,7 +134,7 @@ foreach ($taxonomyFilters as $taxF) {
 						<select onchange="changeInputSalaryFilter(this, 'salary_max')" data-key="salary_max" name="salary_max" data-name="salary_max" data-value="<?php echo $salaryMax; ?>">
 							<?php if ($salaryMax) : ?>
 								<option value="" disabled><?php pll_e('To'); ?></option>
-								<option value="0">0</option>
+								<option value="<?php echo $salaryMax; ?>"><?php echo $salaryMax; ?></option>
 							<?php else : ?>
 								<option value="" disabled selected><?php pll_e('To'); ?></option>
 							<?php endif; ?>

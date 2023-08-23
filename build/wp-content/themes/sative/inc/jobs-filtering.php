@@ -30,6 +30,7 @@ $taxonomyFilters = array(
 // for taxonomies
 foreach ($taxonomyFilters as $taxF) {
 	if (isset($_GET[$taxF]) && !empty($_GET[$taxF]) && $_GET[$taxF] !== null) {
+
 		if (count($_GET[$taxF]) > 1) {
 			foreach (filterHelper($_GET[$taxF], $taxF) as $termID) {
 				$arr = array(
@@ -52,14 +53,14 @@ foreach ($taxonomyFilters as $taxF) {
 if (isset($_GET['salary_min']) && !empty($_GET['salary_min']) && $_GET['salary_min'] !== null) {
 	$args['meta_query'][] = array(
 		'key' => 'salary_min',
-		'value' => intval($_GET['salary_min']),
+		'value' => intval($_GET['salary_min'][0]),
 		'compare' => '>='
 	);
 }
 if (isset($_GET['salary_max']) && !empty($_GET['salary_max']) && $_GET['salary_max'] !== null) {
 	$args['meta_query'][] = array(
 		'key' => 'salary_max',
-		'value' => intval($_GET['salary_max']),
+		'value' => intval($_GET['salary_max'][0]),
 		'compare' => '<='
 	);
 }

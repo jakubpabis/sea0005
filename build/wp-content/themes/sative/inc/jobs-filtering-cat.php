@@ -61,14 +61,14 @@ foreach ($taxonomyFilters as $taxF) {
 if (isset($_GET['salary_min']) && !empty($_GET['salary_min']) && $_GET['salary_min'] !== null) {
 	$args['meta_query'][] = array(
 		'key' => 'salary_min',
-		'value' => $_GET['salary_min'],
+		'value' => intval($_GET['salary_min'][0]),
 		'compare' => '>='
 	);
 }
 if (isset($_GET['salary_max']) && !empty($_GET['salary_max']) && $_GET['salary_max'] !== null) {
 	$args['meta_query'][] = array(
 		'key' => 'salary_max',
-		'value' => $_GET['salary_max'],
+		'value' => intval($_GET['salary_max'][0]),
 		'compare' => '<='
 	);
 }

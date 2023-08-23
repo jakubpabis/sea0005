@@ -12117,21 +12117,21 @@ function itemsDown($item) {
 function jobsAjaxFiltering() {
   $('.filters.job')
     .find('input')
-    .on('click change', function () {
-      var $this = $(this);
-      var $key = $this.data('key');
-      var $value = $this.data('value');
+    .on('click', function () {
+      var $key = $(this).data('key');
+      var $value = $(this).val();
       var $data = {
         action: 'jobs_ajax_filtering',
         url: window.location.href,
       };
-
+      // console.log($(this).val());
+      // console.log($(this).closest('.filter-input-li').hasClass('active'));
       $('.job-category-filters')
         .find('input')
         .each(function () {
           if ($(this).closest('.filter-input-li').hasClass('active')) {
             var $filtersKey = $(this).data('key');
-            var $filtersValue = $(this).data('value');
+            var $filtersValue = $(this).val();
             if (Array.isArray($data['"' + $filtersKey + '"'])) {
               $data['"' + $filtersKey + '"'].push($filtersValue);
             } else {
@@ -12140,18 +12140,18 @@ function jobsAjaxFiltering() {
           }
         });
 
-      if ($this.closest('.filter-input-li').hasClass('active')) {
+      if ($(this).closest('.filter-input-li').hasClass('active')) {
         var $index = $data['"' + $key + '"'].indexOf($value);
         if ($index > -1) {
           $data['"' + $key + '"'].splice($index, 1);
         }
-        $this
+        $(this)
           .closest('.filter-input-li')
           .find('.filter-input-li.active')
           .find('input')
           .each(function () {
             var $dataKey = $(this).data('key');
-            var $dataValue = $(this).data('value');
+            var $dataValue = $(this).val();
             var $index = $data['"' + $dataKey + '"'].indexOf($dataValue);
 
             if ($index > -1) {
@@ -12159,14 +12159,13 @@ function jobsAjaxFiltering() {
             }
           });
 
-        $this
+        $(this)
           .closest('.filter-input-li')
           .find('.filter-input-li.active')
           .removeClass('active');
-        $this.closest('.filter-input-li').removeClass('active');
+        $(this).closest('.filter-input-li').removeClass('active');
       } else {
-        $this.closest('.filter-input-li').addClass('active');
-
+        $(this).closest('.filter-input-li').addClass('active');
         if (Array.isArray($data['"' + $key + '"'])) {
           $data['"' + $key + '"'].push($value);
         } else {
@@ -12227,9 +12226,8 @@ function postsAjaxFiltering() {
       //var $current = window.location.search;
       //var $currentObj = parseParams($current.search);
 
-      var $this = $(this);
-      var $key = $this.data('key');
-      var $value = $this.data('value');
+      var $key = $(this).data('key');
+      var $value = $(this).data('value');
       var $data = {
         action: 'post_ajax_filtering',
         url: window.location.href,
@@ -12249,14 +12247,14 @@ function postsAjaxFiltering() {
           }
         });
 
-      if ($this.parent().parent('li').hasClass('active')) {
+      if ($(this).parent().parent('li').hasClass('active')) {
         var $index = $data['"' + $key + '"'].indexOf($value);
         if ($index > -1) {
           $data['"' + $key + '"'].splice($index, 1);
         }
-        $this.parent().parent('li').removeClass('active');
+        $(this).parent().parent('li').removeClass('active');
       } else {
-        $this.parent().parent('li').addClass('active');
+        $(this).parent().parent('li').addClass('active');
 
         if (Array.isArray($data['"' + $key + '"'])) {
           $data['"' + $key + '"'].push($value);
