@@ -133,7 +133,7 @@
       position: relative;
 
       &:before {
-        content: "";
+        content: '';
         display: block;
         position: absolute;
         top: 24px;
@@ -550,7 +550,7 @@
         position: relative;
 
         .triangle {
-          content: "";
+          content: '';
           width: 0;
           height: 0;
           border-style: solid;
@@ -717,7 +717,7 @@
   border: none;
   outline: 0;
   box-shadow: none;
-  background-image: url("../img/search.svg");
+  background-image: url('../img/search.svg');
   background-position: calc(100% - 15px) 50%;
   background-size: 30px 30px;
   background-repeat: no-repeat;
@@ -869,7 +869,7 @@ form {
         }
       }
 
-      &[type="file"] {
+      &[type='file'] {
         width: 100%;
         background-color: white;
         opacity: 0;
@@ -916,5 +916,12 @@ form {
   ul {
     padding-left: 15px;
     margin-bottom: 20px;
+  }
+}
+
+.accordion-header {
+  cursor: pointer !important;
+  &:hover {
+    background-color: rgba($color-navy, 0.1);
   }
 }

@@ -9794,6 +9794,14 @@ form .ugly textarea {
 	padding-left: 15px;
 }
 
+.accordion-header {
+	cursor: pointer !important;
+}
+
+.accordion-header:hover {
+	background-color: rgba(24, 49, 83, .1);
+}
+
 .card {
 	padding: 40px;
 	border: none;
