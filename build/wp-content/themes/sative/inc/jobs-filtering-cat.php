@@ -62,14 +62,16 @@ if (isset($_GET['salary_min']) && !empty($_GET['salary_min']) && $_GET['salary_m
 	$args['meta_query'][] = array(
 		'key' => 'salary_min',
 		'value' => intval($_GET['salary_min'][0]),
-		'compare' => '>='
+		'compare' => '>=',
+		'type' => 'NUMERIC'
 	);
 }
 if (isset($_GET['salary_max']) && !empty($_GET['salary_max']) && $_GET['salary_max'] !== null) {
 	$args['meta_query'][] = array(
 		'key' => 'salary_max',
 		'value' => intval($_GET['salary_max'][0]),
-		'compare' => '<='
+		'compare' => '<=',
+		'type' => 'NUMERIC'
 	);
 }
 if (isset($_GET['location_s']) && !empty($_GET['location_s']) && $_GET['location_s'] !== null) {
