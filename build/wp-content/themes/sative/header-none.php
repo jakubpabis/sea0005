@@ -69,30 +69,6 @@
 
 	<?php wp_head(); ?>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<script type="text/javascript">
-		function setCookie(cname, cvalue, exdays) {
-			var d = new Date();
-			d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
-			var expires = "expires=" + d.toUTCString();
-			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-		}
-
-		function getCookie(cname) {
-			var name = cname + "=";
-			var decodedCookie = decodeURIComponent(document.cookie);
-			var ca = decodedCookie.split(";");
-			for (var i = 0; i < ca.length; i++) {
-				var c = ca[i];
-				while (c.charAt(0) == " ") {
-					c = c.substring(1);
-				}
-				if (c.indexOf(name) == 0) {
-					return c.substring(name.length, c.length);
-				}
-			}
-			return "";
-		}
-	</script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -103,4 +79,3 @@
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMG8TTV" height="0" width="0"></iframe></noscript>
 	<!-- /Google Tag Manager (noscript) -->
 	<div id="wrapper" class="d-flex align-items-center justify-content-center py-5 bg-lgrey">
-		<?php get_template_part('template-parts/cookies'); ?>
