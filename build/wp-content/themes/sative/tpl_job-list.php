@@ -97,7 +97,7 @@ get_header();
 										<?php if (strlen($helper['supCatName']) > 0) : ?>
 											<span class="icon" data-type="<?php echo $helper['supCatName']; ?>"></span>
 										<?php endif; ?>
-										<h3 class="title m-0"><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
+										<h3 class="title m-0"><a href="<?php echo get_the_permalink(); ?>" onclick="jobsAlertPopup()"><?php echo get_the_title(); ?></a></h3>
 									</div>
 									<div class="info">
 										<?php if (get_field('location')) : ?>
@@ -136,7 +136,7 @@ get_header();
 									<p class="text-size-small excerpt">
 										<?php echo wp_specialchars_decode(get_the_excerpt()); ?>
 									</p>
-									<a href="<?php echo get_the_permalink(); ?>" class="btn btn__small navy"><?php pll_e('More info'); ?></a>
+									<a href="<?php echo get_the_permalink(); ?>" onclick="jobsAlertPopup()" class="btn btn__small navy"><?php pll_e('More info'); ?></a>
 								</article>
 						<?php endwhile;
 						endif; ?>

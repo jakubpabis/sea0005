@@ -92,6 +92,21 @@
 			}
 			return "";
 		}
+
+		function jobsAlertPopup() {
+			console.log(getCookie('jobsAlertPopup'));
+			console.log(parseInt(getCookie('jobsAlertPopup')));
+			if(getCookie('jobsAlertPopup') && parseInt(getCookie('jobsAlertPopup')) === 3) {
+				// jQuery('#subscribePopupModal').modal(
+				// 	{ backdrop: 'static', keyboard: false },
+				// 	'show'
+				// );
+				// setCookie('jobsAlertPopup', false, 365);
+			} else if(getCookie('jobsAlertPopup') !== false) {
+				let $current = getCookie('jobsAlertPopup') ? getCookie('jobsAlertPopup') : 0;
+				setCookie('jobsAlertPopup', parseInt(parseInt($current) + 1), 365);
+			}
+		}
 	</script>
 </head>
 
