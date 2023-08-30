@@ -36,6 +36,10 @@ get_template_part('template-parts/breadcrumbs'); ?>
 								<h2 class="color-navy">
 									<?php echo pll_e('Congratulations! Your application was successfully submitted!'); ?>
 								</h2>
+								<h3><?php pll_e('Get instant updates on the latest job openings?'); ?></h3>
+								<div>
+									<button type="button" class="btn btn__default btn__notched navy pleaseOpenSubscribeModalPopup"><?php pll_e('Sign up for the job alert'); ?></button>
+								</div>
 							</div>
 						<?php else : ?>
 							<div class="info card bg-pink">

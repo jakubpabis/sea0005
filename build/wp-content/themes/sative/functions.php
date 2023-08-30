@@ -10,7 +10,7 @@
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '4.8.9997');
+	define('_S_VERSION', '4.8.9998');
 }
 
 if (!function_exists('sative_setup')) :
@@ -623,6 +623,8 @@ $toTranslate = array(
 	'Go back',
 	'Other',
 	'Make a job alert',
+	'Get instant updates on the latest job openings?',
+	'Sign up for the job alert',
 );
 
 if (function_exists('pll_register_string')) {
