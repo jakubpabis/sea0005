@@ -260,8 +260,8 @@ if ($lang === 'en') {
 							<a href="javascript:void(0)" class="btn btn__small navy d-none d-lg-inline-block" data-toggle="modal" data-target="#uploadCVModal">
 								<?php pll_e('Upload CV'); ?>
 							</a>
-							<a href="mailto:contact@searchxrecruitment.com" class="navigation__lower-btn-other d-lg-none d-inline-block"><i class="far fa-envelope"></i></a>
-							<a href="tel:+31207782393" class="navigation__lower-btn-other d-lg-none d-inline-block"><i class="far fa-phone-alt"></i></a>
+							<a href="mailto:contact@searchxrecruitment.com" class="navigation__lower-btn-other d-lg-none d-flex align-items-center justify-content-center"><i class="far fa-envelope"></i></a>
+							<a href="tel:+31207782393" class="navigation__lower-btn-other d-lg-none d-flex align-items-center justify-content-center"><i class="far fa-phone-alt"></i></a>
 							<button type="button" class="navigation__lower-btn mobileMenu d-1079-none d-flex align-items-center justify-content-center text-center">
 								<i class="far fa-bars text-center"></i>
 								<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
