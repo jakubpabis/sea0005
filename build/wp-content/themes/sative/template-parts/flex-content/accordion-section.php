@@ -24,7 +24,7 @@
 			<div class="row">
 				<?php if($title): ?>
 					<div class="col-12">
-						<h1 class="display-4 text700 mb-5">
+						<h1 class="text700 mb-5">
 							<?php echo $title; ?>
 						</h1>
 					</div>

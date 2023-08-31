@@ -88,7 +88,7 @@ if (isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING']) {
 		$param = explode('=', $item);
 		if ($param > 1 && end($param)) {
 			$key = str_replace($item, '', $string);
-			$params[array_shift($param)] = end($param);
+			$params[] = end($param);
 		}
 	}
 }
