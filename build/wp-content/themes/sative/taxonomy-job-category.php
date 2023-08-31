@@ -76,7 +76,7 @@ get_header(); ?>
 							</div>
 							<button type="button" class="my-2 btn btn__default btn__notched yellow pleaseOpenSubscribeModalPopup"><?php echo pll_e('Make a job alert'); ?></button>
 						</div>
-						<?php if (!empty($params)) : var_dump($params); ?>
+						<?php if (!empty($params)) : ?>
 							<div class="params d-flex flex-wrap justify-content-end mx-auto">
 							<?php foreach ($params as $key => $param) : if(strpos($key, "message") === false) :?>
 									<a href="<?php echo parse_url($_SERVER['REQUEST_URI'])['path'] . '?' . $key; ?>" class="btn btn__medium bg-grey2 color-onavy btn__small my-2 ml-3 mr-0 d-flex align-items-center">
