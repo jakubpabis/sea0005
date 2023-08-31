@@ -34,12 +34,12 @@
 						<?php $i = 1; while(have_rows('accordion_items')) : the_row(); ?>
 						<div class="accordion-card">
 							<h4 class="card-header accordion-header my-0 d-flex flex-row" id="heading_<?php echo $rand; ?>_<?php echo $i; ?>">
-								<span class="accordion-button w-100 d-block point pointer-event" data-toggle="collapse" data-target="#collapse_<?php echo $rand; ?>_<?php echo $i; ?>" aria-expanded="<?php echo $i === 1 ? true : false; ?>" aria-controls="collapse_<?php echo $rand; ?>_<?php echo $i; ?>">
+								<span class="accordion-button w-100 d-block point pointer-event" data-toggle="collapse" data-target="#collapse_<?php echo $rand; ?>_<?php echo $i; ?>" aria-expanded="false" aria-controls="collapse_<?php echo $rand; ?>_<?php echo $i; ?>">
 								<?php echo get_sub_field('title'); ?>
 								</span>
 								<i class="fal fa-chevron-down" style="margin-top: 3px;"></i>
 							</h4>
-							<div id="collapse_<?php echo $rand; ?>_<?php echo $i; ?>" class="collapse <?php echo $i === 1 ? 'show' : null; ?>" aria-labelledby="heading_<?php echo $rand; ?>_<?php echo $i; ?>" data-parent="#<?php echo $id; ?>">
+							<div id="collapse_<?php echo $rand; ?>_<?php echo $i; ?>" class="collapse" aria-labelledby="heading_<?php echo $rand; ?>_<?php echo $i; ?>" data-parent="#<?php echo $id; ?>">
 								<div class="card-body py-0">
 									<?php echo get_sub_field('content'); ?>
 								</div>
