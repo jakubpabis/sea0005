@@ -584,7 +584,17 @@ get_template_part('template-parts/breadcrumbs'); ?>
 	<?php endif; ?>
 <?php endwhile; ?>
 <script>
-	if (window.history.length > 1) {
+	if(getCookie('jobsAlertPopup')) {
+		if(getCookie('jobsAlertPopup') !== 'false' && parseInt(getCookie('jobsAlertPopup')) !== 3) {
+			console.log(getCookie('jobsAlertPopup'));
+			let $current = getCookie('jobsAlertPopup') ? getCookie('jobsAlertPopup') : 0;
+			setCookie('jobsAlertPopup', parseInt(parseInt($current) + 1), 365);
+		}
+	} else {
+		setCookie('jobsAlertPopup', 1, 365);
+	}
+	
+	if (window.history.length > 1 && document.getElementById('backBTN')) {
 		document.getElementById('backBTN').classList.remove('d-none');
 		document.getElementById('backBTN').addEventListener('click', function() {
 			window.history.back();

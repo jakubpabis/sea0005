@@ -180,5 +180,12 @@ unset($group);
     form.addEventListener('submit', function(event) {
 			event.preventDefault(); // This prevents the form from submitting
     });
+		if(getCookie('jobsAlertPopup') && parseInt(getCookie('jobsAlertPopup')) === 3) {
+			jQuery('#subscribePopupModal').modal(
+				{ backdrop: 'static', keyboard: false },
+				'show'
+			);
+			setCookie('jobsAlertPopup', false, 365);
+		}
 	});
 </script>
