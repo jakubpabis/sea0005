@@ -255,14 +255,14 @@ if ($lang === 'en') {
 								</div>
 							</div>
 						</div>
-						<div class="col-auto pl-1 navigation__lower-utils">
+						<div class="col-auto pl-1 navigation__lower-utils d-flex flex-row align-items-center">
 							<a href="javascript:void(0)" class="d-none d-lg-inline-block" data-toggle="modal" data-target="#searchPopupModal"><i class="far fa-search"></i></a>
 							<a href="javascript:void(0)" class="btn btn__small navy d-none d-lg-inline-block" data-toggle="modal" data-target="#uploadCVModal">
 								<?php pll_e('Upload CV'); ?>
 							</a>
 							<a href="mailto:contact@searchxrecruitment.com" class="navigation__lower-btn-other d-lg-none d-inline-block"><i class="far fa-envelope"></i></a>
 							<a href="tel:+31207782393" class="navigation__lower-btn-other d-lg-none d-inline-block"><i class="far fa-phone-alt"></i></a>
-							<button type="button" class="navigation__lower-btn mobileMenu d-1079-none d-inline-block text-center">
+							<button type="button" class="navigation__lower-btn mobileMenu d-1079-none d-flex align-items-center justify-content-center text-center">
 								<i class="far fa-bars text-center"></i>
 								<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" clip-rule="evenodd" d="M30.3884 34.2353L20.1176 23.9745L9.84745 34.2353L6 30.3939L16.2713 20.1321L16.2568 20.1171L16.2713 20.1027L6.00107 9.84138L9.84638 6L20.1176 16.2597L30.3889 6L34.2348 9.84138L23.964 20.1027L23.979 20.1171L23.964 20.1321L34.2353 30.3939L30.3884 34.2353ZM0 40H40V0H0V40Z" fill="#FDD963" />
