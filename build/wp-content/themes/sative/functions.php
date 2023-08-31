@@ -625,6 +625,7 @@ $toTranslate = array(
 	'Make a job alert',
 	'Get instant updates on the latest job openings?',
 	'Sign up for the job alert',
+	'Language',
 );
 
 if (function_exists('pll_register_string')) {
