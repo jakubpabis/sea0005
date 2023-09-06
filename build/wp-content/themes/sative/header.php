@@ -66,7 +66,18 @@
 	<meta name="msvalidate.01" content="DB26E7D9A02A63952EAC119AC5AB03FC" />
 	<!-- /Bing Webmaster Tools -->
 	<meta name="p:domain_verify" content="40be4aba9dc0f75fdd75d97b0a233017" />
-
+	<!-- Begin http://Werkzoeken.nl tracking code -->
+	<script>
+	/* <![CDATA[ */
+	var conversion_key_wz = "cb4b5c2fe9459552bcbb55bfed624f6a";
+	var conversion_key_ict = "";
+	var conversion_key_tec = "";
+	var conversion_ref_id = "";
+	var conversion_candidate_id = "";
+	/* ]]> */
+	</script>
+	<script src="https://click.werkzoeken.nl/conversion/conversion.js"></script>
+	<!-- End http://Werkzoeken.nl tracking code -->
 	<?php wp_head(); ?>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<script type="text/javascript">
