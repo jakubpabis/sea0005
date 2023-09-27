@@ -20,6 +20,7 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://consent.cookiefirst.com/sites/searchxrecruitment.com-495525ce-c345-407f-a0ba-9cc84af59fc8/consent.js"></script>
 	<?php get_template_part('template-parts/cookies-js'); ?>
 
 	<!-- Some other, additional tracking code from Carine -->
