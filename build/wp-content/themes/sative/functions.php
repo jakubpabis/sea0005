@@ -626,7 +626,7 @@ $toTranslate = array(
 	'Get instant updates on the latest job openings?',
 	'Sign up for the job alert',
 	'Language',
-	'Email-us',
+	'E-mail us',
 	'Call us',
 );
 
