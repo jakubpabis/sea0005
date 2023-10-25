@@ -103,7 +103,7 @@ if (isset($_GET['app-url']) && $_GET['app-url']) {
 									</div>
 									<div class="w-50 pr-2 ugly pb-2">
 										<input class="required" type="text" name="cv-name" minlength="1" value="<?php echo $app_name ? $app_name : null; ?>" required>
-										<label class="ugly-label" for="cv-name" <?php echo $app_name ? 'style="opacity: 0;"' : null; ?>><?php echo pll_e('Name'); ?> <span>*</span></label>
+										<label class="ugly-label" for="cv-name" <?php echo $app_name ? 'style="opacity: 0;"' : null; ?>><?php echo pll_e('Full name'); ?> <span>*</span></label>
 									</div>
 									<div class="w-50 ugly pb-2">
 										<input class="required" type="email" name="cv-email" value="<?php echo $app_email ? $app_email : null; ?>" required>
@@ -158,7 +158,8 @@ if (isset($_GET['app-url']) && $_GET['app-url']) {
 										<?php get_template_part('template-parts/referrer'); ?>
 										<input type="hidden" name="cv-jobid" value="188">
 										<input type="hidden" name="action" value="cv_form">
-										<input type="hidden" name="cvUploadHash" id="cvUploadHash" value="<?php global $hashesForLashes; echo $hashesForLashes['cvHash']; ?>">
+										<input type="hidden" name="cvUploadHash" id="cvUploadHash" value="<?php global $hashesForLashes;
+																																											echo $hashesForLashes['cvHash']; ?>">
 										<?php wp_nonce_field('cv_form', 'cv_form_nonce'); ?>
 										<button type="button" class="fake_btn_cv btn btn__default yellow"><?php echo pll_e('Send application'); ?></button>
 										<button type="button" disabled class="fake_btn_cv_loading btn btn__default pink d-none disabled"><?php echo pll_e('Sending, please wait...'); ?></button>

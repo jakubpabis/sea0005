@@ -628,6 +628,7 @@ $toTranslate = array(
 	'Language',
 	'E-mail us',
 	'Call us',
+	'Full name'
 );
 
 if (function_exists('pll_register_string')) {

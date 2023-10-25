@@ -381,7 +381,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 							</div>
 							<div class="col-lg-12 col-sm-6 ugly pt-2">
 								<input class="required" type="text" name="app-name" required value="<?php echo $app_name ? $app_name : null; ?>">
-								<label class="ugly-label" for="app-name" <?php echo $app_name ? 'style="opacity: 0;"' : null; ?>><?php pll_e('Name'); ?> <span>*</span></label>
+								<label class="ugly-label" for="app-name" <?php echo $app_name ? 'style="opacity: 0;"' : null; ?>><?php pll_e('Full name'); ?> <span>*</span></label>
 							</div>
 							<div class="col-lg-12 col-sm-6 ugly pt-2">
 								<input class="required" type="email" name="app-email" required value="<?php echo $app_email ? $app_email : null; ?>">
@@ -438,7 +438,8 @@ get_template_part('template-parts/breadcrumbs'); ?>
 								<input type="hidden" name="app-jobid" value="<?php echo get_field('job_id'); ?>">
 								<input type="hidden" name="action" value="application_form">
 								<?php wp_nonce_field('application_form', 'application_form_nonce'); ?>
-								<input type="hidden" name="jobUploadHash" id="jobUploadHash" value="<?php global $hashesForLashes; echo $hashesForLashes['appHash']; ?>">
+								<input type="hidden" name="jobUploadHash" id="jobUploadHash" value="<?php global $hashesForLashes;
+																																										echo $hashesForLashes['appHash']; ?>">
 								<button type="button" disabled class="fake_btn_app_loading btn btn__default pink d-none disabled"><?php echo pll_e('Sending, please wait...'); ?></button>
 								<button type="button" class="fake_btn_app btn btn__default yellow"><?php echo pll_e('Send application'); ?></button>
 								<button class="g-recaptcha app btn btn__default yellow d-none" data-sitekey="6LdyeiQhAAAAAMsMwMmCkriZI74RsG7oPP5nqWoV" data-callback="onAppSubmit"><?php echo pll_e('Send application'); ?></button>
@@ -584,8 +585,8 @@ get_template_part('template-parts/breadcrumbs'); ?>
 	<?php endif; ?>
 <?php endwhile; ?>
 <script>
-	if(getCookie('jobsAlertPopup')) {
-		if(getCookie('jobsAlertPopup') !== 'false' && parseInt(getCookie('jobsAlertPopup')) !== 3) {
+	if (getCookie('jobsAlertPopup')) {
+		if (getCookie('jobsAlertPopup') !== 'false' && parseInt(getCookie('jobsAlertPopup')) !== 3) {
 			console.log(getCookie('jobsAlertPopup'));
 			let $current = getCookie('jobsAlertPopup') ? getCookie('jobsAlertPopup') : 0;
 			setCookie('jobsAlertPopup', parseInt(parseInt($current) + 1), 365);
@@ -593,7 +594,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 	} else {
 		setCookie('jobsAlertPopup', 1, 365);
 	}
-	
+
 	if (window.history.length > 1 && document.getElementById('backBTN')) {
 		document.getElementById('backBTN').classList.remove('d-none');
 		document.getElementById('backBTN').addEventListener('click', function() {
