@@ -628,7 +628,8 @@ $toTranslate = array(
 	'Language',
 	'E-mail us',
 	'Call us',
-	'Full name'
+	'Full name',
+	'G-ACCOUNT: NL68 INGB 0990 3339 73'
 );
 
 if (function_exists('pll_register_string')) {

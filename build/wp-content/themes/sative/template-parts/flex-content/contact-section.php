@@ -10,86 +10,91 @@
 						<?php echo get_sub_field('title'); ?>
 					</span>
 				<?php endif; ?>
-				<?php if (get_field('contact_text_' . $lang, 'option')) : ?>
-					<div class="row my-4">
-						<div class="col-auto">
-							<i class="fal fa-map-marker-alt"></i>
+				<div class="row">
+					<?php if (get_field('contact_text_' . $lang, 'option')) : ?>
+						<div class="col-lg-12 col-md-6">
+							<div class="row my-4">
+								<div class="col-auto">
+									<i class="fal fa-map-marker-alt"></i>
+								</div>
+								<div class="col pl-0">
+									<?php echo get_field('contact_text_' . $lang, 'option'); ?>
+								</div>
+							</div>
 						</div>
-						<div class="col pl-0">
-							<?php echo get_field('contact_text_' . $lang, 'option'); ?>
+					<?php endif; ?>
+					<?php if (get_field('contact_text2_' . $lang, 'option')) : ?>
+						<div class="col-lg-12 col-md-6">
+							<div class="row my-4">
+								<div class="col-auto">
+									<i class="fal fa-map-marker-alt"></i>
+								</div>
+								<div class="col pl-0">
+									<?php echo get_field('contact_text2_' . $lang, 'option'); ?>
+								</div>
+							</div>
 						</div>
-					</div>
-				<?php endif; ?>
-				<?php if (get_field('contact_text2_' . $lang, 'option')) : ?>
-					<div class="row my-4">
-						<div class="col-auto">
-							<i class="fal fa-map-marker-alt"></i>
+					<?php endif; ?>
+					<?php if (get_field('contact_text3_' . $lang, 'option')) : ?>
+						<div class="col-lg-12 col-md-6">
+							<div class="row my-4">
+								<div class="col-auto">
+									<i class="fal fa-map-marker-alt"></i>
+								</div>
+								<div class="col pl-0">
+									<?php echo get_field('contact_text3_' . $lang, 'option'); ?>
+								</div>
+							</div>
 						</div>
-						<div class="col pl-0">
-							<?php echo get_field('contact_text2_' . $lang, 'option'); ?>
-						</div>
-					</div>
-				<?php endif; ?>
-				<?php if (get_field('contact_text3_' . $lang, 'option')) : ?>
-					<div class="row my-4">
-						<div class="col-auto">
-							<i class="fal fa-map-marker-alt"></i>
-						</div>
-						<div class="col pl-0">
-							<?php echo get_field('contact_text3_' . $lang, 'option'); ?>
-						</div>
-					</div>
-				<?php endif; ?>
-				<div class="row mb-2">
-					<div class="col-auto">
-						<i class="far fa-envelope"></i>
-					</div>
-					<div class="col pl-0">
-						<a class="font-secondary" href="mailto:contact@searchxrecruitment.com">contact@searchxrecruitment.com</a>
-					</div>
+					<?php endif; ?>
 				</div>
-				<div class="row mb-2">
-					<div class="col-auto">
-						<i class="far fa-phone-alt"></i>
+				<div class="row">
+					<div class="col-lg-12 col-md-6 mb-4">
+						<div class="row mb-2">
+							<div class="col-auto">
+								<i class="far fa-envelope"></i>
+							</div>
+							<div class="col pl-0">
+								<a class="font-secondary" href="mailto:contact@searchxrecruitment.com">contact@searchxrecruitment.com</a>
+							</div>
+						</div>
+						<div class="row mb-4">
+							<div class="col-auto">
+								<i class="far fa-phone-alt"></i>
+							</div>
+							<div class="col pl-0">
+								<a class="font-secondary" href="tel:+31207782393">+31 (0)20 - 7782393</a>
+							</div>
+						</div>
+						<div class="mb-3">
+							<a href="https://www.facebook.com/searchxrecruitment" class="btn btn__social notched navy" target="_blank">
+								<i class="fab fa-facebook-f"></i>
+							</a>
+							<a href="https://www.instagram.com/searchxrecruitment/" class="btn btn__social notched navy" target="_blank">
+								<i class="fab fa-instagram"></i>
+							</a>
+							<a href="https://www.linkedin.com/company/search-x-recruitment" class="btn btn__social notched navy" target="_blank">
+								<i class="fab fa-linkedin-in"></i>
+							</a>
+							<a href="https://twitter.com/searchxjobs" class="btn btn__social notched navy" target="_blank">
+								<i class="fab fa-twitter"></i>
+							</a>
+						</div>
 					</div>
-					<div class="col pl-0">
-						<a class="font-secondary" href="tel:+31207782393">+31 (0)20 - 7782393</a>
-					</div>
-				</div>
-				<div class="mb-4">
-					<a href="https://www.facebook.com/searchxrecruitment" class="btn btn__social notched navy" target="_blank">
-						<i class="fab fa-facebook-f"></i>
-					</a>
-					<a href="https://www.instagram.com/searchxrecruitment/" class="btn btn__social notched navy" target="_blank">
-						<i class="fab fa-instagram"></i>
-					</a>
-					<a href="https://www.linkedin.com/company/search-x-recruitment" class="btn btn__social notched navy" target="_blank">
-						<i class="fab fa-linkedin-in"></i>
-					</a>
-					<a href="https://twitter.com/searchxjobs" class="btn btn__social notched navy" target="_blank">
-						<i class="fab fa-twitter"></i>
-					</a>
-				</div>
-				<div class="row mb-4">
-					<div class="col-lg-6">
-						<h5 class="text700 text-uppercase mb-0">
-							It
-						</h5>
-						<p class="line-height-1 mt-2">
-							KVK: 62737244<br />
-							BTW: NL854937274B01<br />
-							BANK: NL54INGB0006845114
-						</p>
-					</div>
-					<div class="col-lg-6">
-						<h5 class="text700 text-uppercase mb-0">
-							Sales
-						</h5>
-						<p class="line-height-1 mt-2">
-							KVK: 77335007<br />
-							BTW: NL860974984B01<br />
-							BANK: NL96INGB0007699801
-						</p>
+					<div class="col-lg-12 col-md-6 mb-4">
+						<div class="row mb-3">
+							<div class="col-lg-10">
+								<h5 class="text700 text-uppercase my-0">
+									Search X Recruitment B.V.
+								</h5>
+								<p class="line-height-1 mt-2">
+									KVK: 62737244<br />
+									BTW: NL854937274B01<br />
+									BANK: NL54INGB0006845114<br />
+									<?php echo pll_e('G-ACCOUNT: NL68 INGB 0990 3339 73') ?>
+								</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
