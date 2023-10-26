@@ -112,7 +112,7 @@
 				</ul>
 				<div class="row mt-4 pt-2">
 					<div class="col-8">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/gazelle.png" alt="FD Gazelle 2022 prize">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/gazelle2023.png" alt="FD Gazelle 2023 prize">
 					</div>
 					<div class="col-4">
 						<?php if (get_field('google_reviews_image_' . $lang, 'option') && get_field('google_reviews_image_' . $lang, 'option')['url']) : ?>
