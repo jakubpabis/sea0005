@@ -61,3 +61,10 @@
 	})(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
 </script>
 <!-- /Hotjar Tracking Code for www.searchxrecruitment.com -->
+
+<style>
+	img[height="1"],
+	img[width="1"] {
+		position: absolute !important;
+	}
+</style>
