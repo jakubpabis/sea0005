@@ -113,12 +113,6 @@ jQuery(document).ready(function () {
       $i++;
     });
   }
-
-  if ($('.hbspt-form').length > 0) {
-    $('.hbspt-form').on('hsvalidatedsubmit', '.hs-form', function (e) {
-      console.log(e);
-    });
-  }
 });
 
 jQuery(window).on('load', function () {

@@ -18,24 +18,27 @@
 		f.parentNode.insertBefore(j, f);
 	})(window, document, 'script', 'dataLayer', 'GTM-PMG8TTV');
 
-	function trackEvent(action, category, label, value) {
-		window.gtag('event', action, {
-			source: category,
-			type: label,
-			value: value,
-		});
-	}
-
 	window.addEventListener('message', function(event) {
 		if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onBeforeFormSubmit') {
 			console.log(event.data);
 			if (event.data.data && event.data.data.length > 0) {
-				const contactType = event.data.data.find(item => item.name === "i_m_a");
+				let contactType = '';
+				if (event.data.data.find(item => item.name === "i_m_a")) {
+					contactType = event.data.data.find(item => item.name === "i_m_a")
+				} else if (event.data.data.find(item => item.name === "ik_ben_een")) {
+					contactType = event.data.data.find(item => item.name === "ik_ben_een")
+				}
 				const contextJSON = event.data.data.find(item => item.name === "hs_context");
 				if (contactType && contextJSON) {
 					const context = JSON.parse(contextJSON.value);
 					console.log(context.lang + ' - ' + contactType.value);
-					trackEvent('form_submit', 'hubspot', 'contact_form', context.lang + ' - ' + contactType.value);
+					window.dataLayer = window.dataLayer || [];
+					window.dataLayer.push({
+						'event': 'contact_form',
+						'bezoeker_soort': contactType.value,
+						'veld2': context.lang,
+						'veld3': 'hubspot'
+					});
 				}
 			}
 
