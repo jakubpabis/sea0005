@@ -162,7 +162,7 @@
 			<i class="fab fa-facebook-f"></i>
 		</a>
 		<a class="btn btn__social notched navy" href="https://twitter.com/intent/tweet?source=<?php echo $current_url; ?>&text=<?php echo $current_url; ?> - <?php echo get_the_title(); ?>" target="_blank">
-			<i class="fab fa-twitter"></i>
+			<i class="fa-brands fa-x-twitter"></i>
 		</a>
 		<a class="btn btn__social notched navy" href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo $current_url; ?>&title=<?php echo get_the_title(); ?>&summary=Checkout%20this%20job%20offer!&source=<?php echo $current_url; ?>" target="_blank">
 			<i class="fab fa-linkedin-in"></i>

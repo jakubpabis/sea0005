@@ -65,7 +65,7 @@
 						<i class="fab fa-linkedin-in"></i>
 					</a>
 					<a href="https://twitter.com/searchxjobs" class="btn btn__social notched sea" target="_blank">
-						<i class="fab fa-twitter"></i>
+						<i class="fa-brands fa-x-twitter"></i>
 					</a>
 				</div>
 				<button type="button" class="ml-4 btn btn__default btn__notched yellow pleaseOpenSubscribeModalPopup"><?php echo pll_e('Make a job alert'); ?></button>

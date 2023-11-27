@@ -10,7 +10,7 @@
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '4.8.99995');
+	define('_S_VERSION', '4.8.99996');
 }
 
 if (!function_exists('sative_setup')) :
@@ -219,7 +219,7 @@ function sative_scripts()
 	wp_dequeue_style('wp-block-library-theme');
 
 	wp_enqueue_style('sative-gfonts', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap', array(), _S_VERSION, 'all');
-	wp_enqueue_style('sative-icons', get_template_directory_uri() . '/assets/css/fa.min.css', array(), _S_VERSION, 'all');
+	// wp_enqueue_style('sative-icons', get_template_directory_uri() . '/assets/css/fa.min.css', array(), _S_VERSION, 'all');
 	wp_enqueue_style('sative-styles', get_template_directory_uri() . '/assets/css/main.min.css', array(), _S_VERSION, 'all');
 	wp_enqueue_style('extra-styles', get_template_directory_uri() . '/assets/css/extra.css', array(), _S_VERSION, 'all');
 
@@ -234,6 +234,7 @@ function sative_scripts()
 	wp_enqueue_script('sative-recaptcha', 'https://www.google.com/recaptcha/api.js', array(), _S_VERSION, true);
 
 	wp_enqueue_script('sative-app', get_template_directory_uri() . '/assets/js/main.min.js', array(), _S_VERSION, true);
+	wp_enqueue_script('sative-fa', 'https://kit.fontawesome.com/ba30bc42ea.js', array(), _S_VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'sative_scripts');
 
