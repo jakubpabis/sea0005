@@ -16,6 +16,9 @@ $lang = pll_current_language();
 <?php get_template_part('template-parts/uploadcv'); ?>
 <?php get_template_part('template-parts/search'); ?>
 <?php get_template_part('template-parts/popups'); ?>
+<!-- CookieBot Declaration -->
+<script id="CookieDeclaration" src="https://consent.cookiebot.com/02101096-38cd-4081-9366-8b55cf9c7a6a/cd.js" type="text/javascript" async></script>
+<!-- /CookieBot Declaration -->
 </div> <!-- #wrapper -->
 <?php wp_footer(); ?>
 

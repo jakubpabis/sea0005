@@ -20,7 +20,6 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://consent.cookiefirst.com/sites/searchxrecruitment.com-495525ce-c345-407f-a0ba-9cc84af59fc8/consent.js"></script>
 	<?php get_template_part('template-parts/cookies-js'); ?>
 
 	<!-- Some other, additional tracking code from Carine -->
@@ -69,13 +68,13 @@
 	<meta name="p:domain_verify" content="40be4aba9dc0f75fdd75d97b0a233017" />
 	<!-- Begin http://Werkzoeken.nl tracking code -->
 	<script>
-	/* <![CDATA[ */
-	var conversion_key_wz = "cb4b5c2fe9459552bcbb55bfed624f6a";
-	var conversion_key_ict = "";
-	var conversion_key_tec = "";
-	var conversion_ref_id = "";
-	var conversion_candidate_id = "";
-	/* ]]> */
+		/* <![CDATA[ */
+		var conversion_key_wz = "cb4b5c2fe9459552bcbb55bfed624f6a";
+		var conversion_key_ict = "";
+		var conversion_key_tec = "";
+		var conversion_ref_id = "";
+		var conversion_candidate_id = "";
+		/* ]]> */
 	</script>
 	<script src="https://click.werkzoeken.nl/conversion/conversion.js"></script>
 	<!-- End http://Werkzoeken.nl tracking code -->

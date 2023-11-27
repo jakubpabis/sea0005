@@ -11,6 +11,9 @@
 $lang = pll_current_language();
 
 ?>
+<!-- CookieBot Declaration -->
+<script id="CookieDeclaration" src="https://consent.cookiebot.com/02101096-38cd-4081-9366-8b55cf9c7a6a/cd.js" type="text/javascript" async></script>
+<!-- /CookieBot Declaration -->
 </div> <!-- #wrapper -->
 <?php wp_footer(); ?>
 

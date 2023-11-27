@@ -1,3 +1,6 @@
+<!-- CookieBot -->
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="02101096-38cd-4081-9366-8b55cf9c7a6a" data-blockingmode="auto" type="text/javascript"></script>
+<!-- /CookieBot -->
 <!-- Google Tag Manager -->
 <script>
 	(function(w, d, s, l, i) {
@@ -23,22 +26,21 @@
 		});
 	}
 
-	window.addEventListener('message', function (event) {
-		if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onBeforeFormSubmit') {
+	window.addEventListener('message', function(event) {
+		if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onBeforeFormSubmit') {
 			console.log(event.data);
-			if( event.data.data && event.data.data.length > 0 ) {
-				const contactType = event.data.data.find( item => item.name === "i_m_a" );
-				const contextJSON = event.data.data.find( item => item.name === "hs_context" );
+			if (event.data.data && event.data.data.length > 0) {
+				const contactType = event.data.data.find(item => item.name === "i_m_a");
+				const contextJSON = event.data.data.find(item => item.name === "hs_context");
 				if (contactType && contextJSON) {
 					const context = JSON.parse(contextJSON.value);
 					console.log(context.lang + ' - ' + contactType.value);
 					trackEvent('form_submit', 'hubspot', 'contact_form', context.lang + ' - ' + contactType.value);
 				}
 			}
-			
+
 		}
 	});
-	
 </script>
 <!-- /Google Tag Manager -->
 <!-- Hotjar Tracking Code for www.searchxrecruitment.com -->
@@ -58,3 +60,4 @@
 		a.appendChild(r);
 	})(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
 </script>
+<!-- /Hotjar Tracking Code for www.searchxrecruitment.com -->
