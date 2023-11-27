@@ -30,7 +30,7 @@ require_once get_template_directory() . '/inc/posts-filtering.php'; ?>
 				</div>
 				<div class="col-md-7 col-11">
 					<input type="text" name="article-title" value="<?php echo isset($_GET['article-title']) ? $_GET['article-title'] : null ?>" placeholder="<?php pll_e('Zoek naar een artikel'); ?>">
-					<i class="far fa-search color-pink"></i>
+					<i class="fas fa-search color-pink"></i>
 				</div>
 			</div>
 		</div>
@@ -73,7 +73,7 @@ require_once get_template_directory() . '/inc/posts-filtering.php'; ?>
 							<div class="mt-4">
 								<div class="d-flex align-items-center mb-3">
 									<a href="contact@searchxrecruitment.com" class="btn btn__social notched navy smaller mr-3" target="_blank">
-										<i class="far fa-envelope"></i>
+										<i class="fas fa-envelope"></i>
 									</a>
 									<a href="mailto:contact@searchxrecruitment.com" class="text500">
 										<?php pll_e('E-mail us'); ?>
@@ -81,7 +81,7 @@ require_once get_template_directory() . '/inc/posts-filtering.php'; ?>
 								</div>
 								<div class="d-flex align-items-center mb-3">
 									<a href="tel:+31207782393" class="btn btn__social notched navy smaller mr-3" target="_blank">
-										<i class="far fa-phone-alt"></i>
+										<i class="fas fa-phone-alt"></i>
 									</a>
 									<a href="tel:+31207782393" class="text500">
 										<?php pll_e('Call us'); ?>

@@ -52,7 +52,7 @@
 					<div class="col-lg-12 col-md-6 mb-4">
 						<div class="row mb-2">
 							<div class="col-auto">
-								<i class="far fa-envelope"></i>
+								<i class="fas fa-envelope"></i>
 							</div>
 							<div class="col pl-0">
 								<a class="font-secondary" href="mailto:contact@searchxrecruitment.com">contact@searchxrecruitment.com</a>
@@ -60,7 +60,7 @@
 						</div>
 						<div class="row mb-4">
 							<div class="col-auto">
-								<i class="far fa-phone-alt"></i>
+								<i class="fas fa-phone-alt"></i>
 							</div>
 							<div class="col pl-0">
 								<a class="font-secondary" href="tel:+31207782393">+31 (0)20 - 7782393</a>

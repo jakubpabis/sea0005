@@ -31,19 +31,19 @@ get_header(); ?>
 					<div class="info card bg-lgrey">
 						<?php if (get_field('location')) : ?>
 							<div class="info__item">
-								<i class="far fa-map-marker-alt"></i>
+								<i class="fas fa-map-marker-alt"></i>
 								<span class="text-size-medium location"><?php echo get_field('location'); ?></span>
 							</div>
 						<?php endif; ?>
 						<?php if ($helper['type']) : ?>
 							<div class="info__item">
-								<i class="far fa-clock"></i>
+								<i class="fas fa-clock"></i>
 								<span class="text-size-medium type"><?php echo $helper['type']; ?></span>
 							</div>
 						<?php endif; ?>
 						<?php if (get_field('salary_min') || get_field('salary_max')) : ?>
 							<div class="info__item">
-								<i class="far fa-euro-sign"></i>
+								<i class="fas fa-euro-sign"></i>
 								<span class="text-size-medium">
 									<number class="salarymin">
 										<?php echo number_format((int)get_field('salary_min'), 0, ".", "."); ?>
@@ -57,7 +57,7 @@ get_header(); ?>
 						<?php endif; ?>
 						<?php if ($helper['industry']) : ?>
 							<div class="info__item">
-								<i class="far fa-industry"></i>
+								<i class="fas fa-industry"></i>
 								<span class="text-size-medium industry"><?php echo $helper['industry']; ?></span>
 							</div>
 						<?php endif; ?>

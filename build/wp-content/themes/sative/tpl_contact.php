@@ -48,7 +48,7 @@ get_header(); ?>
 										<div class="row contact__text-columns align-items-center">
 											<div class="<?php echo get_sub_field('socials') ? 'col-lg-6' : 'col-12' ?>">
 												<?php if (get_sub_field('email')) : ?>
-													<a class="d-inline-block mt-1 text-size-medium" href="mailto:<?php echo get_sub_field('email'); ?>"><i class="far fa-envelope mr-sm-3 mr-2"></i><?php echo get_sub_field('email'); ?></a>
+													<a class="d-inline-block mt-1 text-size-medium" href="mailto:<?php echo get_sub_field('email'); ?>"><i class="fas fa-envelope mr-sm-3 mr-2"></i><?php echo get_sub_field('email'); ?></a>
 												<?php endif; ?>
 												<?php if (get_sub_field('phone')) : ?>
 													<br />
@@ -93,7 +93,7 @@ get_header(); ?>
 										<div class="row contact__text-columns align-items-center">
 											<div class="<?php echo get_sub_field('socials') ? 'col-lg-6' : 'col-12' ?>">
 												<?php if (get_sub_field('email')) : ?>
-													<a class="d-inline-block mt-1 text-size-medium" href="mailto:<?php echo get_sub_field('email'); ?>"><i class="far fa-envelope mr-sm-3 mr-2"></i><?php echo get_sub_field('email'); ?></a>
+													<a class="d-inline-block mt-1 text-size-medium" href="mailto:<?php echo get_sub_field('email'); ?>"><i class="fas fa-envelope mr-sm-3 mr-2"></i><?php echo get_sub_field('email'); ?></a>
 												<?php endif; ?>
 												<?php if (get_sub_field('phone')) : ?>
 													<br />

@@ -174,7 +174,7 @@
 			<i class="fab fa-whatsapp"></i>
 		</a>
 		<a class="btn btn__social notched navy" href="mailto:?subject=<?php echo get_the_title(); ?>&body=Checkout%20this%20job%20offer: <?php echo $current_url; ?>" target="_blank">
-			<i class="far fa-envelope"></i>
+			<i class="fas fa-envelope"></i>
 		</a>
 	</div>
 </div>

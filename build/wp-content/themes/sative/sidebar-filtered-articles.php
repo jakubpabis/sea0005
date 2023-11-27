@@ -24,7 +24,7 @@
 	</h3>
 	<div class="btns mt-4">
 		<a class="mt-1 text-size-medium" href="tel:+31207782393"><i class="fas fa-mobile-android-alt mr-3"></i><?php pll_e('Call us'); ?></a><br />
-		<a class="mt-2 text-size-medium" href="mailto:contact@searchxrecruitment.com"><i class="far fa-envelope mr-2"></i><?php pll_e('E-mail us'); ?></a><br />
+		<a class="mt-2 text-size-medium" href="mailto:contact@searchxrecruitment.com"><i class="fas fa-envelope mr-2"></i><?php pll_e('E-mail us'); ?></a><br />
 		<a href="/contact" class="btn btn__default yellow mt-4"><?php pll_e('Get in touch'); ?></a>
 	</div>
 </div>
@@ -52,7 +52,7 @@
 			<i class="fab fa-whatsapp"></i>
 		</a>
 		<a class="btn btn__social notched navy" href="mailto:?subject=<?php echo get_the_title(); ?>&body=Checkout%20this%20job%20offer: <?php echo $current_url; ?>" target="_blank">
-			<i class="far fa-envelope"></i>
+			<i class="fas fa-envelope"></i>
 		</a>
 	</div>
 </div>

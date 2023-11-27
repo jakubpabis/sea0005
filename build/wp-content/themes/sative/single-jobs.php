@@ -123,7 +123,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 										<div class="col-md-9">
 											<div class="recruiter-contact">
 												<a href="tel:<?php echo get_field('phone', $recruiter->ID); ?>" class="mb-2">
-													<i class="far fa-phone-alt mr-2"></i>
+													<i class="fas fa-phone-alt mr-2"></i>
 													<?php echo get_field('phone', $recruiter->ID); ?>
 												</a>
 											</div>
@@ -132,7 +132,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 												<span><?php pll_e('Stel een vraag via Whatsapp'); ?></span>
 											</a>
 											<a href="<?php echo get_field('calendly', $recruiter->ID); ?>" class="line-height-1 btn btn__small icon navy text-uppercase d-inline-flex text-left w-auto align-items-center">
-												<i class="far fa-video mr-3 fa-21px"></i>
+												<i class="fas fa-video mr-3 fa-21px"></i>
 												<?php pll_e('Plan een videocall met');
 												echo ' ' . $recruiter->post_title; ?>
 											</a>
@@ -151,7 +151,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 									<a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo $current_url; ?>&title=<?php echo get_the_title(); ?>&summary=Checkout%20this%20job%20offer!&source=<?php echo $current_url; ?>" target="_blank"><i class="fab fa-linkedin-in ml-3"></i></a>
 									<a href="https://twitter.com/intent/tweet?source=<?php echo $current_url; ?>&text=<?= $current_url; ?> - <?php echo get_the_title(); ?>" target="_blank"><i class="fa-brands fa-x-twitter ml-3"></i></a>
 									<a href="whatsapp://send?text=<?php echo get_the_title(); ?>&nbsp;&nbsp;<?php echo $current_url; ?>" target="_blank"><i class="fab fa-whatsapp ml-3"></i></a>
-									<a href="mailto:?subject=<?php echo get_the_title(); ?>&body=Checkout%20this%20job%20offer: <?php echo $current_url; ?>"><i class="far fa-envelope ml-3"></i></a>
+									<a href="mailto:?subject=<?php echo get_the_title(); ?>&body=Checkout%20this%20job%20offer: <?php echo $current_url; ?>"><i class="fas fa-envelope ml-3"></i></a>
 								</span>
 							</span>
 							<span class="btn btn__default outline navy d-sm-none d-inline-block mb-3">
@@ -161,7 +161,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 									<a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo $current_url; ?>&title=<?php echo get_the_title(); ?>&summary=Checkout%20this%20job%20offer!&source=<?php echo $current_url; ?>" target="_blank"><i class="fab fa-linkedin-in ml-3"></i></a>
 									<a href="https://twitter.com/intent/tweet?source=<?php echo $current_url; ?>&text=<?= $current_url; ?> - <?php echo get_the_title(); ?>" target="_blank"><i class="fa-brands fa-x-twitter ml-3"></i></a>
 									<a href="whatsapp://send?text=<?php echo get_the_title(); ?>&nbsp;&nbsp;<?php echo $current_url; ?>" target="_blank"><i class="fab fa-whatsapp ml-3"></i></a>
-									<a href="mailto:?subject=<?php echo get_the_title(); ?>&body=Checkout%20this%20job%20offer: <?php echo $current_url; ?>"><i class="far fa-envelope ml-3"></i></a>
+									<a href="mailto:?subject=<?php echo get_the_title(); ?>&body=Checkout%20this%20job%20offer: <?php echo $current_url; ?>"><i class="fas fa-envelope ml-3"></i></a>
 								</span>
 							</span>
 						</div>
@@ -205,7 +205,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 								<a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo $current_url; ?>&title=<?php echo get_the_title(); ?>&summary=Checkout%20this%20job%20offer!&source=<?php echo $current_url; ?>" target="_blank"><i class="fab fa-linkedin-in ml-3"></i></a>
 								<a href="https://twitter.com/intent/tweet?source=<?php echo $current_url; ?>&text=<?= $current_url; ?> - <?php echo get_the_title(); ?>" target="_blank"><i class="fa-brands fa-x-twitter ml-3"></i></a>
 								<a href="whatsapp://send?text=<?php echo get_the_title(); ?>&nbsp;&nbsp;<?php echo $current_url; ?>" target="_blank"><i class="fab fa-whatsapp ml-3"></i></a>
-								<a href="mailto:?subject=<?php echo get_the_title(); ?>&body=Checkout%20this%20job%20offer: <?php echo $current_url; ?>"><i class="far fa-envelope ml-3"></i></a>
+								<a href="mailto:?subject=<?php echo get_the_title(); ?>&body=Checkout%20this%20job%20offer: <?php echo $current_url; ?>"><i class="fas fa-envelope ml-3"></i></a>
 							</span>
 						</span>
 						<span class="btn btn__default outline navy d-sm-none d-inline-block mb-sm-0 mb-3 mt-0">
@@ -215,7 +215,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 								<a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo $current_url; ?>&title=<?php echo get_the_title(); ?>&summary=Checkout%20this%20job%20offer!&source=<?php echo $current_url; ?>" target="_blank"><i class="fab fa-linkedin-in ml-3"></i></a>
 								<a href="https://twitter.com/intent/tweet?source=<?php echo $current_url; ?>&text=<?= $current_url; ?> - <?php echo get_the_title(); ?>" target="_blank"><i class="fa-brands fa-x-twitter ml-3"></i></a>
 								<a href="whatsapp://send?text=<?php echo get_the_title(); ?>&nbsp;&nbsp;<?php echo $current_url; ?>" target="_blank"><i class="fab fa-whatsapp ml-3"></i></a>
-								<a href="mailto:?subject=<?php echo get_the_title(); ?>&body=Checkout%20this%20job%20offer: <?php echo $current_url; ?>"><i class="far fa-envelope ml-3"></i></a>
+								<a href="mailto:?subject=<?php echo get_the_title(); ?>&body=Checkout%20this%20job%20offer: <?php echo $current_url; ?>"><i class="fas fa-envelope ml-3"></i></a>
 							</span>
 						</span>
 					</div>
@@ -469,11 +469,11 @@ get_template_part('template-parts/breadcrumbs'); ?>
 									</p>
 									<div class="recruiter-contact">
 										<a href="mailto:<?php echo get_field('email', $recruiter->ID); ?>" class="mb-2">
-											<i class="far fa-envelope mr-2"></i>
+											<i class="fas fa-envelope mr-2"></i>
 											<?php echo get_field('email', $recruiter->ID); ?>
 										</a>
 										<a href="tel:<?php echo get_field('phone', $recruiter->ID); ?>" class="mb-2">
-											<i class="far fa-phone-alt mr-2"></i>
+											<i class="fas fa-phone-alt mr-2"></i>
 											<?php echo get_field('phone', $recruiter->ID); ?>
 										</a>
 									</div>
@@ -482,7 +482,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 										<span><?php pll_e('Stel een vraag via Whatsapp'); ?></span>
 									</a>
 									<a href="<?php echo get_field('calendly', $recruiter->ID); ?>" class="line-height-1 btn btn__default icon navy text-uppercase mr-xl-4 mr-lg-4 d-inline-flex text-left w-auto align-items-center">
-										<i class="far fa-video mr-3 fa-21px"></i>
+										<i class="fas fa-video mr-3 fa-21px"></i>
 										<?php pll_e('Plan een videocall met');
 										echo ' ' . $recruiter->post_title; ?>
 									</a>

@@ -4973,7 +4973,7 @@ var options = {
     },
   ],
   listClass: 'jobs__list-items',
-  item: '<article class="card bg-lgrey jobs__list-item"><div class="job-title"><span class="icon"></span><h3 class="title"></h3></div><div class="info"><div class="info__item"><i class="far fa-map-marker-alt"></i><span class="text-size-medium location"></span></div><div class="info__item"><i class="far fa-clock"></i><span class="text-size-medium type"></span></div><div class="info__item"><i class="far fa-euro-sign"></i><span class="text-size-medium"><number class="salarymin"></number> - <number class="salarymax"></number></span></div><div class="info__item"><i class="far fa-industry"></i><span class="text-size-medium industry"></span></div></div><p class="text-size-small excerpt"></p><a href="" class="btn btn__small navy">More info</a></article>',
+  item: '<article class="card bg-lgrey jobs__list-item"><div class="job-title"><span class="icon"></span><h3 class="title"></h3></div><div class="info"><div class="info__item"><i class="fas fa-map-marker-alt"></i><span class="text-size-medium location"></span></div><div class="info__item"><i class="fas fa-clock"></i><span class="text-size-medium type"></span></div><div class="info__item"><i class="fas fa-euro-sign"></i><span class="text-size-medium"><number class="salarymin"></number> - <number class="salarymax"></number></span></div><div class="info__item"><i class="fas fa-industry"></i><span class="text-size-medium industry"></span></div></div><p class="text-size-small excerpt"></p><a href="" class="btn btn__small navy">More info</a></article>',
 };
 
 var values = [

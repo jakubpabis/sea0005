@@ -117,7 +117,7 @@ get_header(); ?>
 								<?php echo get_field('intro_text_left'); ?>
 								<form class="searchInput" action="<?php echo getTplPageURL(); ?>" method="GET">
 									<input id="homeSearchInput" type="text" name="job-industry[]" value="<?php echo isset($_GET['job-industry']) ? $_GET['job-industry'] : null ?>" placeholder="<?php pll_e("Let's find the perfect job for you"); ?>">
-									<button type="submit" class="btn btn__notched"><i class="far fa-search"></i></button>
+									<button type="submit" class="btn btn__notched"><i class="fas fa-search"></i></button>
 								</form>
 								<?php if (have_rows('intro_hashtags')) : ?>
 									<ul class="home__middle-hashtags">

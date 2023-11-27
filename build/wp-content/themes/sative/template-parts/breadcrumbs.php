@@ -7,7 +7,7 @@
 				</div>
 				<div class="col-auto breadcrumbs__list">
 					<div class="breadcrumbs__items d-flex align-items-center">
-						<i class="far fa-chevron-right"></i>
+						<i class="fas fa-chevron-right"></i>
 						<?php bcn_display(false, true, false, false); ?>
 					</div>
 				</div>

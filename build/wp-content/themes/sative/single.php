@@ -45,7 +45,7 @@ get_header(); ?>
 
 								if (get_field('file_download')) :
 
-									echo '<a href="javascript:void(0)" data-toggle="modal" data-target="#whitepapersModal" class="btn-whitepaper"><i class="far fa-arrow-to-bottom"></i>' . pll__("Download") . ' ' . get_field('file_download')['title'] . '</a>';
+									echo '<a href="javascript:void(0)" data-toggle="modal" data-target="#whitepapersModal" class="btn-whitepaper"><i class="fas fa-arrow-to-bottom"></i>' . pll__("Download") . ' ' . get_field('file_download')['title'] . '</a>';
 									if (get_field('button')) :
 										echo '<br />';
 									endif;
@@ -162,7 +162,7 @@ get_header(); ?>
 									<input type="hidden" name="whitepapers-filename" value="<?php echo get_field('file_download')['title']; ?>">
 									<input type="hidden" name="action" value="whitepapers_form">
 									<?php wp_nonce_field('whitepapers_form', 'whitepapers_form_nonce'); ?>
-									<button type="submit" class="btn btn__notched d-flex align-items-center"><i class="far fa-download"></i> <span class="text-size-large my-0 ml-3"><?php pll_e('Download'); ?></span></button>
+									<button type="submit" class="btn btn__notched d-flex align-items-center"><i class="fas fa-download"></i> <span class="text-size-large my-0 ml-3"><?php pll_e('Download'); ?></span></button>
 								</div>
 							</div>
 						</form>
