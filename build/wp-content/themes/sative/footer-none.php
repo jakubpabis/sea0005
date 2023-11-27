@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer
  *
@@ -10,30 +11,34 @@
 $lang = pll_current_language();
 
 ?>
-            <?php get_template_part( 'template-parts/chat' ); ?>
-        </div> <!-- #wrapper -->
-        <?php wp_footer(); ?>
-        <?php /*<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
-        <script>
-            window.cookieconsent.initialise({
-                "palette": {
-                    "popup": {
-                        "background": "#183153"
-                    },
-                    "button": {
-                        "background": "#FDD963",
-                        "text": "#183153"
-                    }
-                },
-                "position": "bottom-left",
-                "content": {
-                    "message": "<?php pll_e( 'Search X Recruitment uses cookies to improve our website and your user experience. <br/>By clicking any link or continuing to browse you are giving your consent to our cookie policy.' ); ?>",
-                    "dismiss": "<?php pll_e( 'Accept' ); ?>",
-                    "link": "<?php pll_e( 'Learn more' ); ?>",
-                    "href": <?php if( pll_current_language() === 'en' ) : ?>"/cookie-policy"<?php else: ?>"/cookiebeleid"<?php endif; ?>
-                }
-            });
-        </script> */ ?>
-        <!-- Start of HubSpot Embed Code --> <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/1932066.js"></script> <!-- End of HubSpot Embed Code -->
-    </body>
+<!-- CookieBot Declaration -->
+<script id="CookieDeclaration" src="https://consent.cookiebot.com/02101096-38cd-4081-9366-8b55cf9c7a6a/cd.js" type="text/javascript" async></script>
+<!-- /CookieBot Declaration -->
+</div> <!-- #wrapper -->
+<?php wp_footer(); ?>
+
+<!-- LinkedIn Insight Tag -->
+<script type="text/javascript">
+	_linkedin_partner_id = "14266";
+	window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+	window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script>
+<script type="text/javascript">
+	(function() {
+		var s = document.getElementsByTagName("script")[0];
+		var b = document.createElement("script");
+		b.type = "text/javascript";
+		b.async = true;
+		b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+		s.parentNode.insertBefore(b, s);
+	})();
+</script>
+
+<noscript> <img height="1" width="1" alt="" src="https://px.ads.linkedin.com/collect/?pid=14266&fmt=gif" /> </noscript>
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/1932066.js"></script>
+<!-- End of HubSpot Embed Code -->
+</body>
+
 </html>

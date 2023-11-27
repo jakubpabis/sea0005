@@ -5,11 +5,10 @@
 /design
 /build/composer.lock
 /build
+.DS_Store
 /.DS_Store
 **/.DS_Store
 !/build/wp-content/plugins/sative
 !/build/wp-content/plugins/sative/*
 !/build/wp-content/themes/sative
 !/build/wp-content/themes/sative/*
-!/build/static
-!/build/static/*

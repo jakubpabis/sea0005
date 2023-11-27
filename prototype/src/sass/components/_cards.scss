@@ -1,160 +1,164 @@
 .card {
-    padding: 40px;
-    border: none;
-    outline: 0;
-    @include notch(15px);
+  padding: 40px;
+  border: none;
+  outline: 0;
+  @include notch(15px);
 
-    @media(max-width: 767px) {
-        padding: 35px;
+  @media (max-width: 1199px) {
+    padding: 35px;
+  }
+
+  @media (max-width: 991px) {
+    padding: 30px;
+    @include notch(12px);
+  }
+
+  @media (max-width: 767px) {
+    padding: 25px;
+    @include notch(10px);
+  }
+
+  @media (max-width: 575px) {
+    padding: 20px;
+  }
+
+  &-notched {
+    background-color: white;
+    padding: 30px;
+    --notchSize: 20px;
+    clip-path: polygon(
+      var(--notchSize) 0%,
+      100% 0,
+      100% calc(100% - var(--notchSize)),
+      calc(100% - var(--notchSize)) 100%,
+      0 100%,
+      0% var(--notchSize)
+    );
+  }
+
+  &.grey {
+    background-color: $color-grey;
+  }
+
+  &.grey2 {
+    background-color: $color-grey2;
+  }
+
+  &.lgrey {
+    background-color: $color-light-grey;
+  }
+
+  &.sea {
+    background-color: $color-sea;
+  }
+
+  &.pink {
+    background-color: $color-pink;
+  }
+
+  &.yellow {
+    background-color: $color-yellow;
+  }
+
+  &.navy {
+    background-color: $color-navy;
+  }
+
+  &.white {
+    background-color: white;
+  }
+
+  .title {
+    a {
+      &:hover {
+        color: $color-pink;
+      }
+    }
+  }
+
+  .wp-gr {
+    .wp-google-review {
+      margin-top: 25px !important;
     }
 
-    @media(max-width: 575px) {
-        padding: 30px;
+    .wp-google-place {
+      img {
+        border-radius: 0 !important;
+      }
     }
+  }
 
-    &.grey {
-        background-color: $color-grey;
-    }
-
-    &.grey2 {
-        background-color: $color-grey2;
-    }
-
-    &.lgrey {
-        background-color: $color-light-grey;
-    }
-
-    &.sea {
-        background-color: $color-sea;
-    }
-
-    &.pink {
-        background-color: $color-pink;
-    }
-
-    &.yellow {
-        background-color: $color-yellow;
-    }
-
-    &.navy {
-        background-color: $color-navy;
-    }
-
-    .title {
-
-        a {
-
-            &:hover {
-                color: $color-pink;
-            }
-
-        }
-
-    }
-
-    .wp-gr {
-
-        .wp-google-review {
-            margin-top: 25px!important;
-        }
-
-        .wp-google-place {
-
-            img {
-                border-radius: 0!important;
-            }
-         
-        }
-
-    }
-
-    .grw-widget-title {
-        margin-bottom: 1.5rem!important;
-    }
-
+  .grw-widget-title {
+    margin-bottom: 1.5rem !important;
+  }
 }
 
 .cards {
+  &__section {
+    &-img {
+      max-height: 450px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
 
-    &__section {
+      @media (max-width: 991px) {
+        max-height: 360px;
+      }
 
-        &-img {
-            max-height: 450px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
+      @media (max-width: 767px) {
+        min-height: 240px;
 
-            @media(max-width: 991px) {
-                max-height: 360px;
-            }
-
-            @media(max-width: 767px) {
-                min-height: 240px;
-
-                img {
-                    min-height: 240px;
-                }
-
-            }
-
-            &.job-single {
-                max-height: 320px;
-            }
-
+        img {
+          min-height: 240px;
         }
+      }
 
-        &-content {
-
-            > .container,
-            > .container-lg,
-            > .container-md,
-            > .container-sm {
-                margin-top: -80px;
-                padding-bottom: 50px;
-            }
-
-            &.related {
-                position: relative;
-                border-top: solid 80px white;
-            }
-
-            &.job-single {
-
-                .card {
-                    display: block;
-
-                    .title {
-                        margin-bottom: 20px;
-
-                        a {
-
-                            &:hover {
-                                color: inherit;
-                            }
-
-                        }
-
-                    }
-
-                    .info {
-                        margin-bottom: 30px;
-
-                        &__item {
-                            margin-bottom: 5px;
-                        }
-
-                    }
-
-                }
-
-            }
-
-            .card {
-                margin-bottom: 30px;
-            }
-
-        }
-
+      &.job-single {
+        max-height: 320px;
+      }
     }
 
+    &-content {
+      > .container,
+      > .container-lg,
+      > .container-md,
+      > .container-sm {
+        margin-top: -80px;
+        padding-bottom: 50px;
+      }
+
+      &.related {
+        position: relative;
+        border-top: solid 80px white;
+      }
+
+      &.job-single {
+        .card {
+          display: block;
+
+          .title {
+            margin-bottom: 20px;
+
+            a {
+              &:hover {
+                color: inherit;
+              }
+            }
+          }
+
+          .info {
+            margin-bottom: 30px;
+
+            &__item {
+              margin-bottom: 5px;
+            }
+          }
+        }
+      }
+
+      .card {
+        margin-bottom: 30px;
+      }
+    }
+  }
 }

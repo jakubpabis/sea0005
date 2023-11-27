@@ -1,30 +1,30 @@
 // Global CSS goes here
 body {
-	margin: 0;
-	padding: 0;
-	position: relative;
-	display: block;
-	font-weight: 400;
-    font-size: 18px;
-    color: $color-primary;
-	background-color: white;
-	min-height: 100vh;
-	font-family: $font-primary;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: block;
+  font-weight: 400;
+  font-size: 18px;
+  color: $color-primary;
+  background-color: white;
+  min-height: 100vh;
+  font-family: $font-primary;
 }
 
 html,
 body {
-	max-width: 100%;
-	max-width: 100vw;
-	overflow-x: hidden;
+  max-width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 * {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 img,
@@ -34,38 +34,46 @@ picture,
 embed,
 iframe,
 video {
-	max-width: 100%;
-	height: auto;
-	vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+
+  &.scaled-image {
+    border: none !important;
+    margin: auto;
+  }
 }
 
 object,
 svg {
-	pointer-events: none;
+  pointer-events: none;
 }
 
 a {
-	text-decoration: none;
-	color: inherit;
-	outline: none;
-	border: none;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  border: none;
 
-	&:hover {
-		color: $color-pink;
-		text-decoration: underline;
-	}
+  &:hover {
+    color: $color-pink;
+    text-decoration: underline;
+  }
 
+  &.no-hover {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 ul {
-	margin: 0;
-	list-style-image: url('../img/cubecrossUL.svg');
+  margin: 0;
+  list-style-type: '×';
 
-	li {
-		line-height: 1.44;
-		padding: 8px 0;
-	}
-
+  li {
+    line-height: 1.44;
+    padding: 8px 0 8px 8px;
+  }
 }
 
 input,
@@ -73,109 +81,229 @@ select,
 textarea,
 button,
 label {
-	font-family: $font-primary;
+  font-family: $font-primary;
 }
 
 section {
-	width: 100%;
-	position: relative;
-	display: block;
+  width: 100%;
+  position: relative;
+  display: block;
 }
 
 i {
-	font-weight: 400;
+  font-weight: 400;
 }
 
-.container {
-	position: relative;
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
+  position: relative;
 }
 
 #wrapper {
-	position: relative;
-	display: block;
-	overflow: hidden;
-	padding-top: 133px;
-	min-height: 100vh;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding-top: 126px;
+  min-height: 100vh;
 
-	@media(max-width: 991px) {
-		padding-top: 60px;
-	}
+  @media (max-width: 1199px) {
+    padding-top: 120px;
+  }
 
-	@media(max-width: 575px) {
-		padding-top: 48px;
-	}
+  @media (max-width: 1079px) {
+    padding-top: 68px;
+  }
 
+  @media (max-width: 575px) {
+    padding-top: 58px;
+  }
+
+  @media (max-width: 360px) {
+    padding-top: 56px;
+  }
 }
 
 .bg-cover {
-	display: block;
-	width: 100%;
-	max-width: 100vw;
-	object-fit: cover;
-	overflow: hidden;
+  display: block;
+  width: 100%;
+  max-width: 100vw;
+  object-fit: cover;
+  overflow: hidden;
 
-	&-abs {
-		display: block;
-		width: 100vw;
-		max-width: 100vw;
-		height: 100%;
-		object-fit: cover;
-		position: absolute;
-	}
-
+  &-abs {
+    display: block;
+    width: 100vw;
+    max-width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+  }
 }
 
 .whole-element-link {
-	position: absolute;
-	display: block;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 9;
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
 }
 
 .absolute-center {
-	position: absolute;
-	text-align: center;
-	top: 50%;
-	left: 50%;
-	transform: translateY(-50%) translateX(-50%);
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
 }
 
-.embed-container { 
-	position: relative; 
-	padding-bottom: 56.25%; 
-	height: 0; 
-	overflow: hidden; 
-	max-width: 100%; 
-} 
-
-.embed-container iframe, 
-.embed-container object, 
-.embed-container embed { 
-	position: absolute; 
-	top: 0; 
-	left: 0; 
-	width: 100%; 
-	height: 100%; 
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
 }
 
-#cookie-notice {
-	padding: 15px;
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-	&.cookie-notice-hidden {
-		display: none!important;
-	}
+.cookies-notifictaion {
+  position: fixed;
+  z-index: 999999999999999999999999;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(148, 212, 233);
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(148, 212, 233, 1) 30%,
+    rgba(148, 212, 233, 0) 100%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(148, 212, 233, 1) 30%,
+    rgba(148, 212, 233, 0) 100%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(148, 212, 233, 1) 30%,
+    rgba(148, 212, 233, 0) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#94d4e9",endColorstr="#94d4e9",GradientType=1);
 
-	#cn-notice-text {
-		display: block;
-		text-align: center;
-		min-width: 90%;
-		font-size: 16px;
-		font-weight: 400;
-		margin: 0 auto 15px;
-		font-family: $font-secondary;
-	}
+  .card {
+    margin-bottom: 100px !important;
 
+    @media (max-width: 991px) {
+      margin-bottom: 50px !important;
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 30px !important;
+    }
+
+    @media (max-width: 575px) {
+      margin-bottom: 240px !important;
+    }
+
+    @media (max-width: 360px) {
+      margin-bottom: 220px !important;
+    }
+  }
+
+  &-close {
+    background-color: $color-primary !important;
+    position: absolute;
+    top: -20px;
+    left: -5px;
+    opacity: 1 !important;
+    z-index: 999;
+    border: 5px solid $color-primary !important;
+    cursor: pointer;
+  }
+
+  &-dog {
+    position: relative;
+    display: block;
+    transform: rotateY(180deg);
+    width: 400px;
+    position: absolute;
+    right: -350px;
+    bottom: 0;
+
+    @media (max-width: 991px) {
+      right: -320px;
+    }
+
+    @media (max-width: 767px) {
+      right: -300px;
+    }
+
+    @media (max-width: 575px) {
+      right: auto;
+      left: 30px;
+    }
+  }
+
+  &-cookie {
+    @media (max-width: 767px) {
+      width: 90px;
+    }
+    @media (max-width: 575px) {
+      position: absolute;
+      top: -15px;
+      right: 0;
+      opacity: 0.25;
+    }
+  }
+
+  .triangle {
+    position: absolute;
+    border-width: 40px 40px 0 0;
+    border-color: #ffffff transparent transparent transparent;
+    margin: auto;
+    top: 35px;
+    right: -20px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+
+    @media (max-width: 575px) {
+      top: auto;
+      right: auto;
+      bottom: 210px;
+      left: 35px;
+    }
+
+    @media (max-width: 360px) {
+      bottom: 190px;
+    }
+  }
+}
+
+.bottom-bar {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  display: block;
+  @include trans(500ms);
+  z-index: 1050;
+
+  &.show {
+    bottom: 0;
+  }
 }

@@ -1,3 +1,6 @@
+// Bootstrap
+@import 'plugins/bootstrap';
+
 @import 'base/variables';
 @import 'base/mixins';
 @import 'base/classes';
@@ -5,17 +8,21 @@
 @import 'base/typography';
 @import 'base/btn';
 @import 'base/global';
+@import 'base/utils';
 
 // Import Components
+@import 'components/menukit';
 @import 'components/navigation';
 @import 'components/breadcrumbs';
 @import 'components/header';
 @import 'components/home';
+@import 'components/flex-content';
 @import 'components/cards';
 @import 'components/testimonials';
 @import 'components/modal';
 @import 'components/chat';
 @import 'components/jobs';
+@import 'components/posts';
 @import 'components/article';
 @import 'components/dogs';
 @import 'components/team';
@@ -28,3 +35,4 @@
 @import 'plugins/prettyCheckbox';
 @import 'plugins/owlCarousel';
 @import 'plugins/datepicker';
+@import 'plugins/multiselect';

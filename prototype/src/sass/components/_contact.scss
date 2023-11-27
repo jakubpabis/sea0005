@@ -1,44 +1,88 @@
 .contact {
-    padding: 70px 0 50px;
+  padding: 70px 0 50px;
 
-    @media(max-width: 575px) {
-        padding: 40px 0 0;
-    }
+  @media (max-width: 575px) {
+    padding: 40px 0 0;
+  }
 
-    &__text {
+  &__text {
+    &-columns {
+      * {
+        font-size: 16px;
+      }
 
-        &-columns {
+      > div {
+        padding-top: 25px;
+        padding-bottom: 10px;
 
-            * {
-                font-size: 16px;
-            }
-
-            > div {
-                padding-top: 25px;
-                padding-bottom: 10px;
-
-                @media(max-width: 575px) {
-                    padding-top: 15px;
-                    padding-bottom: 5px;
-                }
-
-            }
-
-            a {
-
-                &:hover {
-                    color: inherit;
-                }
-
-            }
-
-            .btn.navy {
-                margin-right: 5px;
-                color: $color-yellow!important;
-            }
-
+        @media (max-width: 575px) {
+          padding-top: 15px;
+          padding-bottom: 5px;
         }
+      }
 
+      a {
+        &:hover {
+          color: inherit;
+        }
+      }
+
+      .btn.navy {
+        margin-right: 5px;
+        color: $color-yellow !important;
+      }
+    }
+  }
+
+  &-form-carousel {
+    .next {
+      position: absolute;
+      right: 10px;
+      top: 15px;
+      cursor: pointer;
     }
 
+    .ugly {
+      label {
+        padding-left: 0 !important;
+        font-family: $font-primary !important;
+        font-size: 24px !important;
+        font-weight: 700 !important;
+      }
+
+      input,
+      textarea {
+        background-color: transparent !important;
+        border: none !important;
+        border-bottom: 1px solid $color-primary !important;
+        padding-left: 0 !important;
+        font-family: $font-primary !important;
+        font-size: 24px !important;
+        font-weight: 700 !important;
+      }
+
+      textarea {
+        border: 1px solid $color-primary !important;
+        padding-left: 10px !important;
+      }
+    }
+  }
+}
+
+.hs-form-iframe {
+  input,
+  textarea {
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid $color-primary !important;
+    padding-left: 0 !important;
+    font-family: $font-primary !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+  }
+
+  textarea {
+    border: 1px solid $color-primary !important;
+    padding-left: 10px !important;
+  }
 }

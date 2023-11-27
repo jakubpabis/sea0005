@@ -1,122 +1,109 @@
 .testimonials {
+  &__section,
+  &__candidates,
+  &__clients {
+    &-img {
+      max-height: 450px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
 
-    &__section,
-    &__candidates,
-    &__clients {
+      @media (max-width: 991px) {
+        max-height: 360px;
+      }
 
-        &-img {
-            max-height: 450px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
+      @media (max-width: 767px) {
+        min-height: 240px;
 
-            @media(max-width: 991px) {
-                max-height: 360px;
-            }
-
-            @media(max-width: 767px) {
-                min-height: 240px;
-
-                img {
-                    min-height: 240px;
-                }
-
-            }
-
+        img {
+          min-height: 240px;
         }
-
-        &-content {
-
-            > .container {
-                margin-top: -80px;
-                padding-bottom: 80px;
-
-                @media(max-width: 575px) {
-                    padding-bottom: 50px;
-                }
-
-            }
-            
-            .carousel {
-                @include notch(15px);
-            }
-
-            .carousel-item {
-                padding: 60px 0;
-                
-                @media(max-width: 767px) {
-                    padding: 40px 0;
-                }
-
-                img {
-                    @include notch(15px);
-                }
-
-                .fa-quote-left {
-                    position: absolute;
-                    top: -45px;
-                    left: 0;
-                    font-size: 78px;
-                    color: white;
-                    opacity: 0.5;
-                    z-index: -1;
-
-                    @media(max-width: 767px) {
-                        font-size: 70px;
-                        top: -30px;
-                    }
-
-                }
-
-            }
-
-            .carousel-control-prev,
-            .carousel-control-next {
-                opacity: 1;
-                width: 10%;
-                left: 15px;
-
-                @media(max-width: 767px) {
-                    left: calc(-5% + 18px);
-                    width: 11%;
-                }
-
-                i {
-                    width: 36px;
-                    height: 36px;
-                    font-size: 20px;
-                    line-height: 36px;
-                    text-align: center;
-                    color: $color-primary;
-                    background-color: white;
-                    border-radius: 36px;
-                    text-indent: -3px;
-                }
-
-            }
-
-            .carousel-control-next {
-                left: auto;
-                right: 15px;
-
-                @media(max-width: 767px) {
-                    left: auto;
-                    right: calc(-5% + 18px);
-                }
-
-                i {
-                    text-indent: 4px;
-                }
-
-            }
-
-        }
-    
+      }
     }
 
-    &__candidates,
-    &__clients {
-        margin-bottom: 150px;
-    }
+    &-content {
+      > .container {
+        margin-top: -80px;
+        padding-bottom: 80px;
 
+        @media (max-width: 575px) {
+          padding-bottom: 50px;
+        }
+      }
+
+      .carousel {
+        @include notch(15px);
+      }
+
+      .carousel-item {
+        padding: 60px 0;
+
+        @media (max-width: 767px) {
+          padding: 40px 0;
+        }
+
+        img {
+          @include notch(15px);
+        }
+
+        .fa-quote-left {
+          position: absolute;
+          top: -45px;
+          left: 0;
+          font-size: 78px;
+          color: white;
+          opacity: 0.5;
+          z-index: -1;
+
+          @media (max-width: 767px) {
+            font-size: 70px;
+            top: -30px;
+          }
+        }
+      }
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        opacity: 1;
+        width: 10%;
+        left: 15px;
+
+        @media (max-width: 767px) {
+          left: calc(-5% + 18px);
+          width: 11%;
+        }
+
+        i {
+          width: 36px;
+          height: 36px;
+          font-size: 20px;
+          line-height: 36px;
+          text-align: center;
+          color: $color-primary;
+          background-color: white;
+          border-radius: 36px;
+          text-indent: -3px;
+        }
+      }
+
+      .carousel-control-next {
+        left: auto;
+        right: 15px;
+
+        @media (max-width: 767px) {
+          left: auto;
+          right: calc(-5% + 18px);
+        }
+
+        i {
+          text-indent: 4px;
+        }
+      }
+    }
+  }
+
+  &__candidates,
+  &__clients {
+    margin-bottom: 150px;
+  }
 }
