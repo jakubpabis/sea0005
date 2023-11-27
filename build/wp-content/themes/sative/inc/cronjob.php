@@ -80,16 +80,18 @@ function xmlRead()
 		$recruiter_related = array();
 		if ($recruiter) {
 			$recruiter_page = get_page_by_title($recruiter, OBJECT, 'team');
-			$recruiter_related[] = $recruiter_page;
+			if ($recruiter_page->ID) {
+				$recruiter_related[] = $recruiter_page;
 
-			$recruiter_lang = pll_get_post_language($recruiter_page->ID);
-			if ($recruiter_lang === 'en') {
-				$recruiter_translated = pll_get_post($recruiter_page->ID, 'nl');
-			} else {
-				$recruiter_translated = pll_get_post($recruiter_page->ID, 'en');
+				$recruiter_lang = pll_get_post_language($recruiter_page->ID);
+				if ($recruiter_lang === 'en') {
+					$recruiter_translated = pll_get_post($recruiter_page->ID, 'nl');
+				} else {
+					$recruiter_translated = pll_get_post($recruiter_page->ID, 'en');
+				}
+				$recruiter_related[] = get_post($recruiter_translated);
+				//var_dump($recruiter_related);
 			}
-			$recruiter_related[] = get_post($recruiter_translated);
-			//var_dump($recruiter_related);
 		}
 
 		$job_categories = $job->categories->category;
