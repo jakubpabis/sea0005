@@ -26,10 +26,10 @@
 													<h2 class="mb-2"><?php echo get_the_title($item->ID); ?></h2>
 													<h5 class="font-secondary text400 my-0"><?php echo get_field('title', $item->ID); ?></h5>
 													<a href="mailto:<?php echo get_field('email', $item->ID); ?>" class="text400 font-secondary d-inline-block mt-4">
-														<i class="fal fa-envelope mr-md-4 mr-2"></i><?php echo get_field('email', $item->ID); ?>
+														<i class="fas fa-envelope mr-md-4 mr-2"></i><?php echo get_field('email', $item->ID); ?>
 													</a><br />
 													<a href="tel:<?php echo get_field('phone', $item->ID); ?>" class="text400 font-secondary d-inline-block mt-2">
-														<i class="fal fa-phone-alt mr-md-4 mr-2"></i><?php echo get_field('phone', $item->ID); ?>
+														<i class="fas fa-phone-alt mr-md-4 mr-2"></i><?php echo get_field('phone', $item->ID); ?>
 													</a><br />
 												</div>
 												<div class="col-lg-auto col-12 team__item-social d-flex flex-lg-column mt-lg-0 mt-3">

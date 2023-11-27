@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="row align-items-lg-center">
 				<div class="col-auto pr-1">
-					<a href="/"><i class="fal fa-home-lg-alt"></i></a>
+					<a href="/"><i class="fas fa-home-lg-alt"></i></a>
 				</div>
 				<div class="col-auto breadcrumbs__list">
 					<div class="breadcrumbs__items d-flex align-items-center">

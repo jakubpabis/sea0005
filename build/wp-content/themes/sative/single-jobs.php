@@ -262,7 +262,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 								<?php echo $item['text']; ?>
 							</div>
 							<div class="triangle"></div>
-							<i class="fal fa-times fa-2x"></i>
+							<i class="fas fa-times fa-2x"></i>
 						</div>
 					<?php $i++;
 					endforeach; ?>

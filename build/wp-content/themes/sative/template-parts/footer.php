@@ -27,7 +27,7 @@
 				<?php if (get_field('contact_text_' . $lang, 'option')) : ?>
 					<div class="row">
 						<div class="col-auto">
-							<i class="fal fa-map-marker-alt"></i>
+							<i class="fas fa-map-marker-alt"></i>
 						</div>
 						<div class="col pl-0">
 							<?php echo get_field('contact_text_' . $lang, 'option'); ?>
@@ -37,7 +37,7 @@
 				<?php if (get_field('contact_text2_' . $lang, 'option')) : ?>
 					<div class="row">
 						<div class="col-auto">
-							<i class="fal fa-map-marker-alt"></i>
+							<i class="fas fa-map-marker-alt"></i>
 						</div>
 						<div class="col pl-0">
 							<?php echo get_field('contact_text2_' . $lang, 'option'); ?>
@@ -47,7 +47,7 @@
 				<?php if (get_field('contact_text3_' . $lang, 'option')) : ?>
 					<div class="row">
 						<div class="col-auto">
-							<i class="fal fa-map-marker-alt"></i>
+							<i class="fas fa-map-marker-alt"></i>
 						</div>
 						<div class="col pl-0">
 							<?php echo get_field('contact_text3_' . $lang, 'option'); ?>
