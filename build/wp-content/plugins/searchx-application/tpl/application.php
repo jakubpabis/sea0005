@@ -26,9 +26,14 @@ function appEmailTemplate()
                             <tr>
                                 <td>
                                     <h1 style="font-size: 12pt!important;">
-                                        Thank you for applying to the position of <a href="' . $job_link . '" style="color: #425CBB; font-size: 12pt!important;">' . $job_title . '</a>. We’ve received your application in good order and will carefully review your profile to see if it’s a match.<br/>
-                                        Of course, we will let you know if there is and look forward to speaking with you.
+																		Hi, you! Thanks for applying to the position of <a href="' . $job_link . '" style="color: #425CBB; font-size: 12pt!important;">' . $job_title . '</a>. , you made the first important step to a new challenge!<br/>
+																		We’ve received your application in good order and our recruiters will carefully review your profile to see if you are the perfect match. We’re ready for it, what about you?
+																		<br/><br/>
+																		Of course, we will let you know if that match made in heaven is there, and you can expect to hear from us soon!<br/>
                                     </h1>
+																		<h2 style="font-size: 12pt!important;">
+																		Don’t want to miss a thing? Make a <a href="https://searchxrecruitment.com/en/?modal=job-alert" style="color: #425CBB; font-size: 12pt!important;"><strong>job alert</strong></a> and receive the latest vacancies directly in your mailbox! Because we all know, standing still is not an option.
+																		</h2>
                                 </td>
                             </tr>
                         </tbody>
@@ -36,13 +41,11 @@ function appEmailTemplate()
                             <tr>
                                 <td style="padding-top: 40px;">
                                     <p style="font-size: 10pt!important;">
-                                        In the meantime, you can stay posted on our latest jobs by following us on
+																		To infinity and beyond! Want to be the first one to know? Stay tuned on our latest posts by following us on:
                                     </p>
                                     <p style="font-size: 10pt!important;">
-                                        <strong>LinkedIn: </strong><a href="https://www.linkedin.com/company/search-x-recruitment">https://www.linkedin.com/company/search-x-recruitment</a><br/>
-                                        <strong>Facebook: </strong><a href="https://www.facebook.com/searchxrecruitment">https://www.facebook.com/searchxrecruitment</a><br/>
-                                        <strong>Twitter: </strong><a href="https://twitter.com/searchxjobs">https://twitter.com/searchxjobs</a><br/>
-                                        <strong>Instagram: </strong><a href="https://www.instagram.com/searchxrecruitment/">https://www.instagram.com/searchxrecruitment</a>
+                                        <a href="https://www.linkedin.com/company/search-x-recruitment/><strong>LinkedIn</strong></a><br/>
+                                        <a href="https://www.instagram.com/searchxrecruitment/"><strong>Instagram</strong></a>
                                     </p>
                                 </td>
                             </tr>
@@ -64,7 +67,7 @@ function appEmailTemplate()
                             <tr>
                                 <td>
                                     <a href="https://www.searchxrecruitment.com">
-                                        <img id="TemplateLogo" data-class="external" src="https://www.searchxrecruitment.com/wp-content/themes/sative/assets/img/logo-dog.png" alt="Search X Recruitment" style="display: block; margin-left: -24px; max-width: 220px;" width="220px">
+                                        <img id="TemplateLogo" data-class="external" src="https://www.searchxrecruitment.com/wp-content/themes/sative/assets/img/logo-small.png" alt="Search X Recruitment" style="display: block; margin-left: -33px; max-width: 300px;" width="300" height="100>
                                     </a>
                                 </td>
                             </tr>
