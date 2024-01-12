@@ -10,7 +10,7 @@
 
 get_header('none'); ?>
 
-<section class="not-found">
+<section class="not-found w-100 d-flex align-items-center justify-content-center py-5">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-sm-4 col-3 thedog dog__stand right special">

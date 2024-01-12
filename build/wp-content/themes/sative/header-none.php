@@ -23,6 +23,7 @@
 	<?php get_template_part('template-parts/cookies-js'); ?>
 
 
+
 	<!-- Some other, additional tracking code from Carine -->
 	<script>
 		(function(ss, ex) {
@@ -114,5 +115,4 @@
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMG8TTV" height="0" width="0"></iframe></noscript>
 	<!-- /Google Tag Manager (noscript) -->
-	<div id="wrapper" class="d-flex align-items-center justify-content-center py-5 bg-lgrey">
-		<?php get_template_part('template-parts/breadcrumbs'); ?>
+	<div id="wrapper" class="bg-lgrey">
