@@ -45,5 +45,13 @@ get_header('none'); ?>
 	</div>
 </section>
 
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-12">
+			<?php the_content(); ?>
+		</div>
+	</div>
+</div>
+
 <?php
 get_footer('none');
