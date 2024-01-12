@@ -62,7 +62,18 @@
 							<h2 class="color-navy">
 								<?php echo pll_e('Congratulations! You subscribed to our job alert!'); ?>
 							</h2>
-							<?php setcookie('subscribe_popup', true, get_field('subscribe_popup_cookie', 'option'), '/'); ?>
+							<script>
+								function setCookie(cname, cvalue, exdays) {
+									const d = new Date();
+									d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+									let expires = "expires=" + d.toUTCString();
+									document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+								}
+								const time = parseInt(<?php echo get_field('subscribe_popup_cookie', 'option') ?>);
+								setCookie('subscribe_popup', true, time);
+							</script>
+							<?php // setcookie('subscribe_popup', true, get_field('subscribe_popup_cookie', 'option'), '/'); 
+							?>
 						</div>
 					<?php else : ?>
 						<div class="info card bg-pink">
