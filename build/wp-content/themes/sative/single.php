@@ -156,6 +156,7 @@ get_header(); ?>
 									</svg>
 								</div>
 								<div class="col-sm-9 searchInput d-flex justify-content-center align-items-start">
+									<input type="hidden" name="lang" value="<?php echo pll_current_language(); ?>">
 									<div class="triangle-left"></div>
 									<input type="email" name="whitepapers-email" value="" placeholder="<?php pll_e('Put in your email address here'); ?>" required>
 									<input type="hidden" name="whitepapers-url" value="<?php echo get_field('file_download')['url']; ?>">

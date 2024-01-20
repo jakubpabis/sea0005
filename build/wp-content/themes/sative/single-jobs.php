@@ -433,6 +433,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 								</div>
 							</div>
 							<div class="col-12 pt-4">
+								<input type="hidden" name="lang" value="<?php echo pll_current_language(); ?>">
 								<?php get_template_part('template-parts/referrer'); ?>
 								<input type="hidden" name="postid" value="<?php echo get_the_ID(); ?>">
 								<input type="hidden" name="app-jobid" value="<?php echo get_field('job_id'); ?>">

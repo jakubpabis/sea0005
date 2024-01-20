@@ -40,7 +40,6 @@ require_once(dirname(__FILE__) . '/action/application.php');
 function sative_cv_form_submit()
 {
 	$message = add_to_queue_cv();
-
 	$referer = remove_query_arg('message', $_POST['_wp_http_referer']);
 	$referer = remove_query_arg('messagecv', $_POST['_wp_http_referer']);
 	$referer = remove_query_arg('messagesb', $_POST['_wp_http_referer']);

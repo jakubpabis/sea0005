@@ -57,6 +57,7 @@ if (!empty($con_pages) && in_array($id, $con_pages)) {
 										<label class="ugly-label" for="<?php echo $type; ?>_message"><?php echo pll_e('Message'); ?> <span>*</span></label>
 									</div>
 									<div class="col-12 pt-1">
+										<input type="hidden" name="lang" value="<?php echo pll_current_language(); ?>">
 										<input type="hidden" name="action" value="<?php echo $type; ?>_form">
 										<?php wp_nonce_field('<?php echo $type; ?>_form', '<?php echo $type; ?>_form_nonce'); ?>
 										<input type="hidden" name="contactHash" id="contactHash" value="<?php global $hashesForLashes;
@@ -158,6 +159,7 @@ unset($group);
 							</div>
 						<?php endif; ?>
 						<div class="col-12 pt-1">
+							<input type="hidden" name="lang" value="<?php echo pll_current_language(); ?>">
 							<input type="hidden" name="action" value="<?php echo $type; ?>_form">
 							<?php wp_nonce_field('<?php echo $type; ?>_form', '<?php echo $type; ?>_form_nonce'); ?>
 							<input type="hidden" name="subscribeHash" id="subscribeHash" value="<?php global $hashesForLashes;

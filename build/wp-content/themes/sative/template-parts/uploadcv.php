@@ -158,6 +158,7 @@ if (isset($_GET['app-url']) && $_GET['app-url']) {
 										<?php get_template_part('template-parts/referrer'); ?>
 										<input type="hidden" name="cv-jobid" value="188">
 										<input type="hidden" name="action" value="cv_form">
+										<input type="hidden" name="lang" value="<?php echo pll_current_language(); ?>">
 										<input type="hidden" name="cvUploadHash" id="cvUploadHash" value="<?php global $hashesForLashes;
 																																											echo $hashesForLashes['cvHash']; ?>">
 										<?php wp_nonce_field('cv_form', 'cv_form_nonce'); ?>
