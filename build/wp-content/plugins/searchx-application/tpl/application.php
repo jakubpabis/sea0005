@@ -13,7 +13,7 @@ function appEmailTemplate()
 		Of course, we will let you know if that match made in heaven is there, and you can expect to hear from us soon!<br/>
 		</h1>
 		<h2 style="font-size: 12pt!important;">
-		Don’t want to miss a thing? Make a <a href="https://searchxrecruitment.com/en/?modal=job-alert&utm_medium=mail&utm_source=email&utm_campaign=application-success" style="color: #425CBB;"><strong>job alert</strong></a> and receive the latest vacancies directly in your mailbox! Because we all know, standing still is not an option.
+		Don’t want to miss a thing? Make a <a href="https://searchxrecruitment.com/en/?modal=job-alert&utm_medium=mail&utm_source=email&utm_campaign=application-success" style="color: #425CBB; font-size: 12pt!important;"><strong>job alert</strong></a> and receive the latest vacancies directly in your mailbox! Because we all know, standing still is not an option.
 		</h2>
 	';
 	$firstNL = '
@@ -24,7 +24,7 @@ function appEmailTemplate()
 		Natuurlijk laten we je weten of die match er is, en dan hoor je snel van ons!<br/>
 		</h1>
 		<h2 style="font-size: 12pt!important;">
-		Wil je niets missen? Maak dan een <a href="https://searchxrecruitment.com/nl/?modal=job-alert&utm_medium=mail&utm_source=email&utm_campaign=application-success" style="color: #425CBB;"><strong>job alert</strong></a> aan en ontvang de nieuwste vacatures direct in je mailbox! Want we weten allemaal dat stilstaan geen optie is.
+		Wil je niets missen? Maak dan een <a href="https://searchxrecruitment.com/nl/?modal=job-alert&utm_medium=mail&utm_source=email&utm_campaign=application-success" style="color: #425CBB; font-size: 12pt!important;"><strong>job alert</strong></a> aan en ontvang de nieuwste vacatures direct in je mailbox! Want we weten allemaal dat stilstaan geen optie is.
 		</h2>
 	';
 	$first = $lang && $lang === 'nl' ? $firstNL : $firstEN;
@@ -61,8 +61,8 @@ function appEmailTemplate()
 																		' . $second . '
                                     </p>
                                     <p style="font-size: 10pt!important;">
-                                        <a href="https://www.linkedin.com/company/search-x-recruitment?utm_medium=mail&utm_source=email&utm_campaign=application-success"><strong>LinkedIn</strong></a><br/>
-                                        <a href="https://www.instagram.com/searchxrecruitment/?utm_medium=mail&utm_source=email&utm_campaign=application-success"><strong>Instagram</strong></a>
+                                        <a style="font-size: 10pt!important;" href="https://www.linkedin.com/company/search-x-recruitment?utm_medium=mail&utm_source=email&utm_campaign=application-success"><strong>LinkedIn</strong></a><br/>
+                                        <a style="font-size: 10pt!important;" href="https://www.instagram.com/searchxrecruitment/?utm_medium=mail&utm_source=email&utm_campaign=application-success"><strong>Instagram</strong></a>
                                     </p>
                                 </td>
                             </tr>
