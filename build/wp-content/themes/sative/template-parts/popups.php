@@ -3,6 +3,7 @@ global $post;
 $id = $post->ID;
 $sub_pages = get_field('subscribe_popup_on_pages', 'option');
 $con_pages = get_field('contact_popup_on_pages', 'option');
+$lang = pll_current_language();
 $type = false;
 if (!empty($sub_pages) && in_array($id, $sub_pages)) {
 	$type = 'subscribe';
@@ -18,9 +19,9 @@ if (!empty($con_pages) && in_array($id, $con_pages)) {
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content py-5">
 					<div class="modal-header d-flex">
-						<?php if (get_field($type . '_popup_title', 'option')) : ?>
+						<?php if (get_field($type . '_popup_title_' . $lang, 'option')) : ?>
 							<span class="display-4 text700 pr-4 lh-1" id="<?php echo $type; ?>PopupModalTitle">
-								<?php echo get_field($type . '_popup_title', 'option'); ?>
+								<?php echo get_field($type . '_popup_title_' . $lang, 'option'); ?>
 							</span>
 						<?php endif; ?>
 						<button type="button" class="close d-flex align-items-center" data-dismiss="modal" aria-label="Close">
@@ -34,13 +35,13 @@ if (!empty($con_pages) && in_array($id, $con_pages)) {
 					</div>
 
 					<div class="modal-body pt-3">
-						<?php if (get_field($type . '_popup_text', 'option')) : ?>
+						<?php if (get_field($type . '_popup_text_' . $lang, 'option')) : ?>
 							<p class="mt-0 mb-2">
-								<?php echo get_field($type . '_popup_text', 'option'); ?>
+								<?php echo get_field($type . '_popup_text_' . $lang, 'option'); ?>
 							</p>
 						<?php endif; ?>
-						<?php if (get_field($type . '_popup_form', 'option')) : ?>
-							<?php echo get_field($type . '_popup_form', 'option'); ?>
+						<?php if (get_field($type . '_popup_form_' . $lang, 'option')) : ?>
+							<?php echo get_field($type . '_popup_form_' . $lang, 'option'); ?>
 						<?php else : ?>
 							<form method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" accept-charset="UTF-8" role="form" id="<?php echo $type; ?>-popup-form" enctype="multipart/form-data">
 								<div class="row align-items-center">
@@ -138,9 +139,9 @@ unset($group);
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content py-5">
 			<div class="modal-header d-flex">
-				<?php if (get_field($type . '_popup_title', 'option')) : ?>
+				<?php if (get_field($type . '_popup_title_' . $lang, 'option')) : ?>
 					<span class="display-4 text700 pr-4 lh-1" id="<?php echo $type; ?>PopupModalTitle">
-						<?php echo get_field($type . '_popup_title', 'option'); ?>
+						<?php echo get_field($type . '_popup_title_' . $lang, 'option'); ?>
 					</span>
 				<?php endif; ?>
 				<button type="button" class="close d-flex align-items-center" data-dismiss="modal" aria-label="Close">
@@ -153,9 +154,9 @@ unset($group);
 				</button>
 			</div>
 			<div class="modal-body pt-3">
-				<?php if (get_field($type . '_popup_text', 'option')) : ?>
+				<?php if (get_field($type . '_popup_text_' . $lang, 'option')) : ?>
 					<p class="mt-0 mb-2">
-						<?php echo get_field($type . '_popup_text', 'option'); ?>
+						<?php echo get_field($type . '_popup_text_' . $lang, 'option'); ?>
 					</p>
 				<?php endif; ?>
 				<form method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" accept-charset="UTF-8" role="form" id="<?php echo $type; ?>-popup-form" enctype="multipart/form-data">
