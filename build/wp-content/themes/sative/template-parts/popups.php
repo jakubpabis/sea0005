@@ -16,24 +16,32 @@ if (!empty($con_pages) && in_array($id, $con_pages)) {
 	<?php if ($type === 'contact') : ?>
 		<div id="<?php echo $type; ?>PopupModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="<?php echo $type; ?>PopupModalTitle" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M30.3884 34.2353L20.1176 23.9745L9.84745 34.2353L6 30.3939L16.2713 20.1321L16.2568 20.1171L16.2713 20.1027L6.00107 9.84138L9.84638 6L20.1176 16.2597L30.3889 6L34.2348 9.84138L23.964 20.1027L23.979 20.1171L23.964 20.1321L34.2353 30.3939L30.3884 34.2353ZM0 40H40V0H0V40Z" fill="#EC6278" />
-						</svg>
-					</button>
-					<div class="modal-container">
-						<div class="modal-header">
-							<h2 class="modal-title" id="<?php echo $type; ?>PopupModalTitle">
+				<div class="modal-content py-5">
+					<div class="modal-header d-flex">
+						<?php if (get_field($type . '_popup_title', 'option')) : ?>
+							<span class="display-4 text700 pr-4 lh-1" id="<?php echo $type; ?>PopupModalTitle">
 								<?php echo get_field($type . '_popup_title', 'option'); ?>
-							</h2>
-						</div>
-						<div class="modal-body pt-3">
-							<?php if (get_field($type . '_popup_text', 'option')) : ?>
-								<p class="mt-0 mb-2">
-									<?php echo get_field($type . '_popup_text', 'option'); ?>
-								</p>
-							<?php endif; ?>
+							</span>
+						<?php endif; ?>
+						<button type="button" class="close d-flex align-items-center" data-dismiss="modal" aria-label="Close">
+							<span class="text700 text-uppercase text-size-normal mr-2 font-primary">
+								<?php pll_e('Sluiten'); ?>
+							</span>
+							<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M30.3884 34.2353L20.1176 23.9745L9.84745 34.2353L6 30.3939L16.2713 20.1321L16.2568 20.1171L16.2713 20.1027L6.00107 9.84138L9.84638 6L20.1176 16.2597L30.3889 6L34.2348 9.84138L23.964 20.1027L23.979 20.1171L23.964 20.1321L34.2353 30.3939L30.3884 34.2353ZM0 40H40V0H0V40Z" fill="#183153" />
+							</svg>
+						</button>
+					</div>
+
+					<div class="modal-body pt-3">
+						<?php if (get_field($type . '_popup_text', 'option')) : ?>
+							<p class="mt-0 mb-2">
+								<?php echo get_field($type . '_popup_text', 'option'); ?>
+							</p>
+						<?php endif; ?>
+						<?php if (get_field($type . '_popup_form', 'option')) : ?>
+							<?php echo get_field($type . '_popup_form', 'option'); ?>
+						<?php else : ?>
 							<form method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" accept-charset="UTF-8" role="form" id="<?php echo $type; ?>-popup-form" enctype="multipart/form-data">
 								<div class="row align-items-center">
 									<div class="col-md-6 ugly pt-2 pb-3">
@@ -68,11 +76,27 @@ if (!empty($con_pages) && in_array($id, $con_pages)) {
 									</div>
 								</div>
 							</form>
-						</div>
+						<?php endif; ?>
 					</div>
+
 				</div>
 			</div>
 		</div>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				if (!getCookie('contactPopup') || getCookie('contactPopup') === false) {
+					setTimeout(function() {
+						jQuery('#<?php echo $type; ?>PopupModal').modal({
+								backdrop: 'static',
+								keyboard: false
+							},
+							'show'
+						);
+						setCookie('contactPopup', true, 365);
+					}, parseInt(<?php echo get_field($type . '_popup_timeout', 'option'); ?>));
+				}
+			});
+		</script>
 	<?php endif; ?>
 <?php endif; ?>
 
@@ -183,14 +207,17 @@ unset($group);
 			form.addEventListener('submit', function(event) {
 				event.preventDefault(); // This prevents the form from submitting
 			});
-			if (getCookie('jobsAlertPopup') && parseInt(getCookie('jobsAlertPopup')) === 3) {
-				jQuery('#subscribePopupModal').modal({
-						backdrop: 'static',
-						keyboard: false
-					},
-					'show'
-				);
-				setCookie('jobsAlertPopup', false, 365);
+			if (getCookie('jobsAlertPopup') && parseInt(getCookie('jobsAlertPopup')) >= 3) {
+				setTimeout(function() {
+					jQuery('#subscribePopupModal').modal({
+							backdrop: 'static',
+							keyboard: false
+						},
+						'show'
+					);
+					setCookie('jobsAlertPopup', false, 365);
+				}, 5000);
 			}
 		});
 	</script>
+</div>
