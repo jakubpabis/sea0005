@@ -7638,8 +7638,6 @@ body {
 
 html,
 body {
-	overflow-x: hidden;
-	max-width: 100%;
 	max-width: 100vw;
 }
 
