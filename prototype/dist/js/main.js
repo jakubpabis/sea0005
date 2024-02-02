@@ -13906,15 +13906,11 @@ function mobileMenuGoBack() {
 
 function megaMenu() {
   $(document).on('click', function (event) {
-    var $this = $(event.target);
     if (
       ($this.parents('.mega-menu-parent').length < 1 &&
         $('.mega-menu-parent').is(':visible')) ||
       $this.hasClass('mega-menu-go-back')
     ) {
-      console.log($this);
-      console.log($this.parents('.mega-menu-parent').length);
-      console.log($this.parents('.mega-menu-parent'));
       $('.mega-menu-parent')
         .find('.mega-menu-container')
         .stop(true, true)
@@ -13972,7 +13968,6 @@ function megaMenu() {
           .find('.mega-menu__side-submenu')
           .stop(true, true)
           .css({ display: 'none' });
-        console.log('some');
         $this
           .parent()
           .parent()
