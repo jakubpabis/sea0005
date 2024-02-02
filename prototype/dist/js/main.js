@@ -13913,6 +13913,8 @@ function megaMenu() {
       $this.hasClass('mega-menu-go-back')
     ) {
       console.log($this);
+      console.log($this.parents('.mega-menu-parent').length);
+      console.log($this.parents('.mega-menu-parent'));
       $('.mega-menu-parent')
         .find('.mega-menu-container')
         .stop(true, true)
