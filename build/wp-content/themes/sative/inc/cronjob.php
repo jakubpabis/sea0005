@@ -133,8 +133,9 @@ function xmlRead()
 
 				if (strval($postDate) !== strval($date) || $force) {
 
-					//var_dump( strval($postDate) );
-					//var_dump( strval($date) );
+					echo '__________________________ DATES ___________________________<br/>';
+					echo strval($postDate) . '<br/>' . strval($date) . '<br/><br/>';
+
 
 					unset($jobArray['post_name']);
 					unset($jobArray['post_type']);
