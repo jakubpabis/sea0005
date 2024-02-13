@@ -61,15 +61,12 @@ function xmlRead()
 		$excerpt = false;
 		if ($job->custom_fields && !empty($job->custom_fields)) {
 			foreach ($job->custom_fields->custom_field as $field) {
-				echo $field['field'];
-				echo "<br/><br/>";
 				if (strval($field['field']) === 'job_excerpt') {
 					$excerpt = strval($field);
 					break;
 				}
 			}
 		}
-		//echo $excerpt;
 
 		if (strval($job->contact_first_name) && strval($job->contact_last_name)) {
 			$recruiter = strval($job->contact_first_name) . ' ' . strval($job->contact_last_name);
@@ -90,7 +87,6 @@ function xmlRead()
 					$recruiter_translated = pll_get_post($recruiter_page->ID, 'en');
 				}
 				$recruiter_related[] = get_post($recruiter_translated);
-				//var_dump($recruiter_related);
 			}
 		}
 
@@ -108,11 +104,8 @@ function xmlRead()
 		if ($excerpt) {
 			$jobArray['post_excerpt'] = $excerpt;
 		}
-		// var_dump($jobArray);
-		// echo "<br/>";
 
 		if (in_array($jobID, $postsArr, true)) {
-			//var_dump('check');
 			wp_reset_query();
 			$args = array(
 				'name'        => $slug,
@@ -132,7 +125,7 @@ function xmlRead()
 				}
 
 				echo '__________________________ DATES ___________________________<br/>';
-				echo strval($postDate) . '<br/>' . strval($date) . '<br/><br/>';
+				echo $postDate . '<br/>' . $date . '<br/><br/>' . $job->modify_date . '<br/>' . strtotime($job->modify_date) . '<br/><br/>';
 
 				if (strval($postDate) !== strval($date) || $force) {
 
@@ -270,8 +263,6 @@ function jobList()
 	if ($posts->have_posts()) :
 		while ($posts->have_posts()) : $posts->the_post();
 			$id = get_field('job_id', get_the_ID());
-			echo "<br/><br/>";
-			var_dump($id);
 			array_push($postsArr, $id);
 		endwhile;
 	endif;
@@ -462,33 +453,25 @@ function insertCategoriesRec($job_categories, $postID, $skillArr)
 		$skillGroup = 'Skill ' . $skill;
 
 		foreach ($job_categories as $category) {
-			//echo has_term($category, 'job-category', get_post($postID));
 			if (strpos($category['group'], $skillGroup) != false && !has_term($category, 'job-category', get_post($postID))) {
 
 				$skills[] = strval($category);
 
 				$slug = slugify($skill);
-				//echo $slug.' - ';
 
 				$parent = get_term_by('slug', $slug, 'job-category');
 				if (is_object($parent)) {
 					$parentID = $parent->term_id;
-					//echo $parentID.' | ';
-				} else {
-					//var_dump( $parent );
 				}
 
 				$term = get_term_by('name', strval($category), 'job-category');
 				if (is_object($term)) {
-					//echo '<br/>term ID:'.$term->term_id.'<br/>';
 					if ($term !== false) {
 						wp_insert_term(strval($category), 'job-category', array('parent' => $parentID));
 						$term = get_term_by('name', strval($category), 'job-category');
 					}
 					$termID = $term->term_id;
 					wp_set_post_terms($postID, $termID, 'job-category', true);
-				} else {
-					//var_dump( $term) ;
 				}
 			}
 		}
