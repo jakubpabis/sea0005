@@ -23,7 +23,7 @@ function xmlRead()
 
 		array_push($job_ids, $jobID);
 
-		$date = date("Y-m-d H:i:s", strtotime($job->modify_date));
+		$date = date("Y-m-d H:i:s", strtotime($job->publish_date));
 
 		if (!empty($job->url_title)) {
 			$slug = strval($job->url_title);
@@ -125,7 +125,7 @@ function xmlRead()
 				}
 
 				echo '__________________________ DATES ___________________________<br/>';
-				echo $postDate . '<br/>' . $date . '<br/><br/>' . $job->modify_date . '<br/>' . strtotime($job->modify_date) . '<br/><br/>';
+				echo $postDate . '<br/>' . $date . '<br/><br/>' . $job->publish_date . '<br/>' . strtotime($job->publish_date) . '<br/><br/>';
 
 				if (strval($postDate) !== strval($date) || $force) {
 
