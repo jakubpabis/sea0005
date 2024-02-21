@@ -129,15 +129,13 @@ function xmlRead()
 
 				if (strval($postDate) !== strval($date) || $force) {
 
-
-
-
 					unset($jobArray['post_name']);
 					unset($jobArray['post_type']);
 					unset($jobArray['post_status']);
 					$jobArray['ID'] = $postID;
 
 					wp_update_post($jobArray, true);
+					echo '<br/></br/>' . $jobArray['post_content'] . '<br/></br/>';
 
 					update_field('job_id', $jobID, $postID);
 					update_field('salary_min', $salary_min, $postID);
