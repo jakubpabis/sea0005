@@ -221,12 +221,6 @@ get_template_part('template-parts/breadcrumbs'); ?>
 					</div>
 
 				</article>
-				<?php /*
-					<aside class="col-lg-4 jobs__single-sidebar">
-						<?php get_sidebar('jobs'); ?>
-					</aside> */ ?>
-
-
 
 			</div>
 		</div>

@@ -22,7 +22,7 @@
 		</div>
 		<div class="mt-4">
 			<div class="d-flex align-items-center mb-3">
-				<a href="contact@searchxrecruitment.com" class="btn btn__social notched navy smaller mr-xl-3 mr-lg-2 mr-sm-3 mr-2" target="_blank">
+				<a href="mailto:contact@searchxrecruitment.com" class="btn btn__social notched navy smaller mr-xl-3 mr-lg-2 mr-sm-3 mr-2" target="_blank">
 					<i class="fas fa-envelope"></i>
 				</a>
 				<a href="mailto:contact@searchxrecruitment.com" class="text500">
