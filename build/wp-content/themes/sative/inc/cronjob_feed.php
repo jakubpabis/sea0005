@@ -23,9 +23,9 @@ function save_nodes_to_file()
 	$xml_hash = md5($xml_content);
 	$stored_hash = file_exists($xml_hash_file_path) ? file_get_contents($xml_hash_file_path) : '';
 
-	if ($xml_hash !== $stored_hash) {
-		$xml = new SimpleXMLElement($xml_content);
+	$xml = new SimpleXMLElement($xml_content);
 
+	if ($xml_hash !== $stored_hash) {
 		$dom = new DOMDocument('1.0');
 		$dom->formatOutput = true;
 		$dom_vacancies = $dom->createElement('vacancies');
@@ -40,66 +40,64 @@ function save_nodes_to_file()
 		$xml_string = $dom->saveXML();
 		file_put_contents($new_xml_file_path, $xml_string);
 		file_put_contents($xml_hash_file_path, $xml_hash);
+	}
 
 
-		$dom_linkedin = new DOMDocument('1.0');
-		$dom_linkedin->formatOutput = true;
-		$dom_linkedin_vacancies = $dom_linkedin->createElement('vacancies');
-		$dom_linkedin->appendChild($dom_linkedin_vacancies);
+	$dom_linkedin = new DOMDocument('1.0');
+	$dom_linkedin->formatOutput = true;
+	$dom_linkedin_vacancies = $dom_linkedin->createElement('vacancies');
+	$dom_linkedin->appendChild($dom_linkedin_vacancies);
 
-		foreach ($xml->vacancy as $vacancy) {
-			$dom_linkedin_vacancy = dom_import_simplexml($vacancy);
-			$dom_linkedin_vacancy = $dom_linkedin->importNode($dom_linkedin_vacancy, true);
+	foreach ($xml->vacancy as $vacancy) {
+		$dom_linkedin_vacancy = dom_import_simplexml($vacancy);
+		$dom_linkedin_vacancy = $dom_linkedin->importNode($dom_linkedin_vacancy, true);
 
-			$now = time();
-			$your_date = strtotime($dom_linkedin_vacancy->getElementsByTagName('publish_date')->item(0)->nodeValue);
-			$datediff = $now - $your_date;
-			$datediff_days = round($datediff / (60 * 60 * 24));
+		$now = time();
+		$your_date = strtotime($dom_linkedin_vacancy->getElementsByTagName('publish_date')->item(0)->nodeValue);
+		$datediff = $now - $your_date;
+		$datediff_days = round($datediff / (60 * 60 * 24));
 
-			if ($datediff_days > 30) {
-				// Modify the 'id' attribute
-				$vac_ID = $dom_linkedin_vacancy->getAttribute('id');
-				$dom_linkedin_vacancy->setAttribute('id', $vac_ID . 'A');
+		if ($datediff_days >= 14) {
+			// Modify the 'id' attribute
+			$vac_ID = $dom_linkedin_vacancy->getAttribute('id');
+			$dom_linkedin_vacancy->setAttribute('id', $vac_ID . 'A');
 
-				// Modify the <id> node
-				$id_node = $dom_linkedin_vacancy->getElementsByTagName('id')->item(0);
-				$id_node->nodeValue = $vac_ID . 'A';
+			// Modify the <id> node
+			$id_node = $dom_linkedin_vacancy->getElementsByTagName('id')->item(0);
+			$id_node->nodeValue = $vac_ID . 'A';
 
-				// Modify the <publish_date> node
+			// Modify the <publish_date> node
 
-				$publish_date_node = $dom_linkedin_vacancy->getElementsByTagName('publish_date')->item(0);
-				$publish_date_node->nodeValue = date("d-m-Y H:i:s");
+			$publish_date_node = $dom_linkedin_vacancy->getElementsByTagName('publish_date')->item(0);
+			$publish_date_node->nodeValue = date("d-m-Y H:i:s");
 
-				// Modify the <modify_date> node
-				$modify_date_node = $dom_linkedin_vacancy->getElementsByTagName('modify_date')->item(0);
-				$modify_date_node->nodeValue = date("d-m-Y H:i:s");
+			// Modify the <modify_date> node
+			$modify_date_node = $dom_linkedin_vacancy->getElementsByTagName('modify_date')->item(0);
+			$modify_date_node->nodeValue = date("d-m-Y H:i:s");
 
 
 
-				// Modify the <url> node
-				$url_node = $dom_linkedin_vacancy->getElementsByTagName('url')->item(0);
-				$url_node->nodeValue = $dom_linkedin_vacancy->getElementsByTagName('url')->item(0)->nodeValue . 'A';
+			// Modify the <url> node
+			$url_node = $dom_linkedin_vacancy->getElementsByTagName('url')->item(0);
+			$url_node->nodeValue = $dom_linkedin_vacancy->getElementsByTagName('url')->item(0)->nodeValue . 'A';
 
-				// Modify the <apply_url> node
-				$apply_url_node = $dom_linkedin_vacancy->getElementsByTagName('apply_url')->item(0);
-				$apply_url_node->nodeValue = $dom_linkedin_vacancy->getElementsByTagName('apply_url')->item(0)->nodeValue . 'A';
+			// Modify the <apply_url> node
+			$apply_url_node = $dom_linkedin_vacancy->getElementsByTagName('apply_url')->item(0);
+			$apply_url_node->nodeValue = $dom_linkedin_vacancy->getElementsByTagName('apply_url')->item(0)->nodeValue . 'A';
 
-				// Modify the <job_url> node
-				$job_url_node = $dom_linkedin_vacancy->getElementsByTagName('job_url')->item(0);
-				$job_url_node->nodeValue = $dom_linkedin_vacancy->getElementsByTagName('job_url')->item(0)->nodeValue . 'A';
-			}
-
-			$dom_linkedin_vacancies->appendChild($dom_linkedin_vacancy);
+			// Modify the <job_url> node
+			$job_url_node = $dom_linkedin_vacancy->getElementsByTagName('job_url')->item(0);
+			$job_url_node->nodeValue = $dom_linkedin_vacancy->getElementsByTagName('job_url')->item(0)->nodeValue . 'A';
 		}
 
-		$xml_string_linkedin = $dom_linkedin->saveXML();
-		file_put_contents($new_xml_linkedin_file_path, $xml_string_linkedin);
-
-
-		echo 'Success :)';
-	} else {
-		echo 'No changes';
+		$dom_linkedin_vacancies->appendChild($dom_linkedin_vacancy);
 	}
+
+	$xml_string_linkedin = $dom_linkedin->saveXML();
+	file_put_contents($new_xml_linkedin_file_path, $xml_string_linkedin);
+
+
+	echo 'Success :)';
 }
 
 
