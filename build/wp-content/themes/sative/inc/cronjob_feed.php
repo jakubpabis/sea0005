@@ -8,8 +8,6 @@
  */
 function xmlCreateFeed()
 {
-
-	//add_redirection($a, $b, 301);
 	save_nodes_to_file();
 }
 
@@ -104,37 +102,6 @@ function save_nodes_to_file()
 	}
 }
 
-function add_redirection($source_url, $target_url, $http_code = 301)
-{
-	$api_endpoint = get_site_url() . '/wp-json/redirection/v1/redirect/';
-
-	$response = wp_remote_post($api_endpoint, array(
-		'headers' => array(
-			'Content-Type' => 'application/json; charset=utf-8',
-			'Authorization' => 'Bearer 91bf991ebd9bf21fe24f2f78d555f93b', // replace with your API key
-		),
-		'body' => json_encode(array(
-			'url' => $source_url,
-			'action_data' => array('url' => $target_url),
-			'action_code' => $http_code,
-			'action_type' => 'url',
-			'match_type' => 'url',
-		)),
-	));
-
-	if (is_wp_error($response)) {
-		print_r('Failed to add redirection (WP ERROR): ' . $response->get_error_message());
-	} else {
-		$body = json_decode(wp_remote_retrieve_body($response), true);
-		if (isset($body['id'])) {
-			return $body['id'];
-		} else {
-			print_r('Failed to add redirection: ' . print_r($body, true));
-		}
-	}
-
-	return null;
-}
 
 
 /**

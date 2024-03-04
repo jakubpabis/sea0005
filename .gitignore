@@ -5,6 +5,8 @@
 /design
 /build/composer.lock
 /build
+/build/wp-content/themes/sative/xml
+/build/wp-content/themes/sative/xml/*
 .DS_Store
 /.DS_Store
 **/.DS_Store
