@@ -654,6 +654,7 @@ require_once get_template_directory() . '/inc/fetchdata.php';
 
 require_once get_template_directory() . '/inc/cronjob_feed.php';
 
+add_action('sative_jobs_linkedin_feed_cron_hook', 'xmlCreateFeed');
 add_action('sative_jobs_cron_hook', 'xmlRead');
 //wp_clear_scheduled_hook( 'sative_jobs_cron_hook' );
 
