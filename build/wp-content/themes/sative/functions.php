@@ -240,6 +240,22 @@ function sative_scripts()
 }
 add_action('wp_enqueue_scripts', 'sative_scripts');
 
+function custom_use_print_block_library($html, $handle)
+{
+	$handles = array(
+		'extra-styles',
+		'sative-fa',
+		'sative-fab',
+		'sative-fas',
+		'sative-far'
+	);
+	if (in_array($handle, $handles)) {
+		$html = str_replace('media=\'all\'', 'media=\'print\' onload="this.onload=null;this.media=\'all\'"', $html);
+	}
+	return $html;
+}
+add_filter('style_loader_tag', 'custom_use_print_block_library', 10, 2);
+
 /**
  * Implement the Custom Header feature.
  */
