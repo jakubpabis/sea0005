@@ -57,17 +57,19 @@ function save_nodes_to_file()
 		$datediff = $now - $your_date;
 		$datediff_days = round($datediff / (60 * 60 * 24));
 
-		if ($datediff_days >= 14) {
+		if ($datediff_days >= 7) {
+
+			$letter = $letters[floor($datediff_days / 7) - 1];
+
 			// Modify the 'id' attribute
 			$vac_ID = $dom_linkedin_vacancy->getAttribute('id');
-			$dom_linkedin_vacancy->setAttribute('id', $vac_ID . 'A');
+			$dom_linkedin_vacancy->setAttribute('id', $vac_ID . $letter);
 
 			// Modify the <id> node
 			$id_node = $dom_linkedin_vacancy->getElementsByTagName('id')->item(0);
-			$id_node->nodeValue = $vac_ID . 'A';
+			$id_node->nodeValue = $vac_ID . $letter;
 
 			// Modify the <publish_date> node
-
 			$publish_date_node = $dom_linkedin_vacancy->getElementsByTagName('publish_date')->item(0);
 			$publish_date_node->nodeValue = date("d-m-Y H:i:s");
 
@@ -75,19 +77,17 @@ function save_nodes_to_file()
 			$modify_date_node = $dom_linkedin_vacancy->getElementsByTagName('modify_date')->item(0);
 			$modify_date_node->nodeValue = date("d-m-Y H:i:s");
 
-
-
 			// Modify the <url> node
 			$url_node = $dom_linkedin_vacancy->getElementsByTagName('url')->item(0);
-			$url_node->nodeValue = $dom_linkedin_vacancy->getElementsByTagName('url')->item(0)->nodeValue . 'A';
+			$url_node->nodeValue = $dom_linkedin_vacancy->getElementsByTagName('url')->item(0)->nodeValue . $letter;
 
 			// Modify the <apply_url> node
 			$apply_url_node = $dom_linkedin_vacancy->getElementsByTagName('apply_url')->item(0);
-			$apply_url_node->nodeValue = $dom_linkedin_vacancy->getElementsByTagName('apply_url')->item(0)->nodeValue . 'A';
+			$apply_url_node->nodeValue = $dom_linkedin_vacancy->getElementsByTagName('apply_url')->item(0)->nodeValue . $letter;
 
 			// Modify the <job_url> node
 			$job_url_node = $dom_linkedin_vacancy->getElementsByTagName('job_url')->item(0);
-			$job_url_node->nodeValue = $dom_linkedin_vacancy->getElementsByTagName('job_url')->item(0)->nodeValue . 'A';
+			$job_url_node->nodeValue = $dom_linkedin_vacancy->getElementsByTagName('job_url')->item(0)->nodeValue . $letter;
 		}
 
 		$dom_linkedin_vacancies->appendChild($dom_linkedin_vacancy);
