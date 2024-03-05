@@ -21,11 +21,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php get_template_part('template-parts/cookies-js'); ?>
-
-
-
-	<!-- Some other, additional tracking code from Carine -->
-	<script>
+	<!-- Leadfeeder -->
+	<!-- <script>
 		(function(ss, ex) {
 			window.ldfdr = window.ldfdr || function() {
 				(ldfdr._q = ldfdr._q || []).push([].slice.call(arguments));
@@ -42,11 +39,11 @@
 				ce('https://sc.lfeeder.com/lftracker_v1_' + ss + (ex ? '_' + ex : '') + '.js');
 			})(document, 'script');
 		})('lYNOR8xYebO7WQJZ');
-	</script>
+	</script> -->
 	<!-- SalesFeed tracking code -->
 	<script type="text/javascript" async src="https://searchxrecruitment.stackbase.nl/"></script>
 	<!-- Leadinfo tracking code -->
-	<script>
+	<!-- <script>
 		(function(l, e, a, d, i, n, f, o) {
 			if (!l[i]) {
 				l.GlobalLeadinfoNamespace = l.GlobalLeadinfoNamespace || [];
@@ -63,7 +60,7 @@
 				f.parentNode.insertBefore(o, f);
 			}
 		}(window, document, "script", "https://cdn.leadinfo.net/ping.js", "leadinfo", "LI-646B3FAFB71E7"));
-	</script>
+	</script> -->
 	<!-- Bing Webmaster Tools -->
 	<meta name="msvalidate.01" content="DB26E7D9A02A63952EAC119AC5AB03FC" />
 	<!-- /Bing Webmaster Tools -->
