@@ -13,7 +13,7 @@
 								<span class="display-2 bubble text700 m-0">
 									<?php echo $item['title']; ?>
 								</span>
-								<p class="text-size-xlarge text700 font-primary mt-3">
+								<p class="text-size-xlarge text700 font-primary mt-3 pr-2">
 									<?php echo $item['text']; ?>
 								</p>
 							</div>
