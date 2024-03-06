@@ -6,10 +6,10 @@
 				<div class="mb-4 col-md-4 col-sm-7 col-11 <?php echo $i % 2 === 0 ? 'offset-md-0 offset-sm-5 offset-1' : null ?>">
 					<div class="card bg-white d-block">
 						<div class="row flex-nowrap">
-							<div class="col-md-4 col-auto card-icon">
+							<div class="col-lg-4 col-md-3 col-auto card-icon">
 								<img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['title']; ?>">
 							</div>
-							<div class="col-md-8 col">
+							<div class="col-lg-8 col-md-9 col pr-md-0">
 								<span class="display-2 bubble text700 m-0">
 									<?php echo $item['title']; ?>
 								</span>
