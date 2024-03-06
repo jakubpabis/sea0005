@@ -9,7 +9,7 @@
 							<div class="col-lg-4 col-md-3 col-auto card-icon">
 								<img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['title']; ?>">
 							</div>
-							<div class="col-lg-8 col-md-9 col pr-md-0">
+							<div class="col-lg-8 col-md-9 col pl-lg-1 pr-md-0">
 								<span class="display-2 bubble text700 m-0">
 									<?php echo $item['title']; ?>
 								</span>
