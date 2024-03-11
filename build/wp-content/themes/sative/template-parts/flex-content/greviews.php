@@ -56,7 +56,7 @@
 				</div>
 			<?php endif; ?>
 
-			<img class="dog d-none d-md-block" src="<?php echo get_template_directory_uri(); ?>/assets/img/down-dog.png" alt="">
+			<img class="dog d-none d-md-block" src="<?php echo get_template_directory_uri(); ?>/assets/img/down-dog.png" alt="" loading="lazy">
 		</div>
 	</section>
 <?php else : ?>
@@ -66,7 +66,7 @@
 				<?php if (get_sub_field('image') && get_sub_field('image')['url']) : ?>
 					<div class="col text-right d-block d-lg-none">
 						<a href="https://goo.gl/maps/HFFmkqwHAdMfu4iG8" target="_blank">
-							<img class="lazy" data-src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>">
+							<img class="lazy" data-src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>" loading="lazy">
 						</a>
 					</div>
 				<?php endif; ?>
@@ -97,7 +97,7 @@
 					<?php if (get_sub_field('image') && get_sub_field('image')['url']) : ?>
 						<div class="col-lg-4 offset-lg-1 d-lg-block d-none">
 							<a href="https://goo.gl/maps/HFFmkqwHAdMfu4iG8" target="_blank">
-								<img class="lazy" data-src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>">
+								<img class="lazy" data-src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>" loading="lazy">
 							</a>
 						</div>
 					<?php endif; ?>
@@ -115,7 +115,7 @@
 				<div class="col-12">
 					<div class="owl-carousel owl-center owl-theme">
 						<?php foreach (get_sub_field('logotypes') as $item) : ?>
-							<img class="owl-lazy" data-src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['image']['title']; ?>">
+							<img class="owl-lazy" data-src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['image']['title']; ?>" loading="lazy">
 						<?php endforeach; ?>
 					</div>
 					<div class="custom-owl-prev" role="button">

@@ -4,7 +4,7 @@ get_header(); ?>
 
 <?php if (has_post_thumbnail()) : ?>
 	<header class="header__contact">
-		<img class="bg-cover-abs" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+		<img class="bg-cover-abs" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" loading="lazy">
 	</header>
 <?php endif; ?>
 

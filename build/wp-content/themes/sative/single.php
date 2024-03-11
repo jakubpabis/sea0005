@@ -10,18 +10,7 @@
 
 get_header(); ?>
 <div class="body-bg-gradient">
-	<?php while (have_posts()) : the_post();
-
-		/* if (get_the_post_thumbnail_url()) : ?>
-
-		<header class="header__article">
-			<picture class="bg-cover">
-				<source srcset="<?php echo get_the_post_thumbnail_url(); ?>">
-				<img class="bg-cover lazy" data-src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
-			</picture>
-		</header>
-
-	<?php endif; */ ?>
+	<?php while (have_posts()) : the_post(); ?>
 
 		<section class="article mt-0 pt-5">
 			<div class="container">

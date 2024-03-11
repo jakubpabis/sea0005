@@ -79,7 +79,7 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-5 col-md-6 ml-sm-n5 order-12 order-md-1 pr-0 pr-sm-3">
-					<img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>" class="lazy img-fluid">
+					<img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>" class="lazy img-fluid" loading="lazy">
 				</div>
 				<div class="col-lg-7 col-md-6 pt-lg-5 mt-lg-5 mt-md-0 mt-4 order-1 order-md-12">
 					<h5 class="text-uppercase">

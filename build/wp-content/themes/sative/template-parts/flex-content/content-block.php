@@ -24,7 +24,7 @@
 			<?php if (get_sub_field('image') && get_sub_field('image')['url']) : ?>
 				<div class="col-lg-6">
 					<div class="flex-image">
-						<img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['alt']; ?>" class="img-fluid">
+						<img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['alt']; ?>" class="img-fluid" loading="lazy">
 					</div>
 				</div>
 			<?php endif; ?>

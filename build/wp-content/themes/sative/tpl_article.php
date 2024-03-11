@@ -3,25 +3,11 @@
 get_header(); ?>
 
 <div class="body-bg-gradient">
-	<?php while (have_posts()) : the_post();
-
-		/* if (get_the_post_thumbnail_url()) : ?>
-
-		<header class="header__article">
-			<picture class="bg-cover">
-				<source srcset="<?php echo get_the_post_thumbnail_url(); ?>">
-				<img class="bg-cover lazy" data-src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
-			</picture>
-		</header>
-
-	<?php endif; */ ?>
+	<?php while (have_posts()) : the_post(); ?>
 
 		<section class="article mt-0 pt-5">
 			<div class="container">
 				<div class="row">
-					<?php /* <div class="col-12 mb-4 d-flex justify-content-end">
-					<button type="button" id="backBTN" class="btn btn__medium yellow d-none"><?php pll_e('Back'); ?></button>
-				</div> */ ?>
 					<article class="col-12">
 						<?php
 						$cat = get_the_category();
@@ -50,9 +36,6 @@ get_header(); ?>
 								<hr>
 							</div>
 						</div>
-
-
-
 					</article>
 				</div>
 			</div>

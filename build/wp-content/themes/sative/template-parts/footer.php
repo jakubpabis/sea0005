@@ -112,16 +112,16 @@
 				</ul>
 				<div class="row mt-4 pt-2">
 					<div class="col-8">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/gazelle2023.png" alt="FD Gazelle 2023 prize">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/gazelle2023.png" alt="FD Gazelle 2023 prize" loading="lazy">
 					</div>
 					<div class="col-4">
 						<?php if (get_field('google_reviews_image_' . $lang, 'option') && get_field('google_reviews_image_' . $lang, 'option')['url']) : ?>
 							<a href="<?php echo get_field('google_reviews_image_' . $lang, 'option')['caption'] ? get_field('google_reviews_image_' . $lang, 'option')['caption'] : 'https://goo.gl/maps/qmD2gL1rQeBmKrYo7'; ?>" target="_blank" rel="noreferrer">
-								<img src="<?php echo get_field('google_reviews_image_' . $lang, 'option')['url']; ?>" alt="<?php echo get_field('google_reviews_image_' . $lang, 'option')['title'] ? get_field('google_reviews_image_' . $lang, 'option')['title'] : get_field('google_reviews_image_' . $lang, 'option')['alt']; ?>">
+								<img src="<?php echo get_field('google_reviews_image_' . $lang, 'option')['url']; ?>" alt="<?php echo get_field('google_reviews_image_' . $lang, 'option')['title'] ? get_field('google_reviews_image_' . $lang, 'option')['title'] : get_field('google_reviews_image_' . $lang, 'option')['alt']; ?>" loading="lazy">
 							</a>
 						<?php else : ?>
 							<a href="https://goo.gl/maps/qmD2gL1rQeBmKrYo7" target="_blank" rel="noreferrer">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/greviewscore.png" alt="Google Reviews Score">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/greviewscore.png" alt="Google Reviews Score" loading="lazy">
 							</a>
 						<?php endif; ?>
 					</div>

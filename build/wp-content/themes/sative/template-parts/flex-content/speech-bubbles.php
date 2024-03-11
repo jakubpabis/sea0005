@@ -7,7 +7,7 @@
 					<div class="card bg-white d-block">
 						<div class="row flex-nowrap">
 							<div class="col-lg-4 col-md-3 col-auto card-icon">
-								<img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['title']; ?>">
+								<img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['title']; ?>" loading="lazy">
 							</div>
 							<div class="col-lg-8 col-md-9 col pl-lg-1 pr-md-0">
 								<span class="display-2 bubble text700 m-0">

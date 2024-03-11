@@ -154,7 +154,7 @@ get_header(); ?>
 				?>
 				<section class="home__cards cards__section">
 					<div class="cards__section-img">
-						<img data-src="<?php echo get_field('middle_cards_image')['url']; ?>" alt="<?php echo get_field('middle_cards_image')['alt']; ?>" class="bg-cover lazy">
+						<img data-src="<?php echo get_field('middle_cards_image')['url']; ?>" alt="<?php echo get_field('middle_cards_image')['alt']; ?>" class="bg-cover lazy" loading="lazy">
 					</div>
 					<div class="cards__section-content bg-sea">
 						<div class="container-lg">
@@ -228,7 +228,7 @@ get_header(); ?>
 			<?php if ($query->have_posts()) : ?>
 				<section class="home__testimonials testimonials__section">
 					<div class="testimonials__section-img">
-						<img data-src="<?php echo get_field('testimonial_image')['url']; ?>" alt="" class="bg-cover lazy">
+						<img data-src="<?php echo get_field('testimonial_image')['url']; ?>" alt="" class="bg-cover lazy" loading="lazy">
 					</div>
 					<div class="testimonials__section-content">
 						<div class="container">
@@ -245,7 +245,7 @@ get_header(); ?>
 																<div class="row">
 																	<?php if (has_post_thumbnail()) : ?>
 																		<div class="col-lg-2 col-md-3">
-																			<img data-src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="bg-cover lazy">
+																			<img data-src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="bg-cover lazy" loading="lazy">
 																		</div>
 																		<div class="col-lg-10 col-md-9">
 																		<?php else : ?>
@@ -293,7 +293,7 @@ get_header(); ?>
 							<div class="col-lg-10 col-sm-9 col-10">
 								<div class="owl-carousel owl-theme">
 									<?php while (have_rows('clients')) : the_row(); ?>
-										<img class="owl-lazy" data-src="<?php echo get_sub_field('image')['url']; ?>" alt="">
+										<img class="owl-lazy" data-src="<?php echo get_sub_field('image')['url']; ?>" alt="" loading="lazy">
 									<?php endwhile; ?>
 								</div>
 								<?php if (count(get_field('clients')) > 1) : ?>

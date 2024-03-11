@@ -67,7 +67,7 @@ $query = new WP_Query($args);
 											<div class="row">
 												<?php if (has_post_thumbnail()) : ?>
 													<div class="col-lg-2 col-md-3">
-														<img data-src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="bg-cover lazy">
+														<img data-src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="bg-cover lazy" loading="lazy">
 													</div>
 													<div class="col-lg-10 col-md-9">
 													<?php else : ?>
@@ -166,7 +166,7 @@ $query = new WP_Query($args);
 											<div class="row">
 												<?php if (has_post_thumbnail()) : ?>
 													<div class="col-lg-2 col-md-3">
-														<img data-src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="bg-cover lazy">
+														<img data-src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" class="bg-cover lazy" loading="lazy">
 													</div>
 													<div class="col-lg-10 col-md-9">
 													<?php else : ?>

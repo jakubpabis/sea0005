@@ -28,7 +28,7 @@
 			<div class="row">
 				<div class="col-lg-11 position-absolute h-100 p-0 right-0">
 					<div class="flex_content-cta-bg dog right bg-sea w-100 h-100">
-						<img class="flip-vertical" src="<?php echo get_template_directory_uri(); ?>/assets/img/dog-sit-y-white.svg" alt="">
+						<img class="flip-vertical" src="<?php echo get_template_directory_uri(); ?>/assets/img/dog-sit-y-white.svg" alt="" loading="lazy">
 					</div>
 				</div>
 			</div>
