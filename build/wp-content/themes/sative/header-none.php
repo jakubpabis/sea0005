@@ -43,7 +43,7 @@
 	<!-- SalesFeed tracking code -->
 	<script type="text/javascript" async src="https://searchxrecruitment.stackbase.nl/"></script>
 	<!-- Leadinfo tracking code -->
-	<!-- <script>
+	<script>
 		(function(l, e, a, d, i, n, f, o) {
 			if (!l[i]) {
 				l.GlobalLeadinfoNamespace = l.GlobalLeadinfoNamespace || [];
@@ -60,7 +60,7 @@
 				f.parentNode.insertBefore(o, f);
 			}
 		}(window, document, "script", "https://cdn.leadinfo.net/ping.js", "leadinfo", "LI-646B3FAFB71E7"));
-	</script> -->
+	</script>
 	<!-- Bing Webmaster Tools -->
 	<meta name="msvalidate.01" content="DB26E7D9A02A63952EAC119AC5AB03FC" />
 	<!-- /Bing Webmaster Tools -->
