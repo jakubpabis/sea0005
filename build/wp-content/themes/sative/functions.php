@@ -175,14 +175,6 @@ function sative_widgets_init()
 }
 add_action('widgets_init', 'sative_widgets_init');
 
-// //Remove Gutenberg Block Library CSS from loading on the frontend
-// function smartwp_remove_wp_block_library_css()
-// {
-// 	wp_dequeue_style( 'wp-block-library' );
-// 	wp_dequeue_style( 'wp-block-library-theme' );
-// }
-// add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css' );
-
 
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('admin_print_scripts', 'print_emoji_detection_script');
@@ -218,7 +210,6 @@ function sative_scripts()
 	wp_dequeue_style('wp-block-library');
 	wp_dequeue_style('wp-block-library-theme');
 
-	// wp_enqueue_style('sative-gfonts', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap', array(), _S_VERSION, 'all');
 	wp_enqueue_style('sative-styles', get_template_directory_uri() . '/assets/css/main.min.css', array(), _S_VERSION, 'all');
 	wp_enqueue_style('extra-styles', get_template_directory_uri() . '/assets/css/extra.css', array(), _S_VERSION, 'all');
 	wp_enqueue_style('sative-fa', get_template_directory_uri() . '/assets/css/fontawesome.min.css', array(), _S_VERSION, 'all');
