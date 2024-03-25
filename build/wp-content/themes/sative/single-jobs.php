@@ -118,7 +118,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 								<div class="recruiter bg-yellow card p-4">
 									<div class="recruiter-text row align-items-stretch">
 										<div class="col-md-3 col-sm-4 col-6 recruiter-img overflow-hidden mb-md-0 mb-3">
-											<img src="<?php echo get_the_post_thumbnail_url($recruiter->ID, 'medium_large'); ?>" alt="" class="bg-cover" loading="lazy">
+											<img data-src="<?php echo get_the_post_thumbnail_url($recruiter->ID, 'medium_large'); ?>" alt="" class="lazy bg-cover">
 										</div>
 										<div class="col-md-9">
 											<div class="recruiter-contact">
