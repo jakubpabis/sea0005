@@ -22,7 +22,7 @@
 					<?php foreach (get_sub_field('logos') as $item) : ?>
 						<div class="card notched d-flex align-items-center justify-content-center p-2">
 							<div class="card-body d-flex align-items-center justify-content-center">
-								<img class="lazy" data-src="<?php echo $item['image']['url']; ?>" alt="" loading="lazy">
+								<img src="<?php echo $item['image']['url']; ?>" alt="" loading="lazy">
 							</div>
 						</div>
 					<?php endforeach; ?>

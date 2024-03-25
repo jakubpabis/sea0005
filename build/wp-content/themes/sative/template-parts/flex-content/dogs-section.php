@@ -12,19 +12,19 @@
 		</div>
 		<div class="row justify-content-between flex_content-copy_section-dogs align-items-end flex-nowrap mb-lg-5 mb-sm-4 mb-3 pb-xl-5 pb-md-4 pb-sm-3">
 			<div class="col text-center px-1 px-sm-4">
-				<img class="lazy img-fluid mx-auto" data-src="<?php echo get_template_directory_uri(); ?>/assets/img/start-up.svg" alt="" loading="lazy">
+				<img class="img-fluid mx-auto" src="<?php echo get_template_directory_uri(); ?>/assets/img/start-up.svg" alt="" loading="lazy">
 				<?php if (!empty(get_sub_field('dog_links')) && !empty(get_sub_field('dog_links')[0])) : ?>
 					<a href="<?php echo get_sub_field('dog_links')[0]['link']['url']; ?>" class="whole-element-link"></a>
 				<?php endif; ?>
 			</div>
 			<div class="col text-center px-1 px-sm-4">
-				<img class="lazy img-fluid mx-auto" data-src="<?php echo get_template_directory_uri(); ?>/assets/img/scale-up.svg" alt="" loading="lazy">
+				<img class="img-fluid mx-auto" src="<?php echo get_template_directory_uri(); ?>/assets/img/scale-up.svg" alt="" loading="lazy">
 				<?php if (!empty(get_sub_field('dog_links')) && !empty(get_sub_field('dog_links')[1])) : ?>
 					<a href="<?php echo get_sub_field('dog_links')[1]['link']['url']; ?>" class="whole-element-link"></a>
 				<?php endif; ?>
 			</div>
 			<div class="col-3 text-center mx-auto px-1 px-sm-4">
-				<img class="lazy img-fluid" data-src="<?php echo get_template_directory_uri(); ?>/assets/img/grown-up.svg" alt="" loading="lazy">
+				<img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/img/grown-up.svg" alt="" loading="lazy">
 				<?php if (!empty(get_sub_field('dog_links')) && !empty(get_sub_field('dog_links')[2])) : ?>
 					<a href="<?php echo get_sub_field('dog_links')[2]['link']['url']; ?>" class="whole-element-link"></a>
 				<?php endif; ?>

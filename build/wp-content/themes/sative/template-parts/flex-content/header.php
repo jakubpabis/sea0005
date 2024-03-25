@@ -3,7 +3,7 @@
 		<?php if (get_sub_field('image_position') === 'top') : ?>
 			<div class="row">
 				<div class="col-12">
-					<img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>" class="lazy img-fluid" loading="lazy">
+					<img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>" class="img-fluid" loading="lazy">
 				</div>
 			</div>
 			<?php if (get_sub_field('sub_title') || get_sub_field('title')) : ?>
@@ -26,7 +26,7 @@
 		<?php elseif (get_sub_field('image_position') === 'left') : ?>
 			<div class="row justify-content-between align-items-end">
 				<div class="col-lg-5">
-					<img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>" class="lazy img-fluid" loading="lazy">
+					<img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>" class="img-fluid" loading="lazy">
 				</div>
 				<div class="col-lg-7">
 					<h4 class="text-uppercase mb-3 text700">
@@ -48,7 +48,7 @@
 					</span>
 				</div>
 				<div class="col-lg-6 text-right">
-					<img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>" class="lazy img-fluid" loading="lazy">
+					<img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['title']; ?>" class="img-fluid" loading="lazy">
 				</div>
 			</div>
 		<?php endif; ?>

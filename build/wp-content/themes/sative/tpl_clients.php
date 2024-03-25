@@ -48,7 +48,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 			<div class="row align-items-center justify-content-center">
 				<?php while (have_rows('big_clients')) : the_row(); ?>
 					<div class="col-lg-4 col-sm-6 col-10 clients__big-item">
-						<img data-src="<?php echo get_sub_field('image')['sizes']['medium_large']; ?>" alt="<?php echo get_sub_field('image')['alt']; ?>" class="lazy bg-cover" loading="lazy">
+						<img src="<?php echo get_sub_field('image')['sizes']['medium_large']; ?>" alt="<?php echo get_sub_field('image')['alt']; ?>" class="bg-cover" loading="lazy">
 					</div>
 				<?php endwhile; ?>
 			</div>
@@ -71,7 +71,7 @@ get_template_part('template-parts/breadcrumbs'); ?>
 			<div class="row align-items-center justify-content-center">
 				<?php while (have_rows('small_clients')) : the_row(); ?>
 					<div class="col-lg-3 col-sm-4 col-6 clients__small-item">
-						<img data-src="<?php echo get_sub_field('image')['sizes']['medium_large']; ?>" alt="<?php echo get_sub_field('image')['alt']; ?>" class="lazy bg-cover" loading="lazy">
+						<img src="<?php echo get_sub_field('image')['sizes']['medium_large']; ?>" alt="<?php echo get_sub_field('image')['alt']; ?>" class="bg-cover" loading="lazy">
 					</div>
 				<?php endwhile; ?>
 			</div>

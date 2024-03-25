@@ -65,7 +65,7 @@ get_header(); ?>
 										<div class="col-md-5">
 											<?php if (has_post_thumbnail()) : ?>
 												<div class="team__item-img">
-													<img class="lazy bg-cover" data-src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" loading="lazy">
+													<img class="bg-cover" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" loading="lazy">
 												</div>
 											<?php endif; ?>
 										</div>
