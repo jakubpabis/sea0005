@@ -212,10 +212,10 @@ function sative_scripts()
 
 	wp_enqueue_style('sative-styles', get_template_directory_uri() . '/assets/css/main.min.css', array(), _S_VERSION, 'all');
 	wp_enqueue_style('extra-styles', get_template_directory_uri() . '/assets/css/extra.css', array(), _S_VERSION, 'all');
-	wp_enqueue_style('sative-fa', get_template_directory_uri() . '/assets/css/fontawesome.min.css', array(), _S_VERSION, 'all');
-	wp_enqueue_style('sative-fab', get_template_directory_uri() . '/assets/css/brands.min.css', array(), _S_VERSION, 'all');
-	wp_enqueue_style('sative-fas', get_template_directory_uri() . '/assets/css/solid.min.css', array(), _S_VERSION, 'all');
-	wp_enqueue_style('sative-far', get_template_directory_uri() . '/assets/css/regular.min.css', array(), _S_VERSION, 'all');
+	wp_enqueue_style('sative-fa', get_template_directory_uri() . '/assets/css/fontawesome.min.css', array(), false, 'all');
+	wp_enqueue_style('sative-fab', get_template_directory_uri() . '/assets/css/brands.min.css', array(), false, 'all');
+	wp_enqueue_style('sative-fas', get_template_directory_uri() . '/assets/css/solid.min.css', array(), false, 'all');
+	wp_enqueue_style('sative-far', get_template_directory_uri() . '/assets/css/regular.min.css', array(), false, 'all');
 
 	if (!is_admin()) {
 		wp_deregister_script('wp-embed');
@@ -225,7 +225,7 @@ function sative_scripts()
 	wp_deregister_script('jquery');
 	wp_deregister_script('jquery-migrate');
 
-	wp_enqueue_script('sative-recaptcha', 'https://www.google.com/recaptcha/api.js', array(), _S_VERSION, true);
+	wp_enqueue_script('sative-recaptcha', 'https://www.google.com/recaptcha/api.js', array(), false, true);
 
 	wp_enqueue_script('sative-app', get_template_directory_uri() . '/assets/js/main.min.js', array(), _S_VERSION, true);
 }
