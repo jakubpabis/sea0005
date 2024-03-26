@@ -20,10 +20,11 @@
 					<span class="display-3 d-block text700 mb-5">
 						<?php echo get_sub_field('title'); ?>
 					</span>
-					<a href="<?php // echo get_sub_field('link')['url']; 
-										?>#cta_dog_contact_section_form" class="btn btn__default pink bg-pink color-white">
-						<?php echo get_sub_field('link')['title']; ?>
-					</a>
+					<?php if (!empty(get_sub_field('link')['url'])) : ?>
+						<a href="<?php echo get_sub_field('link')['url']; ?>" class="btn btn__default pink bg-pink color-white">
+							<?php echo get_sub_field('link')['title']; ?>
+						</a>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>

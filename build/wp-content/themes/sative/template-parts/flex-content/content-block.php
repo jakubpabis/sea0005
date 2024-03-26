@@ -12,10 +12,10 @@
 					<?php if ((get_sub_field('button_1') && get_sub_field('button_1')['url']) || (get_sub_field('button_2') && get_sub_field('button_2')['url'])) : ?>
 						<div class="d-flex">
 							<?php if (get_sub_field('button_1') && get_sub_field('button_1')['url']) : ?>
-								<a href="<?php echo get_sub_field('button_1')['url']; ?>" target="<?php echo get_sub_field('button_1')['target'] ? get_sub_field('button_1')['target'] : '_self'; ?>" class="btn btn__default mr-3 <?php echo get_sub_field('button_1_color'); ?>"><?php echo get_sub_field('button_1')['title']; ?></a>
+								<a href="<?php echo get_sub_field('button_1')['url']; ?>" target="<?php echo get_sub_field('button_1')['target'] ? get_sub_field('button_1')['target'] : '_self'; ?>" class="btn btn__default mr-3 <?php echo !empty(get_sub_field('button_1_type')) && get_sub_field('button_1_type') === 'outline' ? 'outline' : null; ?> <?php echo get_sub_field('button_1_color'); ?>"><?php echo get_sub_field('button_1')['title']; ?></a>
 							<?php endif; ?>
 							<?php if (get_sub_field('button_2') && get_sub_field('button_2')['url']) : ?>
-								<a href="<?php echo get_sub_field('button_2')['url']; ?>" target="<?php echo get_sub_field('button_2')['target'] ? get_sub_field('button_2')['target'] : '_self'; ?>" class="btn btn__default <?php echo get_sub_field('button_2_color'); ?>"><?php echo get_sub_field('button_2')['title']; ?></a>
+								<a href="<?php echo get_sub_field('button_2')['url']; ?>" target="<?php echo get_sub_field('button_2')['target'] ? get_sub_field('button_2')['target'] : '_self'; ?>" class="btn btn__default <?php echo !empty(get_sub_field('button_2_type')) && get_sub_field('button_2_type') === 'outline' ? 'outline' : null; ?> <?php echo get_sub_field('button_2_color'); ?>"><?php echo get_sub_field('button_2')['title']; ?></a>
 							<?php endif; ?>
 						</div>
 					<?php endif; ?>
