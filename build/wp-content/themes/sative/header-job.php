@@ -25,6 +25,17 @@
 	<meta name="msvalidate.01" content="DB26E7D9A02A63952EAC119AC5AB03FC" />
 	<!-- /Bing Webmaster Tools -->
 	<meta name="p:domain_verify" content="40be4aba9dc0f75fdd75d97b0a233017" />
+	<?php wp_head(); ?>
+	<?php
+	$google_job = false;
+	$xml = simplexml_load_file('https://jobs.searchsoftware.nl/searchit.xml') or die("Error: Cannot create object");
+	foreach ($xml->vacancy as $job) {
+		if (intval($job->id) === intval(get_field('job_id'))) {
+			$google_job = $job;
+			break;
+		}
+	}
+	?>
 	<?php if ($google_job) : ?>
 		<script type="application/ld+json">
 			{
