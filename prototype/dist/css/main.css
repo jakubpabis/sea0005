@@ -7403,12 +7403,62 @@ p,
 }
 
 .btn__default.outline {
-	border: 2px solid #183153;
+	border: 2px solid transparent;
 }
 
 .btn__default.outline.navy {
 	color: #183153 !important;
+	border-color: #183153 !important;
 	background-color: transparent;
+}
+
+.btn__default.outline.navy:hover {
+	color: white !important;
+	background-color: #183153;
+}
+
+.btn__default.outline.sea {
+	color: #94d4e9 !important;
+	border-color: #94d4e9 !important;
+	background-color: transparent;
+}
+
+.btn__default.outline.sea:hover {
+	color: #183153 !important;
+	background-color: #94d4e9;
+}
+
+.btn__default.outline.green {
+	color: #48c353 !important;
+	border-color: #48c353 !important;
+	background-color: transparent;
+}
+
+.btn__default.outline.green:hover {
+	color: #183153 !important;
+	background-color: #48c353;
+}
+
+.btn__default.outline.pink {
+	color: #ec6278 !important;
+	border-color: #ec6278 !important;
+	background-color: transparent;
+}
+
+.btn__default.outline.pink:hover {
+	color: #183153 !important;
+	background-color: #ec6278;
+}
+
+.btn__default.outline.yellow {
+	color: #fdd963 !important;
+	border-color: #fdd963 !important;
+	background-color: transparent;
+}
+
+.btn__default.outline.yellow:hover {
+	color: #183153 !important;
+	background-color: #fdd963;
 }
 
 .btn__small {

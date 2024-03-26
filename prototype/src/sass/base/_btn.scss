@@ -51,11 +51,61 @@
     }
 
     &.outline {
-      border: 2px solid $color-navy;
+      border: 2px solid transparent;
 
       &.navy {
         background-color: transparent;
         color: $color-navy !important;
+        border-color: $color-navy !important;
+
+        &:hover {
+          background-color: $color-navy;
+          color: white !important;
+        }
+      }
+
+      &.sea {
+        background-color: transparent;
+        color: $color-sea !important;
+        border-color: $color-sea !important;
+
+        &:hover {
+          background-color: $color-sea;
+          color: $color-navy !important;
+        }
+      }
+
+      &.green {
+        background-color: transparent;
+        color: $color-green !important;
+        border-color: $color-green !important;
+
+        &:hover {
+          background-color: $color-green;
+          color: $color-navy !important;
+        }
+      }
+
+      &.pink {
+        background-color: transparent;
+        color: $color-pink !important;
+        border-color: $color-pink !important;
+
+        &:hover {
+          background-color: $color-pink;
+          color: $color-navy !important;
+        }
+      }
+
+      &.yellow {
+        background-color: transparent;
+        color: $color-yellow !important;
+        border-color: $color-yellow !important;
+
+        &:hover {
+          background-color: $color-yellow;
+          color: $color-navy !important;
+        }
       }
     }
   }
