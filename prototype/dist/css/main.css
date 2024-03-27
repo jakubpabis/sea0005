@@ -8026,6 +8026,8 @@ ul.lined li:first-child a {
 	height: 55vh;
 	min-height: 240px;
 	max-height: 1000px;
+	-o-object-fit: cover;
+	object-fit: cover;
 }
 
 .swiper-button-prev,

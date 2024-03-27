@@ -1,6 +1,6 @@
 <?php if (!empty(get_sub_field('images'))) : ?>
 	<section class="flex_content flex-section py-5">
-		<div class="container">
+		<div class="container" style="z-index:9;">
 			<div class="row">
 				<?php if (!empty(get_sub_field('title'))) : ?>
 					<div class="col-lg-6">

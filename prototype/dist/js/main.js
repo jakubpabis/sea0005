@@ -18936,9 +18936,9 @@ jQuery(document).ready(function () {
   if ($('.swiper').length > 0) {
     const swiper = new Swiper('.swiper', {
       speed: 400,
-      spaceBetween: 30,
+      spaceBetween: 10,
       autoplay: {
-        delay: 5000,
+        delay: 2500,
       },
       loop: true,
       navigation: {
@@ -18946,24 +18946,11 @@ jQuery(document).ready(function () {
         prevEl: '.swiper-button-prev',
       },
       slidesPerView: 'auto',
-      // slidesPerView: 1,
-      // breakpoints: {
-      //   360: {
-      //     slidesPerView: 2,
-      //   },
-      //   720: {
-      //     slidesPerView: 3,
-      //   },
-      //   960: {
-      //     slidesPerView: 4,
-      //   },
-      //   1200: {
-      //     slidesPerView: 5,
-      //   },
-      //   1600: {
-      //     slidesPerView: 6,
-      //   },
-      // },
+      breakpoints: {
+        480: {
+          spaceBetween: 30,
+        },
+      },
     });
   }
 });
