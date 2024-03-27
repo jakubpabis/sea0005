@@ -1,13 +1,25 @@
+<?php
+
+$title = get_sub_field('title');
+$title_tag = get_sub_field('title_tag') && !empty(get_sub_field('title_tag')) ? get_sub_field('title_tag') : 'span';
+$title_appearance = get_sub_field('title_appearance') && !empty(get_sub_field('title_appearance')) ? get_sub_field('title_appearance') : 'display-3';
+$title_class = get_sub_field('title_class') && !empty(get_sub_field('title_class')) ? get_sub_field('title_class') : 'text700';
+$the_title = $title ? '<' . $title_tag . ' class="' . $title_appearance . ' ' . $title_class . '">' . $title . '</' . $title_tag . '>' : '';
+
+$sub_title = get_sub_field('sub_title');
+$sub_title_tag = get_sub_field('sub_title_tag') && !empty(get_sub_field('sub_title_tag')) ? get_sub_field('sub_title_tag') : 'h5';
+$sub_title_appearance = get_sub_field('sub_title_appearance') && !empty(get_sub_field('sub_title_appearance')) ? get_sub_field('sub_title_appearance') : '';
+$sub_title_class = get_sub_field('sub_title_class') && !empty(get_sub_field('sub_title_class')) ? get_sub_field('sub_title_class') : 'text-uppercase mb-1 text700';
+$the_sub_title = $sub_title ? '<' . $sub_title_tag . ' class="' . $sub_title_appearance . ' ' . $sub_title_class . '">' . $sub_title . '</' . $sub_title_tag . '>' : '';
+
+?>
+
 <section class="flex-section articles-slider">
 	<div class="container">
 		<div class="row align-items-end justify-content-between mb-4 pb-3">
 			<div class="col-lg-9">
-				<h5 class="text-uppercase mb-1 text700">
-					<?php echo get_sub_field('sub_title'); ?>
-				</h5>
-				<span class="display-3 text700">
-					<?php echo get_sub_field('title'); ?>
-				</span>
+				<?php echo $the_sub_title; ?>
+				<?php echo $the_title; ?>
 			</div>
 			<div class="col-auto d-none d-lg-block">
 				<?php if (get_sub_field('link')) : ?>

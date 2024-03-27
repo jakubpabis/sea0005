@@ -17,6 +17,10 @@ switch ($position) {
 		break;
 }
 $title = get_sub_field('title');
+$title_tag = get_sub_field('title_tag') && !empty(get_sub_field('title_tag')) ? get_sub_field('title_tag') : 'h1';
+$title_appearance = get_sub_field('title_appearance') && !empty(get_sub_field('title_appearance')) ? get_sub_field('title_appearance') : '';
+$title_class = get_sub_field('title_class') && !empty(get_sub_field('title_class')) ? get_sub_field('title_class') : 'text700 mb-5';
+$the_title = $title ? '<' . $title_tag . ' class="' . $title_appearance . ' ' . $title_class . '">' . $title . '</' . $title_tag . '>' : '';
 ?>
 <?php if (have_rows('accordion_items')) : ?>
 	<section class="flex_content flex-section">
@@ -24,9 +28,7 @@ $title = get_sub_field('title');
 			<div class="row">
 				<?php if ($title) : ?>
 					<div class="col-12">
-						<h1 class="text700 mb-5">
-							<?php echo $title; ?>
-						</h1>
+						<?php echo $the_title; ?>
 					</div>
 				<?php endif; ?>
 				<div class="<?php echo $class; ?>">

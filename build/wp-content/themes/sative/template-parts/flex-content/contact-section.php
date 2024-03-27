@@ -1,14 +1,26 @@
+<?php
+
+$title = get_sub_field('title');
+$title_tag = get_sub_field('title_tag') && !empty(get_sub_field('title_tag')) ? get_sub_field('title_tag') : 'span';
+$title_appearance = get_sub_field('title_appearance') && !empty(get_sub_field('title_appearance')) ? get_sub_field('title_appearance') : 'display-3';
+$title_class = get_sub_field('title_class') && !empty(get_sub_field('title_class')) ? get_sub_field('title_class') : 'text700 mb-4';
+$the_title = $title ? '<' . $title_tag . ' class="' . $title_appearance . ' ' . $title_class . '">' . $title . '</' . $title_tag . '>' : '';
+
+$sub_title = get_sub_field('sub_title');
+$sub_title_tag = get_sub_field('sub_title_tag') && !empty(get_sub_field('sub_title_tag')) ? get_sub_field('sub_title_tag') : 'h4';
+$sub_title_appearance = get_sub_field('sub_title_appearance') && !empty(get_sub_field('sub_title_appearance')) ? get_sub_field('sub_title_appearance') : '';
+$sub_title_class = get_sub_field('sub_title_class') && !empty(get_sub_field('sub_title_class')) ? get_sub_field('sub_title_class') : 'text-uppercase mb-2 text700';
+$the_sub_title = $sub_title ? '<' . $sub_title_tag . ' class="' . $sub_title_appearance . ' ' . $sub_title_class . '">' . $sub_title . '</' . $sub_title_tag . '>' : '';
+
+?>
+
 <section class="flex-section">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6">
 				<?php if (get_sub_field('title') || get_sub_field('sub_title')) : ?>
-					<h4 class="text-uppercase mb-2 text700">
-						<?php echo get_sub_field('sub_title'); ?>
-					</h4>
-					<span class="display-3 text700 mb-4">
-						<?php echo get_sub_field('title'); ?>
-					</span>
+					<?php echo $the_sub_title; ?>
+					<?php echo $the_title; ?>
 				<?php endif; ?>
 				<div class="row">
 					<?php if (get_field('contact_text_' . $lang, 'option')) : ?>
@@ -101,9 +113,9 @@
 			<div class="col-lg-6">
 				<div class="card notched bg-white p-3 mt-5">
 					<div class="card-body color-navy">
-						<h2 class="m-0 mb-3">
+						<span class="h2 m-0 mb-3">
 							<?php echo get_sub_field('form_title'); ?>
-						</h2>
+						</span>
 						<?php if (get_sub_field('form')) : echo get_sub_field('form'); ?>
 						<?php else : $type = 'contact' ?>
 							<form method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" accept-charset="UTF-8" role="form" id="<?php echo $type; ?>_section_form" enctype="multipart/form-data">

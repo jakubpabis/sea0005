@@ -17,13 +17,20 @@
 		</div>
 	</div>
 	<?php if (get_sub_field('title') && get_sub_field('sub_title') && get_sub_field('button_first') && (!get_sub_field('button_second') || empty(get_sub_field('button_second')))) : ?>
+		<?php
+		$title = get_sub_field('title');
+		$title_tag = get_sub_field('title_tag') && !empty(get_sub_field('title_tag')) ? get_sub_field('title_tag') : 'h1';
+		$title_appearance = get_sub_field('title_appearance') && !empty(get_sub_field('title_appearance')) ? get_sub_field('title_appearance') : '';
+		$title_class = get_sub_field('title_class') && !empty(get_sub_field('title_class')) ? get_sub_field('title_class') : 'd-block mb-0';
+		$sub_title = get_sub_field('sub_title');
+		$sub_title_tag = get_sub_field('sub_title_tag') && !empty(get_sub_field('sub_title_tag')) ? get_sub_field('sub_title_tag') : 'span';
+		$sub_title_appearance = get_sub_field('sub_title_appearance') && !empty(get_sub_field('sub_title_appearance')) ? get_sub_field('sub_title_appearance') : '';
+		$sub_title_class = get_sub_field('sub_title_class') && !empty(get_sub_field('sub_title_class')) ? get_sub_field('sub_title_class') : '';
+		$the_title = $title ? '<' . $title_tag . ' class="' . $title_appearance . ' ' . $title_class . '">' . $title . '<br/>' . '<' . $sub_title_tag . ' class="' . $sub_title_appearance . ' ' . $sub_title_class . '">' . $sub_title . '</' . $sub_title_tag . '>' . '</' . $title_tag . '>' : '';
+		?>
 		<div class="container">
 			<div class="content">
-				<h1 class="d-block mb-0">
-					<?php echo get_sub_field('title'); ?> <br>
-					<span><?php echo get_sub_field('sub_title'); ?></span>
-				</h1>
-
+				<?php echo $the_title; ?>
 				<?php if (get_sub_field('button_first')) : ?>
 					<?php if (get_sub_field('button_first')) : ?>
 						<a href="<?php echo get_sub_field('button_first')['url']; ?>" class="btn btn__default navy mx-2 mb-3 mb-sm-0 d-flex align-items-center justify-content-center">
@@ -34,15 +41,23 @@
 			</div>
 		</div>
 	<?php else : ?>
+		<?php
+		$title = get_sub_field('title');
+		$title_tag = get_sub_field('title_tag') && !empty(get_sub_field('title_tag')) ? get_sub_field('title_tag') : 'span';
+		$title_appearance = get_sub_field('title_appearance') && !empty(get_sub_field('title_appearance')) ? get_sub_field('title_appearance') : '';
+		$title_class = get_sub_field('title_class') && !empty(get_sub_field('title_class')) ? get_sub_field('title_class') : 'text-size-xxlarge d-block mb-0';
+		$the_title = $title ? '<' . $title_tag . ' class="' . $title_appearance . ' ' . $title_class . '">' . $title . '</' . $title_tag . '>' : '';
+		$sub_title = get_sub_field('sub_title');
+		$sub_title_tag = get_sub_field('sub_title_tag') && !empty(get_sub_field('sub_title_tag')) ? get_sub_field('sub_title_tag') : 'span';
+		$sub_title_appearance = get_sub_field('sub_title_appearance') && !empty(get_sub_field('sub_title_appearance')) ? get_sub_field('sub_title_appearance') : '';
+		$sub_title_class = get_sub_field('sub_title_class') && !empty(get_sub_field('sub_title_class')) ? get_sub_field('sub_title_class') : 'mt-0 text-size-large d-block text400 font-secondary';
+		$the_sub_title = $sub_title ? '<' . $sub_title_tag . ' class="' . $sub_title_appearance . ' ' . $sub_title_class . '">' . $sub_title . '</' . $sub_title_tag . '>' : '';
+		?>
 		<div class="container-md">
 			<div class="row position-absolute header__video-bottom justify-content-center w-100">
 				<div class="col-xl-8 col-lg-9 px-md-0 text-center">
-					<span class="text-size-xxlarge d-block mb-0">
-						<?php echo get_sub_field('title'); ?>
-					</span>
-					<span class="mt-0 text-size-large d-block text400 font-secondary">
-						<?php echo get_sub_field('sub_title'); ?>
-					</span>
+					<?php echo $the_title; ?>
+					<?php echo $the_sub_title; ?>
 					<?php if (get_sub_field('button_first') || get_sub_field('button_second')) : ?>
 						<div class="card notched bg-white d-flex align-items-stretch mt-4 py-4 px-3 flex-row flex-wrap flex-sm-nowrap">
 							<?php if (get_sub_field('button_first')) : ?>

@@ -1,3 +1,19 @@
+<?php
+
+$title = get_sub_field('title');
+$title_tag = get_sub_field('title_tag') && !empty(get_sub_field('title_tag')) ? get_sub_field('title_tag') : 'span';
+$title_appearance = get_sub_field('title_appearance') && !empty(get_sub_field('title_appearance')) ? get_sub_field('title_appearance') : 'display-2';
+$title_class = get_sub_field('title_class') && !empty(get_sub_field('title_class')) ? get_sub_field('title_class') : 'text700';
+$the_title = $title ? '<' . $title_tag . ' class="' . $title_appearance . ' ' . $title_class . '">' . $title . '</' . $title_tag . '>' : '';
+
+$sub_title = get_sub_field('sub_title');
+$sub_title_tag = get_sub_field('sub_title_tag') && !empty(get_sub_field('sub_title_tag')) ? get_sub_field('sub_title_tag') : 'h2';
+$sub_title_appearance = get_sub_field('sub_title_appearance') && !empty(get_sub_field('sub_title_appearance')) ? get_sub_field('sub_title_appearance') : '';
+$sub_title_class = get_sub_field('sub_title_class') && !empty(get_sub_field('sub_title_class')) ? get_sub_field('sub_title_class') : '';
+$the_sub_title = $sub_title ? '<' . $sub_title_tag . ' class="' . $sub_title_appearance . ' ' . $sub_title_class . '">' . $sub_title . '</' . $sub_title_tag . '>' : '';
+
+?>
+
 <section class="flex_content-video_section mt-5">
 	<div class="container position-absolute h-100 right-0">
 		<div class="row">
@@ -17,14 +33,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12 pb-xl-4 pb-lg-3 pb-md-2 pt-5">
-				<span class="display-2 text700">
-					<?php echo get_sub_field('title'); ?>
-				</span>
+				<?php echo $the_title; ?>
 			</div>
 			<div class="offset-lg-1 col-lg-9">
-				<h2>
-					<?php echo get_sub_field('sub_title'); ?>
-				</h2>
+				<?php echo $the_sub_title; ?>
 			</div>
 			<?php if (!empty(get_sub_field('links'))) : ?>
 				<div class="offset-lg-1 col-lg-9 pt-5 pb-5">

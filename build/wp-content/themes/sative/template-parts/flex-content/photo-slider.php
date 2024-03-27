@@ -1,12 +1,20 @@
+<?php
+
+$title = get_sub_field('title');
+$title_tag = get_sub_field('title_tag') && !empty(get_sub_field('title_tag')) ? get_sub_field('title_tag') : 'span';
+$title_appearance = get_sub_field('title_appearance') && !empty(get_sub_field('title_appearance')) ? get_sub_field('title_appearance') : 'display-3';
+$title_class = get_sub_field('title_class') && !empty(get_sub_field('title_class')) ? get_sub_field('title_class') : 'd-block text700 mb-5';
+$the_title = $title ? '<' . $title_tag . ' class="' . $title_appearance . ' ' . $title_class . '">' . $title . '</' . $title_tag . '>' : '';
+
+?>
+
 <?php if (!empty(get_sub_field('images'))) : ?>
 	<section class="flex_content flex-section py-5">
 		<div class="container" style="z-index:9;">
 			<div class="row">
 				<?php if (!empty(get_sub_field('title'))) : ?>
 					<div class="col-lg-6">
-						<span class="display-3 d-block text700 mb-5">
-							<?php echo get_sub_field('title'); ?>
-						</span>
+						<?php echo $the_title; ?>
 					</div>
 				<?php endif; ?>
 			</div>

@@ -1,11 +1,19 @@
+<?php
+
+$title = get_sub_field('title');
+$title_tag = get_sub_field('title_tag') && !empty(get_sub_field('title_tag')) ? get_sub_field('title_tag') : 'h2';
+$title_appearance = get_sub_field('title_appearance') && !empty(get_sub_field('title_appearance')) ? get_sub_field('title_appearance') : 'display-4';
+$title_class = get_sub_field('title_class') && !empty(get_sub_field('title_class')) ? get_sub_field('title_class') : 'text700 mb-2 mt-0';
+$the_title = $title ? '<' . $title_tag . ' class="' . $title_appearance . ' ' . $title_class . '">' . $title . '</' . $title_tag . '>' : '';
+
+?>
+
 <section class="flex-section">
 	<div class="container">
 		<div class="row align-items-center">
 			<div class="col-lg-6">
 				<div class="flex-content">
-					<?php if (get_sub_field('title')) : ?>
-						<h2 class="display-4 text700 mb-2 mt-0"><?php echo get_sub_field('title'); ?></h2>
-					<?php endif; ?>
+					<?php echo $the_title; ?>
 					<?php if (get_sub_field('content')) : ?>
 						<?php echo get_sub_field('content'); ?>
 					<?php endif; ?>

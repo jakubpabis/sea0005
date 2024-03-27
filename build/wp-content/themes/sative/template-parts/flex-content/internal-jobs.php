@@ -18,20 +18,31 @@ $query = new WP_Query($args);
 $post_no = $query->found_posts;
 
 ?>
+<?php
+
+$title = get_sub_field('title');
+$title_tag = get_sub_field('title_tag') && !empty(get_sub_field('title_tag')) ? get_sub_field('title_tag') : 'span';
+$title_appearance = get_sub_field('title_appearance') && !empty(get_sub_field('title_appearance')) ? get_sub_field('title_appearance') : 'display-3';
+$title_class = get_sub_field('title_class') && !empty(get_sub_field('title_class')) ? get_sub_field('title_class') : 'text700 font-primary';
+$the_title = $title ? '<' . $title_tag . ' class="' . $title_appearance . ' ' . $title_class . '">' . $title . '</' . $title_tag . '>' : '';
+
+$sub_title = get_sub_field('subtitle');
+$sub_title_tag = get_sub_field('sub_title_tag') && !empty(get_sub_field('sub_title_tag')) ? get_sub_field('sub_title_tag') : 'h4';
+$sub_title_appearance = get_sub_field('sub_title_appearance') && !empty(get_sub_field('sub_title_appearance')) ? get_sub_field('sub_title_appearance') : '';
+$sub_title_class = get_sub_field('sub_title_class') && !empty(get_sub_field('sub_title_class')) ? get_sub_field('sub_title_class') : 'text-uppercase mb-3 text700 font-primary';
+$the_sub_title = $sub_title ? '<' . $sub_title_tag . ' class="' . $sub_title_appearance . ' ' . $sub_title_class . '">' . $sub_title . '</' . $sub_title_tag . '>' : '';
+
+?>
 <section class="flex-section">
 	<header class="header__jobs mt-5">
 		<div class="container">
 			<div class="row align-items-center justify-content-md-between header__jobs-search">
 				<div class="col-lg-8 col-md-10 col-sm-11">
 					<?php if (get_sub_field('subtitle')) : ?>
-						<h4 class="text-uppercase mb-3 text700 font-primary">
-							<?php echo get_sub_field('subtitle'); ?>
-						</h4>
+						<?php echo $the_sub_title; ?>
 					<?php endif; ?>
 					<?php if (get_sub_field('title')) : ?>
-						<span class="display-3 text700 font-primary">
-							<?php echo get_sub_field('title'); ?>
-						</span>
+						<?php echo $the_title; ?>
 					<?php endif; ?>
 				</div>
 				<div class="header__jobs-dog ml-0">

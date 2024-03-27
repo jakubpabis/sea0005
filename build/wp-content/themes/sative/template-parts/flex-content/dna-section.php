@@ -1,3 +1,14 @@
+<?php
+
+$title = get_sub_field('title');
+$title_tag = get_sub_field('title_tag') && !empty(get_sub_field('title_tag')) ? get_sub_field('title_tag') : 'h2';
+$title_appearance = get_sub_field('title_appearance') && !empty(get_sub_field('title_appearance')) ? get_sub_field('title_appearance') : '';
+$title_class = get_sub_field('title_class') && !empty(get_sub_field('title_class')) ? get_sub_field('title_class') : 'd-lg-flex title';
+$the_title = $title ? '<' . $title_tag . ' class="' . $title_appearance . ' ' . $title_class . '">' . $title . '<br>
+<img class="d-none d-lg-block" src="' . get_template_directory_uri() . '/assets/img/dna/dna-arrow.svg" alt="" loading="lazy">' . '</' . $title_tag . '>' : '';
+
+?>
+
 <?php if (get_sub_field('title') || get_sub_field('sub_title') || get_sub_field('button_first') || get_sub_field('button_second')) : ?>
 	<?php $negative = ''; ?>
 <?php else : ?>
@@ -9,10 +20,7 @@
 	<div class="content">
 
 		<div class="container">
-			<h2 class="d-lg-flex title">
-				<?php echo get_sub_field('title'); ?> <br>
-				<img class="d-none d-lg-block" src="<?php echo get_template_directory_uri(); ?>/assets/img/dna/dna-arrow.svg" alt="" loading="lazy">
-			</h2>
+			<?php echo $the_title; ?>
 		</div>
 
 		<div class="dna">

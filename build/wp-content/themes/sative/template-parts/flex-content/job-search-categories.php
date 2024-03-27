@@ -1,3 +1,19 @@
+<?php
+
+$title = get_sub_field('title');
+$title_tag = get_sub_field('title_tag') && !empty(get_sub_field('title_tag')) ? get_sub_field('title_tag') : 'span';
+$title_appearance = get_sub_field('title_appearance') && !empty(get_sub_field('title_appearance')) ? get_sub_field('title_appearance') : 'display-3';
+$title_class = get_sub_field('title_class') && !empty(get_sub_field('title_class')) ? get_sub_field('title_class') : 'd-block text700 mb-5 position-relative';
+$the_title = $title ? '<' . $title_tag . ' class="' . $title_appearance . ' ' . $title_class . '">' . $title . '</' . $title_tag . '>' : '';
+
+$sub_title = get_sub_field('sub_title');
+$sub_title_tag = get_sub_field('sub_title_tag') && !empty(get_sub_field('sub_title_tag')) ? get_sub_field('sub_title_tag') : 'h5';
+$sub_title_appearance = get_sub_field('sub_title_appearance') && !empty(get_sub_field('sub_title_appearance')) ? get_sub_field('sub_title_appearance') : '';
+$sub_title_class = get_sub_field('sub_title_class') && !empty(get_sub_field('sub_title_class')) ? get_sub_field('sub_title_class') : 'text-uppercase position-relative';
+$the_sub_title = $sub_title ? '<' . $sub_title_tag . ' class="' . $sub_title_appearance . ' ' . $sub_title_class . '">' . $sub_title . '</' . $sub_title_tag . '>' : '';
+
+?>
+
 <section class="flex_content-cta job-search-categories flex-section">
 	<div class="container-fluid position-absolute h-100 left-0 d-none d-md-block">
 		<div class="row">
@@ -10,12 +26,8 @@
 		<div class="row align-items-center justify-content-between py-sm-5 pt-5 pb-3">
 			<div class="col-md-7 col-11 px-lg-3 px-md-0">
 				<div class="flex_content-cta-bg flex_content-cta-bg-inner left bg-yellow position-absolute d-block d-md-none"></div>
-				<h5 class="text-uppercase position-relative">
-					<?php echo get_sub_field('sub_title'); ?>
-				</h5>
-				<span class="display-3 d-block text700 mb-5 position-relative">
-					<?php echo get_sub_field('title'); ?>
-				</span>
+				<?php echo $the_sub_title; ?>
+				<?php echo $the_title; ?>
 				<div class="row">
 					<div class="col-lg-9">
 						<?php $lang = pll_current_language(); ?>
