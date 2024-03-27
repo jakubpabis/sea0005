@@ -28,6 +28,13 @@
 	<?php wp_head(); ?>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" as="style" onload="this.onload=null; this.rel='stylesheet'; document.body.classList.add('fontLoaded')">
+	<?php $layouts = get_post_meta(get_the_ID(), 'sections', true);
+	if (
+		is_array($layouts) &&
+		in_array('photo_slider', $layouts)
+	) : ?>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<?php endif; ?>
 </head>
 
 <body <?php body_class(); ?>>

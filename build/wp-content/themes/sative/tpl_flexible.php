@@ -30,7 +30,7 @@ $lang = pll_current_language();
 				<?php get_template_part('template-parts/flex-content/categories-menus'); ?>
 			<?php elseif (get_row_layout() == 'dogs_section') : ?>
 				<?php get_template_part('template-parts/flex-content/dogs-section'); ?>
-			<?php elseif (get_row_layout() == 'call_to_action_section' && get_sub_field('image')) : ?>
+			<?php elseif (get_row_layout() == 'call_to_action_section') : ?>
 				<?php get_template_part('template-parts/flex-content/cta-section'); ?>
 			<?php elseif (get_row_layout() == 'articles_slider') : ?>
 				<?php get_template_part('template-parts/flex-content/articles'); ?>
@@ -68,6 +68,8 @@ $lang = pll_current_language();
 				<?php get_template_part('template-parts/flex-content/content-block'); ?>
 			<?php elseif (get_row_layout() == 'accordion_section') : ?>
 				<?php get_template_part('template-parts/flex-content/accordion-section'); ?>
+			<?php elseif (get_row_layout() == 'photo_slider') : ?>
+				<?php get_template_part('template-parts/flex-content/photo-slider'); ?>
 			<?php endif; ?>
 		<?php endwhile; ?>
 		<?php if (!$contact_form_present && get_field('footer_form_' . $lang, 'option')) : ?>

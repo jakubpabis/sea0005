@@ -6773,6 +6773,14 @@ a.text-dark:hover {
 	left: 0;
 }
 
+.top-0 {
+	top: 0;
+}
+
+.bottom-0 {
+	top: 0;
+}
+
 .flip-vertical {
 	transform: scaleX(-1);
 }
@@ -8007,6 +8015,42 @@ ul.lined li:first-child a {
 	align-items: center !important;
 }
 
+.swiper .swiper-slide {
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: auto;
+}
+
+.swiper .swiper-slide img {
+	height: 55vh;
+	min-height: 240px;
+	max-height: 1000px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	position: relative !important;
+	top: auto !important;
+	right: auto !important;
+	left: auto !important;
+	width: auto !important;
+	height: auto !important;
+	margin: 0 !important;
+	padding: 15px;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+	display: none !important;
+}
+
+.swiper-button-prev svg,
+.swiper-button-next svg {
+	width: 48px !important;
+	height: auto !important;
+}
+
 #SXHP_sn_input,
 .SXHP_sn_input {
 	position: absolute !important;
@@ -8048,6 +8092,10 @@ ul.lined li:first-child a {
 .ms-options-wrap .ms-options ul li label input {
 	top: 9px !important;
 	margin-right: 8px !important;
+}
+
+.min-h-100 {
+	min-height: 100%;
 }
 
 /* --- bootstrap-menu styling http://bootstrap-menu.com  */
@@ -9461,6 +9509,14 @@ body.offcanvas-active {
 	height: calc(100% - 100px) !important;
 	margin-top: 100px;
 	--notchSize: 164px;
+}
+
+.flex_content-cta-bg.slider {
+	height: calc(100% + 200px) !important;
+	margin-top: -100px;
+	margin-bottom: -100px;
+	margin-left: 20px;
+	--notchSize: 64px;
 }
 
 .flex_content-cta-bg-inner {
@@ -19408,6 +19464,10 @@ p,
 	--notchSize: 128px;
 }
 
+.flex_content-cta-bg.slider {
+	--notchSize: 56px;
+}
+
 .flex_content-bubbles {
 	margin: 120px 0;
 }
@@ -19781,6 +19841,10 @@ p,
 	height: 100% !important;
 	margin-top: 0;
 	--notchSize: 96px;
+}
+
+.flex_content-cta-bg.slider {
+	--notchSize: 48px;
 }
 
 .flex_content-bubbles {
@@ -20413,6 +20477,10 @@ p,
 	--notchSize: 72px;
 }
 
+.flex_content-cta-bg.slider {
+	--notchSize: 36px;
+}
+
 .flex_content-bubbles {
 	margin: 80px 0 0;
 }
@@ -20939,6 +21007,10 @@ p,
 
 .flex_content-cta-bg {
 	--notchSize: 64px;
+}
+
+.flex_content-cta-bg.slider {
+	--notchSize: 28px;
 }
 
 .flex_content-cta-bg-inner {

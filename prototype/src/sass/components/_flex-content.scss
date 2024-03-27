@@ -393,6 +393,30 @@
         --notchSize: 64px;
       }
 
+      &.slider {
+        --notchSize: 64px;
+        margin-top: -100px;
+        margin-bottom: -100px;
+        margin-left: 20px;
+        height: calc(100% + 200px) !important;
+
+        @media (max-width: 1199px) {
+          --notchSize: 56px;
+        }
+
+        @media (max-width: 991px) {
+          --notchSize: 48px;
+        }
+
+        @media (max-width: 767px) {
+          --notchSize: 36px;
+        }
+
+        @media (max-width: 575px) {
+          --notchSize: 28px;
+        }
+      }
+
       &-inner {
         z-index: 0;
         width: calc(((100vw - 540px) / 2) + 100%) !important;

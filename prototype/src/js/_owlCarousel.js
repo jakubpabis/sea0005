@@ -4036,6 +4036,37 @@ function runOwlCarousels() {
             .addClass('d-block');
         }
       });
+    } else if ($(this).hasClass('auto-width')) {
+      var $owl = $(this);
+      $owl.owlCarousel({
+        loop: true,
+        margin: 30,
+        nav: false,
+        dots: false,
+        lazyLoad: true,
+        autoplay: true,
+        autoWidth: true,
+        autoplayTimeout: 2500,
+        autoplayHoverPause: true,
+        responsive: {
+          0: {
+            items: 2,
+          },
+          767: {
+            items: 3,
+          },
+          1199: {
+            items: 4,
+          },
+        },
+      });
+
+      $('.custom-owl-prev').click(function () {
+        $owl.trigger('prev.owl.carousel');
+      });
+      $('.custom-owl-next').click(function () {
+        $owl.trigger('next.owl.carousel');
+      });
     } else {
       var $owl = $(this);
       $owl.owlCarousel({

@@ -113,6 +113,39 @@ jQuery(document).ready(function () {
       $i++;
     });
   }
+  if ($('.swiper').length > 0) {
+    const swiper = new Swiper('.swiper', {
+      speed: 400,
+      spaceBetween: 30,
+      autoplay: {
+        delay: 5000,
+      },
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      slidesPerView: 'auto',
+      // slidesPerView: 1,
+      // breakpoints: {
+      //   360: {
+      //     slidesPerView: 2,
+      //   },
+      //   720: {
+      //     slidesPerView: 3,
+      //   },
+      //   960: {
+      //     slidesPerView: 4,
+      //   },
+      //   1200: {
+      //     slidesPerView: 5,
+      //   },
+      //   1600: {
+      //     slidesPerView: 6,
+      //   },
+      // },
+    });
+  }
 });
 
 jQuery(window).on('load', function () {
