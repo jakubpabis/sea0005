@@ -28,7 +28,7 @@
 <!-- SalesFeed tracking code -->
 <script type="text/javascript" async src="https://searchxrecruitment.stackbase.nl/"></script>
 <!-- Leadinfo tracking code -->
-<script>
+<script type="text/javascript">
 	(function(l, e, a, d, i, n, f, o) {
 		if (!l[i]) {
 			l.GlobalLeadinfoNamespace = l.GlobalLeadinfoNamespace || [];
@@ -47,7 +47,7 @@
 	}(window, document, "script", "https://cdn.leadinfo.net/ping.js", "leadinfo", "LI-646B3FAFB71E7"));
 </script>
 <!-- Begin http://Werkzoeken.nl tracking code -->
-<script>
+<script type="text/javascript">
 	/* <![CDATA[ */
 	var conversion_key_wz = "cb4b5c2fe9459552bcbb55bfed624f6a";
 	var conversion_key_ict = "";
@@ -56,7 +56,7 @@
 	var conversion_candidate_id = "";
 	/* ]]> */
 </script>
-<script src="https://click.werkzoeken.nl/conversion/conversion.js"></script>
+<script type="text/javascript" src="https://click.werkzoeken.nl/conversion/conversion.js"></script>
 <!-- End http://Werkzoeken.nl tracking code -->
 
 <?php $layouts = get_post_meta(get_the_ID(), 'sections', true);
@@ -88,3 +88,11 @@ if (
 <!-- Start of HubSpot Embed Code -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/1932066.js"></script>
 <!-- End of HubSpot Embed Code -->
+<?php if (isset($_GET['user-source']) && $_GET['user-source'] === 'job-alert') : ?>
+	<script type="text/javascript">
+		const cookie = getCookie('user-source');
+		if (!cookie) {
+			setCookie('user-source', 'job-alert', 90);
+		}
+	</script>
+<?php endif; ?>
