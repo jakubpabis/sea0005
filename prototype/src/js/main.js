@@ -113,25 +113,42 @@ jQuery(document).ready(function () {
       $i++;
     });
   }
-  if ($('.swiper').length > 0) {
-    const swiper = new Swiper('.swiper', {
+  if ($('.photo-slider').length > 0) {
+    $('.photo-slider').slick({
+      dots: false,
+      infinite: true,
       speed: 400,
-      spaceBetween: 10,
-      autoplay: {
-        delay: 2500,
-      },
-      loop: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      slidesPerView: 'auto',
-      breakpoints: {
-        480: {
-          spaceBetween: 30,
-        },
-      },
+      slidesToShow: 1,
+      centerMode: true,
+      variableWidth: true,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      arrows: false,
     });
+    $('.slick-prev').on('click', function () {
+      $('.photo-slider').slick('slickPrev');
+    });
+    $('.slick-next').on('click', function () {
+      $('.photo-slider').slick('slickNext');
+    });
+    // const swiper = new Swiper('.swiper', {
+    //   speed: 400,
+    //   spaceBetween: 10,
+    //   autoplay: {
+    //     delay: 2500,
+    //   },
+    //   loop: true,
+    //   navigation: {
+    //     nextEl: '.swiper-button-next',
+    //     prevEl: '.swiper-button-prev',
+    //   },
+    //   slidesPerView: 'auto',
+    //   breakpoints: {
+    //     480: {
+    //       spaceBetween: 30,
+    //     },
+    //   },
+    // });
   }
 });
 

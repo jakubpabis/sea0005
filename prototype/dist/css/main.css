@@ -8015,23 +8015,23 @@ ul.lined li:first-child a {
 	align-items: center !important;
 }
 
-.swiper .swiper-slide {
+.photo-slider-item {
 	width: -webkit-fit-content;
 	width: -moz-fit-content;
 	width: fit-content;
 	height: auto;
+	margin: 0 10px;
 }
 
-.swiper .swiper-slide img {
-	height: 55vh;
+.photo-slider-item img {
+	height: 50vh;
 	min-height: 240px;
 	max-height: 1000px;
-	-o-object-fit: cover;
-	object-fit: cover;
+	margin: 0 10px;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
+.slick-next,
+.slick-prev {
 	position: relative !important;
 	top: auto !important;
 	right: auto !important;
@@ -8042,13 +8042,13 @@ ul.lined li:first-child a {
 	padding: 15px;
 }
 
-.swiper-button-prev:after,
-.swiper-button-next:after {
+.slick-next:after,
+.slick-prev:after {
 	display: none !important;
 }
 
-.swiper-button-prev svg,
-.swiper-button-next svg {
+.slick-next svg,
+.slick-prev svg {
 	width: 48px !important;
 	height: auto !important;
 }
@@ -9517,7 +9517,7 @@ body.offcanvas-active {
 	height: calc(100% + 200px) !important;
 	margin-top: -100px;
 	margin-bottom: -100px;
-	margin-left: 20px;
+	margin-left: 15px;
 	--notchSize: 64px;
 }
 
@@ -20865,6 +20865,10 @@ p,
 	left: 35px;
 }
 
+.photo-slider-item img {
+	height: 40vh;
+}
+
 .navigation__upper {
 	top: 48px;
 	height: calc(100vh - 48px);
@@ -21012,6 +21016,10 @@ p,
 }
 
 .flex_content-cta-bg.slider {
+	height: calc(100% + 160px) !important;
+	margin-top: -80px;
+	margin-bottom: -80px;
+	margin-left: 0;
 	--notchSize: 28px;
 }
 
