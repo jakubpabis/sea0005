@@ -13906,6 +13906,7 @@ function mobileMenuGoBack() {
 
 function megaMenu() {
   $(document).on('click', function (event) {
+    var $this = $(event.target);
     if (
       ($this.parents('.mega-menu-parent').length < 1 &&
         $('.mega-menu-parent').is(':visible')) ||
