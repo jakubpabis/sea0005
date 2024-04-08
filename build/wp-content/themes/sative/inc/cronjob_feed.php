@@ -58,13 +58,17 @@ function save_nodes_to_file()
 		$datediff_days = round($datediff / (60 * 60 * 24));
 
 		if ($datediff_days >= 7) {
-
-			$letter = $letters[floor($datediff_days / 7) - 1];
+			$index = floor($datediff_days / 7) - 1;
+			if ($index >= 0) {
+				$letter = $letters[$index];
+			} else {
+				$letter = '';
+			}
 
 			// Modify the 'id' attribute
 			$vac_ID = $dom_linkedin_vacancy->getAttribute('id');
 			$dom_linkedin_vacancy->setAttribute('id', $vac_ID . $letter);
-
+			echo $vac_ID . $letter . '<br/><br/>';
 			// Modify the <id> node
 			$id_node = $dom_linkedin_vacancy->getElementsByTagName('id')->item(0);
 			$id_node->nodeValue = $vac_ID . $letter;
