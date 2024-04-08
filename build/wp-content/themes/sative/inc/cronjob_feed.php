@@ -13,6 +13,7 @@ function xmlCreateFeed()
 
 function save_nodes_to_file()
 {
+	$days_to_chenge_id = 7;
 	$letters = range('a', 'z');
 	$xml_file_url = 'https://jobs.searchsoftware.nl/searchit.xml';
 	$xml_hash_file_path = dirname(__DIR__, 1) . '/xml/xml_hash.txt';
@@ -57,8 +58,8 @@ function save_nodes_to_file()
 		$datediff = $now - $your_date;
 		$datediff_days = round($datediff / (60 * 60 * 24));
 
-		if ($datediff_days >= 7) {
-			$index = floor($datediff_days / 7) - 1;
+		if ($datediff_days >= $days_to_chenge_id) {
+			$index = floor($datediff_days / $days_to_chenge_id) - 1;
 			if ($index >= 0) {
 				$letter = $letters[$index];
 			} else {
