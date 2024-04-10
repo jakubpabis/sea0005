@@ -64,7 +64,7 @@ if (
 	is_array($layouts) &&
 	in_array('photo_slider', $layouts)
 ) : ?>
-	<script defer type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <?php endif; ?>
 
 
