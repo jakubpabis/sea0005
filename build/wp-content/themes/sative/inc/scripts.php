@@ -59,15 +59,6 @@
 <script type="text/javascript" src="https://click.werkzoeken.nl/conversion/conversion.js"></script>
 <!-- End http://Werkzoeken.nl tracking code -->
 
-<?php $layouts = get_post_meta(get_the_ID(), 'sections', true);
-if (
-	is_array($layouts) &&
-	in_array('photo_slider', $layouts)
-) : ?>
-	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<?php endif; ?>
-
-
 <!-- LinkedIn Insight Tag -->
 <script type="text/javascript">
 	_linkedin_partner_id = "14266";
