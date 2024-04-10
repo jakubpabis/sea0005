@@ -23,7 +23,7 @@
 	}
 </script>
 <!-- CookieBot -->
-<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="02101096-38cd-4081-9366-8b55cf9c7a6a" data-blockingmode="auto" type="text/javascript"></script>
+<script defer id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="02101096-38cd-4081-9366-8b55cf9c7a6a" data-blockingmode="auto" type="text/javascript"></script>
 <!-- /CookieBot -->
 <!-- SalesFeed tracking code -->
 <script type="text/javascript" async src="https://searchxrecruitment.stackbase.nl/"></script>
@@ -64,7 +64,7 @@ if (
 	is_array($layouts) &&
 	in_array('photo_slider', $layouts)
 ) : ?>
-	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script defer type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <?php endif; ?>
 
 
