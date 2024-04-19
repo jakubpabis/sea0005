@@ -6,7 +6,7 @@
 
 <script>
 	if (!getCookie('is-mobile') || getCookie('is-mobile') === 'false') {
-		let $video = document.getElementsByClassName('header__video')[0];
+		let $video = document.getElementsByClassName('header__video');
 		console.log($video);
 		if ($video) {
 			$video.prepend(`
