@@ -1,27 +1,3 @@
-<script type="text/javascript">
-	function setCookie(cname, cvalue, exdays) {
-		var d = new Date();
-		d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
-		var expires = "expires=" + d.toUTCString();
-		document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-	}
-
-	function getCookie(cname) {
-		var name = cname + "=";
-		var decodedCookie = decodeURIComponent(document.cookie);
-		var ca = decodedCookie.split(";");
-		for (var i = 0; i < ca.length; i++) {
-			var c = ca[i];
-			while (c.charAt(0) == " ") {
-				c = c.substring(1);
-			}
-			if (c.indexOf(name) == 0) {
-				return c.substring(name.length, c.length);
-			}
-		}
-		return "";
-	}
-</script>
 <!-- CookieBot -->
 <script defer id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="02101096-38cd-4081-9366-8b55cf9c7a6a" data-blockingmode="auto" type="text/javascript"></script>
 <!-- /CookieBot -->
@@ -79,11 +55,3 @@
 <!-- Start of HubSpot Embed Code -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/1932066.js"></script>
 <!-- End of HubSpot Embed Code -->
-<?php if (isset($_GET['user-source']) && $_GET['user-source'] === 'job-alert') : ?>
-	<script type="text/javascript">
-		const cookie = getCookie('user-source');
-		if (!cookie) {
-			setCookie('user-source', 'job-alert', 90);
-		}
-	</script>
-<?php endif; ?>

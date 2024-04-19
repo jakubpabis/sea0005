@@ -104,6 +104,7 @@
 	<?php endif; ?>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" as="style" onload="this.onload=null; this.rel='stylesheet'; document.body.classList.add('fontLoaded')">
+	<?php require_once get_template_directory() . '/inc/scripts-header.php'; ?>
 </head>
 
 <body <?php body_class(); ?>>

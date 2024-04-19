@@ -19,8 +19,7 @@ $lang = pll_current_language();
 </div> <!-- #wrapper -->
 <?php wp_footer(); ?>
 
-<?php require_once get_template_directory() . '/inc/scripts.php';
-?>
+<?php require_once get_template_directory() . '/inc/scripts.php'; ?>
 
 </body>
 
