@@ -43,7 +43,7 @@
       border-top: 0px solid transparent;
       border-bottom: 60px solid transparent;
       border-right: 60px solid white;
-      content: "";
+      content: '';
 
       @media (max-width: 767px) {
         top: 60px;
@@ -276,7 +276,7 @@
           border: none !important;
           outline: 0 !important;
           background-color: transparent !important;
-          background-image: url("../img/search.svg");
+          background-image: url('../img/search.svg');
           background-position: center;
           background-size: 24px 24px;
           background-repeat: no-repeat;
@@ -495,7 +495,7 @@
       }
 
       @media (max-width: 767px) {
-        margin-top: 30px;
+        padding-top: 30px;
         bottom: auto;
         position: relative !important;
         width: auto !important;
