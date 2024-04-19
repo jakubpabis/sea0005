@@ -6,7 +6,7 @@
 
 <script>
 	if (!getCookie('is-mobile') || getCookie('is-mobile') === 'false') {
-		document.getQuerySelectorAll('.header__video')[0].prepend(`
+		document.querySelectorAll('.header__video')[0].prepend(`
 		<div class="container-fluid px-0 justify-content-center d-flex vidvid">
 				<video playsinline muted autoplay preload="true" loop>
 					<source src="<?php echo get_sub_field('video_file'); ?>" type="video/mp4">
