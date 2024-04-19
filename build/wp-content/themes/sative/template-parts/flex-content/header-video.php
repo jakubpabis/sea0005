@@ -6,26 +6,26 @@
 
 <script>
 	document.addEventListener('DOMContentLoaded', (event) => {
-				if (!getCookie('is-mobile') || getCookie('is-mobile') === 'false') {
-					let $video = document.getElementsByClassName('header__video');
-					console.log($video);
-					if ($video) {
-						$video[0].prepend(`
-							<div class="container-fluid px-0 justify-content-center d-flex vidvid">
-									<video playsinline muted autoplay preload="true" loop>
-										<source src="<?php echo get_sub_field('video_file'); ?>" type="video/mp4">
-										Your browser does not support the video tag.
-									</video>
-									<div class="play-button position-absolute">
-										<svg height="40" viewBox="0 0 60 60" width="40" xmlns="http://www.w3.org/2000/svg">
-											<path d="m51.627907 0 8.372093 8.37209302v43.25581398l-8.372093 8.372093h-43.25581398l-8.37209302-8.372093v-43.25581398l8.37209302-8.37209302zm-30.358907 16.0977621c-.3974167.2253406-.644.6534367-.644 1.1181804v25.56815c0 .4647437.2465833.8928398.644 1.1181804.1888333.1070453.3975.1602271.606.1602271.23025 0 .4601667-.0650283.6625-.1943179l20-12.7839898c.3655-.2336077.5875-.6432947.5875-1.0840896s-.222-.8504819-.5875-1.0840895l-20-12.7841602c-.3854167-.2463918-.8710833-.2593463-1.2685-.0340909z" fill="#183153" fill-rule="evenodd" />
-										</svg>
-									</div>
-								</div>
-						`);
-					}
-				}
+		if (!getCookie('is-mobile') || getCookie('is-mobile') === 'false') {
+			let $video = document.getElementsByClassName('header__video');
+			console.log($video);
+			if ($video) {
+				$video[0].prepend(`
+					<div class="container-fluid px-0 justify-content-center d-flex vidvid">
+							<video playsinline muted autoplay preload="true" loop>
+								<source src="<?php echo get_sub_field('video_file'); ?>" type="video/mp4">
+								Your browser does not support the video tag.
+							</video>
+							<div class="play-button position-absolute">
+								<svg height="40" viewBox="0 0 60 60" width="40" xmlns="http://www.w3.org/2000/svg">
+									<path d="m51.627907 0 8.372093 8.37209302v43.25581398l-8.372093 8.372093h-43.25581398l-8.37209302-8.372093v-43.25581398l8.37209302-8.37209302zm-30.358907 16.0977621c-.3974167.2253406-.644.6534367-.644 1.1181804v25.56815c0 .4647437.2465833.8928398.644 1.1181804.1888333.1070453.3975.1602271.606.1602271.23025 0 .4601667-.0650283.6625-.1943179l20-12.7839898c.3655-.2336077.5875-.6432947.5875-1.0840896s-.222-.8504819-.5875-1.0840895l-20-12.7841602c-.3854167-.2463918-.8710833-.2593463-1.2685-.0340909z" fill="#183153" fill-rule="evenodd" />
+								</svg>
+							</div>
+						</div>
+				`);
 			}
+		}
+	});
 </script>
 
 <header class="header__video <?php echo $negative; ?>">
