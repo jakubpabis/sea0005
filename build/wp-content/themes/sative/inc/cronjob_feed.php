@@ -14,7 +14,7 @@ function xmlCreateFeed()
 function save_nodes_to_file()
 {
 	$days_to_chenge_id = 7;
-	$letters = range('a', 'z');
+	$letters = range('c', 'z');
 	$xml_file_url = 'https://jobs.searchsoftware.nl/searchit.xml';
 	$xml_hash_file_path = dirname(__DIR__, 1) . '/xml/xml_hash.txt';
 	$new_xml_file_path = dirname(__DIR__, 1) . '/xml/vacancies.xml';
