@@ -7,6 +7,7 @@
 <script>
 	if (!getCookie('is-mobile') || getCookie('is-mobile') === 'false') {
 		let $video = document.getElementsByClassName('header__video')[0];
+		console.log($video);
 		if ($video) {
 			$video.prepend(`
 			<div class="container-fluid px-0 justify-content-center d-flex vidvid">
