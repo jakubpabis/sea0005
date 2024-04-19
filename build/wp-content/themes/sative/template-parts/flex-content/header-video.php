@@ -9,7 +9,7 @@
 		let $video = document.getElementsByClassName('header__video');
 		console.log($video);
 		if ($video) {
-			$video.prepend(`
+			$video[0].prepend(`
 			<div class="container-fluid px-0 justify-content-center d-flex vidvid">
 					<video playsinline muted autoplay preload="true" loop>
 						<source src="<?php echo get_sub_field('video_file'); ?>" type="video/mp4">
