@@ -5,7 +5,7 @@
 <?php endif; ?>
 
 <header class="header__video <?php echo $negative; ?>">
-	<?php if (isset($_COOKIE['is-mobile']) && $_COOKIE['is-mobile'] === false) : ?>
+	<?php if (!isset($_COOKIE['is-mobile'])) : ?>
 		<div class="container-fluid px-0 justify-content-center d-flex vidvid">
 			<video playsinline muted autoplay preload="true" loop>
 				<source src="<?php echo get_sub_field('video_file'); ?>" type="video/mp4">
