@@ -3,7 +3,7 @@
 $title = get_sub_field('title');
 $title_tag = get_sub_field('title_tag') && !empty(get_sub_field('title_tag')) ? get_sub_field('title_tag') : 'h2';
 $title_appearance = get_sub_field('title_appearance') && !empty(get_sub_field('title_appearance')) ? get_sub_field('title_appearance') : 'display-4';
-$title_class = get_sub_field('title_class') && !empty(get_sub_field('title_class')) ? get_sub_field('title_class') : 'text700 mb-2 mt-0';
+$title_class = get_sub_field('title_class') && !empty(get_sub_field('title_class')) ? get_sub_field('title_class') : 'text700 mb-3 mt-0';
 $the_title = $title ? '<' . $title_tag . ' class="' . $title_appearance . ' ' . $title_class . '">' . $title . '</' . $title_tag . '>' : '';
 
 ?>
@@ -11,7 +11,7 @@ $the_title = $title ? '<' . $title_tag . ' class="' . $title_appearance . ' ' . 
 <section class="flex-section">
 	<div class="container">
 		<div class="row align-items-center">
-			<div class="col-lg-6">
+			<div class="col-lg-6 py-4">
 				<div class="flex-content">
 					<?php echo $the_title; ?>
 					<?php if (get_sub_field('content')) : ?>
@@ -30,7 +30,7 @@ $the_title = $title ? '<' . $title_tag . ' class="' . $title_appearance . ' ' . 
 				</div>
 			</div>
 			<?php if (get_sub_field('image') && get_sub_field('image')['url']) : ?>
-				<div class="col-lg-6">
+				<div class="col-lg-6 py-4">
 					<div class="flex-image">
 						<img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['alt']; ?>" class="img-fluid" loading="lazy">
 					</div>
