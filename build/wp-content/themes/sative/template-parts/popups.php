@@ -109,7 +109,7 @@ $board = getRequestToken('v2/job_boards/categories', $api_key_groups);
 $groups = [];
 foreach ($board->groups as $group) {
 	if ($group->name !== '#2 Skill Area' && $group->name !== '#1 Availability') {
-		$groups[] = ['id' => $group->id, 'name' => explode('Skill', $group->name)[1], 'categories' => []];
+		$groups[] = ['id' => $group->id, 'name' => explode('Skill', $group->name)[1] ?? '', 'categories' => []];
 	}
 }
 
