@@ -74,9 +74,9 @@ function save_nodes_to_file()
 			$id_node = $dom_linkedin_vacancy->getElementsByTagName('id')->item(0);
 			$id_node->nodeValue = $vac_ID . $letter;
 
-			// Modify the <publish_date> node
-			$publish_date_node = $dom_linkedin_vacancy->getElementsByTagName('publish_date')->item(0);
-			$publish_date_node->nodeValue = date("d-m-Y H:i:s");
+			// // Modify the <publish_date> node
+			// $publish_date_node = $dom_linkedin_vacancy->getElementsByTagName('publish_date')->item(0);
+			// $publish_date_node->nodeValue = date("d-m-Y H:i:s");
 
 			// Modify the <modify_date> node
 			$modify_date_node = $dom_linkedin_vacancy->getElementsByTagName('modify_date')->item(0);
