@@ -346,7 +346,7 @@ function insertCategories($job_categories, $postID)
 
 	foreach ($job_categories as $category) {
 
-		if ($category['group'] == '#2 Skill Area') {
+		if ($category['group'] == '#2 Area') {
 
 			$skillArr[] = strval($category);
 
@@ -357,7 +357,7 @@ function insertCategories($job_categories, $postID)
 			}
 			$termID = $term->term_id;
 			wp_set_post_terms($postID, $termID, 'job-category', true);
-		} else if ($category['group'] == '#2.2 Skill Industry') {
+		} else if ($category['group'] == '#2.2 Industry') {
 			$term = get_term_by('name', strval($category), 'job-industry');
 			if (!$term) {
 				wp_insert_term(strval($category), 'job-industry');
