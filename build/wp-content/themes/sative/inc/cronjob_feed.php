@@ -14,7 +14,7 @@ function xmlCreateFeed()
 function save_nodes_to_file()
 {
 	$days_to_change_id = 4;
-	$letters = range('c', 'z');
+	$letters = range('a', 'z');
 	$xml_file_url = 'https://jobs.searchsoftware.nl/searchit.xml';
 	$xml_hash_file_path = dirname(__DIR__, 1) . '/xml/xml_hash.txt';
 	$new_xml_file_path = dirname(__DIR__, 1) . '/xml/vacancies.xml';
@@ -60,6 +60,13 @@ function save_nodes_to_file()
 
 		if ($datediff_days >= $days_to_change_id) {
 			$index = floor($datediff_days / $days_to_change_id) - 1;
+
+			if ($index > 25) {
+				$divider = floor($index / 25);
+				if ($divider > 0) {
+					$index = $index - $divider * 25;
+				}
+			}
 			if ($index >= 0) {
 				$letter = $letters[$index];
 			} else {
