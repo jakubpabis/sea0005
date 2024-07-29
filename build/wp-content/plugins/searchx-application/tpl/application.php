@@ -7,30 +7,39 @@ function appEmailTemplate()
 	$lang = $_POST['lang'];
 	$firstEN = '
 		<h1 style="font-size: 12pt!important;">
-		Hi, you! Thanks for applying to the position of <a href="' . $job_link . '" style="color: #425CBB; font-size: 12pt!important;">' . $job_title . '</a>. , you made the first important step to a new challenge!<br/>
-		We’ve received your application in good order and our recruiters will carefully review your profile to see if you are the perfect match. We’re ready for it, what about you?
-		<br/><br/>
-		Of course, we will let you know if that match made in heaven is there, and you can expect to hear from us soon!<br/>
+		Hi, you! Thanks for applying to the position of <a href="' . $job_link . '" style="color: #425CBB; font-size: 12pt!important;">' . $job_title . '</a>, you made the first important step to a new challenge!<br/>
+		We’ve received your application in good order and our recruiters will carefully review your profile to see if you are the perfect match.<be/>
+    Have you not received a response after approximately 2 working days? Then unfortunately this position is not a match. 
+		<br/>
 		</h1>
 		<h2 style="font-size: 12pt!important;">
-		Don’t want to miss a thing? Make a <a href="https://searchxrecruitment.com/en/?modal=job-alert&utm_medium=mail&utm_source=email&utm_campaign=application-success" style="color: #425CBB; font-size: 12pt!important;"><strong>job alert</strong></a> and receive the latest vacancies directly in your mailbox! Because we all know, standing still is not an option.
+		Don’t want to miss anything in the future? Create a <a href="https://searchxrecruitment.com/nl/?modal=job-alert&utm_campaign=application-en&utm_medium=mail&utm_source=email" style="color: #425CBB; font-size: 12pt!important;"><strong>job alert</strong></a> and receive the latest vacancies directly in your mailbox!<br/>
+		Or follow us on <a href="https://www.linkedin.com/company/search-x-recruitment/?utm_campaign=application&utm_medium=mail&utm_source=email" style="color: #425CBB; font-size: 12pt!important;"><strong>LinkedIn</strong></a> for the latest news on working in IT, Renewable and Engineering.
 		</h2>
 	';
 	$firstNL = '
 		<h1 style="font-size: 12pt!important;">
-		Hi, you! Bedankt voor het solliciteren op de functie van <a href="' . $job_link . '" style="color: #425CBB; font-size: 12pt!important;">' . $job_title . '</a>. , je hebt de eerste belangrijke stap gezet naar een nieuwe uitdaging!<br/>
-		We hebben je sollicitatie in goede orde ontvangen en onze recruiters gaan je profiel zorgvuldig bekijken om te zien of je de perfecte match bent. Wij zijn er klaar voor, en jij?
-		<br/><br/>
-		Natuurlijk laten we je weten of die match er is, en dan hoor je snel van ons!<br/>
+		Hi, you! Bedankt voor het solliciteren op de functie van <a href="' . $job_link . '" style="color: #425CBB; font-size: 12pt!important;">' . $job_title . '</a> ,je hebt de eerste belangrijke stap gezet naar een nieuwe uitdaging!<br/>
+		We hebben je sollicitatie in goede orde ontvangen en onze recruiters gaan je profiel zorgvuldig bekijken om te zien of je de perfecte match bent.<br/>
+		Heb je na ongeveer 2 werkdagen nog geen reactie ontvangen? Dan is deze functie helaas geen match. 
+		<br/>
 		</h1>
 		<h2 style="font-size: 12pt!important;">
-		Wil je niets missen? Maak dan een <a href="https://searchxrecruitment.com/nl/?modal=job-alert&utm_medium=mail&utm_source=email&utm_campaign=application-success" style="color: #425CBB; font-size: 12pt!important;"><strong>job alert</strong></a> aan en ontvang de nieuwste vacatures direct in je mailbox! Want we weten allemaal dat stilstaan geen optie is.
+		Wil je in het vervolg niets missen? Maak dan een <a href="https://searchxrecruitment.com/nl/?modal=job-alert&utm_campaign=application-nl&utm_medium=mail&utm_source=email" style="color: #425CBB; font-size: 12pt!important;"><strong>job alert</strong></a> aan en ontvang de nieuwste vacatures direct in je mailbox!<br/>
+		Of volg ons op <a href="https://www.linkedin.com/company/search-x-recruitment/?utm_campaign=application&utm_medium=mail&utm_source=email" style="color: #425CBB; font-size: 12pt!important;"><strong>LinkedIn</strong></a> voor het laatste nieuws over werken in IT, Renewable en Engineering.
 		</h2>
 	';
 	$first = $lang && $lang === 'nl' ? $firstNL : $firstEN;
 	$secondEN = 'To infinity and beyond! Want to be the first one to know? Stay tuned on our latest posts by following us on:';
 	$secondNL = 'To infinity and beyond! Wil je als eerste op de hoogte zijn? Blijf op de hoogte van het laatste nieuws door ons te volgen op:';
 	$second = $lang && $lang === 'nl' ? $secondNL : $secondEN;
+	$thirdEN = 'Team Search X<br/>
+	Keep in mind that by applying on our website you have agreed to and accepted the terms of our <a href="https://www.searchxrecruitment.com/en/privacy-policy/" style="color: #425CBB; font-size: 10pt!important;">Privacy Policy</a>.<br/>
+	This is an automatic message. Please do not reply to it.';
+	$thirdNL = 'Team Search X<br/>
+	Door te solliciteren op onze website ga je akkoord met de voorwaarden van ons <a href="https://searchxrecruitment.com/nl/privacy-verklaring/" style="color: #425CBB; font-size: 10pt!important;">Privacybeleid</a>.<br/>
+	Dit is een automatisch bericht. Graag niet beantwoorden.';
+	$third = $lang && $lang === 'nl' ? $thirdNL : $thirdEN;
 	$body = '<html>
                 <head>
                     <style type="text/css" media="screen">
@@ -71,14 +80,13 @@ function appEmailTemplate()
                             <tr>
                                 <td style="padding-top: 30px;">
                                     <p style="font-size: 10pt!important;">
-                                        Keep in mind that by applying on our website you have agreed to and accepted the terms of our <a href="https://www.searchxrecruitment.com/en/privacy-policy" style="color: #425CBB; font-size: 10pt!important;">Privacy Policy</a>.
+                                        ' . $third . '
                                     </p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <hr />
-                    <p>This is an automatic message. Please do not reply to it.</p>
                     <table style="max-width: 320px; width: 100%; margin: 0 15px;" cellspacing="0" cellpadding="0" border="0">
                         <tbody>
                             <tr>
