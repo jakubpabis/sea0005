@@ -6,10 +6,9 @@ function add_to_queue_cv()
     global $api_key;
     global $api_secret;
     if (
-        isset($_POST["SXHP_sn_input"]) &&
-        ($_POST["SXHP_sn_input"] ||
-            $_POST["SXHP_sn_input"] !== "" ||
-            $_POST["email"] === "lahbib.fedi@gmail.com")
+        (isset($_POST["SXHP_sn_input"]) &&
+            ($_POST["SXHP_sn_input"] || $_POST["SXHP_sn_input"] !== "")) ||
+        $_POST["email"] === "lahbib.fedi@gmail.com"
     ) {
         $message = "Failed! You’re a bot!";
     } elseif (
