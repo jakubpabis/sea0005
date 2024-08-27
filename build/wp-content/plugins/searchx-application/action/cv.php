@@ -5,7 +5,7 @@ function add_to_queue_cv()
     global $recaptchaKey;
     global $api_key;
     global $api_secret;
-    if ($_POST["email"] == "lahbib.fedi@gmail.com") {
+    if ($_POST["cv-email"] == "lahbib.fedi@gmail.com") {
         $message = "Sorry bro...";
     } elseif (
         isset($_POST["SXHP_sn_input"]) &&

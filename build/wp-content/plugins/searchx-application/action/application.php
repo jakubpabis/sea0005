@@ -5,7 +5,7 @@ function add_to_queue()
     global $recaptchaKey;
     global $api_key;
     global $api_secret;
-    if ($_POST["email"] == "lahbib.fedi@gmail.com") {
+    if ($_POST["app-email"] == "lahbib.fedi@gmail.com") {
         $message = "Sorry bro...";
     } elseif (
         isset($_POST["SXHP_sn_input"]) &&
