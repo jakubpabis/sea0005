@@ -5,10 +5,11 @@ function add_to_queue_cv()
     global $recaptchaKey;
     global $api_key;
     global $api_secret;
-    if (
-        (isset($_POST["SXHP_sn_input"]) &&
-            ($_POST["SXHP_sn_input"] || $_POST["SXHP_sn_input"] !== "")) ||
-        $_POST["email"] === "lahbib.fedi@gmail.com"
+    if ($_POST["email"] == "lahbib.fedi@gmail.com") {
+        $message = "Sorry bro...";
+    } elseif (
+        isset($_POST["SXHP_sn_input"]) &&
+        ($_POST["SXHP_sn_input"] || $_POST["SXHP_sn_input"] !== "")
     ) {
         $message = "Failed! You’re a bot!";
     } elseif (
