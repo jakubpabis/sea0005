@@ -225,27 +225,11 @@ function sative_scripts()
 	wp_deregister_script('jquery');
 	wp_deregister_script('jquery-migrate');
 
-	// wp_enqueue_script('sative-recaptcha', 'https://www.google.com/recaptcha/api.js', array(), false,);
+	wp_enqueue_script('sative-recaptcha', 'https://www.google.com/recaptcha/api.js', array(), false, true);
+
 	wp_enqueue_script('sative-app', get_template_directory_uri() . '/assets/js/main.min.js', array(), _S_VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'sative_scripts');
-
-// /**
-//  * Add defer attribute to scripts
-//  */
-// function add_defer_attribute($tag, $handle)
-// {
-// 	$scripts_to_defer = array('sative-recaptcha');
-
-// 	foreach ($scripts_to_defer as $defer_script) {
-// 		if ($defer_script === $handle) {
-// 			return str_replace(' src', ' defer src', $tag);
-// 		}
-// 	}
-// 	return $tag;
-// }
-// add_filter('script_loader_tag', 'add_defer_attribute', 10, 2);
-
 
 function custom_use_print_block_library($html, $handle)
 {
