@@ -1,10 +1,10 @@
 <!-- CookieBot -->
-<script defer id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="02101096-38cd-4081-9366-8b55cf9c7a6a" data-blockingmode="auto" type="text/javascript"></script>
+<script defer id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="02101096-38cd-4081-9366-8b55cf9c7a6a" data-blockingmode="auto" type="text/javascript" defer></script>
 <!-- /CookieBot -->
 <!-- SalesFeed tracking code -->
-<script type="text/javascript" async src="https://searchxrecruitment.stackbase.nl/"></script>
+<script type="text/javascript" async defer src="https://searchxrecruitment.stackbase.nl/"></script>
 <!-- Leadinfo tracking code -->
-<script type="text/javascript">
+<script type="text/javascript" defer>
 	(function(l, e, a, d, i, n, f, o) {
 		if (!l[i]) {
 			l.GlobalLeadinfoNamespace = l.GlobalLeadinfoNamespace || [];
@@ -23,7 +23,7 @@
 	}(window, document, "script", "https://cdn.leadinfo.net/ping.js", "leadinfo", "LI-646B3FAFB71E7"));
 </script>
 <!-- Begin http://Werkzoeken.nl tracking code -->
-<script type="text/javascript">
+<script type="text/javascript" defer>
 	/* <![CDATA[ */
 	var conversion_key_wz = "cb4b5c2fe9459552bcbb55bfed624f6a";
 	var conversion_key_ict = "";
@@ -32,16 +32,16 @@
 	var conversion_candidate_id = "";
 	/* ]]> */
 </script>
-<script type="text/javascript" src="https://click.werkzoeken.nl/conversion/conversion.js"></script>
+<script type="text/javascript" src="https://click.werkzoeken.nl/conversion/conversion.js" defer></script>
 <!-- End http://Werkzoeken.nl tracking code -->
 
 <!-- LinkedIn Insight Tag -->
-<script type="text/javascript">
+<script type="text/javascript" defer>
 	_linkedin_partner_id = "14266";
 	window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
 	window._linkedin_data_partner_ids.push(_linkedin_partner_id);
 </script>
-<script type="text/javascript">
+<script type="text/javascript" defer>
 	(function() {
 		var s = document.getElementsByTagName("script")[0];
 		var b = document.createElement("script");
