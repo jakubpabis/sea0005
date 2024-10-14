@@ -1,25 +1,19 @@
 <!-- CookieBot -->
 <script defer id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="02101096-38cd-4081-9366-8b55cf9c7a6a" data-blockingmode="auto" type="text/javascript"></script>
 <!-- /CookieBot -->
-<!-- Leadinfo tracking code -->
+
+<!-- Begin http://Werkzoeken.nl tracking code -->
 <script type="text/javascript">
-	(function(l, e, a, d, i, n, f, o) {
-		if (!l[i]) {
-			l.GlobalLeadinfoNamespace = l.GlobalLeadinfoNamespace || [];
-			l.GlobalLeadinfoNamespace.push(i);
-			l[i] = function() {
-				(l[i].q = l[i].q || []).push(arguments)
-			};
-			l[i].t = l[i].t || n;
-			l[i].q = l[i].q || [];
-			o = e.createElement(a);
-			f = e.getElementsByTagName(a)[0];
-			o.async = 1;
-			o.src = d;
-			f.parentNode.insertBefore(o, f);
-		}
-	}(window, document, "script", "https://cdn.leadinfo.net/ping.js", "leadinfo", "LI-646B3FAFB71E7"));
+	/* <![CDATA[ */
+	var conversion_key_wz = "cb4b5c2fe9459552bcbb55bfed624f6a";
+	var conversion_key_ict = "";
+	var conversion_key_tec = "";
+	var conversion_ref_id = "";
+	var conversion_candidate_id = "";
+	/* ]]> */
 </script>
+<script type="text/javascript" src="https://click.werkzoeken.nl/conversion/conversion.js"></script>
+<!-- End http://Werkzoeken.nl tracking code -->
 
 <!-- LinkedIn Insight Tag -->
 <script type="text/javascript">
