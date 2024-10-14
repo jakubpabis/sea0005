@@ -78,11 +78,11 @@ function jobsAjaxFiltering() {
 
       var $current = window.location;
       var $currentObj = parseParams($current.search);
-      console.log($currentObj);
+      //   console.log($currentObj);
 
       $data['params'] = params;
 
-      console.log($data);
+      //   console.log($data);
 
       $.ajax({
         type: 'POST',

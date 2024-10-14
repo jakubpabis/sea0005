@@ -225,8 +225,6 @@ function sative_scripts()
 	wp_deregister_script('jquery');
 	wp_deregister_script('jquery-migrate');
 
-	wp_enqueue_script('sative-recaptcha', 'https://www.google.com/recaptcha/api.js', array(), false, true);
-
 	wp_enqueue_script('sative-app', get_template_directory_uri() . '/assets/js/main.min.js', array(), _S_VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'sative_scripts');
