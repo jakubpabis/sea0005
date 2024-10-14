@@ -25,9 +25,6 @@ function afterFormOpen() {
   if (isScriptLoaded('https://www.google.com/recaptcha/api.js') == false) {
     addScript('https://www.google.com/recaptcha/api.js');
   }
-  if (isScriptLoaded('/wp-content/themes/sative/assets/js/forms.js') == false) {
-    addScript('/wp-content/themes/sative/assets/js/forms.js');
-  }
 }
 
 function statusChangeCallback(response) {
