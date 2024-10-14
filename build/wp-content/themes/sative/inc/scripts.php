@@ -20,18 +20,6 @@
 		}
 	}(window, document, "script", "https://cdn.leadinfo.net/ping.js", "leadinfo", "LI-646B3FAFB71E7"));
 </script>
-<!-- Begin http://Werkzoeken.nl tracking code -->
-<script type="text/javascript">
-	/* <![CDATA[ */
-	var conversion_key_wz = "cb4b5c2fe9459552bcbb55bfed624f6a";
-	var conversion_key_ict = "";
-	var conversion_key_tec = "";
-	var conversion_ref_id = "";
-	var conversion_candidate_id = "";
-	/* ]]> */
-</script>
-<script type="text/javascript" src="https://click.werkzoeken.nl/conversion/conversion.js"></script>
-<!-- End http://Werkzoeken.nl tracking code -->
 
 <!-- LinkedIn Insight Tag -->
 <script type="text/javascript">
