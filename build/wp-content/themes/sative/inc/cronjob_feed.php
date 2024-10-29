@@ -13,7 +13,7 @@ function xmlCreateFeed()
 
 function save_nodes_to_file()
 {
-	$days_to_change_id = 4;
+	$days_to_change_id = 10;
 	$letters = range('a', 'z');
 	$xml_file_url = 'https://jobs.searchsoftware.nl/searchit.xml';
 	$xml_hash_file_path = dirname(__DIR__, 1) . '/xml/xml_hash.txt';
