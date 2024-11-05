@@ -69,8 +69,10 @@ function save_nodes_to_file()
 				$vac_desc = $dom_linkedin_vacancy->getAttribute('description');
 				$splitted = explode(']]>', $vac_desc);
 				var_dump($splitted);
-				$new_vac_desc = $splitted[0] . '#LI-EB1' . $splitted[1];
-				$dom_linkedin_vacancy->setAttribute('description', $new_vac_desc);
+				if (!empty($splitted[0])) {
+					$new_vac_desc = $splitted[0] . '#LI-EB1]]>' . $splitted[1];
+					$dom_linkedin_vacancy->setAttribute('description', $new_vac_desc);
+				}
 			}
 		}
 
