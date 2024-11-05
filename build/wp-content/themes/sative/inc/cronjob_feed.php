@@ -66,21 +66,13 @@ function save_nodes_to_file()
 
 			if ($datediff_days <= $days_to_remove) {
 				$dom_linkedin_vacancies->appendChild($dom_linkedin_vacancy);
-				$description = $dom_linkedin_vacancy->getElementsByTagName('description')->item(0);
-
-				// Clear existing content
-				$description->nodeValue = '';
-
-				// Create new text node with modified content
 				$vac_desc = $dom_linkedin_vacancy->getElementsByTagName('description')->item(0)->nodeValue;
-				if (strpos($vac_desc, ']]>') !== false) {
-					$splitted = explode(']]>', $vac_desc);
-					if (count($splitted) > 1) {
-						$new_vac_desc = $splitted[0] . '#LI-EB1]]>' . $splitted[1];
-						// Create and append new text node
-						$new_text = $dom_linkedin->createTextNode($new_vac_desc);
-						$description->appendChild($new_text);
-					}
+				$splitted = explode(']]>', $vac_desc);
+				var_dump($vac_desc);
+				var_dump($splitted);
+				if (!empty($splitted[0])) {
+					$new_vac_desc = $splitted[0] . '#LI-EB1]]>' . $splitted[1];
+					$dom_linkedin_vacancy->setAttribute('description', $new_vac_desc);
 				}
 			}
 		}
