@@ -68,6 +68,7 @@ function save_nodes_to_file()
 				$dom_linkedin_vacancies->appendChild($dom_linkedin_vacancy);
 				$vac_desc = $dom_linkedin_vacancy->getAttribute('description');
 				$splitted = explode(']]>', $vac_desc);
+				var_dump($vac_desc);
 				var_dump($splitted);
 				if (!empty($splitted[0])) {
 					$new_vac_desc = $splitted[0] . '#LI-EB1]]>' . $splitted[1];
@@ -75,58 +76,6 @@ function save_nodes_to_file()
 				}
 			}
 		}
-
-
-
-		// $your_date = strtotime($dom_linkedin_vacancy->getElementsByTagName('publish_date')->item(0)->nodeValue);
-		// $datediff = $now - $your_date;
-		// $datediff_days = round($datediff / (60 * 60 * 24));
-
-		// if ($datediff_days >= $days_to_remove) {
-		// 	$index = floor($datediff_days / $days_to_remove) - 1;
-
-		// 	if ($index > 25) {
-		// 		$divider = floor($index / 25);
-		// 		if ($divider > 0) {
-		// 			$index = $index - $divider * 25;
-		// 		}
-		// 	}
-		// 	if ($index >= 0) {
-		// 		$letter = $letters[$index];
-		// 	} else {
-		// 		$letter = '';
-		// 	}
-
-		// 	// Modify the 'id' attribute
-		// 	$vac_ID = $dom_linkedin_vacancy->getAttribute('id');
-		// 	$dom_linkedin_vacancy->setAttribute('id', $vac_ID . $letter);
-		// 	echo $vac_ID . $letter . '<br/><br/>';
-		// 	// Modify the <id> node
-		// 	$id_node = $dom_linkedin_vacancy->getElementsByTagName('id')->item(0);
-		// 	$id_node->nodeValue = $vac_ID . $letter;
-
-		// 	// // Modify the <publish_date> node
-		// 	// $publish_date_node = $dom_linkedin_vacancy->getElementsByTagName('publish_date')->item(0);
-		// 	// $publish_date_node->nodeValue = date("d-m-Y H:i:s");
-
-		// 	// Modify the <modify_date> node
-		// 	$modify_date_node = $dom_linkedin_vacancy->getElementsByTagName('modify_date')->item(0);
-		// 	$modify_date_node->nodeValue = date("d-m-Y H:i:s");
-
-		// 	// Modify the <url> node
-		// 	$url_node = $dom_linkedin_vacancy->getElementsByTagName('url')->item(0);
-		// 	$url_node->nodeValue = $dom_linkedin_vacancy->getElementsByTagName('url')->item(0)->nodeValue . $letter;
-
-		// 	// Modify the <apply_url> node
-		// 	$apply_url_node = $dom_linkedin_vacancy->getElementsByTagName('apply_url')->item(0);
-		// 	$apply_url_node->nodeValue = $dom_linkedin_vacancy->getElementsByTagName('apply_url')->item(0)->nodeValue . $letter;
-
-		// 	// Modify the <job_url> node
-		// 	$job_url_node = $dom_linkedin_vacancy->getElementsByTagName('job_url')->item(0);
-		// 	$job_url_node->nodeValue = $dom_linkedin_vacancy->getElementsByTagName('job_url')->item(0)->nodeValue . $letter;
-		// }
-
-		// $dom_linkedin_vacancies->appendChild($dom_linkedin_vacancy);
 	}
 
 	$xml_string_linkedin = $dom_linkedin->saveXML();
