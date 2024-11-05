@@ -70,7 +70,10 @@ function save_nodes_to_file()
 				$vac_desc = $description->nodeValue;
 
 				if (strpos($vac_desc, ']]>') !== false) {
+					var_dump(strpos($vac_desc, ']]>'));
+
 					$splitted = explode(']]>', $vac_desc);
+					var_dump(count($splitted));
 					if (count($splitted) > 1) {
 						// Create new text node with modified content
 						$new_text = $dom_linkedin->createTextNode($splitted[0] . '#LI-EB1]]>' . $splitted[1]);
