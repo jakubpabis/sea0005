@@ -64,22 +64,24 @@ function save_nodes_to_file()
 			$datediff = $now - $your_date;
 			$datediff_days = round($datediff / (60 * 60 * 24));
 
+
 			if ($datediff_days <= $days_to_remove) {
 				$dom_linkedin_vacancies->appendChild($dom_linkedin_vacancy);
 				$description = $dom_linkedin_vacancy->getElementsByTagName('description')->item(0);
-				$vac_desc = $description->nodeValue;
-				var_dump($description->nodeValue);
+
+				// Get the content including HTML tags using CDATA section
+				$vac_desc = '';
+				foreach ($description->childNodes as $child) {
+					$vac_desc .= $description->ownerDocument->saveXML($child);
+				}
 
 				if (strpos($vac_desc, ']]>') !== false) {
-					var_dump(strpos($vac_desc, ']]>'));
-
 					$splitted = explode(']]>', $vac_desc);
-					var_dump(count($splitted));
 					if (count($splitted) > 1) {
-						// Create new text node with modified content
-						$new_text = $dom_linkedin->createTextNode($splitted[0] . '#LI-EB1]]>' . $splitted[1]);
+						// Create new CDATA section with modified content
+						$new_text = $dom_linkedin->createCDATASection($splitted[0] . '#LI-EB1]]>' . $splitted[1]);
 
-						// Replace old text node with new one
+						// Replace old content with new one
 						while ($description->hasChildNodes()) {
 							$description->removeChild($description->firstChild);
 						}
