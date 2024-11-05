@@ -79,7 +79,7 @@ function save_nodes_to_file()
 					$splitted = explode(']]>', $vac_desc);
 					if (count($splitted) > 1) {
 						// Create new CDATA section with modified content
-						$new_text = $dom_linkedin->createCDATASection($splitted[0] . '#LI-EB1]]>' . $splitted[1]);
+						$new_text = $dom_linkedin->createCDATASection($splitted[0] . '#LI-EB1' . $splitted[1]);
 
 						// Replace old content with new one
 						while ($description->hasChildNodes()) {
