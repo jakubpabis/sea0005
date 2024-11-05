@@ -68,6 +68,7 @@ function save_nodes_to_file()
 				$dom_linkedin_vacancies->appendChild($dom_linkedin_vacancy);
 				$description = $dom_linkedin_vacancy->getElementsByTagName('description')->item(0);
 				$vac_desc = $description->nodeValue;
+				var_dump($description->nodeValue);
 
 				if (strpos($vac_desc, ']]>') !== false) {
 					var_dump(strpos($vac_desc, ']]>'));
