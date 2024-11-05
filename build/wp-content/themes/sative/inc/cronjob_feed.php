@@ -67,7 +67,7 @@ function save_nodes_to_file()
 			if ($datediff_days <= $days_to_remove) {
 				$dom_linkedin_vacancies->appendChild($dom_linkedin_vacancy);
 				$vac_desc = $dom_linkedin_vacancy->getAttribute('description');
-				$splitted = explode('</p> ]]>', $vac_desc);
+				$splitted = explode(']]>', $vac_desc);
 				$new_vac_desc = $splitted[0] . '#LI-EB1' . $splitted[1];
 				$dom_linkedin_vacancy->setAttribute('description', $new_vac_desc);
 			}
