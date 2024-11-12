@@ -48,45 +48,76 @@ function save_nodes_to_file()
 	$dom_linkedin_vacancies = $dom_linkedin->createElement('vacancies');
 	$dom_linkedin->appendChild($dom_linkedin_vacancies);
 
+	// Create an array to store vacancies for sorting
+	$vacancies = [];
+
 	foreach ($xml->vacancy as $vacancy) {
 		$dom_linkedin_vacancy = dom_import_simplexml($vacancy);
 		$dom_linkedin_vacancy = $dom_linkedin->importNode($dom_linkedin_vacancy, true);
 		$now = time();
 		$is_linkedin = false;
 		$categories = $dom_linkedin_vacancy->getElementsByTagName('category');
+
 		foreach ($categories as $category) {
 			if ($category->nodeValue === 'LinkedIn') {
 				$is_linkedin = true;
 			}
 		}
+
 		if ($is_linkedin) {
-			$your_date = strtotime($dom_linkedin_vacancy->getElementsByTagName('modify_date')->item(0)->nodeValue);
-			$datediff = $now - $your_date;
+			$modify_date = strtotime($dom_linkedin_vacancy->getElementsByTagName('modify_date')->item(0)->nodeValue);
+			$datediff = $now - $modify_date;
 			$datediff_days = round($datediff / (60 * 60 * 24));
 
-
 			if ($datediff_days <= $days_to_remove) {
-				$dom_linkedin_vacancies->appendChild($dom_linkedin_vacancy);
-				$description = $dom_linkedin_vacancy->getElementsByTagName('description')->item(0);
+				// Store vacancy with its modify_date for sorting
+				$vacancies[] = [
+					'id' => $dom_linkedin_vacancy->getAttribute('id'),
+					'modify_date' => $modify_date
+				];
+			}
+		}
+	}
 
-				// Get the content including HTML tags using CDATA section
-				$vac_desc = '';
-				foreach ($description->childNodes as $child) {
-					$vac_desc .= $description->ownerDocument->saveXML($child);
-				}
+	// Sort vacancies by modify_date in descending order (newest first)
+	usort($vacancies, function ($a, $b) {
+		return $b['modify_date'] - $a['modify_date'];
+	});
 
-				if (strpos($vac_desc, ']]>') !== false) {
-					$splitted = explode(']]>', $vac_desc);
-					if (count($splitted) > 1) {
-						// Create new CDATA section with modified content
-						$new_text = $dom_linkedin->createCDATASection($splitted[0] . '#LI-EB1' . $splitted[1]);
+	// Take only the first 41 vacancies
+	$vacancies = array_slice($vacancies, 0, 41);
 
-						// Replace old content with new one
-						while ($description->hasChildNodes()) {
-							$description->removeChild($description->firstChild);
-						}
-						$description->appendChild($new_text);
+	$vacancies = array_map(function ($item) {
+		return $item['id'];
+	}, $vacancies);
+
+	var_dump($vacancies);
+
+	foreach ($xml->vacancy as $vacancy) {
+		$dom_linkedin_vacancy = dom_import_simplexml($vacancy);
+		$dom_linkedin_vacancy = $dom_linkedin->importNode($dom_linkedin_vacancy, true);
+
+		if (in_array($dom_linkedin_vacancy->getAttribute('id'), $vacancies)) {
+			$dom_linkedin_vacancies->appendChild($dom_linkedin_vacancy);
+			$description = $dom_linkedin_vacancy->getElementsByTagName('description')->item(0);
+
+			// Get the content including HTML tags using CDATA section
+			$vac_desc = '';
+			foreach ($description->childNodes as $child) {
+				$vac_desc .= $description->ownerDocument->saveXML($child);
+			}
+
+			if (strpos($vac_desc, ']]>') !== false) {
+				$splitted = explode(']]>', $vac_desc);
+				if (count($splitted) > 1) {
+					// Create new CDATA section with modified content
+					$new_text = $dom_linkedin->createCDATASection($splitted[0] . '#LI-EB1' . $splitted[1]);
+
+					// Replace old content with new one
+					while ($description->hasChildNodes()) {
+						$description->removeChild($description->firstChild);
 					}
+					$description->appendChild($new_text);
 				}
 			}
 		}
