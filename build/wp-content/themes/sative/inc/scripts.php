@@ -1,5 +1,5 @@
 <!-- CookieBot -->
-<script defer id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="02101096-38cd-4081-9366-8b55cf9c7a6a" data-blockingmode="auto" type="text/javascript"></script>
+<!-- <script defer id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="02101096-38cd-4081-9366-8b55cf9c7a6a" data-blockingmode="auto" type="text/javascript"></script> -->
 <!-- /CookieBot -->
 <!-- Leadinfo tracking code -->
 <script type="text/javascript">

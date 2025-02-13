@@ -132,7 +132,6 @@ function add_job_category_taxonomies()
 		'job-category',
 		'jobs',
 		array(
-			'hierarchical' => true,
 			// This array of options controls the labels displayed in the WordPress Admin UI
 			'labels' => array(
 				'name' => _x('Categories', 'taxonomy general name', 'sative'),
