@@ -53,6 +53,7 @@
 <!-- Start of HubSpot Embed Code -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/1932066.js"></script>
 <!-- End of HubSpot Embed Code -->
+<!--
 <script>
 	function initApollo() {
 		var n = Math.random().toString(36).substring(7),
@@ -67,4 +68,54 @@
 	}
 	initApollo();
 </script>
+-->
+<script type="text/javascript">
+  (function(l,e,m,p,i,r,e){
+    e={i:true,f:false,t:1000,h:l.document.location.href,u:'https://app.lemlist.com/api/visitors'};
+    r={t:null,i:null};
+    i={k:'GZbsNReDLxNysGI/VUr44Uh3CcuXaqUv2LLIL2AT7qE=',t:'tea_6YbYQvBPk9Jsw8A25',u:l.navigator.userAgent,d:0,c:0,p:l.document.location.pathname,r:l.document.location.pathname,q:false};
+    p={i:function(){i.c=0;i.d=0;r.i=l.setInterval(function(){if(!l.document.hidden){i.d+=e.t;}},e.t);},x:function(){
+      i.r=i.p;
+      i.p=l.document.location.pathname;
+      l.fetch(e.u, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'text/plain',
+        },
+        body: JSON.stringify(i),
+      }).then(function(){
+        if(e.i){
+          e.i=false;
+          l.navigation.addEventListener('navigate', n);
+          l.document.body.addEventListener('click', c);
+          l.addEventListener('beforeunload', u);
+        }
+      });
+    }};
+    m=function(){
+      l.clearTimeout(r.t);
+      l.clearInterval(r.i);
+      r.t=l.setTimeout(function(){p.x();p.i();},e.t);
+    };
 
+    var n=function(){if(!e.i){e.f=true;m();}};
+    var u=function(){i.q=true;typeof l.navigator.sendBeacon==='function'?navigator.sendBeacon(e.u,new Blob([JSON.stringify(i)])):p.x();};
+
+    var c=function(){
+      i.c+=1;
+      if(!e.f && !e.i){
+        l.requestAnimationFrame(function(){
+          if(e.h!==l.document.location.href){
+            e.h=l.document.location.href;
+            m();
+          }
+        });
+      }
+    };
+
+    p.x();
+    p.i();
+
+  })(window);
+</script>
