@@ -69,7 +69,7 @@
 	initApollo();
 </script>
 -->
-<script type="text/javascript">
+<!--<script type="text/javascript">
   (function(l,e,m,p,i,r,e){
     e={i:true,f:false,t:1000,h:l.document.location.href,u:'https://app.lemlist.com/api/visitors'};
     r={t:null,i:null};
@@ -118,4 +118,4 @@
     p.i();
 
   })(window);
-</script>
+</script>-->
