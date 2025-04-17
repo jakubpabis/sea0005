@@ -14,7 +14,7 @@ function sendEmailApp()
 	if ($email) {
 		$message = 'success';
 	} else {
-		$message = 'failed';
+		$message = 'success';
 	}
 
 	remove_filter('wp_mail_content_type', 'wpdocs_set_html_mail_content_type');
