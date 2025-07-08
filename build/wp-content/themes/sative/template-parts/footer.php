@@ -158,14 +158,13 @@
 				<div class="col-auto">
 					<span>© Search X Recruitment - <?php echo date("Y"); ?></span> |
 					<a href="/sitemap_index.xml"> Sitemap</a> |
-					<a href="/<?php echo $lang; ?>/<?php pll_e('fulfilled-jobs'); ?>"> <?php pll_e('Fulfilled jobs'); ?></a>
+					<a href="/<?php echo $lang; ?>/<?php pll_e('fulfilled-jobs'); ?>"> <?php pll_e('Fulfilled jobs'); ?></a> |
 					<?php
 					if ($lang === 'en') {
 						$link = 'terms-conditions/';
 					} else {
 						$link = 'algemene-voorwaarden/';
 					}
-
 					?>
 					<a href="/<?php echo $lang; ?>/<?php echo $link; ?>"> <?php pll_e('Terms & Conditions'); ?></a>
 				</div>
